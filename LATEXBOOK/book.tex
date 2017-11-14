@@ -1,4 +1,6 @@
-\documentstyle[12pt,psfig,makeidx]{book}
+\documentclass[12pt,makeidx]{book}
+
+\usepackage{epsfig}
 
 \addtolength{\oddsidemargin}{-0.6cm}
 \addtolength{\evensidemargin}{-2.6cm}
@@ -57,7 +59,8 @@ Exercises\end{center}}
 \newcommand{\Z}{\mbox{$\Bbb{Z}$}}
 \newcommand{\N}{\mbox{$\Bbb{N}$}}
 \newcommand{\D}{\mbox{{\bf D}}}
-\newcommand{\qed}{\hfill\mbox{\raggedright$\Box$} \vspace{1ex}}
+\usepackage{amssymb}
+\newcommand{\qed}{\hfill\mbox{\raggedright$\square$} \vspace{1ex}}
 \newcommand{\proof}{\noindent {\bf Proof:} \hspace{0.1in}}
 \newcommand{\setmin}{\;\mbox{--}\;}
 \newcommand{\Matlab}{{M\small{AT\-LAB}} }
@@ -193,8 +196,8 @@ University of Paderborn, D-33098 Paderborn, Germany}}
 \index{transition matrix|see{matrix, transition}}
 \index{transpose|see{matrix, transpose}}
 
-{\footnotesize
-\printindex}
+%{\footnotesize
+%\printindex}
 
 \end{document}
 
