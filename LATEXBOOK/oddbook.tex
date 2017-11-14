@@ -1,0 +1,217 @@
+\documentstyle[psfig,makeidx]{book}
+
+%\addtolength{\oddsidemargin}{-0.236in}
+\addtolength{\evensidemargin}{-0.9236in}
+%\addtolength{\topmargin}{-0.236in}
+
+\addtolength{\oddsidemargin}{0.24in}
+\addtolength{\topmargin}{-0.54in}
+
+\textheight=19.764cm
+\textwidth=5.484in
+
+
+\newcommand{\rhead}[2]{\markright{SECTION~\protect{\ref{#1}}. #2}}
+ 
+\newcounter{ccounter}
+\setcounter{ccounter}{1}
+\newcommand{\Chapter}[1]{\setcounter{chapter}{\arabic{ccounter}}\chapter{#1}\addtocounter{ccounter}{1}}
+ 
+%\newcommand{\Section}[1]{\normalsize\setcounter{chapter}{\arabic{ccounter}}\section{#1}\setcounter{chapter}{\arabic{section}}\setcounter{equation}{0}\setcounter{thm}{0}\setcounter{figure}{0}}
+
+\newcommand{\Section}[1]{\section{#1}\setcounter{thm}{0}\setcounter{equation}{0}}
+
+\renewcommand{\theequation}{\arabic{chapter}.\arabic{section}.\arabic{equation}}
+\renewcommand{\thefigure}{\arabic{chapter}.\arabic{figure}}
+\renewcommand{\thetable}{\arabic{chapter}.\arabic{table}}
+
+\setcounter{secnumdepth}{1}
+ 
+\newcommand{\Ref}[1]{(\ref{#1})} 
+ 
+\renewcommand{\baselinestretch}{1.2}
+ 
+\newcounter{THM}
+\renewcommand{\theTHM}{\arabic{chapter}.\arabic{section}}
+
+\newtheorem{thm}{Theorem}[THM]
+
+%\newtheorem{thm}{Theorem}[chapter]
+\newtheorem{rmk}[thm]{Remark}
+\newtheorem{rmks}[thm]{Remarks}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{exam}[thm]{Example}
+\newtheorem{exams}[thm]{Examples}
+\newtheorem{Def}[thm]{Definition}
+ 
+\newtheorem{exercise}{}[chapter]
+ 
+\newcommand{\EXER}{\vspace*{0.2in}\hrule\small\setcounter{exercise}{0}}
+\newcommand{\CEXER}{\vspace{0.08in}\begin{center}Computer Exercises\end{center}}
+\newcommand{\TEXER}{\vspace{0.08in}\begin{center}Hand Exercises\end{center}}
+\newcommand{\ans}{{\bf Answer: }}
+\newcommand{\soln}{{\bf Solution: }}
+ 
+\newcommand{\Bbb}{\bf}
+\newcommand{\R}{\mbox{$\Bbb{R}$}}
+\newcommand{\C}{\mbox{$\Bbb{C}$}}
+\newcommand{\Z}{\mbox{$\Bbb{Z}$}}
+\newcommand{\N}{\mbox{$\Bbb{N}$}}
+\newcommand{\D}{\mbox{{\bf D}}}
+\newcommand{\qed}{\hfill\mbox{\raggedright \rule{.07in}{.1in}}}
+\newcommand{\proof}{\noindent {\bf Proof:} \hspace{0.1in}}
+\newcommand{\setmin}{\;\mbox{--}\;}
+\newcommand{\Matlab}{MATLAB }
+\newcommand{\Matlabp}{MATLAB}
+\newcommand{\computer}{\Matlab Instructions}
+\newcommand{\half}{\mbox{$\frac{1}{2}$}}
+\newcommand{\compose}{\raisebox{.15ex}{\mbox{{\scriptsize$\circ$}}}} 
+\newcommand{\AND}{\quad\mbox{and}\quad}
+\newcommand{\vect}[2]{\left(\begin{array}{c} #1_1 \\ \vdots \\  #1_{#2}\end{array}\right)}
+\newcommand{\mattwo}[4]{\left(\begin{array}{rr} #1 & #2\\ #3 &#4\end{array}\right)} 
+\newcommand{\cmattwo}[4]{\left(\begin{array}{cc} #1 & #2\\ #3 &#4\end{array}\right)} 
+\newcommand{\vectwo}[2]{\left(\begin{array}{r} #1 \\ #2\end{array}\right)} 
+\newcommand{\cvectwo}[2]{\left(\begin{array}{c} #1 \\ #2\end{array}\right)}
+\newcommand{\matthree}[9]{\left(\begin{array}{rrr} #1 & #2 & #3 \\ #4 & #5 & #6 \\ #7 & #8 & #9\end{array}\right)}
+\newcommand{\cmatthree}[9]{\left(\begin{array}{ccc} #1 & #2 & #3 \\ #4 & #5 & #6 \\ #7 & #8 & #9\end{array}\right)}
+\newcommand{\vecthree}[3]{\left(\begin{array}{r} #1 \\ #2 \\ #3\end{array}\right)}
+\newcommand{\cvecthree}[3]{\left(\begin{array}{c} #1 \\ #2 \\ #3\end{array}\right)}
+\newcommand{\eyethree}[0]{\left(\begin{array}{rrr} 1 & 0 & 0 \\ 0 & 1 &
+0 \\ 0 & 0 & 1 \end{array}\right)}
+\newcommand{\eyefour}[0]{\left(\begin{array}{rrrr} 1 & 0 & 0 & 0 \\ 0
+& 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 \end{array}\right)}
+\newcommand{\exercap}[1]{\centerline{Figure~\ref{#1}}}
+\newcommand{\exercaptwo}[1]{\centerline{Figure~\ref{#1}a\hspace{2.1in}
+Figure~\ref{#1}b}}
+\newcommand{\exercapthree}[1]{\centerline{Figure~\ref{#1}a\hspace{1.2in}
+Figure~\ref{#1}b\hspace{1.2in}Figure~\ref{#1}c}}
+\newcommand{\para}{\hspace{0.4in}}
+
+\newcommand{\inv}{^{-1}}
+\newcommand{\CC}{{\cal C}}
+\newcommand{\CCone}{\CC^1}   
+\newcommand{\Span}{{\rm span}}
+\newcommand{\rank}{{\rm rank}} 
+\newcommand{\trace}{{\rm tr}}
+\newcommand{\RE}{{\rm Re}}
+\newcommand{\IM}{{\rm Im}}
+\newcommand{\nulls}{{\rm null\;space}}
+ 
+\newcommand{\dps}{\displaystyle}
+\newcommand{\arraystart}{\renewcommand{\arraystretch}{1.8}}
+\newcommand{\arrayfinish}{\renewcommand{\arraystretch}{1.2}}
+ 
+\newcounter{help}
+\renewcommand{\thehelp}{\thesection.\arabic{equation}}
+ 
+\newenvironment{equation*}%
+{\renewcommand\endequation{\eqno (\theequation)* $$}%
+   \begin{equation}}%
+   {\end{equation}\renewcommand\endequation{\eqno \@eqnnum $$\global\@ignoretrue}}
+
+\parindent=0in
+\marginparwidth=0.33in
+
+\newcommand{\exer}[1]{\paragraph\noindent\hspace*{-0.186in}\ifodd\value{page}\reversemarginpar\else\normalmarginpar\fi\marginpar{\bf\ref{#1}.}}
+
+\def\tm{{\ooalign{\hfil\raise.15ex\hbox{\tiny R}\hfil\crcr\mathhexbox20D}}}
+
+\newcommand{\trademark}{{R\!\!\!\!\!\bigcirc}}
+
+%\input{psfig.tex}
+ 
+%\date{August 17, 1998}
+ 
+%\title{{\bf Student's Solutions Manual}\vspace{0.3in} \\Linear Algebra and 
+%\\Differential Equations \\Using \protect{\Matlab} }
+
+\pagenumbering{roman}
+ 
+\includeonly{mopreface,mo1,mo2,mo3,mo4,mo5,mo6,mo7,mo8,mo9,mo10,mo11,mo12,mo13,mo14,mo15,mo16,mo17,mo18}
+\includeonly{mo13}
+
+%\usepackage{showkeys}
+
+\makeindex
+
+\begin{document}
+ 
+%\maketitle
+\setcounter{page}{0}
+
+\vspace*{1.0in} 
+
+\Huge
+
+\begin{center}
+
+{\bf Student Solutions Manual}
+
+\vspace{1.5in} 
+
+\huge
+
+LINEAR ALGEBRA and \\
+DIFFERENTIAL EQUATIONS \\
+Using \protect{\Matlabp}$^\trademark$
+ 
+\vspace{2.0in}
+
+ 
+Elizabeth Golubitsky \quad $\diamond$ \quad Martin Golubitsky
+\end{center}
+\normalsize
+
+\tableofcontents
+
+\include{mopreface}
+
+\pagenumbering{arabic}
+
+\include{c1}
+\include{c2}
+\include{c3}
+\include{c4}
+\include{c5}
+\include{c6}
+\include{c7}
+\include{c8}
+\include{c9}
+\include{c10}
+\include{c11}
+\include{c12}
+\include{c13}
+\include{c14}
+\include{c15}
+\include{c16}
+\include{c17}
+\include{c18}
+\printindex
+
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\include{mo1}
+\include{mo2}
+\include{mo3}
+\include{mo4}
+\include{mo5}
+\include{mo6}
+\include{mo7}
+\include{mo8}
+\include{mo9}
+\include{mo10}
+\include{mo11}
+\include{mo12}
+\include{mo13}
+\include{mo14}
+\include{mo15}
+\include{mo16}
+\include{mo17}
+\include{mo18}
+
+
+\end{document}
+

@@ -1,0 +1,150 @@
+\setcounter{chapter}{0}
+
+\chapter{Preliminaries}
+
+\subsection*{Section~\protect{\ref{S:1.1}} Vectors and Matrices}
+\rhead{S:1.1}{VECTORS AND MATRICES}
+
+\exer{c1.1.1A} $ x + y = (3,2,2)$.
+
+\exer{c1.1.1C} $2x - 3y = (4,2,6) - (3,3,-3) = (1,-1,9)$.
+
+\exer{c1.1.3a} $x + y = (5,0)$.
+
+\exer{c1.1.3c} Addition is not possible.
+
+\exer{c1.1.3e} Addition is not possible.
+
+\exer{c1.1.4B} $2A - 3B = \mattwo{4}{-4}{-11}{11}$.
+
+
+
+\subsection*{Section~\protect{\ref{S:1.2}} \protect{\Matlab}}
+\rhead{S:1.2}{MATLAB}
+
+\exer{c1.2.1}
+(a) $11$;
+(b) $\left(\begin{array}{r} 15\\ 3 \\24\end{array} \right)$;
+(c) $2(-1,2, 1,-2)- (4, 6, 8, 0)=(-6,-2,-6,-4)$;
+(d) $\left(\begin{array}{r} 15 \\ 0 \\ 18 \end{array} \right)$.
+
+\exer{c1.2.3a}  $3.27x - 7.4y = (23.1640, -3.5620, -12.8215)$.
+
+\exer{c1.2.4a}  $-4.2A + 3.1B = \left(\begin{array}{rrr} 
+-14.0300 & -5.8470 &    7.0600 \\
+ -9.7600 & 11.0570 &   -9.6600\end{array}\right)$.
+
+
+
+\newpage
+\subsection*{Section~\protect{\ref{S:1.3}} Special Kinds of Matrices}
+\rhead{S:1.3}{SPECIAL KINDS OF MATRICES}
+
+\exer{c1.1.01a} The matrix is symmetric.
+
+\exer{c1.1.01c} The matrix is symmetric.
+
+\exer{c1.1.01e} The matrix is symmetric.
+
+\exer{c1.1.02b} The matrix is strictly upper triangular.
+
+\exer{c1.1.02d} The matrix is not upper triangular since a triangular
+matrix must be square.
+
+\exer{c1.3.1a} $3$.
+
+\exer{c1.3.2} $mn$.
+
+\exer{c1.3.3b} $1 + 2 + \cdots + (n-1) + n = \frac{n(n + 1)}{2}$.
+
+\exer{c1.3.4a} $True$.
+
+\exer{c1.3.4c} $False$ --- for example:
+$\left(\begin{array}{ccc}
+1 & 2 & 0 \\
+3 & 1 & 0 \\
+0 & 0 & 4
+\end{array}\right)$.
+
+\exer{c1.3.5b} \ans $A^t = (3).$
+
+
+
+\subsection*{Section~\protect{\ref{S:1.4}} The Geometry of Vector Operations}
+\rhead{S:1.4}{THE GEOMETRY OF VECTOR OPERATIONS}
+
+\exer{c1.4.8a} \ans The length of $x$ is $\sqrt{3^2 + 0^2} = 3$.
+
+\exer{c1.4.8c} \ans The length of $x$ is $\sqrt{(-1)^2 + 1^2 + 1^2} =
+\sqrt{3}$.
+
+\exer{c1.4.1a} \ans The vectors are perpendicular.
+
+\soln Vectors $x$ and $y$ are perpendicular if and only if $x \cdot y = 0$.
+In this case, $(1,3) \cdot (3,-1) = 0$.
+
+\exer{c1.4.1bb} \ans The vectors are not perpendicular.
+
+\soln Compute: $(1,1,3,5) \cdot (1,-4,3,0) = 6$.
+
+\exer{c1.4.2}
+When $a = \frac{10}{3}$, $x$ and $y$ are perpendicular, since
+$(1,3,2) \cdot (2,a,-6) = 3a - 10 = 0$.
+
+\newpage
+\exer{c1.4.9a} \ans The dot product $x \cdot y = 4$, and the cosine
+of the angle $\theta$ between $x$ and $y$ is $\frac{2}{\sqrt{5}}$.
+
+\soln Compute $x \cdot y = 4$, $||x|| = 2$, and $||y|| = \sqrt{5}$.
+Then by Theorem~\ref{T:dotangle},
+\[
+\cos\theta = \frac{x \cdot y}{||x||\;||y||} = \frac{2}{\sqrt{5}}.
+\]
+
+\exer{c1.4.9c} \ans The dot product $x \cdot y = 13$, and the cosine
+of the angle $\theta$ between $x$ and $y$ is $\frac{13}{6\sqrt{5}}$.
+
+\soln Compute $x \cdot y = 13$, $||x|| = 3\sqrt{2}$, and $||y|| = \sqrt{10}$.
+Then by Theorem~\ref{T:dotangle},
+\[
+\cos\theta = \frac{x \cdot y}{||x||\;||y||} = \frac{13}{3\sqrt{20}}
+= \frac{13}{6\sqrt{5}}.
+\]
+
+\exer{c1.4.9e} \ans The dot product $x \cdot y = 31$, and the cosine
+of the angle $\theta$ between $x$ and $y$ is
+$\frac{31}{\sqrt{1410}} \approx 0.8256$.
+
+\soln Compute $x \cdot y = 31$, $||x|| = \sqrt{15}$, and $||y|| = \sqrt{94}$.
+Then by Theorem~\ref{T:dotangle},
+\[
+\cos\theta = \frac{x \cdot y}{||x||\;||y||} = \frac{31}{\sqrt{15}\sqrt{94}}
+= \frac{31}{\sqrt{1410}} \approx 0.8256.
+\]
+
+\exer{c1.4.9A} Using the definition $||x|| = \sqrt{x_1^2 + \cdots + x_n^2}$,
+we can compute
+\[
+\begin{array}{rcl}
+||rx|| & = & ||r(x_1,\dots,x_n)|| \\
+& = & ||(rx_1,\dots,rx_n)|| \\
+& = & \sqrt{(rx_1)^2 + \cdots + (rx_n)^2} \\
+& = & \sqrt{r^2(x_1^2 + \cdots + x_n^2)} \\
+& = & |r|\sqrt{x_1^2 + \cdots + x_n^2} \\
+& = & |r| ||x||.
+\end{array}
+\]
+
+
+\exer{c1.4.5}
+$\frac{x}{||x||} = (0.1244, 0.8397, -0.4167, 0.3253)$.
+
+\exer{c1.4.6a} $\theta =
+\arccos \left(\frac{x \cdot y}{||x||\;||y||}\right) =
+0.2715 = 15.5570^\circ$.
+
+\exer{c1.4.6c} $\theta =
+\arccos \left(\frac{x \cdot y}{||x||\;||y||}\right) =
+2.1769 = 124.7286^\circ$.
+
+\exer{c1.4.7b} \ans The area of $P$ is $\sqrt{147} \approx 12.1244$.

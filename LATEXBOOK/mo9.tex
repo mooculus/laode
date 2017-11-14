@@ -1,0 +1,257 @@
+\chapter{Linear Maps and Changes of Coordinates}
+
+\subsection*{Section~\protect{\ref{Sect:linmap}} Linear Mappings and Bases}
+\rhead{Sect:linmap}{LINEAR MAPPINGS AND BASES}
+
+\exer{c7.2.1}
+Compute $A$, the matrix of $L$, using Equation~\Ref{e:defA}:
+\[ A = (w_1^t|w_2^t|w_3^t)(v_1^t|v_2^t|v_3^t)^{-1} =
+\left(\begin{array}{rrr} -1 & 0 & 3 \\ 0 & 1 & 1 \end{array}\right)
+\matthree{1}{2}{-2}{0}{-1}{1}{2}{1}{0}^{-1} =
+\left(\begin{array}{rrr} -7 & -11 & 3 \\ -4 & -7 & 2
+\end{array}\right). \]
+
+\exer{c7.2.2a}
+Let $\frac{d}{dt}$ be a transformation that maps $p(t) \mapsto
+\frac{d}{dt}p(t)$.  For $p(t) =  p_1 + p_2t + p_3t^2 + p_4t^3$, then
+$\frac{d}{dt}p(t) = p_2 + p_3t + p_4t^2$, so $\frac{d}{dt}$ is indeed
+a mapping ${\cal P}_3 \rightarrow {\cal P}_2$.  From calculus, we
+know that, for any functions $f$ and $g$:
+\[ \frac{d}{dt}(f + g)(t) = \frac{d}{dt}f(t) + \frac{d}{dt}g(t), \]
+and that, for any scalar $c$:
+\[ \frac{d}{dt}(cf)(t) = c\frac{d}{dt}f(t). \]
+Let $f$ and $g$ be elements of ${\cal P}_3$.  Then
+$\frac{d}{dt}: {\cal P}_3 \rightarrow {\cal P}_2$ is a linear mapping.
+
+\exer{c7.2.2c}
+Let $M = \frac{d}{dt} \circ L$ be a mapping ${\cal P}_2
+\rightarrow {\cal P}_2$.  The fundamental
+theorem of calculus states that, for any function $g$,
+\[ \frac{d}{dt}\int_0^t g(\tau)d\tau = g(t). \]
+Thus $M(g) = g$ is valid for all values of $g$, so $M$ is the
+identity map.
+
+\para To prove this fact explicitly for this case, note that $M$ is
+the identity mapping if it maps every polynomial in ${\cal P}_2$ to
+itself.  Lemma~\ref{L:linmapfrombasis} states that this mapping can
+be uniquely determined by a basis of ${\cal P}_2$.  According to
+Exercise~\ref{c7.2.2}, $\{1,t,t^2\}$ is a basis for ${\cal P}_2$. 
+Therefore, $M$ is the identity map if $M(1) = 1$, $M(t) = t$ and
+$M(t^2) = t^2$:
+\[ \frac{d}{dt} \circ L (1) = \frac{d}{dt}\left(\int_0^tds\right) =
+\frac{d}{dt}(t) = 1. \]
+\[ \frac{d}{dt} \circ L (t) = \frac{d}{dt}\left(\int_0^tsds\right) =
+\frac{d}{dt}\left(\frac{t^2}{2}\right) = t. \]
+\[ \frac{d}{dt} \circ L (t^2) = \frac{d}{dt}\left(\int_0^ts^2ds\right) =
+\frac{d}{dt}\left(\frac{t^3}{3}\right) = t^2. \]
+So $\frac{d}{dt} \circ L$ is indeed the identity map for ${\cal P}_2$.
+
+\exer{c7.2.4}
+Let $X$ and $Y$ be elements of ${\cal M}(n)$.  Then,
+\[ L(X + Y) = A(X + Y) - (X + Y)A = (AX - XA)
++ (AY - YA) = L(X) + L(Y). \]
+For any real scalar $c$,
+\[ L(cX) = A(cX) - (cX)A = c(AX) - c(XA) = c(AX - XA) = cL(X). \]
+Therefore, $L$ is a linear mapping.
+
+\para The null space of $L$ consists of all matrices $X$ such that
+$AX - XA = 0$, or $AX = XA$.  By definition, these are the matrices
+such that $X$ commutes with $A$.  Let $X$ and $Y$ be elements of
+the null space of $L$.  Then show that $X + Y$ is in the null space
+by calculating:
+\[ L(X + Y) = A(X + Y) - (X + Y)A = AX + AY - XA - YA = AX + AY - AX
+- AY = 0. \]
+Show that, for any real scalar $c$, $cX$ is in the null space by
+calculating:
+\[ L(cX) = A(cX) - (cX)A = cAX - cXA = cAX - cAX = 0. \]
+Therefore, the null space of $L$ is a subspace consisting of all
+matrices that commute with $A$.
+
+\exer{c7.2.6}
+Let $p$ and $q$ be elements of ${\cal P}$.  Then,
+\[ \begin{array}{rcl}
+L(p + q)(x) & = & \int_0^x(t - 1)(p(t) + q(t))dt \\
+& = & \int_0^x((t - 1)p(t)dt + (t - 1)q(t)dt) \\
+& = & \int_0^x(t - 1)p(t)dt + \int_0^x(t - 1)q(t)dt \\
+& = & L(p(x)) + L(q(x)). \end{array} \]
+For any real scalar $c$,
+\[ L(cp(x)) = \int_0^x(t - 1)cp(t)dt = c\int_0^x(t - 1)p(t)dt
+= cL(p(x)). \]
+Therefore, $L$ is a linear mapping.
+
+
+
+\newpage
+\subsection*{Section~\protect{\ref{S:5.8}} Row Rank Equals Column Rank}
+\rhead{S:5.8}{ROW RANK EQUALS COLUMN RANK}
+
+\exer{c5.8.1}
+\ans The possible choices for the scalars $\alpha_j$ are
+$\alpha = (\alpha_1,\alpha_2,\alpha_3) = \alpha_3(-1,-1,1)$ and
+the possible choices for the scalars $\beta_j$ are $\beta = 
+(\beta_1,\beta_2,\beta_3) = \beta_3(-\frac{7}{5},-\frac{9}{5},1)$.
+
+\soln Find $A^t$ and solve by row reduction the equation
+$A^t\alpha = 0$.  To find the scalars $\beta_j$, solve $A\beta =
+0$.  These equations yield
+\[
+-r_1 - r_2 + r_3 = 0 \AND -7c_1 - 9c_2 + 5c_3 = 0.
+\]
+
+\exer{c5.8.3}
+(a) \ans The vectors $(1,0,1,0)$, $(0,1,-1,0)$ and $(0,0,0,1)$ form a
+basis for the row space of $A$, and the row rank of $A$ is $3$.
+
+\soln Row reduce $A$:
+\[
+\left(\begin{array}{rrrr} 1 & 1 & 0 & 1 \\ 0 & -1 & 1 & 2 \\1 & 2
+& -1 & 3 \end{array}\right) \longrightarrow \left(\begin{array}{rrrr}
+1 & 0 & 1 & 0 \\ 0 & 1 & -1 & 0 \\0 & 0 & 0 & 1 \end{array}\right).
+\]
+
+(b) \ans The column rank of $A$ is $3$, and the vectors $(1,0,0)$,
+$(0,1,0)$, and $(0,0,1)$ form a basis for the column space of $A$.
+
+\soln Row reduce $A^t$:
+\[
+\left(\begin{array}{rrr} 1 & 0 & 1 \\ 1 & -1 & 2 \\ 0 & 1 & -1
+\\ 1 & 2 & 3 \end{array}\right) \longrightarrow \left(\begin{array}{rrr}
+1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \\ 0 & 0 & 0 \end{array}\right)
+\]
+
+(c) \ans The vector $(-1,1,1,0)$ is a basis for the null space.  Since one
+vector forms the basis, the nullity of $A$ is $1$.  
+
+\soln Solve $Ax = 0$ by row reducing $A$, which we have already done.
+
+(d) \ans The null space is trivial and the nullity of $A^t$ is $0$.
+
+\soln Find a basis by solving $A^tx = 0$ by row reduction.  The row
+reduced matrix:
+\[
+\left(\begin{array}{rrr} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1
+\\ 0 & 0 & 0 \end{array}\right)
+\]
+implies $x = (0,0,0)$.
+
+\exer{c5.8.5}
+We show that $\rank(A) \leq \min\{\rank(B),\rank(C)\}$ by noting that,
+if $A = BC$, then the columns of $A$ are linear combinations of the
+columns of $B$, so the span of the column space of $A$ cannot exceed
+the span of the column space of $B$.  Therefore, $\rank(A) \leq
+\rank(B)$.  Next, note that $A^t = C^tB^t$.  By a similar argument,
+$\rank(A^t) \leq \rank(C^t)$.  Since $\rank(A) = \rank(A^t)$,
+$\rank(A) \leq \min\{\rank(B),\rank(C)\}$.
+
+
+
+\newpage
+\subsection*{Section~\protect{\ref{S:coordinates}} Vectors and Matrices in
+Coordinates}
+\rhead{S:coordinates}{VECTORS AND MATRICES IN COORDINATES}
+
+\exer{c7.1.1}
+\ans $[v]_{\cal W} = (7,4)$.
+
+\soln Find the scalars $\alpha_1$ and $\alpha_2$ such that $v = \alpha_1w_1
++ \alpha_2w_2$.  That is, solve the linear system
+\[ \begin{array}{rrrrr}
+\alpha_1 & - & 2\alpha_2 & = & -1 \\
+4\alpha_1 & + & \alpha_2 & = & 32 \end{array} \]
+to obtain $(\alpha_1,\alpha_2) = (7,4)$, the coordinates
+of $v$ in the ${\cal W}$ basis.
+
+\exer{c7.1.3}
+(a) By Theorem~\ref{basis=span+indep},
+the subset ${\cal V}$ is a basis for the vector space of $2 \times
+3$ matrices if the vectors of ${\cal V}$ are linearly independent and
+span the vector space.  Let
+\[ B = \left(\begin{array}{rrr} b_{11} & b_{12} & b_{13} \\ b_{21} &
+b_{22} & b_{23} \end{array}\right). \]
+We show that $B$ is in the span of ${\cal V}$ by noting that
+$B = b_{11}E_{11} + b_{12}E_{12} + b_{13}E_{13} + b_{21}E_{21}
++ b_{22}E_{22} + b_{23}E_{23}$.  To show that the matrices $E_{ij}$
+are linearly independent, suppose $b_{11}E_{11} + b_{12}E_{12} +
+b_{13}E_{13} + b_{21}E_{21} + b_{22}E_{22} + b_{23}E_{23} = 0$.  Then,
+\[  B = \left(\begin{array}{rrr} b_{11} & b_{12} & b_{13} \\ b_{21} &
+b_{22} & b_{23} \end{array}\right) = 0, \]
+so $b_{ij} = 0$.
+Therefore, {\cal V} is a basis for the given vector space.
+
+(b) \ans $[A]_{\cal V} = (-1,0,2,3,-2,4)$.
+
+\soln Compute $A = -E_{11} + 2E_{13} + 3E_{21} - 2E_{22} + 4E_{23}$.
+
+\exer{c7.1.6}
+\ans $[v]_W = (-2,2,-1)$.
+
+\soln Use \Matlab to row reduce the augmented matrix
+$(w_1^t|w_2^t|w_3^t|v)$, obtaining:
+\begin{verbatim}
+ans = 
+     1     0     0    -2
+     0     1     0     2
+     0     0     1    -1
+\end{verbatim}
+
+\exer{c7.3.4}
+\ans The matrix $[L]_{\cal W}$ is diagonal in the basis:
+\[
+{\cal W} = \left\{\vectwo{1}{2},\vectwo{2}{3}\right\}
+\]
+
+\soln Theorem~\ref{T:putinform2} states
+that the matrix $[L]_{\cal W}$ is diagonal if ${\cal W}$ consists of
+eigenvectors of $L$ corresponding to real eigenvalues.  By
+computation, we find that $\lambda_1 = 2$ and $\lambda_2 = -1$ are
+the eigenvalues of $L$.  We then find that $Lw_1 = 2w_1$ when
+$w_1 = (1,2)^t$ and $Lw_2 = -w_2$ when $w_2 = (2,3)^t$, so $w_1$ and
+$w_2$ are the eigenvectors of $L$.
+
+
+
+\newpage
+\subsection*{Section~\protect{\ref{MALT}} Matrices of Linear Maps on a
+Vector Space}
+\rhead{MALT}{MATRICES OF LINEAR MAPS ON A VECTOR SPACE}
+
+\exer{c7.1.2}
+\ans
+\[ C_{\cal WZ} = \mattwo{2}{3}{-1}{-2}. \]
+
+\soln Substitute into Equation~\Ref{e:coordformn} as follows:
+\[ C_{\cal WZ} = (w_1^t|w_2^t)^{-1}(z_1^t|z_2^t) =
+\mattwo{1}{0}{2}{1}^{-1}\mattwo{2}{3}{3}{4} =
+\mattwo{2}{3}{-1}{-2}. \]
+
+\exer{c7.3.3}
+If there exists a nonzero vector $v$ such that $M\circ L(v) = 0$,
+then the nullity of $M \circ L$ is nonzero, so $M \circ L$ is not
+invertible.  If $L(v) = 0$, then $M \circ L(v) = 0$.  We know that
+$\rm{nullity}(L) = \dim V - \dim W > 0$.  Therefore, $M\circ L(v)$
+is not invertible
+
+\exer{c7.5.A}
+(a) \ans The matrix $A$ fixes $w_1$, moves $w_2$ to $w_3$, and moves
+$w_3$ to $-w_2$.
+
+\soln Load the matrix and vectors into \Matlabp.  Then compute $Aw_j$ for
+each vector $w_j$, obtaining $Aw_1 = w_1$, $Aw_2 = w_3$, and $Aw_3 = -w_2$.
+
+(b) \ans $[L_A]_{\cal W} = \matthree{1}{0}{0}{0}{0}{-1}{0}{1}{0}$.
+
+\soln From Section~\ref{S:coordinates}, we know that
+\[
+[L_A]_{\cal W} = P^{-1}AP,
+\]
+where $P = (w_1|w_2|w_3)$.  Enter {\tt P} into \Matlab and compute this
+matrix.
+
+(c) \ans The matrix $[L_A]_{\cal W}$ fixes $e_1$, moves $e_2$ to
+$e_3$, and moves $e_3$ to $-e_2$.
+
+\soln Compute $[L_A]_{\cal W}e_1 = e_1$, $[L_A]_{\cal W}e_2 = e_3$, and
+$[L_A]_{\cal W}e_3 = -e_2$.  This result is consistent with part (a),
+since $[L_A]_{\cal W}$ maps the standard basis vectors to one another
+in the same way that $A$ maps the basis vectors of ${\cal W}$ to one
+another.

@@ -1,0 +1,200 @@
+\documentstyle[12pt,psfig,makeidx]{book}
+
+\addtolength{\oddsidemargin}{-0.6cm}
+\addtolength{\evensidemargin}{-2.6cm}
+\addtolength{\topmargin}{-0.6cm}
+
+\textheight=20cm
+\textwidth=15.2cm
+
+\newcounter{ccounter}
+\setcounter{ccounter}{1}
+\newcommand{\Chapter}[1]{\setcounter{chapter}{\arabic{ccounter}}\chapter{#1}\addtocounter{ccounter}{1}}
+
+%\newcommand{\Section}[1]{\section{#1}\setcounter{thm}{0}\setcounter{figure}{0}\setcounter{equation}{0}}
+
+\newcommand{\Section}[1]{\section{#1}\setcounter{thm}{0}\setcounter{equation}{0}}
+
+\renewcommand{\theequation}{\arabic{chapter}.\arabic{section}.\arabic{equation}}
+\renewcommand{\thefigure}{\arabic{chapter}.\arabic{figure}}
+\renewcommand{\thetable}{\arabic{chapter}.\arabic{table}}
+
+%\newcommand{\Sec}[2]{\section{#1}\markright{\arabic{ccounter}.\arabic{section}.#2}\setcounter{equation}{0}\setcounter{thm}{0}\setcounter{figure}{0}}
+
+\newcommand{\Sec}[2]{\section{#1}\markright{\arabic{ccounter}.\arabic{section}.#2}\setcounter{equation}{0}\setcounter{thm}{0}}
+
+\setcounter{secnumdepth}{2}
+%\setcounter{secnumdepth}{1} 
+
+\newcommand{\Ref}[1]{(\ref{#1})}
+
+\renewcommand{\baselinestretch}{1.2}
+
+\newcounter{THM}
+\renewcommand{\theTHM}{\arabic{chapter}.\arabic{section}}
+
+\newtheorem{thm}{Theorem}[THM]
+\newtheorem{rmk}[thm]{Remark}
+\newtheorem{rmks}[thm]{Remarks}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{exam}[thm]{Example}
+\newtheorem{exams}[thm]{Examples}
+\newtheorem{Def}[thm]{Definition}
+
+\newcommand{\trademark}{{R\!\!\!\!\!\bigcirc}}
+\newtheorem{exercise}{}
+
+\newcommand{\EXER}{\vspace*{0.2in}\hrule\small\setcounter{exercise}{0}}
+\newcommand{\CEXER}{\vspace{0.08in}\begin{center}Computer
+Exercises\end{center}}
+\newcommand{\TEXER}{\vspace{0.08in}\begin{center}Hand Exercises\end{center}}
+
+\newcommand{\Bbb}{\bf}
+\newcommand{\R}{\mbox{$\Bbb{R}$}}
+\newcommand{\C}{\mbox{$\Bbb{C}$}}
+\newcommand{\Z}{\mbox{$\Bbb{Z}$}}
+\newcommand{\N}{\mbox{$\Bbb{N}$}}
+\newcommand{\D}{\mbox{{\bf D}}}
+\newcommand{\qed}{\hfill\mbox{\raggedright$\Box$} \vspace{1ex}}
+\newcommand{\proof}{\noindent {\bf Proof:} \hspace{0.1in}}
+\newcommand{\setmin}{\;\mbox{--}\;}
+\newcommand{\Matlab}{{M\small{AT\-LAB}} }
+\newcommand{\Matlabp}{{M\small{AT\-LAB}}}
+\newcommand{\computer}{\Matlab Instructions}
+\newcommand{\half}{\mbox{$\frac{1}{2}$}}
+\newcommand{\compose}{\raisebox{.15ex}{\mbox{{\scriptsize$\circ$}}}}
+\newcommand{\AND}{\quad\mbox{and}\quad}
+\newcommand{\vect}[2]{\left(\begin{array}{c} #1_1 \\ \vdots \\
+ #1_{#2}\end{array}\right)}
+\newcommand{\mattwo}[4]{\left(\begin{array}{rr} #1 & #2\\ #3
+&#4\end{array}\right)}
+\newcommand{\mattwoc}[4]{\left(\begin{array}{cc} #1 & #2\\ #3
+&#4\end{array}\right)}
+\newcommand{\vectwo}[2]{\left(\begin{array}{r} #1 \\ #2\end{array}\right)}
+\newcommand{\vectwoc}[2]{\left(\begin{array}{c} #1 \\ #2\end{array}\right)}
+
+\newcommand{\inv}{^{-1}}
+\newcommand{\CC}{{\cal C}}
+\newcommand{\CCone}{\CC^1}
+\newcommand{\Span}{{\rm span}}
+\newcommand{\rank}{{\rm rank}}
+\newcommand{\trace}{{\rm tr}}
+\newcommand{\RE}{{\rm Re}}
+\newcommand{\IM}{{\rm Im}}
+\newcommand{\nulls}{{\rm null\;space}}
+
+\newcommand{\dps}{\displaystyle}
+\newcommand{\arraystart}{\renewcommand{\arraystretch}{1.8}}
+\newcommand{\arrayfinish}{\renewcommand{\arraystretch}{1.2}}
+\newcommand{\Start}[1]{\vspace{0.08in}\noindent {\bf Section~\ref{#1}}}
+\newcommand{\exer}[1]{\noindent {\bf \ref{#1}}}
+\newcommand{\ans}{}
+\newcommand{\matthree}[9]{\left(\begin{array}{rrr} #1 & #2 & #3 \\ #4 & #5 & #6
+\\ #7 & #8 & #9\end{array}\right)}
+\newcommand{\cvectwo}[2]{\left(\begin{array}{c} #1 \\ #2\end{array}\right)}
+\newcommand{\cmatthree}[9]{\left(\begin{array}{ccc} #1 & #2 & #3 \\ #4 & #5 &
+#6 \\ #7 & #8 & #9\end{array}\right)}
+\newcommand{\vecthree}[3]{\left(\begin{array}{r} #1 \\ #2 \\
+#3\end{array}\right)}
+\newcommand{\cvecthree}[3]{\left(\begin{array}{c} #1 \\ #2 \\
+#3\end{array}\right)}
+\newcommand{\cmattwo}[4]{\left(\begin{array}{cc} #1 & #2\\ #3
+&#4\end{array}\right)}
+
+\newcounter{help}
+\renewcommand{\thehelp}{\thesection.\arabic{equation}}
+
+\newenvironment{equation*}%
+{\renewcommand\endequation{\eqno (\theequation)* $$}%
+   \begin{equation}}%
+   {\end{equation}\renewcommand\endequation{\eqno \@eqnnum
+$$\global\@ignoretrue}}
+
+%\input{psfig.tex}
+
+\date{August 5, 1998}
+
+\title{Linear Algebra and Differential Equations using
+M\Large{ATLAB}}
+
+
+\author{\copyright$\;$Martin Golubitsky\thanks{Department of Mathematics,
+University of Houston, Houston, TX 77204-3476, USA} and Michael
+Dellnitz\thanks{Department of Mathematics and Computer Science,
+University of Paderborn, D-33098 Paderborn, Germany}}
+
+\pagenumbering{roman}
+
+\includeonly{preface,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,c15,c16,c17,c18,commands,answers}
+%\includeonly{c1,c2,c3,c4,c5,c8,c9,c10,c13}
+%\includeonly{c4}
+
+%\usepackage{showkeys}
+
+\makeindex
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\include{preface}
+
+\pagenumbering{arabic}
+
+\include{c1}
+\include{c2}
+\include{c3}
+\include{c4}
+\include{c5}
+\include{c6}
+\include{c7}
+\include{c8}
+\include{c9}
+\include{c10}
+\include{c11}
+\include{c12}
+\include{c13}
+\include{c14}
+\include{c15}
+\include{c16}
+\include{c17}
+\include{c18}
+\include{commands}
+\include{answers}
+
+\index{asymptotic stability|see{stability, asymptotic}}
+\index{bifurcation!diagram|see{diagram, bifurcation}}
+\index{coefficient matrix|see{matrix, coefficient}}
+\index{det|see{determinant}}
+\index{differential equation!Hamiltonian|see{Hamiltonian system}}
+\index{dim|see{dimension}}
+\index{reduced echelon form|see{echelon form, reduced}}
+\index{exact differential equation|see{differential equation, exact}}
+\index{exchange of stability|see{stability, exchange of}}
+\index{forcing!frequency|see{frequency, forcing}}
+\index{global discretization error|see{discretization error}}
+\index{heteroclinic!trajectory|see{trajectory, heteroclinic}}
+\index{homoclinic!trajectory|see{trajectory, homoclinic}}
+\index{Householder matrix|see{matrix, Householder}}
+\index{inductive formula for determinants|see{determinant, inductive formula}}
+\index{internal frequency|see{frequency, internal}}
+\index{Jacobian|see{matrix, Jacobian}}
+\index{linear stability|see{stability, linear}}
+\index{local discretization error|see{discretization error}}
+\index{Markov matrix|see{matrix, Markov}}
+\index{matrix!swap|see{elementary row operations}}
+\index{orthogonal matrix|see{matrix, orthogonal}}
+\index{orthonormal basis|see{basis, orthonormal}}
+\index{quasiperiodic|see{motion, quasiperiodic}}
+\index{spiral!sink|see{sink}}
+\index{spiral!source|see{source}}
+\index{transition matrix|see{matrix, transition}}
+\index{transpose|see{matrix, transpose}}
+
+{\footnotesize
+\printindex}
+
+\end{document}
+

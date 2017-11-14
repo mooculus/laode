@@ -1,0 +1,2947 @@
+\Chapter{Matrices and Linearity}  \label{chap:matrices}
+
+\normalsize
+
+In this chapter we take the first step in abstracting vectors and matrices 
+to mathematical objects that are more than just arrays of numbers.  We begin 
+the discussion in Section~\ref{S:4.1} by introducing the multiplication of a 
+matrix times a vector.  Matrix multiplication simplifies the way in which we 
+write systems of linear equations and is the way by which we view matrices as 
+mappings.  This latter point is discussed in Section~\ref{s:4.2}.
+
+The mappings that are produced by matrix multiplication are special and
+are called {\em linear mappings}.  Some properties of
+linear maps are discussed in Section~\ref{S:linearity}.  One consequence of
+linearity is the {\em principle of superposition\/} that enables
+solutions to systems of linear equations to be built out of simpler
+solutions.  This principle is discussed in Section~\ref{S:Superposition}.
+
+
+In Section~\ref{S:4.6} we introduce 
+multiplication of two matrices and discuss properties of this multiplication
+in Section~\ref{S:4.7}.  Matrix multiplication is defined in terms of
+composition of linear mappings which leads to an explicit formula for matrix
+multiplication.   This dual role of multiplication of two matrices ---
+first by formula and second as composition --- enables us to solve
+linear equations in a conceptual way as well as in an algorithmic way.
+The conceptual way of solving linear equations is through the use of
+matrix inverses (or inverse mappings) which is described in
+Section~\ref{S:SLS}.  In this section we also present
+important properties of matrix inversion and a method of computation
+of matrix inverses.  There is a simple formula for computing inverses
+of $2\times 2$ matrices based on determinants.  The chapter ends with a 
+discussion of determinants of $2\times 2$ matrices in Section~\ref{S:det2x2}.
+
+
+\Section{Matrix Multiplication of Vectors} \label{S:4.1}
+\index{matrix!multiplication}
+
+In Chapter~\ref{lineq} we discussed how matrices appear when solving systems 
+of $m$ linear equations in $n$ unknowns.  Given the system
+\begin{equation}   \label{general2}
+\arraycolsep 2pt
+\begin{array}{rcrcrcrcrl}
+a_{11}x_1 & + & a_{12}x_2 & + & \cdots & + & a_{1n}x_n & = & b_1 & \\
+a_{21}x_1 & + & a_{22}x_2 & + & \cdots & + & a_{2n}x_n & = & b_2 & \\
+    & \vdots &      & \vdots &    & \vdots &     & \vdots &   & \\
+a_{m1}x_1 & + & a_{m2}x_2 & + & \cdots & + & a_{mn}x_n & = & b_m & ,
+\end{array}
+\end{equation}
+we saw that all relevant information is contained in the $m\times n$ matrix 
+of coefficients
+\[
+A=\left(
+\begin{array}{rrrr}
+ a_{11} & a_{12} & \cdots & a_{1n} \\
+ a_{21} & a_{22} & \cdots & a_{2n}  \\
+ \vdots & \vdots &        & \vdots  \\
+ a_{m1} & a_{m2} & \cdots & a_{mn}
+\end{array}
+\right)
+\]
+and the $n$ vector
+\[
+b=\left(
+\begin{array}{c}
+b_1 \\ \vdots \\ b_n
+\end{array}
+\right).
+\]
+
+
+
+\subsection*{Matrices Times Vectors}
+
+We motivate multiplication of a matrix times a vector just as a notational 
+advance that simplifies the
+presentation of the linear systems.  It is, however, much more
+than that.  This concept of multiplication allows us to think of
+matrices as mappings and these mappings tell us much about the
+structure of solutions to linear systems.  But first we discuss
+the notational advantage.
+
+Multiplying an $m\times n$ matrix $A$ times an $n$ vector $x$
+\index{matrix vector product}
+produces an $m$ vector, as follows:
+\begin{equation}  \label{Atimesx}
+Ax=\left(
+\begin{array}{ccc}
+ a_{11}  & \cdots & a_{1n} \\
+ \vdots  &        & \vdots  \\
+ a_{m1}  & \cdots & a_{mn}
+\end{array}
+\right)
+\left(
+\begin{array}{c}
+x_1 \\ \vdots \\ x_n
+\end{array}
+\right)
+=
+\left(
+\begin{array}{c}
+a_{11}x_1 + \cdots + a_{1n}x_n \\ \vdots \\
+a_{m1}x_1 + \cdots + a_{mn}x_n
+\end{array}
+\right).
+\end{equation}
+For example, when $m=2$ and $n=3$, then the product is a $2$-vector
+\begin{equation} \label{Atimesx231}
+\left(
+\begin{array}{ccc}
+ a_{11}  & a_{12} & a_{13} \\
+ a_{21}  & a_{22} & a_{23}
+\end{array}
+\right)
+\left(
+\begin{array}{c}
+x_1 \\ x_2 \\ x_3
+\end{array}
+\right)
+=
+\left(
+\begin{array}{c}
+a_{11}x_1 + a_{12}x_2 + a_{13}x_3 \\
+a_{21}x_1 + a_{22}x_2 + a_{23}x_3
+\end{array}
+\right).
+\end{equation}
+As a specific example, compute
+\[
+\left(
+\begin{array}{rrr}
+ 2  & 3 & -1 \\
+ 4  & 1 &  5
+\end{array}
+\right)
+\left(
+\begin{array}{r}
+2 \\ -3 \\ 4
+\end{array}
+\right)
+=
+\left(
+\begin{array}{ccccc}
+2\cdot 2 & + & 3\cdot(-3) & + & (-1)\cdot 4 \\
+4\cdot 2 & + & 1\cdot(-3) & + & 5\cdot 4
+\end{array}
+\right)
+=
+\left(
+\begin{array}{r}
+-9 \\ 25
+\end{array}
+\right).
+\]
+
+
+Using \Ref{Atimesx} we have a compact notation for writing
+systems of linear equations.  For example, using a special
+instance of \Ref{Atimesx231},
+\[
+\left(
+\begin{array}{rrr}
+ 2  & 3 & -1 \\
+ 4  & 1 &  5
+\end{array}
+\right)
+\left(
+\begin{array}{r}
+x_1 \\ x_2 \\ x_3
+\end{array}
+\right)
+=
+\left(
+\begin{array}{c}
+2x_1 + 3x_2 - x_3 \\
+4x_1 + x_2 + 5x_3
+\end{array}
+\right).
+\]
+In this notation we can write the system of two linear equations
+in three unknowns
+\[
+\begin{array}{ccccccr}
+2x_1 & + & 3x_2 & - &  x_3 & = &   2 \\
+4x_1 & + &  x_2 & + & 5x_3 & = &  -1
+\end{array}
+\]
+as the matrix equation
+\[
+\left(
+\begin{array}{rrr}
+ 2  & 3 & -1 \\
+ 4  & 1 &  5
+\end{array}
+\right)
+\left(
+\begin{array}{r}
+x_1 \\ x_2 \\ x_3
+\end{array}
+\right)
+=
+\left(
+\begin{array}{r}
+2 \\ -1
+\end{array}
+\right).
+\]
+
+Indeed, the general system of linear equations \Ref{general2}
+can be written in matrix form using matrix multiplication as
+\[
+Ax=b
+\]
+where $A$ is the $m\times n$ matrix of coefficients, $x$ is the
+$n$ vector of unknowns, and $b$ is the $m$ vector of constants
+on the right hand side of \Ref{general2}.
+
+
+\subsection*{Matrices Times Vectors in \Matlab}
+
+We have already seen how to define matrices and vectors in
+\Matlabp.  Now we show how to multiply a matrix times a vector
+using \Matlabp\index{matrix vector product!in \protect\Matlab}.
+
+Load the matrix $A$
+\begin{equation*}  \label{eq:5matrix}
+A=\left(
+\begin{array}{rrrrr}
+ 5 & -4 &  3 & -6 &  2 \\
+ 2 & -4 & -2 & -1 &  1 \\
+ 1 &  2 &  1 & -5 &  3 \\
+-2 & -1 & -2 &  1 & -1 \\
+ 1 & -6 &  1 &  1 &  4
+\end{array}
+\right)
+\end{equation*}
+and the vector $x$
+\begin{equation*} \label{eq:5rhs}
+x=\left(
+\begin{array}{r}
+ -1 \\
+  2 \\
+  1 \\
+ -1 \\
+  3
+\end{array}
+\right)
+\end{equation*}
+into \Matlab by typing
+\begin{verbatim}
+e3_1_4
+e3_1_5
+\end{verbatim}
+The multiplication $Ax$ can be performed by typing
+\begin{verbatim}
+b = A*x
+\end{verbatim}  \index{\computer!*}
+and the result should be
+\begin{verbatim}
+b =
+     2
+    -8
+    18
+    -6
+    -1
+\end{verbatim}
+We may verify this result by solving the system of linear
+equations $Ax=b$.  Indeed if we type
+\begin{verbatim}
+A\b
+\end{verbatim}  \index{\computer!$\backslash$}
+then we get the vector $x$ back as the answer.
+
+\EXER
+
+\TEXER
+
+
+\begin{exercise} \label{c4.1.1}
+Let
+\[
+A = \mattwo{2}{1}{-1}{4} \AND x = \vectwo{3}{-2}.
+\]
+Compute $Ax$.
+\end{exercise}
+
+\begin{exercise} \label{c4.1.2}
+Let
+\[
+B=\left(\begin{array}{ccc} 3 & 4 & 1\\ 1& 2 & 3 \end{array}\right)
+\AND y=\left(\begin{array}{r} 2 \\ 5 \\ -2 \end{array}\right).
+\]
+Compute $By$.
+\end{exercise}
+
+\noindent In Exercises~\ref{c4.1.a3a} -- \ref{c4.1.a3d} decide whether or
+not the matrix vector product $Ax$ can be computed; if it can, compute the
+product.
+\begin{exercise} \label{c4.1.a3a}
+$A=\mattwo{1}{2}{0}{-5} \AND x = \vectwo{2}{2}$.
+\end{exercise}
+\begin{exercise} \label{c4.1.a3b}
+$A=\mattwo{1}{2}{0}{-5} \AND
+x = \left(\begin{array}{r} 2\\ 2 \\4\end{array}\right)$.
+\end{exercise}
+\begin{exercise} \label{c4.1.a3c}
+$A=\left(\begin{array}{rrr} 1 & 2 & 4 \end{array}\right) \AND
+x = \left(\begin{array}{r} -1\\ 1 \\3\end{array}\right)$.
+\end{exercise}
+\begin{exercise} \label{c4.1.a3d}
+$A=\left(5\right) \AND x = \vectwo{1}{0}$.
+\end{exercise}
+
+\begin{exercise} \label{c4.1.b3}
+Let
+\[
+A=\left(
+\begin{array}{rrrr}
+ a_{11} & a_{12} & \cdots & a_{1n} \\
+ a_{21} & a_{22} & \cdots & a_{2n}  \\
+ \vdots & \vdots &        & \vdots  \\
+ a_{m1} & a_{m2} & \cdots & a_{mn}
+\end{array}
+\right)\quad\mbox{and}\quad
+x =
+\left( \begin{array}{r} x_1\\ x_2\\ \vdots\\ x_n\end{array}\right).
+\]
+Denote the columns of the matrix $A$ by
+\[
+A_1 =
+\left(\begin{array}{c} a_{11}\\ a_{21}\\ \vdots\\
+a_{m1}\end{array}\right),\quad
+A_2 =
+\left(\begin{array}{c} a_{12}\\ a_{22}\\ \vdots\\
+a_{m2}\end{array}\right),\quad
+\cdots\quad
+A_n =
+\left(\begin{array}{c} a_{1n}\\ a_{2n}\\ \vdots\\ a_{mn}\end{array}\right).
+\]
+Show that the matrix vector product $Ax$ can be written as
+\[
+Ax = x_1 A_1 + x_2 A_2 + \cdots + x_n A_n,
+\]
+where $x_j A_j$ denotes scalar multiplication (see Chapter~\ref{chap:prelim}).
+\end{exercise}
+
+
+\begin{exercise} \label{c4.1.3}
+Let
+\[
+C = \mattwo{1}{1}{2}{-1} \AND b = \vectwo{1}{1}.
+\]
+Find a $2$-vector $z$ such that $Cz=b$.
+\end{exercise}
+
+\begin{exercise} \label{c4.1.4}
+Write the system of linear equations
+\begin{eqnarray*}
+2x_1 + 3x_2 - 2x_3 & = & 4\\
+6x_1 -5x_3 & = & 1
+\end{eqnarray*}
+in the matrix form $Ax=b$.
+\end{exercise}
+
+
+\begin{exercise} \label{c4.1.6}
+Find all solutions to
+\[
+\left(\begin{array}{rrrr} 1 & 3 & -1 & 4 \\ 2 & 1 & 5 & 7 \\
+3 & 4 & 4 & 11 \end{array} \right)
+\left(\begin{array}{c} x_1 \\ x_2 \\ x_3 \\ x_4\end{array}\right) =
+\left(\begin{array}{c} 14 \\ 17 \\31 \end{array}\right).
+\]
+\end{exercise}
+
+\begin{exercise} \label{c4.1.7}
+Let $A$ be a $2\times 2$ matrix.  Find $A$ so that
+\begin{eqnarray*}
+A\left(\begin{array}{c} 1 \\ 0 \end{array}\right) =
+\left(\begin{array}{r} 3 \\ -5 \end{array}\right) \\
+A\left(\begin{array}{c} 0 \\ 1 \end{array}\right) =
+\left(\begin{array}{r} 1 \\ 4 \end{array}\right).
+\end{eqnarray*}
+\end{exercise}
+
+\begin{exercise} \label{c4.1.8}
+Let $A$ be a $2\times 2$ matrix.  Find $A$ so that
+\begin{eqnarray*}
+A\left(\begin{array}{r} 1 \\ 1 \end{array}\right) =
+\left(\begin{array}{r} 2 \\ -1 \end{array}\right) \\
+A\left(\begin{array}{r} 1 \\ -1 \end{array}\right) =
+\left(\begin{array}{r} 4 \\ 3 \end{array}\right).
+\end{eqnarray*}
+\end{exercise}
+
+\begin{exercise} \label{c4.1.9}
+Is there an upper triangular $2\times 2$ matrix $A$ such that
+\begin{equation}  \label{eq:avect}
+A\vectwo{1}{0} = \vectwo{1}{2}?
+\end{equation}
+Is there a symmetric $2\times 2$ matrix $A$ satisfying \Ref{eq:avect}?
+\end{exercise}
+
+\CEXER
+
+\noindent In Exercises~\ref{c4.1.a10a} -- \ref{c4.1.a10b} use \Matlab to
+compute $b=Ax$ for the given $A$ and $x$.
+\begin{exercise} \label{c4.1.a10a}
+\begin{equation*}
+A=\left(
+\begin{array}{rrrrr}
+   -0.2 &   -1.8 &    3.9 &    -6 &   -1.6\\
+    6.3 &    8   &    3   &    2.5 &    5.1\\
+   -0.8 &   -9.9 &    9.7 &    4.7 &    5.9\\
+   -0.9 &   -4.1 &    1.1 &   -2.5 &    8.4\\
+   -1 &   -9 &   -2 &  -9.8 &    6.9
+\end{array}\right)
+\AND
+x = \left( \begin{array}{r} -2.6\\  2.4\\  4.6\\   -6.1\\    8.1
+\end{array}\right).
+\end{equation*}
+\end{exercise}
+\begin{exercise} \label{c4.1.a10b}
+\begin{equation*}
+A=\left(
+\begin{array}{rrrrrrr}
+    14 & -22  &-26 &  -2 & -77 & 100 & -90\\
+    26 &  25  &-15 & -63 &  33 &  92 &  14\\
+   -53 &  40  & 19 &  40 & -27 & -88 &  40\\
+    10 & -21  & 13 &  97 & -72 & -28 &  92\\
+    86 & -17  & 43 &  61 &  13 &  10 &  50\\
+   -33 &  31  &  2 &  41 &  65 & -48 &  48\\
+    31 &  68  & 55 &  -3 &  35 &  19 & -14
+\end{array}
+\right)\AND
+x = \left( \begin{array}{r} 2.7\\   6.1\\   -8.3\\    8.9\\    8.3\\    2\\
+  -4.9
+\end{array}\right).
+\end{equation*}
+\end{exercise}
+
+
+
+\begin{exercise} \label{c4.1.10}
+Let
+\begin{equation*}
+A = \left(\begin{array}{rrr} 2 & 4 & -1 \\ 1 & 3 & 2\\
+-1 & -2 & 5 \end{array}\right) \AND
+b = \left(\begin{array}{c} 2 \\ 1 \\ 4 \end{array}\right).
+\end{equation*}
+Find a $3$-vector $x$ such that $Ax=b$.
+\end{exercise}
+
+\begin{exercise} \label{c4.1.11}
+Let
+\begin{equation*}
+A = \left(\begin{array}{rrr} 1.3 & -4.15 & -1.2 \\ 1.6 & -1.2 & 2.4\\
+-2.5 & 2.35 & 5.09 \end{array}\right) \AND
+b = \left(\begin{array}{c} 1.12 \\ -2.1 \\ 4.36 \end{array}\right).
+\end{equation*}
+Find a $3$-vector $x$ such that $Ax=b$.
+\end{exercise}
+
+\begin{exercise} \label{c4.1.12}
+Let $A$ be a $3\times 3$ matrix.  Find $A$ so that
+\begin{eqnarray*}
+A\left(\begin{array}{r} 2 \\ -1 \\ 1 \end{array}\right) =
+\left(\begin{array}{r} 1 \\ 1  \\ -1 \end{array}\right) \\
+A\left(\begin{array}{r} 1 \\ -1 \\ 0 \end{array}\right) =
+\left(\begin{array}{r} -1 \\ -2 \\ 1 \end{array}\right)\\
+A\left(\begin{array}{r} 0 \\ 2 \\ 4 \end{array}\right) =
+\left(\begin{array}{r} 5 \\ 1 \\ 1 \end{array}\right).
+\end{eqnarray*}
+{\bf Hint:} Rewrite these three conditions as a system of linear
+equations in the nine entries of $A$.  Then solve this system
+using \Matlabp.  (Then pray that there is an easier way.)
+\end{exercise}
+
+
+\Section{Matrix Mappings}  \index{matrix!mappings} \label{s:4.2}
+
+Having illustrated the notational advantage of using matrices
+and matrix multiplication, we now begin to discuss why there
+is also a {\em conceptual advantage\/} to matrix
+multiplication, a conceptual advantage that will help
+us to understand how systems of linear equations and linear
+differential equations may be solved.
+
+Matrix multiplication allows us to view $m\times n$ matrices as
+mappings from $\R^n$ to $\R^m$.  Let $A$ be an $m\times n$
+matrix and let $x$ be an $n$ vector.  Then
+\[
+x \mapsto Ax
+\]
+defines a mapping from $\R^n$ to $\R^m$.
+
+The simplest example of a matrix mapping is given by $1\times 1$
+matrices.  Matrix mappings defined from $\R\to\R$ are
+\[
+x \mapsto ax
+\]
+where $a$ is a real number.  Note that the graph of this
+function is just a straight line through the origin (with slope
+$a$).  From this example we see that matrix mappings are very
+special mappings indeed. In higher dimensions, matrix mappings
+provide a richer set of mappings; we explore here {\em planar\/}
+mappings\index{planar mappings} --- mappings of the plane into
+itself --- using \Matlab graphics and the program {\sf map}.
+
+The simplest planar matrix mappings are the
+{\em dilatations\/}\index{dilatation}.
+Let $A=cI_2$ where $c>0$ is a scalar.  When $c<1$ vectors are
+contracted by a factor of $c$ and and these mappings are
+examples of {\em contractions}\index{contraction}.
+When $c>1$ vectors are
+stretched or expanded by a factor of $c$ and these dilatations
+are examples of {\em expansions}\index{expansion}.
+We now explore some more complicated planar matrix mappings.
+
+The next planar motions that we study are those given by the
+matrices
+\[
+A=\mattwo{\lambda}{0}{0}{\mu}.
+\]
+Here the matrix mapping is given by $(x,y)\mapsto(\lambda x,\mu y)$;
+that is, a mapping that independently stretches and/or contracts the
+$x$ and $y$ coordinates.  Even these simple looking mappings can move 
+objects in the plane in a somewhat complicated fashion.
+
+\subsection*{The Program Map}  \index{\computer!map}
+
+We can use \Matlab to explore planar matrix mappings in an efficient way 
+using the program {\tt map}.  In \Matlab type the command
+\begin{verbatim}
+map
+\end{verbatim}
+and a menu appears labeled {\sf MAP Setup}.  The $2\times 2$ matrix
+\[
+\mattwo{0}{-1}{1}{0}
+\]
+has been pre-entered.  Click on the {\sf Proceed} button.  A
+window entitled {\sf MAP Display} appears. Click on {\sf Icons}
+and click on an icon --- say {\sf Dog}. \index{\computer!dog}
+Then click in the {\sf MAP Display} window and a blue `{\sf Dog}' 
+will appear in that window.  Now click on
+the {\sf Map} button and a new version of the {\sf Dog} will
+appear in yellow --- but the yellow {\sf Dog} is rotated about
+the origin counterclockwise by $90^\circ$ from the blue dog.
+Indeed, this matrix $A$ just rotates the plane counterclockwise
+by $90^\circ$.  To verify this statement just click on {\sf Map}
+again and see that the yellow dog rotates $90^\circ$
+counterclockwise into the magenta dog.  Of course, the magenta
+dog is just rotated $180^\circ$ from the original blue dog.
+Clicking on {\sf Map} again produces a fourth dog --- this one
+in cyan.  Finally one more click on the {\sf map} button will
+rotate the cyan dog into a red dog that exactly covers the
+original blue dog.
+
+Choose another icon from the {\sf Icons} menu; a blue version of
+this icon appears in the {\sf MAP Display} window.  Now click on
+{\sf Map} to see that your chosen icon is just rotated
+counterclockwise by $90^\circ$.
+
+Other matrices will produce different motions of the plane.  You
+may either type the entries of a matrix in the {\sf Map Setup}
+window and click on the {\sf Proceed} button or recall one of
+the pre-assigned matrices listed in the menu obtained by
+clicking on {\sf Gallery}.  For example, clicking on
+the {\sf Contracting rotation} button enters the matrix
+\[
+\mattwo{0.3}{-0.8}{0.8}{0.3}
+\]
+This matrix rotates the plane through an angle of approximately
+$69.4^\circ$ counterclockwise and contracts the plane by a
+factor of approximately $0.85$.  Now click on {\sf Dog} in the
+{\sf Icons} menu to bring up the blue dog again.  Repeated
+clicking on {\sf map} rotates and contracts the dog so that dogs
+in a cycling set of colors slowly converge towards the origin in
+a spiral of dogs.
+
+\subsubsection*{Rotations}\index{rotation}
+
+Rotating the plane counterclockwise through an angle $\theta$ is
+a motion given by a matrix mapping.  We show that the matrix that
+performs this rotation is:
+\begin{equation} \label{e:rotmat}
+R_\theta = \mattwo{\cos\theta}{-\sin\theta}{\sin\theta}{\cos\theta}.
+\end{equation}
+To verify that $R_\theta$ rotates the plane counterclockwise
+through angle $\theta$, let $v_\varphi$ be the unit vector whose
+angle from the horizontal is $\varphi$; that is,
+$v_\varphi=(\cos\varphi,\sin\varphi)$.  We can write every vector in
+$\R^2$ as $rv_\varphi$ for some number $r\ge 0$.   Using the 
+trigonometric identities for the cosine and sine of the sum of two angles, we
+have:
+\begin{eqnarray*}
+R_\theta (rv_\varphi) & = &
+\mattwo{\cos\theta}{-\sin\theta}{\sin\theta}{\cos\theta}
+\vectwo{r\cos\varphi}{r\sin\varphi} \\
+& = & \vectwo{r\cos\theta\cos\varphi -r\sin\theta\sin\varphi}
+{r\sin\theta\cos\varphi + r\cos\theta\sin\varphi}\\
+& = & r\vectwo{\cos(\theta+\varphi)}{\sin(\theta+\varphi)}  \\
+& = & rv_{\varphi+\theta}.
+\end{eqnarray*}
+This calculation shows that $R_\theta$ rotates every vector in the plane
+counterclockwise through angle $\theta$.
+
+It follows from \Ref{e:rotmat} that $R_{180^\circ} = -I_2$.  So rotating a
+vector in the plane by $180^\circ$ is the same as reflecting the vector
+through the origin.  It also follows that the movement associated with the
+linear map $x\mapsto -cx$ where $c>0$ may be thought of as a dilatation
+($x\mapsto cx$) followed by rotation through $180^\circ$ ($x\mapsto -x$).
+
+We claim that combining dilatations with general rotations produces spirals.  
+Consider the matrix
+\[
+S = \mattwo{c\cos\theta}{-c\sin\theta}{c\sin\theta}{c\cos\theta} = cR_\theta
+\]
+where $c<1$.  Then a calculation similar to the previous one shows that
+\[
+S(rv_\varphi) = c(rv_{\varphi+\theta}).
+\]
+So $S$ rotates vectors in the plane while contracting them by
+the factor $c$.  Thus, multiplying a vector repeatedly by $S$ 
+spirals that vector into the origin.  The example that we just 
+considered while using {\sf map} is
+\[
+\mattwo{0.3}{-0.8}{0.8}{0.3}\cong\mattwo{0.85\cos(69.4^\circ)}
+{-0.85\sin(69.4^\circ)}{0.85\sin(69.4^\circ)}{0.85\cos(69.4^\circ)},
+\]
+which has the general form of $S$.
+
+\subsection*{A Notation for Matrix Mappings}
+\index{matrix!mappings}
+
+We reinforce the idea that matrices are mappings by introducing a notation 
+for the mapping associated with an $m\times n$ matrix $A$.  Define
+\[
+L_A:\R^n\to\R^m
+\]
+by
+\[
+L_A(x) = Ax,
+\]
+for every $x\in\R^n$.
+
+There are two special matrices:  the $m\times n$ zero matrix 
+\index{matrix!zero} $O$ all of whose entries are $0$ and the 
+$n\times n$ identity matrix \index{matrix!identity} $I_n$ whose diagonal 
+entries are $1$ and whose off diagonal entries are $0$.  For instance,
+\[
+	I_3 = \left(
+\begin{array}{rrr}
+ 1 & 0 & 0  \\
+ 0 & 1 & 0  \\
+ 0 & 0 & 1
+\end{array}
+\right).
+\]
+
+The mappings associated with these special matrices are also special.  
+Let $x$ be an $n$ vector.  Then
+\begin{equation} \label{multby0}
+Ox=0,
+\end{equation}
+where the $0$ on the right hand side of \Ref{multby0} is the $m$
+vector all of whose entries are $0$.  The mapping $L_O$ is the 
+{\em zero mapping\/} \index{zero mapping} --- the mapping 
+that maps every vector $x$ to $0$.
+
+Similarly,
+\[
+I_nx=x
+\]
+for every vector $x$.  It follows that
+\[
+L_{I_n}(x) = x
+\]
+is the {\em identity mapping\/}, \index{identity mapping} since
+it maps every element to itself.  It is for this reason that the
+matrix $I_n$ is called the $n\times n$ {\em identity matrix\/}.
+
+\EXER
+
+\TEXER
+
+\noindent In Exercises~\ref{c4.2.a1a} -- \ref{c4.2.a1c} find a nonzero
+vector that is mapped to the origin by the given matrix.
+\begin{exercise} \label{c4.2.a1a}
+$A=\mattwo{0}{1}{0}{-2}$.
+\end{exercise}
+\begin{exercise} \label{c4.2.a1b}
+$B=\mattwo{1}{2}{-2}{-4}$.
+\end{exercise}
+\begin{exercise} \label{c4.2.a1c}
+$C=\mattwo{3}{-1}{-6}{2}$.
+\end{exercise}
+
+
+\begin{exercise} \label{c4.2.1a}
+What $2\times 2$ matrix rotates the plane about the origin counterclockwise
+by $30^\circ$?
+\end{exercise}
+\begin{exercise} \label{c4.2.1b}
+What $2\times 2$ matrix rotates the plane clockwise by $45^\circ$?
+\end{exercise}
+\begin{exercise} \label{c4.2.1c}
+What $2\times 2$ matrix rotates the plane clockwise by $90^\circ$ while
+dilating it by a factor of $2$?
+\end{exercise}
+
+\begin{exercise} \label{c4.2.2a}
+Find a $2\times 2$ matrix that reflects vectors in the $(x,y)$ plane across
+the $x$ axis.
+\end{exercise}
+\begin{exercise} \label{c4.2.2b}
+Find a $2\times 2$ matrix that reflects vectors in the $(x,y)$ plane across
+the $y$ axis.
+\end{exercise}
+\begin{exercise} \label{c4.2.2c}
+Find a $2\times 2$ matrix that reflects vectors in the $(x,y)$ plane across
+the line $x=y$.
+\end{exercise}
+
+\begin{exercise} \label{c7.8.1}
+The matrix
+\[
+A=\mattwo{1}{K}{0}{1}
+\]
+is a {\em shear}\index{shear}.  Describe the action of $A$ on the plane
+for different values of $K$.
+\end{exercise}
+
+\begin{exercise} \label{c7.8.2}
+Determine a rotation matrix that maps the vectors $(3,4)$ and
+$(1,-2)$ onto the vectors $(-4,3)$ and $(2,1)$ respectively.
+\end{exercise}
+
+
+
+\begin{exercise} \label{c4.2.3}
+Find a $2\times 3$ matrix $P$ that projects three dimensional $xyz$ space onto
+the $xy$ plane.  {\bf Hint:} Such a matrix will satisfy
+\[
+P\left(\begin{array}{c} 0 \\ 0 \\ z \end{array}\right) = \vectwo{0}{0}
+\AND
+P\left(\begin{array}{c} x \\ y \\ 0 \end{array}\right) = \vectwo{x}{y}.
+\]
+\end{exercise}
+
+\begin{exercise}	\label{c4.2.3a}
+Show that every matrix of the form $\mattwo{a}{-b}{b}{a}$ corresponds to
+rotating the plane through the angle $\theta$ followed by a dilatation 
+$cI_2$ where
+\begin{eqnarray*}
+c & = & \sqrt{a^2+b^2}\\
+\cos\theta & = & \frac{a}{c} \\
+\sin\theta & = & \frac{b}{c}.
+\end{eqnarray*}
+\end{exercise}
+
+\begin{exercise}  \label{c4.2.3b}
+Using Exercise~\ref{c4.2.3a} observe that the matrix
+$\mattwo{3}{4}{-4}{3}$ rotates the plane counterclockwise through
+an angle $\theta$ and then dilates the planes by a factor of $c$.
+Find $\theta$ and $c$.  Use {\tt map} to verify your results.
+\end{exercise}
+
+
+\CEXER
+
+
+\noindent In Exercises~\ref{c4.2.a4a} -- \ref{c4.2.a4c} use {\sf map} to
+find vectors that are stretched and/or contracted to a multiple of
+themselves by the given linear mapping.  {\bf Hint:}  Choose a vector in the
+{\sf MAP Display} window and apply {\sf Map} several times.
+\begin{exercise} \label{c4.2.a4a}
+$A=\mattwoc{2}{0}{1.5}{0.5}$.
+\end{exercise}
+\begin{exercise} \label{c4.2.a4b}
+$B=\mattwo{1.2}{-1.5}{-0.4}{1.2}$.
+\end{exercise}
+\begin{exercise} \label{c4.2.a4c}
+$C=\mattwo{2}{-1.25}{0}{-0.5}$.
+\end{exercise}
+
+\noindent In Exercises~\ref{c4.2.ba} -- \ref{c4.2.bc} use
+Exercise~\ref{c4.2.3a} and {\sf map} to verify that the given matrices
+rotate the plane through an angle $\theta$ followed by a dilatation $cI_2$.
+Find $\theta$ and $c$ in each case.
+\begin{exercise}  \label{c4.2.ba}
+$A=\mattwo{1}{-2}{2}{1}$.
+\end{exercise}
+\begin{exercise}  \label{c4.2.bb}
+$B=\mattwo{-2.4}{-0.2}{0.2}{-2.4}$.
+\end{exercise}
+\begin{exercise}  \label{c4.2.bc}
+$C=\mattwoc{2.67}{1.3}{-1.3}{2.67}$.
+\end{exercise}
+
+
+\noindent In Exercises~\ref{c4.2.4a} -- \ref{c4.2.4e} use {\sf map} to
+help describe the planar motions of the associated linear mappings for the
+given $2\times 2$ matrix.
+\begin{exercise} \label{c4.2.4a}
+$A=\mattwo{\frac{\sqrt{3}}{2}}{\frac{1}{2}}{-\frac{1}{2}}{\frac{\sqrt{3}}{2}}$.
+\end{exercise}
+\begin{exercise} \label{c4.2.4b}
+$B = \mattwo{\frac{1}{2}}{-\frac{1}{2}}{\frac{1}{2}}{\frac{1}{2}}$.
+\end{exercise}
+\begin{exercise} \label{c4.2.4c}
+$C = \mattwo{0}{1}{1}{0}$.
+\end{exercise}
+\begin{exercise} \label{c4.2.4d}
+$D = \mattwo{1}{0}{0}{0}$.
+\end{exercise}
+\begin{exercise} \label{c4.2.4e}
+$E = \mattwo{\frac{1}{2}}{\frac{1}{2}}{\frac{1}{2}}{\frac{1}{2}}$.
+\end{exercise}
+
+\begin{exercise}  \label{c4.2.5}
+The matrix 
+\[
+A = \mattwo{0}{-1}{-1}{0}
+\]
+reflects the $xy$-plane across the diagonal line $y=-x$ while the matrix
+\[
+B=\mattwo{-1}{0}{0}{-1}
+\]
+rotates the plane through an angle of $180^\circ$. Using the program 
+{\sf map} verify that both matrices map the vector $(1,1)$ to its negative
+$(-1,-1)$.  Now perform two experiments.  First using the {\sf icon} menu in 
+{\sf map} place a dog icon at about the point $(1,1)$ and move that dog by 
+matrix $A$.  Then replace the dog in its orginal position near $(1,1)$ and 
+move that dog using matrix $B$.  Describe the difference in the result.
+\end{exercise}   
+
+
+\Section{Linearity}  \label{S:linearity}
+
+We begin by recalling the vector operations of addition and
+scalar multiplication.  Given two $n$ vectors, vector addition
+\index{vector!addition} is defined by
+\[
+\vect{x}{n}+\vect{y}{n}=\left(\begin{array}{c} x_1+y_1 \\ \vdots \\
+x_n+y_n\end{array}\right).
+\]
+Multiplication of a scalar \index{scalar multiplication} times a vector
+is defined by
+\[
+c\vect{x}{n} = \vect{cx}{n}.
+\]
+Using \Ref{Atimesx} we can check that matrix multiplication
+satisfies
+\begin{eqnarray}
+A(x+y) & = & Ax + Ay \label{sum} \\
+A(cx) & = & c(Ax). \label{product}
+\end{eqnarray}
+Using \Matlab we can also verify that the identities \Ref{sum}
+and \Ref{product} are valid for some particular choices of $x$,
+$y$, $c$ and $A$.  For example, let
+\begin{equation*}
+A = \left(\begin{array}{cccc} 2 & 3 & 4 & 1\\ 1 & 1 & 2 & 3
+\end{array}\right), \quad x = \left(\begin{array}{r} 1 \\ 5 \\ 4 \\
+3 \end{array}\right), \quad y = \left(\begin{array}{r} 1 \\ -1 \\ -1 \\
+4 \end{array}\right), \AND c=5.
+\end{equation*}
+Typing {\tt e3\_3\_3} enters this information into \Matlabp.  Now
+type
+\begin{verbatim}
+z1 = A*(x+y)
+z2 = A*x + A*y
+\end{verbatim}
+and compare {\tt z1} and {\tt z2}.  The fact that they are both
+equal to
+\[
+\vectwo{35}{33}
+\]
+verifies \Ref{sum} in this case.  Similarly, type
+\begin{verbatim}
+w1 = A*(c*x)
+w2 = c*(A*x)
+\end{verbatim}
+and compare {\tt w1} and {\tt w2} to verify \Ref{product}.
+
+
+The central idea in linear algebra is the notion of
+{\em linearity\/}. \index{linear}
+\begin{Def} \label{linearity}
+A mapping $L:\R^n\to\R^m$ is {\em linear}\index{linear!mapping}
+if
+\begin{itemize}
+\item[(a)]  $L(x+y) = L(x) + L(y)$ for all $x,y\in\R^n$.
+\item[(b)]  $L(cx) = cL(x)$ for all $x\in\R^n$ and all scalars
+$c\in\R$.
+\end{itemize}
+\end{Def}
+
+To better understand the meaning of Definition~\ref{linearity}(a,b),
+we verify these conditions for the mapping $L:\R^2\to\R^2$ defined by
+\begin{equation}  \label{E:mme}
+L(x) = (x_1+3x_2,2x_1-x_2),
+\end{equation}
+where $x=(x_1,x_2)\in\R^2$.  To verify Definition~\ref{linearity}(a), let
+$y=(y_1,y_2)\in\R^2$.  Then
+\begin{eqnarray*}
+L(x+y) & = & L(x_1+y_1,x_2+y_2)\\
+& = & ((x_1+y_1)+3(x_2+y_2), 2(x_1+y_1)-(x_2+y_2)) \\
+ & = & (x_1+y_1+3x_2+3y_2, 2x_1+2y_1-x_2-y_2).
+\end{eqnarray*}
+On the other hand,
+\begin{eqnarray*}
+L(x)+L(y) & = & (x_1+3x_2,2x_1-x_2) + (y_1+3y_2,2y_1-y_2) \\
+ & = & (x_1+3x_2+y_1+3y_2, 2x_1-x_2+2y_1-y_2).
+\end{eqnarray*}
+Hence
+\[
+L(x+y) = L(x) + L(y)
+\]
+for every pair of vectors $x$ and $y $ in $\R^2$.
+
+Similarly, to verify Definition~\ref{linearity}(b), let $c\in\R$ be a scalar
+and compute
+\[
+L(cx) = L(cx_1,cx_2)=((cx_1)+3(cx_2),2(cx_1)-(cx_2)).
+\]
+Then compute
+\[
+cL(x) = c(x_1+3x_2,2x_1-x_2)= (c(x_1+3x_2), c(2x_1-x_2)),
+\]
+from which it follows that
+\[
+L(cx) = cL(x)
+\]
+for every vector $x\in\R^2$ and every scalar $c\in\R$.  Thus $L$ is a linear 
+mapping.
+
+In fact, the mapping \Ref{E:mme} is a matrix mapping and could
+have been written in the form
+\[
+L(x) = \mattwo{1}{3}{2}{-1}x.
+\]
+Hence the linearity of $L$ could have been checked using identities
+\Ref{sum} and \Ref{product}.  Indeed, matrix mappings are always linear
+mappings, as we now discuss.
+
+\subsubsection*{Matrix Mappings are Linear Mappings}
+
+Let $A$ be an $m\times n$ matrix and recall that the matrix mapping
+$L_A:\R^n\to\R^m$ is defined by $L_A(x)=Ax$.  We may rewrite \Ref{sum} and
+\Ref{product} using this notation as
+\begin{eqnarray*}
+L_A(x+y) & = & L_A(x) + L_A(y) \\
+L_A(cx) & = & cL_A(x).
+\end{eqnarray*}
+Thus all matrix mappings\index{matrix!mappings} are linear
+mappings\index{linear!mapping}.  We will show that all linear
+mappings are matrix mappings (see Theorem~\ref{lin-matrices}).  But first
+we discuss linearity in the simplest context of mappings from $\R\to\R$.
+
+\subsection*{Linear and Nonlinear Mappings of $\R\to\R$}
+
+Note that $1\times 1$ matrices are just scalars $A=(a)$.  It follows from
+\Ref{sum} and \Ref{product} that we have shown that the matrix mappings
+$L_A(x)=ax$ are all linear, though this point could have been verified
+directly.  Before showing that these are all the linear mappings of
+$\R\to\R$, we focus on examples of functions of $\R\to\R$ that are
+{\em not\/} linear.
+
+\subsubsection*{Examples of Mappings that are Not Linear}
+
+\begin{itemize}
+\item   $f(x)=x^2$.  Calculate
+\[
+f(x+y) = (x+y)^2 = x^2+2xy+y^2
+\]
+while
+\[
+f(x)+f(y) = x^2 + y^2.
+\]
+The two expressions are not equal and $f(x)=x^2$ is not linear.
+\item   $f(x)=e^x$.  Calculate
+\[
+f(x+y) = e^{x+y} = e^x e^y
+\]
+while
+\[
+f(x)+f(y) = e^x + e^y.
+\]
+The two expressions are not equal and $f(x)=e^x$ is not linear.
+\item   $f(x) = \sin x$.  Recall that
+\[
+f(x+y) =\sin(x+y) = \sin x \cos y +\cos x \sin y
+\]
+while
+\[
+f(x)+f(y) = \sin x + \sin y.
+\]
+The two expressions are not equal and $f(x)=\sin x $ is not
+linear.
+\end{itemize}
+
+\subsubsection*{Linear Functions of One Variable}
+
+Suppose we take the opposite approach and ask what functions of
+$\R\to\R$ are linear.  Observe that if $L:\R\to\R$ is linear,
+then
+\[
+L(x) = L(x\cdot 1).
+\]
+Since we are looking at the special case of linear mappings on
+$\R$, we note that $x$ is a real number as well as a vector.
+Thus we can use Definition~\ref{linearity}(b) to observe that
+\[
+L(x\cdot 1)=xL(1).
+\]
+So if we let $a=L(1)$, then we see that
+\[
+L(x)=ax.
+\]
+Thus linear mappings of $\R$ into $\R$ are very special mappings
+indeed; they are all scalar multiples of the identity mapping.
+
+\subsection*{All Linear Mappings are Matrix Mappings}
+
+We end this section by proving that every linear mapping is
+given by matrix multiplication. But first we state and prove two
+lemmas.  There is a standard set of vectors that is used over
+and over again in linear algebra, which we now define.
+
+\begin{Def}  \label{D:canonicalbasis}
+Let $j$ be an integer between $1$ and $n$.  The $n$-vector $e_j$ is
+the vector that has a $1$ in the $j^{th}$ entry and zeros in all
+other entries.
+\end{Def} \index{$e_j$}
+
+\begin{lemma}  \label{linequal}
+Let $L_1:\R^n\to\R^m$ and $L_2:\R^n\to\R^m$ be linear mappings.
+Suppose that $L_1(e_j)=L_2(e_j)$ for every $j=1,\ldots,n$.  Then
+$L_1=L_2$.
+\end{lemma}
+
+\proof  Let $x=(x_1,\ldots,x_n)$ be a vector in $\R^n$.  Then
+\[
+x = x_1e_1 + \cdots + x_ne_n.
+\]
+Linearity of $L_1$ and $L_2$ implies that
+\begin{eqnarray*}
+L_1(x) & = & x_1L_1(e_1) + \cdots + x_nL_1(e_n) \\
+  & = & x_1L_2(e_1) + \cdots + x_nL_2(e_n) \\
+  & = & L_2(x).
+\end{eqnarray*}
+Since $L_1(x)=L_2(x)$ for all $x\in\R^n$, it follows that
+$L_1=L_2$.  \qed
+
+\begin{lemma}  \label{columnsA}
+Let $A$ be an $m\times n$ matrix.  Then $Ae_j$ is the $j^{th}$
+column of $A$.
+\end{lemma}
+
+\proof  Recall the definition of matrix multiplication given in \Ref{Atimesx}.
+In that formula, just set $x_i$ equal to zero for all $i\neq j$ and set
+$x_j=1$. \qed
+
+\begin{thm}  \label{lin-matrices}
+Let $L:\R^n\to\R^m$ be a linear mapping\index{linear!mapping}.
+Then there exists an $m\times n$ matrix $A$ such that $L=L_A$.
+\end{thm}
+
+\proof
+There are two steps to the proof: determine the matrix $A$ and
+verify that $L_A=L$.
+
+Let $A$ be the matrix whose $j^{th}$ column is $L(e_j)$.  By
+Lemma~\ref{columnsA} $L(e_j) = Ae_j$; that is, $L(e_j) = L_A(e_j)$.
+Lemma~\ref{linequal} implies that $L=L_A$.  \qed
+
+Theorem~\ref{lin-matrices} provides a simple way of showing that
+\[
+L(0) = 0
+\]
+for any linear map $L$.  Indeed, $L(0)=L_A(0)=A0=0$ for some matrix $A$.  
+(This fact can also be proved directly from the definition of linear mapping.)
+
+\subsubsection*{Using Theorem~\protect\ref{lin-matrices} to Find Matrices
+Associated to Linear Maps}
+
+The proof of Theorem~\ref{lin-matrices} shows that the $j^{th}$ column of the
+matrix $A$ associated to a linear mapping $L$ is $L(e_j)$ viewed as a column
+vector.  As an example, let $L:\R^2\to\R^2$ be rotation clockwise through
+$90^\circ$.  Geometrically, it is easy to see that
+\[
+L(e_1) = L\left(\vectwo{1}{0}\right) = \vectwo{0}{-1} \AND
+L(e_2) = L\left(\vectwo{0}{1}\right) = \vectwo{1}{0}.
+\]
+Since we know that rotations are linear maps, it follows that the matrix
+$A$ associated to the linear map $L$ is:
+\[
+A = \mattwo{0}{1}{-1}{0}.
+\]
+Additional examples of linear mappings whose associated matrices can be found
+using Theorem~\ref{lin-matrices} are given in Exercises \ref{c4.3.7} --
+\ref{c4.3.10}.
+
+
+
+\EXER
+
+\TEXER
+
+\begin{exercise} \label{c4.3.1}
+Compute $ax+by$ for each of the following:
+\begin{itemize}
+\item[(a)] $a=2$, $b=-3$, $x=(2,4)$ and $y=(3,-1)$.
+\item[(b)] $a=10$, $b=-2$, $x=(1,0,-1)$ and $y=(2,-4,3)$.
+\item[(c)] $a=5$, $b=-1$, $x=(4,2,-1,1)$ and $y=(-1,3,5,7)$.
+\end{itemize}
+\end{exercise}
+
+\begin{exercise} \label{c4.3.2}
+Let $x=(4,7)$ and $y=(2,-1)$.  Write the vector $\alpha x+\beta
+y$ as a vector in coordinates.
+\end{exercise}
+
+\begin{exercise} \label{c4.3.3}
+Let $x=(1,2)$, $y=(1,-3)$, and $z=(-2,-1)$.  Show that you can
+write
+\[
+z=\alpha x+ \beta y
+\]
+for some $\alpha,\beta\in\R$.
+
+\noindent {\bf Hint:} Set up a system of two linear equations in
+the unknowns $\alpha$ and $\beta$, and then solve this linear
+system.
+\end{exercise}
+
+\begin{exercise} \label{c4.3.4}
+Can the vector $z=(2,3,-1)$ be written as
+\[
+z=\alpha x+ \beta y
+\]
+where $x=(2,3,0)$ and $y=(1,-1,1)$?
+\end{exercise}
+
+\begin{exercise} \label{c4.3.5}
+Let $x=(3,-2)$, $y=(2,3)$, and $z=(1,4)$.  For which real
+numbers $\alpha,\beta,\gamma$ does
+\[
+\alpha x + \beta y + \gamma z = (1,-2)?
+\]
+\end{exercise}
+
+\noindent In Exercises~\ref{c4.3.6a} -- \ref{c4.3.6d} determine
+whether the given transformation is linear.
+\begin{exercise} \label{c4.3.6a}
+  $T:\R^3\to\R^2$ defined by $T(x_1,x_2,x_3)=(x_1+2x_2-x_3,x_1-4x_3)$.
+\end{exercise}
+\begin{exercise} \label{c4.3.6b}
+  $T:\R^2\to\R^2$ defined by $T(x_1,x_2)=(x_1+x_1x_2,2x_2)$.
+\end{exercise}
+\begin{exercise} \label{c4.3.6c}
+  $T:\R^2\to\R^2$ defined by $T(x_1,x_2)=(x_1+x_2,x_1-x_2-1)$.
+\end{exercise}
+\begin{exercise} \label{c4.3.6d}
+  $T:\R^2\to\R^3$ defined by $T(x_1,x_2)=(1,x_1+x_2,2x_2)$
+\end{exercise}
+
+\begin{exercise} \label{c4.3.7}
+Find the $2\times 3$ matrix $A$ that satisfies
+\[
+Ae_1  =  \vectwo{2}{3},\qquad
+Ae_2  =  \vectwo{1}{-1}, \AND
+Ae_3  = \vectwo{0}{1}.
+\]
+\end{exercise}
+
+\begin{exercise} \label{c4.3.8}
+The {\em cross product\/} of two $3$-vectors $x=(x_1,x_2,x_3)$
+and $y=(y_1,y_2,y_3)$ is the $3$-vector
+\[
+x\times y = (x_2y_3-x_3y_2,-(x_1y_3-x_3y_1),x_1y_2-x_2y_1).
+\]
+Let $K=(2,1,-1)$.  Show that the mapping $L:\R^3\to\R^3$ defined by
+\[
+L(x) = x\times K
+\]
+is a linear mapping.  Find the $3\times 3$ matrix $A$ such that
+\[
+L(x) = Ax,
+\]
+that is, $L=L_A$.
+\end{exercise}
+
+\begin{exercise} \label{c4.3.9}
+Argue geometrically that rotation of the plane counterclockwise
+through an angle of $45^\circ$ is a linear mapping.  Find a
+$2\times 2$ matrix $A$ such that $L_A$ rotates the plane
+counterclockwise by $45^\circ$.
+\end{exercise}
+
+\begin{exercise} \label{c4.3.10}
+Let $\sigma$ permute coordinates cyclically in $\R^3$; that is,
+\[
+\sigma(x_1,x_2,x_3) = (x_2,x_3,x_1).
+\]
+Find a $3\times 3$ matrix $A$ such that $\sigma = L_A$.
+\end{exercise}
+
+\begin{exercise} \label{c4.3.11}
+Let $L$ be a linear map.  Using the definition of linearity,
+prove that $L(0)=0$.
+\end{exercise}
+
+\begin{exercise}  \label{c4.3.12}
+Let $L_1:\R^n\to\R^m$ and $L_2:\R^n\to\R^m$ be linear mappings. Prove
+that $L:\R^n\to\R^m$ defined by
+\[
+L(x) = L_1(x) + L_2(x)
+\]
+is also a linear mapping.  Theorem~\ref{lin-matrices} states that there
+are matrices $A$, $A_1$ and $A_2$ such that
+\[
+L = L_A \AND L_j = L_{A_j}
+\]
+for $j=1,2$.  What is the relationship between the matrices $A$, $A_1$
+and $A_2$?
+\end{exercise}
+
+\CEXER
+
+\begin{exercise} \label{c4.3.13}
+Let
+\[
+A = \mattwo{0.5}{0}{0}{2}.
+\]
+Use {\sf map} to verify that the linear mapping $L_A$ halves
+the $x$-component of a point while it doubles the $y$-component.
+\end{exercise}
+
+\begin{exercise} \label{c4.3.14}
+Let
+\[
+A = \mattwo{0}{0.5}{-0.5}{0}.
+\]
+Use {\sf map} to determine how the mapping $L_A$ acts on $2$-vectors.
+Describe this action in words.
+\end{exercise}
+
+\noindent In Exercises~\ref{c4.3.15A} -- \ref{c4.3.15B} use \Matlab to
+verify \Ref{sum} and \Ref{product}.
+\begin{exercise} \label{c4.3.15A}
+\begin{equation*} \label{eq4.3.15a}
+A = \left(
+\begin{array}{rrr}
+ 1 & 2 & 3  \\
+ 0 & 1 & -2  \\
+ 4 & 0 & 1
+\end{array}
+\right),\quad
+x=\left(
+\begin{array}{r}
+ 3   \\
+ 2   \\
+ -1
+\end{array}
+\right),\quad
+y=\left(
+\begin{array}{r}
+ 0   \\
+ -5   \\
+ 10
+\end{array}
+\right),\quad c=21;
+\end{equation*}
+\end{exercise}
+\begin{exercise} \label{c4.3.15B}
+\begin{equation*} \label{eq4.3.15b}
+A = \left(
+\begin{array}{rrrrr}
+ 4 & 0 & -3 & 2 & 4 \\
+ 2 & 8 & -4 & -1 & 3 \\
+ -1 & 2 & 1 & 10 & -2 \\
+ 4 & 4 & -2 & 1 & 2 \\
+ -2 & 3 & 1 & 1 & -1
+\end{array}
+\right),\quad
+x=\left(
+\begin{array}{r}
+ 1   \\
+ 3   \\
+ -2   \\
+ 3   \\
+ -1
+\end{array}
+\right),\quad
+y=\left(
+\begin{array}{r}
+ 2   \\
+ 0   \\
+ 13   \\
+ -2   \\
+ 1
+\end{array}
+\right),\quad c=-13.
+\end{equation*}
+\end{exercise}
+
+
+
+
+\Section{The Principle of Superposition}
+\label{S:Superposition}
+
+The principle of superposition is just a restatement of the fact
+that matrix mappings are linear.  Nevertheless, this restatement
+is helpful when trying to understand the structure of solutions
+to systems of linear equations.
+
+\subsection*{Homogeneous Equations}
+\index{homogeneous}
+
+A system of linear equations is {\em homogeneous\/} if it has
+the form
+\begin{equation} \label{homosys}
+Ax=0,
+\end{equation}
+where $A$ is an $m\times n$ matrix and $x\in\R^n$.  Note that
+homogeneous systems are consistent since $0\in\R^n$ is always a
+solution, that is, $A(0)=0$.
+
+The {\em principle of superposition\/} \index{principle of
+superposition} \index{superposition} makes two assertions:
+\begin{itemize}
+\item  Suppose that $y$ and $z$ in $\R^n$ are solutions to \Ref{homosys}
+(that is, suppose that $Ay=0$ and $Az=0$); then $y+z$ is a solution
+to \Ref{homosys}.
+\item Suppose that $c$ is a scalar; then $cy$ is a solution to
+\Ref{homosys}.
+\end{itemize}
+The principle of superposition is proved using the linearity of matrix 
+multiplication.  Calculate
+\[
+A(y+z) = Ay + Az = 0+0=0
+\]
+to verify that $y+z$ is a solution, and calculate
+\[
+A(cy) = c(Ay) = c\cdot 0 = 0
+\]
+to verify that $cy$ is a solution.
+
+We see that solutions to homogeneous systems of linear equations
+always satisfy the general property of superposition: sums of
+solutions are solutions and scalar multiples of solutions are
+solutions.
+
+We illustrate this principle by explicitly solving the system of
+equations
+\[
+\left(\begin{array}{rrrr} 1 & 2 & -1 & 1\\ 2 & 5 & -4 & -1
+\end{array}\right)\left(\begin{array}{c} x_1\\x_2\\x_3\\x_4
+\end{array}\right) = \left(\begin{array}{c} 0\\0
+\end{array}\right).
+\]
+Use row reduction to show that the matrix
+\[
+\left(\begin{array}{rrrr} 1 & 2 & -1 & 1\\ 2 & 5 & -4 & -1
+\end{array}\right)
+\]
+is row equivalent to
+\[
+\left(\begin{array}{rrrr} 1 & 0 & 3 & 7\\ 0 & 1 & -2 & -3
+\end{array}\right)
+\]
+which is in reduced echelon form.  Recall, using the methods of
+Section~\ref{S:Gauss}, that every
+solution to this linear system has the form
+\[
+\left(\begin{array}{c} -3x_3-7x_4\\ 2x_3+3x_4\\ x_3\\
+x_4\end{array}\right) =
+x_3\left(\begin{array}{r}-3\\2\\1\\0\end{array}\right) +
+x_4\left(\begin{array}{r}-7\\3\\0\\1\end{array}\right).
+\]
+Superposition is verified again by observing that the form of 
+the solutions is preserved under vector addition and scalar
+multiplication.  For instance, suppose that
+\[
+\alpha_1 \left(\begin{array}{r}-3\\2\\1\\0\end{array}\right) +
+\alpha_2 \left(\begin{array}{r}-7\\3\\0\\1\end{array}\right)
+\AND
+\beta_1 \left(\begin{array}{r}-3\\2\\1\\0\end{array}\right) +
+\beta_2 \left(\begin{array}{r}-7\\3\\0\\1\end{array}\right)
+\]
+are two solutions.  Then the sum has the form
+\[
+\gamma_1 \left(\begin{array}{r}-3\\2\\1\\0\end{array}\right) +
+\gamma_2 \left(\begin{array}{r}-7\\3\\0\\1\end{array}\right)
+\]
+where $\gamma_j = \alpha_j + \beta_j$.
+
+
+We have actually proved more than superposition.  We have shown
+in this example that every solution is a superposition
+of just two solutions
+\[
+\left(\begin{array}{r}-3\\2\\1\\0\end{array}\right) \AND
+\left(\begin{array}{r}-7\\3\\0\\1\end{array}\right).
+\]
+
+\subsection*{Inhomogeneous Equations}
+\index{inhomogeneous}
+
+The linear system of $m$ equations in $n$ unknowns is written as
+\[
+Ax=b
+\]
+where $A$ is an $m\times n$ matrix, $x\in\R^n$, and $b\in\R^m$.
+This system is {\em inhomogeneous\/} when the vector $b$ is nonzero.
+Note that if $y,z\in\R^n$ are solutions to the inhomogeneous
+equation (that is, $Ay=b$ and $Az=b$), then $y-z$ is a solution
+to the homogeneous equation.  That is,
+\[
+A(y-z) = Ay - Az = b - b = 0.
+\]
+For example, let 
+\[
+A = \left(\begin{array}{rrr}  1 & 2 & 0 \\ -2 & 0 & 1 \end{array}\right)
+\AND b = \vectwo{3}{-1}.
+\]
+Then 
+\[
+y = \left(\begin{array}{c} 1\\1\\1\end{array}\right) \AND 
+z =  \left(\begin{array}{c} 3\\0\\5\end{array}\right)
+\]
+are both solutions to the linear system $Ax=b$.  It follows that 
+\[
+y-z = \left(\begin{array}{r} -2\\1\\-4\end{array}\right)
+\]
+is a solution to the homogeneous system $Ax=0$, which can be checked by 
+direct calculation.
+
+ 
+Thus we can completely solve the inhomogeneous equation by
+finding one solution to the inhomogeneous equation and then
+adding to that solution every solution of the homogeneous
+equation. More precisely, suppose that we know all of the
+solutions $w$ to the homogeneous equation $Ax=0$ and one
+solution $y$ to the inhomogeneous equation $Ax=b$.  Then $y+w$
+is another solution to the inhomogeneous equation and {\em
+every\/} solution to the inhomogeneous equation has this form.
+
+\subsubsection*{An Example of an Inhomogeneous Equation}
+
+Suppose that we want to find all solutions of $Ax=b$ where
+\[
+A = \left(
+\begin{array}{rrr}
+ 3 & 2 & 1  \\
+ 0 & 1 & -2  \\
+ 3 & 3 & -1
+\end{array}
+\right)\quad\mbox{and}\quad
+b=\left(
+\begin{array}{r}
+ -2   \\
+ 4   \\
+ 2
+\end{array}
+\right).
+\]
+Suppose that you are told that $y=(-5,6,1)^t$ is a solution of the
+inhomogeneous equation.  (This fact can be verified by a short calculation
+--- just multiply $Ay$ and see that the result equals $b$.)  Next find
+all solutions to the homogeneous equation $Ax=0$ by putting $A$ into reduced
+echelon form.  The resulting row echelon form matrix is
+\[
+\left(
+\begin{array}{rrr}
+ 1 & 0 & \frac{5}{3}  \\
+ 0 & 1 & -2  \\
+ 0 & 0 & 0
+\end{array}
+\right).
+\]
+Hence we see that the solutions of the homogeneous equation $Ax=0$ are
+\[
+\left(\begin{array}{r} -\frac{5}{3}s\\ 2s\\ s\end{array}\right) =
+s\left(\begin{array}{r}-\frac{5}{3}\\2\\1\end{array}\right).
+\]
+Combining these results, we conclude that all the solutions
+of $Ax=b$ are given by
+\[
+	\left(\begin{array}{r}-5\\6\\1\end{array}\right)+
+	s\left(\begin{array}{r}-\frac{5}{3}\\2\\1\end{array}\right).
+\]
+
+
+\EXER
+
+\TEXER
+
+\begin{exercise} \label{c4.4.1}
+Consider the homogeneous linear equation
+\[
+x+y+z = 0
+\]
+\begin{enumerate}
+\item[(a)]  Write all solutions to this equation as a general
+superposition of a pair of vectors $v_1$ and $v_2$.
+\item[(b)]  Write all solutions as a general superposition of
+a second pair of vectors $w_1$ and $w_2$.
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise} \label{c4.4.2}
+Write all solutions to the homogeneous system of linear
+equations
+\begin{eqnarray*}
+x_1+2x_2+x_4-x_5 = 0\\
+x_3-2x_4+x_5 = 0
+\end{eqnarray*}
+as the general superposition of three vectors.
+\end{exercise}
+
+\begin{exercise} \label{c4.4.3}
+\begin{itemize}
+\item[(a)] Find all solutions to the homogeneous equation
+$Ax=0$ where
+\[
+A = \left(\begin{array}{ccc} 2 & 3 & 1 \\ 1 & 1 & 4 \end{array}
+\right).
+\]
+\item[(b)] Find a single solution to the inhomogeneous equation
+\begin{equation}  \label{E:inhom}
+Ax =\vectwo{6}{6}.
+\end{equation}
+\item[(c)] Use your answers in (a) and (b) to find all solutions
+to \Ref{E:inhom}.
+\end{itemize}
+\end{exercise}
+
+
+
+
+
+
+
+\Section{Composition and Multiplication of Matrices} \label{S:4.6}
+\index{composition} \index{matrix!multiplication}
+
+The {\em composition\/} of two matrix mappings leads to another
+matrix mapping from which the concept of multiplication of two
+matrices follows.  Matrix multiplication can be introduced by
+formula, but then the idea is unmotivated and one is left to
+wonder why matrix multiplication is defined in such a seemingly
+awkward way.
+
+We begin with the example of $2\times 2$ matrices.  Suppose that
+\[
+A= \left(\begin{array}{rr} 2 & 1\\ 1 & -1\end{array}\right)
+\AND
+B= \left(\begin{array}{rr} 0 & 3\\ -1 & 4\end{array}\right).
+\]
+We have seen that the mappings
+\[
+x\mapsto Ax \AND x\mapsto Bx
+\]
+map $2$-vectors to $2$-vectors.  So we can ask what happens when
+we compose these mappings.  In symbols, we compute
+\[
+L_A\compose L_B (x) = L_A(L_B(x))= A(Bx).
+\]
+In coordinates, let $x=(x_1, x_2)$ and compute
+\begin{eqnarray*}
+A(Bx) & = & A \left(\begin{array}{c} 3x_2 \\ -x_1+4x_2
+\end{array}\right)\\
+ & = & \left(\begin{array}{c} -x_1+10x_2  \\ x_1-x_2
+\end{array}\right).
+\end{eqnarray*}
+It follows that we can rewrite $A(Bx)$ using multiplication of a
+matrix times a vector as
+\[
+A(Bx) = \left(\begin{array}{rr} -1 & 10 \\ 1 & -1
+\end{array}\right)
+        \left(\begin{array}{c} x_1 \\ x_2 \end{array} \right).
+\]
+In particular, $L_A\compose L_B$ is again a linear mapping,
+namely $L_C$, where
+\[
+C =\left(\begin{array}{rr} -1 & 10 \\ 1 & -1 \end{array}\right).
+\]
+With this computation in mind, we define the product
+\[
+AB =
+\left(\begin{array}{rr} 2 & 1\\ 1 & -1\end{array}\right)
+\left(\begin{array}{rr} 0 & 3\\ -1 & 4\end{array}\right)
+= \left(\begin{array}{rr} -1 & 10 \\ 1 & -1 \end{array}\right).
+\]
+
+Using the same approach we can derive a formula for matrix
+multiplication of $2\times 2$ matrices.  Suppose
+\[
+A= \left(\begin{array}{rr} a_{11} & a_{12}\\ a_{21} &
+a_{22}\end{array}\right)
+\AND
+B= \left(\begin{array}{rr} b_{11} & b_{12}\\ b_{21} &
+b_{22}\end{array}\right).
+\]
+Then
+\begin{eqnarray*}
+A(Bx) & = & A \left(\begin{array}{c} b_{11}x_1+b_{12}x_2 \\
+b_{21}x_1+b_{22}x_2 \end{array}\right)\\
+ & = & \left(\begin{array}{c} a_{11}(b_{11}x_1+b_{12}x_2)
++a_{12}(b_{21}x_1+b_{22}x_2)  \\
+a_{21}(b_{11}x_1+b_{12}x_2) +
+a_{22}(b_{21}x_1+b_{22}x_2) \end{array}\right) \\
+ & = & \left(\begin{array}{c} (a_{11}b_{11}+a_{12}b_{21})x_1+
+(a_{11}b_{12}+a_{12}b_{22})x_2  \\
+(a_{21}b_{11}+a_{22}b_{21})x_1+
+(a_{21}b_{12}+a_{22}b_{22})x_2 \end{array}\right) \\
+& = & \left(\begin{array}{rr} a_{11}b_{11}+a_{12}b_{21} &
+a_{11}b_{12}+a_{12}b_{22}\\
+a_{21}b_{11}+a_{22}b_{21} & a_{21}b_{12}+a_{22}b_{22}
+\end{array}\right)
+        \left(\begin{array}{c} x_1 \\ x_2 \end{array} \right).
+\end{eqnarray*}
+Hence, for $2\times 2$ matrices, we see that composition of
+matrix mappings defines matrix multiplication\index{matrix!multiplication}
+as:
+\begin{equation}  \label{2x2mult}
+\left(\begin{array}{rr} a_{11} & a_{12}\\ a_{21} &
+a_{22}\end{array}\right)
+\left(\begin{array}{rr} b_{11} & b_{12}\\ b_{21} &
+b_{22}\end{array}\right)
+=\left(\begin{array}{rr} a_{11}b_{11}+a_{12}b_{21} &
+a_{11}b_{12}+a_{12}b_{22}
+\\ a_{21}b_{11}+a_{22}b_{21} & a_{21}b_{12}+a_{22}b_{22}
+\end{array}\right).
+\end{equation}
+
+Formula \Ref{2x2mult} may seem a bit formidable, but it does
+have structure.  Suppose $A$ and $B$ are $2\times 2$ matrices,
+then the entry of
+\[
+C=AB
+\]
+in the $i^{th}$ row, $j^{th}$ column may be written as
+\[
+a_{i1}b_{1j} + a_{i2}b_{2j} = \sum_{k=1}^2 a_{ik}b_{kj}.
+\]
+We shall see that an analog of this formula is available for
+matrix multiplications of all sizes.  But to derive this
+formula, it is easier to develop matrix multiplication
+abstractly.
+
+
+\begin{lemma}  \label{complin}
+Let $L_1:\R^n\to\R^m$ and $L_2:\R^p\to\R^n$ be linear mappings.
+Then $L=L_1\compose L_2:\R^p\to\R^m$ is a linear mapping.
+\end{lemma}
+
+\proof  Compute
+\begin{eqnarray*}
+L(x+y) & = & L_1\compose L_2(x+y)\\
+ & = & L_1(L_2(x)+L_2(y)) \\
+ & = & L_1(L_2(x)) + L_1(L_2(y))\\
+ & = & L_1\compose L_2(x) + L_1\compose L_2(y)\\
+ & = & L(x) + L(y).
+\end{eqnarray*}
+Similarly, compute $L_1\compose L_2(cx) = cL_1\compose L_2(x)$.
+\qed
+
+We apply Lemma~\ref{complin} in the following way.  Let $A$ be
+an $m\times n$ matrix and let $B$ be an $n\times p$
+matrix.  Then $L_A:\R^n\to\R^m$ and $L_B:\R^p\to\R^n$ are linear
+mappings, and the mapping $L=L_A\compose L_B:\R^p\to\R^m$ is
+defined and linear.  Theorem~\ref{lin-matrices} implies that
+there is an $m\times p$ matrix $C$ such that $L=L_C$.
+Abstractly, we define the {\em matrix product\/} \index{matrix!product}
+$AB$ to be $C$.
+\begin{quote}
+{\em Note that the matrix product $AB$ is defined only when the number of
+columns of $A$ is equal to the number of rows of $B$.}
+\end{quote}
+
+\subsubsection*{Calculating the Product of Two Matrices}
+
+Next we discuss how to calculate the product of matrices; this
+discussion generalizes our discussion of the product of $2\times 2$
+matrices.  Lemma~\ref{columnsA} tells how to compute $C=AB$.  The $j^{th}$
+column of the matrix product is just
+\[
+Ce_j = A(Be_j),
+\]
+where $B_j\equiv Be_j$ is the $j^{th}$ column of the matrix $B$.  Therefore,
+\begin{equation}  \label{E:matprod}
+C = (AB_1|\cdots|AB_p).
+\end{equation}
+Indeed, the $(i,j)^{th}$ entry of $C$ is the $i^{th}$ entry of $AB_j$,
+that is, the $i^{th}$ entry of
+\[
+A\left(\begin{array}{c} b_{1j}\\ \vdots\\
+b_{nj}\end{array}\right)
+=
+\left(\begin{array}{c} a_{11}b_{1j} + \cdots + a_{1n}b_{nj} \\
+\vdots \\ a_{m1}b_{1j} + \cdots + a_{mn}b_{nj}
+\end{array}\right).
+\]
+It follows that the entry $c_{ij}$ of $C$ in the $i^{th}$ row and
+$j^{th}$ column is
+\begin{equation} \label{multij}
+c_{ij} = a_{i1}b_{1j} + a_{i2}b_{2j} + \cdots + a_{in}b_{nj} =
+\sum_{k=1}^n a_{ik}b_{kj}.
+\end{equation}
+
+We can interpret \Ref{multij} in the following way.  To calculate $c_{ij}$:
+multiply the entries of the $i^{th}$ row of $A$ with the corresponding
+entries in the $j^{th}$ column of $B$ and add the results.  This
+interpretation reinforces the
+idea that for the matrix product $AB$ to be defined, the number of columns
+in $A$ must equal the number of rows in $B$.
+
+For example, we now perform the following multiplication:
+
+\begin{eqnarray*}
+& & \left(\begin{array}{rrr} 2 & 3 & 1 \\ 3 & -1 & 2 \end{array}\right)
+\left(\begin{array}{rr} 1 & -2 \\ 3 & 1 \\ -1 & 4 \end{array}\right)\\
+& = & \mattwoc{2\cdot 1+3\cdot 3 + 1\cdot(-1)}{2\cdot(-2)+3\cdot 1+1\cdot 4}
+{3\cdot 1 + (-1)\cdot 3+2\cdot(-1)}{3\cdot(-2)+(-1)\cdot 1+2\cdot 4}\\
+& = & \mattwo{10}{3}{-2}{1}.
+\end{eqnarray*}
+
+\subsubsection*{Some Special Matrix Products}
+
+Let $A$ be an $m\times n$ matrix.  Then
+\begin{eqnarray*}
+OA & = & O \\
+AO & = & O \\
+AI_n & = & A \\
+I_mA & = & A
+\end{eqnarray*}
+The first two equalities are easily checked using \Ref{multij}.
+It is not significantly more difficult to verify the last two
+equalities using \Ref{multij}, but we shall verify these
+equalities using the language of linear mappings, as follows:
+\[
+L_{AI_n}(x)=L_A\compose L_{I_n}(x)=L_A(x),
+\]
+since $L_{I_n}(x)=x$ is the identity map.  Therefore $AI_n=A$.
+A similar proof verifies that $I_mA=A$.  Although the
+verification of these equalities using the notions of linear
+mappings may appear to be a case of overkill, the next section
+contains results where these notions truly simplify the discussion.
+
+\EXER
+
+\TEXER
+
+\noindent In Exercises~\ref{c4.6.-1a} -- \ref{c4.6.-1d} determine whether or 
+not the matrix products $AB$ or $BA$ can be computed for each given pair of 
+matrices $A$ and $B$.  If the product is possible, perform the computation.
+\begin{exercise}  \label{c4.6.-1a}
+$A=\mattwo{1}{0}{-2}{1}$ and $B=\mattwo{-2}{0}{3}{-1}$.
+\end{exercise}
+\begin{exercise}  \label{c4.6.-1b}
+$A=\left(\begin{array}{rrr} 0 & -2 & 1\\ 4 & 10 & 0 \end{array}\right)$
+and $B=\left(\begin{array}{rr} 0 & 2 \\ 3 & -1 \end{array}\right)$.
+\end{exercise}
+\begin{exercise}  \label{c4.6.-1c}
+$A=\left(\begin{array}{rrrr} 8 & 0 & 2 & 3\\ -3 & 0 & -10 &
+3\end{array}\right)$
+and $B=\left(\begin{array}{rrr} 0 & 2 & 5\\ -1 & 3 & -1 \\ 0 & 1 &
+-5\end{array}\right)$.
+\end{exercise}
+\begin{exercise}  \label{c4.6.-1d}
+$A=\left(\begin{array}{rr} 8 & -1 \\ -3 & 12 \\ 5 & -4\end{array}\right)$
+and $B=\left(\begin{array}{rrrr} 2 & 8 & 0 & -3\\ 1 & 4 & 0 & 1\\
+-5 & 6 & 7 & -20\end{array}\right)$
+\end{exercise}
+
+\noindent In Exercises~\ref{c4.6.0a} -- \ref{c4.6.0d} compute
+the given matrix product.
+\begin{exercise}  \label{c4.6.0a}
+$\mattwo{2}{3}{0}{1}\mattwo{-1}{1}{-3}{2}$.
+\end{exercise}
+\begin{exercise}  \label{c4.6.0b}
+$\left(\begin{array}{rrr} 1 & 2 & 3\\ -2 & 3 & -1 \end{array}\right)
+\left(\begin{array}{rr} 2 & 3\\ -2 & 5 \\1 & -1 \end{array}\right)$.
+\end{exercise}
+\begin{exercise}  \label{c4.6.0c}
+$\left(\begin{array}{rr} 2 & 3\\ -2 & 5 \\1 & -1 \end{array}\right)
+\left(\begin{array}{rrr} 1 & 2 & 3\\ -2 & 3 & -1 \end{array}\right)$.
+\end{exercise}
+\begin{exercise}  \label{c4.6.0d}
+$\left(\begin{array}{rrr} 2 & -1 &3\\ 1 & 0 & 5\\1 & 5 & -1\end{array}\right)
+\left(\begin{array}{rrr} 1 & 7 \\ -2 & -1 \\ -5 & 3\end{array}\right)$.
+\end{exercise}
+
+
+\begin{exercise} \label{c4.6.1}
+Determine all the $2\times 2$ matrices $B$ such that $AB=BA$
+where $A$ is the matrix
+\[
+A=\left(\begin{array}{rr} 2 & 0 \\ 0 & -1 \end{array}\right).
+\]
+\end{exercise}
+
+\begin{exercise} \label{c4.6.2}
+Let
+\[
+A=\mattwo{2}{5}{1}{4} \AND B=\mattwo{a}{3}{b}{2}.
+\]
+For which values of $a$ and $b$ does $AB=BA$?
+\end{exercise}
+
+\begin{exercise} \label{c4.6.3}
+Let
+\[
+A = \left(\begin{array}{rrr} 1 & 0 & -3\\ -2 & 1 & 1 \\ 0 & 1 & -5 \end{array}
+\right).
+\]
+Let $A^t$ is the transpose of the matrix $A$, as defined in
+Section~\ref{S:1.3}. Compute $AA^t$.
+\end{exercise}
+
+\CEXER
+
+\noindent In Exercises~\ref{c4.7.1a} -- \ref{c4.7.1c} decide for the
+given pair of matrices $A$ and $B$ whether or not the products $AB$ or
+$BA$ are defined and compute the products when possible.
+\begin{exercise} \label{c4.7.1a}
+\begin{equation*}
+A=\left(\begin{array}{rrr} 2  &  2  & -2 \\ -4  &  4  &  0
+\end{array}\right) \AND
+B=\left(\begin{array}{rrr} 3 &  -2  &  0\\ 0 &  -1 &   4\\ -2 &  -3
+&   5
+\end{array}\right)
+\end{equation*}
+\end{exercise}
+\begin{exercise} \label{c4.7.1b}
+\begin{equation*}
+A=\left(\begin{array}{rrrrr}  -4  &  1  &  0  &  5  & -1\\
+5  & -1  & -2  & -4  & -2\\ 1  &  5 &  -4   & 1  &  5
+\end{array}\right) \AND
+B=\left(\begin{array}{rrrrrr} 1  &  3  & -4  &  3  & -2  &  1\\
+0  &  3  &  2  &  3  & -1  &  4\\ 5  &  4  &  4  &  5  & -1  &  0\\
+-4  & -3  &  2  &  4  &  1  &  4
+\end{array}\right)
+\end{equation*}
+\end{exercise}
+\begin{exercise} \label{c4.7.1c}
+\begin{equation*}
+A=\left(\begin{array}{rrrr}  -2  & -2  &  4  &  5\\
+ 0  & -3  & -4  &  3\\ 1  & -3  &  1  &  1\\ 0  &  1  &  0  &  4
+\end{array}\right) \AND
+B=\left(\begin{array}{rrrr} 2  &  3  & -4  &  5\\
+4  & -3  &  0  & -2\\ -3 &  -4  & -4 &  -3\\ -2  & -2  &  3  & -1
+\end{array}\right)
+\end{equation*}
+\end{exercise}
+
+
+
+\Section{Properties of Matrix Multiplication} \label{S:4.7}
+\index{matrix!multiplication}
+
+In this section we discuss the facts that matrix multiplication is
+associative (but not commutative) and that certain distributive
+properties hold.  We also discuss how matrix multiplication is
+performed in \Matlab.
+
+\subsubsection*{Matrix Multiplication is Associative}
+\index{associative}
+
+\begin{thm} \label{assoc}
+Matrix multiplication is associative.  That is, let $A$ be an
+$m\times n$ matrix, let $B$ be a $n\times p$ matrix, and let $C$
+be a $p\times q$ matrix.  Then
+\[
+(AB)C = A(BC).
+\]
+\end{thm}
+
+\proof Begin by observing that composition of mappings is always
+associative.  In symbols, let $f:\R^n\to\R^m$, $g:\R^p\to\R^n$,
+and $h:\R^q\to\R^p$.  Then
+\begin{eqnarray*}
+f\compose (g\compose h)(x) & = & f[(g\compose h)(x)] \\
+  & = & f[g(h(x))] \\
+  & = & (f\compose g)(h(x)) \\
+  & = & [(f\compose g)\compose h](x).
+\end{eqnarray*}
+It follows that
+\[
+f\compose (g\compose h) = (f\compose g)\compose h.
+\]
+
+We can apply this result to linear mappings.  Thus
+\[
+L_A\compose (L_B\compose L_C) = (L_A\compose L_B)\compose L_C.
+\]
+Since
+\[
+L_{A(BC)} = L_A\compose L_{BC} = L_A\compose (L_B\compose L_C)
+\]
+and
+\[
+L_{(AB)C} = L_{AB}\compose L_C = (L_A\compose L_B)\compose L_C,
+\]
+it follows that
+\[
+L_{A(BC)} = L_{(AB)C},
+\]
+and
+\[
+A(BC) = (AB)C.
+\]
+\qed
+
+It is worth convincing yourself that Theorem~\ref{assoc} has
+content by verifying by hand that matrix multiplication of
+$2\times 2$ matrices is associative.
+
+\subsubsection*{Matrix Multiplication is Not Commutative}
+\index{commutative}
+
+Although matrix multiplication is associative, it is {\em not\/}
+commutative. This statement is trivially true when the matrix
+$AB$ is defined while that matrix $BA$ is not.  Suppose, for
+example, that $A$ is a $2\times 3$ matrix and that $B$ is a
+$3\times 4$ matrix.  Then $AB$ is a $2\times 4$ matrix, while
+the multiplication $BA$ makes no sense whatsoever.
+
+More importantly, suppose that $A$ and $B$ are both $n\times n$
+square matrices.  Then $AB=BA$ is generally not valid.  For
+example, let
+\[
+A=\left(\begin{array}{cc} 1 & 0 \\ 0 & 0 \end{array}\right) \AND
+B =\left(\begin{array}{cc} 0 & 1 \\ 0 & 0 \end{array}\right).
+\]
+Then
+\[
+AB =\left(\begin{array}{cc} 0 & 1 \\ 0 & 0 \end{array}\right)
+\AND BA=\left(\begin{array}{cc} 0 & 0 \\ 0 & 0 \end{array}\right).
+\]
+So $AB\neq BA$.  In certain cases it does happen that $AB=BA$.
+For example, when $B=I_n$,
+\[
+AI_n = A = I_nA.
+\]
+But these cases are rare.
+
+\subsubsection*{Additional Properties of Matrix Multiplication}
+\index{distributive}
+
+Recall that if $A=(a_{ij})$ and $B=(b_{ij})$ are both $m\times n$ 
+matrices, then $A+B$ is the $m\times n$ matrix $(a_{ij}+b_{ij})$. 
+We now enumerate several properties of matrix multiplication.
+
+\begin{itemize}
+
+\item	Let $A$ and $B$ be $m\times n$ matrices and let $C$ be an $n\times p$
+matrix.  Then
+\[
+(A+B)C = AC + BC.
+\]
+Similarly, if $D$ is a $q\times m$ matrix, then
+\[
+D(A+B) = DA + DB.
+\]
+So matrix multiplication distributes across matrix addition.
+
+\item	If $\alpha$ and $\beta$ are scalars, then
+\[
+(\alpha+\beta)A = \alpha A + \beta A.
+\]
+So addition distributes with scalar multiplication.
+
+\item	Scalar multiplication and matrix multiplication satisfy:
+\[
+(\alpha A)C = \alpha (AC).
+\]
+\end{itemize}
+
+\subsubsection*{Matrix Multiplication and Transposes}
+\index{matrix!transpose}
+
+Let $A$ be an $m\times n$ matrix and let $B$ be an $n\times p$
+matrix, so that the matrix product $AB$ is defined and $AB$ is an
+$m\times p$ matrix.  Note that $A^t$
+is an $n\times m$ matrix and that $B^t$ is a $p\times n$ matrix, so
+that in general the product $A^tB^t$ is {\em not\/} defined.  However,
+the product $B^tA^t$ is defined and is an $p\times m$ matrix, as is
+the matrix $(AB)^t$.  We claim that
+\begin{equation}  \label{e:transposeprod}
+(AB)^t = B^tA^t.
+\end{equation}
+We verify this claim by direct computation.  The $(i,k)^{th}$ entry
+in $(AB)^t$ is the $(k,i)^{th}$ entry in $AB$.   That entry is:
+\[
+\sum_{j=1}^{n} a_{kj}b_{ji}.
+\]
+The $(i,k)^{th}$ entry in $B^tA^t$ is:
+\[
+\sum_{j=1}^n b^t_{ij}a^t_{jk},
+\]
+where $a^t_{jk}$ is the $(j,k)^{th}$ entry in $A^t$ and $b^t_{ij}$
+is the $(i,j)^{th}$ entry in $B^t$.  It follows from the definition
+of transpose that the $(i,k)^{th}$ entry in $B^tA^t$ is:
+\[
+\sum_{j=1}^n b_{ji}a_{kj} = \sum_{j=1}^n a_{kj}b_{ji},
+\]
+which verifies the claim.
+
+
+\subsubsection*{Matrix Multiplication in \Matlab}
+\index{matrix!multiplication!in \protect\Matlab}
+
+Let us now explain how matrix multiplication works in \Matlabp.
+We load the matrices
+\begin{equation*}  \label{examp_AB}
+A=\left(\begin{array}{rrr} -5  &  2  &  0\\
+               -1  &  1  & -4\\
+               -4  &  4  &  2\\
+               -1  &  3  & -1 \end{array}\right) \AND
+B =\left(\begin{array}{rrrrr}      2  & -2  & -2  &  5  &  5\\
+                    4  & -5  &  1  & -1  &  2\\
+                    3  &  2  &  3  & -3  &  3
+ \end{array}\right)
+\end{equation*}%
+by typing
+\begin{verbatim}
+e3_6_2
+\end{verbatim}
+Now the command {\tt C = A*B} \index{\computer!*} asks \Matlab to compute
+the matrix $C$ as the product of $A$ and $B$.  We obtain
+\begin{verbatim}
+C =
+    -2     0    12   -27   -21
+   -10   -11    -9     6   -15
+    14    -8    18   -30    -6
+     7   -15     2    -5    -2
+\end{verbatim}
+Let us confirm this result by another computation.  As we have
+seen above the $4^{th}$ column of $C$ should be given by the
+product of $A$ with the $4^{th}$ column of $B$.  Indeed, if we
+perform this computation and type
+\begin{verbatim}
+A*B(:,4)
+\end{verbatim}
+the result is
+\begin{verbatim}
+ans =
+   -27
+     6
+   -30
+    -5
+\end{verbatim}
+which is precisely the $4^{th}$ column of $C$.
+
+\Matlab also recognizes when a matrix multiplication of two
+matrices is not defined.  For example, the product of
+the $3\times 5$ matrix $B$ with the $4\times 3$ matrix $A$
+is not defined, and if we type {\tt B*A} then we obtain the
+error message
+\begin{verbatim}
+??? Error using ==> *
+Inner matrix dimensions must agree.
+\end{verbatim}
+We remark that the size of a matrix $A$ can be seen using
+the \Matlab command {\tt size}\index{\computer!size}.
+For example, the command {\tt size(A)} leads to
+\begin{verbatim}
+ans =
+     4     3
+\end{verbatim}
+reflecting the fact that $A$ is a matrix with four
+rows and three columns.
+
+
+
+\EXER
+
+
+\TEXER
+
+
+\begin{exercise} \label{c4.7.2.2}
+Let $A$ be an $m\times n$ matrix.  Show that the matrices $A A^t$ and
+$A^t A$ are symmetric.
+\end{exercise}
+
+
+\begin{exercise} \label{c4.7.3}
+Let
+\[
+A=\mattwo{1}{2}{-1}{-1} \AND B =\mattwo{2}{3}{1}{4}.
+\]
+Compute $AB$ and $B^tA^t$.  Verify that $(AB)^t=B^tA^t$ for these
+matrices $A$ and $B$.
+\end{exercise}
+
+\begin{exercise} \label{c4.7.4}
+Let
+\[
+A = \left(\begin{array}{ccc} 0 & 1 & 0\\ 0 & 0 & 1 \\ 0 & 0 & 0 \end{array}
+\right).
+\]
+Compute $B=I+A+\frac{1}{2}A^2$ and $C=I+tA+\frac{1}{2}(tA)^2$.
+\end{exercise}
+
+\begin{exercise} \label{c4.7.5}
+Let
+\[
+I = \mattwo{1}{0}{0}{1} \AND J =\mattwo{0}{-1}{1}{0}.
+\]
+\begin{itemize}
+\item[(a)] Show that $J^2=-I$.
+\item[(b)] Evaluate $(aI+bJ)(cI+dJ)$ in terms of $I$ and $J$.
+\end{itemize}
+\end{exercise}
+
+\begin{exercise} \label{c4.7.8}
+Recall that a square matrix $C$ is {\em upper triangular\/} if $c_{ij}=0$
+when $i>j$.  Show that the matrix product of two upper triangular $n\times n$
+matrices is also upper triangular.
+\end{exercise}
+
+
+\CEXER
+
+\noindent In Exercises~\ref{c4.7.0a} -- \ref{c4.7.0c} use \Matlab to
+verify that $(A+B)C = AC+BC$ for the given matrices.
+\begin{exercise}  \label{c4.7.0a}
+$A=\mattwo{0}{2}{2}{1}$, $B=\mattwo{-2}{1}{3}{0}$ and $C=\mattwo{2}{-1}{1}{5}$
+\end{exercise}
+\begin{exercise}  \label{c4.7.0b}
+$A=\mattwo{12}{-2}{3}{1}$,
+$B=\mattwo{8}{-20}{3}{10}$ and
+$C=\left(\begin{array}{rrr} 10 & 2 & 4\\ 2 & 13 & -4 \end{array}\right)$
+\end{exercise}
+\begin{exercise}  \label{c4.7.0c}
+$A=\left(\begin{array}{rr} 6 & 1 \\ 3 & 20 \\ -5 & 3\end{array}\right)$,
+$B=\left(\begin{array}{rr} 2 & -10 \\ 5 & 0 \\ 3 & 1\end{array}\right)$ and
+$C=\mattwo{-2}{10}{12}{10}$
+\end{exercise}
+
+\begin{exercise} \label{c4.7.2}
+Use the {\tt rand(3,3)} command in \Matlab to choose five pairs of
+$3\times 3$ matrices $A$ and $B$ at random.  Compute $AB$ and $BA$
+using \Matlab to see that in general these matrix products are unequal.
+\end{exercise}
+
+\begin{exercise} \label{c4.7.2.1}
+Experimentally, find two symmetric $2\times 2$ matrices $A$ and $B$ for
+which the matrix product $AB$ is {\em not\/} symmetric.
+\end{exercise}
+
+
+
+\Section{Solving Linear Systems and Inverses} \label{S:SLS}
+
+When we solve the simple equation
+\[
+ax=b,
+\]
+we do so by dividing by $a$ to obtain
+\[
+x=\frac{1}{a}b.
+\]
+This division works as long as $a\neq 0$.
+
+Writing systems of linear equations as
+\[
+Ax=b
+\]
+suggests that solutions should have the form
+\[
+x=\frac{1}{A} b
+\]
+and the \Matlab command for solving linear systems
+\begin{verbatim}
+x=A\b
+\end{verbatim}
+suggests that there is some merit to this analogy.
+
+The following is a better analogy.  Multiplication by $a$ has the
+inverse operation: division by $a$; multiplying a number $x$ by
+$a$ and then multiplying the result by $a\inv=1/a$ leaves the number
+$x$ unchanged (as long as $a\neq 0$).  In this sense we should
+write the solution to $ax=b$ as
+\[
+x=a\inv b.
+\]
+For systems of equations $Ax=b$ we wish to write solutions as
+\[
+x=A\inv b.
+\]
+In this section we consider the questions: What does $A\inv$
+mean and when does $A\inv$ exist? (Even in one dimension, we
+have seen that the inverse does not always exist, since
+$0\inv=\frac{1}{0}$ is undefined.)
+
+\subsection*{Invertibility}
+
+We begin by giving a precise definition of invertibility for square matrices.
+\begin{Def} \label{inverse} \index{inverse} \index{invertible}
+The $n\times n$ matrix $A$ is {\em invertible\/} if there is an $n\times n$
+matrix $B$ such that
+\[
+AB=I_n \AND BA=I_n.
+\]
+The matrix $B$ is called an {\em inverse\/} of $A$.  If $A$ is not invertible,
+then $A$ is {\em noninvertible\/} or {\em singular\/}. \index{noninvertible}
+\index{singular}
+\end{Def}
+
+Geometrically, we can see that some matrices are invertible.  For example, 
+the matrix
+\[
+R_{90} = \mattwo{0}{-1}{1}{0}
+\]
+rotates the plane counterclockwise through $90^\circ$ and is
+invertible.  The inverse matrix of $R_{90}$ is the matrix that rotates the
+plane clockwise through $90^\circ$.  That matrix is:
+\[
+R_{-90} = \mattwo{0}{1}{-1}{0}.
+\]
+This statement can be checked algebraically by verifying that 
+$R_{90}R_{-90}=I_2$ and that $R_{-90}R_{90} = I_2$.
+
+Similarly,  
+\[
+B = \mattwo{5}{3}{2}{1}
+\]
+is an inverse of 
+\[
+A = \mattwo{-1}{3}{2}{-5},
+\]
+as matrix multiplication shows that $AB=I_2$ and $BA=I_2$. In fact, there is 
+an elementary formula for finding inverses of $2\times 2$ matrices (when they 
+exist); see \Ref{e:formAinv} in Section~\ref{S:det2x2}.
+
+On the other hand, not all matrices are invertible.  For example, the zero 
+matrix is noninvertible, since $0B=0$ for any matrix $B$.
+
+\begin{lemma} \label{B=C}
+If an $n\times n$ matrix $A$ is invertible, then its inverse is unique
+and is denoted by $A\inv$.
+\end{lemma}
+
+\proof
+Let $B$ and $C$ be $n\times n$ matrices that are inverses of $A$.  Then
+\[
+BA=I_n \AND AC=I_n.
+\]
+We use the associativity of matrix multiplication to
+prove that $B=C$.  Compute
+\[
+B = BI_n = B(AC) = (BA)C = I_nC = C.
+\]
+\qed
+
+We now show how to compute inverses for products of invertible
+matrices.
+
+\begin{prop} \label{P:invprod} \index{matrix!multiplication}
+\index{inverse}
+Let $A$ and $B$ be two invertible $n\times n$ matrices.  Then
+$AB$ is also invertible and
+\[
+(AB)\inv = B\inv A\inv.
+\]
+\end{prop}
+
+\proof  Use associativity of matrix multiplication to compute
+\[
+(AB)(B\inv A\inv) = A(BB\inv)A\inv = AI_nA\inv = AA\inv=I_n.
+\]
+Similarly,
+\[
+(B\inv A\inv)(AB) = B\inv(A\inv A)B = B\inv B = I_n.
+\]
+Therefore $AB$ is invertible with the desired inverse. \qed
+
+\begin{prop} \label{L:transposeinv} \index{matrix!transpose}
+Suppose that $A$ is an invertible $n\times n$ matrix.  Then
+$A^t$ is invertible and
+\[
+(A^t)\inv = (A\inv)^t.
+\]
+\end{prop}
+
+\proof  We must show that $(A\inv)^t$ is the inverse of $A^t$.  Identity
+\Ref{e:transposeprod} implies that
+\[
+(A\inv)^tA^t = (AA\inv)^t = (I_n)^t = I_n,
+\]
+and
+\[
+A^t(A\inv)^t = (A\inv A)^t = (I_n)^t = I_n.
+\]
+Therefore, $(A\inv)^t$ is the inverse of $A^t$, as claimed.  \qed
+
+\subsection*{Invertibility and Unique Solutions}
+
+Next we discuss the implications of invertibility for the
+solution of the inhomogeneous linear system:  \index{inhomogeneous}
+\begin{equation}  \label{squarematrix}
+Ax=b,
+\end{equation}
+where $A$ is an $n\times n$ matrix and $b\in\R^n$.
+
+\begin{prop} \label{P:inv=>unique}\index{uniqueness of solutions}
+Let $A$ be an invertible $n\times n$ matrix and let $b$ be in $\R^n$.
+Then the system of linear equations \Ref{squarematrix} has a unique solution.
+\end{prop}
+
+\proof  We can solve the linear system \Ref{squarematrix} by setting
+\begin{equation}  \label{soln}
+x=A\inv b.
+\end{equation}
+This solution is easily verified by calculating
+\[
+Ax=A(A\inv b) = (AA\inv)b = I_nb = b.
+\]
+Next, suppose that $x$ is a solution to \Ref{squarematrix}.  Then
+\[
+x = I_n x = (A\inv A)x = A\inv(Ax) = A\inv b.
+\]
+So $A\inv b$ is the only possible solution.  \qed
+
+\begin{cor} \label{C:inv=>In}
+An invertible matrix is row equivalent to $I_n$.
+\end{cor}
+
+\proof  Let $A$ be an invertible $n\times n$ matrix.
+Proposition~\ref{P:inv=>unique} states that the system of linear equations
+$Ax=b$ has a unique solution.  Chapter~\ref{lineq}, Corollary~\ref{consistent}
+states that $A$ is row equivalent to $I_n$.  \qed
+
+The converse of Corollary~\ref{C:inv=>In} is also valid.
+
+\begin{prop}  \label{P:row=>inv}
+An $n\times n$ matrix $A$ that is row equivalent to $I_n$ is invertible.
+\end{prop}
+
+\proof  Form the $n\times 2n$ matrix $M=(A|I_n)$.  Since $A$ is row equivalent
+to $I_n$, there is a sequence of elementary row operations so that $M$ is
+row equivalent to $(I_n|B)$.  Eliminating all columns from the right half
+of $M$ except the $j^{th}$ column yields the matrix $(A|e_j)$.  The same
+sequence of elementary row operations states that the matrix $(A|e_j)$ is
+row equivalent to $(I_n|B_j)$ where $B_j$ is the $j^{th}$ column of $B$.  It
+follows that $B_j$ is the solution to the system of linear equations
+$Ax=e_j$ and that the matrix product
+\[
+AB = (AB_1|\cdots|AB_n) = (e_1|\cdots|e_n) = I_n.
+\]
+So $AB=I_n$.
+
+We claim that $BA=I_n$ and hence that $A$ is invertible.  To verify this claim
+form the $n\times 2n$ matrix $N=(I_n|A)$.  Using the same sequence of
+elementary row operations again shows that $N$ is row equivalent to $(B|I_n)$.
+By construction
+the matrix $B$ is row equivalent to $I_n$.  Therefore, there is a unique
+solution to the system of linear equations $Bx=e_j$.  Now eliminating all
+columns except the $j^{th}$ from the right hand side of the matrix $(B|I_n)$
+shows that the solution to the system of linear equations $Bx=e_j$ is just
+$A_j$, where $A_j$ is the $j^{th}$ column of $A$.  It follows that
+\[
+BA = (BA_1|\cdots|BA_n) = (e_1|\cdots|e_n) = I_n.
+\]
+Hence $BA=I_n$.  \qed
+
+\begin{thm} \label{invertequiv}
+Let $A$ be an $n\times n$ matrix.  Then the following are
+equivalent:
+\begin{itemize}
+\item[(a)]  $A$ is invertible. \index{invertible}
+\item[(b)] The equation $Ax=b$ has a unique solution for each
+$b\in\R^n$.
+\item[(c)]  The only solution to $Ax=0$ is $x=0$.
+\item[(d)]  $A$ is row equivalent to $I_n$.
+\end{itemize}
+\end{thm}
+
+\proof $(a) \Rightarrow (b)$ This implication
+is just Proposition~\ref{P:inv=>unique}.
+
+$(b) \Rightarrow (c)$ This implication is straightforward --- just
+take $b=0$ in \Ref{squarematrix}.
+
+$(c) \Rightarrow (d)$  This implication is just a restatement of
+Chapter~\ref{lineq}, Corollary~\ref{consistent}.
+
+$(d) \Rightarrow (a)$.  This implication is just
+Proposition~\ref{P:row=>inv}. \qed
+
+
+\subsection*{A Method for Computing Inverse Matrices}
+
+The proof of Proposition~\ref{P:row=>inv} gives a constructive method
+for finding the inverse of any invertible square matrix.
+
+\begin{thm}  \label{T:AIn}\index{inverse!computation}
+Let $A$ be an $n\times n$ matrix that is row equivalent to
+$I_n$ and let $M$ be the $n\times 2n$ augmented matrix
+\begin{equation}  \label{e:M}
+M = (A | I_n).
+\end{equation}
+Then the matrix $M$ is row equivalent to $(I_n | A\inv)$.
+\end{thm}
+
+\subsubsection*{An Example}
+
+Compute the inverse of the matrix
+\[
+A = \left(\begin{array}{rrr} 1 & 2 & 0 \\ 0 & 1 & 3 \\ 0 & 0 & 1
+\end{array}\right).
+\]
+Begin by forming the $3\times 6$ matrix
+\[
+M = \left(\begin{array}{rrr|rrr} 1 & 2 & 0 & 1 & 0 & 0 \\
+0 & 1 & 3 & 0 & 1 & 0 \\ 0 & 0 & 1 & 0 & 0 & 1
+\end{array}\right).
+\]
+To put $M$ in row echelon form by row reduction, first subtract
+3 times the $3^{rd}$ row from the $2^{nd}$ row, obtaining
+\[
+\left(\begin{array}{rrr|rrr} 1 & 2 & 0 & 1 & 0 & 0 \\
+0 & 1 & 0 & 0 & 1 & -3 \\ 0 & 0 & 1 & 0 & 0 & 1
+\end{array}\right).
+\]
+Second, subtract 2 times the $2^{nd}$ row from the $1^{st}$ row, obtaining
+\[
+\left(\begin{array}{rrr|rrr} 1 & 0 & 0 & 1 & -2 & 6 \\
+0 & 1 & 0 & 0 & 1 & -3 \\ 0 & 0 & 1 & 0 & 0 & 1
+\end{array}\right).
+\]
+Theorem~\ref{T:AIn} implies that
+\[
+A\inv = \left(\begin{array}{rrr} 1 & -2 & 6 \\ 0 & 1 & -3 \\ 0 & 0 & 1
+\end{array}\right),
+\]
+which can be verified by matrix multiplication.
+
+\subsubsection*{Computing the Inverse Using \Matlab}
+
+There are two ways that we can compute inverses using \Matlab.
+Either we can perform the row reduction of \Ref{e:M} directly
+or we can use the \Matlab the command {\tt inv}.  We illustrate
+both of these methods. First type {\tt e3\_7\_4} to recall the matrix
+\begin{equation*}
+A = \left(\begin{array}{rrr} 1 & 2 & 4 \\ 3 & 1 & 1 \\ 2 & 0 & -1
+\end{array}\right).
+\end{equation*}
+
+To perform the row reduction of \Ref{e:M} we need to form the matrix
+$M$. The \Matlab command for generating an $n\times n$ identity
+matrix is {\tt eye(n)}.  Therefore, typing
+\begin{verbatim}
+M = [A eye(3)]
+\end{verbatim} \index{\computer!eye}
+in \Matlab yields the result
+\begin{verbatim}
+M =
+     1     2     4     1     0     0
+     3     1     1     0     1     0
+     2     0    -1     0     0     1
+\end{verbatim}
+Now row reduce $M$ to reduced echelon form as follows.  Type
+\begin{verbatim}
+M(3,:) = M(3,:) - 2*M(1,:)
+M(2,:) = M(2,:) - 3*M(1,:)
+\end{verbatim}
+obtaining
+\begin{verbatim}
+M =
+     1     2     4     1     0     0
+     0    -5   -11    -3     1     0
+     0    -4    -9    -2     0     1
+\end{verbatim}
+Next type
+\begin{verbatim}
+M(2,:) = M(2,:)/M(2,2)
+M(3,:) = M(3,:) + 4*M(2,:)
+M(1,:) = M(1,:) - 2*M(2,:)
+\end{verbatim}
+to obtain
+\begin{verbatim}
+M =
+    1.0000         0   -0.4000   -0.2000    0.4000         0
+         0    1.0000    2.2000    0.6000   -0.2000         0
+         0         0   -0.2000    0.4000   -0.8000    1.0000
+\end{verbatim}
+Finally, type
+\begin{verbatim}
+M(3,:) = M(3,:)/M(3,3)
+M(2,:) = M(2,:) - M(2,3)*M(3,:)
+M(1,:) = M(1,:) - M(1,3)*M(3,:)
+\end{verbatim}
+to obtain
+\begin{verbatim}
+M =
+    1.0000         0         0   -1.0000    2.0000   -2.0000
+         0    1.0000         0    5.0000   -9.0000   11.0000
+         0         0    1.0000   -2.0000    4.0000   -5.0000
+\end{verbatim}
+Thus $C=A\inv$ is obtained by extracting the last three columns
+of $M$ by typing
+\begin{verbatim}
+C = M(:,[4 5 6])
+\end{verbatim}
+which yields
+\begin{verbatim}
+C =
+   -1.0000    2.0000   -2.0000
+    5.0000   -9.0000   11.0000
+   -2.0000    4.0000   -5.0000
+\end{verbatim}
+You may check that $C$ is the inverse of $A$ by typing {\tt A*C}
+and {\tt C*A}.
+
+In fact, this entire scheme for computing the inverse of a
+matrix has been preprogrammed into \Matlab.  Just type
+\begin{verbatim}
+inv(A)
+\end{verbatim} \index{\computer!inv}
+to obtain
+\begin{verbatim}
+ans =
+   -1.0000    2.0000   -2.0000
+    5.0000   -9.0000   11.0000
+   -2.0000    4.0000   -5.0000
+\end{verbatim}
+
+We illustrate again this simple method for computing the inverse
+of a matrix $A$.  For example, reload the matrix in \Ref{eq:5matrix}
+by typing \verb+ e3_1_4+ and obtaining:
+\begin{verbatim}
+A =
+     5    -4     3    -6     2
+     2    -4    -2    -1     1
+     1     2     1    -5     3
+    -2    -1    -2     1    -1
+     1    -6     1     1     4
+\end{verbatim}
+The command {\tt B = inv(A)} stores the inverse of the matrix $A$
+in the matrix $B$, and we obtain the result
+\begin{verbatim}
+B =
+   -0.0712    0.2856   -0.0862   -0.4813   -0.0915
+   -0.1169    0.0585    0.0690   -0.2324   -0.0660
+    0.1462   -0.3231   -0.0862    0.0405    0.0825
+   -0.1289    0.0645   -0.1034   -0.2819    0.0555
+   -0.1619    0.0810    0.1724   -0.1679    0.1394
+\end{verbatim}
+This computation also illustrates the fact that even when the matrix
+$A$ has integer entries, the inverse of $A$ usually has noninteger
+entries.
+
+Let $b=(2,-8,18,-6,-1)$.  Then we may use the inverse $B=A\inv$
+to compute the solution of $Ax=b$.  Indeed if we type
+\begin{verbatim}
+b = [2;-8;18;-6;-1];
+x = B*b
+\end{verbatim}
+then we obtain
+\begin{verbatim}
+x =
+   -1.0000
+    2.0000
+    1.0000
+   -1.0000
+    3.0000
+\end{verbatim}
+as desired (see \Ref{eq:5rhs}).  With this computation we have confirmed
+the analytical results of the previous subsections.
+
+
+
+
+
+\EXER
+
+\TEXER
+
+\begin{exercise} \label{c4.8.1}
+Verify by matrix multiplication that the following matrices are inverses
+of each other:
+\[
+\left( \begin{array}{rrr}
+1  &  0  &  2\\
+0  & -1  &  2\\
+1  &  0  &  1
+\end{array} \right)\AND
+\left( \begin{array}{rrr}
+-1 &   0 &   2\\
+ 2 &  -1 &  -2\\
+ 1 &   0 &  -1
+\end{array} \right).
+\]
+\end{exercise}
+
+\begin{exercise} \label{c4.8.2}
+Let $\alpha \not=0$ be a real number and let $A$ be an invertible
+matrix.  Show that the inverse of the matrix $\alpha A$ is given by
+$\frac{1}{\alpha}A^{-1}$.
+\end{exercise}
+
+\begin{exercise} \label{c4.8.3}
+Let $A=\mattwo{a}{0}{0}{b}$ be a $2\times 2$ diagonal matrix.
+For which values of $a$ and $b$ is $A$ invertible?
+\end{exercise}
+
+\begin{exercise} \label{c4.8.4}
+Let $A,B,C$ be general $n\times n$ matrices.  Simplify the expression
+$A\inv(BA\inv)\inv(CB\inv)\inv$.
+\end{exercise}
+
+\noindent In Exercises~\ref{c4.9.3a} -- \ref{c4.9.3b} use row reduction
+to find the inverse of the given matrix.
+\begin{exercise} \label{c4.9.3a}
+$\left(\begin{array}{rrr} 1 & 4 & 5\\ 0 & 1 & -1\\ -2 & 0 & -8
+\end{array}\right)$.
+\end{exercise}
+\begin{exercise} \label{c4.9.3b}
+$\left(\begin{array}{rrr} 1 & -1 & -1\\ 0 & 2 & 0\\ 2 & 0 & -1
+\end{array}\right)$.
+\end{exercise}
+
+\begin{exercise} \label{c4.8.5}
+Let $A$ be an $n\times n$ matrix that satisfies
+\[
+A^3 + a_2A^2 + a_1A + I_n = 0,
+\]
+where $A^2=AA$ and $A^3=AA^2$.  Show that $A$ is invertible. \\
+{\bf Hint:}  Let $B = -(A^2+a_2A+a_1I_n)$ and verify that $AB=BA=I_n$.
+\end{exercise}
+
+\begin{exercise} \label{c4.8.6}
+Let $A$ be an $n\times n$ matrix that satisfies
+\[
+A^m + a_{m-1}A^{m-1} + \cdots + a_1A + I_n = 0.
+\]
+Show that $A$ is invertible.
+\end{exercise}
+
+\begin{exercise} \label{c4.9.6}
+For which values of $a,b,c$ is the matrix
+\[
+A =\left(\begin{array}{rrr} 1 & a & b\\ 0 & 1 & c\\ 0 & 0 & 1
+\end{array}\right)
+\]
+invertible?  Find $A\inv$ when it exists.
+\end{exercise}
+
+
+\CEXER
+
+\noindent In Exercises~\ref{c4.9.7a} -- \ref{c4.9.7b} use row reduction
+to find the inverse of the given matrix and confirm your results using the 
+command {\tt inv}.
+\begin{exercise} \label{c4.9.7a}
+\begin{equation*}
+A=\left(\begin{array}{ccc} 2 & 1 & 3\\ 1 & 2 & 3 \\ 5& 1 & 0
+\end{array}\right).
+\end{equation*}
+\end{exercise}
+\begin{exercise} \label{c4.9.7b}
+\begin{equation*}
+B= \left(\begin{array}{cccr} 0 & 5 & 1 & 3\\ 1 & 5 & 3 & -1\\ 2 & 1 &
+0 & -4 \\ 1 & 7 & 2 & 3 \end{array}\right).
+\end{equation*}
+\end{exercise}
+
+\begin{exercise} \label{c4.9.8}
+Try to compute the inverse of the matrix
+\begin{equation*}
+C = \left(\begin{array}{rrr} 1 & 0 & 3\\ -1 & 2 & -2 \\ 0& 2 & 1
+\end{array}\right)
+\end{equation*}
+in \Matlab using the command {\tt inv}.  What happens --- can you
+explain the outcome?
+
+Now compute the inverse of the matrix
+\[
+\left(\begin{array}{rrr} 1 & \epsilon & 3\\ -1 & 2 & -2 \\ 0& 2 & 1
+\end{array}\right)
+\]
+for some nonzero numbers $\epsilon$ of your choice.  What can be observed
+in the inverse if $\epsilon$ is very small?  What happens when $\epsilon$
+tends to zero?
+\end{exercise}
+
+
+\Section{Determinants of $2\times 2$ Matrices}
+\label{S:det2x2}
+
+There is a simple way for determining whether a $2\times 2$ matrix $A$ is
+invertible and there is a simple formula for finding $A\inv$.
+\index{inverse}  First, we present the formula.  Let
+\[
+A=\mattwo{a}{b}{c}{d}.
+\]
+and suppose that $ad-bc\neq0$.  Then
+\begin{equation}  \label{e:formAinv}
+A\inv = \frac{1}{ad-bc} \mattwo{d}{-b}{-c}{a}.
+\end{equation}
+This is most easily verified by directly applying the formula for
+matrix multiplication.  So $A$ is invertible when $ad-bc\neq 0$. We
+shall prove below that $ad-bc$ must be nonzero when $A$ is invertible.
+
+From this discussion it is clear that the number $ad-bc$ must be an
+important quantity for $2\times 2$ matrices.  So we define:
+\begin{Def}
+The {\em determinant\/} \index{determinant} of the $2\times 2$
+matrix $A$ is
+\begin{equation}  \label{D:determinant}
+\det(A) = ad - bc.
+\end{equation}
+\end{Def}
+
+\begin{prop} \label{propdet}
+As a function on $2\times 2$ matrices, the determinant satisfies
+the following properties.
+\begin{itemize}
+\item[(a)] The determinant of an upper triangular matrix is the
+product of the diagonal elements. \index{matrix!upper triangular}
+\item[(b)] The determinants of a matrix and its transpose are
+equal. \index{matrix!transpose}
+\item[(c)] $\det(AB) = \det(A)\det(B)$.
+\end{itemize}
+\end{prop}
+
+\proof Both (a) and (b) are easily verified by direct
+calculation.  Property (c) is also verified by direct
+calculation --- but of a more extensive sort.  Note that
+\[
+\left(\begin{array}{cc} a & b\\ c & d \end{array}\right)
+\left(\begin{array}{cc} \alpha & \beta \\ \gamma & \delta
+\end{array}\right) =
+\left(\begin{array}{cc} a\alpha+b\gamma & a\beta+b\delta \\
+c\alpha+d\gamma & c\beta+d\delta\end{array}\right).
+\]
+Therefore,
+\begin{eqnarray*}
+\det(AB) & = & (a\alpha+b\gamma)(c\beta+d\delta) -
+     (a\beta+b\delta)(c\alpha+d\gamma)\\
+& = & (ac\alpha\beta+bc\beta\gamma+ad\alpha\delta+bd\gamma\delta)
+-(ac\alpha\beta+bc\alpha\delta+ad\beta\gamma+bd\gamma\delta)\\
+& = & bc(\beta\gamma-\alpha\delta) +
+ad(\alpha\delta-\beta\gamma) \\
+& = & (ad-bc)(\alpha\delta-\beta\gamma) \\
+& = & \det(A)\det(B),
+\end{eqnarray*}
+as asserted.   \qed
+
+\begin{cor}  \label{C:2x2invert} \index{invertible}
+A $2\times 2$ matrix $A$ is invertible if and only if $\det(A)\neq 0$.
+\end{cor}
+
+\proof  If $A$ is invertible, then $AA\inv = I_2$.
+Proposition~\ref{propdet} implies that
+\[
+\det(A)\det(A\inv) = \det(I_2) = 1.
+\]
+Therefore, $\det(A)\neq 0$.  Conversely, if $\det(A)\neq 0$, then
+\Ref{e:formAinv} implies that $A$ is invertible.  \qed
+
+
+\subsection*{Determinants and Area}
+
+Suppose that $v$ and $w$ are two vectors in $\R^2$ that point in different
+directions.  Then, the set of points
+\[
+z=\alpha v + \beta w \quad\mbox{where } 0\leq\alpha,\beta\leq 1
+\]
+is a parallelogram\index{parallelogram}, that we denote by $P$.
+We denote the area of $P$ by $|P|$.  For example, the unit square $S$, whose
+corners are $(0,0)$, $(1,0)$, $(0,1)$, and $(1,1)$, is the parallelogram
+generated by the unit vectors $e_1$ and $e_2$.
+
+Next let $A$ be a $2\times 2$ matrix and let
+\[
+A(P) = \{Az:z\in P\}.
+\]
+It follows from linearity (since $Az=\alpha Av+\beta Aw$) that $A(P)$ is the
+parallelogram generated by $Av$ and $Aw$.
+
+\begin{prop}  \label{P:det&area}
+Let $A$ be a $2\times 2$ matrix and let $S$ be the unit square.  Then 
+\begin{equation}  \label{e:det&area2}
+|A(S)| = |\det A|.
+\end{equation}
+\end{prop}
+
+\proof   Note that $A(S)$ is the parallelogram generated by $u_1=Ae_1$ and 
+$u_2=Ae_2$, and $u_1$ and $u_2$ are the columns of $A$.  It follows that
+\[
+(\det A)^2=\det(A^t)\det(A)=\det(A^tA) =
+\det\mattwo{u_1^tu_1}{u_1^tu_2}{u_2^tu_1}{u_2^tu_2}.
+\]
+Hence
+\[
+(\det A)^2=
+\det\mattwo{||u_1||^2}{u_1\cdot u_2}{u_1\cdot u_2}{||u_2||^2} =
+||u_1||^2||u_2||^2-(u_1\cdot u_2)^2.
+\]
+Recall that \Ref{e:areaP} of Chapter~\ref{chap:prelim} states that
+\[
+|P|^2 = ||v||^2||w||^2 - (v\cdot w)^2.
+\]
+where $P$ is the parallelogram generated by $v$ and $w$.  Therefore, 
+$(\det A)^2 = |A(S)|^2$ and \Ref{e:det&area2} is verified. \qed
+
+
+\begin{thm}  \label{T:det&area}
+Let $P$ be a parallelogram in $\R^2$ and let $A$ be a $2\times 2$
+matrix.  Then
+\begin{equation} \label{e:det&area}
+|A(P)| = |\det A||P|.
+\end{equation}
+\end{thm}
+
+\proof  First note that \Ref{e:det&area2} a special case of \Ref{e:det&area}, 
+since $|S|=1$.   Next, let $P$ be the parallelogram generated by the (column)
+vectors $v$ and $w$, and let $B=(v|w)$.  Then $P=B(S)$.  It
+follows from \Ref{e:det&area2} that $|P|=|\det B|$.  Moreover,
+\begin{eqnarray*}
+|A(P)| & = & |(AB)(S)| \\
+& = & |\det(AB)| \\
+& = & |\det A||\det B| \\
+& = & |\det A||P|,
+\end{eqnarray*}
+as desired.  \qed
+
+\EXER
+
+\TEXER
+
+\begin{exercise} \label{c4.9.1}
+Find the inverse of the matrix
+\[
+\mattwo{2}{1}{3}{2}.
+\]
+\end{exercise}
+
+\begin{exercise} \label{c7.8.4}
+Find the inverse of the shear matrix $\mattwo{1}{K}{0}{1}$.
+\end{exercise}\index{shear}
+
+\begin{exercise} \label{c4.9.4}
+Show that the $2\times 2$ matrix $A=\mattwo{a}{b}{c}{d}$ is row
+equivalent to $I_2$ if and only if $ad-bc\neq 0$.  {\bf Hint:}
+Prove this result separately in the two cases $a\neq 0$ and
+$a=0$.
+\end{exercise}
+
+\begin{exercise} \label{c4.9.5}
+Let $A$ be a $2\times 2$ matrix having integer entries.  Find a
+condition on the entries of $A$ that guarantees that $A\inv$ has
+integer entries.
+\end{exercise}
+
+\begin{exercise} \label{c6.4.4}
+Let $A$ be a $2\times 2$ matrix and assume that $\det(A)\neq 0$.
+Then use the explicit form for $A\inv$ given in \Ref{e:formAinv}
+to verify that
+\[
+\det(A\inv) = \frac{1}{\det(A)}.
+\]
+\end{exercise}
+
+\begin{exercise} \label{c7.8.3}
+Sketch the triangle whose vertices are $0$, $p=(3,0)^t$, and
+$q=(0,2)^t$; and find the area of this triangle.  Let
+\[
+M=\mattwo{-4}{-3}{5}{-2}.
+\]
+Sketch the triangle whose vertices are $0$, $Mp$, and $Mq$; and
+find the area of this triangle.
+\end{exercise}
+
+\begin{exercise} \label{c7.8.4A}
+Cramer's rule \index{Cramer's rule} provides a method based on determinants 
+for finding the unique solution to the linear equation $Ax=b$ when $A$ is 
+an invertible matrix.  More precisely, let $A$ be an invertible $2\times 2$ 
+matrix and let $b\in\R^2$ be a column vector. Let $B_j$ be the $2\times 2$ 
+matrix obtained from $A$ by replacing the $j^{th}$ column of $A$ by the vector 
+$b$.  Let $x=(x_1,x_2)^t$ be the unique solution to $Ax=b$. Then Cramer's rule
+states that 
+\begin{equation}  \label{E:cramer}
+x_j = \frac{\det(B_j)}{\det(A)}.
+\end{equation}
+Prove Cramer's rule.  {\bf Hint:}  Write the general system of two equations in 
+two unknowns as
+\begin{eqnarray*}
+a_{11}x_1+a_{12}x_2 & = & b_1\\
+a_{21}x_1+a_{22}x_2 & = & b_2.
+\end{eqnarray*}
+Subtract $a_{11}$ times the second equation from $a_{21}$ times the first 
+equation to eliminate $x_1$; then solve for $x_2$, and verify \Ref{E:cramer}.  
+Use a similar calculation to solve for $x_1$. 
+\end{exercise}
+
+\noindent In Exercises~\ref{c7.8.4B} -- \ref{c7.8.4C} use Cramer's 
+rule~\Ref{E:cramer} to solve the given system of linear 
+equations.
+\begin{exercise} \label{c7.8.4B}
+Solve \qquad $\begin{array}{rcl} 2x+3y & = & 2 \\ 3x - 5y & = & 1 \end{array}$ 
+\qquad for $x$.
+\end{exercise} 
+\begin{exercise} \label{c7.8.4C}
+Solve \qquad
+$\begin{array}{rcl} 4x-3y & = & -1 \\ x + 2y & = & 7 \end{array}$ 
+\qquad for $y$.
+\end{exercise}
+
+\CEXER
+
+\begin{exercise} \label{c4.9.9}
+Use \Matlab to choose five $2\times 2$ matrices at random and compute
+their inverses.  Do you get the impression that `typically'
+$2\times 2$ matrices are invertible?  Try to find a reason for
+this fact using the determinant of $2\times 2$ matrices.
+\end{exercise}
+
+\noindent  In Exercises~\ref{c3.8.AA} -- \ref{c3.8.AD} use the {\sf unit 
+square} icon in the program {\sf map} to test Proposition~\ref{P:det&area}, as 
+follows. Enter the given matrix $A$ into {\sf map} and map the {\sf unit 
+square} icon.  Compute $\det(A)$ by estimating the area of $A(S)$ --- given 
+that $S$ has unit area.  For each matrix, use this numerical experiment to 
+decide whether or not the matrix is invertible.
+\begin{exercise}  \label{c3.8.AA}
+$A=\mattwo{0}{-2}{2}{0}$.
+\end{exercise}
+\begin{exercise}  \label{c3.8.AB}
+$A=\mattwo{-0.5}{-0.5}{0.7}{0.7}$.
+\end{exercise}
+\begin{exercise}  \label{c3.8.AC}
+$A=\mattwo{-1}{-0.5}{-2}{-1}$.
+\end{exercise}
+\begin{exercise}  \label{c3.8.AD}
+$A=\mattwo{0.7071}{0.7071}{-0.7071}{0.7071}$.
+\end{exercise}
+
