@@ -1,19 +1,8 @@
-\documentclass[12pt,makeidx]{book}
-
 \usepackage{epsfig}
-
-\addtolength{\oddsidemargin}{-0.6cm}
-\addtolength{\evensidemargin}{-2.6cm}
-\addtolength{\topmargin}{-0.6cm}
-
-\textheight=20cm
-\textwidth=15.2cm
 
 \newcounter{ccounter}
 \setcounter{ccounter}{1}
-\newcommand{\Chapter}[1]{\setcounter{chapter}{\arabic{ccounter}}\chapter{#1}\addtocounter{ccounter}{1}}
-
-%\newcommand{\Section}[1]{\section{#1}\setcounter{thm}{0}\setcounter{figure}{0}\setcounter{equation}{0}}
+\newcommand{\chapter}[1]{\setcounter{chapter}{\arabic{ccounter}}\chapter{#1}\addtocounter{ccounter}{1}}
 
 \newcommand{\Section}[1]{\section{#1}\setcounter{thm}{0}\setcounter{equation}{0}}
 
@@ -128,15 +117,8 @@ University of Houston, Houston, TX 77204-3476, USA} and Michael
 Dellnitz\thanks{Department of Mathematics and Computer Science,
 University of Paderborn, D-33098 Paderborn, Germany}}
 
-\pagenumbering{roman}
 
-\includeonly{preface,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,c15,c16,c17,c18,commands,answers}
-%\includeonly{c1,c2,c3,c4,c5,c8,c9,c10,c13}
-%\includeonly{c4}
 
-%\usepackage{showkeys}
-
-\makeindex
 
 \begin{document}
 
