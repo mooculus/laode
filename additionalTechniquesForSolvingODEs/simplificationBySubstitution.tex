@@ -1,0 +1,246 @@
+\documentclass{ximera}
+
+\input{./preamble.tex}
+
+\title{Simplification by Substitution}
+
+\begin{document}
+\begin{abstract}
+\end{abstract}
+\maketitle
+
+
+\label{sec:SBS}
+
+So far in this chapter --- as well as in Chapter~\ref{C:LDE} ---
+we have seen how to find solutions of ordinary differential equations 
+that have special forms.  (For instance, separation of variables can 
+be applied to solve equations of the form $\frac{dx}{dt}=g(x) h(t)$.) 
+However, ``most'' differential equations are not of the form needed to
+apply one of these techniques.  But sometimes it is possible to
+transform the equation into such a form.  This is accomplished
+by substituting a new function for $x(t)$, so that the differential 
+equation for this new function has a simpler form.  We illustrate this 
+procedure in two cases.
+
+\subsection*{Homogeneous Coefficients}
+\index{homogeneous coefficients}
+
+Differential equations of the form
+\begin{equation}
+\label{eq:homcoeff}
+\frac{dx}{dt} = F\left(\frac{x}{t}\right),
+\end{equation}
+where $F:\R\to\R$ is continuous, are said to have {\em
+homogeneous coefficients}\index{homogeneous coefficients}.  
+In general, none of the techniques
+described so far can be applied to this equation.  
+
+Since the function $x(t)/t$ appears as the argument of $F$ in
+the equation it seems plausible to write down \Ref{eq:homcoeff}
+in terms of this function.  Having this in mind, define
+\[
+v(t) = \frac{x(t)}{t}.
+\]
+Then $x(t) = t v(t)$ and \Ref{eq:homcoeff} becomes
+\[
+v(t) + t \frac{dv}{dt}(t) = F(v(t)).
+\]
+When $t\not= 0$, this equation is equivalent to
+\begin{equation}
+\label{eq:homsep}
+\frac{dv}{dt} = \frac{F(v)-v}{t}.
+\end{equation}
+We have arrived at an equation to which we can apply separation
+of variables\index{separation of variables}.  
+Once a solution $v(t)$ of \Ref{eq:homsep} is
+found, we obtain a solution of \Ref{eq:homcoeff} by setting
+\[
+x(t) = t v(t).
+\]
+If an initial condition $x(t_0)=x_0$ is specified in
+\Ref{eq:homcoeff}, then we have to solve \Ref{eq:homsep} with
+the transformed initial condition $v(t_0)=x_0/t_0$.
+
+\subsubsection*{An Example}
+Consider the initial value problem
+\begin{equation}
+\label{eq:homcoex1}
+\begin{array}{rcl}
+\dps \frac{dx}{dt} & = & \dps \frac{2t^2+x^2}{tx} \\
+x(2) & = & 6.
+\end{array}
+\end{equation}
+{\rm Since the right hand side of this equation can be written as
+\[
+F\left(\frac{x}{t}\right) = 2\frac{t}{x}+\frac{x}{t},
+\]
+we see that \Ref{eq:homcoex1} has homogeneous 
+coefficients\index{homogeneous coefficients}.  We
+set $v(t) = x(t)/t$. By \Ref{eq:homsep} we have to solve the
+initial value problem\index{initial value problem}
+\[
+\begin{array}{rcl}
+\dps \frac{dv}{dt} & = & \dps \frac{F(v)-v}{t} = 
+\frac{2\frac{1}{v}+v-v}{t}=\frac{2}{tv} \\
+v(2) & = & 6/2 = 3.
+\end{array}
+\]
+Separation of variables \index{separation of variables} shows that 
+$v(t)$ has to satisfy
+\[
+\frac{v^2}{2} = \ln(t) - \ln(2) + \frac{9}{2}
+\]
+(see Section~\ref{sec:sov}). Therefore
+\[
+v(t) = \sqrt{9+2\ln\frac{t}{2}}.
+\]
+Finally, we obtain the solution
+\[
+x(t) = tv(t) = t\sqrt{9+2\ln\frac{t}{2}}.
+\]}
+
+\subsection*{Bernoulli's Equation}
+\index{Bernoulli's equation}
+
+Let $r,s:\R\rightarrow\R$ be continuous functions, and let $p\in\R$
+be a real number.  Then an equation of the form
+\begin{equation}
+\label{eq:bern1}
+\frac{dx}{dt} = r(t)x + s(t)x^p
+\end{equation}
+is called a {\em Bernoulli equation}.  For $p=0$ or $p=1$ the
+equation is linear and we can, in principle, find all the
+solutions by variation of parameters (see Chapter~\ref{C:LDE}).  
+Hence we assume that
+\[
+p\not= 0,1.
+\]
+The idea is to substitute $x(t)$ in such a way that also for these
+values of $p$ \Ref{eq:bern1} becomes linear in the new function $v(t)$.  
+We try the guess
+\[
+v(t) = x(t)^{1/\alpha},
+\]
+where we choose the real constant $\alpha\not= 0$ later to simplify
+the transformed equation.  Using the chain rule on $x(t) =
+v(t)^\alpha$, we compute
+\[
+\frac{dx}{dt} = \alpha v^{\alpha-1} \frac{dv}{dt}.
+\]
+Substitution into \Ref{eq:bern1} yields
+\[
+\alpha v^{\alpha-1} \frac{dv}{dt} = r(t)v^\alpha + s(t)v^{p\alpha}.
+\]
+Thus
+\[
+\frac{dv}{dt}  = \frac{1}{\alpha} r(t) v + 
+\frac{1}{\alpha} s(t) v^{p\alpha-\alpha+1}.
+\]
+To simplify this equation, choose the constant $\alpha$ so that
+$p\alpha-\alpha+1=0$; that is, set
+\[
+\alpha = \frac{1}{1-p}.
+\]
+Then we arrive at the {\em linear\/} equation
+\begin{equation}
+\label{eq:bern2}
+\frac{dv}{dt} = (1-p) r(t) v + (1-p) s(t),
+\end{equation}
+which we can, in principle, be solved by 
+variation of parameters\index{variation of parameters}.
+If this can be done, then we obtain a solution $x(t)$ of
+\Ref{eq:bern1} by setting 
+\[
+x(t) = (v(t))^{\frac{1}{1-p}}.
+\]
+If an initial condition $x(t_0)=x_0$ is specified in
+\Ref{eq:bern1},
+then we have to solve \Ref{eq:bern2} with the transformed initial
+condition
+$v(t_0)=x_0^{1/\alpha}=x_0^{1-p}$.
+
+\subsubsection*{An Example}
+Consider the initial value problem
+\[
+\begin{array}{rcl}
+\dps \frac{dx}{dt} & = &  3t^2 x + 3t^2x^{\frac{2}{3}}\\
+x(0) & = & 27.
+\end{array}
+\]
+{\rm The differential equation is a Bernoulli equation with
+\[
+r(t) = 3t^2,\quad s(t)=3t^2, \AND p=\frac{2}{3}.
+\]
+Hence we have to find a solution of the linear initial value
+problem (see \Ref{eq:bern2})
+\[
+\begin{array}{rcl}
+\dps \frac{dv}{dt} & = &  t^2 v + t^2 \\
+v(0) & = & 27^{1/3} = 3.
+\end{array}
+\]
+The solution to this differential equation can be obtained by variation of 
+parameters and is 
+\[
+v(t) = -1 +4 e^{t^3/3}.
+\]
+Therefore, a solution of the Bernoulli equation is given by
+\[
+x(t) = v(t)^{\frac{1}{1-p}} = \left(-1 +4 e^{t^3/3}\right)^3.
+\]}
+
+\EXER
+
+\TEXER
+
+\noindent In Exercises~\ref{c14.5.1} -- \ref{c14.5.5} decide whether the 
+given differential equation has homogeneous coefficients or is a Bernoulli 
+equation.
+\begin{exercise} \label{c14.5.1}
+$\dps \frac{dx}{dt} = \frac{x^2}{t^3}$.
+\end{exercise}
+\begin{exercise} \label{c14.5.2}
+$\dps \frac{dx}{dt} = t$.
+\end{exercise}
+\begin{exercise} \label{c14.5.4}
+$\dps \frac{dx}{dt} = \frac{\cos t}{x^4}\sqrt{t}+x^2$.
+\end{exercise}
+\begin{exercise} \label{c14.5.3}
+$\dps \frac{dx}{dt} = \frac{t^2}{\sqrt{x}}+x\sin t$.
+\end{exercise}
+\begin{exercise} \label{c14.5.5}
+$\dps \frac{dx}{dt} = \frac{x}{t} +\frac{\sqrt{t}}{\sqrt{x}}$.
+\end{exercise}
+
+\noindent In Exercises~\ref{c14.5.6} -- \ref{c14.5.9} solve the given initial 
+value problem by an appropriate solution technique.
+\begin{exercise} \label{c14.5.6}
+$\dps \frac{dx}{dt} = \sec\left(\frac{x}{t}\right)+\frac{x}{t}$ where
+$x(1)=\pi$.
+\end{exercise}
+\begin{exercise} \label{c14.5.7}
+$\dps \frac{dx}{dt} = x+x^2$ where $x(2)=1$.
+\end{exercise}
+\begin{exercise} \label{c14.5.8}
+$\dps \frac{dx}{dt} = -\frac{x}{t}-t^3 x^3$ where $x(1)=1$.
+\end{exercise}
+\begin{exercise} \label{c14.5.9}
+$\dps \frac{dx}{dt} = \frac{x(x+t)}{t^2}$ where $x(1)=1$.
+\end{exercise}
+
+\begin{exercise} \label{c14.5.10}
+We set $v(t) = x(t)^{1-p}$ to transform the Bernoulli equation 
+\Ref{eq:bern1} into the equation
+\[
+\frac{dv}{dt} = (1-p) r(t) v + (1-p) s(t).
+\]
+Now set $w(t) = v(\beta t)$ and show that $\beta$ can be chosen so that 
+$w(t)$ is a solution to the linear differential equation
+\[
+\frac{dw}{dt} = r\left(\frac{t}{1-p}\right) w + s\left(\frac{t}{1-p}\right).
+\]
+\end{exercise}
+
+
+\end{document}

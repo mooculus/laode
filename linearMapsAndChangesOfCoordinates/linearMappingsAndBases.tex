@@ -1,0 +1,408 @@
+\documentclass{ximera}
+
+\input{./preamble.tex}
+
+\title{Linear Mappings and Bases}
+
+\begin{document}
+\begin{abstract}
+\end{abstract}
+\maketitle
+
+  \label{Sect:linmap}
+
+The examples of linear mappings
+\index{linear!mapping} from $\R^n\to\R^m$ that we introduced in
+Section~\ref{S:linearity} were matrix mappings.  More precisely,
+let $A$ be an $m\times n$ matrix.  Then
+\[
+L_A(x)=Ax
+\]
+defines the linear mapping $L_A:\R^n\to\R^m$.  Recall that $Ae_j$
+is the $j^{th}$ column of $A$ (see Chapter~\ref{chap:matrices},
+Lemma~\ref{columnsA}); it follows that $A$ can be
+reconstructed from the vectors $Ae_1,\ldots,Ae_n$.  This remark
+implies (Chapter~\ref{chap:matrices}, Lemma~\ref{linequal}) that
+linear mappings of $\R^n$ to $\R^m$ are determined by their
+values on the standard basis $e_1, \ldots, e_n$.  Next we show
+that this result is valid in greater generality.  We begin by
+defining what we mean for a mapping between vector spaces to be
+linear.
+
+\begin{Def}  \label{D:linearV}
+Let $V$ and $W$ be vector spaces and let $L:V\to W$ be a mapping.  The map
+$L$ is {\em linear\/} if
+\begin{eqnarray*}
+L(u+v) & = & L(u) + L(v) \\
+L(cv) & = & cL(v)
+\end{eqnarray*}
+for all $u,v\in V$ and $c\in\R$.
+\end{Def} \index{linear}\index{vector!space}
+
+\subsubsection*{Examples of Linear Mappings}
+
+\noindent (a) Let $v\in\R^n$ be a fixed vector.  Use the
+dot product\index{dot product} to define the mapping
+$L:\R^n\to\R$ by
+\[
+L(x)= x\cdot v.
+\]
+Then $L$ is linear.  Just check that
+\[
+L(x+y) = (x+y)\cdot v = x\cdot v + y\cdot v = L(x) + L(y)
+\]
+for every vector $x$ and $y$ in $\R^n$ and
+\[
+L(cx) = (cx)\cdot v = c(x\cdot v) = cL(x)
+\]
+for every scalar $c\in\R$.
+
+\noindent (b) The map $L:\CCone\to\R$ defined by
+\[
+L(f) = f'(2)
+\]
+is linear.  Indeed,
+\[
+L(f+g) = (f+g)'(2) = f'(2) + g'(2) = L(f) + L(g).
+\]
+Similarly, $L(cf)=cL(f)$.
+
+\noindent (c) The map $L:\CCone\to\CCone$ defined by
+\[
+L(f)(t)=f(t-1)
+\]
+is linear.  Indeed,
+\[
+L(f+g)(t) = (f+g)(t-1) = f(t-1) + g(t-1) = L(f)(t) + L(g)(t).
+\]
+Similarly, $L(cf)=cL(f)$.  It may be helpful to compute $L(f)(t)$ when
+$f(t)=t^2-t+1$.  That is,
+\[
+L(f)(t) = (t-1)^2-(t-1)+1 = t^2-2t+1-t+1+1 = t^2-3t+3.
+\]
+
+
+\subsubsection*{Constructing Linear Mappings from Bases}
+
+\begin{thm} \label{L:linmapfrombasis}
+Let $V$ and $W$ be vector spaces.  Let $\{v_1,\ldots,v_n\}$ be a
+basis for $V$ and let $\{w_1,\ldots,w_n\}$ be $n$ vectors in $W$.
+Then there exists a unique linear map $L:V\to W$ such that $L(v_i)=w_i$.
+\end{thm}\index{linear!mapping!construction}
+
+\begin{proof} Let $v\in V$ be a vector.  Since $\Span\{v_1,\ldots,v_n\}=V$, we may
+write $v$ as
+\[
+v = \alpha_1v_1 + \cdots + \alpha_nv_n,
+\]
+where $\alpha_1,\ldots,\alpha_n$ in $\R$.   Moreover, $v_1,\ldots,v_n$
+are linearly independent, these scalars are uniquely defined.  More
+precisely, if
+\[
+\alpha_1v_1 + \cdots + \alpha_nv_n = \beta_1v_1 + \cdots + \beta_nv_n,
+\]
+then
+\[
+(\alpha_1-\beta_1)v_1 + \cdots + (\alpha_n-\beta_n)v_n = 0.
+\]
+Linear independence implies that $\alpha_j-\beta_j=0$; that is
+$\alpha_j=\beta_j$.   We can now define
+\begin{equation}  \label{e:v-coord}
+L(v) = \alpha_1 w_1+\cdots+\alpha_n w_n.
+\end{equation}
+
+We claim that $L$ is linear.  Let $\hat{v}\in V$ be another
+vector and let
+\[
+\hat{v} = \beta_1v_1+\cdots+\beta_nv_n.
+\]
+It follows that
+\[
+v+\hat{v} = (\alpha_1+\beta_1)v_1+\cdots+(\alpha_n+\beta_n)v_n,
+\]
+and hence by \Ref{e:v-coord} that
+\begin{eqnarray*}
+L(v+\hat{v}) & = &
+(\alpha_1+\beta_1)w_1+\cdots+(\alpha_n+\beta_n)w_n\\
+& = & (\alpha_1w_1+\cdots+\alpha_nw_n) +
+(\beta_1w_1+\cdots+\beta_nw_n)  \\
+& = & L(v) + L(\hat{v}).
+\end{eqnarray*}
+
+Similarly
+\begin{eqnarray*}
+L(cv) &  = & L( (c\alpha_1)v_1+\cdots +(c\alpha_n)v_n)\\
+& = & c(\alpha_1w_1+\cdots+\alpha_nw_n)\\
+& = & cL(v).
+\end{eqnarray*}
+Thus $L$ is linear.
+
+Let $M:V\to W$ be another linear mapping such that $M(v_i)=w_i$.
+Then
+\begin{eqnarray*}
+L(v) & = & L(\alpha_1v_1+\ldots +\alpha_nv_n)\\
+& = & \alpha_1w_1+\cdots+\alpha_nw_n \\
+& = & \alpha_1M(v_1) + \cdots +\alpha_nM(v_n)\\
+& = & M(\alpha_1v_1 + \cdots +\alpha_nv_n)\\
+& = & M(v).
+\end{eqnarray*}
+Thus $L=M$ and the linear mapping is uniquely defined.  \end{proof}
+
+
+There are two assertions made in Theorem~\ref{L:linmapfrombasis}.
+The first is that a linear map exists mapping $v_i$ to $w_i$.
+The second is that there is only one {\em linear\/} mapping
+that accomplishes this task.  If we drop the constraint that the
+map be linear, then many mappings may satisfy these conditions.
+For example, find a linear map from $\R\to\R$ that maps $1$ to $4$.
+There is only one: $y=4x$.  However there are many nonlinear maps
+that send $1$ to $4$.  Examples are $y=x+3$ and $y=4x^2$.
+
+\subsubsection*{Finding the Matrix of a Linear Map from $\R^n\to\R^m$
+Given by Theorem~\protect{\ref{L:linmapfrombasis}}}
+\index{linear!mapping!matrix}
+
+Suppose that $V=\R^n$ and $W=\R^m$.  We know that every linear
+map $L:\R^n\to\R^m$ can be defined as multiplication by an
+$m\times n$ matrix.  The question that we next address is:
+How can we find the matrix whose existence is guaranteed by
+Theorem~\ref{L:linmapfrombasis}?
+
+More precisely, let $v_1,\ldots,v_n$ be a basis for $\R^n$ and
+let $w_1,\ldots,w_n$ be vectors in $\R^m$.  We suppose that all
+of these vectors are row vectors.  Then we need to find
+an $m\times n$ matrix $A$ such that $Av_i^t=w_i^t$ for all $i$.
+We find $A$ as follows.  Let $v\in\R^n$ be a row vector.  Since
+the $v_i$ form a basis, there exist scalars $\alpha_i$ such that
+\[
+v=\alpha_1 v_1 + \cdots + \alpha_n v_n.
+\]
+In coordinates
+\begin{equation}  \label{e:v^t}
+v^t = (v_1^t|\cdots|v_n^t)\vect{\alpha}{n},
+\end{equation}
+where $(v_1^t|\cdots|v_n^t)$ is an $n\times n$
+invertible matrix\index{matrix!invertible}.
+By definition (see \Ref{e:v-coord})
+\[
+L(v) = \alpha_1 w_1 + \cdots + \alpha_n w_n.
+\]
+Thus the matrix $A$ must satisfy
+\[
+Av^t = (w_1^t|\cdots|w_n^t)\vect{\alpha}{n},
+\]
+where $(w_1^t|\cdots|w_n^t)$ is an $m\times n$ matrix.
+Using \Ref{e:v^t} we see that
+\[
+Av^t = (w_1^t|\cdots|w_n^t)(v_1^t|\cdots|v_n^t)\inv v^t,
+\]
+and
+\begin{equation}  \label{e:defA}
+A = (w_1^t|\cdots|w_n^t)(v_1^t|\cdots|v_n^t)\inv
+\end{equation}
+is the desired $m\times n$ matrix.
+
+\subsubsection*{An Example of a Linear Map from $\R^3$ to $\R^2$}
+
+As an example we illustrate Theorem~\ref{L:linmapfrombasis} and
+\Ref{e:defA} by defining a linear mapping from $\R^3$ to $\R^2$
+by its action on a basis.  Let
+\[
+v_1=(1,4,1)\quad v_2=(-1,1,1) \quad v_3=(0,1,0).
+\]
+We claim that $\{v_1,v_2,v_3\}$ is a basis of $\R^3$ and that
+there is a unique linear map for which $L(v_i)=w_i$ where
+\[
+w_1=(2,0) \quad w_2=(1,1) \quad w_3=(1,-1).
+\]
+
+We can verify that $\{v_1,v_2,v_3\}$ is a basis of $\R^3$ by
+showing that the matrix
+\[
+(v_1^t|v_2^t|v_3^t) = \left(\begin{array}{rrr}
+1 & -1 & 0  \\
+4 & 1 & 1  \\
+1 & 1 & 0  \end{array}\right)
+\]
+is invertible.  This can either be done in \Matlab using the
+{\tt inv} command or by hand by row reducing the matrix
+
+\[
+\left(\begin{array}{rrr|ccc}
+1 & -1 & 0 & 1 & 0 & 0 \\
+4 &  1 & 1 & 0 & 1 & 0 \\
+1 &  1 & 0 & 0 & 0 & 1  \end{array}\right)
+\]
+to obtain
+\[
+(v_1^t|v_2^t|v_3^t)\inv = \frac{1}{2}\left(\begin{array}{rrr}
+ 1 & 0 &  1 \\
+-1 & 0 &  1 \\
+-3 & 2 & -5
+\end{array}\right).
+\]
+Now apply \Ref{e:defA} to obtain
+\[
+A = \frac{1}{2} \left(\begin{array}{rrr} 2 & 1 & 1\\ 0 & 1 & -1
+\end{array}\right) \left(\begin{array}{rrr}
+ 1 & 0 &  1 \\
+-1 & 0 &  1 \\
+-3 & 2 & -5
+\end{array}\right) = \left(\begin{array}{rrr} -1 & 1 & -1 \\ 1 & -1 & 3
+\end{array}\right).
+\]
+As a check, verify by matrix multiplication that $Av_i=w_i$, as claimed.
+
+
+\subsection*{Properties of Linear Mappings}
+
+\begin{lemma} \label{L:compose}
+Let $U,V,W$ be vector spaces and $L:V\to W$ and $M:U\to V$ be linear maps.
+Then $L\compose M :U\to W$ is linear.
+\end{lemma}\index{composition!of linear mappings}
+
+\begin{proof} The proof of Lemma~\ref{L:compose} is identical to that of
+Chapter~\ref{chap:matrices}, Lemma~\ref{complin}. \end{proof}
+
+A linear map $L:V\to W$ is {\em invertible\/} \index{invertible} if there
+exists a linear map $M:W\to V$ such that $L\compose M:W\to W$ is the identity
+map on $W$ and $M\compose L:V\to V$ is the identity map on $V$.
+
+\begin{thm} \label{T:invertbasis}
+Let $V$ and $W$ be finite dimensional vector spaces and let $v_1,\ldots,v_n$
+be a basis\index{basis} for $V$.  Let $L:V\to W$ be a linear map.
+Then $L$ is invertible
+if and only if $w_1,\ldots,w_n$ is a basis for $W$ where $w_j=L(v_j)$.
+\end{thm}
+
+\begin{proof}  If $w_1,\ldots,w_n$ is a basis for $W$, then use
+Theorem~\ref{L:linmapfrombasis} to define a linear map $M:W\to V$ by
+$M(w_j)=v_j$.  Note that
+\[
+L\compose M(w_j)= L(v_j) =w_j.
+\]
+It follows by linearity (using the uniqueness part of
+Theorem~\ref{L:linmapfrombasis}) that $L\compose M$ is the identity of $W$.
+Similarly, $M\compose L$ is the identity map on $V$, and $L$ is invertible.
+
+Conversely, suppose that $L\compose M$ and $M\compose L$ are identity maps
+and that $w_j=L(v_j)$.  We must show that $w_1,\ldots,w_n$ is a basis.  We
+use Theorem~\ref{basis=span+indep} and verify separately that
+$w_1,\ldots,w_n$ are linearly independent and span $W$.
+
+If there exist scalars $\alpha_1,\ldots,\alpha_n$ such that
+\[
+\alpha_1w_1+\cdots +\alpha_nw_n = 0,
+\]
+then apply $M$ to both sides of this equation to obtain
+\[
+0=M(\alpha_1w_1+\cdots +\alpha_nw_n)=\alpha_1v_1+\cdots+\alpha_nv_n.
+\]
+But the $v_j$ are linearly independent.  Therefore, $\alpha_j=0$ and the
+$w_j$ are linearly independent.
+
+To show that the $w_j$ span $W$, let $w$ be a vector in $W$.  Since the $v_j$
+are a basis for $V$, there exist scalars $\beta_1,\ldots,\beta_n$ such that
+\[
+M(w) = \beta_1v_1+\cdots+\beta_nv_n.
+\]
+Applying $L$ to both sides of this equation yields
+\[
+w = L\compose M(w) = \beta_1w_1+\cdots+\beta_nw_n.
+\]
+Therefore, the $w_j$ span $W$.  \end{proof}
+
+\begin{cor}
+Let $V$ and $W$ be finite dimensional vector spaces.  Then there exists
+an invertible\index{invertible} linear map $L:V\to W$
+if and only if $\dim(V)=\dim(W)$.
+\end{cor}
+
+\begin{proof}  Suppose that $L:V\to W$ is an invertible linear map.  Let
+$v_1,\ldots,v_n$ be a basis for $V$ where $n=\dim(V)$.  Then
+Theorem~\ref{T:invertbasis} implies that $L(v_1),\ldots,L(v_n)$ is a basis
+for $W$ and $\dim(W)=n=\dim(V)$.
+
+Conversely, suppose that $\dim(V)=\dim(W)=n$.  Let $v_1,\ldots,v_n$ be a
+basis for $V$ and let $w_1,\ldots,w_n$ be a basis for $W$.  Using
+Theorem~\ref{L:linmapfrombasis} define the linear map $L:V\to W$ by
+$L(v_j)=w_j$.  Theorem~\ref{T:invertbasis} states that $L$ is invertible. \end{proof}
+
+\EXER
+
+\TEXER
+
+\begin{exercise} \label{c7.2.1}
+Use the method described above to construct a linear mapping $L$
+from $\R^3$ to $\R^2$ with $L(v_i)=w_i$, $i=1,2,3$, where
+\[
+v_1=(1,0,2)\quad v_2=(2,-1,1) \quad v_3=(-2,1,0)
+\]
+and
+\[
+w_1=(-1,0) \quad w_2=(0,1) \quad w_3=(3,1).
+\]
+\end{exercise}
+
+\begin{exercise}  \label{c7.2.2}
+Let ${\cal P}_n$ be the vector space of polynomials $p(t)$ of
+degree less than or equal to $n$.  Show that $\{1,t,t^2,\ldots,t^n\}$ is a
+basis for ${\cal P}_n$.
+\end{exercise}
+
+\begin{exercise}  \label{c7.2.2a}
+Show that
+\[
+\frac{d}{dt}:{\cal P}_3\to{\cal P}_2
+\]
+is a linear mapping.
+\end{exercise}
+\begin{exercise}  \label{c7.2.2b}
+Show that
+\[
+L(p) = \int_0^tp(s)ds
+\]
+is a linear mapping of ${\cal P}_2\to{\cal P}_3$.
+\end{exercise}
+\begin{exercise}  \label{c7.2.2c}
+Use Exercises~\ref{c7.2.2a}, \ref{c7.2.2b} and
+Theorem~\ref{L:linmapfrombasis} to show that
+\[
+\frac{d}{dt}\compose L:{\cal P}_2\to{\cal P}_2
+\]
+is the identity map.
+\end{exercise}
+
+\begin{exercise} \label{c7.2.3}
+Let $\C$ denote the set of complex numbers.  Verify that
+$\C$ is a two-dimensional vector space.  Show that $L:\C\to\C$
+defined by
+\[
+L(z) = \lambda z,
+\]
+where $\lambda=\sigma+i\tau$ is a linear mapping.
+\end{exercise}
+
+\begin{exercise} \label{c7.2.4}
+Let ${\cal M}(n)$ denote the vector space of $n\times n$
+matrices and let $A$ be an $n\times n$ matrix.  Let
+$L:{\cal M}(n)\to{\cal M}(n)$ be the mapping defined by
+$L(X)=AX-XA$ where $X\in{\cal M}(n)$.  Verify that $L$ is
+a linear mapping.  Show that the null space of $L$,
+$\{X\in{\cal M}:L(X)=0\}$, is a subspace consisting of all
+matrices that commute with $A$.
+\end{exercise}
+
+\begin{exercise} \label{c7.2.5}
+Let $L:\CCone\to\R$ be defined by $L(f) = \int_0^{2\pi}f(t)\cos(t)dt$
+for $f\in\CCone$.  Verify that $L$ is a linear mapping.
+\end{exercise}
+
+\begin{exercise} \label{c7.2.6}
+Let ${\cal P}$ be the vector space of polynomials in one variable
+$x$.  Define $L:{\cal P}\to {\cal P}$ by $L(p)(x)=\int_0^x(t-1)p(t)dt$.
+Verify that $L$ is a linear mapping.
+\end{exercise}
+
+
+\end{document}

@@ -1,0 +1,429 @@
+\documentclass{ximera}
+
+\input{./preamble.tex}
+
+\title{The Proof of the Main Theorem}
+
+\begin{document}
+\begin{abstract}
+\end{abstract}
+\maketitle
+
+ \label{S:5.6}
+
+We begin the proof of Theorem~\ref{basis=span+indep} with two
+lemmas on linearly independent and spanning sets.
+
+\begin{lemma}  \label{reducetoindep}
+Let $\{w_1,\ldots,w_k\}$ be a set of vectors in a vector space
+$V$ and let $W$ be the subspace spanned by these vectors.  Then
+there is a linearly independent subset of $\{w_1,\ldots,w_k\}$
+that also spans $W$.
+\end{lemma}\index{linearly!independent}
+
+\begin{proof} If $\{w_1,\ldots,w_k\}$ is linearly independent, then the
+lemma is proved.  If not, then the set $\{w_1,\ldots,w_k\}$ is
+linearly dependent.  If this set is linearly dependent, then at
+least one of the vectors is a linear combination of the others.
+By renumbering if necessary, we can assume that $w_k$ is a
+linear combination of $w_1,\ldots,w_{k-1}$; that is,
+\[
+w_k = a_1w_1 + \cdots + a_{k-1}w_{k-1}.
+\]
+Now suppose that $w\in W$.  Then
+\[
+w = b_1w_1 + \cdots + b_kw_k.
+\]
+It follows that
+\[
+w = (b_1+b_ka_1)w_1 + \cdots + (b_{k-1}+b_ka_{k-1})w_{k-1},
+\]
+and that $W=\Span\{w_1,\ldots,w_{k-1}\}$.  If the vectors
+$w_1,\ldots,w_{k-1}$ are linearly independent, then the proof of
+the lemma is complete.  If not, continue inductively until a
+linearly independent subset of the $w_j$ that also spans $W$ is
+found.  \end{proof}
+
+The important point in proving that linear independence together
+with spanning imply that we have a basis is discussed in the next
+lemma.
+
+\begin{lemma}  \label{lem:lindep}
+Let $W$ be an $m$-dimensional vector space and let $k>m$ be an integer.
+Then any set of $k$ vectors in $W$ is linearly dependent.
+\end{lemma} \index{linearly!dependent}
+
+\begin{proof} Since the dimension of $W$ is $m$ we know that
+this vector space can be written as $W=\Span\{v_1,\ldots,v_m\}$.
+Moreover, Lemma~\ref{reducetoindep} implies that the vectors
+$v_1,\ldots,v_m$ are linearly independent.  Suppose that
+$\{w_1,\ldots,w_k\}$ is another set of vectors where $k>m$.
+We have to show that the vectors $w_1,\ldots,w_k$ are linearly
+dependent; that is, we must show that there exist scalars
+$r_1,\ldots,r_k$ not all of which are zero that satisfy
+\begin{equation} \label{independence1}
+r_1w_1 + \cdots + r_kw_k = 0.
+\end{equation}
+We find these scalars by solving a system of linear equations, as
+we now show.
+
+The fact that $W$ is spanned by the vectors $v_j$ implies that
+\begin{eqnarray*}
+w_1 & = & a_{11}v_1 + \cdots + a_{m1}v_m\ \\
+w_2 & = & a_{12}v_1 + \cdots + a_{m2}v_m\ \\
+ & \vdots & \\\
+w_k & = & a_{1k}v_1 + \cdots + a_{mk}v_m.
+\end{eqnarray*}
+It follows that $r_1w_1 + \cdots + r_kw_k$ equals
+\[
+\begin{array}{ll}
+r_1(a_{11}v_1 + \cdots + a_{m1}v_m) & +  \\
+r_2(a_{12}v_1 + \cdots + a_{m2}v_m) & + \cdots + \\
+r_k(a_{1k}v_1 + \cdots + a_{mk}v_m) &
+\end{array}
+\]
+Rearranging terms leads to the expression:
+\begin{equation}   \label{e:r1v1etc}
+\begin{array}{ll}
+(a_{11}r_1 + \cdots + a_{1k}r_k)v_1\ & + \\
+(a_{21}r_1 + \cdots + a_{2k}r_k)v_2\ & + \cdots + \\
+(a_{m1}r_1 + \cdots + a_{mk}r_k)v_m. &
+\end{array}
+\end{equation}
+Thus, \Ref{independence1} is valid if and only if \Ref{e:r1v1etc}
+sums to zero.  Since the set $\{v_1,\ldots,v_m\}$ is linearly
+independent, \Ref{e:r1v1etc} can equal zero if and only if
+\begin{eqnarray*}
+a_{11}r_1 + \cdots + a_{1k}r_k & = & 0\ \\
+a_{21}r_1 + \cdots + a_{2k}r_k & = & 0\ \\
+          & \vdots &   \\
+a_{m1}r_1 + \cdots + a_{mk}r_k & = & 0.
+\end{eqnarray*}
+Since $m<k$, Chapter~\ref{lineq}, Theorem~\ref{number} implies that
+this system of homogeneous linear equations always has a nonzero
+solution $r=(r_1,\ldots,r_k)$ --- from which it follows that the
+$w_i$ are linearly dependent.  \end{proof}
+
+\begin{cor}  \label{basis<n}
+Let $V$ be a vector space of dimension $n$ and let $\{u_1,\ldots,u_k\}$ be a 
+linearly independent set of vectors in $V$.  Then $k\le n$.
+\end{cor} \index{linearly!independent}
+\index{dimension}\index{vector!space}
+
+\begin{proof} If $k>n$ then Lemma~\ref{lem:lindep} implies that
+$\{u_1,\ldots,u_k\}$ is linearly dependent.  Since we have
+assumed that this set is linearly independent, it follows that
+$k\leq n$. \end{proof}
+
+\vspace{0.1in}
+
+\begin{proof}[Theorem~\ref{basis=span+indep}]
+Suppose that ${\cal B}=\{w_1,\ldots,w_k\}$ is a basis for $W$.
+By definition, ${\cal B}$ spans $W$ and $k=\dim W$.  We must
+show that ${\cal B}$ is linearly independent.  Suppose ${\cal B}$
+is linearly dependent, then Lemma~\ref{reducetoindep} implies
+that there is a proper subset of ${\cal B}$ that spans $W$ (and
+is linearly independent). This contradicts the fact that as a
+basis ${\cal B}$ has the smallest number of elements of any
+spanning set for $W$.
+
+Suppose that ${\cal B}=\{w_1,\ldots,w_k\}$ both spans $W$ and is
+linearly independent.  Linear independence and Corollary~\ref{basis<n}
+imply that $k\leq\dim W$.  Since, by definition, any spanning set
+of $W$ has at least $\dim W$ vectors, it follows that $k\geq\dim W$.
+Thus, $k = \dim W$ and  ${\cal B}$ is a basis.   \end{proof}
+
+\subsection*{Extending Linearly Independent Sets to Bases} \index{basis}
+
+Lemma~\ref{reducetoindep} leads to one approach to finding
+bases.  Suppose that the subspace $W$ is spanned by a finite
+set of vectors $\{w_1,\ldots,w_k\}$.  Then, we can throw out
+vectors one by one until we arrive at a linearly independent
+subset of the $w_j$.  This subset is a basis for $W$.
+
+We now discuss a second approach to finding a basis for a
+nonzero subspace $W$ of a finite dimensional vector space $V$.
+
+\begin{lemma}  \label{extendindep}
+Let $\{u_1,\ldots,u_k\}$ be a linearly independent set of
+vectors in a vector space $V$ and assume that
+\[
+u_{k+1}\not\in\Span\{u_1,\ldots,u_k\}.
+\]
+Then $\{u_1,\ldots,u_{k+1}\}$ is also a linearly independent
+set.
+\end{lemma} \index{linearly!independent}
+
+\begin{proof}  Let $r_1,\ldots,r_{k+1}$ be scalars such that
+\begin{equation}  \label{rk+1}
+r_1u_1 + \cdots + r_{k+1}u_{k+1} = 0.
+\end{equation}
+To prove independence, we need to show that all $r_j=0$.
+Suppose $r_{k+1}\neq 0$.  Then we can solve \Ref{rk+1} for
+\[
+u_{k+1} = -\frac{1}{r_{k+1}}(r_1u_1+\cdots +r_ku_k),
+\]
+which implies that $u_{k+1}\in \Span\{u_1,\ldots,u_k\}$.  This
+contradicts the choice of $u_{k+1}$.  So $r_{k+1}=0$ and
+\[
+r_1u_1 + \cdots + r_ku_k = 0.
+\]
+Since $\{u_1,\ldots,u_k\}$ is linearly independent, it follows
+that $r_1=\cdots =r_k=0$.  \end{proof}
+
+The second method for constructing a basis is:
+\index{basis!construction}
+\begin{itemize}
+\item        Choose a nonzero vector $w_1$ in $W$.
+\item If $W$ is not spanned by $w_1$, then choose a vector $w_2$
+that is not on the line spanned by $w_1$.
+\item        If $W\neq\Span\{w_1,w_2\}$, then choose a vector
+$w_3\not\in
+\Span\{w_1,w_2\}$.
+\item        If $W\neq\Span\{w_1,w_2,w_3\}$, then choose a vector
+$w_4\not\in
+\Span\{w_1,w_2,w_3\}$.
+\item Continue until a spanning set\index{spanning set} for $W$ is
+found.  This set is a basis for $W$.
+\end{itemize}
+
+We now justify this approach to finding bases for subspaces.
+Suppose that $W$ is a subspace of a finite dimensional vector
+space $V$.  For example, suppose that $W\subset\R^n$. Then
+our approach to finding a basis of $W$ is as follows.  Choose a
+nonzero vector $w_1\in W$.  If $W=\Span\{w_1\}$, then we are
+done.  If not, choose a vector $w_2\in W\setmin\Span\{w_1\}$.
+It follows from Lemma~\ref{extendindep} that $\{w_1,w_2\}$ is
+linearly independent.  If $W=\Span\{w_1,w_2\}$, then
+Theorem~\ref{basis=span+indep} implies that $\{w_1,w_2\}$ is
+a basis for $W$, $\dim W=2$, and we are done.  If not, choose
+$w_3\in W\setmin\Span\{w_1,w_2\}$ and $\{w_1,w_2,w_3\}$ is
+linearly independent.  The finite dimension of $V$ implies that
+continuing inductively must lead to a spanning set of linear
+independent vectors for $W$ --- which by
+Theorem~\ref{basis=span+indep} is a basis. This discussion proves:
+\begin{cor}  \label{c:extendindependent}
+Every linearly independent subset of a finite dimensional vector
+space $V$ can be extended to a basis of $V$.
+\end{cor}
+
+
+\subsection*{Further consequences of Theorem~\ref{basis=span+indep}}
+
+We summarize here several important facts about dimensions.
+
+\begin{cor}  \label{dimensiondecreases}
+Let $W$ be a subspace of a finite dimensional vector space $V$.
+\begin{itemize}
+\item[(a)]   Suppose that $W$ is a proper subspace\index{subspace!proper}.
+Then $\dim W < \dim V$\index{dimension}.
+\item[(b)]   Suppose that $\dim W = \dim V$.  Then $W=V$.
+\end{itemize}
+\end{cor}
+
+\begin{proof}
+(a) Let $\dim W = k$ and let $\{w_1,\ldots,w_k\}$ be a basis for
+$W$.  Since $W$ is a proper subspace of $V$, there is a vector
+$w\in V\setmin W$.  It follows from Lemma~\ref{extendindep} that
+$\{w_1,\ldots,w_k,w\}$ is a linearly independent set.  Therefore,
+Corollary~\ref{basis<n} implies that $k+1\le n$.
+
+(b) Let $\{w_1,\ldots,w_k\}$ be a basis for $W$.
+Theorem~\ref{basis=span+indep} implies that this set is linearly
+independent.  If $\{w_1,\ldots,w_k\}$ does not span $V$, then it
+can be extended to a basis as above.  But then $\dim V > \dim W$,
+which is a contradiction.  \end{proof}
+
+\begin{cor} \label{C:dim=n}
+Let ${\cal B}=\{w_1,\ldots,w_n\}$ be a set of $n$ vectors in an
+$n$-dimensional vector space $V$.  Then the following are equivalent:
+\begin{itemize}
+\item[(a)]  ${\cal B}$ is a spanning set of $V$, \index{span}
+\item[(b)]  ${\cal B}$ is a basis for $V$, and \index{basis}
+\item[(c)] ${\cal B}$ is a linearly independent set.
+\index{linearly!independent}
+\end{itemize}
+\end{cor}
+
+\begin{proof}    By definition, (a) implies (b) since a basis is a spanning
+set with the number of vectors equal to the dimension of the space.
+Theorem~\ref{basis=span+indep} states that a basis is a linearly
+independent set; so (b) implies (c). If ${\cal B}$ is a linearly
+independent set of $n$ vectors, then it spans a subspace $W$ of
+dimension $n$.  It follows from Corollary~\ref{dimensiondecreases}(b)
+that $W=V$ and that (c) implies (a).  \end{proof}
+
+
+\subsubsection*{Subspaces of $\R^3$}
+\index{$\R^3$!subspaces}
+
+We can now classify all subspaces of $\R^3$.  They are:  the origin, lines
+through the origin, planes through the origin, and $\R^3$.  All of these
+sets were shown to be subspaces in Example~\ref{EX:subspaces}(a--c).
+
+To verify that these sets are the only subspaces of $\R^3$, note that
+Theorem~\ref{basis=span+indep} implies that proper subspaces of $\R^3$ have
+dimension equal either to one or two. (The zero dimensional subspace is the
+origin and the only three dimensional subspace is $\R^3$ itself.)  One
+dimensional subspaces of $\R^3$ are spanned by one nonzero vector and are just
+lines through the origin.  See Example~\ref{EX:subspaces}(b).  We claim that
+all two dimensional subspaces are planes through the origin.
+
+Suppose that $W\subset\R^3$ is a subspace spanned by two non-collinear vectors
+$w_1$ and $w_2$.\index{collinear}  We show that $W$ is a plane \index{plane}
+through the origin using results in Chapter~\ref{lineq}.  Observe that there
+is a vector $N=(N_1,N_2,N_3)$ perpendicular to $w_1=(a_{11},a_{12},a_{13})$
+and $w_2=(a_{21},a_{22},a_{23})$.  Such a vector $N$ satisfies the two linear
+equations:
+\begin{eqnarray*}
+w_1\cdot N & = & a_{11}N_1 + a_{12}N_2 + a_{13}N_3 = 0 \\
+w_2\cdot N & = & a_{21}N_1 + a_{22}N_2 + a_{23}N_3 = 0.
+\end{eqnarray*}
+Chapter~\ref{lineq}, Theorem~\ref{number} implies that a system of two linear
+equations in three unknowns has a nonzero solution.  Let $P$ be the plane
+perpendicular \index{perpendicular} to $N$ that contains the origin.  We show
+that $W=P$ and hence that the claim is valid.
+
+The choice of $N$ shows that the vectors $w_1$ and $w_2$ are both in $P$. In
+fact, since $P$ is a subspace it contains every vector in $\Span\{w_1,w_2\}$.
+Thus $W\subset P$.  If $P$ contains just one additional vector $w_3\in\R^3$
+that is not in $W$, then the span of $w_1,w_2,w_3$ is three dimensional and
+$P=W=\R^3$.
+
+
+
+\EXER
+
+\TEXER
+
+
+
+\noindent In Exercises~\ref{c5.7.1a} -- \ref{c5.7.1c} you are
+given a pair of vectors $v_1,v_2$ spanning a subspace of $\R^3$.
+Decide whether that subspace is a line or a plane through the
+origin.  If it is a plane, then compute a vector $N$ that is
+perpendicular to that plane.
+\begin{exercise} \label{c5.7.1a}
+$v_1=(2,1,2) \AND v_2=(0,-1,1)$.
+\end{exercise}
+\begin{exercise} \label{c5.7.1b}
+$v_1=(2,1,-1) \AND v_2=(-4,-2,2)$.
+\end{exercise}
+\begin{exercise} \label{c5.7.1c}
+$v_1=(0,1,0) \AND v_2=(4,1,0)$.
+\end{exercise}
+
+\begin{exercise} \label{c5.7.2}
+The pairs of vectors
+\[
+     v_1=(-1,1,0) \AND v_2=(1,0,1)
+\]
+span a plane $P$ in $\R^3$.  The pairs of vectors
+\[
+        w_1=(0,1,0) \AND w_2=(1,1,0)
+\]
+span a plane $Q$ in $\R^3$.  Show that $P$ and $Q$
+are different and compute the subspace of $\R^3$ that
+is given by the intersection $P\cap Q$.
+\end{exercise}
+
+\begin{exercise} \label{c5.6.1}
+Let $A$ be a $7\times 5$ matrix with $\rank(A)=r$.\index{rank}
+\begin{itemize}
+\item[(a)]	What is the largest value that $r$ can have?
+\item[(b)]	Give a condition equivalent to the system of
+	equations $Ax=b$ having a solution.
+\item[(c)]	What is the dimension of the null space of $A$?
+\item[(d)]	If there is a solution to $Ax=b$, then how many
+parameters are needed to describe the set of all solutions?
+\end{itemize}
+\end{exercise}
+
+\begin{exercise} \label{c5.6.2}
+Let
+\[
+A=\left(\begin{array}{rrrr} 1 & 3 & -1 & 4\\ 2& 1 & 5 & 7\\ 3 & 4 & 4 & 11
+\end{array}\right).
+\]
+\begin{itemize}
+\item[(a)] Find a basis for the subspace ${\cal C}\subset\R^3$ spanned by the
+columns of $A$.
+\item[(b)] Find a basis for the subspace ${\cal R}\subset\R^4$ spanned by the
+rows of $A$.
+\item[(c)] What is the relationship between $\dim {\cal C}$ and
+$\dim {\cal R}$?
+\end{itemize}
+\end{exercise}
+
+
+\begin{exercise} \label{c5.6.3}
+Show that the vectors
+\[
+v_1=(2,3,1) \AND v_2=(1,1,3)
+\]
+are linearly independent.   Show that the span of $v_1$ and $v_2$
+forms a plane in $\R^3$ by showing that every linear combination
+ is the solution to a single linear equation.  Use this equation
+to determine the normal vector $N$ to this plane.  Verify
+Lemma~\ref{extendindep} by verifying directly that $v_1,v_2,N$
+are linearly independent vectors.
+\end{exercise}
+
+\begin{exercise}  \label{c5.6.3A}
+Let $W$ be an infinite dimensional subspace of the vector space $V$.
+Show that $V$ is infinite dimensional.
+\end{exercise}
+
+
+\CEXER
+
+\begin{exercise} \label{c5.6.4}
+Consider the following set of vectors
+\[
+w_1 = (2, -2, 1), \quad
+w_2 = (-1, 2, 0), \quad
+w_3 = (3, -2, \lambda), \quad
+w_4 = (-5, 6, -2),
+\]
+where $\lambda$ is a real number.
+\begin{itemize}
+\item[(a)] Find a value for $\lambda$ such that the
+dimension of $\Span\{w_1,w_2,w_3,w_4\}$ is three. Then decide
+whether $\{w_1,w_2,w_3\}$ or $\{w_1,w_2,w_4\}$ is a basis for
+$\R^3$.
+\item[(b)] Find a value for $\lambda$ such that the
+dimension of $\Span\{w_1,w_2,w_3,w_4\}$ is two.
+\end{itemize}
+\end{exercise}
+
+\begin{exercise} \label{c5.6.5}
+Find a basis for $\R^5$ as follows.  Randomly choose vectors $x_1,x_2\in\R^5$
+by typing {\tt x1 = rand(5,1)} and {\tt x2 = rand(5,1)}.  Check that these
+vectors are linearly independent.  If not, choose another pair of vectors
+until you find a linearly independent set.  Next choose a vector $x_3$ at
+random and check that $x_1,x_2,x_3$ are linearly independent.  If not,
+randomly choose another vector for $x_3$. Continue until you have five
+linearly independent vectors --- which by a dimension count must be a
+basis and span $\R^5$.  Verify this comment by using \Matlab
+to write the vector
+\[
+\left(\begin{array}{r} 2 \\ 1 \\ 3\\ -2 \\ 4 \end{array}\right)
+\]
+as a linear combination of $x_1,\ldots,x_5$.
+\end{exercise}
+
+\begin{exercise} \label{c5.6.6}
+Find a basis for the subspace of $\R^5$ spanned by
+\begin{equation*}
+\begin{array}{rcl}
+u_1 & = & (1,1,0,0,1) \\
+u_2 & = & (0,2,0,1,-1)  \\
+u_3 & = & (0,-1,1,0,2)   \\
+u_4 & = & (1,4,1,2,1)  \\
+u_5 & = & (0,0,2,1,3).
+\end{array}
+\end{equation*}
+\end{exercise}
+
+
+\end{document}

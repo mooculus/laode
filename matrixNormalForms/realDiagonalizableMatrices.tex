@@ -1,0 +1,376 @@
+\documentclass{ximera}
+
+\input{./preamble.tex}
+
+\title{Real Diagonalizable Matrices}
+
+\begin{document}
+\begin{abstract}
+\end{abstract}
+\maketitle
+
+ 
+\label{S:RDM}
+
+An $n\times n$ matrix is {\em real diagonalizable\/}
+\index{real diagonalizable} if it is similar \index{similar} to a
+diagonal matrix\index{matrix!diagonal}.  More precisely, 
+an $n\times n$ matrix $A$ is
+real diagonalizable if there exists an invertible $n\times n$
+matrix S such that
+\[
+D=S\inv AS
+\]
+is a diagonal matrix.  In this section we investigate when a
+matrix is diagonalizable.  In this discussion we assume that all
+matrices have real entries.
+
+We begin with the observation that not all matrices are real
+diagonalizable.  We saw in Example~\ref{E:triangular} that the
+diagonal entries of the diagonal matrix $D$ are the eigenvalues
+of $D$. Theorem~\ref{T:similareigen} states that similar
+matrices have the same eigenvalues.  Thus if a matrix is real
+diagonalizable, then it must have real eigenvalues.  It follows,
+for example, that the $2\times 2$ matrix 
+\[
+\mattwo{0}{-1}{1}{0}
+\]
+is not real diagonalizable, since its eigenvalues are $\pm i$. 
+
+However, even if a matrix $A$ has real eigenvalues, it need not
+be diagonalizable.  For example, the only matrix similar to the
+identity matrix $I_n$ is the identity matrix itself.  To verify
+this point, calculate
+\[
+S\inv I_n S = S\inv S = I_n.
+\]
+Suppose that $A$ is a matrix all of whose eigenvalues are equal
+to $1$.  If $A$ is similar to a diagonal matrix $D$, then $D$
+must have all of its eigenvalues equal to $1$.  Since the
+identity matrix is the only diagonal matrix with all eigenvalues
+equal to $1$, $D=I_n$.  So, if $A$ is similar to a diagonal
+matrix, it must itself be the identity matrix.  Consider,
+however, the $2\times 2$ matrix
+\[
+A=\mattwo{1}{1}{0}{1}.
+\]
+Since $A$ is triangular, it follows that both eigenvalues of $A$
+are equal to $1$.  Since $A$ is not the identity matrix, it
+cannot be diagonalizable. More generally, if $N$ is a nonzero
+strictly upper triangular $n\times n$ matrix, then the matrix
+$I_n+N$ is not diagonalizable.  \index{matrix!strictly upper
+triangular}
+
+These examples show that complex eigenvalues are always
+obstructions to real diagonalization and multiple real eigenvalues
+are sometimes obstructions to diagonalization.  Indeed, 
+
+\begin{thm}  \label{T:diagsimple}
+Let $A$ be an $n\times n$ matrix with $n$ distinct real
+eigenvalues.  
+Then $A$ is real diagonalizable\index{real diagonalizable}.
+\end{thm}  \index{eigenvalue}\index{eigenvalue!real!distinct}
+
+There are two ideas in the proof of Theorem~\ref{T:diagsimple}, and 
+they are summarized in the following lemmas.
+
+\begin{lemma} \label{L:simpleeigen}
+Let $\lambda_1,\ldots,\lambda_k$ be distinct real eigenvalues
+for an $n\times n$ matrix $A$.  Let $v_j$ be eigenvectors
+associated with the eigenvalue $\lambda_j$.  Then
+$\{v_1,\ldots,v_k\}$ is a linearly independent set.
+\end {lemma} \index{eigenvector}\index{linearly!independent}
+
+\begin{proof} We prove the lemma by using induction on $k$.  When $k=1$
+the proof is simple, since $v_1\neq 0$.  So we can assume that
+$\{v_1,\ldots,v_{k-1}\}$ is a linearly independent set. 
+
+Let $\alpha_1,\ldots,\alpha_k$ be scalars such that
+\begin{equation}  \label{e:linindep}
+\alpha_1 v_1 + \cdots + \alpha_k v_k = 0.
+\end{equation}
+We must show that all $\alpha_j=0$.
+
+Begin by multiplying both sides of \Ref{e:linindep} by $A$, to
+obtain: 
+\begin{eqnarray}
+0 & = & A(\alpha_1 v_1 + \cdots + \alpha_k v_k) \nonumber \\
+& = & \alpha_1 Av_1 + \cdots + \alpha_k Av_k \label{e:linother}\\
+& = & \alpha_1 \lambda_1 v_1 + \cdots + \alpha_k \lambda_k v_k.\nonumber
+\end{eqnarray}
+
+Now subtract $\lambda_k$ times \Ref{e:linindep} from \Ref{e:linother},
+to obtain:
+\[
+\alpha_1(\lambda_1-\lambda_k)v_1 + \cdots +
+\alpha_{k-1}(\lambda_{k-1}-\lambda_k)v_{k-1} = 0.
+\]
+Since $\{v_1,\ldots,v_{k-1}\}$ is a linearly independent set, it
+follows that 
+\[
+\alpha_j(\lambda_j-\lambda_k)=0,
+\]
+for $j=1,\ldots,k-1$.  Since all of the eigenvalues are
+distinct, $\lambda_j-\lambda_k\neq 0$ and $\alpha_j=0$ for
+$j=1,\ldots,k-1$. Substituting this information into
+\Ref{e:linindep} yields $\alpha_k v_k=0$.  Since $v_k\neq 0$, 
+$\alpha_k$ is also equal to zero.  \end{proof}
+
+\begin{lemma}  \label{L:eigenv-diag}
+Let $A$ be an $n\times n$ matrix.  Then $A$ is real diagonalizable if
+and only if $A$ has $n$ real linearly independent 
+eigenvectors\index{eigenvector!linearly independent}.
+\end{lemma}  \index{real diagonalizable}
+
+\begin{proof}  Suppose that $A$ has $n$ linearly independent eigenvectors 
+$v_1,\ldots,v_n$.  Let $\lambda_1,\ldots,\lambda_n$ be the 
+corresponding eigenvalues of $A$; that is, $Av_j=\lambda_jv_j$.
+Let $S=(v_1|\cdots|v_n)$ be the $n\times n$ matrix whose columns are the 
+eigenvectors $v_j$.  We claim that $D=S\inv AS$ is a diagonal matrix.
+Compute
+\[
+D=S\inv AS=S\inv A(v_1|\cdots|v_n)=S\inv(Av_1|\cdots|Av_n)=
+S\inv(\lambda_1v_1|\cdots|\lambda_nv_n).
+\]
+It follows that 
+\[
+D=(\lambda_1S\inv v_1|\cdots|\lambda_nS\inv v_n).
+\]
+Note that 
+\[
+S\inv v_j=e_j,
+\]
+since
+\[
+Se_j = v_j.
+\]
+Therefore,
+\[
+D= (\lambda_1e_1|\cdots|\lambda_ne_n)
+\]
+is a diagonal matrix.  
+
+Conversely, suppose that $A$ is a real diagonalizable matrix.  Then there
+exists an invertible matrix $S$ such that $D=S\inv AS$ is diagonal.  Let
+$v_j = Se_j$.  We claim that $\{v_1,\ldots,v_n\}$ is a linearly independent 
+set of eigenvectors of $A$.
+
+Since $D$ is diagonal, $De_j=\lambda_je_j$ for some real number $\lambda_j$. 
+It follows that
+\[
+Av_j = SDS\inv v_j = SDS\inv Se_j = SDe_j = \lambda_j Se_j = \lambda_jv_j.
+\]  
+So $v_j$ is an eigenvector of $A$.  Since the matrix $S$ is invertible, its
+columns are linearly independent.  Since the columns of $S$ are $v_j$, the
+set $\{v_1,\ldots,v_n\}$ is a linearly independent set of eigenvectors of
+$A$, as claimed. \end{proof}
+
+
+
+\begin{proof}[Theorem~\ref{T:diagsimple}] Let
+$\lambda_1,\ldots,\lambda_n$ be the distinct eigenvalues of 
+$A$ and let $v_1,\ldots,v_n$ be the corresponding eigenvectors.
+Lemma~\ref{L:simpleeigen} implies that $\{v_1,\ldots,v_n\}$ is 
+a linearly independent set in $\R^n$ and therefore a basis.
+Lemma~\ref{L:eigenv-diag} implies that $A$ is diagonalizable.  \end{proof}
+
+\subsection*{Diagonalization Using MATLAB}
+\index{diagonalization!in \protect\Matlab}
+
+Let
+\begin{equation*}
+A= \left( \begin{array}{rrr} -6 & 12 & 4 \\
+ 8 & -21 & -8 \\
+  -29 & 72 & 27 \end{array} \right).
+\end{equation*}
+We use \Matlab to answer the questions:  Is $A$ real diagonalizable 
+and, if it is, can we find the matrix $S$ such that $S\inv AS$ is diagonal?
+We can find the eigenvalues of $A$ by typing {\tt eig(A)}. \Matlabp's
+response is:
+\begin{verbatim}
+ans =
+   -2.0000
+   -1.0000
+    3.0000
+\end{verbatim}
+Since the eigenvalues of $A$ are real and distinct, 
+Theorem~\ref{T:diagsimple} states that $A$ can be diagonalized.  
+That is, there is a matrix $S$ such that 
+\[
+S\inv AS = \left(\begin{array}{rrr} -1 & 0 & 0 \\ 0 & -2 & 0\\
+0 & 0 & 3 \end{array}\right)
+\]
+The proof of Lemma~\ref{L:eigenv-diag} tells us how to find the 
+matrix $S$.  We need to find the eigenvectors $v_1,v_2,v_3$ 
+associated with the eigenvalues $-1,-2,3$, respectively.  Then 
+the matrix $(v_1|v_2|v_3)$ whose columns are the eigenvectors is 
+the matrix $S$. To verify this construction we first find the 
+eigenvectors of $A$ by typing
+\begin{verbatim}
+v1 = null(A+eye(3));
+v2 = null(A+2*eye(3));
+v3 = null(A-3*eye(3));
+\end{verbatim} 
+Now type {\tt S = [v1 v2 v3]} to obtain
+\begin{verbatim}
+S =
+    0.8729    0.7071         0
+    0.4364    0.0000    0.3162
+   -0.2182    0.7071   -0.9487
+\end{verbatim}
+Finally, check that $S\inv AS$ is the desired diagonal matrix by 
+typing {\tt inv(S)*A*S}\index{\computer!inv} to obtain
+\begin{verbatim}
+ans =
+   -1.0000    0.0000         0
+    0.0000   -2.0000   -0.0000
+    0.0000         0    3.0000
+\end{verbatim}
+
+It is cumbersome to use the 
+{\tt null}\index{\computer!null} command to find 
+eigenvectors and \Matlab has been preprogrammed to do these
+computations automatically.  We can use the {\tt eig} command 
+to find the eigenvectors and eigenvalues of a matrix $A$, as 
+follows.  Type
+\begin{verbatim}
+[S,D] = eig(A)
+\end{verbatim}\index{\computer!eig}
+and \Matlab responds with 
+\begin{verbatim}
+S =
+   -0.7071    0.8729   -0.0000
+   -0.0000    0.4364   -0.3162
+   -0.7071   -0.2182    0.9487
+ 
+D = 
+   -2.0000         0         0
+         0   -1.0000         0
+         0         0    3.0000
+\end{verbatim}
+The matrix $S$ is the transition matrix\index{matrix!transition} 
+whose columns are the 
+eigenvectors of $A$ and the matrix $D$ is a diagonal matrix whose 
+$j^{th}$ diagonal entry is the eigenvalue of $A$ corresponding to 
+the eigenvector in the $j^{th}$ column of $S$.
+
+
+\EXER
+
+\TEXER
+
+\begin{exercise} \label{c10.3.1}
+Let $A=\mattwo{0}{3}{3}{0}$.  
+\begin{itemize}
+\item[(a)]  Find the eigenvalues and eigenvectors of $A$.
+\item[(b)]  Find an invertible matrix $S$ such that $S\inv AS$ is a 
+diagonal matrix $D$.  What is $D$?
+\end{itemize}
+\end{exercise}
+
+\begin{exercise} \label{c10.3.2}
+The eigenvalues of 
+\[
+A=\left(\begin{array}{rrr} -1 & 2 & -1\\ 3& 0 & 1 \\ -3 & -2 & -3 \end{array}
+\right)
+\]
+are $2,-2,-4$.  Find the eigenvectors of $A$ for each of these eigenvalues and 
+find a $3\times 3$ invertible matrix $S$ so that $S\inv AS$ is diagonal.
+\end{exercise} 
+
+\begin{exercise} \label{c10.3.3}
+Let
+\[
+A=\left(\begin{array}{rrr} -1 & 4 & -2 \\ 0 & 3 & -2 \\ 0 & 4 & -3 \end{array}
+\right).
+\]
+Find the eigenvalues and eigenvectors of $A$, and find an invertible  
+matrix $S$ so that $S\inv AS$ is diagonal.
+\end{exercise}
+
+\begin{exercise} \label{c10.3.4}
+Let $A$ and $B$ be similar $n\times n$ matrices.
+\begin{itemize}
+\item[(a)]  Show that if $A$ is invertible, then $B$ is invertible.
+\item[(b)]  Show that $A+A\inv$ is similar to $B+B\inv$.
+\end{itemize}
+\end{exercise}
+
+\begin{exercise} \label{c10.3.5}
+Let $A$ and $B$ be $n\times n$ matrices.  Suppose that $A$ is real 
+diagonalizable and that $B$ is similar to $A$.  Show that $B$ is 
+real diagonalizable.
+\end{exercise}
+
+\begin{exercise} \label{c10.3.6}
+Let $A$ be an $n\times n$ real diagonalizable matrix. Show that $A+\alpha I_n$
+is also real diagonalizable.
+\end{exercise}
+
+\begin{exercise} \label{c10.3.6A}
+Let $A$ be an $n\times n$ matrix with a real eigenvalue $\lambda$ and 
+associated eigenvector $v$.  Assume that all other eigenvalues of $A$ are
+different from $\lambda$.  Let $B$ be an $n\times n$ matrix that commutes
+with $A$; that is, $AB=BA$.  Show that $v$ is also an eigenvector for $B$.
+\end{exercise}
+
+\begin{exercise} \label{c10.3.6B}
+Let $A$ be an $n\times n$ matrix with distinct real eigenvalues and let $B$ 
+be an $n\times n$ matrix that commutes with $A$.  Using the result of
+Exercise~\ref{c10.3.6A}, show that there is a matrix $S$ that simultaneously
+diagonalizes $A$ and $B$; that is, $S\inv AS$ and $S\inv BS$ are both
+diagonal matrices.
+\end{exercise}
+
+\begin{exercise} \label{c10.3.6C}
+Let $A$ be an $n\times n$ matrix all of whose eigenvalues equal $\pm 1$. Show
+that if $A$ is diagonalizable, the $A^2=I_n$.
+\end{exercise}
+
+\begin{exercise} \label{c10.3.6D}
+Let $A$ be an $n\times n$ matrix all of whose eigenvalues equal $0$ and $1$. 
+Show that if $A$ is diagonalizable, the $A^2=A$.
+\end{exercise}
+
+\CEXER
+
+\begin{exercise} \label{c10.3.7}
+Consider the $4\times 4$ matrix
+\begin{equation*}
+C =\left(\begin{array}{rrrr}  12 & 48 & 68 & 88 \\ -19 & -54 & -57 & -68\\
+22 & 52 & 66 & 96 \\ -11 & -26 & -41 & -64 \end{array}\right).
+\end{equation*}
+Use \Matlab to show that the eigenvalues of $C$ are real and distinct.
+Find a matrix $S$ so that $S\inv CS$ is diagonal.  
+\end{exercise}
+
+\noindent In Exercises~\ref{c10.3.8a} -- \ref{c10.3.8b} use \Matlab 
+to decide whether or not the given matrix is real diagonalizable.
+\begin{exercise} \label{c10.3.8a}
+\begin{equation*}
+A=\left(
+\begin{array}{rrrr}
+      -2.2 & 4.1&-1.5&-0.2\\
+      -3.4 & 4.8&-1.0& 0.2\\
+      -1.0 & 0.4& 1.9& 0.2\\
+     -14.5 &17.8&-6.7& 0.6
+\end{array}
+\right).
+\end{equation*}
+\end{exercise}
+\begin{exercise} \label{c10.3.8b}
+\begin{equation*}
+B=\left(
+\begin{array}{rrrrr}
+      1.9 & 2.2 & 1.5 & -1.6 & -2.8\\
+      0.8 & 2.6 & 1.5 & -1.8 & -2.0\\
+      2.6 & 2.8 & 1.6 & -2.1 & -3.8\\
+      4.8 & 3.6 & 1.5 & -3.1 & -5.2\\
+     -2.1 & 1.2 & 1.7 & -0.2 &  0.0
+\end{array} \right).
+\end{equation*}
+\end{exercise}
+
+
+
+\end{document}

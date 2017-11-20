@@ -1,0 +1,224 @@
+\documentclass{ximera}
+
+\input{./preamble.tex}
+
+\title{Proof of Jordan Normal Form}
+
+\begin{document}
+\begin{abstract}
+\end{abstract}
+\maketitle
+
+
+\label{S:Jordan} \index{Jordan normal form}
+
+We prove the Jordan normal form theorem under the assumption that the 
+eigenvalues of $A$ are all real.  The proof for matrices having both real and 
+complex eigenvalues proceeds along similar lines.
+
+Let $A$ be an $n\times n$ matrix, let $\lambda_1,\ldots,\lambda_s$ be the
+distinct eigenvalues of $A$, and let $A_j = A-\lambda_jI_n$.
+
+\begin{lemma}  \label{L:commute}
+The linear mappings $A_i$ and $A_j$ commute.
+\end{lemma}
+
+\begin{proof} Just compute
+\[
+A_iA_j = (A-\lambda_iI_n)(A-\lambda_jI_n)= A^2-\lambda_iA-\lambda_jA+
+\lambda_i\lambda_jI_n,
+\]
+and
+\[
+A_jA_i = (A-\lambda_jI_n)(A-\lambda_iI_n)= A^2-\lambda_jA-\lambda_iA+
+\lambda_j\lambda_iI_n.
+\]
+So $A_iA_j=A_jA_i$, as claimed.  \end{proof}
+
+Let $V_j$ be the generalized eigenspace corresponding to eigenvalue 
+$\lambda_j$. 
+
+\begin{lemma}  \label{L:Ajinvertible}
+$A_i:V_j\to V_j$ is invertible when $i\neq j$.
+\end{lemma}
+
+\begin{proof}  Recall from Lemma~\ref{L:Jordan} that $V_j=\nulls(A_j^k)$ for some 
+$k\ge 1$.  Suppose that $v\in V_j$.  We first verify that $A_iv$ is also in 
+$V_j$.  Using Lemma~\ref{L:commute}, just compute 
+\[
+A_j^kA_iv = A_iA_j^kv = A_i0 = 0.
+\]
+Therefore, $A_iv\in\nulls(A_j^k)=V_j$.
+ 
+Let $B$ be the linear mapping $A_i|V_j$.  It follows from
+Chapter~\ref{C:LMCC}, Theorem~\ref{T:nsr} that
+\[
+{\rm nullity}(B) +\dim{\rm range}(B) = \dim(V_j).
+\]
+Now $w\in\nulls(B)$ if $w\in V_j$ and $A_iw=0$.  Since
+$A_iw = (A-\lambda_iI_n)w = 0$, it follows that $Aw = \lambda_iw$.  Hence 
+\[
+A_jw = (A-\lambda_jI_n)w = (\lambda_i-\lambda_j)w
+\]
+and
+\[
+A_j^kw = (\lambda_i-\lambda_j)^kw.
+\]
+Since $\lambda_i\neq\lambda_j$, it follows that $A_j^kw=0$ only when $w=0$.
+Hence the nullity of $B$ is zero.  We conclude that
+\[
+\dim{\rm range}(B) = \dim(V_j).
+\]
+Thus, $B$ is invertible, since the domain and range of $B$ are the same
+space.  \end{proof}
+
+\begin{lemma}  \label{L:independentVj}
+Nonzero vectors taken from different generalized eigenspaces $V_j$ are 
+linearly independent.  More precisely, if $w_j\in V_j$ and 
+\[
+w = w_1 + \cdots + w_s = 0,
+\]
+then $w_j=0$.  
+\end{lemma}
+
+\begin{proof} Let $V_j=\nulls(A_j^{k_j})$ for some integer $k_j$.  Let
+$C=A_2^{k_2}\compose\cdots\compose A_s^{k_s}$. Then 
+\[
+0 = Cw = Cw_1,
+\]
+since $A_j^{k_j}w_j=0$ for $j=2,\ldots,s$.   But Lemma~\ref{L:Ajinvertible} 
+implies that $C|V_1$ is invertible.  Therefore, $w_1=0$.  Similarly, all of 
+the remaining $w_j$ have to vanish.  \end{proof}
+
+\begin{lemma}  \label{L:spanVj}
+Every vector in $\R^n$ is a linear combination of vectors in the generalized 
+eigenspaces $V_j$.
+\end{lemma}
+
+\begin{proof}  Let $W$ be the subspace
+of $\R^n$ consisting of all vectors of the form $z_1+\cdots +z_s$ where 
+$z_j\in V_j$.  We need to verify that $W=\R^n$.  Suppose that $W$ is a 
+proper subspace.  Then choose a basis $w_1,\ldots,w_t$ of $W$ and extend
+this set to a basis ${\cal W}$ of $\R^n$.  In this basis the matrix
+$[A]_{\cal W}$ has block form, that is,
+\[
+[A]_{\cal W} = \mattwo{A_{11}}{A_{12}}{0}{A_{22}},
+\]
+where $A_{22}$ is an $(n-t)\times(n-t)$ matrix.  The eigenvalues of $A_{22}$ 
+are eigenvalues of $A$.  Since all of the distinct eigenvalues and 
+eigenvectors of $A$ are accounted for in $W$ (that is, in $A_{11}$), we have 
+a contradiction.  So $W=\R^n$, as claimed.  \end{proof}
+
+\begin{lemma}  \label{L:basisunion}
+Let ${\cal V}_j$ be a basis for the generalized eigenspaces $V_j$ and let 
+${\cal V}$ be the union of the sets ${\cal V}_j$.  Then ${\cal V}$ is a basis
+for $\R^n$.
+\end{lemma}
+
+\begin{proof}  We first show that the vectors in ${\cal V}$ span $\R^n$.  It follows 
+from Lemma~\ref{L:spanVj} that every vector in $\R^n$ is a linear combination
+of vectors in $V_j$.  But each vector in $V_j$ is a linear combination of
+vectors in ${\cal V}_j$.  Hence, the vectors in ${\cal V}$ span $\R^n$.
+
+Second, we show that the vectors in ${\cal V}$ are linearly independent. 
+Suppose that a linear combination of vectors in ${\cal V}$ sums to zero.  
+We can write this sum as 
+\[
+w_1 + \cdots + w_s = 0,
+\]
+where $w_j$ is the linear combination of vectors in ${\cal V}_j$. 
+Lemma~\ref{L:independentVj} implies that each $w_j=0$.  Since ${\cal V}_j$ is
+a basis for $V_j$, it follows that the coefficients in the linear
+combinations $w_j$ must all be zero.  Hence, the vectors in ${\cal V}$ are 
+linearly independent.
+
+Finally, it follows from Theorem~\ref{basis=span+indep} of 
+Chapter~\ref{C:vectorspaces} that ${\cal V}$ is a basis.  \end{proof}
+
+\begin{lemma} \label{L:diagVj}
+In the basis ${\cal V}$ of $\R^n$ guaranteed by Lemma~\ref{L:basisunion}, the 
+matrix $[A]_{\cal V}$ is block diagonal, that is,
+\[
+[A]_{\cal V} = \left(\begin{array}{ccc} A_{11} & 0 & 0  \\ 0 & \ddots & 0 \\
+0 & 0 & A_{ss} \end{array}\right),
+\]
+where all of the eigenvalues of $A_{jj}$ equal $\lambda_j$.
+\end{lemma}
+
+\begin{proof}  It follows from Lemma~\ref{L:commute} that $A:V_j\to V_j$.  Suppose
+that $v_j\in {\cal V}_j$.   Then $Av_j$ is in $V_j$ and $Av_j$ is a linear
+combination of vectors in ${\cal V}_j$.   The block diagonalization of 
+$[A]_{\cal V}$ follows.  Since $V_j=\nulls(A_j^{k_j})$, it follows that all
+eigenvalues of $A_{jj}$ equal $\lambda_j$.   \end{proof}
+
+Lemma~\ref{L:diagVj} implies that to prove the Jordan normal form theorem, 
+we must find a basis in which the matrix $A_{jj}$ is in Jordan normal form.  
+So, without loss of generality, we may assume that all eigenvalues of $A$ 
+equal $\lambda_0$, and then find a basis in which $A$ is in Jordan normal 
+form.  Moreover, we can replace $A$ by the matrix $A-\lambda_0I_n$, a
+matrix all of whose eigenvalues are zero.  So, without loss of generality, we 
+assume that $A$ is an $n\times n$ matrix all of whose eigenvalues are zero.  
+We now sketch the remainder of the proof of Theorem~\ref{T:Jordan}.
+
+Let $k$ be the smallest integer such that $\R^n = \nulls(A^k)$ and let 
+\[
+s=\dim\nulls(A^k)-\dim\nulls(A^{k-1})>0.
+\]
+Let $z_1,\ldots,z_{n-s}$ be 
+a basis for $\nulls(A^{k-1})$ and extend this set to a basis for 
+$\nulls(A^k)$ by adjoining the linearly independent vectors $w_1,\ldots,w_s$.  
+Let 
+\[
+W_k=\Span\{w_1,\ldots,w_s\}.
+\]
+It follows that $W_k\cap\nulls(A^{k-1})=\{0\}$.  
+
+We claim that the $ks$ vectors ${\cal W}=\{w_{j\ell}=A^\ell(w_j)\}$ where 
+$0\le\ell\le {k-1}$ and $1\le j\le s$ are linearly independent.  We can write 
+any linear combination of the vectors in ${\cal W}$ as $y_k+\cdots+y_1$, 
+where $y_j\in A^{k-j}(W_k)$.  Suppose that 
+\[
+y_k+\cdots+y_1=0.
+\]
+Then $A^{k-1}(y_k+\cdots+y_1)= A^{k-1}y_k=0$.  Therefore, $y_k$ is in $W_k$ 
+and in $\nulls(A^{k-1})$.  Hence, $y_k=0$.  Similarly, 
+$A^{k-2}(y_{k-1}+\cdots+y_1)= A^{k-2}y_{k-1}=0$.  But $y_{k-1}=A\hat{y}_k$ 
+where $\hat{y}_k\in W_k$ and $\hat{y}_k\in\nulls(A^{k-1})$.  Hence, 
+$\hat{y}_k=0$ and $y_{k-1}=0$.  Similarly, all of the $y_j=0$.  It follows 
+from $y_j=0$ that a linear combination of the vectors 
+$A^{k-j}(w_1),\ldots,A^{k-j}(w_s)$ is zero; that is
+\[
+0 = \beta_1A^{k-j}(w_1) + \cdots + \beta_sA^{k-j}(w_s) =
+A^{k-j}(\beta_1w_1+\cdots+\beta_sw_s).
+\]
+Applying  $A^{j-1}$ to this expression, we see that 
+\[
+\beta_1w_1+\cdots+\beta_sw_s
+\]
+is in $W_k$ and in the $\nulls(A^{k-1})$.  Hence, 
+\[
+\beta_1w_1+\cdots+\beta_sw_s = 0.
+\]
+Since the $w_j$ are linearly independent, each $\beta_j=0$, thus verifying 
+the claim.
+
+Next, we find the largest integer $m$ so that 
+\[
+t=\dim\nulls(A^m)-\dim\nulls(A^{m-1})>0.
+\]
+Proceed as above.  Choose a basis for $\nulls(A^{m-1})$ and extend to a basis 
+for $\nulls(A^m)$ by adjoining the vectors $x_1,\ldots,x_t$.  Adjoin the $mt$ 
+vectors $A^\ell x_j$ to the set ${\cal V}$ and verify that these vectors are 
+all linearly independent.  And repeat the process.  Eventually, we arrive at 
+a basis for $\R^n=\nulls(A^k)$.  
+
+In this basis the matrix $[A]_{\cal V}$ is block diagonal; indeed, each of 
+the blocks is a Jordan block, since 
+\[
+A(w_{j\ell}) = \left\{\begin{array}{cl}w_{j(\ell-1)} & 0<\ell\le k-1\\ 0 & 
+\ell=1 \end{array}\right. .
+\]
+Note the resemblance with \Ref{e:Ndef}.
+
+
+\end{document}

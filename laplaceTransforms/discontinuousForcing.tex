@@ -1,0 +1,354 @@
+\documentclass{ximera}
+
+\input{./preamble.tex}
+
+\title{Discontinuous Forcing}
+
+\begin{document}
+\begin{abstract}
+\end{abstract}
+\maketitle
+
+ \label{S:13.4}
+
+
+In Section~\ref{S:resonance} we saw how to find solutions to a second 
+order ordinary differential equation modeling the dynamics of a periodically
+forced undamped spring\index{spring!undamped!periodically forced}.  
+In particular, we studied equation \Ref{eq:uspf}, a variant of 
+which is reproduced here:
+\begin{equation}  \label{eq:ivH1}
+\begin{array}{rcl}
+   \ddot{x} + 4x & = & g(t) \\
+    x(0) & = & 1 \\
+    \dot{x}(0) & = & 0,
+\end{array}
+\end{equation}
+where $g(t)=\cos(at)$.
+
+We now assume that for a certain period of time there is no external 
+force\index{external force}
+acting on the spring and that, at some point, the situation changes. 
+After that time the spring is subjected to an external forcing term.  
+Specifically, we study the solution of \Ref{eq:ivH1} where $g(t)$ is 
+assumed to have the simplest type of forcing with these properties, 
+that is,  
+\begin{equation}  \label{eq:Heavy1}
+g(t) = H_1(t). 
+\end{equation}
+So until time $t=1$ there is no force on the spring, and after time $t=1$
+there is a unit force acting on the spring.
+
+The first step in solving the initial value problem \Ref{eq:ivH1} is to 
+apply the Laplace transform to both sides of the equation to obtain:
+\[
+s^2{\cal L}[x]-s + 4{\cal L}[x] = {\cal L}[H_1] = \frac{1}{s}e^{-s}.
+\]
+Here we have used the initial conditions $x(0)=1$ and $\dot{x}(0)=0$.
+
+In the second step we solve this equation for ${\cal L}[x]$ and obtain: 
+\[
+{\cal L}[x] = \frac{1}{s^2+4}\left( \frac{1}{s}e^{-s}+s\right)
+=\frac{1}{s(s^2+4)}e^{-s}+\frac{s}{s^2+4}.
+\]
+This result is simplified by using partial fractions to obtain:
+\[
+\frac{1}{s(s^2+4)}=\frac{1}{4}\left(\frac{1}{s}-\frac{s}{s^2+4}\right).
+\]
+Therefore,
+\[
+{\cal L}[x] = \frac{1}{4}\left(\frac{1}{s}e^{-s}\right) -
+\frac{1}{4}\frac{s}{s^2+4}e^{-s} + \frac{s}{s^2+4}.
+\]
+
+In the third step we use the inverse Laplace transform to solve for $x(t)$. 
+In particular,
+\[
+x = \frac{1}{4}{\cal L}\inv\left[\frac{1}{s}e^{-s}\right] - 
+\frac{1}{4}{\cal L}\inv\left[\frac{s}{s^2+4}e^{-s}\right] + 
+{\cal L}\inv\left[\frac{s}{s^2+4}\right].
+\]
+Using Table~\ref{tab:Laplist} we obtain
+\[
+x(t) = \frac{1}{4}H_1(t) - 
+\frac{1}{4}{\cal L}\inv\left[\frac{s}{s^2+4}e^{-s}\right](t) + \cos(2t).
+\]
+It remains to find the inverse Laplace transform of $\frac{s}{s^2+4}e^{-s}$.  
+This calculation can be done using Proposition~\ref{prop:eHcLap2}, and we 
+obtain
+\begin{eqnarray*}
+x(t) & = & \frac{1}{4}H_1(t) - \frac{1}{4}H_1(t)\cos(2(t-1)) + \cos(2t) \\
+& = & \frac{1}{4}H_1(t)(1-\cos(2(t-1))) + \cos(2t).
+\end{eqnarray*}
+Note that the function 
+\[
+H_1(t)(1-\cos(2(t-1)))
+\]
+is differentiable, even though the step function $H_1(t)$ is discontinuous.
+See Exercise~\ref{Ex:cont}.
+
+\subsubsection*{An Example with Impulse Forcing}
+
+We are now in a position to solve initial value problems having forcing 
+functions that are impulse functions.   Indeed, as an example we solve
+\begin{equation}  \label{eq:delta1}
+\begin{array}{rcl}
+\dot x + x & = & \delta_2(t)\\
+x(0) & = & 1,
+\end{array}
+\end{equation}
+using Laplace transforms.  Indeed, an application of ${\cal L}$ to
+\Ref{eq:delta1} leads to
+\[
+s{\cal L}[x]-1 + {\cal L}[x] = e^{-2s},
+\]
+and therefore
+\[
+{\cal L}[x]=\frac{e^{-2s}+1}{s+1}=e^{-2s}\frac{1}{s+1}+\frac{1}{s+1}.
+\]
+Now we can use Proposition~\ref{prop:eHcLap2} combined with 
+Table~\ref{tab:Laplist} to see that
+\[
+x(t) = {\cal L}^{-1}\left[e^{-2s}\frac{1}{s+1}\right](t)+ 
+{\cal L}^{-1}\left[\frac{1}{s+1}\right](t) = 
+H_2(t)e^{-(t-2)} + e^{-t}.
+\]
+Not surprisingly, this solution has a jump discontinuity at $t=2$ (see 
+Figure~\ref{fig:delta1sol}); that is, the jump discontinuity occurs at 
+the time when the impulse force is applied.
+\begin{figure}[htb]
+           \centerline{%
+           \psfig{file=figures/d1sol.eps,width=2.8in}}
+           \caption{The solution of the initial value problem
+	   \protect\Ref{eq:delta1}.}
+           \label{fig:delta1sol}
+\end{figure}
+
+
+\subsection*{Grand Finale}
+
+We end this section by using Laplace transforms to solve the initial 
+value problem:
+\begin{equation}  \label{eq:lapendexam}
+\begin{array}{rcl}
+\ddot x + 4\dot x +5x  & = & \delta_1(t)+2H_3(t) \\
+x(0) & = & 0 \\
+\dot x(0) & = & 1.
+\end{array}
+\end{equation}
+When solving \Ref{eq:lapendexam} we use most of the techniques that we have 
+introduced so far.  
+
+Applying the Laplace transform to both sides of the differential
+equation in \Ref{eq:lapendexam} and using the initial conditions leads to
+\[
+s^2{\cal L}[x] -1 + 4s{\cal L}[x] + 5{\cal L}[x]=
+e^{-s} +2\frac{e^{-3s}}{s}.
+\]
+Solving this equation for the Laplace transform of $x$ yields
+\[
+{\cal L}[x] = \frac{e^{-s} +2\frac{e^{-3s}}{s}+1}{s^2+4s+5}
+= \frac{e^{-s}+1}{s^2+4s+5}+ \frac{2e^{-3s}}{s(s^2+4s+5)}.
+\]
+
+To find the inverse Laplace transform\index{Laplace transform!inverse}
+of this equation, we need to 
+compute the partial fraction expansion of 
+\[
+\frac{p(s)}{q(s)} = \frac{1}{s(s^2+4s+5)}.
+\]
+Defining {\tt p=[1]} and {\tt q=[1 4 5 0]} we use the 
+command {\tt [c,r] = residue(p,q)}\index{\computer!residue} to obtain 
+\begin{verbatim}
+c =
+  -0.1000 + 0.2000i
+  -0.1000 - 0.2000i
+   0.2000          
+r =
+  -2.0000 + 1.0000i
+  -2.0000 - 1.0000i
+        0          
+\end{verbatim}
+
+Hence the roots of $s^2+4s+5$ are $-2\pm i$, and we have
+\[
+\frac{1}{s(s^2+4s+5)} = \frac{-0.1 + 0.2i}{s-(-2+i)}+
+\frac{-0.1-0.2i}{s-(-2-i)}+\frac{0.2}{s}.
+\]
+We combination the complex conjugate terms by typing
+\begin{verbatim}
+[num,denom] = realform(c(1),r(1))
+\end{verbatim}\index{partial fractions!in \Matlab!{\tt realform}}
+and obtain
+\begin{verbatim}
+num =
+    -0.2000   -0.4000
+denom =
+     -2     1
+\end{verbatim}
+The partial fractions result is:
+\[
+\frac{1}{s(s^2+4s+5)} = -\frac{0.2(s+2)+0.4}{(s+2)^2+1}
++\frac{0.2}{s}.
+\]
+
+Now we can rewrite ${\cal L}[x]$ as
+\begin{eqnarray*}
+{\cal L}[x] &=& \frac{e^{-s}}{(s+2)^2+1}+ \frac{1}{(s+2)^2+1}\\
+&& +2e^{-3s}\left(-0.2\frac{s+2}{(s+2)^2+1}-0.4\frac{1}{(s+2)^2+1}
++0.2\frac{1}{s}\right).
+\end{eqnarray*}
+We use Proposition~\ref{prop:eHcLap1}(a) to see that
+\begin{eqnarray*}
+{\cal L}\inv\left[\frac{1}{(s+2)^2+1}\right]&=&
+e^{-2t}\sin(t)\\
+{\cal L}^{-1}\left[\frac{s+2}{(s+2)^2+1}\right]&=&
+e^{-2t}\cos(t),
+\end{eqnarray*}
+and Proposition~\ref{prop:eHcLap2}(b) to see that
+\begin{eqnarray*}
+{\cal L}^{-1}\left[e^{-s}\frac{1}{(s+2)^2+1}\right]&=&
+H_1(t)e^{-2(t-1)}\sin(t-1)\\
+{\cal L}^{-1}\left[e^{-3s}\frac{s+2}{(s+2)^2+1}\right]&=&
+H_3(t)e^{-2(t-3)}\cos(t-3)\\
+{\cal L}^{-1}\left[e^{-3s}\frac{1}{(s+2)^2+1}\right]&=&
+H_3(t)e^{-2(t-3)}\sin(t-3).
+\end{eqnarray*}
+Now we can write down the solution $x(t)$ as
+\begin{eqnarray*}
+x(t) &=& H_1(t)e^{-2(t-1)}\sin(t-1)+e^{-2t}\sin(t)\\
+&&-0.4 H_3(t)e^{-2(t-3)}\cos(t-3) -0.8 H_3(t)e^{-2(t-3)}\sin(t-3)
++0.4 H_3(t)\\
+&=& H_1(t)e^{-2(t-1)}\sin(t-1)+e^{-2t}\sin(t)\\
+&& -0.4 H_3(t)e^{-2(t-3)}(\cos(t-3)+2\sin(t-3))+0.4 H_3(t).
+\end{eqnarray*}
+The solution is shown in Figure~\ref{fig:lapallsol}.
+The two changes in the behavior of the solution occurring at 
+$t=1$ and at $t=3$ are readily observed.  
+\begin{figure}[htb]
+           \centerline{%
+           \psfig{file=figures/dallsol.eps,width=3.2in}}
+           \caption{The solution of the initial value problem
+           \protect\Ref{eq:lapendexam}.}
+           \label{fig:lapallsol}
+\end{figure}
+
+Note that the solution to \Ref{eq:lapendexam} tends asymptotically to 
+$x=0.4$  for large $t$.  This behavior can be explained as follows.  For large 
+$t$, equation \Ref{eq:lapendexam} becomes
+\[
+\ddot x + 4\dot x +5x = 2.
+\]
+The only equilibrium (or time independent solution) to this equation is
+$x(t)=0.4$, and each solution of \Ref{eq:lapendexam} tends to that equilibrium 
+for large $t$.
+
+
+\EXER
+
+\TEXER
+
+\begin{exercise}  \label{Ex:cont}
+Consider the function
+\[
+z(t) = H_1(t)(1-\cos(2(t-1))) = \left\{
+\begin{array}{cl} 0 & t \leq 1 \\ 1-\cos(2(t-1)) & t > 1. \end{array}\right.
+\]
+Show that $z(t)$ is continuous at $t=1$ by verifying that 
+\[
+\lim_{t\to 1^+}z(t) = \lim_{t\to 1^-}z(t).
+\]
+Show that $z(t)$ is differentiable and that $\dot{z}(1)=0$ by verifying that 
+\[
+\lim_{h\to 0^+} \frac{z(1+h)-z(1)}{h} = 0 = 
+\lim_{h\to 0^-} \frac{z(1+h)-z(1)}{h}
+\]
+\end{exercise}
+
+\begin{exercise} \label{c13.4.2}
+Reconfirm that the solution of the initial value problem
+\[
+\ddot x + 4 x=H_1(t),\quad x(0)=1,\quad \dot x(0)=0
+\]
+is given by
+\[
+x(t)=\frac{1}{4}H_1(t)(1-\cos(2(t-1))) + \cos(2t).
+\]
+Use the methods of Chapter \ref{C:LDE} and proceed as follows:
+\begin{itemize}
+\item[(a)] Find the solution $x_1(t)$ of the initial value problem
+\[
+\ddot x + 4 x=0,\quad x(0)=1,\quad \dot x(0)=0
+\]
+on the time interval $t\in[0,1]$.
+\item[(b)] Find the general solution $x_2(t)$ of the second order
+differential equation $\ddot x + 4 x=1$.
+\item[(c)] Adjust the parameters in $x_2(t)$ such that the function
+\[
+x(t)=\left\{ \begin{array}{l} x_1(t)\quad t\in[0,1]\\
+x_2(t) \quad t>1 \end{array}\right.
+\]
+is differentiable at $t=1$.
+\end{itemize}
+\end{exercise}
+
+
+
+\CEXER
+
+
+
+\begin{exercise} \label{c13.4.5}
+Use the \Matlab command {\tt ode45} to compute the solution of the grand 
+finale initial value problem \Ref{eq:lapendexam}.  
+More precisely, write \Ref{eq:lapendexam} as a nonautonomous first order 
+system of ODEs by setting $y=\dot{x}$ and obtaining
+\begin{equation*}
+\begin{array}{rcl}
+\dot{x} & = & y \\
+\dot{y} & = & -5x-4y+\delta_1(t)+2H_3(t).
+\end{array}
+\end{equation*}
+
+There is a numerical difficulty when attempting to compute delta functions. 
+A standard way around this difficulty is to approximate the Dirac delta 
+function $\delta_1(t)$ using \Ref{eq:deltah} with $h=0.01$.  We use the 
+\Matlab m-file {\tt f16\_4\_5.m} for the numerical computations:
+\begin{verbatim}
+function y = f16_4_5(t,x)
+   h = 0.01;
+y(1) = x(2);
+y(2) = -4*x(2)-5*x(1);
+if (abs(t-(1-h/2)) <= h/2)
+        y(2) = y(2) + 1/h;
+end
+if (t >= 3)
+        y(2) = y(2) + 2;
+end
+y = [y(1) y(2)]';
+\end{verbatim}\index{\computer!abs}
+
+Using {\tt ode45}\index{\computer!ode45} compute the solution on the 
+time interval $[0,8]$ using the command
+\begin{verbatim}
+[t,x] = ode45('f16_4_5',[0 8],[0,1]); 
+\end{verbatim}
+Plot the first component of {\tt x} by typing {\tt plot(t,x(:,1))} and observe 
+the difference between the numerically computed solution and the exact 
+solution, whose graph is plotted in Figure~\ref{fig:lapallsol}.
+
+Next, set the relative error tolerance {\tt 1e-8} using the command
+\begin{verbatim}
+options = odeset('RelTol',1e-8);
+\end{verbatim}
+and compute the solution using the command
+\begin{verbatim}
+[t,x] = ode45('f16_4_5',[0 8],[0,1],options); 
+\end{verbatim}
+Compare the results of this numerical integration with the theoretically exact 
+result in Figure~\ref{fig:lapallsol}.  Try to explain why the results differ 
+for different tolerances.
+\end{exercise}
+
+
+\end{document}

@@ -1,0 +1,229 @@
+\documentclass{ximera}
+
+\input{./preamble.tex}
+
+\title{Symmetric Matrices}
+
+\begin{document}
+\begin{abstract}
+\end{abstract}
+\maketitle
+
+
+\label{S:symmetric}
+
+Symmetric matrices have some remarkable properties that can be
+summarized by:
+\begin{thm}  \label{T:symmetricmat}
+Let $A$ be an $n\times n$ symmetric matrix\index{matrix!symmetric}.
+Then
+\begin{enumerate}
+\item[(a)] every eigenvalue\index{eigenvalue!of symmetric matrix}
+of $A$ is real, and
+\item[(b)] there is an orthonormal basis\index{basis!orthonormal}
+of $\R^n$ consisting of
+	eigenvectors of $A$.
+\end{enumerate}
+\end{thm}
+
+As a consequence of Theorem~\ref{T:symmetricmat}, let
+${\cal V}=\{v_1,\ldots,v_n\}$ be an orthonormal basis for $\R^n$
+consisting of eigenvectors of $A$.  Indeed, suppose
+\[
+Av_j = \lambda_jv_j
+\]
+where $\lambda_j\in\R$.  Note that
+\[
+Av_j\cdot v_i =  \left\{\begin{array}{rl} \lambda_j & \qquad i=j\\
+			0 & \qquad i\neq j \end{array}\right.
+\]
+It follows from \Ref{e:coordorthomat} that
+\[
+[A]_{\cal V}= \left(\begin{array}{ccc} \lambda_1 & & 0 \\  & \ddots & \\
+	0 &  & \lambda_n \end{array}\right)
+\]
+is a diagonal matrix.  So every symmetric matrix is similar to a diagonal
+matrix.
+
+\subsubsection*{Hermitian Inner Products}
+
+The proof of Theorem~\ref{T:symmetricmat} uses the {\em Hermitian inner
+product}\index{Hermitian inner product} --- a generalization of
+dot product\index{dot product} to complex vectors\index{vector!complex}.
+Let $v,w\in\C^n$ be two complex $n$-vectors.  Define
+\[
+\langle v,w \rangle = v_1\overline{w}_1 + \cdots + v_n\overline{w}_n.
+\]
+Note that the coordinates $w_i$ of the second vector enter this formula
+with a complex conjugate.  However, if $v$ and $w$ are real vectors, then
+\[
+\langle v,w \rangle = v\cdot w.
+\]
+A more compact notation for the Hermitian inner product is given by
+matrix multiplication\index{matrix!multiplication}.
+Suppose that $v$ and $w$ are column $n$-vectors.
+Then
+\[
+\langle v,w \rangle = v^t\overline{w}.
+\]
+
+The properties of the Hermitian inner product are similar to those of dot
+product.  We note three.  Let $c\in\C$ be a complex scalar.  Then
+\begin{eqnarray*}
+\langle v,v \rangle & = & ||v||^2\ge 0\\
+\langle cv,w \rangle & = & c\langle v,w \rangle \\
+\langle v,cw \rangle & = & \overline{c} \langle v,w \rangle
+\end{eqnarray*}
+Note the complex conjugation of the complex scalar $c$ in the previous
+formula.
+
+Let $C$ be a complex $n\times n$ matrix.  Then the main observation
+concerning Hermitian inner products that we shall use is:
+\[
+\langle Cv,w \rangle = \langle v,\overline{C}^tw \rangle.
+\]
+This fact is verified by calculating
+\[
+\langle Cv,w \rangle = (Cv)^t\overline{w} = (v^tC^t)\overline{w}
+= v^t(C^t\overline{w}) = v^t(\overline{\overline{C}^tw})
+= \langle v,\overline{C}^tw \rangle.
+\]
+So if $A$ is a $n\times n$ real symmetric matrix, then
+\begin{equation}   \label{e:symminv}
+\langle Av,w \rangle = \langle v,Aw \rangle,
+\end{equation}
+since $\overline{A}^t= A^t = A$.
+
+\begin{proof}[Theorem~\ref{T:symmetricmat}(a)]  Let $\lambda$
+be an eigenvalue of $A$ and let $v$ be the associated eigenvector. Since
+$Av=\lambda v$ we can use \Ref{e:symminv} to compute
+\[
+\lambda \langle v,v \rangle = \langle Av,v \rangle = \langle v,Av \rangle
+= \overline{\lambda} \langle v,v \rangle.
+\]
+Since $\langle v,v \rangle = ||v||^2 > 0$, it follows that
+$\lambda=\overline{\lambda}$ and $\lambda$ is real.  \end{proof}
+
+
+\begin{proof}[Theorem~\ref{T:symmetricmat}(b)]
+Let $A$ be a real symmetric $n\times n$ matrix.  We want to show that there
+is an orthonormal basis of $\R^n$ consisting of eigenvectors of $A$.  The
+proof proceeds inductively on $n$.   The theorem is trivially valid for
+$n=1$; so we assume that it is valid for $n-1$.
+
+Theorem~\ref{T:eigens} of Chapter~\ref{C:D&E} implies that $A$ has an 
+eigenvalue $\lambda_1$ and Theorem~\ref{T:symmetricmat}(a) states that 
+this eigenvalue is real.
+Let $v_1$ be a unit length eigenvector corresponding to the eigenvalue
+$\lambda_1$.  Extend $v_1$ to an orthonormal basis $v_1,w_2,\ldots,w_n$ of
+$\R^n$ and let $P=(v_1|w_2|\cdots|w_n)$ be the matrix whose columns are the
+vectors in this orthonormal basis.  Orthonormality and direct multiplication
+implies that
+\begin{equation}  \label{e:orthosym}
+P^tP=I_n.
+\end{equation}
+Therefore $P$ is invertible; indeed $P\inv=P^t$.
+
+Next, let
+\[
+B= P\inv AP.
+\]
+By direct computation
+\[
+Be_1 = P\inv APe_1 = P\inv Av_1 = \lambda_1 P\inv v_1=\lambda_1e_1.
+\]
+It follows that that $B$ has the form
+\[
+B = \mattwo{\lambda_1}{*}{0}{C}
+\]
+where $C$ is an $(n-1)\times (n-1)$ matrix.   Since $P\inv=P^t$, it follows
+that $B$ is a symmetric matrix; to verify this point compute
+\[
+B^t = (P^t AP)^t = P^t A^t (P^t)^t = P^tAP = B.
+\]
+It follows that
+\[
+B =\mattwo{\lambda_1}{0}{0}{C}
+\]
+where $C$ is a symmetric matrix.  By induction we can choose an orthonormal
+basis $z_2,\ldots,z_n$ in $\{0\}\times\R^{n-1}$ consisting of eigenvectors
+of $C$.  It follows that $e_1,z_2,\ldots,z_n$ is an orthonormal basis for
+$\R^n$ consisting of eigenvectors of $B$.
+
+Finally, let $v_j=P\inv z_j$ for $j=2,\ldots,n$.  Since $v_1=P\inv e_1$,
+it follows that  $v_1,v_2,\ldots,v_n$ is a basis of $\R^n$ consisting of
+eigenvectors of $A$.  We need only show that the $v_j$ form an orthonormal
+basis of $\R^n$.   This is done using \Ref{e:symminv}.  For notational
+convenience let $z_1=e_1$ and compute
+\[
+\langle v_i,v_j \rangle  =\langle P\inv z_i,P\inv z_j\rangle =
+\langle P^tz_i, P^tz_j \rangle = \langle z_i, PP^t z_j \rangle =
+\langle z_i,z_j \rangle,
+\]
+since $PP^t= I_n$.  Thus the vectors $v_j$ form an orthonormal basis since
+the vectors $z_j$ form an orthonormal basis.  \end{proof}
+
+
+
+
+\EXER
+
+\TEXER
+
+\begin{exercise} \label{c7.7.1}
+Let
+\[
+A = \mattwo{a}{b}{b}{d}
+\]
+be the general real $2\times 2$ symmetric matrix.
+\begin{itemize}
+\item[(a)]  Prove directly using the discriminant of the characteristic
+polynomial that $A$ has real eigenvalues.
+\item[(b)]  Show that $A$ has equal eigenvalues only if $A$ is a scalar
+multiple of $I_2$.
+\end{itemize}
+\end{exercise}
+
+\begin{exercise} \label{c7.7.2}
+Let
+\[
+A=\mattwo{1}{2}{2}{-2}.
+\]
+Find the eigenvalues and eigenvectors of $A$ and verify that the eigenvectors
+are orthogonal.
+\end{exercise}
+
+\CEXER
+
+\noindent In Exercises~\ref{exer:powita} -- \ref{exer:powitc}
+compute the eigenvalues and the eigenvectors of the 
+$2\times 2$ matrix.  Then load the matrix into the program {\sf map}
+\index{\computer!map} in \Matlab and iterate.  That is, choose an initial
+vector $v_0$ and use {\sf map} to compute $v_1=Av_0$, $v_2=Av_1$, \ldots.
+How does the result of iteration compare with the eigenvectors and
+eigenvalues that you have found?
+{\bf Hint:} You may find it convenient to use the feature {\sf Rescale} in
+the {\sf MAP Options}.  Then the norm of the vectors is rescaled to $1$
+after each use of the command {\sf Map} and the vectors $v_j$ will not
+escape from the viewing screen.
+\begin{exercise}  \label{exer:powita}
+$A=\mattwo{1}{3}{3}{1}$
+\end{exercise}
+\begin{exercise}  \label{exer:powitb}
+$B=\mattwo{11}{9}{9}{11}$
+\end{exercise}
+\begin{exercise}  \label{exer:powitc}
+$C=\mattwo{0.005}{-2.005}{-2.005}{0.005}$
+\end{exercise}
+
+\begin{exercise} \label{c7.7.3}
+Perform the same computational experiment as described in
+Exercises~\ref{exer:powita} -- \ref{exer:powitc} using the matrix
+$A=\mattwo{0}{2}{2}{0}$
+and the program {\sf map}.  How do your results differ from the results
+in those exercises and why?
+\end{exercise}
+
+
+
+\end{document}

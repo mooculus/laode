@@ -1,0 +1,375 @@
+\documentclass{ximera}
+
+\input{./preamble.tex}
+
+\title{Sinks, Saddles, and Sources}
+
+\begin{document}
+\begin{abstract}
+\end{abstract}
+\maketitle
+
+ \label{S:6.7}
+
+The qualitative theory of autonomous differential equations begins with
+the observation that many important properties of solutions to constant
+coefficient systems of differential equations
+\begin{equation} \label{e:C2}
+\frac{dX}{dt}=CX
+\end{equation}
+are unchanged by similarity.
+
+Begin by noting that the origin is always an equilibrium for \Ref{e:C2}
+and suppose that $C$ is a $2\times 2$ matrix.  The origin for \Ref{e:C2}
+is called a {\em sink\/}\index{sink} if the eigenvalues of $C$ both have
+negative real
+part and a {\em source\/}\index{source} if the eigenvalues both have
+positive real part.
+When $C$ has one eigenvalue of each sign, the origin is called a
+{\em saddle}\index{saddle}.
+
+Now suppose that $B$ is a $2\times 2$ matrix that is similar to $C$.
+Lemma~\ref{L:simdettr} of Chapter~\ref{Chap:Planar} states that $B$ and
+$C$ have the same eigenvalues.  It follows that if the origin is a saddle
+for \Ref{e:C2}, then it is a saddle for $\dot{X}=BX$.  Similar statements
+hold for sinks and sources.
+
+\subsection*{Asymptotic Stability}
+
+We now discuss asymptotic stability of the origin in linear systems.
+Recall from our discussion in Section~\ref{sec:UncoupledLS} 
+that the origin is {\em asymptotically stable\/} \index{stability!asymptotic}
+if every trajectory $X(t)$ beginning at an initial condition near the
+origin stays near $0$ for all positive $t$, and
+\[
+\lim_{t\to\infty}X(t) = 0.
+\]
+Recall also from Lemma~\ref{L:simsoln} of Chapter~\ref{Chap:Planar} that
+if $B=P\inv CP$, then $P\inv X(t)$ is a solution to $\dot{X}=BX$ whenever
+$X(t)$ is a solution to \Ref{e:C2}.  Since $P\inv$ is a matrix of constants
+that do not depend on $t$, it follows that
+\[
+\lim_{t\to\infty}X(t) = 0 \Longleftrightarrow \lim_{t\to\infty}P\inv X(t) = 0.
+\]
+So the origin is asymptotically stable for $\dot{X}=BX$ if and only if it is
+asymptotically stable for \Ref{e:C2}.  With this observation in hand, we
+prove that sinks are stable.
+
+\begin{thm}  \label{C:asympstlin}
+If the eigenvalues of $C$ have negative real part, then the origin
+is an asymptotically stable equilibrium\index{equilibrium} for \Ref{e:C2}.
+If one of the
+eigenvalues of $C$ has positive real part, then the origin is unstable.
+\end{thm}
+
+\begin{proof}  This proof is based on the closed form of solutions given in
+Section~\ref{S:6.5}.   The remark preceding this theorem states that we
+need only prove this theorem for differential equations up to similarity.
+
+\noindent (a) \quad If the eigenvalues $\lambda_1$ and $\lambda_2$ are real
+and there are two independent eigenvectors, then Chapter~\ref{Chap:Planar},
+Theorem~\ref{T:putinform} states that the matrix $C$ is similar to the
+diagonal matrix
+\[
+B = \mattwoc{\lambda_1}{0}{0}{\lambda_2}.
+\]
+The general solution to the differential equation $\dot{X}=BX$ is
+\[
+x_1(t) = \alpha_1e^{\lambda_1 t} \AND x_2(t) = \alpha_2e^{\lambda_2 t}.
+\]
+Since
+\[
+\lim_{t\to\infty}e^{\lambda_1 t} = 0  = \lim_{t\to\infty}e^{\lambda_2 t},
+\]
+when $\lambda_1$ and $\lambda_2$ are negative, it follows that
+\[
+\lim_{t\to\infty} X(t) = 0
+\]
+for all solutions $X(t)$, and the origin is asymptotically stable.  Note that
+if one of the eigenvalues, say $\lambda_1$, is positive then $x_1(t)$ will
+undergo exponential growth and the origin is unstable.
+
+\noindent (b) \quad If the eigenvalues of $C$ are the complex conjugates
+$\sigma\pm i\tau$ where $\tau\neq 0$, then Chapter~\ref{Chap:Planar},
+Theorem~\ref{T:putinform} states that after a similarity transformation
+\Ref{e:C2} has the form
+\[
+\dot{X} = \mattwo{\sigma}{-\tau}{\tau}{\sigma}X,
+\]
+and solutions for this equation have the form \Ref{e:exp0ev} of
+Chapter~\ref{Chap:Planar}, that is,
+\[
+X(t) = e^{\sigma t}
+\mattwo{\cos(\tau t)}{-\sin(\tau t)}{\sin(\tau t)}{\cos(\tau t)}X_0
+= e^{\sigma t}R_{\tau t}X_0,
+\]
+where $R_{\tau t}$ is a rotation matrix\index{rotation!matrix}
+(recall \Ref{e:rotmat} of
+Chapter~\ref{chap:matrices}).  It follows that as time evolves
+the vector $X_0$ is rotated about the origin and then expanded or contracted
+by the factor $e^{\sigma t}$.  So when $\sigma<0$, $\lim_{t\to\infty} X(t)=0$
+for all solutions $X(t)$.  Hence the origin is asymptotically stable.  Note
+that when $\sigma>0$ solutions spiral away from the origin.
+
+\noindent (c) \quad If the eigenvalues are both equal to $\lambda_1$
+and if there is only one independent eigenvector, then
+Chapter~\ref{Chap:Planar}, Theorem~\ref{T:putinform} states that after a
+similarity transformation \Ref{e:C2} has the form
+\[
+\dot{X} = \mattwo{\lambda_1}{1}{0}{\lambda_1}X,
+\]
+whose solutions are
+\[
+X(t) = e^{t\lambda}\mattwoc{1}{t}{0}{1} X_0
+\]
+using \Ref{e:expshear} of Chapter~\ref{Chap:Planar}. Note that the functions
+$e^{\lambda_1 t} \AND te^{\lambda_1 t}$ both have limits equal to zero as
+$t\to\infty$.  In the second case, use l'H\^{o}spital's rule and the
+assumption that $-\lambda_1>0$ to compute
+\[
+\lim_{t\to\infty} \frac{t}{e^{-\lambda_1 t}} =
+  -\lim_{t\to\infty} \frac{1}{\lambda_1 e^{-\lambda_1 t}} = 0.
+\]
+Hence $\lim_{t\to\infty} X(t) =0$ for all solutions $X(t)$ and the origin
+is asymptotically stable.  Note that initially $||X(t)||$ can grow since
+$t$ is increasing.  But eventually exponential decay wins out and solutions
+limit on the origin.   Note that solutions grow exponentially when
+$\lambda_1>0$.  \end{proof}
+
+It is instructive to note how the time series $x_1(t)$ damps down to the
+origin in the three cases listed in Theorem~\ref{C:asympstlin}.
+In Figure~\ref{F:oscil} we present the time series for the three
+coefficient matrices:
+\[
+C_1 = \mattwo{-2}{0}{0}{-1} \qquad
+C_2 = \mattwo{-1}{-55}{55}{-1} \qquad
+C_3 = \mattwo{-2}{1}{0}{-2}.
+\]
+In this figure, we can see the exponential decay to zero associated with the
+unequal real eigenvalues of $C_1$; the damped oscillation associated with the
+complex eigenvalues of $C_2$; and the initial growth of the time series due
+to the $te^{-2t}$ term followed by exponential decay to zero in the equal
+eigenvalue $C_3$ example.
+
+\begin{figure}[htb]
+           \centerline{%
+           \psfig{file=figures/expdamp.eps,width=2.2in}
+	   \psfig{file=figures/oscil.eps,width=2.2in}
+	   \psfig{file=figures/grdecay.eps,width=2.2in}}
+           \caption{Time series for different sinks.}
+           \label{F:oscil}
+\end{figure}
+
+
+\subsubsection*{Linear Stability}
+
+Saddles, sinks, and sources are distinguished by the stability of the
+origin.  In Theorem~\ref{C:asympstlin} we showed that the origin is
+asymptotically stable if the eigenvalues have negative real part, that is,
+if the origin is a sink.  There is another term that is commonly used and
+is synonymous with sink.
+\begin{Def} \label{D:linstablin}
+The origin is a {\em linearly stable\/} equilibrium of \Ref{e:C2} if the
+eigenvalues of $C$ have negative real part.
+\end{Def}\index{stability!linear}
+So Theorem~\ref{C:asympstlin} may be restated as: linear stability
+implies asymptotic stability of the origin.
+
+\subsubsection*{Sources Versus Sinks}
+
+The explicit form of solutions to planar linear systems shows that solutions
+with initial conditions near the origin grow exponentially in forward time
+when the origin of \Ref{e:C2} is a source.  We can prove this point
+geometrically, as follows.
+
+The phase planes of sources and sinks are almost the same; they have the
+same trajectories but the arrows are reversed.  To verify this point, note
+that
+\begin{equation}  \label{e:C3}
+\dot{X}=-CX
+\end{equation}
+is a sink when \Ref{e:C2} is a source; observe that the trajectories of
+solutions of \Ref{e:C2} are the same as those of \Ref{e:C3} --- just with
+time running backwards.  For let $X(t)$ be a solution to \Ref{e:C2}; then
+$X(-t)$ is a solution to \Ref{e:C3}.   See Figure~\ref{F:SS} for plots of
+$\dot{X}=BX$ and $\dot{X}=-BX$ where
+\begin{equation}  \label{E:SS}
+B = \mattwo{-1}{-5}{5}{-1}.
+\end{equation}
+
+So when we draw schematic phase portraits\index{phase!portrait}
+for sinks\index{phase!portrait!for a sink}, we automatically know
+how to draw schematic phase portraits for
+sources\index{phase!portrait!for a source}.  The trajectories are
+the same --- but the arrows point in the opposite direction.
+
+\begin{figure}[htb]
+           \centerline{%
+	   \psfig{file=figures/asink.eps,width=3.2in}
+           \psfig{file=figures/asource.eps,width=3.2in}}
+           \caption{(Left) Sink $\dot{X}=BX$ where $B$ is given in
+\protect{\Ref{E:SS}}.  (Right) Source $\dot{X}=-BX$.}
+           \label{F:SS}
+\end{figure}
+
+
+\subsection*{Phase Portraits for Saddles}
+\index{phase!portrait!for a saddle}
+
+Next we discuss the phase portraits of linear saddles.  Using
+{\sf pplane5}\index{\computer!pplane5}, draw the phase portrait
+of the saddle
+\begin{equation}  \label{e:saddlet}
+\begin{array}{rcl}
+\dot{x} & = & 2x+y\\
+\dot{y} & = & -x-3y,
+\end{array}
+\end{equation}
+as in Figure~\ref{F:linsaddle}.  The important feature of saddles
+is that there are special trajectories (the eigendirections) that
+limit on the origin in either forward or backward time.
+
+\begin{figure}[htb]
+           \centerline{%
+	   \psfig{file=figures/linpnb.eps,width=3.5in}
+           \psfig{file=figures/linpnts.eps,width=3.5in}}
+           \caption{(Left) Saddle phase portrait.
+	(Right) First quadrant solution time series.}
+           \label{F:linsaddle}
+\end{figure}
+
+\begin{Def} \label{D:stablemfld}
+The {\em stable manifold\/} or {\em stable orbit\/} of a saddle consists of
+those trajectories that limit on the origin in forward time; the
+{\em unstable manifold\/} or {\em unstable orbit\/} of a saddle consists of
+those trajectories that limit on the origin in backward time.
+\end{Def}
+\index{stable!manifold} \index{unstable!manifold}
+\index{stable!orbit} \index{unstable!orbit}
+
+Let $\lambda_1<0$ and $\lambda_2>0$ be the eigenvalues of a saddle with
+associated eigenvectors $v_1$ and $v_2$.  The stable orbits are given by the
+solutions $X(t) = \pm e^{\lambda_1 t}v_1$ and the unstable orbits are given
+by the solutions $X(t) = \pm e^{\lambda_2 t}v_2$.
+
+\subsubsection*{Stable and Unstable Orbits using {\sf pplane5}}
+
+The program {\sf pplane5} is programmed to draw the stable and unstable
+orbits of a saddle on command. Although the principal use of this
+feature is seen when analyzing nonlinear systems, it is useful to
+introduce this feature here.  As an example, load the linear system
+\Ref{e:saddlet} into {\sf pplane5} and click on {\sf Proceed}.  Now
+pull down the {\sf PPLANE5 Options} menu and click on {\sf Find an
+equilibrium}.  Click the cross hairs in the {\sf PPLANE5 Display}
+window on a point near the origin; {\sf pplane5} responds by
+opening a new window --- the {\sf PPLANE5 Equilibrium point data}
+window --- and by putting a small yellow circle about the
+origin.  The circle indicates that the numerical algorithm
+programmed into {\sf pplane5} has detected an equilibrium near
+the chosen point. A new window opens and displays the message
+{\sf There is a saddle point at} $(0,0)$.  This window also displays the
+coefficient matrix (called the Jacobian for reasons that will be discussed
+in Section~\ref{S:linearization}) at the equilibrium and its eigenvalues
+and eigenvectors.  This process numerically verifies that the origin
+is a saddle (a fact that could have been verified in a more
+straightforward way).
+
+Now pull down the {\sf PPLANE5 Options} menu again and click on
+{\sf Plot stable and unstable orbits}.  Next click on the mouse
+when the cross hairs are within the yellow circle and {\sf
+pplane5} responds by drawing the stable and unstable orbits.
+The result is shown in Figure~\ref{F:linsaddle}(left).
+On this figure we have also plotted one trajectory
+from each quadrant; thus obtaining the phase portrait of a saddle.
+On the right of Figure~\ref{F:linsaddle} we have plotted a
+time series of the first quadrant solution.  Note how the $x$
+time series increases exponentially to $+\infty$ in forward time and 
+the $y$ time series decreases in forward time while going exponentially 
+towards $-\infty$.  The two time series together
+give the trajectory $(x(t),y(t))$ that in forward time is asymptotic
+to the line given by the unstable eigendirection.
+
+
+
+\EXER
+
+\TEXER
+
+
+\noindent In Exercises~\ref{E:stabmata} -- \ref{E:stabmatc} determine
+whether or not the equilibrium at the origin in the system of differential
+equations $\dot{X}=CX$ is asymptotically stable.
+\begin{exercise} \label{E:stabmata}
+$C=\mattwo{1}{2}{4}{1}$.
+\end{exercise}
+\begin{exercise} \label{E:stabmatb}
+$C=\mattwo{-1}{2}{-4}{-1}$.
+\end{exercise}
+\begin{exercise} \label{E:stabmatc}
+$C=\mattwo{2}{1}{1}{-5}$.
+\end{exercise}
+
+\noindent In Exercises~\ref{E:sisasoa} -- \ref{E:sisasof} determine
+whether the equilibrium at the origin in the system of differential
+equations $\dot{X}=CX$ is a sink, a saddle or a source.
+\begin{exercise} \label{E:sisasoa}
+$C=\mattwo{-2}{2}{0}{-1}$.
+\end{exercise}
+\begin{exercise} \label{E:sisasob}
+$C=\mattwo{3}{5}{0}{-2}$.
+\end{exercise}
+\begin{exercise} \label{E:sisasoc}
+$C=\mattwo{4}{2}{-1}{2}$.
+\end{exercise}
+\begin{exercise} \label{E:sisasod}
+$C=\mattwo{8}{0}{-5}{3}$.
+\end{exercise}
+\begin{exercise} \label{E:sisasoe}
+$C=\mattwo{9}{-11}{-11}{9}$.
+\end{exercise}
+\begin{exercise} \label{E:sisasof}
+$C=\mattwo{1}{-8}{2}{1}$.
+\end{exercise}
+
+\CEXER
+
+\noindent In Exercises~\ref{E:sssa} -- \ref{E:sssd} use {\sf pplane5} to
+determine whether the origin is a saddle, sink, or source in $\dot{X}=CX$
+for the given matrix $C$.
+\begin{exercise} \label{E:sssa}
+$C=\mattwoc{10}{-2.7}{4.32}{1.6}$.
+\end{exercise}
+\begin{exercise} \label{E:sssb}
+$C=\mattwoc{-10}{-2.7}{4.32}{1.6}$.
+\end{exercise}
+\begin{exercise} \label{E:sssc}
+$C=\mattwoc{-1}{2}{4.76}{1.5}$.
+\end{exercise}
+\begin{exercise} \label{E:sssd}
+$C=\mattwo{-2}{-2}{4}{1}$.
+\end{exercise}
+
+
+\noindent In Exercises~\ref{E:sima} -- \ref{E:simb} the given matrices $B$
+and $C$ are similar.  Observe that the phase portraits of the systems
+$\dot{X}=BX$ and $\dot{X}=CX$ are qualitatively the same in two steps.
+\begin{itemize}
+\item[(a)]  Use \Matlab to find the $2\times 2$ matrix $P$ such that
+$B=P\inv CP$.  Use {\tt map} to understand how the matrix $P$ moves points 
+in the plane.
+\item[(b)]  Use {\sf pplane5} to observe that $P$ moves solutions of
+$\dot{X}=BX$ to the solution of $\dot{X}=CX$.  Write a sentence or two describing your results.
+\end{itemize}
+\begin{exercise} \label{E:sima}
+$C = \mattwo{2}{3}{-1}{-3} \AND B = \frac{1}{2}\mattwo{1}{-1}{-9}{-3}$.
+\end{exercise}
+\begin{exercise} \label{E:simb}
+$C = \mattwo{-1}{5}{-5}{-1} \AND B = \mattwo{-1}{0.5}{-50}{-1}$.
+\end{exercise}
+
+
+
+
+
+
+\end{document}

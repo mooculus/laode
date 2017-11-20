@@ -1,0 +1,225 @@
+\documentclass{ximera}
+
+\input{./preamble.tex}
+
+\title{Special Kinds of Matrices}
+
+\begin{document}
+\begin{abstract}
+\end{abstract}
+\maketitle
+
+
+\label{S:1.3}
+
+There are many matrices that have special forms and hence
+have special names --- which we now list.
+
+\begin{itemize}
+
+\item A {\em square\/} matrix\index{matrix!square} is a matrix
+with the same number of rows and columns; that is, a square
+matrix is an $n\times n$ matrix.
+
+\item A {\em diagonal\/} matrix\index{matrix!diagonal} is a
+square matrix whose only
+nonzero entries are along the main diagonal; that is, $a_{ij}=0$
+if $i\neq j$.  The following is a $3\times 3$ diagonal matrix
+\[
+\left(\begin{array}{ccc} 1 & 0 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & 3
+\end{array} \right).
+\]
+There is a shorthand in \Matlab for entering diagonal matrices. To
+enter this $3\times 3$ matrix, type {\tt diag([1 2 3])}\index{\computer!diag}.
+
+\item The {\em identity\/} matrix\index{matrix!identity} is the
+diagonal matrix all of whose diagonal entries equal $1$.  The
+$n\times n$ identity matrix is denoted by $I_n$.  This identity
+matrix is entered in \Matlab by typing {\tt eye(n)}\index{\computer!eye}.
+
+\item A {\em zero\/} matrix \index{matrix!zero} is a matrix all
+of whose entries are $0$. A zero matrix is denoted by $0$.  This
+notation is ambiguous since there is a zero $m\times n$ matrix
+for every $m$ and $n$.  Nevertheless, this ambiguity rarely
+causes any difficulty.  In \Matlabp, to define an $m\times n$
+matrix $A$ whose entries all equal $0$, just type
+{\tt A = zeros(m,n)}\index{\computer!zeros}.
+To define an $n\times n$ zero matrix $B$, type {\tt B = zeros(n)}.
+
+\item The {\em transpose\/}\index{matrix!transpose} of an $m\times n$
+matrix $A$ is the $n\times m$ matrix obtained from $A$ by
+interchanging rows and columns.  Thus the transpose of the
+$4\times 2$ matrix
+\[
+\left(\begin{array}{rr} 2 & 1 \\ -1 & 2 \\ 3 & -4 \\ 5 & 7
+\end{array}\right)
+\]
+is the $2\times 4$ matrix
+\[
+\left(\begin{array}{rrrr} 2 & -1 & 3 & 5 \\ 1 & 2 & -4 & 7
+\end{array}\right).
+\]
+Suppose that you enter this $4\times 2$ matrix into \Matlab by
+typing
+\begin{verbatim}
+A = [2 1; -1 2; 3 -4; 5 7]
+\end{verbatim}
+The transpose of a matrix $A$ is denoted by $A^t$.  To compute
+the transpose of $A$ in \Matlabp, just type {\tt A$'$}.
+\index{\computer!'}
+
+\item A {\em symmetric\/} matrix\index{matrix!symmetric} is a
+square matrix whose entries are symmetric about the main
+diagonal; that is $a_{ij}=a_{ji}$.  Note that a symmetric matrix
+is a square matrix $A$ for which $A^t=A$.
+
+\item An {\em upper triangular\/} matrix\index{matrix!upper
+triangular} is a square matrix all of whose entries below the
+main diagonal are $0$; that is, $a_{ij}=0$ if $i>j$.  A {\em
+strictly upper triangular\/} matrix is an upper triangular
+matrix whose diagonal entries are also equal to $0$.  Similar
+definitions hold for {\em lower triangular\/}\index{matrix!lower triangular}
+and {\em strictly lower triangular\/} matrices.  The following four 
+$3\times 3$ matrices are examples of upper triangular, strictly upper 
+triangular, lower triangular, and strictly lower triangular matrices:
+\[
+\left(\begin{array}{rrr} 1 & 2 & 3\\ 0 & 2 & 4\\ 0 & 0 & 6\end{array}\right)
+\quad
+\left(\begin{array}{rrr} 0 & 2 & 3\\ 0 & 0 & 4\\ 0 & 0 & 0\end{array}\right)
+\quad
+\left(\begin{array}{rrr} 7 & 0 & 0\\ 5 & 2 & 0\\ -4 & 1 & -3\end{array}\right)
+\quad
+\left(\begin{array}{rrr} 0 & 0 & 0\\ 5 & 0 & 0\\ 10 & 1 & 0\end{array}\right).
+\]
+
+\item A square matrix $A$ is {\em block diagonal\/}
+\index{matrix!block diagonal} if
+\[
+A = \left(\begin{array}{cccc} B_1 & 0 & \cdots & 0 \\
+0 & B_2 & \cdots & 0 \\ \vdots & \vdots & \ddots & \vdots \\
+0 & 0 & \cdots & B_k \end{array} \right)
+\]
+where each $B_j$ is itself a square matrix. An example of a $5\times 5$
+block diagonal matrix with one $2\times 2$ block and one $3\times 3$ block is:
+\[
+\left(\begin{array}{ccccc} 2 & 3 & 0 & 0 & 0\\ 4 & 1 & 0 & 0 & 0\\
+0 & 0 & 1 & 2 & 3\\ 0 & 0 & 3 & 2 & 4\\ 0 & 0 & 1 & 1 & 5\end{array}\right).
+\]
+
+
+\end{itemize}
+
+\EXER
+
+\TEXER
+
+\noindent In Exercises~\ref{c1.1.01a} -- \ref{c1.1.01e} decide whether or
+not the given matrix is symmetric.
+\begin{exercise} \label{c1.1.01a}
+ $\mattwo{2}{1}{1}{5}$.
+\end{exercise}
+\begin{exercise} \label{c1.1.01b}
+ $\mattwo{1}{1}{0}{-5}$.
+\end{exercise}
+\begin{exercise} \label{c1.1.01c}
+ $(3)$.
+\end{exercise}
+\begin{exercise} \label{c1.1.01d}
+ $\left( \begin{array}{rr}
+ 3 & 4 \\
+ 4 & 3 \\
+ 0 & 1 \end{array} \right)$.
+\end{exercise}
+\begin{exercise} \label{c1.1.01e}
+ $\left( \begin{array}{rrr}
+ 3 & 4 & -1\\
+ 4 & 3 &  1\\
+ -1 & 1 & 10\end{array} \right)$.
+\end{exercise}
+
+\noindent In Exercises~\ref{c1.1.02a} -- \ref{c1.1.02e} decide which of
+the given matrices are upper triangular and which are strictly upper
+triangular.
+
+\begin{exercise} \label{c1.1.02a}
+ $\mattwo{2}{0}{-1}{-2}$.
+\end{exercise}
+\begin{exercise} \label{c1.1.02b}
+ $\mattwo{0}{4}{0}{0}$.
+\end{exercise}
+\begin{exercise} \label{c1.1.02c}
+ $(2)$.
+\end{exercise}
+\begin{exercise} \label{c1.1.02d}
+ $\left( \begin{array}{rr}
+ 3 & 2 \\
+ 0 & 1 \\
+ 0 & 0 \end{array} \right)$.
+\end{exercise}
+\begin{exercise} \label{c1.1.02e}
+ $\left( \begin{array}{rrr}
+ 0 & 2 & -4\\
+ 0 & 7 & -2\\
+ 0 & 0 & 0\end{array} \right)$.
+\end{exercise}
+
+
+\noindent A general $2\times 2$ diagonal matrix has the form
+$\mattwo{a}{0}{0}{b}$.  Thus the two unknown real numbers $a$ and $b$ are
+needed to specify each $2\times 2$ diagonal matrix.  In
+Exercises~\ref{c1.3.1a} -- \ref{c1.3.3c}, how many unknown real numbers
+are needed to specify each of the given matrices:
+\begin{exercise}  \label{c1.3.1a}
+An upper triangular $2\times 2$ matrix?
+\end{exercise}
+\begin{exercise}  \label{c1.3.1b}
+A symmetric $2\times 2$ matrix?
+\end{exercise}
+\begin{exercise}  \label{c1.3.2}
+An $m\times n$ matrix?
+\end{exercise}
+\begin{exercise}  \label{c1.3.3a}
+A diagonal $n\times n$ matrix?
+\end{exercise}
+\begin{exercise}  \label{c1.3.3b}
+An upper triangular $n\times n$ matrix?   {\bf Hint:}  Recall the
+summation formula:
+\[
+1 + 2 + \cdots + k = \frac{k(k+1)}{2}.
+\]
+\end{exercise}
+\begin{exercise}  \label{c1.3.3c}
+A symmetric $n\times n$ matrix? 
+\end{exercise}
+
+\noindent In each of Exercises~\ref{c1.3.4a} -- \ref{c1.3.4c} determine
+whether the statement is {\em True\/} or {\em False\/}?
+\begin{exercise} \label{c1.3.4a}
+ Every symmetric, upper triangular matrix is diagonal.
+\end{exercise}
+\begin{exercise} \label{c1.3.4b}
+ Every diagonal matrix is a multiple of the identity matrix.
+\end{exercise}
+\begin{exercise} \label{c1.3.4c}
+ Every block diagonal matrix is symmetric.
+\end{exercise}
+
+\CEXER
+
+\begin{exercise} \label{c1.3.5a}
+Use \Matlab to compute $A^t$ when
+\begin{equation} 
+A = \left(\begin{array}{cccc} 
+1 & 2 & 4 & 7 \\ 2 & 1 & 5 & 6 \\  4 & 6 & 2 & 1 
+\end{array}\right)
+\end{equation}
+Use \Matlab to verify that $(A^t)^t=A$ by setting {\tt B=A'}, {\tt C=B'},
+and checking that $C=A$.
+\end{exercise}
+
+\begin{exercise} \label{c1.3.5b}
+Use \Matlab to compute $A^t$ when $A=(3)$ is a $1\times 1$ matrix.
+\end{exercise}
+
+
+\end{document}

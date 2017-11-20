@@ -1,0 +1,498 @@
+\documentclass{ximera}
+
+\input{./preamble.tex}
+
+\title{Eigenvalues}
+
+\begin{document}
+\begin{abstract}
+\end{abstract}
+\maketitle
+
+ \label{S:eig} 
+ 
+In this section we discuss how to find eigenvalues for an
+$n\times n$ matrix $A$.  This discussion parallels the
+discussion for $2\times 2$ matrices given in
+Section~\ref{S:evchp}.  As we noted in that section, $\lambda$
+is a real eigenvalue of $A$ if there exists a nonzero
+eigenvector $v$ such that
+\begin{equation}  \label{e:eigen}
+Av = \lambda v.
+\end{equation}
+It follows that the matrix $A-\lambda I_n$ is 
+singular\index{singular} since
+\[
+(A-\lambda I_n)v = 0.
+\]
+Theorem~\ref{T:detandinv} implies that 
+\[
+\det(A-\lambda I_n) = 0.
+\]
+With these observations in mind, we can make the following definition.
+\begin{Def}   \label{D:charpoly}
+Let $A$ be an $n\times n$ matrix.  The {\em characteristic polynomial\/} 
+of $A$ is:
+\[
+p_A(\lambda) = \det(A-\lambda I_n).
+\]  \index{characteristic polynomial}
+\end{Def}
+
+In Theorem~\ref{T:charpolyn} we show that $p_A(\lambda)$ is indeed a 
+polynomial of degree $n$ in $\lambda$.  Note here that the roots of 
+\index{characteristic polynomial!roots}
+$p_A$ are the {\em eigenvalues\/} of $A$. As we
+discussed, the real eigenvalues\index{eigenvalue!real} 
+of $A$ are roots of the
+characteristic polynomial.  \index{eigenvalue} Conversely, if
+$\lambda$ is a real root of $p_A$, then
+Theorem~\ref{T:detandinv} states that the matrix $A-\lambda I_n$
+is singular and therefore that there exists a nonzero vector $v$
+such that \Ref{e:eigen} is satisfied.  Similarly, by using this
+extended algebraic definition of eigenvalues we allow the
+possibility of complex eigenvalues\index{eigenvalue!complex}.  
+The complex analog of
+Theorem~\ref{T:detandinv} shows that if $\lambda$ is a complex
+eigenvalue, then there exists a nonzero complex $n$-vector $v$
+such that \Ref{e:eigen} is satisfied.
+
+\begin{exam} \label{E:triangular}
+Let $A$ be an $n\times n$ lower triangular matrix.  Then the
+diagonal entries are the eigenvalues of $A$.  {\rm We verify
+this statement as follows.  \index{matrix!lower triangular}
+\[
+A-\lambda I_n = \left(\begin{array}{ccc} a_{11}-\lambda &  & 0 \\
+ &  \ddots &  \\ (*) & & a_{nn}-\lambda \end{array}\right).
+\]
+Since the determinant of a triangular matrix is the product of
+the diagonal entries, it follows that 
+\begin{equation}  \label{e:triangpoly}
+p_A(\lambda) = (a_{11}-\lambda)\cdots(a_{nn}-\lambda),
+\end{equation}
+and hence that the diagonal entries of $A$ are roots of the 
+characteristic polynomial. A similar argument works if $A$ is
+upper triangular.}
+\end{exam}  
+ 
+It follows from \Ref{e:triangpoly} that the characteristic
+polynomial of a triangular matrix
+\index{characteristic polynomial!of triangular matrices}
+is a polynomial of degree $n$ and that
+\begin{equation}  \label{e:leadingterm}
+p_A(\lambda) = (-1)^n \lambda^n + b_{n-1}\lambda^{n-1} + \cdots +b_0.
+\end{equation}
+for some real constants $b_0, \ldots, b_{n-1}$. In fact, this
+statement is true in general.  
+
+\begin{thm}  \label{T:charpolyn}
+Let $A$ be an $n\times n$ matrix.  Then $p_A$ is a polynomial of
+degree $n$ of the form \Ref{e:leadingterm}.
+\end{thm} \index{characteristic polynomial}
+
+\begin{proof} Let $C$ be an $n\times n$ matrix whose entries have
+the form $c_{ij}+d_{ij}\lambda$.  Then $\det(C)$ is a polynomial
+in $\lambda$ of degree at most $n$.  We verify this statement by
+induction. It is easily verified when $n=1$, since then
+$C=(c+d\lambda)$ for some real numbers $c$ and $d$. Then
+$\det(C)=c+d\lambda$ which is a polynomial of degree at most
+one.  (It may have degree zero, if $d=0$.) So assume that this
+statement is true for $(n-1)\times (n-1)$ matrices. Recall from
+\Ref{e:inductdet} that 
+\[
+\det(C) = (c_{11}+d_{11}\lambda)\det(C_{11})
++\cdots+(-1)^{n+1}(c_{1n}+d_{1n}\lambda)\det(C_{1n}).
+\]    
+By induction each of the determinants $C_{1j}$ is a polynomial
+of degree at most $n-1$.  It follows that multiplication by
+$c_{1j}+d_{1j}\lambda$ yields a polynomial of degree at most $n$
+in $\lambda$.  Since the sum of polynomials of degree at most
+$n$ is a polynomial of degree at most $n$, we have verified our
+assertion.
+
+Since $A-\lambda I_n$ is a matrix whose entries have the
+desired form, it follows that $p_A(\lambda)$ is a polynomial of
+degree at most $n$ in $\lambda$.  To complete the proof of this
+theorem we need to show that the coefficient of $\lambda^n$ is
+$(-1)^n$.  Again, we verify this statement by induction.  This
+statement is easily verified for $1\times 1$ matrices --- we
+assume that it is true for $(n-1)\times (n-1)$ matrices.  Again
+use \Ref{e:inductdet} to compute
+\[
+\det(A-\lambda I_n) = (a_{11}-\lambda)\det(B_{11})-a_{12}\det(B_{12}) 
++\cdots+(-1)^{n+1}a_{1n}\det(B_{1n}).
+\]
+where $B_{1j}$ are the cofactor \index{cofactor} matrices of
+$A-\lambda I_n$.  Using our previous observation all of the
+terms $\det(B_{1j})$ are polynomials of degree at most $n-1$.
+Thus, in this expansion, the only term that can contribute a
+term of degree $n$ is:
+\[
+-\lambda\det(B_{11}).
+\]
+Note that the cofactor matrix $B_{11}$ is the $(n-1)\times
+(n-1)$ matrix
+\[
+B_{11} = A_{11} -\lambda I_{n-1},
+\]
+where $A_{11}$ is the first cofactor matrix of the matrix $A$.
+By induction, $\det(B_{11})$ is a polynomial of degree $n-1$ with
+leading term $(-1)^{n-1}\lambda^{n-1}$.  Multiplying this
+polynomial by $-\lambda$ yields a polynomial of degree $n$ with
+the correct leading term.  \end{proof}
+
+\subsection*{General Properties of Eigenvalues}
+
+The {\em fundamental theorem of algebra\/} \index{fundamental
+theorem of algebra} states that every polynomial of degree $n$
+has exactly $n$ roots (counting multiplicity).  For example, the 
+quadratic formula shows that 
+every quadratic polynomial has exactly two roots.  In general, the proof 
+of the fundamental theorem is not easy and is certainly beyond the 
+limits of this course.  Indeed, the difficulty in proving the {\em
+fundamental theorem of algebra\/} is in proving that a
+polynomial $p(\lambda)$ of degree $n>0$ has one (complex) root.
+Suppose that $\lambda_0$ is a root of $p(\lambda)$; that is,
+suppose that $p(\lambda_0)=0$. Then it is easy to show that
+\begin{equation}  \label{e:factoring}
+p(\lambda) = (\lambda-\lambda_0)q(\lambda)
+\end{equation}
+for some polynomial $q$ of degree $n-1$.  So once we know that
+$p$ has a root, then we can argue by induction to prove that $p$
+has $n$ roots.  
+
+Recall that a polynomial need not have any real roots. For
+example, the polynomial $p(\lambda)=\lambda^2+1$ has no real
+roots, since $p(\lambda)> 0$ for all real $\lambda$.  This
+polynomial does have two complex roots $\pm i =\pm\sqrt{-1}$.  
+
+However, a polynomial with real coefficients has either real
+roots or complex roots that come in complex conjugate pairs.  To
+verify this statement, we need to show that if $\lambda_0$ is a
+complex root of $p(\lambda)$, then so is $\overline{\lambda_0}$.
+We claim that 
+\[
+p(\overline{\lambda})=\overline{p(\lambda)}.
+\]
+To verify this point, suppose that
+\[
+p(\lambda) = c_n\lambda^n + c_{n-1}\lambda^{n-1} + \cdots + c_0,
+\]
+where each $c_j\in\R$.  Then
+\[
+\overline{p(\lambda)}
+=\overline{c_n\lambda^n + c_{n-1}\lambda^{n-1} + \cdots + c_0} 
+= c_n\overline{\lambda}^n + c_{n-1}\overline{\lambda}^{n-1} + \cdots + c_0
+= p(\overline{\lambda})
+\]
+If $\lambda_0$ is a root of $p(\lambda)$, then
+\[
+p(\overline{\lambda_0}) = \overline{p(\lambda_0)}=\overline{0}=0.
+\]
+Hence $\overline{\lambda_0}$ is also a root of $p$.
+
+It follows that 
+\begin{thm}  \label{T:eigens}
+Every (real) $n\times n$ matrix $A$ has exactly $n$ eigenvalues
+$\lambda_1,\ldots,\lambda_n$.  These eigenvalues are either real
+or complex conjugate pairs.  Moreover,
+\begin{enumerate}
+\item[(a)] $p_A(\lambda) = (\lambda_1-\lambda)\cdots(\lambda_n-\lambda)$,
+\item[(b)] $\det(A) = \lambda_1\cdots\lambda_n$.
+\end{enumerate}
+\end{thm} \index{eigenvalue}\index{eigenvalue!existence}
+\index{determinant}
+
+\begin{proof} Since the characteristic polynomial $p_A$ is a polynomial
+of degree $n$ with real coefficients, the first part of the
+theorem follows from the preceding discussion. In particular, it follows
+from \Ref{e:factoring} that 
+\[
+p_A(\lambda) = c(\lambda_1-\lambda)\cdots(\lambda_n-\lambda),
+\]
+for some constant $c$.  Formula \Ref{e:leadingterm} implies that
+$c=1$ --- which proves (a).  Since $p_A(\lambda)=\det(A-\lambda I_n)$, 
+it follows that $p_A(0)=\det(A)$.  Thus (a) implies 
+that $p_A(0)=\lambda_1\cdots\lambda_n$, thus proving (b).  \end{proof}
+
+The eigenvalues of a matrix do not have to be different.  For
+example, consider the extreme case of a strictly triangular
+matrix $A$.  Example~\ref{E:triangular} shows that all of the
+eigenvalues of $A$ are zero. 
+
+We now discuss certain properties of eigenvalues.  
+\begin{cor}  \label{C:eig=0}
+Let $A$ be an $n\times n$ matrix. Then $A$ is invertible if and
+only if zero is {\em not\/} an eigenvalue of $A$.
+\end{cor}  \index{invertible}
+
+\begin{proof} The proof follows from Theorem~\ref{T:detandinv} and
+Theorem~\ref{T:eigens}(b). \end{proof} 
+
+\begin{lemma} 
+Let $A$ be a singular $n\times n$ matrix.  Then the null space of $A$
+is the span of all eigenvectors whose associated eigenvalue is zero.
+\end{lemma} \index{null space}\index{singular}
+
+\begin{proof} An eigenvector $v$ of $A$ has eigenvalue zero if and only
+if 
+\[
+Av=0.
+\]
+This statement is valid if and only if $v$ is in the null space
+of $A$. \end{proof}
+
+
+
+\begin{thm}  \label{T:inveig}
+Let $A$ be an invertible $n\times n$ matrix with eigenvalues 
+$\lambda_1,\cdots,\lambda_n$.  Then the eigenvalues of 
+$A\inv$ are $\lambda_1\inv,\cdots,\lambda_n\inv$.
+\end{thm}  \index{invertible}\index{eigenvalue!of inverse}
+
+\begin{proof}  We claim that  
+\[
+p_A(\lambda) = (-1)^n \det(A) \lambda^n p_{A\inv}(\frac{1}{\lambda}).
+\]
+It then follows that $\frac{1}{\lambda}$ is an eigenvalue for
+$A\inv$ for each eigenvalue $\lambda$ of $A$.  This makes sense,
+since the eigenvalues of $A$ are nonzero. 
+
+Compute:
+\begin{eqnarray*}
+(-1)^n \det(A) \lambda^n p_{A\inv}(\frac{1}{\lambda}) & = &
+ (-\lambda)^n \det(A)\det(A\inv-\frac{1}{\lambda}I_n) \\
+& = & \det(-\lambda A)\det(A\inv-\frac{1}{\lambda}I_n)\\
+& = & \det(-\lambda A (A\inv-\frac{1}{\lambda}I_n))\\
+& = & \det(A-\lambda I_n) \\
+& = & p_A(\lambda),
+\end{eqnarray*}
+which verifies the claim.  \end{proof}
+
+\begin{thm}  \label{T:similareigen}
+Let $A$ and $B$ be similar $n\times n$ matrices.  Then
+\[
+p_A = p_B,
+\]
+and hence the eigenvalues of $A$ and $B$ are identical.
+\end{thm}  \index{similar}
+
+\begin{proof}  Since $B$ and $A$ are similar, there exists an 
+invertible $n\times n$ matrix $S$ such that $B=S\inv AS$.  It 
+follows that 
+\[
+\det(B-\lambda I_n) = \det(S\inv AS-\lambda I_n)
+= \det(S\inv(A-\lambda I_n)S) = \det(A-\lambda I_n),
+\]
+which verifies that $p_A=p_B$.  \end{proof}
+
+Recall that the {\em trace\/}\index{trace} of an 
+$n\times n$ matrix $A$ is
+the sum of the diagonal entries of $A$; that is
+\[
+{\rm tr}(A) = a_{11} +\cdots+ a_{nn}.
+\]
+We state without proof the following theorem:
+\begin{thm} \label{T:tracen}
+Let $A$ be an $n\times n$ matrix with eigenvalues
+$\lambda_1,\ldots,\lambda_n$.  Then
+\[
+{\rm tr}(A) = \lambda_1 + \cdots + \lambda_n.
+\]
+\end{thm}
+
+It follows from Theorem~\ref{T:similareigen} that the traces of
+similar matrices are equal.
+
+
+\subsection*{\Matlab Calculations}
+
+The commands for computing characteristic polynomials and
+eigenvalues of square matrices are straightforward in \Matlab.
+In particular, for an $n\times n$ matrix $A$, the \Matlab command
+ {\tt poly(A)} returns the coefficients of $(-1)^np_A(\lambda)$.
+
+For example, reload the $4\times 4$ matrix $A$ of \Ref{e:A4x4}
+by typing {\tt e8\_1\_11}.  The characteristic polynomial of $A$ is
+found by typing
+\begin{verbatim}
+poly(A)
+\end{verbatim} \index{\computer!poly}
+to obtain
+\begin{verbatim}
+ans =
+    1.0000   -5.0000   15.0000  -10.0000  -46.0000
+\end{verbatim} 
+Thus the characteristic polynomial of $A$ is:
+\[
+p_A(\lambda) = \lambda^4 -5\lambda^3+15\lambda^2-10\lambda-46.
+\]
+The eigenvalues of $A$ are found by typing {\tt eig(A)} and
+obtaining
+\begin{verbatim}
+ans =
+  -1.2224          
+   1.6605 + 3.1958i
+   1.6605 - 3.1958i
+   2.9014 
+\end{verbatim}
+Thus $A$ has two real eigenvalues and one complex conjugate pair
+of eigenvalues.  Note that \Matlab has preprogrammed not only
+the algorithm for finding the characteristic polynomial, but
+also numerical routines for finding the roots of the
+characteristic polynomial.
+
+The trace of $A$ is found by typing {\tt trace(A)} and obtaining
+\begin{verbatim} 
+ans =
+     5
+\end{verbatim} \index{\computer!trace}
+
+Using the \Matlab command {\tt sum} we can verify the statement
+of Theorem~\ref{T:tracen}.  Indeed {\tt sum(v)} computes the sum 
+of the components of the vector $v$ and typing
+\begin{verbatim}
+sum(eig(A))
+\end{verbatim}
+\index{\computer!sum}
+we obtain the answer {\tt 5.0000}, as expected.
+
+\EXER
+
+\TEXER
+
+\noindent In Exercises~\ref{c10.2.1a} -- \ref{c10.2.1b} determine the 
+characteristic polynomial and the eigenvalues of the given matrices.
+\begin{exercise} \label{c10.2.1a}
+$A = \left(\begin{array}{rrr} -9 & -2 & -10 \\ 3 & 2 & 3 \\
+8 & 2 & 9 \end{array}\right)$. 
+\end{exercise}
+\begin{exercise} \label{c10.2.1b}
+$B = \left(\begin{array}{rrrr} 2 & 1 & -5 & 2 \\ 1 & 2 & 13 & 2 \\
+0 & 0 & 3 & -1 \\ 0 & 0 & 1 & 1 \end{array}\right)$.
+\end{exercise}
+
+\begin{exercise} \label{c10.2.2}
+Find a basis for the eigenspace of 
+\[
+A = \left(\begin{array}{rrr} 3 & 1 & -1 \\ -1 & 1 & 1 \\ 2 & 2 & 0 
+\end{array}\right)
+\]
+corresponding to the eigenvalue $\lambda=2$.
+\end{exercise}
+
+\begin{exercise} \label{c10.2.3}
+Consider the matrix  
+\[
+A = \left(\begin{array}{rrr} -1 & 1 & 1 \\ 1 & -1 & 1 \\ 1 & 1 & -1 
+\end{array}\right).
+\]
+\begin{itemize}
+\item[(a)] Verify that the characteristic polynomial of $A$ is
+ $p_\lambda(A)=(\lambda-1)(\lambda+2)^2$.
+\item[(b)] Show that $(1,1,1)$ is an eigenvector of $A$ corresponding to 
+$\lambda=1$.
+\item[(c)] Show that $(1,1,1)$ is orthogonal to every eigenvector 
+of $A$ corresponding to the eigenvalue $\lambda=-2$.
+\end{itemize}
+\end{exercise}
+
+\begin{exercise} \label{c10.2.4}
+Consider the matrix $A=\mattwo{8}{5}{-10}{-7}$.
+\begin{itemize}
+\item[(a)] Find the eigenvalues and eigenvectors of $A$.
+\item[(b)] Show that the eigenvectors found in (a) form a basis for $\R^2$.
+\item[(c)] Find the coordinates of the vector $(x_1,x_2)$ relative to the 
+basis in part (b).
+\end{itemize}
+\end{exercise}
+
+\begin{exercise} \label{c10.2.5}
+Find the characteristic polynomial and the eigenvalues of 
+\[
+A = \left(\begin{array}{rrr} -1 & 2 & 2 \\ 2 & 2 & 2 \\ -3 & -6 & -6 
+\end{array}\right).
+\]
+Find eigenvectors corresponding to each of the three eigenvalues.
+\end{exercise}
+
+\begin{exercise} \label{c10.2.6}
+Let $A$ be an $n\times n$ matrix.  Suppose that 
+\[
+A^2 + A + I_n = 0.
+\]
+Prove that $A$ is invertible.
+\end{exercise}
+
+\noindent In Exercises~\ref{c10.2.7a} -- \ref{c10.2.7b} decide whether 
+the given statements are {\em true\/} or {\em false\/}. If the 
+statements are false, give a counterexample; if the statements are true, 
+give a proof.
+\begin{exercise} \label{c10.2.7a}
+If the eigenvalues of a $2\times 2$ matrix are equal to $1$,
+then the four entries of that matrix are each less than $500$.
+\end{exercise}
+\begin{exercise} \label{c10.2.7b}
+The trace of the product of two $n\times n$ matrices is the
+product of the traces.
+\end{exercise}
+
+\begin{exercise} \label{c10.2.8}
+When $n$ is odd show that every real $n\times n$ matrix has a real
+eigenvalue. 
+\end{exercise}
+
+\CEXER
+
+\noindent In Exercises~\ref{c10.2.9a} -- \ref{c10.2.9b}, use \Matlab to 
+compute (a) the eigenvalues, traces, and characteristic polynomials of 
+the given matrix.  (b) Use the results from part (a) to confirm 
+Theorems~\ref{T:inveig} and \ref{T:tracen}.
+\begin{exercise} \label{c10.2.9a}
+\begin{equation*}
+A=\left( \begin{array}{rrrrr}
+      -12 & -19 &  -3 &  14 &   0\\
+      -12 &  10 &  14 & -19 &   8\\
+        4 &  -2 &   1 &   7 &  -3\\
+       -9 &  17 & -12 &  -5 &  -8\\
+      -12 &  -1 &   7 &  13 & -12
+\end{array} \right).
+\end{equation*}
+\end{exercise}
+\begin{exercise} \label{c10.2.9b}
+\begin{equation*}
+B=\left( \begin{array}{rrrrrr}
+      -12 &  -5 &  13 &  -6 & -5 &  12\\
+        7 &  14 &   6 &   1 &  8 &  18\\
+       -8 &  14 &  13 &   9 &  2 &   1\\
+        2 &   4 &   6 &  -8 & -2 &  15\\
+      -14 &   0 &  -6 &  14 &  8 & -13\\
+        8 &  16 &  -8 &   3 &  5 &  19
+\end{array} \right).
+\end{equation*}
+\end{exercise}
+
+\begin{exercise} \label{c10.2.10}
+Use \Matlab to compute the characteristic polynomial of the following
+matrix:
+\[
+A = \left( \begin{array}{rrr}
+ 4 & -6 & 7\\
+ 2 & 0 & 5\\
+-10 & 2 & 5
+\end{array} \right)
+\]
+Denote this polynomial by $p_A(\lambda) = 
+-(\lambda^3 + p_2 \lambda^2 + p_1 \lambda + p_0)$.  Then compute
+the matrix
+\[
+B = -(A^3 + p_2 A^2 + p_1 A + p_0 I).
+\]
+What do you observe?  In symbols $B=p_A(A)$.  Compute the matrix $B$ for
+examples of other square matrices $A$ and determine whether or not 
+your observation was an accident.
+\end{exercise}
+
+
+
+
+\end{document}

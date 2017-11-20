@@ -1,0 +1,85 @@
+\documentclass{ximera}
+
+\input{./preamble.tex}
+
+\title{Solving Ordinary Differential Equations}
+
+\begin{document}
+\begin{abstract}
+\end{abstract}
+\maketitle
+
+
+\label{chap:SolveOdes}
+
+\normalsize
+
+The study of linear systems of equations given in Chapter~\ref{lineq}
+provides one motivation for the study of matrices and linear algebra.  
+Linear constant coefficient systems of ordinary differential equations 
+provide a second motivation for this study.  In this chapter we
+show how the phase space geometry of systems of differential equations
+motivates the idea of {\em eigendirections} (or invariant directions) and
+{\em eigenvalues\/} (or growth rates).  
+
+We begin this chapter with a discussion of the theory and application
+of the simplest of linear differential equations, the linear growth equation,
+$\dot{x}=\lambda x$.  In Section~\ref{S:growthmodels}, we solve the linear
+growth equation and discuss the fact that solutions to differential equations
+are functions; and we emphasize this point by using \Matlab to graph
+solutions of $x$ as a function of $t$.  We also illustrate the applicability
+of this very simple equation with a discussion of compound interest and
+a simple population model.
+
+In Section~\ref{S:3.2} we discuss two different ways to plot solutions of
+differential equations: {\em time series\/} and {\em phase space\/} plots.
+The first method just plots the graph of a solution as a function
+of time $t$, as discussed in Section~\ref{S:growthmodels}, while the second
+method is based on thinking of the differential equation as describing
+how a point moves in space.  Both methods are important: time series are
+typical ways of representing results of experiments and phase space plots
+are central to a geometric understanding of solutions to differential
+equations.  In Sections~\ref{S:3.2} and \ref{S:PSP&E} we introduce two \Matlab
+programs {\sf dfield5} (written by John Polking)\index{Polking, John} and 
+{\sf pline} that illustrate the two methods of plotting the output of a 
+differential equation.
+
+In the optional Section~\ref{sec:sov} we present one method for solving
+differential equations analytically where $f(t,x)$, the right hand side in 
+the ODE, is a product of a function of $x$ and a function of $t$. This method 
+is called {\em separation of variables} and is based on integration theory
+from calculus.  We will see that even these simple differential
+equations may lead to solutions that are defined only implicitly and not in
+closed form.
+
+The next two sections introduce planar constant coefficient linear
+differential equations.  In these sections we use the program {\sf pplane5}
+(also written by John Polking) that solves numerically planar systems of
+differential equations.  In Section~\ref{sec:UncoupledLS} we discuss 
+uncoupled systems --- two independent one dimensional systems like those 
+presented in Section~\ref{S:growthmodels} --- whose solution geometry in the 
+plane is somewhat more complicated than might be expected.  In 
+Section~\ref{s:3.5} we discuss coupled linear systems.  Here we
+illustrate the existence and nonexistence of eigendirections.
+
+In Section~\ref{S:IVP&E} we show how the initial value problems can be solved 
+by building the solution --- through the use of superposition as discussed in 
+Section~\ref{S:Superposition} --- from simpler solutions.  These simpler
+solutions are ones generated from real eigenvalues and eigenvectors
+--- when they exist.  In Section~\ref{S:evchp} we develop the theory of  
+{\em eigenvalues\/} and {\em characteristic polynomials\/} of $2\times 2$ 
+matrices.  (The corresponding theory for $n\times n$ matrices is developed in 
+Chapter~\ref{C:D&E}.)
+
+The method for solving planar constant coefficient linear differential 
+equations with real eigenvalues is summarized in Section~\ref{S:IVPR}.  This 
+method is based on the material of Sections~\ref{S:IVP&E} and \ref{S:evchp}.  
+The complete discussion of the solutions of linear planar systems of 
+differential equations is given in Chapter~\ref{Chap:Planar}.
+
+The chapter ends with an optional discussion of {\em Markov chains\/} in 
+Section~\ref{S:TransitionApplied}.  Markov chains give a method for 
+analyzing branch processes where at each time unit several outcomes are 
+possible, each with a given probability.
+
+\end{document}

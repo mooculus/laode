@@ -1,0 +1,62 @@
+\documentclass{ximera}
+
+\input{./preamble.tex}
+
+\title{Vector Spaces}
+
+\begin{document}
+\begin{abstract}
+\end{abstract}
+\maketitle
+
+
+\label{C:vectorspaces}
+
+\normalsize
+
+In Chapter~\ref{lineq} we discussed how to solve systems of $m$
+linear equations in $n$ unknowns.  We found that solutions of
+these equations are vectors $(x_1,\ldots,x_n)\in\R^n$.  
+In Chapter~\ref{chap:matrices} we discussed how the notation of
+matrices and matrix multiplication drastically simplifies the
+presentation of linear systems and how matrix multiplication
+leads to linear mappings.  We also discussed briefly how linear
+mappings lead to methods for solving linear systems ---
+superposition, eigenvectors, inverses.  In
+Chapter~\ref{chap:SolveOdes} we discussed how to solve systems
+of $n$ linear differential equations in $n$ unknown functions.
+These chapters have
+provided an introduction to many of the ideas of linear algebra
+and now we begin the task of formalizing these ideas.
+
+Sets having the two operations of vector addition and scalar
+multiplication are called {\em vector spaces\/}.  This concept
+is introduced in Section~\ref{S:5.1} along with the two
+primary examples --- the set $\R^n$ in which solutions to systems
+of linear equations sit and the set $\CCone$ of differentiable
+functions in which solutions to systems of ordinary differential
+equations sit.  Solutions to systems of homogeneous linear equations
+form subspaces of $\R^n$ and solutions of systems of linear
+differential equations form subspaces of $\CCone$.  These issues
+are discussed in Sections~\ref{S:5.1} and \ref{S:5.2}.
+
+When we {\em solve\/} a homogeneous system of equations, we write
+every solution as a superposition of a finite number of specific
+solutions.  Abstracting this process is one of the main points of this
+chapter.  Specifically, we show that every vector in many commonly
+occurring vector spaces
+(in particular, the subspaces of solutions) can be written as a
+{\em linear combination\/} (superposition) of a few 
+solutions.  The minimum number of solutions needed is called
+the {\em dimension\/} of that vector space.  Sets of vectors that 
+generate all solutions by superposition and that consist of that minimum 
+number of vectors are called {\em bases\/}.  These ideas are discussed
+in detail in Sections~\ref{S:5.3}--\ref{S:5.5}.  The proof of
+the main theorem (Theorem~\ref{basis=span+indep}), which gives a
+computable method for determining when a set is a basis, is given in
+Section~\ref{S:5.6}.  This proof may be omitted on a first reading,
+but the statement of the theorem is most important and must be
+understood.
+
+
+\end{document}

@@ -1,0 +1,785 @@
+\documentclass{ximera}
+
+\input{./preamble.tex}
+
+\title{Solving Systems in Original Coordinates}
+
+\begin{document}
+\begin{abstract}
+\end{abstract}
+\maketitle
+
+
+\label{S:SEOC}
+
+In Section~\ref{sec:LinHomSys} we discussed one method for solving systems of 
+first order constant coefficient linear differential equations.   We saw that 
+such systems can be solved by putting the coefficient matrix $A$ in Jordan 
+normal form and then computing the exponential of the Jordan normal form 
+matrix.  
+
+In this section we describe a second and a third approach to solving linear 
+systems; the second method is based on finding the generalized eigenvectors 
+that put $A$ into Jordan normal form\index{Jordan normal form} and then
+computing solutions directly using this information while the third method is 
+based on deriving a formula for the exponential\index{matrix!exponential} 
+$e^{tA}$ in original coordinates.  The advantage of the second method is
+that it is not necessary to perform the similarity that transforms the matrix 
+$A$ to Jordan normal form and the advantage of the third method is that it is 
+not necessary even to compute the eigenvectors of $A$.  Be forewarned,
+however, that all of these methods require substantial calculations.
+
+Let $A$ be an $n\times n$ matrix.  All methods for solving the system 
+\begin{equation} \label{dotX=AX}
+\dot{X}=AX
+\end{equation}
+begin by finding the eigenvalues\index{eigenvalue} of $A$.  This can be done 
+either analytically (sometimes) or numerically (using \Matlabp). Then the  
+methods diverge.  In the first and second methods, we need to find the 
+eigenvectors and, if need be, the generalized eigenvectors
+\index{eigenvector!generalized} of $A$; while in the third method, we need to 
+perform tedious calculations involving partial fractions and matrix 
+multiplications.  With either method, the calculations simplify enormously 
+when the eigenvalues are simple.  Indeed, this simplification also occurs in 
+the Jordan normal form method of Section~\ref{sec:LinHomSys}.
+
+\subsection*{A Method Based on Eigenvectors}
+ 
+In this method we find a basis for solutions of \Ref{dotX=AX}.  First, we 
+review the simpler case when there is a basis of eigenvectors and then we 
+consider (part of) the case when there is a deficiency of eigenvectors.
+
+\subsubsection*{A Complete Set of Eigenvectors}
+
+The simplest case in solving \Ref{dotX=AX} occurs when $A$ has a basis of 
+eigenvectors $v_1,\ldots,v_n$ corresponding to the (not necessarily distinct) 
+eigenvalues $\lambda_1,\ldots,\lambda_n$.  We showed how to find a basis for
+the solutions of \Ref{dotX=AX} in Section~\ref{S:TDM} but review the results
+here.  Each eigenvector $v_j$ generates the solution 
+$X_j(t)=e^{\lambda_j t}v_j$ to \Ref{dotX=AX} and the general solution is:
+\begin{equation} \label{E:gensolns}
+X(t) = \alpha_1 X_1(t) + \cdots + \alpha_nX_n(t),
+\end{equation}
+where the scalars $\alpha_j$ are real when $\lambda_j$ is real and complex
+when the $\lambda_j$ is not real.  
+
+The initial value problem\index{initial value problem} is then solved 
+by finding scalars $\alpha_j$ so that
+\begin{equation}  \label{E:gensolnsic}
+X_0 = X(0) =\alpha_1v_1 + \cdots + \alpha_nv_n.
+\end{equation}
+The solution of \Ref{E:gensolnsic} is a well understood linear algebra 
+problem.   
+
+\subsubsection*{Complex Eigenvalues}
+
+The only complication occurs when some of the eigenvalues are complex. 
+If $\lambda$ is a complex eigenvalue of the real matrix $A$, so is 
+$\overline{\lambda}$.  If $v$ is a complex eigenvector corresponding to 
+$\lambda$, then $\overline{v}$ is the complex eigenvector corresponding to 
+$\overline{\lambda}$.  With this choice of eigenvector, $\overline{\alpha}$ 
+is the scalar corresponding to the eigenvector $\overline{v}$ where $\alpha$
+is the scalar corresponding to the eigenvector $v$.
+
+More precisely, let $\lambda = \sigma+i\tau$ be an eigenvalue of $A$ and 
+let $v=u+iw$ be a corresponding eigenvector.  We claim that 
+\begin{equation}  \label{eq:reimsol}
+X_1(t) = e^{\sigma t}(\cos(\tau t)u - \sin(\tau t)w)\quad
+\mbox{and}\quad
+X_2(t) = e^{\sigma t}(\sin(\tau t)u + \cos(\tau t)w)
+\end{equation}
+are solutions of the homogeneous equation \Ref{dotX=AX}.  Verifying that
+$X_1$ and $X_2$ are solutions proceeds as follows.  The solutions 
+corresponding to the eigenvalue $\lambda$ are 
+\[
+\alpha e^{\lambda t}v + \overline{\alpha} e^{\overline{\lambda}t}\overline{v}
+= 2\RE\left(\alpha e^{\lambda t}v\right)
+\]
+for all complex scalars $\alpha$.  If we set $\alpha=\frac{1}{2}$, then 
+using Euler's formula, we obtain the solution 
+\[
+\RE\left(e^{\lambda t}v\right) = e^{\sigma t}\RE\left((\cos(\tau t)+i\sin(\tau t))(u + iw)\right)=X_1(t)
+\]
+Similarly, setting $\alpha=-\frac{1}{2}i$ leads to the solution $X_2(t)$.  
+
+
+\subsubsection*{Two Examples with a Complete Set of Eigenvectors}
+
+Next we consider two examples.  The first has distinct eigenvalues, some 
+of which are complex, while the second has real eigenvalues one of which is 
+multiple.
+
+\noindent (a)  Find all the solutions of the linear system of ODEs
+\arraystart
+\begin{equation*}  \label{eq:exsyslinc1}
+\left(\begin{array}{c}
+\dps\frac{dx_1}{dt} \\ \dps\frac{dx_2}{dt} \\ \dps\frac{dx_3}{dt}
+\end{array}\right)
+=
+\left(\begin{array}{rrr}
+     0  &  3  &  1\\
+     4  &  1  & -1\\
+     2  &  7  & -5
+\end{array}\right)
+\left(\begin{array}{c}
+x_1 \\ x_2 \\ x_3
+\end{array}\right).
+\end{equation*}
+\arrayfinish
+We load the coefficient matrix $A$ of \Ref{eq:exsyslinc1} by typing 
+{\tt e15\_1\_5} and compute its eigenvalues and eigenvectors using the 
+command 
+\begin{verbatim}
+[V D] = eig(A)
+\end{verbatim}\index{\computer!eig}
+This leads to
+\begin{verbatim}
+V =
+  -0.5774             0.3757 + 0.0411i   0.3757 - 0.0411i
+  -0.5774            -0.3757 - 0.0411i  -0.3757 + 0.0411i
+  -0.5774            -0.4579 + 0.7103i  -0.4579 - 0.7103i
+
+D =
+   4.0000                  0                  0
+        0            -4.0000 + 2.0000i        0
+        0                  0            -4.0000 - 2.0000i
+\end{verbatim}
+The matrix $A$ has the three distinct eigenvalues $\rho=4$,
+$\lambda=\sigma+i\tau = -4+2i$ and $\overline\lambda=\sigma-i\tau
+= -4-2i$.  We can use these data to find all the solutions of 
+\Ref{eq:exsyslinc1}.  Every solution of \Ref{eq:exsyslinc1} is a linear 
+combination of the functions
+\begin{eqnarray*}
+X_1(t) & = & e^{4t}\left(\begin{array}{r} 1\\1\\1\end{array}\right),\\
+\widehat{X}_2(t) & = & e^{-4t}\left[
+\cos(2t)\left(\begin{array}{r}0.3757\\-0.3757\\-0.4579\end{array}\right)
+-\sin(2t)\left(\begin{array}{r} 0.0411\\-0.0411\\0.7103\end{array}\right)
+\right],\\
+\widehat{X}_3(t) & = & e^{-4t}\left[
+\sin(2t)\left(\begin{array}{r}0.3757\\-0.3757\\-0.4579\end{array}\right)
++\cos(2t)\left(\begin{array}{r} 0.0411\\-0.0411\\0.7103\end{array}\right)
+\right].
+\end{eqnarray*}
+
+
+In fact, it is possible to obtain a simpler form for these solutions by 
+using different eigenvectors associated with the eigenvalues $-4\pm 2i$.  
+Rescaling {\tt V(:,2)} by {\tt V(:,2)/V(1,2)} yields the answer
+\begin{verbatim}
+ans =
+   1.0000
+  -1.0000 - 0.0000i
+  -1.0000 + 2.0000i
+\end{verbatim}
+and therefore $(1,-1,-1+2i)^t$ is also an eigenvector belonging to the
+eigenvalue $-4+2i$.  Using this eigenvector the two solutions in 
+\Ref{eq:reimsol} take the form
+\[
+X_2(t) = e^{-4t}\left(\begin{array}{c}
+\cos(2t)\\ -\cos(2t)\\ -\cos(2t)-2\sin(2t)\end{array}\right),\quad
+X_3(t) = e^{-4t}\left(\begin{array}{c}
+\sin(2t)\\ -\sin(2t)\\ -\sin(2t)+2\cos(2t)\end{array}\right).
+\]
+
+Suppose that we wish to find the solution satisfying the initial 
+condition\index{initial condition} $X_0=(1,2,3)^t$.  Then we need 
+to find scalars $\alpha_1$,
+$\alpha_2$, and $\alpha_3$ that solve the system of linear equations
+\[
+X_0 = \alpha_1X_1(0) + \alpha_2X_2(0) + \alpha_3X_3(0).
+\]
+In coordinates, this linear system is:
+\[
+\left(\begin{array}{c} 1 \\ 2 \\ 3\end{array}\right) =
+\left(\begin{array}{rrr} 1 & 1 & 0 \\ 1 & -1 & 0 \\ 1 & -1 & 2 \end{array}
+\right)\left(\begin{array}{c} \alpha_1 \\ \alpha_2 \\ \alpha_3
+\end{array}\right).
+\] 
+This linear system is easily solved by hand to obtain 
+$\alpha_1=\frac{3}{2}$, $\alpha_2=-\frac{1}{2}$ and $\alpha_3=\frac{1}{2}$.
+The closed form solution to this initial value problem is then 
+\begin{equation}  \label{E:ecp}
+X(t) = \frac{1}{2}\left(\begin{array}{c} 
+3e^{4t} + e^{-4t}(\sin(2t)-\cos(2t)) \\
+3e^{4t} + e^{-4t}(-\sin(2t)+\cos(2t))\\
+3e^{4t} + e^{-4t}(\sin(2t)+3\cos(2t))
+\end{array}\right).
+\end{equation}
+
+
+\noindent (b) As a second example, consider the system $\dot{X} = AX$ where
+\begin{equation*} \label{eq:exsyslin1}
+A = 
+\left(\begin{array}{rrr}
+-2 & -2 & -4 \\
+ 0 & 0 & 4 \\
+ 0 & 2 & 2
+\end{array}\right)
+\end{equation*}
+By inspection, we see that the three eigenvalues of $A$ are $-2$ and the two
+eigenvalues of the matrix $\mattwo{0}{4}{2}{2}$.  A quick calculation shows
+that the eigenvalues of this $2\times 2$ matrix are $-2$ and $4$.  So the 
+eigenvalues of $A$ are
+\[
+\lambda_1=\lambda_2=-2 \AND \lambda_3=4.
+\]
+There are three linearly independent eigenvectors corresponding to these 
+eigenvalues: 
+\[
+v_1=\left(\begin{array}{r}
+1 \\ 0 \\ 0
+\end{array}\right),\qquad
+v_2=\left(\begin{array}{r}
+0 \\ -2 \\ 1
+\end{array}\right),\qquad
+v_3=\left(\begin{array}{r}
+1 \\ -1 \\ -1
+\end{array}\right).
+\]
+Therefore, every solution of the equation $\dot X=AX$ has the form
+\[
+X(t)=\alpha_1e^{-2t}\left(\begin{array}{r}
+1 \\ 0 \\ 0
+\end{array}\right) + \alpha_2e^{-2t}\left(\begin{array}{r}
+0 \\ -2 \\ 1\end{array}\right) + \alpha_3e^{4t}\left(\begin{array}{r}
+1 \\ -1 \\ -1
+\end{array}\right)
+\] 
+with appropriate constants $\alpha_1,\alpha_2,\alpha_3$.
+
+
+\subsubsection*{A Deficiency in Eigenvectors}
+
+When working with Jordan normal forms\index{Jordan normal form} we have to 
+find bases consisting of generalized eigenvectors.  As we know, this is a 
+difficult problem.  We describe a method here for finding closed form 
+solutions to linear systems when the eigenvalues are real and there is 
+exactly one Jordan block\index{Jordan block} associated to each eigenvalue.  
+This assumption is equivalent to assuming that the null space of 
+$A-\lambda I_n$ being one dimensional, and under this assumption the 
+computation of generalized eigenvalues is a tractable linear algebra problem 
+(as we saw in Section~\ref{S:JNF}).
+
+Suppose that $\lambda$ is a real eigenvalue of $A$ with algebraic
+multiplicity $k$ and with one linearly independent eigenvector $w$.   Suppose 
+that there exist linearly independent vectors $w_j$ ($j=1,\ldots,k$) such that
+\begin{equation}  \label{eq:genvec}
+\begin{array}{rcl}
+(A-\lambda I_n)w_1 & = & 0 \\
+(A-\lambda I_n)w_2 & = & w_1 \\
+& \vdots & \\
+(A-\lambda I_n)w_k & = & w_{k-1}.
+\end{array}
+\end{equation}
+We use this information to find $k$ linearly independent solutions to
+$\dot{X}=AX$.  See Theorem~\ref{T:JBsoln}.
+
+The theory of Section~\ref{sec:LinHomSys} tells us that solutions of
+\Ref{eq:linsys} have the form
+\[
+X(t)=e^{\lambda t}(\alpha_1(t)w_1+\alpha_2(t)w_2+\cdots+\alpha_k(t)w_k),
+\]
+where each $\alpha_j(t)$ is a polynomial of degree at most $k-1$.  See 
+Lemma~\ref{R:pdeg} in Section~\ref{sec:LinHomSys}.  Using the product rule, 
+compute
+\[
+\dps\frac{dX}{dt} = e^{\lambda t}
+\left(\lambda (\alpha_1w_1+\cdots+\alpha_kw_k)+
+\frac{d\alpha_1}{dt}w_1+\cdots+\frac{d\alpha_k}{dt}w_k\right).
+\]
+On the other hand, from \Ref{eq:genvec}
+\begin{eqnarray*}
+AX(t) & = & e^{\lambda t}(\alpha_1\lambda w_1+\alpha_2(w_1+\lambda w_2)
++\cdots+\alpha_k(w_{k-1}+\lambda w_k))\\
+& = & e^{\lambda t}(\lambda (\alpha_1w_1+\cdots+\alpha_kw_k) +
+\alpha_2w_1 + \cdots+ \alpha_kw_{k-1}).
+\end{eqnarray*}
+It follows that $X(t)$ is a solution if and only if
+\begin{equation}  \label{E:alphas}
+\frac{d\alpha_1}{dt}w_1+\cdots+
+\frac{d\alpha_k}{dt}w_k= \alpha_2w_1 + \cdots+ \alpha_kw_{k-1}.
+\end{equation}
+Since $w_1,\ldots,w_k$ are linearly independent vectors, \Ref{E:alphas} is 
+equivalent to
+\begin{eqnarray*}
+\frac{d\alpha_1}{dt} & = & \alpha_2    \\
+                     & \vdots &        \\
+\frac{d\alpha_{k-1}}{dt} & = & \alpha_k \\
+\frac{d\alpha_k}{dt}  & = & 0.
+\end{eqnarray*}
+
+Next, choose $j$ such that $1\le j\le k$.  By setting
+\[ 
+\alpha_{j+1} =  \cdots = \alpha_k = 0
+\]
+and 
+\[
+\alpha_j(t)=1, \quad \alpha_{j-1}(t)=t, \quad \alpha_{j-2}(t)=\frac{t^2}{2},
+\quad \ldots, \quad\alpha_1(t)=\frac{t^{j-1}}{(j-1)!}.
+\]
+Then the function 
+\begin{equation}  \label{E:Xj}
+X_j(t)=e^{\lambda t} \left(\frac{t^{j-1}}{(j-1)!}w_1+\frac{t^{j-2}}{(j-2)!}w_2
++\cdots+tw_{j-1}+w_j\right)
+\end{equation}
+is a solution of \Ref{eq:linsys}.   Moreover, since $X_j(0)=w_j$, the 
+solutions $X_1(t),\ldots,X_k(t)$ are linearly independent.  We have proved:
+\begin{thm}  \label{T:JBsoln}
+Let $w_1,\ldots,w_k$ be a set of linearly independent generalized
+eigenvectors vectors satisfying \Ref{eq:genvec}. Then the functions 
+$X_1(t),\ldots,X_k(t)$ in \Ref{E:Xj} are a linearly independent set of 
+solutions\index{linearly!independent solutions} to $\dot{X}=AX$.
+\end{thm}
+
+For example, when $k=3$, we have found three linearly independent solutions:
+\begin{eqnarray*}
+X_1(t)&=&e^{\lambda t} w_1\\
+X_2(t)&=&e^{\lambda t} (tw_1+w_2)\\
+X_3(t)&=&e^{\lambda t} \left(\frac{t^2}{2}w_1+tw_2+w_3\right).
+\end{eqnarray*}
+
+
+\subsubsection*{An Example}
+
+Consider the system $\dot{X}=AX$, where 
+\begin{equation*}    \label{eq:exsyslin2}
+A =
+\left(\begin{array}{rrr}
+     6  &  6  &  6\\
+     5  & 11  & -1\\
+     1  & -5  &  7
+\end{array}\right).
+\end{equation*}
+The eigenvalues of $A$ (using {\tt eig(A)})\index{\computer!eig} are
+\[
+\lambda_1=0\quad \mbox{and}\quad \lambda_2=\lambda_3=12.
+\]
+In this case (using {\tt [V,D] = eig(A)}) we find that there are just two
+linearly independent eigenvectors
+\[
+v_1=\left(\begin{array}{r}
+2 \\ -1 \\ -1
+\end{array}\right),\quad
+v_2=\left(\begin{array}{r}
+0 \\ 1 \\ -1
+\end{array}\right).
+\]
+It follows that the algebraic multiplicity\index{multiplicity!algebraic}
+of $\lambda_2=12$
+is two but the geometric multiplicity\index{multiplicity!geometric}
+is just one.  Typing
+\begin{verbatim}
+null((A-12*eye(3))^2)
+\end{verbatim}\index{\computer!null}\index{\computer!eye}
+shows us that $w_2=(2,1,1)^t$ is a generalized eigenvector of $A$.
+Set $w_1=(A-12I_3)w_2=(0,8,-8)^t$.  Then all solutions of \Ref{eq:exsyslin2}
+are linear combinations of
+\[
+X_1(t)=\left(\begin{array}{r}
+2 \\ -1 \\ -1
+\end{array}\right), \quad
+X_2(t)=e^{12t}\left(\begin{array}{r}
+0 \\ 1 \\ -1
+\end{array}\right), \quad
+X_3(t)=e^{12t}\left[
+t\left(\begin{array}{r}
+0 \\ 8 \\ -8
+\end{array}\right)
++\left(\begin{array}{r}
+2 \\ 1 \\ 1
+\end{array}\right)\right].
+\]
+
+
+
+\subsection*{The Direct Computation of the Matrix Exponential $e^{tA}$}
+
+Explicitly solving a linear system of $n$ ODEs when the coefficient 
+matrix $A$ has fewer than $n$ linearly independent eigenvectors is 
+a difficult problem.  Several methods have been developed to find 
+closed form solutions when eigenvector deficiencies exist; all of these 
+methods require many calculations and are difficult to carry out using 
+only hand calculation.  We now describe one of these methods --- the 
+direct computation of the exponential $e^{tA}$ by a method based on the 
+Cayley-Hamilton theorem\index{Cayley Hamilton theorem} 
+(Theorem~\ref{T:CH} of 
+Chapter~\ref{C:HDeigenvalues}), which was proved as a corollary to the 
+Jordan normal form theorem.
+
+\subsubsection*{A Method Based on Cayley-Hamilton and Partial Fractions}
+\index{partial fractions}
+
+Let $\lambda_1,\ldots,\lambda_k$ be the distinct eigenvalues of the 
+$n\times n$ matrix $A$.  Let $m_j$ be the algebraic multiplicity of the 
+eigenvalue $\lambda_j$.  Therefore, the characteristic polynomial
+\index{characteristic polynomial} of $A$ is 
+\[
+p_A(\lambda) = (\lambda_1-\lambda)^{m_1}\cdots(\lambda_k-\lambda)^{m_k}.
+\]
+
+We begin with a preliminary discussion of $p_A$ based on partial fractions.
+In particular, we claim that 
+\begin{equation}  \label{e:1/p}
+\frac{1}{p_A(\lambda)} = \frac{a_1(\lambda)}{(\lambda_1-\lambda)^{m_1}} +\cdots
+	+ \frac{a_k(\lambda)}{(\lambda_k-\lambda)^{m_k}}
+\end{equation}
+where $a_j(\lambda)$ is a polynomial with $\deg(a_j)\leq m_j-1$.  Partial 
+fractions state that $1/p_A(\lambda)$ can be written as sums of expressions 
+of the form
+\[
+\frac{c_{j1}}{(\lambda_j-\lambda)} + \cdots + \frac{c_{jm_j}}{(\lambda_j-\lambda)^{m_j}},
+\]
+for scalars $c_{ji}$.  Putting these terms over a common denominator proves 
+\Ref{e:1/p}.
+
+Define the polynomials 
+\begin{equation}  \label{e:Pj}
+P_j(\lambda) = \frac{p_A(\lambda)}{(\lambda_j-\lambda)^{m_j}}.
+\end{equation}
+For instance, if 
+$p_A(\lambda)=(\lambda_1-\lambda)(\lambda_2-\lambda)^2(\lambda_3-\lambda)$ 
+with $\lambda_1 = -2$, $\lambda_2 = 5$ and $\lambda_3 = 4$ then
+\begin{eqnarray*}
+P_1(\lambda) &=& \frac{p_A(\lambda)}{-2-\lambda}=(5-\lambda)^2(4-\lambda)\\
+P_2(\lambda) &=& \frac{p_A(\lambda)}{(5-\lambda)^2}=(-2-\lambda)(4-\lambda)\\
+P_3(\lambda) &=& \frac{p_A(\lambda)}{4-\lambda}=(-2-\lambda)(5-\lambda)^2.
+\end{eqnarray*}
+We can now state one method for computing $e^{tA}$.
+\begin{thm} \label{T:etA}
+Let $A$ be an $n\times n$ matrix with distinct eigenvalues 
+$\lambda_1,\ldots,\lambda_k$ and algebraic multiplicities $m_1,\ldots,m_k$.  
+Then
+\[
+e^{tA} = \sum_{\ell=1}^k \left[e^{\lambda_\ell t}a_\ell(A)P_\ell(A)
+\sum_{j=0}^{m_\ell-1}\frac{1}{j!}t^j(A-\lambda_\ell I_n)^j\right].
+\]
+\end{thm}\index{matrix!exponential}\index{multiplicity}
+\index{distinct eigenvalues}
+
+Note that this matrix exponential consists of functions that are linear 
+combinations of $t^je^{\lambda_\ell t}$ where $j\leq m_\ell-1$.  These
+are just the type of terms that appeared in our discussion of solutions 
+of equations in Jordan normal form in Section~\ref{sec:LinHomSys}.
+
+\begin{proof} Multiplying \Ref{e:1/p} by $p_A(\lambda)$ yields the identity
+\begin{equation}  \label{e:p=aP}
+1 = a_1(\lambda)P_1(\lambda) + \cdots + a_k(\lambda)P_k(\lambda).
+\end{equation}
+Identity \Ref{e:p=aP} is valid for every number $\lambda$.  This is 
+possible only if, for each $j>0$, the sum of all coefficients of terms 
+with $\lambda^j$ is zero.  Therefore, we can substitute $A$ into 
+\Ref{e:p=aP} and obtain
+\begin{equation}  \label{e:p=AP}
+I_n = a_1(A)P_1(A) + \cdots + a_k(A)P_k(A).
+\end{equation}
+
+We now compute 
+\[
+e^{tA}   =  e^{\lambda_\ell t}e^{t(A-\lambda_\ell I_n)} =  
+e^{\lambda_\ell t}\sum_{j=0}^\infty\frac{1}{j!}t^j(A-\lambda_\ell I_n)^j.
+\]
+Multiplying this identity by $a_\ell(A)P_\ell(A)$ yields
+\[
+a_\ell(A)P_\ell(A)e^{tA} = e^{\lambda_\ell t}a_\ell(A)
+\sum_{j=0}^\infty\frac{1}{j!}t^jP_\ell(A)(A-\lambda_\ell I_n)^j.
+\]
+Now we use the Cayley-Hamilton theorem to observe that 
+\[
+P_\ell(A)(A-\lambda_\ell I_n)^{m_\ell} = (-1)^{m_\ell}p_A(A) = 0.
+\]
+Hence $P_\ell(A)(A-\lambda_\ell I_n)^j=0$ for all $j\ge m_\ell$
+and therefore
+\[
+a_\ell(A)P_\ell(A)e^{tA} = e^{\lambda_\ell t}a_\ell(A)
+\sum_{j=0}^{m_\ell-1}\frac{1}{j!}t^jP_\ell(A)(A-\lambda_\ell I_n)^j.
+\]
+Finally, we sum over the index $\ell$ and use \Ref{e:p=AP} to conclude that
+\[
+e^{tA} = \sum_{\ell=1}^ka_\ell(A)P_\ell(A)e^{tA} = 
+\sum_{\ell=1}^k\left[ e^{\lambda_\ell t}a_\ell(A)P_\ell(A)
+\sum_{j=0}^{m_\ell-1}\frac{1}{j!}t^j(A-\lambda_\ell I_n)^j \right]
+\]
+which proves the theorem.  \end{proof}  
+
+As a special case, consider a matrix $A$ that has $n$ distinct
+eigenvalues. Then $m_\ell-1=0$ for each $\ell$ implying that the polynomial
+$a_\ell(\lambda)$ has degree zero and is a constant independent of $\lambda$. 
+Since $0!=1$, $t^0=1$, and $(A-\lambda_\ell I_n)^0=I_n$, we obtain
+\begin{cor} \label{T:etA0}
+Let $A$ be an $n\times n$ matrix with distinct eigenvalues
+\index{distinct eigenvalues}
+$\lambda_1,\ldots,\lambda_n$. Then
+\[
+e^{tA} = \sum_{\ell=1}^n a_\ell e^{\lambda_\ell t} P_\ell(A).
+\]
+\end{cor}
+
+\subsubsection*{An Example with Distinct Eigenvalues}
+
+We revisit the example in \Ref{eq:exsyslinc1}, that is, 
+\[
+A = \left(\begin{array}{rrr}
+     0  &  3  &  1\\
+     4  &  1  & -1\\
+     2  &  7  & -5
+\end{array}\right)
+\]
+As we discussed previously, the eigenvalues of this matrix are:
+$\lambda_1=4$, $\lambda_2=-4+2i$, and $\lambda_3=-4-2i$.
+Therefore, the characteristic 
+polynomial\index{characteristic polynomial} of $A$ is
+\[
+p_A(\lambda) = (4-\lambda)(-4+2i-\lambda)(-4-2i-\lambda),
+\]
+and
+\begin{eqnarray*}
+P_1(\lambda) & = & (-4+2i-\lambda)(-4-2i-\lambda) \\
+P_2(\lambda)& = & (4-\lambda)(-4-2i-\lambda)\\  
+P_3(\lambda) & = & (4-\lambda)(-4+2i-\lambda).
+\end{eqnarray*}
+Moreover, using partial fractions\index{partial fractions}, 
+we can write
+\[
+\frac{1}{p_A(\lambda)} = \frac{\frac{1}{68}}{4-\lambda} + 
+\frac{-\frac{1}{8+32i}}{-4+2i-\lambda}
++ \frac{-\frac{1}{8-32i}}{-4-2i-\lambda}.
+\]
+So
+\[
+a_1(\lambda)=\frac{1}{68}, \quad a_2(\lambda)=-\frac{1}{8+32i},
+ \AND a_3(\lambda)=-\frac{1}{8-32i}.
+\]
+
+Next, using \Matlabp, compute
+\[
+\begin{array}{rcccl}
+P_1(A) & = & ((-4+2i)I_3-A)((-4-2i)I_3-A) & = & 
+\left(\begin{array}{rrr}  
+     34    &       34    &        0 \\     
+     34    &       34    &        0 \\     
+     34    &       34    &        0      
+\end{array}\right) \\
+P_2(A) & = & (4I_3-A)((-4-2i)I_3-A) & = &  
+\left(\begin{array}{rrr}
+     -2  - 8i     &   10  +  6i  &  -8  +  2i \\     
+      2  + 8i     &  -10  -  6i  &   8  -  2i \\     
+     18  + 4i     &  -22  + 14i  &   4  - 18i       
+\end{array}\right) \\
+P_3(A) & = & (4I_3-A)((-4+2i)I_3-A) & = & 
+\left(\begin{array}{rrr}
+     -2  + 8i     &   10  -  6i  &  -8  -  2i \\      
+      2  - 8i     &  -10  +  6i  &   8  +  2i \\   
+     18  - 4i     &  -22  - 14i  &   4  + 18i    
+\end{array}\right)
+\end{array}
+\]
+
+Corollary~\ref{T:etA0} states that
+\[
+e^{tA} = e^{4t}a_1(A)P_1(A)+e^{-4t+2it}a_2(A)P_2(A)
+	+e^{-4t-2it}a_3(A)P_3(A)
+\]
+Using \Matlabp, we obtain
+\begin{eqnarray*}
+e^{tA} & = & \frac{1}{2}e^{4t} 
+\left(\begin{array}{rrr}
+     1    &      1    &       0  \\    
+     1    &      1    &       0  \\    
+     1    &      1    &       0      
+\end{array}\right)  + 
+\frac{1}{4}e^{-4t+2it}
+\left(\begin{array}{ccc}
+     1     &    -1      +    i     &      -i   \\ 
+    -1     &     1      -    i     &       i    \\
+ -1  + 2i  &    -1      -   3i    &     2 + i   
+\end{array}\right) + \\
+& & \frac{1}{4}e^{-4t-2it}
+\left(\begin{array}{ccc}
+     1     &    -1      -    i     &       i   \\ 
+    -1     &     1      +    i     &      -i    \\
+ -1  - 2i  &    -1      +    3i    &     2 - i   
+\end{array}\right)
+\end{eqnarray*}
+Therefore,
+\[
+e^{tA} = \frac{1}{2}e^{4t}
+\left(\begin{array}{rrr}
+     1    &      1    &       0  \\
+     1    &      1    &       0  \\
+     1    &      1    &       0
+\end{array}\right)  
++ \frac{1}{2}e^{-4t}\left(\cos(2t)\left(\begin{array}{rrr}
+1 & -1 & 0\\ -1 & 1 & 0\\ -1 & -1 & 2 \end{array}\right)+\sin(2t)
+\left(\begin{array}{rrr}
+0 & 1 & -1\\ 0 & -1 & 1\\ 2 & -3 & 1 \end{array}\right)\right)
+\]
+
+A distinct advantage of this direct method for computing $e^{tA}$ comes
+when solving an initial value problem.  Then we can write the solution 
+directly as $X(t)=e^{tA}X_0$.  For example, the solution to the initial
+value problem when $X_0=(1,2,3)^t$ is:
+\[
+X(t) = e^{tA}X_0 = \frac{1}{2}e^{4t}
+\left(\begin{array}{c} 3\\3\\3\end{array}\right)
++ \frac{1}{2}e^{-4t}\left(\cos(2t)\left(\begin{array}{r}
+-1\\1\\3\end{array}\right)+\sin(2t)
+\left(\begin{array}{r} -1\\1\\-1 \end{array}\right)\right) 
+\]
+Compare this result with \Ref{E:ecp}.
+
+
+\subsubsection*{An Example with Multiple Eigenvalues}
+
+As an example, recall the matrix \Ref{eq:exsyslin2}
+\[
+A =
+\left(\begin{array}{rrr}
+     6  &  6  &  6\\
+     5  & 11  & -1\\
+     1  & -5  &  7
+\end{array}\right).
+\]
+The eigenvalues of $A$ (using {\tt eig(A)}) are
+\[
+\lambda_1=0\quad \mbox{and}\quad \lambda_2=\lambda_3=12.
+\]
+Therefore, the characteristic polynomial is
+\[
+p_A(\lambda) = (0-\lambda)(12-\lambda)^2=-\lambda(12-\lambda)^2.
+\]
+Using partial fractions, we write
+\[
+\frac{1}{p_A(\lambda)} = \frac{1}{-\lambda(12-\lambda)^2}=
+\frac{\frac{1}{144}}{-\lambda} + 
+\frac{-\frac{1}{6}+\frac{1}{144}\lambda}{(12-\lambda)^2}
+\]
+It follows that 
+\[
+a_1(\lambda)=\frac{1}{144} \AND a_2(\lambda) = -\frac{1}{6}+\frac{1}{144}\lambda
+\]
+and
+\[
+P_1(\lambda)=(12-\lambda)^2 \AND P_2(\lambda) = -\lambda.
+\]
+
+Thus, using \Matlabp, we calculate
+\[
+a_1(A)= \frac{1}{144}I_3 \AND a_2(A)=-\frac{1}{6}I_3+\frac{1}{144}A=   
+\frac{1}{144}\left(\begin{array}{rrr}
+    -18  &    6  &       6  \\  
+     5   &   -13 &      -1\\   
+     1   &    -5 &     -17   
+\end{array}\right)
+\]
+and
+\[
+P_1(A) = (12I_3-A)^2 =    
+\left(\begin{array}{rrr}
+     72    &      -72   &       -72  \\    
+    -36    &       36   &        36 \\     
+    -36    &       36   &        36      
+\end{array}\right)   \AND
+P_2(A) = -A.
+\]
+From Theorem~\ref{T:etA} (again with the help of \Matlabp), it follows that 
+\begin{eqnarray*}
+e^{tA}&  =&  e^{0t}a_1(A)P_1(A) + 
+e^{12t}a_2(A)P_2(A)+te^{12t}a_2(A)P_2(A)(A-12I_3)\\
+& = & \frac{1}{4}\left(\begin{array}{rrr}
+     2     &   -2    &     -2 \\    
+    -1     &     1   &       1\\     
+    -1     &     1   &       1     
+\end{array}\right)  +
+\frac{1}{4}e^{12t}\left(\begin{array}{rrr}     
+    2 &   2 &   2\\
+    1 &   3 &  -1\\
+    1 &  -1 &   3
+\end{array}\right) + te^{12t}\left(\begin{array}{rrr}
+         0   &      0    &     0\\
+         2   &     2    &   2\\
+        -2   &     -2    &    -2
+\end{array}\right).
+\end{eqnarray*}
+ 
+
+
+
+\EXER
+
+
+\TEXER
+
+\noindent  In Exercises~\ref{c12.1.2a} -- \ref{c12.1.2d} consider the system 
+of differential equations $\dot X = AX$ corresponding to the given matrix 
+$A$ and construct a complete set of linearly independent solutions.
+\begin{exercise} \label{c12.1.2a}
+$A=\mattwo{2}{1}{0}{2}$.
+\end{exercise}
+\begin{exercise} \label{c12.1.2b}
+$A=\left(\begin{array}{rrr} 1 & 0 & 0\\ 0 & -1 & 2 \\ 0 & 0 & -1
+\end{array}\right)$.
+\end{exercise}
+\begin{exercise} \label{c12.1.2c}
+$A=\mattwo{1}{-1}{1}{3}$.
+\end{exercise}
+\begin{exercise} \label{c12.1.2d}
+$A=\left(\begin{array}{rrr} -4 & -9 & 0\\ 0 & 5 & 0 \\ -9 & -8 & 5
+\end{array}\right)$.
+\end{exercise}
+
+\noindent  In Exercises~\ref{c12.1.6a} -- \ref{c12.1.6d} use Corollary~\ref{T:etA0} to compute $e^{tA}$ for the given matrix.
+\begin{exercise} \label{c12.1.6a}
+$A = \mattwo{0}{1}{1}{0}$.
+\end{exercise}
+\begin{exercise} \label{c12.1.6b}
+$A = \mattwo{2}{1}{1}{2}$.
+\end{exercise}
+\begin{exercise} \label{c12.1.6c}
+$A = \mattwo{3}{2}{0}{1}$.
+\end{exercise}
+\begin{exercise} \label{c12.1.6d}
+$A = \left(\begin{array}{rrr} 1 & -3 & 1\\ 0 & -2 & -5 \\ 0 & 0 & 3
+\end{array}\right)$.
+\end{exercise}
+
+
+\CEXER
+
+\noindent  In Exercises~\ref{c12.1.10a} -- \ref{c12.1.10b}  solve the 
+initial value problem for the given system of ODE $\dot{X}=AX$ with 
+initial condition $X(0)=X_0$.
+\begin{exercise}  \label{c12.1.10a}
+$A=\left(\begin{array}{rrr} 
+     1   &  2  &  -1 \\
+    -1   &  1  &   1 \\
+     2   &  2  &  -2
+\end{array}\right) \AND 
+X_0=\left(\begin{array}{r} 1 \\ 2 \\ -1  \end{array}\right)$.
+\end{exercise}
+\begin{exercise}  \label{c12.1.10b}
+$A=\left(\begin{array}{rrr}
+    -3   &  0   &  2\\
+     2   & -1   & -1\\
+    -4   &  0   &  3
+\end{array}\right) \AND 
+X_0=\left(\begin{array}{r} 0 \\ 1 \\ 1  \end{array}\right)$.
+\end{exercise}
+
+\noindent  In Exercises~\ref{c12.1.8a} -- \ref{c12.1.8d} use
+Theorem~\ref{T:etA} and \Matlab to compute $e^{tA}$ for the given matrix.
+\begin{exercise} \label{c12.1.8a}
+$A = \mattwo{0}{1}{0}{0}$.
+\end{exercise}
+\begin{exercise} \label{c12.1.8b}
+$A = \mattwo{-1}{2}{0}{-1}$.
+\end{exercise}
+\begin{exercise} \label{c12.1.8c}
+$A = \left(\begin{array}{rrr} 1 & 1 & 2\\ 1 & 1 & 0 \\ 0 & 0 & 0
+\end{array}\right)$.
+\end{exercise}
+\begin{exercise} \label{c12.1.8d}
+$A = \left(\begin{array}{rrr} -1 & 2 & -6\\ 0 & 2 & 0 \\ 0 & -1 & 2
+\end{array}\right)$.
+\end{exercise} 
+
+\end{document}

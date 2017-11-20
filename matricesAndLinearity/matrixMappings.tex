@@ -1,0 +1,371 @@
+\documentclass{ximera}
+
+\input{./preamble.tex}
+
+\title{Matrix Mappings}
+
+\begin{document}
+\begin{abstract}
+\end{abstract}
+\maketitle
+
+  \index{matrix!mappings} \label{s:4.2}
+
+Having illustrated the notational advantage of using matrices
+and matrix multiplication, we now begin to discuss why there
+is also a {\em conceptual advantage\/} to matrix
+multiplication, a conceptual advantage that will help
+us to understand how systems of linear equations and linear
+differential equations may be solved.
+
+Matrix multiplication allows us to view $m\times n$ matrices as
+mappings from $\R^n$ to $\R^m$.  Let $A$ be an $m\times n$
+matrix and let $x$ be an $n$ vector.  Then
+\[
+x \mapsto Ax
+\]
+defines a mapping from $\R^n$ to $\R^m$.
+
+The simplest example of a matrix mapping is given by $1\times 1$
+matrices.  Matrix mappings defined from $\R\to\R$ are
+\[
+x \mapsto ax
+\]
+where $a$ is a real number.  Note that the graph of this
+function is just a straight line through the origin (with slope
+$a$).  From this example we see that matrix mappings are very
+special mappings indeed. In higher dimensions, matrix mappings
+provide a richer set of mappings; we explore here {\em planar\/}
+mappings\index{planar mappings} --- mappings of the plane into
+itself --- using \Matlab graphics and the program {\sf map}.
+
+The simplest planar matrix mappings are the
+{\em dilatations\/}\index{dilatation}.
+Let $A=cI_2$ where $c>0$ is a scalar.  When $c<1$ vectors are
+contracted by a factor of $c$ and and these mappings are
+examples of {\em contractions}\index{contraction}.
+When $c>1$ vectors are
+stretched or expanded by a factor of $c$ and these dilatations
+are examples of {\em expansions}\index{expansion}.
+We now explore some more complicated planar matrix mappings.
+
+The next planar motions that we study are those given by the
+matrices
+\[
+A=\mattwo{\lambda}{0}{0}{\mu}.
+\]
+Here the matrix mapping is given by $(x,y)\mapsto(\lambda x,\mu y)$;
+that is, a mapping that independently stretches and/or contracts the
+$x$ and $y$ coordinates.  Even these simple looking mappings can move 
+objects in the plane in a somewhat complicated fashion.
+
+\subsection*{The Program Map}  \index{\computer!map}
+
+We can use \Matlab to explore planar matrix mappings in an efficient way 
+using the program {\tt map}.  In \Matlab type the command
+\begin{verbatim}
+map
+\end{verbatim}
+and a menu appears labeled {\sf MAP Setup}.  The $2\times 2$ matrix
+\[
+\mattwo{0}{-1}{1}{0}
+\]
+has been pre-entered.  Click on the {\sf Proceed} button.  A
+window entitled {\sf MAP Display} appears. Click on {\sf Icons}
+and click on an icon --- say {\sf Dog}. \index{\computer!dog}
+Then click in the {\sf MAP Display} window and a blue `{\sf Dog}' 
+will appear in that window.  Now click on
+the {\sf Map} button and a new version of the {\sf Dog} will
+appear in yellow --- but the yellow {\sf Dog} is rotated about
+the origin counterclockwise by $90^\circ$ from the blue dog.
+Indeed, this matrix $A$ just rotates the plane counterclockwise
+by $90^\circ$.  To verify this statement just click on {\sf Map}
+again and see that the yellow dog rotates $90^\circ$
+counterclockwise into the magenta dog.  Of course, the magenta
+dog is just rotated $180^\circ$ from the original blue dog.
+Clicking on {\sf Map} again produces a fourth dog --- this one
+in cyan.  Finally one more click on the {\sf map} button will
+rotate the cyan dog into a red dog that exactly covers the
+original blue dog.
+
+Choose another icon from the {\sf Icons} menu; a blue version of
+this icon appears in the {\sf MAP Display} window.  Now click on
+{\sf Map} to see that your chosen icon is just rotated
+counterclockwise by $90^\circ$.
+
+Other matrices will produce different motions of the plane.  You
+may either type the entries of a matrix in the {\sf Map Setup}
+window and click on the {\sf Proceed} button or recall one of
+the pre-assigned matrices listed in the menu obtained by
+clicking on {\sf Gallery}.  For example, clicking on
+the {\sf Contracting rotation} button enters the matrix
+\[
+\mattwo{0.3}{-0.8}{0.8}{0.3}
+\]
+This matrix rotates the plane through an angle of approximately
+$69.4^\circ$ counterclockwise and contracts the plane by a
+factor of approximately $0.85$.  Now click on {\sf Dog} in the
+{\sf Icons} menu to bring up the blue dog again.  Repeated
+clicking on {\sf map} rotates and contracts the dog so that dogs
+in a cycling set of colors slowly converge towards the origin in
+a spiral of dogs.
+
+\subsubsection*{Rotations}\index{rotation}
+
+Rotating the plane counterclockwise through an angle $\theta$ is
+a motion given by a matrix mapping.  We show that the matrix that
+performs this rotation is:
+\begin{equation} \label{e:rotmat}
+R_\theta = \mattwo{\cos\theta}{-\sin\theta}{\sin\theta}{\cos\theta}.
+\end{equation}
+To verify that $R_\theta$ rotates the plane counterclockwise
+through angle $\theta$, let $v_\varphi$ be the unit vector whose
+angle from the horizontal is $\varphi$; that is,
+$v_\varphi=(\cos\varphi,\sin\varphi)$.  We can write every vector in
+$\R^2$ as $rv_\varphi$ for some number $r\ge 0$.   Using the 
+trigonometric identities for the cosine and sine of the sum of two angles, we
+have:
+\begin{eqnarray*}
+R_\theta (rv_\varphi) & = &
+\mattwo{\cos\theta}{-\sin\theta}{\sin\theta}{\cos\theta}
+\vectwo{r\cos\varphi}{r\sin\varphi} \\
+& = & \vectwo{r\cos\theta\cos\varphi -r\sin\theta\sin\varphi}
+{r\sin\theta\cos\varphi + r\cos\theta\sin\varphi}\\
+& = & r\vectwo{\cos(\theta+\varphi)}{\sin(\theta+\varphi)}  \\
+& = & rv_{\varphi+\theta}.
+\end{eqnarray*}
+This calculation shows that $R_\theta$ rotates every vector in the plane
+counterclockwise through angle $\theta$.
+
+It follows from \Ref{e:rotmat} that $R_{180^\circ} = -I_2$.  So rotating a
+vector in the plane by $180^\circ$ is the same as reflecting the vector
+through the origin.  It also follows that the movement associated with the
+linear map $x\mapsto -cx$ where $c>0$ may be thought of as a dilatation
+($x\mapsto cx$) followed by rotation through $180^\circ$ ($x\mapsto -x$).
+
+We claim that combining dilatations with general rotations produces spirals.  
+Consider the matrix
+\[
+S = \mattwo{c\cos\theta}{-c\sin\theta}{c\sin\theta}{c\cos\theta} = cR_\theta
+\]
+where $c<1$.  Then a calculation similar to the previous one shows that
+\[
+S(rv_\varphi) = c(rv_{\varphi+\theta}).
+\]
+So $S$ rotates vectors in the plane while contracting them by
+the factor $c$.  Thus, multiplying a vector repeatedly by $S$ 
+spirals that vector into the origin.  The example that we just 
+considered while using {\sf map} is
+\[
+\mattwo{0.3}{-0.8}{0.8}{0.3}\cong\mattwo{0.85\cos(69.4^\circ)}
+{-0.85\sin(69.4^\circ)}{0.85\sin(69.4^\circ)}{0.85\cos(69.4^\circ)},
+\]
+which has the general form of $S$.
+
+\subsection*{A Notation for Matrix Mappings}
+\index{matrix!mappings}
+
+We reinforce the idea that matrices are mappings by introducing a notation 
+for the mapping associated with an $m\times n$ matrix $A$.  Define
+\[
+L_A:\R^n\to\R^m
+\]
+by
+\[
+L_A(x) = Ax,
+\]
+for every $x\in\R^n$.
+
+There are two special matrices:  the $m\times n$ zero matrix 
+\index{matrix!zero} $O$ all of whose entries are $0$ and the 
+$n\times n$ identity matrix \index{matrix!identity} $I_n$ whose diagonal 
+entries are $1$ and whose off diagonal entries are $0$.  For instance,
+\[
+	I_3 = \left(
+\begin{array}{rrr}
+ 1 & 0 & 0  \\
+ 0 & 1 & 0  \\
+ 0 & 0 & 1
+\end{array}
+\right).
+\]
+
+The mappings associated with these special matrices are also special.  
+Let $x$ be an $n$ vector.  Then
+\begin{equation} \label{multby0}
+Ox=0,
+\end{equation}
+where the $0$ on the right hand side of \Ref{multby0} is the $m$
+vector all of whose entries are $0$.  The mapping $L_O$ is the 
+{\em zero mapping\/} \index{zero mapping} --- the mapping 
+that maps every vector $x$ to $0$.
+
+Similarly,
+\[
+I_nx=x
+\]
+for every vector $x$.  It follows that
+\[
+L_{I_n}(x) = x
+\]
+is the {\em identity mapping\/}, \index{identity mapping} since
+it maps every element to itself.  It is for this reason that the
+matrix $I_n$ is called the $n\times n$ {\em identity matrix\/}.
+
+\EXER
+
+\TEXER
+
+\noindent In Exercises~\ref{c4.2.a1a} -- \ref{c4.2.a1c} find a nonzero
+vector that is mapped to the origin by the given matrix.
+\begin{exercise} \label{c4.2.a1a}
+$A=\mattwo{0}{1}{0}{-2}$.
+\end{exercise}
+\begin{exercise} \label{c4.2.a1b}
+$B=\mattwo{1}{2}{-2}{-4}$.
+\end{exercise}
+\begin{exercise} \label{c4.2.a1c}
+$C=\mattwo{3}{-1}{-6}{2}$.
+\end{exercise}
+
+
+\begin{exercise} \label{c4.2.1a}
+What $2\times 2$ matrix rotates the plane about the origin counterclockwise
+by $30^\circ$?
+\end{exercise}
+\begin{exercise} \label{c4.2.1b}
+What $2\times 2$ matrix rotates the plane clockwise by $45^\circ$?
+\end{exercise}
+\begin{exercise} \label{c4.2.1c}
+What $2\times 2$ matrix rotates the plane clockwise by $90^\circ$ while
+dilating it by a factor of $2$?
+\end{exercise}
+
+\begin{exercise} \label{c4.2.2a}
+Find a $2\times 2$ matrix that reflects vectors in the $(x,y)$ plane across
+the $x$ axis.
+\end{exercise}
+\begin{exercise} \label{c4.2.2b}
+Find a $2\times 2$ matrix that reflects vectors in the $(x,y)$ plane across
+the $y$ axis.
+\end{exercise}
+\begin{exercise} \label{c4.2.2c}
+Find a $2\times 2$ matrix that reflects vectors in the $(x,y)$ plane across
+the line $x=y$.
+\end{exercise}
+
+\begin{exercise} \label{c7.8.1}
+The matrix
+\[
+A=\mattwo{1}{K}{0}{1}
+\]
+is a {\em shear}\index{shear}.  Describe the action of $A$ on the plane
+for different values of $K$.
+\end{exercise}
+
+\begin{exercise} \label{c7.8.2}
+Determine a rotation matrix that maps the vectors $(3,4)$ and
+$(1,-2)$ onto the vectors $(-4,3)$ and $(2,1)$ respectively.
+\end{exercise}
+
+
+
+\begin{exercise} \label{c4.2.3}
+Find a $2\times 3$ matrix $P$ that projects three dimensional $xyz$ space onto
+the $xy$ plane.  {\bf Hint:} Such a matrix will satisfy
+\[
+P\left(\begin{array}{c} 0 \\ 0 \\ z \end{array}\right) = \vectwo{0}{0}
+\AND
+P\left(\begin{array}{c} x \\ y \\ 0 \end{array}\right) = \vectwo{x}{y}.
+\]
+\end{exercise}
+
+\begin{exercise}	\label{c4.2.3a}
+Show that every matrix of the form $\mattwo{a}{-b}{b}{a}$ corresponds to
+rotating the plane through the angle $\theta$ followed by a dilatation 
+$cI_2$ where
+\begin{eqnarray*}
+c & = & \sqrt{a^2+b^2}\\
+\cos\theta & = & \frac{a}{c} \\
+\sin\theta & = & \frac{b}{c}.
+\end{eqnarray*}
+\end{exercise}
+
+\begin{exercise}  \label{c4.2.3b}
+Using Exercise~\ref{c4.2.3a} observe that the matrix
+$\mattwo{3}{4}{-4}{3}$ rotates the plane counterclockwise through
+an angle $\theta$ and then dilates the planes by a factor of $c$.
+Find $\theta$ and $c$.  Use {\tt map} to verify your results.
+\end{exercise}
+
+
+\CEXER
+
+
+\noindent In Exercises~\ref{c4.2.a4a} -- \ref{c4.2.a4c} use {\sf map} to
+find vectors that are stretched and/or contracted to a multiple of
+themselves by the given linear mapping.  {\bf Hint:}  Choose a vector in the
+{\sf MAP Display} window and apply {\sf Map} several times.
+\begin{exercise} \label{c4.2.a4a}
+$A=\mattwoc{2}{0}{1.5}{0.5}$.
+\end{exercise}
+\begin{exercise} \label{c4.2.a4b}
+$B=\mattwo{1.2}{-1.5}{-0.4}{1.2}$.
+\end{exercise}
+\begin{exercise} \label{c4.2.a4c}
+$C=\mattwo{2}{-1.25}{0}{-0.5}$.
+\end{exercise}
+
+\noindent In Exercises~\ref{c4.2.ba} -- \ref{c4.2.bc} use
+Exercise~\ref{c4.2.3a} and {\sf map} to verify that the given matrices
+rotate the plane through an angle $\theta$ followed by a dilatation $cI_2$.
+Find $\theta$ and $c$ in each case.
+\begin{exercise}  \label{c4.2.ba}
+$A=\mattwo{1}{-2}{2}{1}$.
+\end{exercise}
+\begin{exercise}  \label{c4.2.bb}
+$B=\mattwo{-2.4}{-0.2}{0.2}{-2.4}$.
+\end{exercise}
+\begin{exercise}  \label{c4.2.bc}
+$C=\mattwoc{2.67}{1.3}{-1.3}{2.67}$.
+\end{exercise}
+
+
+\noindent In Exercises~\ref{c4.2.4a} -- \ref{c4.2.4e} use {\sf map} to
+help describe the planar motions of the associated linear mappings for the
+given $2\times 2$ matrix.
+\begin{exercise} \label{c4.2.4a}
+$A=\mattwo{\frac{\sqrt{3}}{2}}{\frac{1}{2}}{-\frac{1}{2}}{\frac{\sqrt{3}}{2}}$.
+\end{exercise}
+\begin{exercise} \label{c4.2.4b}
+$B = \mattwo{\frac{1}{2}}{-\frac{1}{2}}{\frac{1}{2}}{\frac{1}{2}}$.
+\end{exercise}
+\begin{exercise} \label{c4.2.4c}
+$C = \mattwo{0}{1}{1}{0}$.
+\end{exercise}
+\begin{exercise} \label{c4.2.4d}
+$D = \mattwo{1}{0}{0}{0}$.
+\end{exercise}
+\begin{exercise} \label{c4.2.4e}
+$E = \mattwo{\frac{1}{2}}{\frac{1}{2}}{\frac{1}{2}}{\frac{1}{2}}$.
+\end{exercise}
+
+\begin{exercise}  \label{c4.2.5}
+The matrix 
+\[
+A = \mattwo{0}{-1}{-1}{0}
+\]
+reflects the $xy$-plane across the diagonal line $y=-x$ while the matrix
+\[
+B=\mattwo{-1}{0}{0}{-1}
+\]
+rotates the plane through an angle of $180^\circ$. Using the program 
+{\sf map} verify that both matrices map the vector $(1,1)$ to its negative
+$(-1,-1)$.  Now perform two experiments.  First using the {\sf icon} menu in 
+{\sf map} place a dog icon at about the point $(1,1)$ and move that dog by 
+matrix $A$.  Then replace the dog in its orginal position near $(1,1)$ and 
+move that dog using matrix $B$.  Describe the difference in the result.
+\end{exercise}   
+
+
+\end{document}

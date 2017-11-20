@@ -1,0 +1,222 @@
+\documentclass{ximera}
+
+\input{./preamble.tex}
+
+\title{Existence of Determinants}
+
+\begin{document}
+\begin{abstract}
+\end{abstract}
+\maketitle
+
+
+\label{A:det}
+
+The purpose of this appendix is to verify the inductive
+definition of determinant \Ref{e:inductdet}. We have already
+shown that if a determinant function exists, then it is unique.
+We also know that the determinant function exists for $1\times
+1$ matrices. So we assume by induction that the determinant function
+exists for $(n-1)\times(n-1)$ matrices and prove that the
+inductive definition gives a determinant function for $n\times
+n$ matrices.  \index{determinant}
+
+Recall that $A_{ij}$ is the cofactor matrix obtained from $A$ by
+deleting the $i^{th}$ row and $j^{th}$ column --- so $A_{ij}$ is
+an $(n-1)\times(n-1)$ matrix.  The inductive definition is:
+\index{determinant!inductive formula for}
+\[
+D(A) = a_{11}\det(A_{11})-a_{12}\det(A_{12})+\cdots 
++(-1)^{n+1}a_{1n}\det(A_{1n}).
+\] \index{cofactor}
+We use the notation $D(A)$ to remind us that we have not yet
+verified that this definition satisfies properties (a)-(c) of
+Definition~\ref{D:determinants}.  In this appendix we verify these
+properties after assuming that the inductive definition
+satisfies properties (a)-(c) for $(n-1)\times (n-1)$ matrices.
+For emphasis, we use the notation $\det$ to indicate the
+determinant of square matrices of size less than $n$.
+
+Property (a) is easily verified for $D(A)$ since if $A$ is lower
+triangular, then
+\[
+D(A) = a_{11}\det(A_{11}) = a_{11}a_{22}\cdots a_{nn}
+\]
+by induction.
+
+Before verifying that $D$ satisfies properties (b) and (c) of a
+determinant, we prove:
+\begin{lemma}
+Let $E$ be a elementary row matrix and let $B$ be any $n\times
+n$ matrix.   Then
+\begin{equation} \label{e:proddetE}
+D(EB) = D(E) D(B)
+\end{equation} 
+\end{lemma}
+
+\begin{proof} We verify \Ref{e:proddetE} for each of the three types of
+elementary row operations. \index{elementary row operations}
+
+\noindent (I) Suppose that $E$ multiplies the $i^{th}$ row by a
+nonzero scalar $c$.  If $i>1$, then the cofactor matrix
+$(EA)_{1j}$ is obtained from the cofactor matrix $A_{1j}$ by
+multiplying the $(i-1)^{st}$ row by $c$.  By induction,
+$\det(EA)_{1j}= c\det(A_{1j})$ and $D(EA)=cD(A)$.  On the other
+hand, $D(E)=\det(E_{11})=c$.  So \Ref{e:proddetE} is verified in
+this instance.  If $i=1$, then the $1^{st}$ row of $EA$ is
+$(ca_{11},\ldots,ca_{1n})$ from which it is easy to verify
+\Ref{e:proddetE}.
+
+\noindent (II) Next suppose that $E$ adds a multiple $c$ of the
+$i^{th}$ row to the $j^{th}$ row.  We note that $D(E)=1$.  When
+$j>1$ then $D(E)=\det(E_{11})=1$ by induction.  When $j=1$ then
+$D(E)= \det(E_{11})\pm c\det(E_{1i})=\det(I_{n-1})\pm
+c\det(E_{1i})$. But $E_{1i}$ is strictly upper triangular and
+$\det(E_{1i})=0$.  Thus $D(E)=1$. 
+
+If $i>1$ and $j>1$, then the result $D(EA)=D(A)=D(E)D(A)$
+follows by induction.  
+
+If $i=1$, then
+\begin{eqnarray*}
+D(EB) & = & b_{11}\det((EB)_{11})+\cdots+(-1)^{n+1}b_{1n}\det((EB)_{1n})\\
+& = & D(B) + cD(C)
+\end{eqnarray*}
+where the $1^{st}$ and $i^{th}$ row of $C$ are equal.
+
+If $j=1$, then 
+\begin{eqnarray*}
+D(EB) & = & (b_{11}+cb_{i1})\det(B_{11}) +\cdots+ 
+(-1)^{n+1}(b_{1n}+cb_{in})\det(B_{1n})\\
+& = &
+\left[b_{11}\det(B_{11})+\cdots+(-1)^{n+1}b_{1n}\det(B_{1n})\right]
++ 
+\\ & & 
+        c\left[b_{i1}\det(B_{11})+\cdots+(-1)^{n+1}b_{i1}\det(B_{1n})\right]\\
+& = & D(B) + cD(C)
+\end{eqnarray*}
+where the $1^{st}$ and $i^{th}$ row of $C$ are equal.  
+
+The hardest part of this proof is a calculation that shows that
+if the $1^{st}$ and $i^{th}$ rows of $C$ are equal, then
+$D(C)=0$.  By induction, we can swap the $i^{th}$ row with the
+$2^{nd}$.  Hence we need only verify this fact when $i=2$. 
+
+\noindent (III) $E$ is the matrix that swaps two rows.   
+
+As we saw earlier \Ref{e:swapdecomp}, $E$ is the product of four
+matrices of types (I) and (II).  It follows that $D(E)=-1$ and
+$D(EA)=-D(A)=D(E)D(A)$.  
+
+We now verify that when the $1^{st}$ and $2^{nd}$ rows of an
+$n\times n$ matrix $C$ are equal, then $D(C)=0$.  This is a
+tedious calculation that requires some facility with indexes and
+summations.  Rather than do this proof for general $n$, we
+present the proof for $n=4$.  This case contains all of the
+ideas of the general proof.  
+
+We begin with the definition of $D(C)$
+\begin{eqnarray*}
+D(C) & = & c_{11}\det\left(\begin{array}{ccc} c_{22} & c_{23} & c_{24}
+\\ c_{32} & c_{33} & c_{34} \\ c_{42} & c_{43} & c_{44}
+\end{array}\right) 
+-c_{12}\det\left(\begin{array}{ccc} c_{21} & c_{23} & c_{24}
+\\ c_{31} & c_{33} & c_{34} \\ c_{41} & c_{43} & c_{44}
+\end{array}\right) + \\ & &  
+c_{13}\det\left(\begin{array}{ccc} c_{21} & c_{22} & c_{24}
+\\ c_{31} & c_{32} & c_{34} \\ c_{41} & c_{42} & c_{44}
+\end{array}\right) 
+-c_{14}\det\left(\begin{array}{ccc} c_{21} & c_{22} & c_{23}
+\\ c_{31} & c_{32} & c_{33} \\ c_{41} & c_{42} & c_{43}
+\end{array}\right).
+\end{eqnarray*}
+Next we expand each of the four $3\times 3$ matrices along their
+$1^{st}$ rows, obtaining
+\begin{eqnarray*}
+D(C) & = & 
+c_{11}\left(c_{22}\det\mattwo{c_{33}}{c_{34}}{c_{43}}{c_{44}}
+-c_{23}\det\mattwo{c_{32}}{c_{34}}{c_{42}}{c_{44}}
++c_{24}\det\mattwo{c_{32}}{c_{33}}{c_{42}}{c_{43}}\right)\\ & &
+-c_{12}\left(c_{21}\det\mattwo{c_{33}}{c_{34}}{c_{43}}{c_{44}}
+-c_{23}\det\mattwo{c_{31}}{c_{34}}{c_{41}}{c_{44}}
++c_{24}\det\mattwo{c_{31}}{c_{33}}{c_{41}}{c_{43}}\right)\\ & &
++c_{13}\left(c_{21}\det\mattwo{c_{32}}{c_{34}}{c_{42}}{c_{44}}
+-c_{22}\det\mattwo{c_{31}}{c_{34}}{c_{41}}{c_{44}}
++c_{24}\det\mattwo{c_{31}}{c_{32}}{c_{41}}{c_{42}}\right)\\ & &
+-c_{14}\left(c_{21}\det\mattwo{c_{32}}{c_{33}}{c_{42}}{c_{43}}
+-c_{22}\det\mattwo{c_{31}}{c_{33}}{c_{41}}{c_{43}}
++c_{23}\det\mattwo{c_{31}}{c_{32}}{c_{41}}{c_{42}}\right)
+\end{eqnarray*}
+Combining the $2\times 2$ determinants leads to:
+\begin{eqnarray*}
+D(C) & = &
+(c_{11}c_{22}-c_{12}c_{21})\det\mattwo{c_{33}}{c_{34}}{c_{43}}{c_{44}}
++(c_{11}c_{24}-c_{14}c_{21})\det\mattwo{c_{32}}{c_{33}}{c_{42}}{c_{43}}
+\\ & & 
++(c_{12}c_{23}-c_{13}c_{22})\det\mattwo{c_{31}}{c_{34}}{c_{41}}{c_{44}}
++(c_{13}c_{21}-c_{11}c_{23})\det\mattwo{c_{32}}{c_{34}}{c_{42}}{c_{44}}
+\\ & & 
++(c_{13}c_{24}-c_{14}c_{23})\det\mattwo{c_{31}}{c_{32}}{c_{41}}{c_{42}}
++(c_{14}c_{22}-c_{12}c_{24})\det\mattwo{c_{31}}{c_{33}}{c_{41}}{c_{43}}
+\end{eqnarray*}
+Supposing that 
+\[
+c_{21}=c_{11} \quad  c_{22}=c_{12} \quad c_{23}=c_{13} \quad
+c_{24}=c_{14} 
+\]
+it is now easy to check that $D(C)=0$.
+
+We now return to verifying that $D(A)$ satisfies properties (b)
+and (c) of being a determinant.  We begin by showing that
+$D(A)=0$ if $A$ has a row that is identically zero.  Suppose
+that the zero row is the $i^{th}$ row and let $E$ be the matrix
+that multiplies the $i^{th}$ row of $A$ by $c$.  Then $EA=A$.
+Using \Ref{e:proddetE} we see that
+\[
+D(A)=D(EA)=D(E)D(A)=cD(A),
+\]
+which implies that $D(A)=0$ since $c$ is arbitrary.
+
+Next we prove that $D(A)=0$ when $A$ is singular.  Using row 
+reduction we can write
+\[
+A=E_s\cdots E_1R
+\]
+where the $E_j$ are elementary row matrices and $R$ is in
+reduced echelon form\index{echelon form!reduced}.  
+Since $A$ is singular, the last row of
+$R$ is identically zero.  Hence $D(R)=0$ and \Ref{e:proddetE}
+implies that $D(A)=0$.  
+
+We now verify property (b).  Suppose that $A$ is singular; we
+show that $D(A^t)=D(A)=0$.  Since the row rank of $A$ equals the
+column rank of $A$, it follows that $A^t$ is singular when $A$
+is singular.  Next assume that $A$ is nonsingular.  Then $A$ is
+row equivalent to $I_n$ and we can write
+\begin{equation}  \label{e:Adecomp}
+A=E_s\cdots E_1,
+\end{equation}
+where the $E_j$ are elementary row matrices.  Since  
+\[
+A^t = E_1^t\cdots E_s^t
+\]
+and $D(E)=D(E^t)$, property (b) follows. 
+
+We now verify property (c): $D(AB)=D(A)D(B)$.  Recall that $A$
+is singular if and only if there exists a nonzero vector $v$
+such that $Av=0$.  Now if $A$ is singular, then so is $A^t$.
+Therefore $(AB)^t=B^tA^t$ is also singular.  To verify this
+point, let $w$ be the nonzero vector such that $A^tw=0$.  Then
+$B^tA^tw=0$.  Thus $AB$ is singular since $(AB)^t$ is singular.
+Thus $D(AB)=0=D(A)D(B)$ when $A$ is singular.  Suppose now that
+$A$ is nonsingular.  It follows that 
+\[
+AB = E_s\cdots E_1B.
+\]
+Using \Ref{e:proddetE} we see that
+\[
+D(AB)=D(E_s)\cdots D(E_1)D(B) = D(E_s\cdots E_1)D(B) = D(A)D(B),
+\]
+as desired. We have now completed the proof that a determinant
+function exists. \end{proof}
+\end{document}

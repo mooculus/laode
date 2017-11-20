@@ -1,0 +1,99 @@
+\documentclass{ximera}
+
+\input{./preamble.tex}
+
+\title{Uniqueness of Reduced Echelon Form}
+
+\begin{document}
+\begin{abstract}
+\end{abstract}
+\maketitle
+
+
+\label{S:uniquerowechelon}
+
+
+In this section we prove Theorem~\ref{uniquerowechelon}, which
+states that every matrix is row equivalent to precisely one
+reduced echelon form matrix.  
+
+\noindent {\bf Proof of Theorem~\ref{uniquerowechelon}:}
+Suppose that $E$ and $F$ are two $m\times n$ reduced echelon
+matrices that are row equivalent to $A$.  Since elementary row
+operations are invertible, the two matrices $E$ and $F$ are
+row equivalent.  Thus, the systems of linear equations associated to 
+the $m\times (n+1)$ matrices $(E|0)$ and $(F|0)$ must have exactly the
+same set of solutions.  It is the fact that the solution sets
+of the linear equations associated to $(E|0)$ and $(F|0)$ are
+identical that allows us to prove that $E=F$.
+
+Begin by renumbering the variables $x_1,\ldots,x_n$ so that the equations 
+associated to $(E|0)$ have the form: 
+\begin{equation}  \label{e1-ell2a}
+\begin{array}{rcl}
+  x_1  & = &  - a_{1,\ell+1}x_{\ell+1} - \cdots - a_{1,n}x_n\\
+  x_2  & = &  - a_{2,\ell+1}x_{\ell+1} - \cdots - a_{2,n}x_n\\
+\vdots &   &    \vdots \\
+x_\ell & = &  - a_{\ell,\ell+1}x_{\ell+1} - \cdots - a_{\ell,n}x_n.
+\end{array}
+\end{equation}
+In this form, pivots of $E$ occur in the columns $1,\ldots,\ell$.  We begin 
+by showing that the matrix $F$ also has pivots in columns $1,\ldots,\ell$. 
+Moreover, there is a unique solution to these equations for {\em every\/}
+choice of numbers $x_{\ell+1},\ldots,x_n$.  
+
+Suppose that the pivots of $F$ do not occur in columns $1,\ldots,\ell$.  Then
+there is a row in $F$ whose first nonzero entry occurs in a column $k>\ell$. 
+This row corresponds to an equation
+\[
+x_k = c_{k+1}x_{k+1} + \cdots + c_nx_n.
+\]
+Now, consider solutions that satisfy
+\[
+x_{\ell+1} = \cdots = x_{k-1} = 0 \AND x_{k+1} = \cdots = x_n = 0.
+\]
+In the equations associated to the matrix $(E|0)$, there is a unique solution
+associated with every number $x_k$; while in the equations associated to the 
+matrix $(F|0)$, $x_k$ must be zero to be a solution.  This argument
+contradicts the fact that the $(E|0)$ equations and the $(F|0)$
+equations have the same solutions.  So the pivots of $F$ must also occur in 
+columns $1,\ldots,\ell$, and the equations associated to $F$ must have the 
+form:
+\begin{equation} \label{e1-ell2b}
+\begin{array}{rcl}
+x_1  & = & - \hat{a}_{1,\ell+1}x_{\ell+1} - \cdots - \hat{a}_{1,n}x_n \\
+x_2  & = & - \hat{a}_{2,\ell+1}x_{\ell+1} - \cdots - \hat{a}_{2,n}x_n \\
+\vdots &   &    \vdots  \\
+x_\ell & = & - \hat{a}_{\ell,\ell+1}x_{\ell+1} - \cdots - \hat{a}_{\ell,n}x_n
+\end{array}
+\end{equation}
+where $\hat{a}_{i,j}$ are scalars.
+
+To complete this proof, we show that $a_{i,j}=\hat{a}_{i,j}$.  These 
+equalities are verified as follows.  There is just one solution to each 
+system \Ref{e1-ell2a} and \Ref{e1-ell2b} of the form
+\[
+x_{\ell+1}=1,\; x_{\ell+2}=\cdots=x_n=0.
+\]
+These solutions are
+\[
+(-a_{1,\ell+1}, \ldots, -a_{\ell,\ell+1},1,0,\cdots,0)
+\]
+for \Ref{e1-ell2a} and
+\[
+(-\hat{a}_{1,\ell+1},\ldots,-\hat{a}_{\ell,\ell+1},1,0\cdots,0)
+\]
+for \Ref{e1-ell2b}. It follows that $a_{j,\ell+1}=\hat{a}_{j,\ell+1}$
+for $j=1,\ldots,\ell$.  Complete this proof by repeating this argument. 
+Just inspect solutions of the form
+\[
+x_{\ell+1}=0,\; x_{\ell+2}=1,\; x_{\ell+3}=\cdots= x_n=0
+\]
+through
+\[
+x_{\ell+1}=\cdots = x_{n-1}=0,\; x_n=1.
+\]
+
+
+
+\end{document}

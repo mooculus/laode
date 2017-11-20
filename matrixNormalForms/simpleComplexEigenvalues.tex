@@ -1,0 +1,631 @@
+\documentclass{ximera}
+
+\input{./preamble.tex}
+
+\title{Simple Complex Eigenvalues}
+
+\begin{document}
+\begin{abstract}
+\end{abstract}
+\maketitle
+
+  \label{S:CSE}
+
+Theorem~\ref{T:diagsimple} states that a matrix $A$ with real
+unequal eigenvalues may be diagonalized. It follows that 
+in an appropriately chosen basis (the basis of eigenvectors), 
+matrix multiplication\index{matrix!multiplication} by $A$ acts 
+as multiplication by these real eigenvalues.  Moreover, geometrically, 
+multiplication by $A$ stretches or contracts vectors in 
+eigendirections (depending on whether the eigenvalue is greater
+than or less than $1$ in absolute value).
+
+The purpose of this section is to show that a similar kind of diagonalization 
+is possible when the matrix has distinct complex eigenvalues. See
+Theorem~\ref{T:diagsimplecpx} and Theorem~\ref{T:Complexdiag}.  We show 
+that multiplication by a matrix with complex eigenvalues corresponds
+to multiplication by complex numbers.  We also show that multiplication by 
+complex eigenvalues correspond geometrically to rotations\index{rotation} 
+as well as expansions\index{expansion} and contractions\index{contraction}.
+
+\subsubsection*{The Geometry of Complex Eigenvalues: Rotations and
+Dilatations}
+
+Real $2\times 2$ matrices are the smallest real matrices where complex 
+eigenvalues can possibly occur.  In Chapter~\ref{Chap:Planar}, 
+Theorem~\ref{T:putinform}(b) we discussed the classification of such matrices 
+up to similarity.  Recall that if the eigenvalues of a $2\times 2$ matrix $A$ 
+are $\sigma\pm i\tau$, 
+then $A$ is similar to the matrix 
+\begin{equation} \label{E:normalfm2}
+\mattwo{\sigma}{-\tau}{\tau}{\sigma}.
+\end{equation}
+Moreover, the basis in which $A$ has the form \Ref{E:normalfm2} is found
+as follows.  Let $v=w_1+iw_2$ be the eigenvector of $A$ corresponding to 
+the eigenvalue $\sigma-i\tau$.  Then $\{w_1,w_2\}$ is the desired 
+basis.\index{basis}
+
+Geometrically, multiplication of vectors in $\R^2$ by \Ref{E:normalfm2} is 
+the same as a rotation followed by a dilatation\index{dilatation}.  More 
+specifically, let $r=\sqrt{\sigma^2+\tau^2}$.  So the point $(\sigma,\tau)$ 
+lies on the circle of radius $r$ about the origin, and there is an angle 
+$\theta$ such that $(\sigma,\tau)=(r\cos\theta,r\sin\theta)$.  Now we can 
+rewrite \Ref{E:normalfm2} as
+\[
+\mattwo{\sigma}{-\tau}{\tau}{\sigma}
+= r\mattwo{\cos\theta}{-\sin{\theta}}{\sin\theta}{\cos\theta}=rR_{\theta},
+\]
+where $R_\theta$ is rotation counterclockwise through angle $\theta$.  From 
+this discussion we see that geometrically complex eigenvalues are associated 
+with rotations followed either by stretching ($r>1$) or contracting ($r<1$).
+
+As an example, consider the matrix
+\begin{equation}  \label{E:exampA}
+A = \mattwo{2}{1}{-2}{0}.
+\end{equation}
+The characteristic polynomial\index{characteristic polynomial}
+of $A$ is $p_A(\lambda)=\lambda^2-2\lambda+2$.
+Thus the eigenvalues of $A$ are $1\pm i$, and $\sigma=1$ and $\tau=1$ for
+this example.  An eigenvector associated to the eigenvalue $1-i$ is 
+$v=(1,-1-i)^t=(1,-1)^t+i(0,-1)^t$. Therefore, 
+\[
+B = S\inv A S = \mattwo{1}{-1}{1}{1} \quad\mbox{where}\quad 
+S = \mattwo{1}{0}{-1}{-1},
+\]
+as can be checked by direct calculation.  Moreover, we can rewrite
+\[
+B = \sqrt{2}\mattwo{\frac{\sqrt{2}}{2}}{-\frac{\sqrt{2}}{2}}
+{\frac{\sqrt{2}}{2}}{\frac{\sqrt{2}}{2}} =
+\sqrt{2}R_{\frac{\pi}{4}}.
+\]
+So, in an appropriately chosen coordinate system, multiplication by $A$ rotates
+vectors counterclockwise by $45^\circ$ and then expands the result by a 
+factor of $\sqrt{2}$.  See Exercise~\ref{c10.4.rotate}.
+
+\subsubsection*{The Algebra of Complex Eigenvalues: Complex Multiplication}
+\index{eigenvalue!complex}
+
+We have shown that the normal form\index{normal form} \Ref{E:normalfm2} can 
+be interpreted geometrically as a rotation followed by a dilatation.  There 
+is a second algebraic interpretation of \Ref{E:normalfm2}, and this 
+interpretation is based on multiplication by complex numbers.
+
+Let $\lambda=\sigma+i\tau$ be a complex number and consider the matrix 
+associated with complex multiplication, that is, the linear mapping
+\begin{equation}  \label{e:cplxmap}
+z\mapsto \lambda z
+\end{equation}
+on the complex plane.  By identifying real and imaginary parts, we can 
+rewrite \Ref{e:cplxmap} as a real $2\times 2$ matrix in the following way. 
+Let $z=x + iy$.  Then
+\[
+\lambda z = (\sigma+i\tau)(x+iy) = (\sigma x - \tau y) + 
+i(\tau x + \sigma y).
+\]
+Now identify $z$ with the vector $(x,y)$; that is, the vector whose first
+component is the real part of $z$ and whose second component is the 
+imaginary part.  Using this identification the complex number $\lambda z$
+is identified with the vector $(\sigma x - \tau y,\tau x + \sigma y)$. 
+So, in real coordinates and in matrix form, \Ref{e:cplxmap} becomes
+\[
+\vectwo{x}{y}\mapsto \vectwo{\sigma x - \tau y}{\tau x + \sigma y} =
+\mattwo{\sigma}{-\tau}{\tau}{\sigma} \vectwo{x}{y}.
+\]
+That is, the matrix corresponding to multiplication of $z=x+iy$ by the 
+complex number $\lambda=\sigma+i\tau$ is the one that multiplies the 
+vector $(x,y)^t$ by the normal form matrix \Ref{E:normalfm2}.
+
+\subsubsection*{Direct Agreement Between the Two Interpretations of 
+\protect\Ref{E:normalfm2}}   
+
+We have shown that matrix multiplication by \Ref{E:normalfm2} may be thought 
+of either algebraically as multiplication by a complex number (an eigenvalue)
+or geometrically as a rotation followed by a dilatation.  We now show how to
+go directly from the algebraic interpretation to the geometric interpretation.
+
+Euler's formula\index{Euler's formula} (Chapter~\ref{Chap:Planar}, 
+\Ref{E:Euler}) states that
+\[
+e^{i\theta} = \cos\theta + i\sin\theta
+\]
+for any real number $\theta$. It follows that we can write a 
+complex number $\lambda=\sigma+i\tau$ in polar form as
+\[
+\lambda = re^{i\theta}
+\]
+where $r^2=\lambda\overline{\lambda}=\sigma^2+\tau^2$, $\sigma=r\cos\theta$,
+and $\tau=r\sin\theta$.  
+
+Now consider multiplication by $\lambda$ in polar form.  Write 
+$z=se^{i\varphi}$ in polar form, and compute
+\[
+\lambda z = re^{i\theta}se^{i\varphi} = rse^{i(\varphi+\theta)}.
+\]
+It follows from polar form that multiplication of $z$ by 
+$\lambda=re^{i\theta}$  rotates 
+$z$ through an angle $\theta$ and dilates the result by the factor $r$.
+Thus Euler's formula directly relates the geometry of 
+rotations\index{rotation} and 
+dilatations\index{dilatation} with the 
+algebra of multiplication by a complex number.
+
+
+\subsection*{Normal Form Matrices with Distinct Complex Eigenvalues}
+\index{normal form}\index{eigenvalue!complex!distinct}
+
+In the first parts of this section we have discussed a geometric and 
+an algebraic approach to matrix multiplication by $2\times 2$ matrices with 
+complex eigenvalues.   We now turn our attention to classifying $n\times n$ 
+matrices that have distinct eigenvalues, whether these eigenvalues are real 
+or complex.  We will see that there are two ways to frame this classification 
+--- one algebraic (using complex numbers) and one geometric (using rotations 
+and dilatations).
+
+\subsubsection*{Algebraic Normal Forms: The Complex Case}
+
+Let $A$ be an $n\times n$ matrix with real entries and $n$ distinct 
+eigenvalues $\lambda_1,\ldots,\lambda_n$.  Let $v_j$ be an eigenvector 
+associated with the eigenvalue $\lambda_j$.  By methods that are 
+entirely analogous to those in Section~\ref{S:RDM} we can diagonalize 
+the matrix $A$ over the complex numbers.  The resulting theorem is 
+analogous to Theorem~\ref{T:diagsimple}.  
+
+More precisely, the $n\times n$ matrix $A$ is {\em complex diagonalizable\/} 
+\index{complex diagonalizable}
+if there is a complex $n\times n$ matrix $T$ such that
+\[
+T\inv AT = \left(\begin{array}{cccc} \lambda_1 & 0 & \cdots & 0 \\
+	0 & \lambda_2 & \cdots & 0\\
+	\vdots & \vdots & \ddots & \vdots \\
+	0 & 0 & \cdots & \lambda_n \end{array} \right).
+\]
+
+\begin{thm}  \label{T:diagsimplecpx}
+Let $A$ be an $n\times n$ matrix with $n$ distinct eigenvalues.  Then $A$ 
+is complex diagonalizable.
+\end{thm}  \index{eigenvalue}
+
+The proof of Theorem~\ref{T:diagsimplecpx} follows from a theoretical 
+development virtually word for word the same as that used to prove 
+Theorem~\ref{T:diagsimple} in Section~\ref{S:RDM}.  Beginning from the 
+theory that we have developed so far, the difficulty in proving this 
+theorem lies in the need to base the theory of linear algebra on complex 
+scalars rather than real scalars.  We will not pursue that development here.
+
+As in Theorem~\ref{T:diagsimple}, the proof of Theorem~\ref{T:diagsimplecpx} 
+shows that the complex matrix $T$ is the matrix whose columns are
+the eigenvectors $v_j$ of $A$; that is,
+\[
+T = (v_1|\cdots|v_n).
+\] 
+
+Finally, we mention that the computation of inverse\index{inverse}
+matrices with complex entries is the same as that for matrices with real 
+entries.  That is, row reduction\index{row!reduction}
+of the $n\times 2n$ matrix $(T|I_n)$ leads, when $T$ is
+invertible, to the matrix $(I_n|T\inv)$.
+
+\subsubsection*{Two Examples}
+
+As a first example, consider the normal form $2\times 2$ matrix 
+\Ref{E:normalfm2} that has eigenvalues $\lambda$ and $\overline{\lambda}$, 
+where $\lambda=\sigma+i\tau$.   Let 
+\[
+B = \mattwo{\sigma}{-\tau}{\tau}{\sigma} \AND 
+C = \mattwo{\lambda}{0}{0}{\overline{\lambda}}.
+\]
+Since the eigenvalues of $B$ and $C$ are identical, 
+Theorem~\ref{T:diagsimplecpx} implies that there is a $2\times 2$ complex 
+matrix $T$ such that
+\begin{equation}  \label{E:BCsimilar}
+C = T\inv B T.
+\end{equation}
+Moreover, the columns of $T$ are the complex eigenvectors $v_1$ and $v_2$
+associated to the eigenvalues $\lambda$ and $\overline{\lambda}$.
+
+It can be checked that the eigenvectors of $B$ are $v_1=(1,-i)^t$ and 
+$v_2=(1,i)^t$.  On setting 
+\[
+T = \mattwo{1}{1}{-i}{i},
+\]
+it is a straightforward calculation to verify that $C=T\inv BT$.  
+
+
+As a second example, consider the matrix 
+\begin{equation*}
+A = \left(\begin{array}{rrr}     4  &   2   &  1\\
+     2  &  -3  &   1\\  1 &   -1  &  -3 \end{array} \right).
+\end{equation*}
+Using \Matlab we find the eigenvalues of $A$ by typing {\tt eig(A)}. 
+They are:
+\begin{verbatim}
+ans =
+   4.6432          
+  -3.3216 + 0.9014i
+  -3.3216 - 0.9014i
+\end{verbatim}
+We can diagonalize (over the complex numbers) using \Matlab --- indeed 
+\Matlab is programmed to do these calculations over the complex numbers. 
+Type {\tt [T,D] = eig(A)} and obtain
+\begin{verbatim}
+T =
+   0.9604    -0.1299 + 0.1587i  -0.1299 - 0.1587i
+   0.2632     0.0147 - 0.5809i   0.0147 + 0.5809i
+   0.0912     0.7788 - 0.1173i   0.7788 + 0.1173i
+
+D =
+   4.6432          0                  0          
+        0    -3.3216 + 0.9014i        0          
+        0          0            -3.3216 - 0.9014i
+\end{verbatim}
+This calculation can be checked by typing {\tt inv(T)*A*T} to see that 
+the diagonal matrix\index{matrix!diagonal} {\tt D} appears.  
+One can also check that the columns of 
+{\tt T} are eigenvectors of $A$.
+
+Note that the development here does not depend on the matrix $A$ having 
+real entries.  Indeed, this diagonalization can be completed using 
+$n\times n$ matrices with complex entries --- and \Matlab can handle such 
+calculations.
+
+
+\subsubsection*{Geometric Normal Forms: Block Diagonalization}
+\index{normal form!geometric}
+
+There is a second normal form theorem based on the geometry of rotations 
+and dilatations for real $n\times n$ matrices $A$.  In this normal form 
+we determine all matrices $A$ that have distinct eigenvalues --- up to 
+similarity by real $n\times n$ matrices $S$.  The normal form results in 
+matrices that are block diagonal with either $1\times 1$ blocks or 
+$2\times 2$ blocks of the form \Ref{E:normalfm2} on the diagonal.
+
+A real $n\times n$ matrix is in 
+{\em real block diagonal form\/}
+\index{matrix!block diagonal!real}
+if it is a block diagonal matrix
+\begin{equation} \label{e:blockform}
+\left(\begin{array}{cccc} B_1 & 0 & \cdots & 0 \\
+	0 & B_2 & \cdots & 0\\
+	\vdots & \vdots & \ddots & \vdots \\
+	0 & 0 & \cdots & B_m \end{array} \right),
+\end{equation}
+where each $B_j$ is either a $1\times 1$ block 
+\[
+B_j = \lambda_j
+\]
+for some real number $\lambda_j$ or a $2\times 2$ block
+\begin{equation} \label{e:2x2block}
+B_j =   \mattwo{\sigma_j}{-\tau_j}{\tau_j}{\sigma_j}
+\end{equation}
+where $\sigma_j$ and $\tau_j\neq 0$ are real numbers.  A
+matrix is {\em real block diagonalizable\/} if it is 
+similar\index{similar} to a real block diagonal form matrix.
+
+Note that the real eigenvalues of a real block diagonal form matrix 
+are just the real numbers $\lambda_j$ that occur in the $1\times 1$
+blocks.  The complex eigenvalues are the eigenvalues of the
+$2\times 2$ blocks $B_j$ and are $\sigma_j\pm i\tau_j$.
+
+
+\begin{thm} \label{T:Complexdiag}
+Every $n\times n$ matrix $A$ with $n$ distinct eigenvalues is 
+real block diagonalizable.
+\end{thm}
+
+We need two preliminary results.  
+\begin{lemma} \label{L:indepcomplx}
+Let $\lambda_1,\ldots,\lambda_q$ be distinct (possible complex) eigenvalues 
+of an $n\times n$ matrix $A$.  Let $v_j$ be a (possibly complex)
+eigenvector associated with the eigenvalue $\lambda_j$.  Then
+$v_1,\ldots,v_q$ are linearly independent in the sense that if
+\begin{equation}  \label{E:indepcomplx}
+\alpha_1v_1 + \cdots + \alpha_qv_q = 0
+\end{equation}
+for (possibly complex) scalars $\alpha_j$, then $\alpha_j=0$ for all $j$.
+\end{lemma}
+
+\begin{proof}  The proof is identical in spirit with the proof of 
+Lemma~\ref{L:simpleeigen}.  Proceed by induction on $q$.  When $q=1$ the
+lemma is trivially valid, as $\alpha v=0$ for $v\neq 0$ implies that
+$\alpha=0$, even when $\alpha\in\C$ and $v\in\C^n$.  
+
+By induction assume the lemma is valid for $q-1$.  Now apply $A$ to 
+\Ref{E:indepcomplx} obtaining
+\[
+\alpha_1\lambda_1v_1 + \cdots + \alpha_q\lambda_qv_q = 0.
+\]
+Subtract this identity from $\lambda_q$ times \Ref{E:indepcomplx}, and obtain
+\[
+\alpha_1(\lambda_1-\lambda_q)v_1 + \cdots +
+\alpha_{q-1}(\lambda_{q-1}-\lambda_q)v_{q-1} = 0.
+\]
+By induction 
+\[
+\alpha_j(\lambda_j-\lambda_q) = 0
+\]
+for $j=1,\ldots, q-1$.  Since the $\lambda_j$ are distinct it follows that 
+$\alpha_j=0$ for $j=1,\ldots, q-1$.  Hence \Ref{E:indepcomplx} implies that 
+$\alpha_qv_q = 0$; since $v_q\neq 0$, $\alpha_q=0$.  \end{proof}
+
+\begin{lemma}  \label{L:rlcmplx}
+Let $\mu_1,\ldots,\mu_k$ be distinct real eigenvalues of an $n\times n$ 
+matrix $A$ and let $\nu_1,\overline{\nu}_1\ldots,\nu_\ell,\overline{\nu}_\ell$
+be distinct complex conjugate eigenvalues of $A$.  Let $v_j\in\R^n$ be
+eigenvectors associated to $\mu_j$ and let $w_j=w_j^r+iw_j^i$ be eigenvectors
+associated with the eigenvalues $\nu_j$.  Then the $k+2\ell$ vectors 
+\[
+v_1,\ldots,v_k,w_1^r,w_1^i,\ldots,w_\ell^r,w_\ell^i
+\]
+in $\R^n$ are linearly independent.
+\end{lemma}
+
+\begin{proof}  Let $w=w^r+iw^i$ be a vector in $\C^n$ and let $\beta^r$ and
+$\beta^i$ be real scalars.  Then 
+\begin{equation}  \label{E:realcmplx}
+\beta^rw^r + \beta^iw^i = \beta w + \overline{\beta} \overline{w},
+\end{equation}
+where $\beta = \frac{1}{2}(\beta^r-i\beta^i)$.  Identity \Ref{E:realcmplx} 
+is verified by direct calculation.
+
+Suppose now that 
+\begin{equation}  \label{E:rlcplxlc} 
+\alpha_1v_1+\cdots+\alpha_kv_k + \beta_1^rw_1^r+\beta_1^iw_1^i + \cdots +
+\beta_\ell^rw_\ell^r+\beta_\ell^iw_\ell^i = 0
+\end{equation}
+for real scalars $\alpha_j$, $\beta_j^r$ and $\beta_j^i$.  Using 
+\Ref{E:realcmplx} we can rewrite \Ref{E:rlcplxlc} as
+\[
+\alpha_1v_1+\cdots+\alpha_kv_k + \beta_1w_1+\overline{\beta}_1\overline{w}_1 
++ \cdots + \beta_\ell w_\ell+\overline{\beta}_\ell\overline{w}_\ell = 0,
+\]
+where $\beta_j = \frac{1}{2}(\beta_j^r-i\beta_j^i)$.  Since the eigenvalues 
+\[
+\mu_1,\ldots,\mu_k,\nu_1,\overline{\nu}_1\ldots,\nu_\ell,\overline{\nu}_\ell
+\]
+are all distinct, we may apply Lemma~\ref{L:indepcomplx} to conclude that 
+$\alpha_j=0$ and $\beta_j=0$.  It follows that $\beta_j^r=0$ and
+$\beta_j^i=0$, as well, thus proving linear independence.  \end{proof}. 
+
+
+\begin{proof}[Theorem~\ref{T:Complexdiag}]   Let $\mu_j$ for 
+$j=1,\ldots,k$ be the real eigenvalues of $A$ and let 
+$\nu_j,\overline{\nu}_j$ for $j=1,\ldots,\ell$ be the complex eigenvalues of 
+$A$. Since the eigenvalues are all distinct, it follows that $k+2\ell=n$.
+
+Let $v_j$ and $w_j=w_j^r+iw_j^i$ be eigenvectors associated with the 
+eigenvalues $\mu_j$ and $\overline{\nu}_j$.  It follows from 
+Lemma~\ref{L:rlcmplx} that the $n$ real vectors
+\begin{equation}  \label{e:complexeigen}
+v_1,\ldots,v_k,w_1^r,w_1^i,\ldots,w_\ell^r,w_\ell^i
+\end{equation}
+are linearly independent and hence form a basis for $\R^n$.
+
+We now show that $A$ is real block diagonalizable.  Let $S$ be the $n\times
+n$ matrix whose columns are the vectors in \Ref{e:complexeigen}.  Since
+these vectors are linearly independent, $S$ is invertible.  We claim that 
+$S\inv AS$ is real block diagonal.  This statement is verified by direct
+calculation.
+
+First, note that $Se_j=v_j$ for $j=1,\ldots,k$ and compute
+\[
+(S\inv AS)e_j = S\inv Av_j = \mu_j S\inv v_j = \mu_j e_j.
+\]
+It follows that the first $k$ columns of $S\inv AS$ are zero except for the 
+diagonal entries, and those diagonal entries equal $\mu_1,\ldots,\mu_k$.
+
+Second, note that $Se_{k+1}=w_1^r$ and $Se_{k+2}=w_1^i$.  Write the complex 
+eigenvalues as
+\[
+\nu_j = \sigma_j+i\tau_j.
+\]
+Since 
+$Aw_1 = \overline{\nu}_1w_1$, it follows that
+\begin{eqnarray*}
+Aw_1^r+iAw_1^i & = & (\sigma_1-i\tau_1)(w_1^r+iw_1^i)\\
+& = & (\sigma_1w_1^r+\tau_1w_1^i) + i(-\tau_1w_1^r +\sigma_1w_1^i).
+\end{eqnarray*}
+Equating real and imaginary parts leads to 
+\begin{equation}  \label{e:complexsimple}
+\begin{array}{ccc} Aw_1^r & = & \sigma_1w_1^r+\tau_1w_1^i\\
+Aw_1^i & = &   -\tau_1w_1^r+\sigma_1w_1^i. \end{array}
+\end{equation}
+Using \Ref{e:complexsimple}, compute
+\[
+(S\inv AS)e_{k+1} = S\inv Aw_1^r = S\inv(\sigma_1w_1^r+\tau_1w_1^i) 
+= \sigma_1e_{k+1} + \tau_1e_{k+2}.
+\]
+Similarly, 
+\[
+(S\inv AS)e_{k+2} = S\inv Aw_1^i = S\inv(-\tau_1w_1^r+\sigma_1w_1^i)
+= -\tau_1e_{k+1} + \sigma_1e_{k+2}.
+\]
+Thus, the $k^{th}$ and $(k+1)^{st}$ columns of $S\inv AS$ have the desired
+diagonal block in the $k^{th}$ and $(k+1)^{st}$ rows, and have all other 
+entries equal to zero.
+
+The same calculation is valid for the complex eigenvalues 
+$\nu_2,\ldots,\nu_\ell$.  Thus, $S\inv AS$ is real block diagonal, as 
+claimed.   \end{proof}
+
+
+\subsubsection*{\Matlab Calculations of Real Block Diagonal Form}
+\index{real block diagonal form!in \protect\Matlab}
+
+Let $C$ be the $4\times 4$ matrix
+\begin{equation*}
+C =\left(\begin{array}{rrrr}  1 & 0 & 2 & 3 \\ 2 & 1 & 4 & 6\\
+-1 & -5 & 1 & 3 \\ 1 & 4 & 7 & 10 \end{array}\right).
+\end{equation*}
+Using \Matlab enter $C$ by typing {\tt e13\_2\_14} and find the 
+eigenvalues of $C$ by typing {\tt eig(C)}\index{\computer!eig} 
+to obtain
+\begin{verbatim}
+ans =
+   0.5855 + 0.8861i
+   0.5855 - 0.8861i
+  -0.6399          
+  12.4690    
+\end{verbatim}
+We see that $C$ has two real and two complex conjugate eigenvalues.
+To find the complex eigenvectors associated with these eigenvalues,
+type 
+\begin{verbatim}
+[T,D] = eig(C)
+\end{verbatim}
+\Matlab responds with
+\begin{verbatim}
+T =
+  -0.0787 + 0.0899i  -0.0787 - 0.0899i   0.0464             0.2209          
+   0.0772 + 0.2476i   0.0772 - 0.2476i   0.0362             0.4803          
+  -0.5558 - 0.5945i  -0.5558 + 0.5945i  -0.8421            -0.0066          
+   0.3549 + 0.3607i   0.3549 - 0.3607i   0.5361             0.8488          
+D =
+   0.5855 + 0.8861i        0                  0                  0          
+        0             0.5855 - 0.8861i        0                  0          
+        0                  0            -0.6399                  0          
+        0                  0                  0            12.4690          
+\end{verbatim}
+The $4\times 4$ matrix $T$ has the eigenvectors of $C$ as columns.
+The $j^{th}$ column is the eigenvector associated with the $j^{th}$
+diagonal entry in the diagonal matrix $D$. 
+
+To find the matrix $S$ that puts $C$ in real block diagonal form, we
+need to take the real and imaginary parts of the eigenvectors 
+corresponding to the complex eigenvalues and the real eigenvectors 
+corresponding to the real eigenvalues.  In this case, type
+\index{\computer!real}\index{\computer!imag}
+\begin{verbatim}
+S = [real(T(:,1)) imag(T(:,1)) T(:,3) T(:,4)]
+\end{verbatim}
+to obtain 
+\begin{verbatim}
+S =
+   -0.0787    0.0899    0.0464    0.2209
+    0.0772    0.2476    0.0362    0.4803
+   -0.5558   -0.5945   -0.8421   -0.0066
+    0.3549    0.3607    0.5361    0.8488
+\end{verbatim} 
+Note that the $1^{st}$ and $2^{nd}$ columns are the real and 
+imaginary parts of the complex eigenvector.  Check that 
+{\tt inv(S)*C*S} is the matrix in complex diagonal form
+\begin{verbatim}
+ans = 
+    0.5855    0.8861    0.0000    0.0000
+   -0.8861    0.5855    0.0000   -0.0000
+    0.0000    0.0000   -0.6399    0.0000
+   -0.0000   -0.0000   -0.0000   12.4690
+\end{verbatim}
+as proved in Theorem~\ref{T:Complexdiag}.
+
+
+
+\EXER
+
+\TEXER
+
+
+\begin{exercise}  \label{c10.4.3}
+Consider the $2\times 2$ matrix 
+\[
+A = \mattwo{3}{1}{-2}{1},
+\]
+whose eigenvalues are $2\pm i$ and whose associated eigenvectors are:
+\[
+\vectwoc{1-i}{2i} \AND \vectwoc{1+i}{-2i}
+\]
+Find a complex $2\times 2$ matrix $T$ such that $C=T\inv AT$ is complex
+diagonal and a real $2\times 2$ matrix $S$ so that $B=S\inv AS$ is in real
+block diagonal form.
+\end{exercise}
+
+\begin{exercise}  \label{c10.4.4}
+Let 
+\[
+A=\mattwo{2}{5}{-2}{0}.
+\]
+Find a complex $2\times 2$ matrix $T$ such that $T\inv AT$ is complex
+diagonal and a real $2\times 2$ matrix $S$ so that $S\inv AS$ is in real
+block diagonal form.
+\end{exercise}
+
+
+
+\CEXER
+
+\begin{exercise} \label{c10.4.rotate}
+Use {\sf map}\index{\computer!map} to verify that 
+the normal form matrices \Ref{E:normalfm2} are 
+just rotations followed by dilatations.  In particular, use {\sf map} to 
+study the normal form matrix
+\[
+A = \mattwo{1}{-1}{1}{1}.
+\]
+Then compare your results with the similar matrix
+\[
+B = \mattwo{2}{1}{-2}{0}.
+\]
+\end{exercise}
+
+\begin{exercise} \label{c10.4.6}
+Consider the $2\times 2$ matrix
+\[
+A = \mattwo{-0.8318}{-1.9755}{0.9878}{1.1437}.
+\]
+\begin{itemize}
+\item[(a)]  Use \Matlab to find the complex conjugate eigenvalues and 
+eigenvectors of $A$.
+\item[(b)]  Find the real block diagonal normal form of $A$ and describe
+geometrically the motion of this normal form on the plane.
+\item[(c)]  Using {\sf map} describe geometrically how $A$ maps vectors in 
+the plane to vectors in the plane. 
+\end{itemize}
+\end{exercise}
+
+
+\noindent In Exercises~\ref{c10.4.7a} -- \ref{c10.4.7d} find a square real 
+matrix $S$ so that $S\inv AS$ is in real block diagonal form and a complex 
+square matrix $T$ so that $T\inv AT$ is in complex diagonal form.
+\begin{exercise} \label{c10.4.7a}
+\begin{equation*}
+A = \left(\begin{array}{rrr}
+    1 &     2 &     4 \\
+    2 &    -4 &    -5\\
+    1 &    10 &   -15
+\end{array}\right).
+\end{equation*}
+\end{exercise}
+\begin{exercise} \label{c10.4.7b}
+\begin{equation*}
+A = \left(\begin{array}{rrrr}
+  -15.1220 &  12.2195 &  13.6098 &  14.9268 \\
+  -28.7805 &  21.8049 &  25.9024 &  28.7317 \\
+   60.1951 & -44.9512 & -53.9756 & -60.6829 \\
+  -44.5122 &  37.1220 &  43.5610 &  47.2927
+\end{array}\right).
+\end{equation*}
+\end{exercise} 
+\begin{exercise} \label{c10.4.7c}
+\begin{equation*}
+A = \left(\begin{array}{rrrrrr}
+    2.2125 &    5.1750 &    8.4250 &   15.0000 &   19.2500 &    0.5125 \\
+   -1.9500 &   -3.9000 &   -6.5000 &   -7.4000 &  -12.0000 &   -2.9500\\
+    2.2250 &    3.9500 &    6.0500 &    0.9000 &    1.5000 &    1.0250\\
+   -0.2000 &   -0.4000 &         0 &    0.1000 &         0 &   -0.2000\\
+   -0.7875 &   -0.8250 &   -1.5750 &    1.0000 &    2.2500 &    0.5125\\
+    1.7875 &    2.8250 &    4.5750 &         0 &    4.7500 &    5.4875
+\end{array}\right).
+\end{equation*}
+\end{exercise}
+\begin{exercise} \label{c10.4.7d}
+\begin{equation*}
+A = \left(\begin{array}{rrr}
+   -12 &    15 &     0\\
+     1 &     5 &     2\\
+    -5 &     1 &     5
+\end{array}\right).
+\end{equation*}
+\end{exercise}
+
+
+
+\end{document}
