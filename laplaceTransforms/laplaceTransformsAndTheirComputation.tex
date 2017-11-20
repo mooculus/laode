@@ -20,14 +20,14 @@ impulse functions.  In the third part we discuss two properties of Laplace
 transforms that are useful when computing inverse Laplace transforms of
 functions of the type that appear when solving forced second order equations.
 
-\begin{Def}  \label{D:laplace}
+\begin{definition}  \label{D:laplace}
 Let $x(t)$ be a function that is defined for $0\le t < \infty$.
 Then the function ${\cal L}[x](s)$ is defined by
 \begin{equation} \label{E:laplace}
 {\cal L}[x](s) = \int_0^{\infty} e^{-st} x(t)\; dt
 \end{equation}
 and is called the {\em Laplace transform\/} of $x(t)$.
-\end{Def}\index{Laplace transform!definition}
+\end{definition}\index{Laplace transform!definition}
 
 Note that the Laplace transform is an improper 
 integral --- which implies that some care must be taken when discussing 
@@ -49,7 +49,7 @@ Definition~\ref{D:laplace}.  Let $x(t)=e^{at}$ and compute
 The first step in verifying properties \Ref{Tprops} is to show that the 
 Laplace transform ${\cal L}$ is linear, that is, to 
 show that \Ref{Tprops}(a) holds.
-\begin{prop}  \label{prop:linLap}
+\begin{proposition}  \label{prop:linLap}
 Suppose $x(t)$ and $y(t)$ are functions for which the Laplace transforms
 ${\cal L}[x](s)$, ${\cal L}[y](s)$ exist for $s>a$, and let $c$ be real. 
 Then for all $s>a$
@@ -59,7 +59,7 @@ Then for all $s>a$
 {\cal L}[cx] & = & c{\cal L}[x].
 \end{array}
 \end{equation}
-\end{prop}
+\end{proposition}
 
 \begin{proof} Using properties of integrals we obtain for each $s>a$
 \begin{eqnarray*}
@@ -76,7 +76,7 @@ multiplication.  \end{proof}
 Next we verify the important derivative property \Ref{Tprops}(c) of the 
 Laplace transform.  
 
-\begin{prop}  \label{prop:derLap}
+\begin{proposition}  \label{prop:derLap}
 Suppose that $x$ is a differentiable function such that 
 $|x(t)|\le Me^{at}$ for constants $a>0$ and $M>0$.  
 Then
@@ -85,7 +85,7 @@ Then
 \item[(b)] ${\cal L}[\dot x](s) = s{\cal L}[x](s) - x(0) \quad 
 \mbox{for $s>a$.}$
 \end{itemize}
-\end{prop}
+\end{proposition}
 
 \begin{proof} 
 \noindent (a) Observe that by the assumption on the growth of 
@@ -303,7 +303,7 @@ See \Ref{e:sampleLT}.
 The next proposition enables us to calculate inverse Laplace transforms for
 functions of type \Ref{E:1sttype}.
 
-\begin{prop}  \label{prop:eHcLap1}
+\begin{proposition}  \label{prop:eHcLap1}
 Suppose that $Y(s)={\cal L}[y(t)](s)$ exists.  Then
 \[
 \begin{array}{rrcl}
@@ -311,7 +311,7 @@ Suppose that $Y(s)={\cal L}[y(t)](s)$ exists.  Then
 \mbox{(b)} & {\cal L}^{-1}[Y(s-a)](t) & = & e^{at}y(t).
 \end{array}
 \]
-\end{prop}
+\end{proposition}
 \index{Laplace transform!general properties}\index{Laplace transform!inverse}
 
 \begin{proof}  To verify (a) compute
@@ -364,7 +364,7 @@ by the jump function $H_c(t)$ and by doing so we will be able to compute the
 inverse Laplace transform of functions like \Ref{2ndtype} when $G(s)$ is the 
 Laplace transform of a discontinuous forcing function.
 
-\begin{prop}  \label{prop:eHcLap2}
+\begin{proposition}  \label{prop:eHcLap2}
 Suppose that $Y(s)={\cal L}[y(t)](s)$ exists.  Then
 \[
 \begin{array}{rrcl}
@@ -372,7 +372,7 @@ Suppose that $Y(s)={\cal L}[y(t)](s)$ exists.  Then
 \mbox{(b)} & {\cal L}^{-1}[e^{-cs}Y(s)](t) & = & H_c(t)y(t-c).
 \end{array}
 \]
-\end{prop}
+\end{proposition}
 
 \begin{proof} (a)  Compute
 \[

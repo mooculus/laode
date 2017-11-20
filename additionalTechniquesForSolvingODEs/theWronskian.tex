@@ -35,14 +35,14 @@ Define the {\em Wronskian\/}\index{Wronskian} to be
 W(t) = \det Y(t).
 \]
 
-\begin{thm}  \label{T:Wronskian}
+\begin{theorem}  \label{T:Wronskian}
 Let $X_1,\ldots,X_n$ be solutions to \Ref{E:NCCH} such that the vectors
 $X_j(0)$ form a basis of $\R^n$.  Let $Y(t)$ be the matrix defined in 
 \Ref{E:Y(t)}.  Then
 \begin{equation}  \label{L:Wronskian}
 W(t) = e^{\int_0^t\trace(A(\tau))d\tau}W(0).
 \end{equation}
-\end{thm}
+\end{theorem}
 
 It follows directly from \Ref{L:Wronskian} that the determinant of $Y(t)$ is 
 nonzero when the determinant of $Y(0)$ is nonzero.  But $\det Y(0)\neq 0$ 

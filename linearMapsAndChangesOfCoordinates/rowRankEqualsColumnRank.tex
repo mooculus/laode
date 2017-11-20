@@ -16,11 +16,11 @@ Let $A$ be an $m\times n$ matrix.  The {\em row space\/}
 and is a subspace of $\R^n$.  The {\em column space\/}
 \index{column!space} of $A$ is the span of the columns of $A$
 and is a subspace of $\R^m$.
-\begin{Def} 
+\begin{definition} 
 The {\em row rank\/} of $A$ is the dimension of the
 row space of $A$ and the {\em column rank\/} of $A$ is the
 dimension of the column space of $A$.
-\end{Def} \index{row!rank}  \index{column!rank}
+\end{definition} \index{row!rank}  \index{column!rank}
 Lemma~\ref{L:computerank} of Chapter~\ref{C:vectorspaces} states that
 \[
 \mbox{row rank}(A) = \rank(A).
@@ -86,13 +86,13 @@ L_A(v)=Av = v_1A_1+\cdots+v_nA_n.
 
 There is a theorem that relates the dimensions of the null space and range
 with the dimension of $V$.
-\begin{thm}  \label{T:nsr}
+\begin{theorem}  \label{T:nsr}
 Let $V$ and $W$ be vector spaces with $V$ finite dimensional and let
 $L:V\to W$ be a linear map.  Then
 \[
 \dim(V) = \dim(\mbox{\rm null space}(L)) + \dim({\rm range}(L)).
 \]\index{dimension}\index{null space} \index{range}
-\end{thm}
+\end{theorem}
 
 \begin{proof}   Since $V$ is finite dimensional, the null space of $L$ is finite 
 dimensional (since the null space is a subspace of $V$) and the range of $L$ 
@@ -169,20 +169,20 @@ space of $A$.  Therefore,
 \]
 Hence, the rank of $A$ equals the column rank of $A$.  Since rank and row rank 
 are identical, we have proved:
-\begin{thm} \label{T:rowrank=columnrank}
+\begin{theorem} \label{T:rowrank=columnrank}
 Let $A$ be an $m\times n$ matrix.  Then
 \[
 \mbox{row rank } A=\mbox{column rank } A.
 \]
-\end{thm}\index{row!rank}\index{column!rank}
+\end{theorem}\index{row!rank}\index{column!rank}
 
 Since the row rank of $A$ equals the column rank of $A^t$, we have:
-\begin{cor}
+\begin{corollary}
 Let $A$ be an $m\times n$ matrix.  Then
 \[
 \rank(A) = \rank(A^t).
 \]
-\end{cor}\index{matrix!transpose}
+\end{corollary}\index{matrix!transpose}
 
 
 \EXER

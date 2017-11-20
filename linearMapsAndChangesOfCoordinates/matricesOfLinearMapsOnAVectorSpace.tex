@@ -38,12 +38,12 @@ We may rewrite \Ref{e:coordchange} as
 [v]_{\cal W} = C_{{\cal W}{\cal Z}}[v]_{\cal Z}.
 \end{equation}
 
-\begin{Def}
+\begin{definition}
 Let ${\cal W}$ and ${\cal Z}$ be bases\index{basis} for the $n$-dimensional
 vector space $V$.  The $n\times n$ matrix $C_{{\cal W}{\cal Z}}$
 is a {\em transition\/} matrix if $C_{{\cal W}{\cal Z}}$ satisfies
 \Ref{e:coordchange2}.
-\end{Def}  \index{matrix!transition}
+\end{definition}  \index{matrix!transition}
 
 
 \subsubsection*{Transition Mappings Defined}
@@ -52,7 +52,7 @@ The next theorem presents a method for finding the transition matrix
 between coordinates associated to bases in an $n$-dimensional vector
 space $V$.
 
-\begin{thm}  \label{T:coordform}
+\begin{theorem}  \label{T:coordform}
 Let ${\cal W}=\{w_1,\ldots,w_n\}$ and ${\cal Z}=\{z_1,\ldots,z_n\}$
 be bases for the $n$-dimensional vector space\index{vector!space} $V$.
 Then
@@ -71,7 +71,7 @@ z_n & = & c_{1n}w_1 + \cdots + c_{nn}w_n \nonumber
 \end{array}
 \end{equation}
 for scalars $c_{ij}$.
-\end{thm}
+\end{theorem}
 
 \begin{proof}
 We can restate \Ref{e:wtoz} as
@@ -199,7 +199,7 @@ C_{\cal WZ} & = & \mattwo{1}{2}{2}{3}\inv\mattwo{1}{2}{4}{1} \\
 
 \subsection*{Matrices of Linear Maps in Different Bases}
 
-\begin{thm} \label{T:matrixcoord}
+\begin{theorem} \label{T:matrixcoord}
 Let $L:V\to V$ be a linear mapping\index{linear!mapping} and let
 ${\cal W}$ and ${\cal Z}$ be bases of $V$.  Then
 \[
@@ -209,7 +209,7 @@ are similar \index{similar} matrices.  More precisely,
 \begin{equation}  \label{e:matrixcoord}
 [L]_{\cal W} = C_{{\cal Z}{\cal W}}\inv [L]_{\cal Z} C_{{\cal Z}{\cal W}}.
 \end{equation}
-\end{thm}
+\end{theorem}
 
 \begin{proof}  For every $v\in\R^n$ we compute
 \begin{eqnarray*}

@@ -22,12 +22,12 @@ to introduce a new type of matrices, the orthogonal matrices.
 
 \subsection*{Orthogonal Matrices}
 
-\begin{Def} \label{def:orthmat}
+\begin{definition} \label{def:orthmat}
 \index{matrix!orthogonal}
 An $n\times n$ matrix $Q$ is {\em orthogonal\/} if its columns form an
 orthonormal basis\index{basis!orthonormal}
 of $\R^n$.
-\end{Def}
+\end{definition}
 
 The following lemma states elementary properties of orthogonal matrices:
 \begin{lemma} \label{lem:orthprop}
@@ -52,9 +52,9 @@ thus proving (c).  \end{proof}
 
 The previous lemma together with \Ref{e:orthosym} in the proof of
 Theorem~\ref{T:symmetricmat}(b) lead to the following result:
-\begin{prop}  For each symmetric $n\times n$ matrix $A$, there exists an
+\begin{proposition}  For each symmetric $n\times n$ matrix $A$, there exists an
 orthogonal matrix $P$ such that $P^tAP$ is a diagonal matrix.
-\end{prop}
+\end{proposition}
 
 \subsubsection*{Reflections Across Hyperplanes: Householder Matrices}
 
@@ -70,13 +70,13 @@ a linear map $H:\R^n\to\R^n$ such that
 \end{itemize}
 We claim that the matrix of a reflection across a hyperplane is orthogonal
 and there is a simple formula for that matrix.
-\begin{Def} \label{D:Householder}
+\begin{definition} \label{D:Householder}
 A {\em Householder matrix\/} is an $n\times n$ matrix of the form
 \begin{equation} \label{eq:householder}
 H=I_n - \frac{2}{u^tu} u u^t
 \end{equation}
 where $u\in\R^n$ is a nonzero vector. \index{matrix!Householder}.
-\end{Def}
+\end{definition}
 This definition makes sense since $u^tu=||u||^2$ is a number while the
 product $u u^t$ is an $n\times n$ matrix.
 
@@ -118,7 +118,7 @@ implemented in \Matlab.
 An $n\times k$ matrix $R=\{r_{ij}\}$ is {\em upper triangular\/} if
 $r_{ij}=0$ whenever $i>j$.
 
-\begin{Def}  \label{qr-Def} \index{QR decomposition}
+\begin{definition}  \label{qr-Def} \index{QR decomposition}
 An $n\times k$ matrix $A$ has a {\em $QR$ decomposition\/} if
 \begin{equation} \label{eq:qrdecom}
 A=QR.
@@ -127,7 +127,7 @@ where $Q$ is an $n\times n$
 orthogonal matrix\index{matrix!orthogonal}
 and $R$ is an $n\times k$
 upper triangular matrix\index{matrix!upper triangular} $R$.
-\end{Def}
+\end{definition}
 
 $QR$ decompositions can be used to find orthonormal bases as follows.
 Suppose that ${\cal W} = \{w_1,\ldots,w_k\}$ is a basis for the subspace
@@ -162,7 +162,7 @@ w_k & = & r_{1k}v_1 + r_{2k}v_2 + \cdots + r_{kk}v_k.
 It now follows that the $W=\Span\{v_1,\ldots,v_k\}$ and that
 $\{v_1,\ldots,v_k\}$ is an orthonormal basis for $W$.  We have proved:
 
-\begin{prop} \label{prop:qrdec}
+\begin{proposition} \label{prop:qrdec}
 Suppose that there exist an orthogonal $n\times n$ matrix $Q$ and an upper
 triangular $n\times k$ matrix $R$ such that the $n\times k$ matrix $A$ has
 a $QR$ decomposition\index{QR decomposition}
@@ -174,7 +174,7 @@ orthonormal basis\index{basis!orthonormal}
 of the subspace $W=\Span\{w_1,\ldots,w_k\}$, where the $w_j$
 are the columns of $A$.  Moreover, $r_{ij}=v_i\cdot w_j$ is the coordinate
 of $w_j$ in the orthonormal basis.
-\end{prop}
+\end{proposition}
 
 Conversely, we can also write down a $QR$ decomposition for a matrix $A$, if
 we have computed an orthonormal basis for the columns of $A$.  Indeed, using
@@ -190,7 +190,7 @@ Matrices} \index{QR decomposition!using Householder matrices}
 The $QR$ decomposition by Householder transformations is based on the
 following observation :
 
-\begin{prop} \label{prop:Housej}
+\begin{proposition} \label{prop:Housej}
 Let $z=(z_1,\ldots,z_n)\in\R^n$ be nonzero and let
 \[
 r=\sqrt{z_j^2  + \cdots + z_n^2}.
@@ -213,7 +213,7 @@ Hz = \left(\begin{array}{c} z_1\\  \vdots\\z_{j-1}\\ r \\ 0\\ \vdots\\ 0
 \end{array}\right)
 \end{equation}
 holds for the Householder matrix $H=I_n-\frac{2}{u^tu}uu^t$.
-\end{prop}
+\end{proposition}
 
 \begin{proof}  Begin by computing
 \begin{eqnarray*}

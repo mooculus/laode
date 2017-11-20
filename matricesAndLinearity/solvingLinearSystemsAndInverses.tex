@@ -55,7 +55,7 @@ $0\inv=\frac{1}{0}$ is undefined.)
 \subsection*{Invertibility}
 
 We begin by giving a precise definition of invertibility for square matrices.
-\begin{Def} \label{inverse} \index{inverse} \index{invertible}
+\begin{definition} \label{inverse} \index{inverse} \index{invertible}
 The $n\times n$ matrix $A$ is {\em invertible\/} if there is an $n\times n$
 matrix $B$ such that
 \[
@@ -64,7 +64,7 @@ AB=I_n \AND BA=I_n.
 The matrix $B$ is called an {\em inverse\/} of $A$.  If $A$ is not invertible,
 then $A$ is {\em noninvertible\/} or {\em singular\/}. \index{noninvertible}
 \index{singular}
-\end{Def}
+\end{definition}
 
 Geometrically, we can see that some matrices are invertible.  For example, 
 the matrix
@@ -115,14 +115,14 @@ B = BI_n = B(AC) = (BA)C = I_nC = C.
 We now show how to compute inverses for products of invertible
 matrices.
 
-\begin{prop} \label{P:invprod} \index{matrix!multiplication}
+\begin{proposition} \label{P:invprod} \index{matrix!multiplication}
 \index{inverse}
 Let $A$ and $B$ be two invertible $n\times n$ matrices.  Then
 $AB$ is also invertible and
 \[
 (AB)\inv = B\inv A\inv.
 \]
-\end{prop}
+\end{proposition}
 
 \begin{proof}  Use associativity of matrix multiplication to compute
 \[
@@ -134,13 +134,13 @@ Similarly,
 \]
 Therefore $AB$ is invertible with the desired inverse. \end{proof}
 
-\begin{prop} \label{L:transposeinv} \index{matrix!transpose}
+\begin{proposition} \label{L:transposeinv} \index{matrix!transpose}
 Suppose that $A$ is an invertible $n\times n$ matrix.  Then
 $A^t$ is invertible and
 \[
 (A^t)\inv = (A\inv)^t.
 \]
-\end{prop}
+\end{proposition}
 
 \begin{proof}  We must show that $(A\inv)^t$ is the inverse of $A^t$.  Identity
 \Ref{e:transposeprod} implies that
@@ -162,10 +162,10 @@ Ax=b,
 \end{equation}
 where $A$ is an $n\times n$ matrix and $b\in\R^n$.
 
-\begin{prop} \label{P:inv=>unique}\index{uniqueness of solutions}
+\begin{proposition} \label{P:inv=>unique}\index{uniqueness of solutions}
 Let $A$ be an invertible $n\times n$ matrix and let $b$ be in $\R^n$.
 Then the system of linear equations \Ref{squarematrix} has a unique solution.
-\end{prop}
+\end{proposition}
 
 \begin{proof}  We can solve the linear system \Ref{squarematrix} by setting
 \begin{equation}  \label{soln}
@@ -181,9 +181,9 @@ x = I_n x = (A\inv A)x = A\inv(Ax) = A\inv b.
 \]
 So $A\inv b$ is the only possible solution.  \end{proof}
 
-\begin{cor} \label{C:inv=>In}
+\begin{corollary} \label{C:inv=>In}
 An invertible matrix is row equivalent to $I_n$.
-\end{cor}
+\end{corollary}
 
 \begin{proof}  Let $A$ be an invertible $n\times n$ matrix.
 Proposition~\ref{P:inv=>unique} states that the system of linear equations
@@ -192,9 +192,9 @@ states that $A$ is row equivalent to $I_n$.  \end{proof}
 
 The converse of Corollary~\ref{C:inv=>In} is also valid.
 
-\begin{prop}  \label{P:row=>inv}
+\begin{proposition}  \label{P:row=>inv}
 An $n\times n$ matrix $A$ that is row equivalent to $I_n$ is invertible.
-\end{prop}
+\end{proposition}
 
 \begin{proof}  Form the $n\times 2n$ matrix $M=(A|I_n)$.  Since $A$ is row equivalent
 to $I_n$, there is a sequence of elementary row operations so that $M$ is
@@ -223,7 +223,7 @@ BA = (BA_1|\cdots|BA_n) = (e_1|\cdots|e_n) = I_n.
 \]
 Hence $BA=I_n$.  \end{proof}
 
-\begin{thm} \label{invertequiv}
+\begin{theorem} \label{invertequiv}
 Let $A$ be an $n\times n$ matrix.  Then the following are
 equivalent:
 \begin{itemize}
@@ -233,7 +233,7 @@ $b\in\R^n$.
 \item[(c)]  The only solution to $Ax=0$ is $x=0$.
 \item[(d)]  $A$ is row equivalent to $I_n$.
 \end{itemize}
-\end{thm}
+\end{theorem}
 
 \begin{proof} $(a) \Rightarrow (b)$ This implication
 is just Proposition~\ref{P:inv=>unique}.
@@ -253,14 +253,14 @@ Proposition~\ref{P:row=>inv}. \end{proof}
 The proof of Proposition~\ref{P:row=>inv} gives a constructive method
 for finding the inverse of any invertible square matrix.
 
-\begin{thm}  \label{T:AIn}\index{inverse!computation}
+\begin{theorem}  \label{T:AIn}\index{inverse!computation}
 Let $A$ be an $n\times n$ matrix that is row equivalent to
 $I_n$ and let $M$ be the $n\times 2n$ augmented matrix
 \begin{equation}  \label{e:M}
 M = (A | I_n).
 \end{equation}
 Then the matrix $M$ is row equivalent to $(I_n | A\inv)$.
-\end{thm}
+\end{theorem}
 
 \subsubsection*{An Example}
 

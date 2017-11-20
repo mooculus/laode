@@ -18,13 +18,13 @@ Markov chains\index{Markov chain} introduced in
 Section~\ref{S:TransitionApplied}.
 
 The basic result is the following theorem.
-\begin{thm} \label{T:convergeto0}
+\begin{theorem} \label{T:convergeto0}
 Let $A$ be an $n\times n$ matrix and assume that all eigenvalues $\lambda$ of 
 $A$ satisfy $|\lambda|<1$.  Then for every vector $v_0\in\R^n$
 \begin{equation}  \label{E:convergeto0}
 \lim_{k\to\infty} A^kv_0 = 0.
 \end{equation}
-\end{thm}
+\end{theorem}
 
 \begin{proof}  Suppose that $A$ and $B$ are similar matrices; that is, $B=SAS\inv$
 for some invertible matrix $S$.  Then $B^k = SA^kS\inv$ and for any vector 
@@ -122,15 +122,15 @@ second term decreases to zero geometrically, and the third term is
 constant independent of $m$. The desired convergence to zero follows from 
 \Ref{E:PG}.  \end{proof}
 
-\begin{Def}  The $n\times n$ matrix $A$ has a {\em dominant\/} eigenvalue 
+\begin{definition}  The $n\times n$ matrix $A$ has a {\em dominant\/} eigenvalue 
 $\lambda_0>0$ if $\lambda_0$ is a simple eigenvalue and all other eigenvalues
 $\lambda$ of $A$ satisfy $|\lambda|<\lambda_0$.
-\end{Def}\index{eigenvalue!dominant}
+\end{definition}\index{eigenvalue!dominant}
 
 
-\begin{thm}  \label{T:Markovdom}
+\begin{theorem}  \label{T:Markovdom}
 Let $P$ be a Markov matrix. Then $1$ is a dominant eigenvalue of $P$.
-\end{thm}\index{matrix!Markov}\index{matrix!Markov}
+\end{theorem}\index{matrix!Markov}\index{matrix!Markov}
 
 \begin{proof}  Recall from Chapter~\ref{chap:matrices}, Definition~\ref{D:Markov} 
 that a Markov matrix is a square matrix $P$ whose entries are nonnegative, 
@@ -186,7 +186,7 @@ Since $q_{ji}>0$, this inequality can hold only if all of the $v_i$ are
 equal.  \end{proof}
 
 
-\begin{thm} \label{T:convergetoeig}
+\begin{theorem} \label{T:convergetoeig}
 (a)  Let $Q$ be an $n\times n$ matrix with dominant eigenvalue 
 $\lambda>0$ and associated eigenvector $v$.  Let $v_0$ be any vector in 
 $\R^n$.  Then
@@ -202,7 +202,7 @@ with all entries nonnegative.  Then
 \]
 where $V$ is the eigenvector of $P^t$ with eigenvalue $1$ such that the 
 sum of the entries in $V$ is equal to the sum of the entries in $v_0$.
-\end{thm} \index{matrix!Markov}\index{matrix!Markov}
+\end{theorem} \index{matrix!Markov}\index{matrix!Markov}
 
 \begin{proof}  (a) After a similarity transformation, if needed, 
 we can assume that $Q$ is in 

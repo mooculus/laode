@@ -74,14 +74,14 @@ Ne_j & = & e_{j-1} & \quad j=2,\ldots,n .
 Note that \Ref{e:Ndef} implies that $N^n=0$.
 
 The $n\times n$ matrix $N$ motivates the following definitions.  
-\begin{Def} \label{D:multiplicities}
+\begin{definition} \label{D:multiplicities}
 Let $\lambda_0$ be an eigenvalue of $A$.  The {\em algebraic multiplicity\/} 
 \index{multiplicity!algebraic} of $\lambda_0$ is the number of times 
 that $\lambda_0$ appears as a root of the characteristic polynomial 
 $p_A(\lambda)$.  The {\em geometric multiplicity\/} 
 \index{multiplicity!geometric} of $\lambda_0$ is the number of linearly 
 independent eigenvectors of $A$ having eigenvalue equal to $\lambda_0$.
-\end{Def}  
+\end{definition}  
 Abstractly, the geometric multiplicity is:
 \[
 {\rm nullity}(A-\lambda_0I_n).
@@ -188,12 +188,12 @@ Qv_1 = 0,
 it follows that the geometric multiplicity of $\lambda_0$ in the matrix
 $\widehat{J}_n(\lambda_0)$ equals $1$.  \end{proof}
 
-\begin{Def}  \label{D:jordanblock}
+\begin{definition}  \label{D:jordanblock}
 The real matrices $J_n(\lambda_0)$ when $\lambda_0\in\R$ and 
 $\widehat{J}_n(\lambda_0)$ when $\lambda_0\in\C$ are {\em real Jordan
 blocks\/}.  The matrices $J_n(\lambda_0)$ when $\lambda_0\in\C$ are (complex)
 {\em Jordan blocks\/}.
-\end{Def} \index{Jordan block}
+\end{definition} \index{Jordan block}
 
 \subsection*{Generalized Eigenvectors and Generalized Eigenspaces}
 
@@ -201,7 +201,7 @@ What happens when $n\times n$ matrices have fewer that $n$ linearly
 independent eigenvectors?  Answer: The matrices gain generalized 
 eigenvectors.
 
-\begin{Def}
+\begin{definition}
 A vector $v\in\C^n$ is a {\em generalized eigenvector\/} for the 
 $n\times n$ matrix $A$ with eigenvalue $\lambda$ if
 \begin{equation}  \label{e:geneig}
@@ -210,7 +210,7 @@ $n\times n$ matrix $A$ with eigenvalue $\lambda$ if
 for some positive integer $k$. The smallest integer $k$ for which
 \Ref{e:geneig} is satisfied is called the {\em index\/}
 \index{index} of the generalized eigenvector $v$.
-\end{Def}  \index{eigenvector!generalized}
+\end{definition}  \index{eigenvector!generalized}
 Note: Eigenvectors\index{eigenvector} are generalized eigenvectors with
 index equal to $1$.
 

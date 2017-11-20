@@ -324,12 +324,12 @@ X_j(t)=e^{\lambda t} \left(\frac{t^{j-1}}{(j-1)!}w_1+\frac{t^{j-2}}{(j-2)!}w_2
 \end{equation}
 is a solution of \Ref{eq:linsys}.   Moreover, since $X_j(0)=w_j$, the 
 solutions $X_1(t),\ldots,X_k(t)$ are linearly independent.  We have proved:
-\begin{thm}  \label{T:JBsoln}
+\begin{theorem}  \label{T:JBsoln}
 Let $w_1,\ldots,w_k$ be a set of linearly independent generalized
 eigenvectors vectors satisfying \Ref{eq:genvec}. Then the functions 
 $X_1(t),\ldots,X_k(t)$ in \Ref{E:Xj} are a linearly independent set of 
 solutions\index{linearly!independent solutions} to $\dot{X}=AX$.
-\end{thm}
+\end{theorem}
 
 For example, when $k=3$, we have found three linearly independent solutions:
 \begin{eqnarray*}
@@ -445,7 +445,7 @@ P_2(\lambda) &=& \frac{p_A(\lambda)}{(5-\lambda)^2}=(-2-\lambda)(4-\lambda)\\
 P_3(\lambda) &=& \frac{p_A(\lambda)}{4-\lambda}=(-2-\lambda)(5-\lambda)^2.
 \end{eqnarray*}
 We can now state one method for computing $e^{tA}$.
-\begin{thm} \label{T:etA}
+\begin{theorem} \label{T:etA}
 Let $A$ be an $n\times n$ matrix with distinct eigenvalues 
 $\lambda_1,\ldots,\lambda_k$ and algebraic multiplicities $m_1,\ldots,m_k$.  
 Then
@@ -453,7 +453,7 @@ Then
 e^{tA} = \sum_{\ell=1}^k \left[e^{\lambda_\ell t}a_\ell(A)P_\ell(A)
 \sum_{j=0}^{m_\ell-1}\frac{1}{j!}t^j(A-\lambda_\ell I_n)^j\right].
 \]
-\end{thm}\index{matrix!exponential}\index{multiplicity}
+\end{theorem}\index{matrix!exponential}\index{multiplicity}
 \index{distinct eigenvalues}
 
 Note that this matrix exponential consists of functions that are linear 
@@ -505,14 +505,14 @@ As a special case, consider a matrix $A$ that has $n$ distinct
 eigenvalues. Then $m_\ell-1=0$ for each $\ell$ implying that the polynomial
 $a_\ell(\lambda)$ has degree zero and is a constant independent of $\lambda$. 
 Since $0!=1$, $t^0=1$, and $(A-\lambda_\ell I_n)^0=I_n$, we obtain
-\begin{cor} \label{T:etA0}
+\begin{corollary} \label{T:etA0}
 Let $A$ be an $n\times n$ matrix with distinct eigenvalues
 \index{distinct eigenvalues}
 $\lambda_1,\ldots,\lambda_n$. Then
 \[
 e^{tA} = \sum_{\ell=1}^n a_\ell e^{\lambda_\ell t} P_\ell(A).
 \]
-\end{cor}
+\end{corollary}
 
 \subsubsection*{An Example with Distinct Eigenvalues}
 

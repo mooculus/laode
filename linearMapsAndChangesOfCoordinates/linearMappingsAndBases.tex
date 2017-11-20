@@ -29,7 +29,7 @@ that this result is valid in greater generality.  We begin by
 defining what we mean for a mapping between vector spaces to be
 linear.
 
-\begin{Def}  \label{D:linearV}
+\begin{definition}  \label{D:linearV}
 Let $V$ and $W$ be vector spaces and let $L:V\to W$ be a mapping.  The map
 $L$ is {\em linear\/} if
 \begin{eqnarray*}
@@ -37,7 +37,7 @@ L(u+v) & = & L(u) + L(v) \\
 L(cv) & = & cL(v)
 \end{eqnarray*}
 for all $u,v\in V$ and $c\in\R$.
-\end{Def} \index{linear}\index{vector!space}
+\end{definition} \index{linear}\index{vector!space}
 
 \subsubsection*{Examples of Linear Mappings}
 
@@ -84,11 +84,11 @@ L(f)(t) = (t-1)^2-(t-1)+1 = t^2-2t+1-t+1+1 = t^2-3t+3.
 
 \subsubsection*{Constructing Linear Mappings from Bases}
 
-\begin{thm} \label{L:linmapfrombasis}
+\begin{theorem} \label{L:linmapfrombasis}
 Let $V$ and $W$ be vector spaces.  Let $\{v_1,\ldots,v_n\}$ be a
 basis for $V$ and let $\{w_1,\ldots,w_n\}$ be $n$ vectors in $W$.
 Then there exists a unique linear map $L:V\to W$ such that $L(v_i)=w_i$.
-\end{thm}\index{linear!mapping!construction}
+\end{theorem}\index{linear!mapping!construction}
 
 \begin{proof} Let $v\in V$ be a vector.  Since $\Span\{v_1,\ldots,v_n\}=V$, we may
 write $v$ as
@@ -268,12 +268,12 @@ A linear map $L:V\to W$ is {\em invertible\/} \index{invertible} if there
 exists a linear map $M:W\to V$ such that $L\compose M:W\to W$ is the identity
 map on $W$ and $M\compose L:V\to V$ is the identity map on $V$.
 
-\begin{thm} \label{T:invertbasis}
+\begin{theorem} \label{T:invertbasis}
 Let $V$ and $W$ be finite dimensional vector spaces and let $v_1,\ldots,v_n$
 be a basis\index{basis} for $V$.  Let $L:V\to W$ be a linear map.
 Then $L$ is invertible
 if and only if $w_1,\ldots,w_n$ is a basis for $W$ where $w_j=L(v_j)$.
-\end{thm}
+\end{theorem}
 
 \begin{proof}  If $w_1,\ldots,w_n$ is a basis for $W$, then use
 Theorem~\ref{L:linmapfrombasis} to define a linear map $M:W\to V$ by
@@ -312,11 +312,11 @@ w = L\compose M(w) = \beta_1w_1+\cdots+\beta_nw_n.
 \]
 Therefore, the $w_j$ span $W$.  \end{proof}
 
-\begin{cor}
+\begin{corollary}
 Let $V$ and $W$ be finite dimensional vector spaces.  Then there exists
 an invertible\index{invertible} linear map $L:V\to W$
 if and only if $\dim(V)=\dim(W)$.
-\end{cor}
+\end{corollary}
 
 \begin{proof}  Suppose that $L:V\to W$ is an invertible linear map.  Let
 $v_1,\ldots,v_n$ be a basis for $V$ where $n=\dim(V)$.  Then

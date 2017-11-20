@@ -21,7 +21,7 @@ an algorithm for determining whether a system of linear
 equations is consistent or inconsistent, and for determining all
 solutions to a consistent system.
 
-\begin{Def}
+\begin{definition}
 A matrix $E$ is in (row) {\em echelon form\/} \index{echelon
 form} if two conditions hold.
 \begin{enumerate}
@@ -30,7 +30,7 @@ to $1$.  This leading entry $1$ is called a {\em pivot\/}. \index{pivot}
 \item[(b)] A pivot in the $(i+1)^{st}$ row of $E$ occurs in a column to
 the right of the column where the pivot in the $i^{th}$ row occurs.
 \end{enumerate}
-\end{Def}
+\end{definition}
 
 Here are three examples of matrices that are in echelon form.
 The pivot in each row (which is always equal to $1$) is preceded
@@ -81,11 +81,11 @@ Here are three examples of matrices that are {\em not\/} in echelon form.
 \]
 
 
-\begin{Def} \label{D:roweq}\index{row!equivalent}
+\begin{definition} \label{D:roweq}\index{row!equivalent}
 Two $m\times n$ matrices are {\em row equivalent\/} if one can be
 transformed to the other by a sequence of elementary row
 operations.
-\end{Def}
+\end{definition}
 \index{row!equivalent}
 
 Let $A=(a_{ij})$ be a matrix with $m$ rows and $n$ columns.  We
@@ -116,29 +116,29 @@ set to $0$.  Now proceed inductively until we run out of nonzero
 rows.
 
 This argument proves:
-\begin{prop}  \label{P:echform}
+\begin{proposition}  \label{P:echform}
 Every matrix is row equivalent to a matrix in echelon form.
-\end{prop}
+\end{proposition}
 
 More importantly, the previous argument provides an algorithm for
 transforming matrices into echelon form.
 
 \subsection*{Reduction to Reduced Echelon Form}
 
-\begin{Def}\index{echelon form!reduced}
+\begin{definition}\index{echelon form!reduced}
 A matrix $E$ is in {\em reduced echelon form\/} if
 \begin{enumerate}
 \item[(a)]        $E$ is in echelon form, and
 \item[(b)] in every column of $E$ having a pivot, every entry
 in that column other than the pivot is $0$.
 \end{enumerate}
-\end{Def}
+\end{definition}
 
 We can now prove
-\begin{thm}  \label{T:redechform}
+\begin{theorem}  \label{T:redechform}
 Every matrix is row equivalent \index{row!equivalent} to a matrix
 in reduced echelon form.
-\end{thm}
+\end{theorem}
 
 \begin{proof} Let $A$ be a matrix.  Proposition~\ref{P:echform} states
 that we can transform $A$ by elementary row operations to a matrix
@@ -199,7 +199,7 @@ of linear equations having $n$ variables.  Since an augmented
 matrix is formed from the matrix of coefficients by adding a
 column, we see that the augmented matrix has $n+1$ columns.
 
-\begin{thm} \label{number}
+\begin{theorem} \label{number}
 Suppose that $E$ is an $m\times(n+1)$ augmented matrix that is in 
 reduced echelon form.  Let $\ell$ be the number of nonzero rows in $E$
 \begin{enumerate}
@@ -210,7 +210,7 @@ pivot in the $(n+1)^{st}$ column.
 then the set of all solutions is parameterized by $n-\ell$
 parameters.
 \end{enumerate} \index{inconsistent} \index{consistent}
-\end{thm}
+\end{theorem}
 
 \begin{proof}  Suppose that the last nonzero row in $E$ has its
 pivot in the $(n+1)^{st}$ column. Then the corresponding
@@ -282,11 +282,11 @@ and are specified by the one parameter $x_2$.
 It follows from Theorem~\ref{number} that linear systems of equations
 with fewer equations than unknowns and with zeros on the right hand
 side always have nonzero solutions.  More precisely:
-\begin{cor}  \label{existencehomo}
+\begin{corollary}  \label{existencehomo}
 Let $A$ be an $m\times n$ matrix where $m<n$.  Then the system of
 linear equations whose augmented matrix is $(A|0)$ has a nonzero
 solution.
-\end{cor}
+\end{corollary}
 
 \begin{proof} Perform elementary row operations on the augmented matrix $(A|0)$
 to arrive at the reduced echelon form matrix $(E|0)$.  Since the zero
@@ -300,12 +300,12 @@ solutions.   \end{proof}
 Recall that two $m\times n$ matrices are row equivalent if one
 can be transformed to the other by elementary row operations.
 
-\begin{cor}  \label{consistent}
+\begin{corollary}  \label{consistent}
 Let $A$ be an $n\times n$ square matrix and let $b$ be in
 $\R^n$.  Then $A$ is row equivalent to the identity matrix $I_n$
 if and only if the system of linear equations whose augmented
 matrix is $(A|b)$ has a unique solution.
-\end{cor} \index{matrix!identity}  \index{matrix!augmented}
+\end{corollary} \index{matrix!identity}  \index{matrix!augmented}
 
 \begin{proof}	Suppose that $A$ is row equivalent to $I_n$.  Then, by using
 the same sequence of elementary row operations, it follows that
@@ -352,20 +352,20 @@ elementary row operations to transform $A$ to two reduced
 echelon form matrices $E_1$ and $E_2$.  Can $E_1$ and $E_2$ be
 different?  The answer is: No.
 
-\begin{thm} \label{uniquerowechelon}
+\begin{theorem} \label{uniquerowechelon}
 For each matrix $A$, there is precisely one reduced echelon form
 matrix $E$ that is row equivalent\index{row!equivalent}  to $A$.
-\end{thm}\index{echelon form!reduced!uniqueness}
+\end{theorem}\index{echelon form!reduced!uniqueness}
 
 The proof of Theorem~\ref{uniquerowechelon} is given in 
 Section~\ref{S:uniquerowechelon}.  Since every matrix is row equivalent 
 to a unique matrix in reduced echelon form, we can define the rank 
 of a matrix as follows.
-\begin{Def}  \label{D:rank}
+\begin{definition}  \label{D:rank}
 Let $A$ be an $m\times n$ matrix that is row equivalent to a
 reduced echelon form matrix $E$.  Then the {\em rank\/} of $A$,
 denoted $\rank(A)$, is the number of nonzero rows in $E$.
-\end{Def}  \index{rank}
+\end{definition}  \index{rank}
 
 We make three remarks concerning the rank of a matrix.
 \begin{itemize}

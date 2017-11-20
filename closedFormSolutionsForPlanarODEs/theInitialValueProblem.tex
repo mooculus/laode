@@ -38,14 +38,14 @@ of solutions \index{uniqueness of solutions} are not always guaranteed
 --- though they are guaranteed for a large class of differential
 equations, as the following theorem shows.
 
-\begin{thm}  \label{exist&unique}
+\begin{theorem}  \label{exist&unique}
 Suppose that the functions $f$ and $g$ in the system of
 differential equations \Ref{2dsystem} are differentiable near
 $(x_0,y_0)$ and that the partial derivatives $f_x,f_y,g_x,g_y$
 are continuous near $(x_0,y_0)$.  Then there exists a unique
 solution to \Ref{2dsystem} with initial conditions
 $(x(0),y(0))=(x_0,y_0)$.
-\end{thm} \index{uniqueness of solutions}
+\end{theorem} \index{uniqueness of solutions}
 
 For example, consider the planar system of constant coefficient linear
 differential equations:
@@ -216,7 +216,7 @@ have proved that the dimension of the space of solutions to \Ref{ndlinsystem}
 is two.  This proof generalizes immediately to a proof of the following
 theorem for $n\times n$ systems.
 
-\begin{thm}  \label{T:solvends}
+\begin{theorem}  \label{T:solvends}
 Let $C$ be an $n\times n$ matrix.  Suppose that $X_1(t),\ldots,X_n(t)$
 are  solutions to $\dot{X}=CX$ such that the vectors of initial conditions
 $v_j=X_j(0)$ are linearly independent in $\R^n$.  Then the unique solution
@@ -228,7 +228,7 @@ where $r_1,\ldots,r_n$ are scalars satisfying
 \begin{equation} \label{findscalars}
 X_0 = r_1v_1 + \cdots + r_nv_n.
 \end{equation}
-\end{thm}\index{initial condition!linear independence}
+\end{theorem}\index{initial condition!linear independence}
 
 We call \Ref{E:genlsoln} the {\em general solution\/} \index{general solution}
 to the system of differential equations $\dot{X}=CX$.  When solving the
@@ -236,13 +236,13 @@ initial value problem we find a {\em particular solution\/}\index{particular
 solution}
 by specifying the scalars $r_1,\ldots,r_n$.
 
-\begin{cor}  \label{C:indsoln}
+\begin{corollary}  \label{C:indsoln}
 Let $C$ be an $n\times n$ matrix and let ${\cal X}=\{X_1(t),\ldots,X_n(t)\}$
 be solutions to the differential equation $\dot{X}=CX$ such that the vectors
 $X_j(0)$ are linearly independent in $\R^n$.  Then the set of all solutions
 to $\dot{X}=CX$ is an $n$-dimensional subspace of $(\CCone)^n$, and
 ${\cal X}$ is a basis for the solution subspace.
-\end{cor}\index{subspace!of solutions}
+\end{corollary}\index{subspace!of solutions}
 
 Consider a special case of Theorem~\ref{T:solvends}.  Suppose that the
 matrix $C$ has $n$ linearly independent eigenvectors $v_1,\ldots,v_n$ with

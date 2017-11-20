@@ -30,16 +30,16 @@ Consider the linear system of ODEs $\dot{X}=AX$.  In the case $n=2$ we showed
 that the origin is an asymptotically stable equilibrium precisely when the 
 eigenvalues of $A$ have negative real part.  In this subsection we show that the 
 same result holds for general $n$. 
-\begin{Def}  \label{D:linstab}
+\begin{definition}  \label{D:linstab}
 The origin is a {\em linearly stable\/} equilibrium for the system 
 of differential equations $\dot{X}=AX$ if the $n$ eigenvalues of $A$ 
 all have negative real part.  
-\end{Def}\index{stability!linear}
+\end{definition}\index{stability!linear}
 Using this definition we have:
-\begin{thm}  \label{T:linstab}
+\begin{theorem}  \label{T:linstab}
 The origin is an asymptotically stable equilibrium for the system of 
 differential equations $\dot{X}=AX$ if and only if the origin is linearly stable.
-\end{thm}
+\end{theorem}
 
 \begin{proof} The proof of this theorem follows directly from Lemma~\ref{R:pdeg}.
 Each coordinate function of each solution of $\dot{X}=AX$ is a linear 
@@ -84,7 +84,7 @@ next, and
 \item[(iii)] blocks corresponding to eigenvalues with zero real part come last.
 \end{itemize}
 As a consequence of this discussion we have proved:
-\begin{prop}  \label{P:SUC}
+\begin{proposition}  \label{P:SUC}
 Every $n\times n$ matrix $B$ is similar\index{similar} to a 
 block diagonal $n\times n$ matrix\index{matrix!block diagonal}
 \begin{equation} \label{e:SUC}
@@ -101,11 +101,11 @@ of whose eigenvalues have positive real part; and
 of whose eigenvalues have zero real part;
 \end{itemize}
 and $k_s+k_u+k_c=n$.
-\end{prop}
+\end{proposition}
 
 Using Proposition~\ref{P:SUC}, we can give a qualitative description of 
 every constant coefficient linear system of differential equations.
-\begin{thm}  \label{T:SUC}
+\begin{theorem}  \label{T:SUC}
 Let $A$ be a Jordan normal form matrix in the block diagonal form \Ref{e:SUC}.
 Let $X=(x,y,z)\in\R^n$ where $x\in\R^{k_s}$, $y\in\R^{k_u}$ and $z\in\R^{k_c}$.
 Then every solution to the differential equation $\dot{X}=AX$ has the form
@@ -125,7 +125,7 @@ Moreover, if the Jordan blocks\index{Jordan block} of $C$ are all trivial
 (that is, $1\times 1$ zero blocks or $2\times 2$ blocks with complex
 conjugate purely imaginary eigenvalues), then $z(t)$ will remain bounded in 
 both forward and backward time. 
-\end{thm}
+\end{theorem}
 
 \begin{proof}  The block diagonal form of $A$ decouples the differential equation 
 into three subsystems:
@@ -145,11 +145,11 @@ Solutions to the subblock equations are either equilibria (in the case of a
 $1\times 1$ block) or circles (in the case of the $2\times 2$ block).  The
 result follows, since the superposition of bounded solutions is bounded. \end{proof}
 
-\begin{Def}
+\begin{definition}
 The $x$ coordinates in Theorem~\ref{T:SUC} are the {\em stable\/} coordinates,
 the $y$ coordinates are the {\em unstable\/} coordinates, and the $z$ 
 coordinates are the {\em center\/} coordinates.
-\end{Def}\index{coordinates!stable} \index{coordinates!unstable}
+\end{definition}\index{coordinates!stable} \index{coordinates!unstable}
 \index{coordinates!center}
 
 Theorem~\ref{T:SUC} implies that for each linear constant coefficient system
@@ -196,7 +196,7 @@ eigenvalues of $(df)_{X_0}$ all have nonzero real part. We now state
 the analog of Theorem~\ref{T:linearization} of Chapter~\ref{C:NPS}.
 \index{hyperbolic}\index{equilibrium!hyperbolic}
 
-\begin{thm}  \label{T:nlinearization}
+\begin{theorem}  \label{T:nlinearization}
 Suppose that the system of differential equations \Ref{e:eqnn} has a 
 hyperbolic equilibrium at $X_0$.  Then, on a sufficiently small neighborhood 
 of $X_0$, the phase space for \Ref{e:eqnn} is the {\em same\/} as the phase 
@@ -204,7 +204,7 @@ space of the system of linear differential equations
 \begin{equation}  \label{e:nlinearizedeqn}
 \frac{dX}{dt} = (df)_{X_0}X.
 \end{equation}
-\end{thm} 
+\end{theorem} 
 
 As before, it is difficult to define precisely what we mean by the word
 {\em same\/}. Roughly speaking, {\em same\/} means that near $X_0$ there 

@@ -14,12 +14,12 @@
 The minimum number of vectors that span a vector space has special
 significance.
 
-\begin{Def}
+\begin{definition}
 The vector space $V$ has {\em finite dimension\/} if $V$ is the
 span of a finite number of vectors.  If $V$ has finite dimension, then the
 smallest number of vectors that span $V$ is called the {\em dimension\/} of
 $V$ and is denoted by $\dim V$.
-\end{Def} \index{dimension}\index{dimension!finite} \index{span}
+\end{definition} \index{dimension}\index{dimension!finite} \index{span}
 
 For example, recall that $e_j$ is the vector in $\R^n$ whose $j^{th}$
 component is $1$ and all of whose other components are $0$.
@@ -52,21 +52,21 @@ is not spanned by finitely many vectors.
 
 \subsection*{Bases and The Main Theorem}
 
-\begin{Def} \label{basis}
+\begin{definition} \label{basis}
 Let ${\cal B} = \{w_1,\ldots,w_k\}$ be a set of vectors in a
 vector space $W$.  The subset ${\cal B}$ is a {\em basis\/} for $W$
 if ${\cal B}$ is a spanning set for $W$ with the smallest number
 of elements in a spanning set for $W$.
-\end{Def} \index{basis} \index{spanning set}
+\end{definition} \index{basis} \index{spanning set}
 
 It follows that if $\{w_1,\ldots,w_k\}$ is a basis for $W$, then
 $k=\dim W$. The main theorem about bases is:
 
-\begin{thm}  \label{basis=span+indep}
+\begin{theorem}  \label{basis=span+indep}
 A set of vectors ${\cal B} =\{w_1,\ldots,w_k\}$ in a vector space $W$
 is a basis for $W$ if and only if the set ${\cal B}$ is linearly
 independent and spans $W$.
-\end{thm} \index{linearly!independent} \index{basis} \index{span}
+\end{theorem} \index{linearly!independent} \index{basis} \index{span}
 
 \noindent {\bf Remark:}  The importance of Theorem~\ref{basis=span+indep} is
 that we can show that a set of vectors is a basis by verifying spanning
@@ -234,16 +234,16 @@ From the left hand side of \Ref{e:expandsoln} we see that if this
 linear combination sums to zero, then $x_2=x_4=x_5=x_7=0$.  It
 follows from Theorem~\ref{basis=span+indep} that $\dim W = 4$.
 
-\begin{Def}  \label{D:nullity}
+\begin{definition}  \label{D:nullity}
 The {\em nullity\/} of $A$ is the dimension of the null space of $A$.
-\end{Def} \index{nullity}\index{null space!dimension}
+\end{definition} \index{nullity}\index{null space!dimension}
 
-\begin{thm}  \label{T:dimsoln}
+\begin{theorem}  \label{T:dimsoln}
 Let $A$ be an $m\times n$ matrix. Then
 \[
 {\rm nullity}(A) + \rank(A) = n.
 \]
-\end{thm} \index{rank}
+\end{theorem} \index{rank}
 
 \begin{proof}	Neither the rank nor the null space of $A$ are changed by
 elementary row operations.  So we can assume that $A$ is in reduced

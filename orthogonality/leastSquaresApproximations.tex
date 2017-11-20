@@ -114,7 +114,7 @@ w_0 = \alpha_1w_1 + \cdots + \alpha_kw_k
 \]
 for some scalars $\alpha_i$.  We now show how to find these scalars.
 
-\begin{thm}  \label{T:nearestvector}
+\begin{theorem}  \label{T:nearestvector}
 Let $x_0\in\R^n$ be a vector, and let $\{w_1,\ldots,w_k\}$ be a
 basis\index{basis} for the subspace\index{subspace} $W\subset\R^n$.
 Then
@@ -128,7 +128,7 @@ is the nearest vector in $W$ to $x_0$ when
 \end{equation}
 where $A=(w_1|\cdots|w_k)$ is the $n\times k$ matrix whose columns are the
 basis vectors of $W$.
-\end{thm}
+\end{theorem}
 
 \begin{proof} Observe that the vector $x_0-w_0$ is orthogonal to every vector in $W$
 precisely when $x_0-w_0$ is orthogonal to each basis vector $w_j$.  It
@@ -245,7 +245,7 @@ plane\index{plane} spanned by $w_1$ and $w_2$.
 
 \subsubsection*{The General Case}
 
-\begin{thm} (Gram-Schmidt Orthonormalization) \label{T:orthobasis}
+\begin{theorem} (Gram-Schmidt Orthonormalization) \label{T:orthobasis}
 Let $w_1,\ldots,w_k$ be a basis for the subspace $W\subset\R^n$.  Define
 $v_1$ as in \Ref{E:ortho1} and then define inductively
 \begin{eqnarray}
@@ -257,7 +257,7 @@ Then $v_1,\ldots,v_k$ is an orthonormal basis of $W$ such that for each $j$
 \[
 \Span\{v_1,\ldots,v_j\} = \Span\{w_1,\ldots,w_j\}
 \]
-\end{thm}\index{Gram-Schmidt orthonormalization}
+\end{theorem}\index{Gram-Schmidt orthonormalization}
 \index{basis!orthonormal}
 
 \begin{proof}  We assume that we have constructed orthonormal vectors $v_1,\ldots,v_j$

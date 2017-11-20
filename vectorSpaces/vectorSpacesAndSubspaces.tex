@@ -18,12 +18,12 @@ straightforward to verify that each of the eight
 properties listed in Table~\ref{vectorspacelist} is valid for
 vectors in $V=\R^n$.  Remarkably, sets that satisfy these eight
 properties have much in common with $\R^n$.  So we define:
-\begin{Def}  \label{vectorspace}
+\begin{definition}  \label{vectorspace}
 Let $V$ be a set having the two operations of addition and scalar
 multiplication.  Then $V$ is a {\em vector space\/} if the eight
 properties listed in Table~\ref{vectorspace} hold.  The elements
 of a vector space are called {\em vectors}\index{vector}.
-\end{Def} \index{vector!space}\index{vector!space}
+\end{definition} \index{vector!space}\index{vector!space}
 
 The vector $0$ mentioned in (A3) in Table~\ref{vectorspacelist}
 is called the {\em zero vector}\index{zero vector}.
@@ -149,11 +149,11 @@ and not closed under scalar multiplication.
 
 \subsection*{Subspaces}
 
-\begin{Def} \label{subspaces}
+\begin{definition} \label{subspaces}
 Let $V$ be a vector space.  A nonempty subset $W\subset V$ is a
 {\em subspace\/} if $W$ is a vector space using the operations of 
 addition and scalar multiplication defined on $V$.
-\end{Def} \index{subspace}
+\end{definition} \index{subspace}
 
 Note that in order for a subset $W$ of a vector space $V$ to be a 
 subspace it must be {\em closed under addition\/} and {\em closed under
@@ -243,10 +243,10 @@ calculate
 Thus, $(-1)v$ is the additive inverse of $v$ and must equal $-v$, as
 claimed.  \end{proof}
 
-\begin{thm}  \label{T:subspaces}
+\begin{theorem}  \label{T:subspaces}
 Let $W$ be a subset of the vector space $V$. If $W$ is closed under addition 
 and closed under scalar multiplication, then $W$ is a subspace.
-\end{thm}\index{subspace}
+\end{theorem}\index{subspace}
 \begin{proof}  We have to show that $W$ is a vector space using the operations 
 of addition and scalar multiplication defined on $V$.  That is, we need to
 verify that the eight properties listed in Table~\ref{vectorspacelist} are 
@@ -262,7 +262,7 @@ since they are valid for vectors in $V$.  \end{proof}
 
 \subsubsection*{Examples of Subspaces of $\R^n$}
 
-\begin{exam}  \label{EX:subspaces}
+\begin{example}  \label{EX:subspaces}
 {\rm
 \begin{itemize}
 \item[(a)] Let $V$ be a vector space.  Then the subsets $V$ and $\{0\}$ are
@@ -285,7 +285,7 @@ solutions to this equation is closed under addition and scalar multiplication
 and is therefore a subspace by Theorem~\ref{T:subspaces}.
 \end{itemize}
 }
-\end{exam}
+\end{example}
 In a sense that will be made precise all subspaces of $\R^n$ can be written
 as the span of a finite number of vectors generalizing
 Example~\ref{EX:subspaces}(b) or as solutions to a system of linear equations

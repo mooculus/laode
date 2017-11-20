@@ -74,7 +74,7 @@ In the modified Euler method \Ref{eq:meulmethod}
 
 Next we introduce the two different types of error for a numerical method
 given by $\Phi$.
-\begin{Def}
+\begin{definition}
 \label{def:errors}
 \begin{itemize}
 \item[(a)] \index{discretization error!local}
@@ -90,7 +90,7 @@ The {\em global discretization error\/} $\epsilon(k)$ is given by
 \]
 where $k=0,1,\ldots,K$.
 \end{itemize}
-\end{Def}
+\end{definition}
 
 \subsection*{A Theorem on Global Discretization Errors}
 
@@ -144,7 +144,7 @@ Hence we can repeat the estimate in \Ref{eq:globest} and obtain
 |\epsilon(k)| \le \frac{(1+hL)^k -1}{hL}\delta_h.
 \]
 Since $1+hL\le e^{hL}$ we have proved the following result.
-\begin{thm} \label{prop:glerr}
+\begin{theorem} \label{prop:glerr}
 \index{discretization error!global}
 \index{error bound}
 Suppose that \Ref{eq:locerrbound} and \Ref{eq:PhiLip} hold.  Then the
@@ -153,7 +153,7 @@ by the function $\Phi$ satisfies
 \begin{equation} \label{eq:geestimate}
 |\epsilon(k)| \le \left(\frac{e^{khL}-1}{L}\right)\frac{\delta_h}{h}.
 \end{equation}
-\end{thm}
+\end{theorem}
 
 \subsubsection*{An Example Using Euler's Method}
 
@@ -339,7 +339,7 @@ Here $C_M$ and $C_R$ are positive constants.
 Once the local discretization error is bounded we can use
 Theorem~\ref{prop:glerr} to obtain a bound on global discretization 
 error.  In particular, we can prove:
-\begin{prop} \label{prop:errEMR}
+\begin{proposition} \label{prop:errEMR}
 Suppose that \Ref{eq:PhiLip} holds.  Then there are constants $C_E$,
 $C_M$ and $C_R$ such that the global discretization error of
 \begin{itemize}
@@ -360,7 +360,7 @@ the fourth order Runge-Kutta method is bounded by
 |\epsilon(k)| \le \frac{e^{khL}-1}{L}C_R h^4.
 \]
 \end{itemize}
-\end{prop}
+\end{proposition}
 
 In view of this proposition it is clear that the fourth order Runge-Kutta 
 method is much better than Euler's method or the modified

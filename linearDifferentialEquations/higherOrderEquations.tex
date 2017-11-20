@@ -85,7 +85,7 @@ Then we arrive at the system of ODEs
 \frac{dY}{dt} = QY+G(t).
 \end{equation}
 Let us summarize.
-\begin{prop}   \label{prop:ho1}
+\begin{proposition}   \label{prop:ho1}
 The function $x(t)$ is a solution to the order $n$ ODE \Ref{eq:nconst}  
 if and only if the vector of functions $Y(t)=(y_1(t),\ldots,y_n(t))^t$ is 
 a solution of the first order system \Ref{eq:highrw}, where 
@@ -93,7 +93,7 @@ a solution of the first order system \Ref{eq:highrw}, where
 y_1(t) = x(t) \AND y_{j+1}(t)=\dps \frac{d^jx}{dt^j}(t) 
 \]
 for $j=1,2,\ldots,n-1$.
-\end{prop}\index{order}
+\end{proposition}\index{order}
 
 \subsection*{The Homogeneous Equation}
 \index{homogeneous}
@@ -148,7 +148,7 @@ each eigenvalue of the characteristic polynomial $p(\lambda)$ in
 \Ref{E:charpoly}.  If the eigenvalues $\lambda=\sigma\pm i\tau$ are complex, 
 then there are two solutions to \Ref{eq:nconsthom}, namely,
 $e^{\sigma t}\cos(\tau t)$ and $e^{\sigma t}\sin(\tau t)$.
-\begin{thm} \label{T:hoe}
+\begin{theorem} \label{T:hoe}
 Let $\lambda_1,\ldots,\lambda_k$ be the distinct eigenvalues of the 
 characteristic 
 polynomial\index{characteristic polynomial!of higher order ODE} 
@@ -158,7 +158,7 @@ $m_1,\ldots,m_k$.  Then
 \{t^je^{\lambda_\ell}: 1\leq\ell\leq k, 0\leq j<m_\ell\}
 \]
 is a basis of solutions\index{basis!of solutions} to \Ref{eq:nconsthom}.
-\end{thm} 
+\end{theorem} 
 
 \begin{proof}  The previous calculations show that if $\lambda$ is an eigenvalue 
 of $p(\lambda)$, then $e^{\lambda t}$ is a solution to \Ref{eq:nconsthom}.  
@@ -275,7 +275,7 @@ v_n & = & \lambda v_{n-1} & = & \lambda^{n-1}.
 as desired.  \end{proof}
 
 We restate the results in Theorem~\ref{T:hoe} in real form.
-\begin{thm}   \label{thm:HOgen}
+\begin{theorem}   \label{thm:HOgen}
 Let $\lambda$ be an eigenvalue of \Ref{E:charpoly} with multiplicity $m$.
 \begin{itemize}
 \item[(a)] If $\lambda$ is real\index{eigenvalue!real}, then 
@@ -288,7 +288,7 @@ solutions of \Ref{eq:nconsthom} for $0\leq j < m$.
 the functions\index{linear!combination!of functions} constructed 
 in (a) and (b).
 \end{itemize}
-\end{thm}
+\end{theorem}
 
 \subsubsection*{Examples of Fourth Order}
 
@@ -377,7 +377,7 @@ x(t_0)\AND \frac{dx}{dt}(t_0)
 have to be specified.  
 
 \arraystart
-\begin{thm}
+\begin{theorem}
 The initial value problem
 \begin{equation}
 \begin{array}{c}
@@ -388,7 +388,7 @@ x(t_0)=x_0.
 \end{array}
 \end{equation}
 has a unique solution $x(t)$.
-\end{thm}
+\end{theorem}
 \arrayfinish
 
 \begin{proof} The result is an immediate consequence of Proposition~\ref{prop:ho1},

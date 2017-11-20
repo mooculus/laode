@@ -63,12 +63,12 @@ Therefore
 & = & \lambda^2 - (a+d)\lambda + (ad-bc). \label{e:charpoly}
 \end{eqnarray}
 
-\begin{Def} \label{charpolyn=2}
+\begin{definition} \label{charpolyn=2}
 The {\em characteristic polynomial\/} of the matrix $A$ is
 \[
 p_A(\lambda) = \det(A-\lambda I_2).
 \]
-\end{Def} \index{characteristic polynomial}
+\end{definition} \index{characteristic polynomial}
 
 For an $n\times n$ matrix $A=(a_{ij})$, define the {\em trace\/}
 \index{trace} of $A$ to be the sum of the diagonal elements of $A$;
@@ -105,9 +105,9 @@ real eigenvalues of $A$.  For $2\times 2$ matrices we now
 generalize our first definition of eigenvalues, 
 Definition~\ref{D:eigenvalue1}, to include complex eigenvalues, as follows.
 
-\begin{Def}
+\begin{definition}
 An {\em eigenvalue\/} of $A$ is a root of the characteristic polynomial $p_A$.
-\end{Def} \index{eigenvalue} \index{characteristic polynomial}
+\end{definition} \index{eigenvalue} \index{characteristic polynomial}
 Suppose that $\lambda_1$ and $\lambda_2$ are the roots of $p_A$.
 It follows that
 \begin{equation}  \label{e:charpolyprod}
@@ -161,7 +161,7 @@ multiplicity --- and these can be described as follows.  The
 \begin{equation}  \label{e:discriminant}
 D = [\trace(A)]^2 -4\det(A).
 \end{equation}
-\begin{thm} \label{eigendist}
+\begin{theorem} \label{eigendist}
 There are three possibilities for the two eigenvalues of a
 $2\times 2$ matrix $A$ that we can describe in terms of the
 discriminant:
@@ -170,7 +170,7 @@ discriminant:
 \item[(ii)] The eigenvalues of $A$ are a complex conjugate pair ($D<0$).
 \item[(iii)] The eigenvalues of $A$ are real and equal ($D=0$).
 \end{itemize}
-\end{thm} \index{eigenvalue}
+\end{theorem} \index{eigenvalue}
 
 \begin{proof} We can find the roots of the characteristic polynomial
 using the form of $p_A$ given in \Ref{e:invcharpoly} and the

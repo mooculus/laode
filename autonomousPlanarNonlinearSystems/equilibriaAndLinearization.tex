@@ -41,7 +41,7 @@ Let $F:\R^2\to\R^2$ be the nonlinear mapping
 \[
 F(x,y)=(f(x,y),g(x,y)).
 \]
-\begin{Def}  \label{D:Jacobian}
+\begin{definition}  \label{D:Jacobian}
 The {\em Jacobian matrix} \index{matrix!Jacobian}
 \index{matrix!Jacobian} of $F$ at the point 
 $(x,y)$ is the $2\times 2$ matrix 
@@ -50,16 +50,16 @@ $(x,y)$ is the $2\times 2$ matrix
 \end{equation}
 where the subscript denotes partial differentiation.  For example, 
 $f_x=\frac{\partial f}{\partial x}$.
-\end{Def}
+\end{definition}
 
 Near an equilibrium, the Jacobian matrix is the best {\em linear\/}
 approximation\index{linear!approximation} to the mapping $F$.  
 This statement can be formalized using 
 Taylor series methods in two variables, but we just accept this fact here. 
-\begin{Def}  \label{D:hyperbolic}
+\begin{definition}  \label{D:hyperbolic}
 An equilibrium is {\em hyperbolic\/} if the eigenvalues of the 
 Jacobian matrix have nonzero real part. 
-\end{Def} \index{hyperbolic}\index{equilibrium!hyperbolic}
+\end{definition} \index{hyperbolic}\index{equilibrium!hyperbolic}
 
 Note that it is easy to compute the Jacobian matrix for linear 
 systems.  Indeed, for the linear differential equation
@@ -73,7 +73,7 @@ the Jacobian matrix is just \index{matrix!Jacobian}
 and is independent of $x$ and $y$.  So, not surprisingly, the 
 best linear approximation to a linear system is itself.
 
-\begin{thm} \label{T:linearization} \index{linearization}
+\begin{theorem} \label{T:linearization} \index{linearization}
 Suppose that the system of differential equations
 \Ref{e:nonlinear2} has a hyperbolic equilibrium at
 $Z_0=(x_0,y_0)$.  Then, on a sufficiently small neighborhood of
@@ -83,7 +83,7 @@ linear differential equations
 \begin{equation}  \label{e:linearizedeqn}
 \vectwo{\dot{x}}{\dot{y}} = (dF)_{Z_0} \vectwo{x}{y}.
 \end{equation}
-\end{thm}  \index{hyperbolic}\index{equilibrium!hyperbolic}
+\end{theorem}  \index{hyperbolic}\index{equilibrium!hyperbolic}
 It is difficult to define precisely what we mean by the word
 {\em same\/}. Roughly speaking, {\em same\/} means that near 
 $Z_0$ there is a nonlinear change of coordinates that 
@@ -125,9 +125,9 @@ We say that an equilibrium is
 {\em linearly stable\/}\index{stability!linear}
 if all of the eigenvalues of the Jacobian matrix have negative real part.
 
-\begin{cor} \label{C:linearstability}
+\begin{corollary} \label{C:linearstability}
 An equilibrium that is linearly stable is asymptotically stable.
-\end{cor}  \index{stability!asymptotic} 
+\end{corollary}  \index{stability!asymptotic} 
 
 In Section~\ref{S:PlanarSystems} we discussed linear stability
 of the origin for planar linear equations.  We showed (see
@@ -136,7 +136,7 @@ stability implies that the origin is asymptotically stable.  It
 follows from Theorem~\ref{T:linearization} that the equilibrium
 of the nonlinear equation is also asymptotically stable.  
 
-\begin{rmk} 
+\begin{remark} 
 Generalizations of Theorem~\ref{T:linearization} and 
 Corollary~\ref{C:linearstability} to $n$ dimensions are both valid. 
 {\rm The Jacobian matrix -- the matrix of partial 
@@ -146,7 +146,7 @@ of an equilibrium means that no eigenvalue of the Jacobian matrix has
 zero real part, and {\em linear stability\/} of an equilibrium means 
 that the real parts of all $n$ of the eigenvalues have negative real 
 part.  See Chapter~\ref{C:HDS}, Theorem~\ref{T:linstab}.}
-\end{rmk} \index{hyperbolic} \index{matrix!Jacobian}
+\end{remark} \index{hyperbolic} \index{matrix!Jacobian}
 
 \subsection*{Important Features of Hyperbolic Equilibria}
 \index{equilibrium!hyperbolic}

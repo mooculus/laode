@@ -59,7 +59,7 @@ and compare {\tt w1} and {\tt w2} to verify \Ref{product}.
 
 The central idea in linear algebra is the notion of
 {\em linearity\/}. \index{linear}
-\begin{Def} \label{linearity}
+\begin{definition} \label{linearity}
 A mapping $L:\R^n\to\R^m$ is {\em linear}\index{linear!mapping}
 if
 \begin{itemize}
@@ -67,7 +67,7 @@ if
 \item[(b)]  $L(cx) = cL(x)$ for all $x\in\R^n$ and all scalars
 $c\in\R$.
 \end{itemize}
-\end{Def}
+\end{definition}
 
 To better understand the meaning of Definition~\ref{linearity}(a,b),
 we verify these conditions for the mapping $L:\R^2\to\R^2$ defined by
@@ -201,11 +201,11 @@ given by matrix multiplication. But first we state and prove two
 lemmas.  There is a standard set of vectors that is used over
 and over again in linear algebra, which we now define.
 
-\begin{Def}  \label{D:canonicalbasis}
+\begin{definition}  \label{D:canonicalbasis}
 Let $j$ be an integer between $1$ and $n$.  The $n$-vector $e_j$ is
 the vector that has a $1$ in the $j^{th}$ entry and zeros in all
 other entries.
-\end{Def} \index{$e_j$}
+\end{definition} \index{$e_j$}
 
 \begin{lemma}  \label{linequal}
 Let $L_1:\R^n\to\R^m$ and $L_2:\R^n\to\R^m$ be linear mappings.
@@ -235,10 +235,10 @@ column of $A$.
 In that formula, just set $x_i$ equal to zero for all $i\neq j$ and set
 $x_j=1$. \end{proof}
 
-\begin{thm}  \label{lin-matrices}
+\begin{theorem}  \label{lin-matrices}
 Let $L:\R^n\to\R^m$ be a linear mapping\index{linear!mapping}.
 Then there exists an $m\times n$ matrix $A$ such that $L=L_A$.
-\end{thm}
+\end{theorem}
 
 \begin{proof}
 There are two steps to the proof: determine the matrix $A$ and

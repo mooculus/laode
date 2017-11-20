@@ -23,13 +23,13 @@ finite set of vectors.
 \subsection*{Solutions to Homogeneous Systems Form Subspaces}
 \index{homogeneous} \index{subspace}
 
-\begin{Def} \label{D:nullspace}
+\begin{definition} \label{D:nullspace}
 Let $A$ be an $m\times n$ matrix.  The {\em null space\/} of $A$
 is the set of solutions to the homogeneous system of linear equations
 \begin{equation} \label{Ax=0}
 Ax=0.
 \end{equation}
-\end{Def} \index{null space}
+\end{definition} \index{null space}
 
 \begin{lemma}
 Let $A$ be an $m\times n$ matrix.  Then the null space of $A$
@@ -132,11 +132,11 @@ v = r_1v_1 + \cdots + r_kv_k
 for some scalars $r_1,\ldots,r_k$.  \index{linear!combination}
 
 
-\begin{Def}  \label{span}
+\begin{definition}  \label{span}
 The set of all linear combinations of the vectors $v_1,\ldots,v_k$
 in a vector space $V$ is the {\em span\/} of $v_1,\ldots,v_k$ and is
 denoted by $\Span\{v_1,\ldots,v_k\}$.
-\end{Def} \index{span}
+\end{definition} \index{span}
 
 For example, the vector on the left hand side in \Ref{eq:SpanSol}
 is a linear combination of the two vectors on the right hand side.
@@ -158,10 +158,10 @@ $x_1x_3$-plane, since vectors in this span are
 x_1e_1+x_3e_3 = x_1(1,0,0) + x_3(0,0,1) = (x_1,0,x_3).
 \]
 
-\begin{prop} \label{spansubspace} Let $V$ be a vector space and
+\begin{proposition} \label{spansubspace} Let $V$ be a vector space and
 let $w_1,\ldots,w_k\in V$. Then $W=\Span\{w_1,\ldots,w_k\}
 \subset V$ is a subspace.
-\end{prop} \index{span} \index{subspace}\index{vector!space}
+\end{proposition} \index{span} \index{subspace}\index{vector!space}
 
 \begin{proof}  Suppose $x,y\in W$.  Then
 \begin{eqnarray*}
@@ -213,10 +213,10 @@ Recall that a matrix $A$ has {\em rank\/} $\ell$ if it is row
 equivalent to a matrix in echelon form with $\ell$ nonzero rows.
 \index{rank}
 
-\begin{prop}  \label{P:n-rank}
+\begin{proposition}  \label{P:n-rank}
 Let $A$ be an $m\times n$ matrix with rank $\ell$. Then the
 null space of $A$ is the span of $n-\ell$ vectors.
-\end{prop} \index{null space} \index{span}
+\end{proposition} \index{null space} \index{span}
 
 We have now seen that there are two ways to describe subspaces ---
 as solutions of homogeneous systems of linear equations and as a

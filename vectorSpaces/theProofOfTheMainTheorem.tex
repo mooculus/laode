@@ -104,10 +104,10 @@ this system of homogeneous linear equations always has a nonzero
 solution $r=(r_1,\ldots,r_k)$ --- from which it follows that the
 $w_i$ are linearly dependent.  \end{proof}
 
-\begin{cor}  \label{basis<n}
+\begin{corollary}  \label{basis<n}
 Let $V$ be a vector space of dimension $n$ and let $\{u_1,\ldots,u_k\}$ be a 
 linearly independent set of vectors in $V$.  Then $k\le n$.
-\end{cor} \index{linearly!independent}
+\end{corollary} \index{linearly!independent}
 \index{dimension}\index{vector!space}
 
 \begin{proof} If $k>n$ then Lemma~\ref{lem:lindep} implies that
@@ -202,24 +202,24 @@ linearly independent.  The finite dimension of $V$ implies that
 continuing inductively must lead to a spanning set of linear
 independent vectors for $W$ --- which by
 Theorem~\ref{basis=span+indep} is a basis. This discussion proves:
-\begin{cor}  \label{c:extendindependent}
+\begin{corollary}  \label{c:extendindependent}
 Every linearly independent subset of a finite dimensional vector
 space $V$ can be extended to a basis of $V$.
-\end{cor}
+\end{corollary}
 
 
 \subsection*{Further consequences of Theorem~\ref{basis=span+indep}}
 
 We summarize here several important facts about dimensions.
 
-\begin{cor}  \label{dimensiondecreases}
+\begin{corollary}  \label{dimensiondecreases}
 Let $W$ be a subspace of a finite dimensional vector space $V$.
 \begin{itemize}
 \item[(a)]   Suppose that $W$ is a proper subspace\index{subspace!proper}.
 Then $\dim W < \dim V$\index{dimension}.
 \item[(b)]   Suppose that $\dim W = \dim V$.  Then $W=V$.
 \end{itemize}
-\end{cor}
+\end{corollary}
 
 \begin{proof}
 (a) Let $\dim W = k$ and let $\{w_1,\ldots,w_k\}$ be a basis for
@@ -234,7 +234,7 @@ independent.  If $\{w_1,\ldots,w_k\}$ does not span $V$, then it
 can be extended to a basis as above.  But then $\dim V > \dim W$,
 which is a contradiction.  \end{proof}
 
-\begin{cor} \label{C:dim=n}
+\begin{corollary} \label{C:dim=n}
 Let ${\cal B}=\{w_1,\ldots,w_n\}$ be a set of $n$ vectors in an
 $n$-dimensional vector space $V$.  Then the following are equivalent:
 \begin{itemize}
@@ -243,7 +243,7 @@ $n$-dimensional vector space $V$.  Then the following are equivalent:
 \item[(c)] ${\cal B}$ is a linearly independent set.
 \index{linearly!independent}
 \end{itemize}
-\end{cor}
+\end{corollary}
 
 \begin{proof}    By definition, (a) implies (b) since a basis is a spanning
 set with the number of vectors equal to the dimension of the space.

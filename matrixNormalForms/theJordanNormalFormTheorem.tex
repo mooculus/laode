@@ -36,7 +36,7 @@ The prototypical examples of matrices having fewer eigenvectors than
 eigenvalues are the matrices $J_n(\lambda)$ for $\lambda$ real (see
 \Ref{E:JnR}) and $\widehat{J}_n(\lambda)$ for $\lambda$ complex (see
 \Ref{E:JnC}).
-\begin{Def} 
+\begin{definition} 
 A matrix is in {\em Jordan normal form\/} if it is block diagonal and 
 the matrix in each block on the diagonal is a Jordan block, that is, 
 $J_\ell(\lambda)$ for some integer $\ell$ and some real or complex number 
@@ -47,16 +47,16 @@ and the matrix in each block on the diagonal is a real Jordan block, that is,
 either $J_\ell(\lambda)$ for some integer $\ell$ and some real number 
 $\lambda$ or $\widehat{J}_\ell(\lambda)$ for some integer $\ell$ and some 
 complex number $\lambda$. 
-\end{Def} \index{Jordan block}
+\end{definition} \index{Jordan block}
 \index{Jordan normal form}
 
 
 The main theorem about Jordan normal form is:
-\begin{thm}[Jordan normal form] \label{T:Jordan}
+\begin{theorem}[Jordan normal form] \label{T:Jordan}
 Let $A$ be an $n\times n$ matrix.  Then $A$ is 
 similar\index{similar} to a Jordan normal
 form matrix and to a real Jordan normal form matrix.
-\end{thm}
+\end{theorem}
 
 This theorem is proved by constructing a basis ${\cal V}$ for $\R^n$ so 
 that the matrix $S\inv AS$ is in Jordan normal form, where $S$ is the
@@ -116,13 +116,13 @@ vectors in ${\cal V}$.  Then $S\inv AS$ is in Jordan normal form.
 As a corollary of the Jordan normal form theorem, we prove the Cayley 
 Hamilton theorem which states that a {\em square matrix satisfies its 
 characteristic polynomial\/}.  More precisely:
-\begin{thm}[Cayley Hamilton] \label{T:CH} \index{Cayley Hamilton theorem}
+\begin{theorem}[Cayley Hamilton] \label{T:CH} \index{Cayley Hamilton theorem}
 Let $A$ be a square matrix\index{matrix!square} and let $p_A(\lambda)$ be 
 its characteristic polynomial\index{characteristic polynomial}.  Then
 \[
 p_A(A) = 0.
 \]
-\end{thm}
+\end{theorem}
 
 \begin{proof}  Let $A$ be an $n\times n$ matrix.  The characteristic polynomial of 
 $A$ is

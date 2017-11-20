@@ -30,13 +30,13 @@ Theorem~\ref{T:detandinv} implies that
 \det(A-\lambda I_n) = 0.
 \]
 With these observations in mind, we can make the following definition.
-\begin{Def}   \label{D:charpoly}
+\begin{definition}   \label{D:charpoly}
 Let $A$ be an $n\times n$ matrix.  The {\em characteristic polynomial\/} 
 of $A$ is:
 \[
 p_A(\lambda) = \det(A-\lambda I_n).
 \]  \index{characteristic polynomial}
-\end{Def}
+\end{definition}
 
 In Theorem~\ref{T:charpolyn} we show that $p_A(\lambda)$ is indeed a 
 polynomial of degree $n$ in $\lambda$.  Note here that the roots of 
@@ -56,7 +56,7 @@ Theorem~\ref{T:detandinv} shows that if $\lambda$ is a complex
 eigenvalue, then there exists a nonzero complex $n$-vector $v$
 such that \Ref{e:eigen} is satisfied.
 
-\begin{exam} \label{E:triangular}
+\begin{example} \label{E:triangular}
 Let $A$ be an $n\times n$ lower triangular matrix.  Then the
 diagonal entries are the eigenvalues of $A$.  {\rm We verify
 this statement as follows.  \index{matrix!lower triangular}
@@ -72,7 +72,7 @@ p_A(\lambda) = (a_{11}-\lambda)\cdots(a_{nn}-\lambda),
 and hence that the diagonal entries of $A$ are roots of the 
 characteristic polynomial. A similar argument works if $A$ is
 upper triangular.}
-\end{exam}  
+\end{example}  
  
 It follows from \Ref{e:triangpoly} that the characteristic
 polynomial of a triangular matrix
@@ -84,10 +84,10 @@ p_A(\lambda) = (-1)^n \lambda^n + b_{n-1}\lambda^{n-1} + \cdots +b_0.
 for some real constants $b_0, \ldots, b_{n-1}$. In fact, this
 statement is true in general.  
 
-\begin{thm}  \label{T:charpolyn}
+\begin{theorem}  \label{T:charpolyn}
 Let $A$ be an $n\times n$ matrix.  Then $p_A$ is a polynomial of
 degree $n$ of the form \Ref{e:leadingterm}.
-\end{thm} \index{characteristic polynomial}
+\end{theorem} \index{characteristic polynomial}
 
 \begin{proof} Let $C$ be an $n\times n$ matrix whose entries have
 the form $c_{ij}+d_{ij}\lambda$.  Then $\det(C)$ is a polynomial
@@ -191,7 +191,7 @@ p(\overline{\lambda_0}) = \overline{p(\lambda_0)}=\overline{0}=0.
 Hence $\overline{\lambda_0}$ is also a root of $p$.
 
 It follows that 
-\begin{thm}  \label{T:eigens}
+\begin{theorem}  \label{T:eigens}
 Every (real) $n\times n$ matrix $A$ has exactly $n$ eigenvalues
 $\lambda_1,\ldots,\lambda_n$.  These eigenvalues are either real
 or complex conjugate pairs.  Moreover,
@@ -199,7 +199,7 @@ or complex conjugate pairs.  Moreover,
 \item[(a)] $p_A(\lambda) = (\lambda_1-\lambda)\cdots(\lambda_n-\lambda)$,
 \item[(b)] $\det(A) = \lambda_1\cdots\lambda_n$.
 \end{enumerate}
-\end{thm} \index{eigenvalue}\index{eigenvalue!existence}
+\end{theorem} \index{eigenvalue}\index{eigenvalue!existence}
 \index{determinant}
 
 \begin{proof} Since the characteristic polynomial $p_A$ is a polynomial
@@ -220,10 +220,10 @@ matrix $A$.  Example~\ref{E:triangular} shows that all of the
 eigenvalues of $A$ are zero. 
 
 We now discuss certain properties of eigenvalues.  
-\begin{cor}  \label{C:eig=0}
+\begin{corollary}  \label{C:eig=0}
 Let $A$ be an $n\times n$ matrix. Then $A$ is invertible if and
 only if zero is {\em not\/} an eigenvalue of $A$.
-\end{cor}  \index{invertible}
+\end{corollary}  \index{invertible}
 
 \begin{proof} The proof follows from Theorem~\ref{T:detandinv} and
 Theorem~\ref{T:eigens}(b). \end{proof} 
@@ -243,11 +243,11 @@ of $A$. \end{proof}
 
 
 
-\begin{thm}  \label{T:inveig}
+\begin{theorem}  \label{T:inveig}
 Let $A$ be an invertible $n\times n$ matrix with eigenvalues 
 $\lambda_1,\cdots,\lambda_n$.  Then the eigenvalues of 
 $A\inv$ are $\lambda_1\inv,\cdots,\lambda_n\inv$.
-\end{thm}  \index{invertible}\index{eigenvalue!of inverse}
+\end{theorem}  \index{invertible}\index{eigenvalue!of inverse}
 
 \begin{proof}  We claim that  
 \[
@@ -268,13 +268,13 @@ Compute:
 \end{eqnarray*}
 which verifies the claim.  \end{proof}
 
-\begin{thm}  \label{T:similareigen}
+\begin{theorem}  \label{T:similareigen}
 Let $A$ and $B$ be similar $n\times n$ matrices.  Then
 \[
 p_A = p_B,
 \]
 and hence the eigenvalues of $A$ and $B$ are identical.
-\end{thm}  \index{similar}
+\end{theorem}  \index{similar}
 
 \begin{proof}  Since $B$ and $A$ are similar, there exists an 
 invertible $n\times n$ matrix $S$ such that $B=S\inv AS$.  It 
@@ -292,13 +292,13 @@ the sum of the diagonal entries of $A$; that is
 {\rm tr}(A) = a_{11} +\cdots+ a_{nn}.
 \]
 We state without proof the following theorem:
-\begin{thm} \label{T:tracen}
+\begin{theorem} \label{T:tracen}
 Let $A$ be an $n\times n$ matrix with eigenvalues
 $\lambda_1,\ldots,\lambda_n$.  Then
 \[
 {\rm tr}(A) = \lambda_1 + \cdots + \lambda_n.
 \]
-\end{thm}
+\end{theorem}
 
 It follows from Theorem~\ref{T:similareigen} that the traces of
 similar matrices are equal.

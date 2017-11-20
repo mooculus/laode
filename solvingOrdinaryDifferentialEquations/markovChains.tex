@@ -248,7 +248,7 @@ example in exactly three steps.  (It takes a minimum of three steps to get
 from room~3 to room~1 in the cat example.)  To simplify our discussion we
 include this assumption in our definition of a Markov chain.
 
-\begin{Def}  \label{D:Markov}
+\begin{definition}  \label{D:Markov}
 {\em Markov matrices\/}\index{matrix!Markov} are square matrices
 $P$ such that
 \begin{enumerate}
@@ -257,7 +257,7 @@ $P$ such that
 \item[(c)]  there is a positive integer $k$ such that all of the entries
 	in $P^k$ are positive.
 \end{enumerate}
-\end{Def}
+\end{definition}
 
 It is straightforward to verify that parts (a) and (b) in the definition of
 Markov matrices are satisfied by the transition matrix
@@ -268,7 +268,7 @@ P = \left(\begin{array}{ccc} p_{11} & \cdots & p_{1n} \\
 \]
 of a Markov chain.  To verify part (c) requires further discussion.
 
-\begin{prop}   \label{T:Markoveasy}
+\begin{proposition}   \label{T:Markoveasy}
 Let $P$ be a transition matrix\index{matrix!transition} for a
 Markov chain\index{Markov chain}.
 \begin{enumerate}
@@ -278,7 +278,7 @@ $k$ steps is the $(i,j)^{th}$ entry in the matrix $P^k$.
 steps is the $i^{th}$ entry in the vector $V_k\equiv (P^t)^kV_0$.
 \item[(c)]  $P$ is a Markov matrix\index{matrix!Markov}.
 \end{enumerate}
-\end{prop}
+\end{proposition}
 
 \begin{proof} Only minor changes in our discussion of the cat example proves parts
 (a) and (b) of the proposition.
@@ -298,7 +298,7 @@ in the initial population is:
 \#(V_0) = v_1^{(0)} + \cdots + v_n^{(0)}.
 \]
 
-\begin{thm}  \label{T:Markov}
+\begin{theorem}  \label{T:Markov}
 Let $P$ be a Markov matrix\index{matrix!Markov}.  Then
 \begin{enumerate}
 \item[(a)]  $\#(V_k)=\#(V_0)$; that is, the number of individuals after $k$
@@ -306,7 +306,7 @@ time steps is the same as the initial number.
 \item[(b)]  $\dps V = \lim_{k\to\infty}V_k$ exists and $\#(V)=\#(V_0)$.
 \item[(c)]  $V$ is an eigenvector of $P^t$ with eigenvalue equal to $1$.
 \end{enumerate}
-\end{thm}
+\end{theorem}
 
 \begin{proof}  (a) By induction it is sufficient to show that $\#(V_1)=\#(V_0)$.  We
 do
@@ -337,13 +337,13 @@ which proves (c).   \end{proof}
 Theorem~\ref{T:Markov}(b) gives the answer to the second part of Question (B)
 for general Markov chains.  Next we discuss Question (C).
 
-\begin{thm} \label{T:ergodic}
+\begin{theorem} \label{T:ergodic}
 Let $P$ be a Markov matrix\index{matrix!Markov}.
 Let $V$ be the eigenvector of $P^t$ with
 eigenvalue $1$ and $\#(V)=1$.  Then after a large number of steps $N$ the
 expected number of times an individual will visit site~$i$ is $Nv_i$ where
 $v_i$ is the $i^{th}$ entry in $V$.
-\end{thm}
+\end{theorem}
 
 \begin{proof}[Sketch] In our discussion of Question (C) for the
 cat example, we explained why the fraction $f_N$ of time that an individual

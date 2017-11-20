@@ -19,7 +19,7 @@ compute determinants of $n\times n$ matrices where $n>3$, which further
 justifies the approach. Later on, we will give an inductive formula 
 \Ref{e:inductdet} for computing the determinant. 
  
-\begin{Def}  \label{D:determinants}
+\begin{definition}  \label{D:determinants}
 A {\em determinant\/} of a square $n\times n$ matrix $A$ is a real
 number that satisfies the following three properties:
 \begin{itemize} 
@@ -37,12 +37,12 @@ Then
 \det(AB) = \det(A)\det(B).
 \end{equation}
 \end{itemize}
-\end{Def} \index{determinant}
+\end{definition} \index{determinant}
 
-\begin{thm}  \label{T:determinants}
+\begin{theorem}  \label{T:determinants}
 There exists a unique determinant function satisfying the three
 properties of Definition~\ref{D:determinants}.
-\end{thm}\index{determinant!uniqueness}
+\end{theorem}\index{determinant!uniqueness}
 
 We will show that it is possible to compute the determinant of
 any $n\times n$ matrix using Definition~\ref{D:determinants}.
@@ -161,11 +161,11 @@ $2\times 2$ matrices is the determinant function defined by
 \subsection*{Row Operations are Invertible Matrices} 
 \index{elementary row operations}
 
-\begin{prop}  \label{P:ERO}
+\begin{proposition}  \label{P:ERO}
 Let $A$ and $B$ be $m\times n$ matrices where $B$ is obtained from $A$ by
 a single elementary row operation.  Then there exists an invertible 
 $m\times m$ matrix $R$ such that $B=RA$.
-\end{prop} 
+\end{proposition} 
 
 \begin{proof}  First consider multiplying the $j^{th}$ row of $A$ by the
 nonzero constant $c$.  Let $R$ be the diagonal matrix whose
@@ -287,10 +287,10 @@ form using Definition~\ref{D:determinants}(a) since all reduced echelon
 form $n\times n$ matrices are upper triangular.  Lemma~\ref{L:detelemrowmat}  
 tells us how to compute the determinants of elementary row matrices.  This 
 discussion proves: 
-\begin{prop}
+\begin{proposition}
 If a determinant function exists for $n\times n$ matrices, then it is unique. 
 \index{determinant!uniqueness}
-\end{prop}
+\end{proposition}
 
 We still need to show that determinant functions exist when $n>2$.  More 
 precisely, we know that the reduced echelon form matrix $E$ is uniquely 
@@ -358,13 +358,13 @@ Thus
 We end this subsection with an important observation about the
 determinant function.  This observation generalizes to dimension
 $n$ Corollary~\ref{C:2x2invert} of Chapter~\ref{chap:matrices}. 
-\begin{thm}  \label{T:detandinv}
+\begin{theorem}  \label{T:detandinv}
 An $n\times n$ matrix $A$ is invertible if and only if $\det(A)\neq 0$.
 Moreover, if $A\inv$ exists, then 
 \begin{equation}  \label{E:detinv}
 \det A\inv = \frac{1}{\det A}.
 \end{equation}
-\end{thm} \index{invertible}
+\end{theorem} \index{invertible}
  
 \begin{proof}  If $A$ is invertible, then 
 \[
@@ -385,11 +385,11 @@ So it follows from
 \]
 Since $\det(R_j)\neq 0$, it follows that $\det(A)=0$.  \end{proof}
 
-\begin{cor}
+\begin{corollary}
 If the rows of an $n\times n$ matrix $A$ are linearly dependent (for example,
 if one row of $A$ is a scalar multiple of another row of $A$), then 
 $\det(A)=0$.
-\end{cor}
+\end{corollary}
 
 
 \subsection*{An Inductive Formula for Determinants} 

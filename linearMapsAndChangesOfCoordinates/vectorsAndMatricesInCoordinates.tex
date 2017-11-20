@@ -75,7 +75,7 @@ for scalars $\beta_1,\ldots,\beta_n$.  Then
 Since the vectors in ${\cal W}$ are linearly independent, it
 follows that $\alpha_j=\beta_j$ for all $j$.  \end{proof}
 
-\begin{Def}  \label{D:coordinates}
+\begin{definition}  \label{D:coordinates}
 Let ${\cal W} = \{w_1,\ldots,w_n\}$ be a basis in a vector space $V$.
 Lemma~\ref{L:coordinates} states that we can write $v\in V$ uniquely as
 \begin{equation}  \label{e:coordv}
@@ -87,7 +87,7 @@ the basis ${\cal W}$ by
 \begin{equation}   \label{e:coordnot}
 [v]_{\cal W} = (\alpha_1,\ldots,\alpha_n) \in\R^n.
 \end{equation}
-\end{Def}\index{coordinates}\index{vector!coordinates}
+\end{definition}\index{coordinates}\index{vector!coordinates}
 
 We call the coordinates of a vector $v\in\R^n$ relative to the standard basis,
 the {\em standard coordinates\/}\index{coordinates!standard} of $v$.
@@ -113,25 +113,25 @@ L(v) = Av.
 \]
 Thus every linear mapping on $\R^n$ can be written in this matrix form.
 
-\begin{rmk} \label{R:standard} {\rm
+\begin{remark} \label{R:standard} {\rm
 Another way to think of the $j^{th}$ column of the matrix $A$
 is as the coordinate vector of $L(e_j)$ relative to the
 standard basis, that is, as $[L(e_j)]_{\cal E}$.  We denote the
 matrix $A$ by $[L]_{\cal E}$; this notation emphasizes the fact
 that $A$ is the matrix of $L$ relative to the standard basis.}
-\end{rmk}
+\end{remark}
 
 
 We now discuss how to write a linear map $L$ as a matrix using
 different coordinates.
-\begin{Def} \label{D:matrixincoord}
+\begin{definition} \label{D:matrixincoord}
 Let ${\cal W} = \{w_1,\ldots,w_n\}$ be a basis for the vector
 space $V$. The $n\times n$ matrix $[L]_{\cal W}$ associated to
 the linear map $L:V\to V$ and the basis ${\cal W}$ is defined
 as follows.  The $j^{th}$ column of $[L]_{\cal W}$ is
 $[L(w_j)]_{\cal W}$ --- the coordinates of $L(w_j)$ relative
 to the basis ${\cal W}$.
-\end{Def} \index{matrix!associated to a linear map}
+\end{definition} \index{matrix!associated to a linear map}
 
 Note that when $V=\R^n$ and when ${\cal W} = {\cal E}$, the
 standard basis of $\R^n$, then the definition of the matrix
@@ -347,13 +347,13 @@ Therefore,
 [L_A]_{\cal W} = P_{\cal W}\inv AP_{\cal W}.
 \]
 We have proved:
-\begin{thm}
+\begin{theorem}
 Let $A$ be an $n\times n$ matrix and let $L_A:\R^n\to\R^n$ be the associated
 linear map.  Let ${\cal W} = \{w_1,\ldots,w_n\}$ be a basis\index{basis} for
 $\R^n$.  Then the matrix $[L_A]_{\cal W}$ associated to to $L_A$ in the basis
 ${\cal W}$ is similar\index{similar} to $A$.  Therefore the determinant, trace,
 and eigenvalues of $[L_A]_{\cal W}$ are identical to those of $A$.
-\end{thm}
+\end{theorem}
 
 
 
@@ -387,7 +387,7 @@ the ideas of coordinates and matrices associated with bases to
 reinterpret the normal form result (Chapter~\ref{Chap:Planar},
 Theorem~\ref{T:putinform}) in a more geometric fashion.
 
-\begin{thm}  \label{T:putinform2}
+\begin{theorem}  \label{T:putinform2}
 Let $L:\R^2\to\R^2$ be a linear mapping.  Then in an appropriate
 coordinate system defined by the basis ${\cal W}$ below, the matrix
 $L_{\cal W}$ has one of the following forms.
@@ -419,7 +419,7 @@ Then ${\cal W}=\{w_1,w_2\}$ is a basis and
 [L]_{\cal W} = \mattwo{\lambda}{1}{0}{\lambda}.
 \]
 \end{itemize}
-\end{thm}
+\end{theorem}
 
 \begin{proof}
 The verification of (a) was discussed in \Ref{e:diagcoord}.  The
