@@ -471,14 +471,14 @@ Then for all $s>a$
 \end{equation}
 \end{prop}
 
-\proof Using properties of integrals we obtain for each $s>a$
+\begin{proof} Using properties of integrals we obtain for each $s>a$
 \begin{eqnarray*}
 {\cal L}[x+y](s) &=& \int_0^{\infty} e^{-st} (x(t)+y(t))\; dt\\
 &=& \int_0^{\infty} e^{-st} x(t)\; dt + \int_0^{\infty} e^{-st} y(t)\; dt\\
 &=& {\cal L}[x](s)+ {\cal L}[y](s).
 \end{eqnarray*}
 A similar computation verifies that ${\cal L}$ commutes with scalar 
-multiplication.  \qed
+multiplication.  \end{proof}
 
 \subsubsection*{The Derivative Property of Laplace Transforms is Valid}
 \index{Laplace transform!derivative property}
@@ -497,7 +497,7 @@ Then
 \end{itemize}
 \end{prop}
 
-\proof 
+\begin{proof} 
 \noindent (a) Observe that by the assumption on the growth of 
 $x(t)$ we have for $s>a$
 \[
@@ -524,7 +524,7 @@ compute
 s\lim\limits_{h\to \infty} \int_0^h e^{-st} x(t)\; dt\\
 &=& -x(0) + s{\cal L}[x](s)
 \end{eqnarray*}
-for $s>a$.  \qed
+for $s>a$.  \end{proof}
 
 Finally, we remark that \Ref{Tprops}(b) is valid, but that its proof is 
 beyond the scope of this course.  One method of proof is to develop an 
@@ -724,13 +724,13 @@ Suppose that $Y(s)={\cal L}[y(t)](s)$ exists.  Then
 \end{prop}
 \index{Laplace transform!general properties}\index{Laplace transform!inverse}
 
-\proof  To verify (a) compute
+\begin{proof}  To verify (a) compute
 \[
 {\cal L}[e^{at}y(t)](s) = \int_0^{\infty} e^{-st}e^{at} y(t)\; dt
 = \int_0^{\infty} e^{-(s-a)t} y(t)\; dt = {\cal L}[y(t)](s-a) = Y(s-a).
 \]
 Part (b) follows by applying the inverse Laplace transform to both sides 
-of (a).  \qed
+of (a).  \end{proof}
 
 For example, suppose that we want to compute the inverse Laplace transform of 
 \begin{equation}  \label{e:exlappf}
@@ -784,7 +784,7 @@ Suppose that $Y(s)={\cal L}[y(t)](s)$ exists.  Then
 \]
 \end{prop}
 
-\proof (a)  Compute
+\begin{proof} (a)  Compute
 \[
 {\cal L}[H_c(t)y(t-c)](s) = \int_0^{\infty} e^{-st}H_c(t) y(t-c)\; dt
 = \int_c^{\infty} e^{-st}y(t-c)\; dt.
@@ -796,7 +796,7 @@ On substituting $t+c$ for $t$ we obtain
 =e^{-cs} Y(s).
 \]
 Part (b) follows by applying the inverse Laplace transform to both sides 
-of (a).  \qed
+of (a).  \end{proof}
 
 As an application of Proposition~\ref{prop:eHcLap2}(b), we find that
 \[

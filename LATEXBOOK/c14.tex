@@ -141,12 +141,12 @@ e^A = \mattwo{e^{C_1}}{0}{0}{e^{C_2}}.
 \]
 \end{lemma}
 
-\proof  This lemma is proved by noting that
+\begin{proof}  This lemma is proved by noting that
 \[
 A^k = \mattwo{C_1^k}{0}{0}{C_2^k},
 \]
 and applying the power series definition of matrix exponential.  
-See Chapter~\ref{Chap:Planar}, \Ref{e:expL}. \qed
+See Chapter~\ref{Chap:Planar}, \Ref{e:expL}. \end{proof}
 
 \subsection*{Matrix Exponentials of Jordan Normal Forms}
 
@@ -425,7 +425,7 @@ where $k$ is the size of the largest Jordan block associated to the given
 eigenvalue. 
 \end{lemma}
 
-\proof  Formula \Ref{e:expsoln} verifies this statement when $A$ is in Jordan 
+\begin{proof}  Formula \Ref{e:expsoln} verifies this statement when $A$ is in Jordan 
 normal form with real eigenvalues.  A similar formula holds with $J$ and $M$ 
 when $A$ has complex eigenvalues.  Solutions to the general matrix equation 
 are just linear combinations of solutions to the corresponding Jordan normal 
@@ -433,7 +433,7 @@ form equations.  Indeed, as noted in the discussion leading to \Ref{E:JNFDE},
 solutions to the general system equation are obtained from the Jordan normal 
 form equations by multiplying these special solutions by the constant matrix
 $S$.  This multiplication does not alter the statement that the coordinate
-functions are linear combinations of the given functions.  \qed
+functions are linear combinations of the given functions.  \end{proof}
 
 In Section~\ref{S:SEOC} we discuss alternative methods for finding solutions 
 to systems of constant coefficient linear differential equations.  All of
@@ -608,7 +608,7 @@ The origin is an asymptotically stable equilibrium for the system of
 differential equations $\dot{X}=AX$ if and only if the origin is linearly stable.
 \end{thm}
 
-\proof The proof of this theorem follows directly from Lemma~\ref{R:pdeg}.
+\begin{proof} The proof of this theorem follows directly from Lemma~\ref{R:pdeg}.
 Each coordinate function of each solution of $\dot{X}=AX$ is a linear 
 combination of functions of the form $t^je^{\lambda t}$ where $\lambda$ is 
 a real eigenvalue of $A$ and $t^je^{\sigma t}\cos(\tau t)$ and 
@@ -624,7 +624,7 @@ eigenvalue is complex since
 \lim_{t\to\infty}t^ke^{\sigma t}\cos(\tau t) = 0 = 
 \lim_{t\to\infty}t^ke^{\sigma t}\sin(\tau t),
 \]
-when $\sigma < 0$.  \qed
+when $\sigma < 0$.  \end{proof}
 
 \subsection*{Stable, Unstable and Center Coordinates}
 
@@ -694,7 +694,7 @@ conjugate purely imaginary eigenvalues), then $z(t)$ will remain bounded in
 both forward and backward time. 
 \end{thm}
 
-\proof  The block diagonal form of $A$ decouples the differential equation 
+\begin{proof}  The block diagonal form of $A$ decouples the differential equation 
 into three subsystems:
 \begin{eqnarray*}
 \dot{x} & = & Sx \\
@@ -710,7 +710,7 @@ that if the Jordan blocks in $C$ are trivial, then the blocks are either
 $1\times 1$ zero blocks or $2\times 2$ blocks $\mattwo{0}{-\tau}{\tau}{0}$.
 Solutions to the subblock equations are either equilibria (in the case of a
 $1\times 1$ block) or circles (in the case of the $2\times 2$ block).  The
-result follows, since the superposition of bounded solutions is bounded. \qed
+result follows, since the superposition of bounded solutions is bounded. \end{proof}
 
 \begin{Def}
 The $x$ coordinates in Theorem~\ref{T:SUC} are the {\em stable\/} coordinates,

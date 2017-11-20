@@ -80,7 +80,7 @@ zero, then $\det(A)=0$.
 \end{itemize}
 \end{lemma}
 
-\proof  (a) Note that Definition~\ref{D:determinants}(a) implies that 
+\begin{proof}  (a) Note that Definition~\ref{D:determinants}(a) implies that 
 $\det(cI_n)=c^n$.  It follows from \Ref{e:detproduct} that
 \[
 \det(cA) = \det(cI_n A) = \det(cI_n)\det(A) = c^n\det(A).
@@ -92,7 +92,7 @@ of $A$ is zero.  Let $J$ be an $n\times n$
 diagonal matrix with a $1$ in every diagonal entry except the $i^{th}$ 
 diagonal entry which is $0$.  A matrix calculation shows that $JA=A$. 
 It follows from Definition~\ref{D:determinants}(a) that $\det(J)=0$ and 
-from \Ref{e:detproduct} that $\det(A)=0$.  \qed 
+from \Ref{e:detproduct} that $\det(A)=0$.  \end{proof} 
 
 
 
@@ -190,7 +190,7 @@ a single elementary row operation.  Then there exists an invertible
 $m\times m$ matrix $R$ such that $B=RA$.
 \end{prop} 
 
-\proof  First consider multiplying the $j^{th}$ row of $A$ by the
+\begin{proof}  First consider multiplying the $j^{th}$ row of $A$ by the
 nonzero constant $c$.  Let $R$ be the diagonal matrix whose
 $j^{th}$ entry on the diagonal is $c$ and whose other diagonal 
 entries are $1$.  Then the matrix $RA$ is just the matrix obtained from 
@@ -250,7 +250,7 @@ since $E_{ij}^2 = O$ for $i\not= j$.  For example,
 \left(\begin{array}{ccc} a_{11}+5a_{21} & a_{12}+5a_{22} & a_{13}+5a_{23} \\ 
 a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33} \end{array}\right),
 \end{eqnarray*}
-adds $5$ times the $2^{nd}$ row to the $1^{st}$ row.   \qed
+adds $5$ times the $2^{nd}$ row to the $1^{st}$ row.   \end{proof}
 
 \subsubsection*{Determinants of Elementary Row Matrices}
 
@@ -264,7 +264,7 @@ row by $c$ is $c$.
 \end{itemize}
 \end{lemma}  \index{determinant}
  
-\proof The matrix that swaps the $i^{th}$ row with the $j^{th}$
+\begin{proof} The matrix that swaps the $i^{th}$ row with the $j^{th}$
 row is the matrix whose nonzero elements are $a_{kk}=1$ where
 $k\neq i,j$ and $a_{ij}=1=a_{ji}$.  Using a similar argument as
 in \Ref{e:detswap} we see that the determinants of these
@@ -279,7 +279,7 @@ these matrices are equal to $1$.
 Finally, the matrix that multiplies the $i^{th}$ row by $c\neq
 0$ is a diagonal matrix all of whose diagonal entries are $1$
 except for $a_{ii}=c$.  Again property (a) implies that the
-determinant of this matrix is $c\neq 0$. \qed
+determinant of this matrix is $c\neq 0$. \end{proof}
 
 
 \subsection*{Computation of Determinants}
@@ -389,7 +389,7 @@ Moreover, if $A\inv$ exists, then
 \end{equation}
 \end{thm} \index{invertible}
  
-\proof  If $A$ is invertible, then 
+\begin{proof}  If $A$ is invertible, then 
 \[
 \det(A)\det(A\inv) = \det(AA\inv) = \det(I_n) =1.
 \]
@@ -406,7 +406,7 @@ So it follows from
 \[
 0=\det(E) = \det(R_1)\cdots\det(R_s)\det(A)
 \]
-Since $\det(R_j)\neq 0$, it follows that $\det(A)=0$.  \qed
+Since $\det(R_j)\neq 0$, it follows that $\det(A)=0$.  \end{proof}
 
 \begin{cor}
 If the rows of an $n\times n$ matrix $A$ are linearly dependent (for example,
@@ -534,7 +534,7 @@ matrix.  Then
 \]
 \end{lemma}
 
-\proof We prove this result using \Ref{e:inductdet} coupled with 
+\begin{proof} We prove this result using \Ref{e:inductdet} coupled with 
 induction. Assume that this lemma is valid or all $(n-1)\times
 (n-1)$ matrices of the appropriate form.  Now use
 \Ref{e:inductdet} to compute
@@ -561,7 +561,7 @@ It follows that
 b_{1k}\det(B_{1k})\right)\det(D) \\
 & = & \det(B)\det(D),
 \end{eqnarray*}
-as desired.  \qed
+as desired.  \end{proof}
 
 
 \subsection*{Determinants in \Matlab}
@@ -850,7 +850,7 @@ Let $A$ be an $n\times n$ matrix.  Then $p_A$ is a polynomial of
 degree $n$ of the form \Ref{e:leadingterm}.
 \end{thm} \index{characteristic polynomial}
 
-\proof Let $C$ be an $n\times n$ matrix whose entries have
+\begin{proof} Let $C$ be an $n\times n$ matrix whose entries have
 the form $c_{ij}+d_{ij}\lambda$.  Then $\det(C)$ is a polynomial
 in $\lambda$ of degree at most $n$.  We verify this statement by
 induction. It is easily verified when $n=1$, since then
@@ -899,7 +899,7 @@ where $A_{11}$ is the first cofactor matrix of the matrix $A$.
 By induction, $\det(B_{11})$ is a polynomial of degree $n-1$ with
 leading term $(-1)^{n-1}\lambda^{n-1}$.  Multiplying this
 polynomial by $-\lambda$ yields a polynomial of degree $n$ with
-the correct leading term.  \qed
+the correct leading term.  \end{proof}
 
 \subsection*{General Properties of Eigenvalues}
 
@@ -963,7 +963,7 @@ or complex conjugate pairs.  Moreover,
 \end{thm} \index{eigenvalue}\index{eigenvalue!existence}
 \index{determinant}
 
-\proof Since the characteristic polynomial $p_A$ is a polynomial
+\begin{proof} Since the characteristic polynomial $p_A$ is a polynomial
 of degree $n$ with real coefficients, the first part of the
 theorem follows from the preceding discussion. In particular, it follows
 from \Ref{e:factoring} that 
@@ -973,7 +973,7 @@ p_A(\lambda) = c(\lambda_1-\lambda)\cdots(\lambda_n-\lambda),
 for some constant $c$.  Formula \Ref{e:leadingterm} implies that
 $c=1$ --- which proves (a).  Since $p_A(\lambda)=\det(A-\lambda I_n)$, 
 it follows that $p_A(0)=\det(A)$.  Thus (a) implies 
-that $p_A(0)=\lambda_1\cdots\lambda_n$, thus proving (b).  \qed
+that $p_A(0)=\lambda_1\cdots\lambda_n$, thus proving (b).  \end{proof}
 
 The eigenvalues of a matrix do not have to be different.  For
 example, consider the extreme case of a strictly triangular
@@ -986,21 +986,21 @@ Let $A$ be an $n\times n$ matrix. Then $A$ is invertible if and
 only if zero is {\em not\/} an eigenvalue of $A$.
 \end{cor}  \index{invertible}
 
-\proof The proof follows from Theorem~\ref{T:detandinv} and
-Theorem~\ref{T:eigens}(b). \qed 
+\begin{proof} The proof follows from Theorem~\ref{T:detandinv} and
+Theorem~\ref{T:eigens}(b). \end{proof} 
 
 \begin{lemma} 
 Let $A$ be a singular $n\times n$ matrix.  Then the null space of $A$
 is the span of all eigenvectors whose associated eigenvalue is zero.
 \end{lemma} \index{null space}\index{singular}
 
-\proof An eigenvector $v$ of $A$ has eigenvalue zero if and only
+\begin{proof} An eigenvector $v$ of $A$ has eigenvalue zero if and only
 if 
 \[
 Av=0.
 \]
 This statement is valid if and only if $v$ is in the null space
-of $A$. \qed
+of $A$. \end{proof}
 
 
 
@@ -1010,7 +1010,7 @@ $\lambda_1,\cdots,\lambda_n$.  Then the eigenvalues of
 $A\inv$ are $\lambda_1\inv,\cdots,\lambda_n\inv$.
 \end{thm}  \index{invertible}\index{eigenvalue!of inverse}
 
-\proof  We claim that  
+\begin{proof}  We claim that  
 \[
 p_A(\lambda) = (-1)^n \det(A) \lambda^n p_{A\inv}(\frac{1}{\lambda}).
 \]
@@ -1027,7 +1027,7 @@ Compute:
 & = & \det(A-\lambda I_n) \\
 & = & p_A(\lambda),
 \end{eqnarray*}
-which verifies the claim.  \qed
+which verifies the claim.  \end{proof}
 
 \begin{thm}  \label{T:similareigen}
 Let $A$ and $B$ be similar $n\times n$ matrices.  Then
@@ -1037,14 +1037,14 @@ p_A = p_B,
 and hence the eigenvalues of $A$ and $B$ are identical.
 \end{thm}  \index{similar}
 
-\proof  Since $B$ and $A$ are similar, there exists an 
+\begin{proof}  Since $B$ and $A$ are similar, there exists an 
 invertible $n\times n$ matrix $S$ such that $B=S\inv AS$.  It 
 follows that 
 \[
 \det(B-\lambda I_n) = \det(S\inv AS-\lambda I_n)
 = \det(S\inv(A-\lambda I_n)S) = \det(A-\lambda I_n),
 \]
-which verifies that $p_A=p_B$.  \qed
+which verifies that $p_A=p_B$.  \end{proof}
 
 Recall that the {\em trace\/}\index{trace} of an 
 $n\times n$ matrix $A$ is
@@ -1302,7 +1302,7 @@ D(EB) = D(E) D(B)
 \end{equation} 
 \end{lemma}
 
-\proof We verify \Ref{e:proddetE} for each of the three types of
+\begin{proof} We verify \Ref{e:proddetE} for each of the three types of
 elementary row operations. \index{elementary row operations}
 
 \noindent (I) Suppose that $E$ multiplies the $i^{th}$ row by a
@@ -1412,7 +1412,7 @@ Supposing that
 c_{21}=c_{11} \quad  c_{22}=c_{12} \quad c_{23}=c_{13} \quad
 c_{24}=c_{14} 
 \]
-it is now easy to check that $D(C)=0$. \qed
+it is now easy to check that $D(C)=0$. \end{proof}
 
 We now return to verifying that $D(A)$ satisfies properties (b)
 and (c) of being a determinant.  We begin by showing that
@@ -1466,5 +1466,5 @@ Using \Ref{e:proddetE} we see that
 D(AB)=D(E_s)\cdots D(E_1)D(B) = D(E_s\cdots E_1)D(B) = D(A)D(B),
 \]
 as desired. We have now completed the proof that a determinant
-function exists. \qed
+function exists. \end{proof}
 \end{document}

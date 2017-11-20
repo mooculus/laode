@@ -1052,7 +1052,7 @@ Suppose that $L_1(e_j)=L_2(e_j)$ for every $j=1,\ldots,n$.  Then
 $L_1=L_2$.
 \end{lemma}
 
-\proof  Let $x=(x_1,\ldots,x_n)$ be a vector in $\R^n$.  Then
+\begin{proof}  Let $x=(x_1,\ldots,x_n)$ be a vector in $\R^n$.  Then
 \[
 x = x_1e_1 + \cdots + x_ne_n.
 \]
@@ -1063,29 +1063,29 @@ L_1(x) & = & x_1L_1(e_1) + \cdots + x_nL_1(e_n) \\
   & = & L_2(x).
 \end{eqnarray*}
 Since $L_1(x)=L_2(x)$ for all $x\in\R^n$, it follows that
-$L_1=L_2$.  \qed
+$L_1=L_2$.  \end{proof}
 
 \begin{lemma}  \label{columnsA}
 Let $A$ be an $m\times n$ matrix.  Then $Ae_j$ is the $j^{th}$
 column of $A$.
 \end{lemma}
 
-\proof  Recall the definition of matrix multiplication given in \Ref{Atimesx}.
+\begin{proof}  Recall the definition of matrix multiplication given in \Ref{Atimesx}.
 In that formula, just set $x_i$ equal to zero for all $i\neq j$ and set
-$x_j=1$. \qed
+$x_j=1$. \end{proof}
 
 \begin{thm}  \label{lin-matrices}
 Let $L:\R^n\to\R^m$ be a linear mapping\index{linear!mapping}.
 Then there exists an $m\times n$ matrix $A$ such that $L=L_A$.
 \end{thm}
 
-\proof
+\begin{proof}
 There are two steps to the proof: determine the matrix $A$ and
 verify that $L_A=L$.
 
 Let $A$ be the matrix whose $j^{th}$ column is $L(e_j)$.  By
 Lemma~\ref{columnsA} $L(e_j) = Ae_j$; that is, $L(e_j) = L_A(e_j)$.
-Lemma~\ref{linequal} implies that $L=L_A$.  \qed
+Lemma~\ref{linequal} implies that $L=L_A$.  \end{proof}
 
 Theorem~\ref{lin-matrices} provides a simple way of showing that
 \[
@@ -1671,7 +1671,7 @@ Let $L_1:\R^n\to\R^m$ and $L_2:\R^p\to\R^n$ be linear mappings.
 Then $L=L_1\compose L_2:\R^p\to\R^m$ is a linear mapping.
 \end{lemma}
 
-\proof  Compute
+\begin{proof}  Compute
 \begin{eqnarray*}
 L(x+y) & = & L_1\compose L_2(x+y)\\
  & = & L_1(L_2(x)+L_2(y)) \\
@@ -1680,7 +1680,7 @@ L(x+y) & = & L_1\compose L_2(x+y)\\
  & = & L(x) + L(y).
 \end{eqnarray*}
 Similarly, compute $L_1\compose L_2(cx) = cL_1\compose L_2(x)$.
-\qed
+\end{proof}
 
 We apply Lemma~\ref{complin} in the following way.  Let $A$ be
 an $m\times n$ matrix and let $B$ be an $n\times p$
@@ -1893,7 +1893,7 @@ be a $p\times q$ matrix.  Then
 \]
 \end{thm}
 
-\proof Begin by observing that composition of mappings is always
+\begin{proof} Begin by observing that composition of mappings is always
 associative.  In symbols, let $f:\R^n\to\R^m$, $g:\R^p\to\R^n$,
 and $h:\R^q\to\R^p$.  Then
 \begin{eqnarray*}
@@ -1927,7 +1927,7 @@ and
 \[
 A(BC) = (AB)C.
 \]
-\qed
+\end{proof}
 
 It is worth convincing yourself that Theorem~\ref{assoc} has
 content by verifying by hand that matrix multiplication of
@@ -2261,7 +2261,7 @@ If an $n\times n$ matrix $A$ is invertible, then its inverse is unique
 and is denoted by $A\inv$.
 \end{lemma}
 
-\proof
+\begin{proof}
 Let $B$ and $C$ be $n\times n$ matrices that are inverses of $A$.  Then
 \[
 BA=I_n \AND AC=I_n.
@@ -2271,7 +2271,7 @@ prove that $B=C$.  Compute
 \[
 B = BI_n = B(AC) = (BA)C = I_nC = C.
 \]
-\qed
+\end{proof}
 
 We now show how to compute inverses for products of invertible
 matrices.
@@ -2285,7 +2285,7 @@ $AB$ is also invertible and
 \]
 \end{prop}
 
-\proof  Use associativity of matrix multiplication to compute
+\begin{proof}  Use associativity of matrix multiplication to compute
 \[
 (AB)(B\inv A\inv) = A(BB\inv)A\inv = AI_nA\inv = AA\inv=I_n.
 \]
@@ -2293,7 +2293,7 @@ Similarly,
 \[
 (B\inv A\inv)(AB) = B\inv(A\inv A)B = B\inv B = I_n.
 \]
-Therefore $AB$ is invertible with the desired inverse. \qed
+Therefore $AB$ is invertible with the desired inverse. \end{proof}
 
 \begin{prop} \label{L:transposeinv} \index{matrix!transpose}
 Suppose that $A$ is an invertible $n\times n$ matrix.  Then
@@ -2303,7 +2303,7 @@ $A^t$ is invertible and
 \]
 \end{prop}
 
-\proof  We must show that $(A\inv)^t$ is the inverse of $A^t$.  Identity
+\begin{proof}  We must show that $(A\inv)^t$ is the inverse of $A^t$.  Identity
 \Ref{e:transposeprod} implies that
 \[
 (A\inv)^tA^t = (AA\inv)^t = (I_n)^t = I_n,
@@ -2312,7 +2312,7 @@ and
 \[
 A^t(A\inv)^t = (A\inv A)^t = (I_n)^t = I_n.
 \]
-Therefore, $(A\inv)^t$ is the inverse of $A^t$, as claimed.  \qed
+Therefore, $(A\inv)^t$ is the inverse of $A^t$, as claimed.  \end{proof}
 
 \subsection*{Invertibility and Unique Solutions}
 
@@ -2328,7 +2328,7 @@ Let $A$ be an invertible $n\times n$ matrix and let $b$ be in $\R^n$.
 Then the system of linear equations \Ref{squarematrix} has a unique solution.
 \end{prop}
 
-\proof  We can solve the linear system \Ref{squarematrix} by setting
+\begin{proof}  We can solve the linear system \Ref{squarematrix} by setting
 \begin{equation}  \label{soln}
 x=A\inv b.
 \end{equation}
@@ -2340,16 +2340,16 @@ Next, suppose that $x$ is a solution to \Ref{squarematrix}.  Then
 \[
 x = I_n x = (A\inv A)x = A\inv(Ax) = A\inv b.
 \]
-So $A\inv b$ is the only possible solution.  \qed
+So $A\inv b$ is the only possible solution.  \end{proof}
 
 \begin{cor} \label{C:inv=>In}
 An invertible matrix is row equivalent to $I_n$.
 \end{cor}
 
-\proof  Let $A$ be an invertible $n\times n$ matrix.
+\begin{proof}  Let $A$ be an invertible $n\times n$ matrix.
 Proposition~\ref{P:inv=>unique} states that the system of linear equations
 $Ax=b$ has a unique solution.  Chapter~\ref{lineq}, Corollary~\ref{consistent}
-states that $A$ is row equivalent to $I_n$.  \qed
+states that $A$ is row equivalent to $I_n$.  \end{proof}
 
 The converse of Corollary~\ref{C:inv=>In} is also valid.
 
@@ -2357,7 +2357,7 @@ The converse of Corollary~\ref{C:inv=>In} is also valid.
 An $n\times n$ matrix $A$ that is row equivalent to $I_n$ is invertible.
 \end{prop}
 
-\proof  Form the $n\times 2n$ matrix $M=(A|I_n)$.  Since $A$ is row equivalent
+\begin{proof}  Form the $n\times 2n$ matrix $M=(A|I_n)$.  Since $A$ is row equivalent
 to $I_n$, there is a sequence of elementary row operations so that $M$ is
 row equivalent to $(I_n|B)$.  Eliminating all columns from the right half
 of $M$ except the $j^{th}$ column yields the matrix $(A|e_j)$.  The same
@@ -2382,7 +2382,7 @@ $A_j$, where $A_j$ is the $j^{th}$ column of $A$.  It follows that
 \[
 BA = (BA_1|\cdots|BA_n) = (e_1|\cdots|e_n) = I_n.
 \]
-Hence $BA=I_n$.  \qed
+Hence $BA=I_n$.  \end{proof}
 
 \begin{thm} \label{invertequiv}
 Let $A$ be an $n\times n$ matrix.  Then the following are
@@ -2396,7 +2396,7 @@ $b\in\R^n$.
 \end{itemize}
 \end{thm}
 
-\proof $(a) \Rightarrow (b)$ This implication
+\begin{proof} $(a) \Rightarrow (b)$ This implication
 is just Proposition~\ref{P:inv=>unique}.
 
 $(b) \Rightarrow (c)$ This implication is straightforward --- just
@@ -2406,7 +2406,7 @@ $(c) \Rightarrow (d)$  This implication is just a restatement of
 Chapter~\ref{lineq}, Corollary~\ref{consistent}.
 
 $(d) \Rightarrow (a)$.  This implication is just
-Proposition~\ref{P:row=>inv}. \qed
+Proposition~\ref{P:row=>inv}. \end{proof}
 
 
 \subsection*{A Method for Computing Inverse Matrices}
@@ -2745,7 +2745,7 @@ equal. \index{matrix!transpose}
 \end{itemize}
 \end{prop}
 
-\proof Both (a) and (b) are easily verified by direct
+\begin{proof} Both (a) and (b) are easily verified by direct
 calculation.  Property (c) is also verified by direct
 calculation --- but of a more extensive sort.  Note that
 \[
@@ -2766,19 +2766,19 @@ ad(\alpha\delta-\beta\gamma) \\
 & = & (ad-bc)(\alpha\delta-\beta\gamma) \\
 & = & \det(A)\det(B),
 \end{eqnarray*}
-as asserted.   \qed
+as asserted.   \end{proof}
 
 \begin{cor}  \label{C:2x2invert} \index{invertible}
 A $2\times 2$ matrix $A$ is invertible if and only if $\det(A)\neq 0$.
 \end{cor}
 
-\proof  If $A$ is invertible, then $AA\inv = I_2$.
+\begin{proof}  If $A$ is invertible, then $AA\inv = I_2$.
 Proposition~\ref{propdet} implies that
 \[
 \det(A)\det(A\inv) = \det(I_2) = 1.
 \]
 Therefore, $\det(A)\neq 0$.  Conversely, if $\det(A)\neq 0$, then
-\Ref{e:formAinv} implies that $A$ is invertible.  \qed
+\Ref{e:formAinv} implies that $A$ is invertible.  \end{proof}
 
 
 \subsection*{Determinants and Area}
@@ -2807,7 +2807,7 @@ Let $A$ be a $2\times 2$ matrix and let $S$ be the unit square.  Then
 \end{equation}
 \end{prop}
 
-\proof   Note that $A(S)$ is the parallelogram generated by $u_1=Ae_1$ and 
+\begin{proof}   Note that $A(S)$ is the parallelogram generated by $u_1=Ae_1$ and 
 $u_2=Ae_2$, and $u_1$ and $u_2$ are the columns of $A$.  It follows that
 \[
 (\det A)^2=\det(A^t)\det(A)=\det(A^tA) =
@@ -2824,7 +2824,7 @@ Recall that \Ref{e:areaP} of Chapter~\ref{chap:prelim} states that
 |P|^2 = ||v||^2||w||^2 - (v\cdot w)^2.
 \]
 where $P$ is the parallelogram generated by $v$ and $w$.  Therefore, 
-$(\det A)^2 = |A(S)|^2$ and \Ref{e:det&area2} is verified. \qed
+$(\det A)^2 = |A(S)|^2$ and \Ref{e:det&area2} is verified. \end{proof}
 
 
 \begin{thm}  \label{T:det&area}
@@ -2835,7 +2835,7 @@ matrix.  Then
 \end{equation}
 \end{thm}
 
-\proof  First note that \Ref{e:det&area2} a special case of \Ref{e:det&area}, 
+\begin{proof}  First note that \Ref{e:det&area2} a special case of \Ref{e:det&area}, 
 since $|S|=1$.   Next, let $P$ be the parallelogram generated by the (column)
 vectors $v$ and $w$, and let $B=(v|w)$.  Then $P=B(S)$.  It
 follows from \Ref{e:det&area2} that $|P|=|\det B|$.  Moreover,
@@ -2845,7 +2845,7 @@ follows from \Ref{e:det&area2} that $|P|=|\det B|$.  Moreover,
 & = & |\det A||\det B| \\
 & = & |\det A||P|,
 \end{eqnarray*}
-as desired.  \qed
+as desired.  \end{proof}
 
 \EXER
 

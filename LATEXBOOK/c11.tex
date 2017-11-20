@@ -935,7 +935,7 @@ X(T)=X(0).
 Then $X(t)$ is a periodic solution with period dividing $T$.
 \end{lemma}
 
-\proof  Let $Y(t)=X(t+T)$.  Then $Y(t)$ is a solution to 
+\begin{proof}  Let $Y(t)=X(t+T)$.  Then $Y(t)$ is a solution to 
 \Ref{e:genlveceqn} since 
 \[
 \dot{Y}(t) = \dot{X}(t+T)=F(X(t+T))=F(Y(t)).
@@ -944,7 +944,7 @@ This solution has initial condition $Y(0)=X(T)=X(0)$.
 Uniqueness of solutions with the same initial condition 
 implies that $X(t)=Y(t)$ for all $t$ and that $X(t)=X(t+T)$.
 Since $X(t)$ is not an equilibrium, there is a smallest 
-positive period for $X$ and that period must divide $T$. \qed
+positive period for $X$ and that period must divide $T$. \end{proof}
 
 In this section we study two types of planar systems that have periodic 
 solutions, centers and phase--amplitude equations, and in both examples 
@@ -1084,7 +1084,7 @@ Moreover, if $a'(r^2_0)<0$ then the periodic solution is asymptotically
 stable; if $a'(r^2_0)>0$ then the periodic solution is unstable.
 \end{prop}\index{stability!asymptotic}\index{periodic solution}
 
-\proof  The function $r(t)$ measures how far the solution $(x(t),y(t))$ to
+\begin{proof}  The function $r(t)$ measures how far the solution $(x(t),y(t))$ to
 \Ref{e:HopfNF} is from the origin.  Thus, if $r_0$ is a positive zero of the 
 amplitude equation, then the distance of the solution remains constant; that
 is, the trajectory of $(x(t),y(t))$ in the plane lies on the circle $r=r_0$
@@ -1113,7 +1113,7 @@ It follows that $f'(r_0)<0$ if and only if $a'(r_0^2)<0$.
   
 If $a'(r^2_0)<0$, then the equilibrium of the amplitude equation is 
 asymptotically stable and nearby trajectories to the planar periodic solution
-limit on that periodic solution $r=r_0$ in forward time.  \qed 
+limit on that periodic solution $r=r_0$ in forward time.  \end{proof} 
 
 
 

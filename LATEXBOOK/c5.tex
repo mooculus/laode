@@ -244,7 +244,7 @@ Let $V$ be a vector space, and let ${\bf 0}\in V$ be the zero vector.  Then
 for every vector in $v\in V$.
 \end{lemma}
 
-\proof Let $v$ be a vector in $V$ and use (D1) to compute
+\begin{proof} Let $v$ be a vector in $V$ and use (D1) to compute
 \[
      0v + 0v  = (0+0)v = 0v.
 \]
@@ -292,13 +292,13 @@ calculate
      v + (-1)v = 1v + (-1)v =(1-1)v = 0v = {\bf 0}.
 \]
 Thus, $(-1)v$ is the additive inverse of $v$ and must equal $-v$, as
-claimed.  \qed
+claimed.  \end{proof}
 
 \begin{thm}  \label{T:subspaces}
 Let $W$ be a subset of the vector space $V$. If $W$ is closed under addition 
 and closed under scalar multiplication, then $W$ is a subspace.
 \end{thm}\index{subspace}
-\proof  We have to show that $W$ is a vector space using the operations 
+\begin{proof}  We have to show that $W$ is a vector space using the operations 
 of addition and scalar multiplication defined on $V$.  That is, we need to
 verify that the eight properties listed in Table~\ref{vectorspacelist} are 
 satisfied.  Note that properties (A1), (A2), (M1), (M2), (D1), and (D2) are 
@@ -309,7 +309,7 @@ Since $W$ is closed under scalar multiplication, it follows that
 $0w$ and $(-1)w$ are in $W$. Lemma~\ref{lem:AddId} states that
 $0w=0$ and $(-1)w=-w$; it follows that $0$ and $-w$ are in $W$.
 Hence, properties (A3) and (A4) are valid for vectors in $W$,
-since they are valid for vectors in $V$.  \qed
+since they are valid for vectors in $V$.  \end{proof}
 
 \subsubsection*{Examples of Subspaces of $\R^n$}
 
@@ -557,7 +557,7 @@ Let $A$ be an $m\times n$ matrix.  Then the null space of $A$
 is a subspace of $\R^n$.
 \end{lemma}
 
-\proof
+\begin{proof}
 Suppose that $x$ and $y$ are solutions to \Ref{Ax=0}.  Then
 \[
 A(x+y) = Ax+Ay = 0+0 = 0;
@@ -569,7 +569,7 @@ A(rx) = rAx = r0 = 0;
 so $rx$ is a solution of \Ref{Ax=0}.  Thus, $x+y$ and $rx$ are
 in the null space of $A$, and the null space is closed under addition 
 and scalar multiplication.  So Theorem~\ref{T:subspaces} implies that
-the null space is a subspace of the vector space $\R^n$.   \qed
+the null space is a subspace of the vector space $\R^n$.   \end{proof}
 
 \subsubsection*{Solutions to Linear Systems of Differential Equations Form
 Subspaces}
@@ -684,7 +684,7 @@ let $w_1,\ldots,w_k\in V$. Then $W=\Span\{w_1,\ldots,w_k\}
 \subset V$ is a subspace.
 \end{prop} \index{span} \index{subspace}\index{vector!space}
 
-\proof  Suppose $x,y\in W$.  Then
+\begin{proof}  Suppose $x,y\in W$.  Then
 \begin{eqnarray*}
 x & = & r_1w_1 + \cdots + r_kw_k \\
 y & = & s_1w_1 + \cdots + s_kw_k
@@ -700,7 +700,7 @@ rx = (rr_1)w_1 + \cdots + (rr_k)w_k
 \]
 are both in $\Span\{w_1,\ldots,w_k\}$. Hence $W\subset V$ is
 closed under addition and scalar multiplication, and is a
-subspace by Theorem~\ref{T:subspaces}. \qed
+subspace by Theorem~\ref{T:subspaces}. \end{proof}
 
 For example, let
 \begin{equation}  \label{e:vandw}
@@ -1446,7 +1446,7 @@ to be the matrix whose rows are the $w_j$s.  Then
 \end{equation}
 \end{lemma}\index{dimension}\index{rank}
 
-\proof To verify \Ref{e:dimW=rankM}, observe that the span of
+\begin{proof} To verify \Ref{e:dimW=rankM}, observe that the span of
 $w_1,\ldots,w_k$ is unchanged by
 \begin{itemize}
 \item[(a)] swapping $w_i$ and $w_j$,
@@ -1482,7 +1482,7 @@ left hand side of \Ref{e:rowsums} is
 a_i,
 \]
 since all entries in the $j^{th}$ column of $E$ other than the
-pivot must be zero, as $E$ is in reduced echelon form.  \qed
+pivot must be zero, as $E$ is in reduced echelon form.  \end{proof}
 
 For instance, let $W=\Span\{w1,w2,w3\}$ in $\R^4$ where
 \begin{equation*} \label{eq:vectors}
@@ -1583,7 +1583,7 @@ Let $A$ be an $m\times n$ matrix. Then
 \]
 \end{thm} \index{rank}
 
-\proof	Neither the rank nor the null space of $A$ are changed by
+\begin{proof}	Neither the rank nor the null space of $A$ are changed by
 elementary row operations.  So we can assume that $A$ is in reduced
 echelon form.  The rank of $A$ is the number of nonzero rows in
 the reduced echelon form matrix.  Proposition~\ref{P:n-rank} states that
@@ -1607,7 +1607,7 @@ That is, suppose that
 r_1w_{j_1} + \cdots + r_pw_{j_p} = 0.
 \]
 From the $j_m$$^{th}$ entry in this equation, it follows that $r_m=0$;
-and the vectors are linearly independent.  \qed
+and the vectors are linearly independent.  \end{proof}
 
 Theorem~\ref{T:dimsoln} has an interesting and useful interpretation.
 We have seen in the previous subsection that the rank of a matrix $A$
@@ -1697,7 +1697,7 @@ there is a linearly independent subset of $\{w_1,\ldots,w_k\}$
 that also spans $W$.
 \end{lemma}\index{linearly!independent}
 
-\proof If $\{w_1,\ldots,w_k\}$ is linearly independent, then the
+\begin{proof} If $\{w_1,\ldots,w_k\}$ is linearly independent, then the
 lemma is proved.  If not, then the set $\{w_1,\ldots,w_k\}$ is
 linearly dependent.  If this set is linearly dependent, then at
 least one of the vectors is a linear combination of the others.
@@ -1718,7 +1718,7 @@ and that $W=\Span\{w_1,\ldots,w_{k-1}\}$.  If the vectors
 $w_1,\ldots,w_{k-1}$ are linearly independent, then the proof of
 the lemma is complete.  If not, continue inductively until a
 linearly independent subset of the $w_j$ that also spans $W$ is
-found.  \qed
+found.  \end{proof}
 
 The important point in proving that linear independence together
 with spanning imply that we have a basis is discussed in the next
@@ -1729,7 +1729,7 @@ Let $W$ be an $m$-dimensional vector space and let $k>m$ be an integer.
 Then any set of $k$ vectors in $W$ is linearly dependent.
 \end{lemma} \index{linearly!dependent}
 
-\proof Since the dimension of $W$ is $m$ we know that
+\begin{proof} Since the dimension of $W$ is $m$ we know that
 this vector space can be written as $W=\Span\{v_1,\ldots,v_m\}$.
 Moreover, Lemma~\ref{reducetoindep} implies that the vectors
 $v_1,\ldots,v_m$ are linearly independent.  Suppose that
@@ -1778,7 +1778,7 @@ a_{m1}r_1 + \cdots + a_{mk}r_k & = & 0.
 Since $m<k$, Chapter~\ref{lineq}, Theorem~\ref{number} implies that
 this system of homogeneous linear equations always has a nonzero
 solution $r=(r_1,\ldots,r_k)$ --- from which it follows that the
-$w_i$ are linearly dependent.  \qed
+$w_i$ are linearly dependent.  \end{proof}
 
 \begin{cor}  \label{basis<n}
 Let $V$ be a vector space of dimension $n$ and let $\{u_1,\ldots,u_k\}$ be a 
@@ -1786,10 +1786,10 @@ linearly independent set of vectors in $V$.  Then $k\le n$.
 \end{cor} \index{linearly!independent}
 \index{dimension}\index{vector!space}
 
-\proof If $k>n$ then Lemma~\ref{lem:lindep} implies that
+\begin{proof} If $k>n$ then Lemma~\ref{lem:lindep} implies that
 $\{u_1,\ldots,u_k\}$ is linearly dependent.  Since we have
 assumed that this set is linearly independent, it follows that
-$k\leq n$. \qed
+$k\leq n$. \end{proof}
 
 \vspace{0.1in}
 
@@ -1807,7 +1807,7 @@ Suppose that ${\cal B}=\{w_1,\ldots,w_k\}$ both spans $W$ and is
 linearly independent.  Linear independence and Corollary~\ref{basis<n}
 imply that $k\leq\dim W$.  Since, by definition, any spanning set
 of $W$ has at least $\dim W$ vectors, it follows that $k\geq\dim W$.
-Thus, $k = \dim W$ and  ${\cal B}$ is a basis.   \qed
+Thus, $k = \dim W$ and  ${\cal B}$ is a basis.   \end{proof}
 
 \subsection*{Extending Linearly Independent Sets to Bases} \index{basis}
 
@@ -1830,7 +1830,7 @@ Then $\{u_1,\ldots,u_{k+1}\}$ is also a linearly independent
 set.
 \end{lemma} \index{linearly!independent}
 
-\proof  Let $r_1,\ldots,r_{k+1}$ be scalars such that
+\begin{proof}  Let $r_1,\ldots,r_{k+1}$ be scalars such that
 \begin{equation}  \label{rk+1}
 r_1u_1 + \cdots + r_{k+1}u_{k+1} = 0.
 \end{equation}
@@ -1845,7 +1845,7 @@ contradicts the choice of $u_{k+1}$.  So $r_{k+1}=0$ and
 r_1u_1 + \cdots + r_ku_k = 0.
 \]
 Since $\{u_1,\ldots,u_k\}$ is linearly independent, it follows
-that $r_1=\cdots =r_k=0$.  \qed
+that $r_1=\cdots =r_k=0$.  \end{proof}
 
 The second method for constructing a basis is:
 \index{basis!construction}
@@ -1897,7 +1897,7 @@ Then $\dim W < \dim V$\index{dimension}.
 \end{itemize}
 \end{cor}
 
-\proof
+\begin{proof}
 (a) Let $\dim W = k$ and let $\{w_1,\ldots,w_k\}$ be a basis for
 $W$.  Since $W$ is a proper subspace of $V$, there is a vector
 $w\in V\setmin W$.  It follows from Lemma~\ref{extendindep} that
@@ -1908,7 +1908,7 @@ Corollary~\ref{basis<n} implies that $k+1\le n$.
 Theorem~\ref{basis=span+indep} implies that this set is linearly
 independent.  If $\{w_1,\ldots,w_k\}$ does not span $V$, then it
 can be extended to a basis as above.  But then $\dim V > \dim W$,
-which is a contradiction.  \qed
+which is a contradiction.  \end{proof}
 
 \begin{cor} \label{C:dim=n}
 Let ${\cal B}=\{w_1,\ldots,w_n\}$ be a set of $n$ vectors in an
@@ -1921,13 +1921,13 @@ $n$-dimensional vector space $V$.  Then the following are equivalent:
 \end{itemize}
 \end{cor}
 
-\proof    By definition, (a) implies (b) since a basis is a spanning
+\begin{proof}    By definition, (a) implies (b) since a basis is a spanning
 set with the number of vectors equal to the dimension of the space.
 Theorem~\ref{basis=span+indep} states that a basis is a linearly
 independent set; so (b) implies (c). If ${\cal B}$ is a linearly
 independent set of $n$ vectors, then it spans a subspace $W$ of
 dimension $n$.  It follows from Corollary~\ref{dimensiondecreases}(b)
-that $W=V$ and that (c) implies (a).  \qed
+that $W=V$ and that (c) implies (a).  \end{proof}
 
 
 \subsubsection*{Subspaces of $\R^3$}

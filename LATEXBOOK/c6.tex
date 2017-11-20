@@ -595,11 +595,11 @@ and only if the real and imaginary parts are real vector-valued solutions
 to $\dot{X}=CX$.
 \end{lemma}
 
-\proof Equating the real and imaginary parts of \Ref{E:X1X2} implies that
+\begin{proof} Equating the real and imaginary parts of \Ref{E:X1X2} implies that
 \[
 \dot{X}_1 = CX_1 \AND \dot{X}_2 = CX_2.
 \]
-\qed
+\end{proof}
 
 It follows from Lemma~\ref{L:RIsoln} that finding one complex-valued solution
 to a linear differential equation provides us with two real-valued solutions.
@@ -639,7 +639,7 @@ Cw & = & \tau v + \sigma w.
 and $v$ and $w$ are linearly independent\index{linearly!independent} vectors.
 \end{lemma}
 
-\proof   By assumption $Cv_1=\lambda_1v_1$, that is,
+\begin{proof}   By assumption $Cv_1=\lambda_1v_1$, that is,
 \begin{equation}  \label{E:viw}
 C (v+iw) = (\sigma+i\tau)(v+iw) = (\sigma v - \tau w) + i(\tau v + \sigma w).
 \end{equation}
@@ -654,7 +654,7 @@ It then follows from the previous equation that
 Cw = (\tau\alpha+\sigma)w.
 \]
 Hence $w$ is a real eigenvector; but the eigenvalues of $C$ are not real and
-$C$ has no real eigenvectors.   \qed
+$C$ has no real eigenvectors.   \end{proof}
 
 
 \subsubsection*{An Example with Complex Eigenvalues}
@@ -746,14 +746,14 @@ independent eigenvectors both with eigenvalue $\lambda_1$.
 Then $A=\lambda_1 I_2$.
 \end{lemma}\index{eigenvector!linearly independent}\index{eigenvector!real}
 
-\proof  Let $v_1$ and $v_2$ be two linearly independent
+\begin{proof}  Let $v_1$ and $v_2$ be two linearly independent
 eigenvectors of $A$, that is, $Av_j = \lambda_1 v_j$.  It follows
 from linearity that $Av=\lambda_1 v$ for any linear combination
 $v=\alpha_1v_1+\alpha_2v_2$.  Since $v_1$ and $v_2$ are linearly
 independent and $\dim(\R^2)=2$, it follows that $\{v_1,v_2\}$ is
 a basis of $\R^2$.  Thus, every vector $v\in\R^2$ is a linear
 combination of $v_1$ and $v_2$.  Therefore, $A$ is $\lambda_1$ times
-the identity matrix.  \qed
+the identity matrix.  \end{proof}
 
 \subsubsection*{Generalized Eigenvectors}
 
@@ -786,7 +786,7 @@ independent.  Then $w$ is a nonzero scalar multiple of a generalized
 eigenvector of $C$.
 \end{lemma}
 
-\proof  (a) If $v_1$ and $w_1$ were linearly dependent, then $w_1$ would be 
+\begin{proof}  (a) If $v_1$ and $w_1$ were linearly dependent, then $w_1$ would be 
 a multiple of $v_1$ and hence an eigenvector of $C$.  But $C-\lambda_1I_2$
 applied to an eigenvector is zero, which is a contradiction.  Therefore, 
 $v_1$ and $w_1$ are linearly independent.
@@ -819,7 +819,7 @@ It now follows from \Ref{E:Cw1} that
 (C-\lambda_1I_2)w = \alpha v_1.
 \]
 Therefore, $w_1=\frac{1}{\alpha}w$ is a generalized eigenvector
-of $C$.  \qed
+of $C$.  \end{proof}
 
 
 
@@ -1072,9 +1072,9 @@ X(t)=e^{tC}X_0.
 \]
 \end{thm}
 
-\proof  Existence follows from the previous discussion;
+\begin{proof}  Existence follows from the previous discussion;
 uniqueness follows from the $n$ dimensional analog of
-Theorem~\ref{exist&unique}.  \qed
+Theorem~\ref{exist&unique}.  \end{proof}
 
 
 \subsection*{Explicit Computation of Matrix Exponentials}
@@ -1427,7 +1427,7 @@ e^{A+B} = e^A e^B.
 \]
 \end{prop} \index{matrix!exponential}
 
-\proof  Note that \Ref{e:AB=BA} implies that
+\begin{proof}  Note that \Ref{e:AB=BA} implies that
 \begin{eqnarray}
 A^kB    & = & BA^k  \label{e:AkB=BAk}\\
 e^{tA}B & = & Be^{tA}. \label{e:etAB=BetA}
@@ -1475,7 +1475,7 @@ and $Y(t)=X(t)$.  Since $X_0$ is arbitrary it follows that
 \[
 e^{t(A+B)} = e^{tA}e^{tB}.
 \]
-Evaluating at $t=1$ yields the desired result.  \qed
+Evaluating at $t=1$ yields the desired result.  \end{proof}
 
 \subsubsection{Verification of Table~\protect{\ref{T:3sys}}(b)}
 
@@ -1624,7 +1624,7 @@ $\dot{Y}=CY$, then $X(t)=PY(t)$ is a solution to the system of
 differential equations $\dot{X}=BX$.
 \end{lemma}
 
-\proof   Since the entries in the matrix $P$ are constants, it follows that
+\begin{proof}   Since the entries in the matrix $P$ are constants, it follows that
 \[
 \frac{dX}{dt} = P\frac{dY}{dt}.
 \]
@@ -1636,7 +1636,7 @@ Since $Y=P\inv X$ and $PCP\inv = B$,
 \[
 \frac{dX}{dt} = PCP\inv X = BX.
 \]
-Thus $X(t)$ is a solution to $\dot{X}=BX$, as claimed.  \qed
+Thus $X(t)$ is a solution to $\dot{X}=BX$, as claimed.  \end{proof}
 
 
 \subsection*{Invariants of Similarity}
@@ -1651,7 +1651,7 @@ p_A(\lambda) & = & p_B(\lambda),\\
 and the eigenvalues of $A$ and $B$ are equal.
 \end{lemma}
 
-\proof
+\begin{proof}
 The determinant\index{determinant} is a function on $2\times 2$ matrices
 that has several important properties.  Recall, in particular, from
 Chapter~\ref{chap:matrices}, Theorem~\ref{propdet} that for any pair of
@@ -1675,7 +1675,7 @@ p_B(\lambda) & = & \det(B-\lambda I_2) \\
 \end{eqnarray*}
 Hence the eigenvalues of $A$ and $B$ are the same.  It follows
 from \Ref{e:treigen} and \Ref{e:deteigen} of Section~\ref{S:evchp}
-that the determinants and traces of $A$ and $B$ are equal.   \qed
+that the determinants and traces of $A$ and $B$ are equal.   \end{proof}
 
 For example, if
 \[
@@ -1714,7 +1714,7 @@ e^C = P\inv e^BP.
 \end{equation}
 \end{lemma} \index{similar} \index{invertible}
 
-\proof Note that for all powers of $k$ we have
+\begin{proof} Note that for all powers of $k$ we have
 \[
 (P\inv BP)^k = P\inv B^kP.
 \]
@@ -1726,7 +1726,7 @@ e^C =\sum^{\infty}_{k=0} \frac{1}{k!}C^k
 = P\inv\left(\sum^{\infty}_{k=0} \frac{1}{k!}B^k\right)P
 = P\inv e^B P.
 \]
-\qed
+\end{proof}
 
 
 \subsection*{Classification of $2\times 2$ Matrices}
@@ -1768,7 +1768,7 @@ where  $v_2$ is a generalized eigenvector of $C$ that satisfies
 \end{itemize}
 \end{thm}
 
-\proof
+\begin{proof}
 The strategy in the proof of this theorem is to determine the
 $1^{st}$ and $2^{nd}$ columns of $P\inv CP$ by computing (in each case)
 $P\inv CPe_j$ for $j=1$ and $j=2$.  Note from the definition of $P$
@@ -1834,7 +1834,7 @@ Thus the two columns of $P\inv CP$ are:
 \[
 \vectwoc{\lambda_1}{0} \AND \vectwoc{1}{\lambda_1}.
 \]
-  \qed
+  \end{proof}
 
 
 \subsection*{Closed Form Solutions Using Similarity}
@@ -2059,7 +2059,7 @@ p_A(A) = A^2 + aA + bI_2 = 0.
 \]
 \end{thm}
 
-\proof  Suppose $B=P\inv AP$ and $A$ are similar matrices.  We claim that
+\begin{proof}  Suppose $B=P\inv AP$ and $A$ are similar matrices.  We claim that
 if $p_A(A)=0$, then $p_B(B)=0$.  To verify this claim, recall from
 Lemma~\ref{L:simdettr} that $p_A=p_B$ and calculate
 \[
@@ -2099,7 +2099,7 @@ p_D(D) =
 \[
 p_E(E) = (E-\lambda_1I_2)^2 = \mattwo{0}{1}{0}{0}^2 = 0.
 \]
-\qed
+\end{proof}
 
 
 

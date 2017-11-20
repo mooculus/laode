@@ -507,7 +507,7 @@ combinations of $t^je^{\lambda_\ell t}$ where $j\leq m_\ell-1$.  These
 are just the type of terms that appeared in our discussion of solutions 
 of equations in Jordan normal form in Section~\ref{sec:LinHomSys}.
 
-\proof Multiplying \Ref{e:1/p} by $p_A(\lambda)$ yields the identity
+\begin{proof} Multiplying \Ref{e:1/p} by $p_A(\lambda)$ yields the identity
 \begin{equation}  \label{e:p=aP}
 1 = a_1(\lambda)P_1(\lambda) + \cdots + a_k(\lambda)P_k(\lambda).
 \end{equation}
@@ -545,7 +545,7 @@ e^{tA} = \sum_{\ell=1}^ka_\ell(A)P_\ell(A)e^{tA} =
 \sum_{\ell=1}^k\left[ e^{\lambda_\ell t}a_\ell(A)P_\ell(A)
 \sum_{j=0}^{m_\ell-1}\frac{1}{j!}t^j(A-\lambda_\ell I_n)^j \right]
 \]
-which proves the theorem.  \qed  
+which proves the theorem.  \end{proof}  
 
 As a special case, consider a matrix $A$ that has $n$ distinct
 eigenvalues. Then $m_\ell-1=0$ for each $\ell$ implying that the polynomial
@@ -979,7 +979,7 @@ $m_1,\ldots,m_k$.  Then
 is a basis of solutions\index{basis!of solutions} to \Ref{eq:nconsthom}.
 \end{thm} 
 
-\proof  The previous calculations show that if $\lambda$ is an eigenvalue 
+\begin{proof}  The previous calculations show that if $\lambda$ is an eigenvalue 
 of $p(\lambda)$, then $e^{\lambda t}$ is a solution to \Ref{eq:nconsthom}.  
 The difficulty in proving this theorem is in showing that $t^je^{\lambda t}$ 
 is also a solution to \Ref{eq:nconsthom} for any $j<m$, where $m$ is the 
@@ -989,7 +989,7 @@ eigenvalues of the characteristic polynomial of the coefficient matrix $Q$ in
 \Ref{eq:coefma}.  Second, we show in Lemma~\ref{lem:ho2} that every eigenvalue 
 of $Q$ is associated to precisely one Jordan block and that
 every eigenvector of $Q$ has a nonvanishing first component. 
-Then the result follows from Theorem~\ref{T:JBsoln}.  \qed
+Then the result follows from Theorem~\ref{T:JBsoln}.  \end{proof}
 
 \begin{lemma}  \label{lem:ho1}
 The characteristic polynomial\index{characteristic polynomial} of 
@@ -999,7 +999,7 @@ p_Q(\lambda) = (-1)^np(\lambda).
 \]
 \end{lemma}
 
-\proof We prove the lemma by induction.
+\begin{proof} We prove the lemma by induction.
 For $n=1$ the matrix $Q$ is just $(-a_0)$.  Hence
 \[
 p_Q(\lambda)=\det(Q-\lambda I_1) = -a_0-\lambda = -(\lambda+a_0)
@@ -1040,7 +1040,7 @@ p_Q(\lambda) & = &
 \cdots+a_2\lambda+a_1) +(-1)^n a_0 \\
 & = & (-1)^n(\lambda^n+a_{n-1}\lambda^{n-1}+\cdots+a_1\lambda+a_0).
 \end{eqnarray*}
-This proves the lemma.   \qed
+This proves the lemma.   \end{proof}
 
 \begin{lemma}   \label{lem:ho2}
 Let $\lambda$ be an eigenvalue of $Q$.  Then, up to scaling, there is a 
@@ -1060,7 +1060,7 @@ one, and there is exactly one Jordan block\index{Jordan block}
 of $Q$ associated to the eigenvalue $\lambda$.
 \end{lemma}
 
-\proof Let $\lambda$ be an eigenvalue of $Q$ and let 
+\begin{proof} Let $\lambda$ be an eigenvalue of $Q$ and let 
 $v=(v_1,\ldots,v_n)^t$ be a
 corresponding eigenvector.  Writing $Qv = \lambda v$
 in coordinates we obtain
@@ -1091,7 +1091,7 @@ v_3 & = & \lambda v_2 & = & \lambda^2 \\
 v_n & = & \lambda v_{n-1} & = & \lambda^{n-1}.
 \end{array}
 \]
-as desired.  \qed
+as desired.  \end{proof}
 
 We restate the results in Theorem~\ref{T:hoe} in real form.
 \begin{thm}   \label{thm:HOgen}
@@ -1210,11 +1210,11 @@ has a unique solution $x(t)$.
 \end{thm}
 \arrayfinish
 
-\proof The result is an immediate consequence of Proposition~\ref{prop:ho1},
+\begin{proof} The result is an immediate consequence of Proposition~\ref{prop:ho1},
 since the corresponding solution of the system of linear differential
 equations exists and is unique (see Theorem~\ref{T:linODEsoln} in 
 Chapter~\ref{Chap:Planar}).
-\qed
+\end{proof}
 
 \subsection*{Inhomogeneous Higher Order Equations}
 \index{inhomogeneous}
@@ -1431,14 +1431,14 @@ x_p(t) = \alpha_1x_1(t) + \alpha_2x_2(t).
 \]
 \end{lemma}
 
-\proof  The proof follows directly from the linearity of $p(D)$.  Just 
+\begin{proof}  The proof follows directly from the linearity of $p(D)$.  Just 
 compute
 \[
 p(D)(\alpha_1x_1 + \alpha_2x_2) = \alpha_1p(D)x_1 + 
 \alpha_2p(D)x_2 = \alpha_1g_1 + \alpha_2g_2.
 \]
 Thus, the particular solution is a superposition of the solutions $x_1$ and
-$x_2$.  \qed
+$x_2$.  \end{proof}
 
 \subsection*{The Method of Elimination}
 
@@ -1466,7 +1466,7 @@ p_A(D)x_j = 0.
 \end{equation}
 \end{thm}
 
-\proof  The proof of this theorem follows from the Cayley-Hamilton 
+\begin{proof}  The proof of this theorem follows from the Cayley-Hamilton 
 theorem, as follows.   Rewrite the differential equation using operator 
 notation as  
 \[
@@ -1481,7 +1481,7 @@ D^2X = D(AX) = A(DX) = A^2X.
 \]
 Hence $D^kX = A^kX$ by induction, and $p(D)X = p(A)X$ for any polynomial $p(\lambda)$ by linearity.  The Cayley-Hamilton theorem (Theorem~\ref{T:CH} 
 of Chapter~\ref{C:HDeigenvalues}) states that $p_A(A)=0$.  Hence $p_A(D)X=0$.  
-So, in coordinates, $p_A(D)x_j=0$. \qed
+So, in coordinates, $p_A(D)x_j=0$. \end{proof}
 
 \subsubsection*{Implementation of the Method of Elimination}
 

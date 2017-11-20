@@ -115,7 +115,7 @@ associated with the eigenvalue $\lambda_j$.  Then
 $\{v_1,\ldots,v_k\}$ is a linearly independent set.
 \end {lemma} \index{eigenvector}\index{linearly!independent}
 
-\proof We prove the lemma by using induction on $k$.  When $k=1$
+\begin{proof} We prove the lemma by using induction on $k$.  When $k=1$
 the proof is simple, since $v_1\neq 0$.  So we can assume that
 $\{v_1,\ldots,v_{k-1}\}$ is a linearly independent set. 
 
@@ -148,7 +148,7 @@ for $j=1,\ldots,k-1$.  Since all of the eigenvalues are
 distinct, $\lambda_j-\lambda_k\neq 0$ and $\alpha_j=0$ for
 $j=1,\ldots,k-1$. Substituting this information into
 \Ref{e:linindep} yields $\alpha_k v_k=0$.  Since $v_k\neq 0$, 
-$\alpha_k$ is also equal to zero.  \qed
+$\alpha_k$ is also equal to zero.  \end{proof}
 
 \begin{lemma}  \label{L:eigenv-diag}
 Let $A$ be an $n\times n$ matrix.  Then $A$ is real diagonalizable if
@@ -156,7 +156,7 @@ and only if $A$ has $n$ real linearly independent
 eigenvectors\index{eigenvector!linearly independent}.
 \end{lemma}  \index{real diagonalizable}
 
-\proof  Suppose that $A$ has $n$ linearly independent eigenvectors 
+\begin{proof}  Suppose that $A$ has $n$ linearly independent eigenvectors 
 $v_1,\ldots,v_n$.  Let $\lambda_1,\ldots,\lambda_n$ be the 
 corresponding eigenvalues of $A$; that is, $Av_j=\lambda_jv_j$.
 Let $S=(v_1|\cdots|v_n)$ be the $n\times n$ matrix whose columns are the 
@@ -197,7 +197,7 @@ Av_j = SDS\inv v_j = SDS\inv Se_j = SDe_j = \lambda_j Se_j = \lambda_jv_j.
 So $v_j$ is an eigenvector of $A$.  Since the matrix $S$ is invertible, its
 columns are linearly independent.  Since the columns of $S$ are $v_j$, the
 set $\{v_1,\ldots,v_n\}$ is a linearly independent set of eigenvectors of
-$A$, as claimed. \qed
+$A$, as claimed. \end{proof}
 
 
 
@@ -206,7 +206,7 @@ $\lambda_1,\ldots,\lambda_n$ be the distinct eigenvalues of
 $A$ and let $v_1,\ldots,v_n$ be the corresponding eigenvectors.
 Lemma~\ref{L:simpleeigen} implies that $\{v_1,\ldots,v_n\}$ is 
 a linearly independent set in $\R^n$ and therefore a basis.
-Lemma~\ref{L:eigenv-diag} implies that $A$ is diagonalizable.  \qed
+Lemma~\ref{L:eigenv-diag} implies that $A$ is diagonalizable.  \end{proof}
 
 \subsection*{Diagonalization Using MATLAB}
 \index{diagonalization!in \protect\Matlab}
@@ -722,7 +722,7 @@ $v_1,\ldots,v_q$ are linearly independent in the sense that if
 for (possibly complex) scalars $\alpha_j$, then $\alpha_j=0$ for all $j$.
 \end{lemma}
 
-\proof  The proof is identical in spirit with the proof of 
+\begin{proof}  The proof is identical in spirit with the proof of 
 Lemma~\ref{L:simpleeigen}.  Proceed by induction on $q$.  When $q=1$ the
 lemma is trivially valid, as $\alpha v=0$ for $v\neq 0$ implies that
 $\alpha=0$, even when $\alpha\in\C$ and $v\in\C^n$.  
@@ -743,7 +743,7 @@ By induction
 \]
 for $j=1,\ldots, q-1$.  Since the $\lambda_j$ are distinct it follows that 
 $\alpha_j=0$ for $j=1,\ldots, q-1$.  Hence \Ref{E:indepcomplx} implies that 
-$\alpha_qv_q = 0$; since $v_q\neq 0$, $\alpha_q=0$.  \qed
+$\alpha_qv_q = 0$; since $v_q\neq 0$, $\alpha_q=0$.  \end{proof}
 
 \begin{lemma}  \label{L:rlcmplx}
 Let $\mu_1,\ldots,\mu_k$ be distinct real eigenvalues of an $n\times n$ 
@@ -757,7 +757,7 @@ v_1,\ldots,v_k,w_1^r,w_1^i,\ldots,w_\ell^r,w_\ell^i
 in $\R^n$ are linearly independent.
 \end{lemma}
 
-\proof  Let $w=w^r+iw^i$ be a vector in $\C^n$ and let $\beta^r$ and
+\begin{proof}  Let $w=w^r+iw^i$ be a vector in $\C^n$ and let $\beta^r$ and
 $\beta^i$ be real scalars.  Then 
 \begin{equation}  \label{E:realcmplx}
 \beta^rw^r + \beta^iw^i = \beta w + \overline{\beta} \overline{w},
@@ -782,7 +782,7 @@ where $\beta_j = \frac{1}{2}(\beta_j^r-i\beta_j^i)$.  Since the eigenvalues
 \]
 are all distinct, we may apply Lemma~\ref{L:indepcomplx} to conclude that 
 $\alpha_j=0$ and $\beta_j=0$.  It follows that $\beta_j^r=0$ and
-$\beta_j^i=0$, as well, thus proving linear independence.  \qed. 
+$\beta_j^i=0$, as well, thus proving linear independence.  \end{proof}. 
 
 
 \noindent {\bf Proof of Theorem~\ref{T:Complexdiag}}:   Let $\mu_j$ for 
@@ -843,7 +843,7 @@ entries equal to zero.
 
 The same calculation is valid for the complex eigenvalues 
 $\nu_2,\ldots,\nu_\ell$.  Thus, $S\inv AS$ is real block diagonal, as 
-claimed.   \qed
+claimed.   \end{proof}
 
 
 \subsubsection*{\Matlab Calculations of Real Block Diagonal Form}
@@ -1065,7 +1065,7 @@ eigenvector  if
 {\rm nullity}$(N)=1$.
 \end{lemma}\index{nullity}
 
-\proof  In coordinates the equation $Nv=0$ is:
+\begin{proof}  In coordinates the equation $Nv=0$ is:
 \[
 \left(\begin{array}{cccccc} 0 & 1 & 0 & \cdots & 0 & 0\\
 	0 & 0 & 1 & \cdots & 0 & 0 \\
@@ -1079,7 +1079,7 @@ eigenvector  if
 	\end{array}\right) = 0.
 \]
 Thus $v_2 = v_3 = \cdots v_n = 0$, and the solutions are all multiples 
-of $e_1$.  Therefore, the nullity of $N$ is $1$.  \qed
+of $e_1$.  Therefore, the nullity of $N$ is $1$.  \end{proof}
 
 Note that we can express matrix multiplication by $N$ as
 \begin{equation}  \label{e:Ndef}
@@ -1113,7 +1113,7 @@ The algebraic multiplicity of an eigenvalue is greater than
 or equal to its geometric multiplicity.
 \end{lemma}
 
-\proof For ease of notation we prove this lemma only for real 
+\begin{proof} For ease of notation we prove this lemma only for real 
 eigenvalues, though the proof for complex eigenvalues is similar.  Let 
 $A$ be an $n\times n$ matrix and let $\lambda_0$ be a real eigenvalue 
 of $A$. Let $k$ be the geometric multiplicity of $\lambda_0$ and let 
@@ -1137,7 +1137,7 @@ Hence $\lambda_0$ appears as a root of $p_A(\lambda)$ at least
 $k$ times and the algebraic multiplicity of $\lambda_0$ 
 is greater than or equal to $k$.   The same proof works when $\lambda_0$ 
 is a complex eigenvalue --- but all vectors chosen must be complex rather
-than real.   \qed
+than real.   \end{proof}
 
 \subsubsection*{Deficiency in Eigenvectors with Complex Eigenvalues}
 
@@ -1164,7 +1164,7 @@ of the eigenvalue $\lambda_0$ in the $2n\times 2n$ matrix
 $\widehat{J}_n(\lambda_0)$ is $n$ and the geometric multiplicity is $1$.
 \end{lemma}
 
-\proof We begin by showing that the eigenvalues of
+\begin{proof} We begin by showing that the eigenvalues of
 $J=\widehat{J}_n(\lambda_0)$ are $\lambda_0$ and $\overline{\lambda_0}$, each 
 with algebraic multiplicity $n$.  The characteristic polynomial of $J$ is 
 $p_J(\lambda)=\det(J-\lambda I_{2n})$.  From Lemma~\ref{L:detblockdiag} of 
@@ -1203,7 +1203,7 @@ $v_1$ (up to a complex scalar multiple) satisfying
 Qv_1 = 0,
 \]
 it follows that the geometric multiplicity of $\lambda_0$ in the matrix
-$\widehat{J}_n(\lambda_0)$ equals $1$.  \qed
+$\widehat{J}_n(\lambda_0)$ equals $1$.  \end{proof}
 
 \begin{Def}  \label{D:jordanblock}
 The real matrices $J_n(\lambda_0)$ when $\lambda_0\in\R$ and 
@@ -1264,7 +1264,7 @@ $A_0 = A-\lambda_0 I_n$.  Let $k$ be the smallest integer for which
 for every interger $j>0$.
 \end{lemma}
 
-\proof We can prove the lemma by induction on $j$ if we can show that 
+\begin{proof} We can prove the lemma by induction on $j$ if we can show that 
 \[
 \nulls(A_0^{k+1})=\nulls(A_0^{k+2}).
 \]
@@ -1280,7 +1280,7 @@ so $Aw\in\nulls(A_0^{k+1})=\nulls(A_0^k)$, by \Ref{E:nullsequal}.  Therefore,
 \[
 A^{k+1}w = A^k(Aw) = 0,
 \]
-which verifies that $w\in\nulls(A_0^{k+1})$.  \qed
+which verifies that $w\in\nulls(A_0^{k+1})$.  \end{proof}
 
 Let $V_{\lambda_0}$ be the set of all generalized eigenvectors of $A$ with 
 eigenvalue $\lambda_0$.  Let $k$ be the smallest integer satisfying
@@ -1522,7 +1522,7 @@ p_A(A) = 0.
 \]
 \end{thm}
 
-\proof  Let $A$ be an $n\times n$ matrix.  The characteristic polynomial of 
+\begin{proof}  Let $A$ be an $n\times n$ matrix.  The characteristic polynomial of 
 $A$ is
 \[
 p_A(\lambda)=\det(A-\lambda I_n).
@@ -1566,7 +1566,7 @@ $(J_n(\lambda_0)-\lambda_0I_n)^n=0$.  If $\lambda_0$ is complex, then either
 repeat this calculation using the complex Jordan form or show by direct 
 calculation that $(A-\lambda_0I_n)(A-\overline{\lambda_0}I_n)$ is strictly 
 upper triangular when $A=\widehat{J}_n(\lambda_0)$ is the real Jordan form of 
-the Jordan block in \Ref{E:JnC}.  \qed
+the Jordan block in \Ref{E:JnC}.  \end{proof}
 
 
 
@@ -1932,7 +1932,7 @@ $A$ satisfy $|\lambda|<1$.  Then for every vector $v_0\in\R^n$
 \end{equation}
 \end{thm}
 
-\proof  Suppose that $A$ and $B$ are similar matrices; that is, $B=SAS\inv$
+\begin{proof}  Suppose that $A$ and $B$ are similar matrices; that is, $B=SAS\inv$
 for some invertible matrix $S$.  Then $B^k = SA^kS\inv$ and for any vector 
 $v_0\in\R^n$ \Ref{E:convergeto0} is valid if and only if
 \[
@@ -2026,7 +2026,7 @@ m(m-1)\cdots(m-j+1) \AND \lambda^m \AND \frac{1}{j!\lambda^j}N^j.
 The first term has polynomial growth to infinity dominated by $m^j$, the 
 second term decreases to zero geometrically, and the third term is 
 constant independent of $m$. The desired convergence to zero follows from 
-\Ref{E:PG}.  \qed
+\Ref{E:PG}.  \end{proof}
 
 \begin{Def}  The $n\times n$ matrix $A$ has a {\em dominant\/} eigenvalue 
 $\lambda_0>0$ if $\lambda_0$ is a simple eigenvalue and all other eigenvalues
@@ -2038,7 +2038,7 @@ $\lambda$ of $A$ satisfy $|\lambda|<\lambda_0$.
 Let $P$ be a Markov matrix. Then $1$ is a dominant eigenvalue of $P$.
 \end{thm}\index{matrix!Markov}\index{matrix!Markov}
 
-\proof  Recall from Chapter~\ref{chap:matrices}, Definition~\ref{D:Markov} 
+\begin{proof}  Recall from Chapter~\ref{chap:matrices}, Definition~\ref{D:Markov} 
 that a Markov matrix is a square matrix $P$ whose entries are nonnegative, 
 whose rows sum to $1$, and for which a power $P^k$ that has all positive 
 entries.  To prove this theorem we must show that all eigenvalues $\lambda$ 
@@ -2089,7 +2089,7 @@ It follows from \Ref{E:ineqM} that
 v_j= q_{j1}v_1 + \cdots + q_{jn}v_n.
 \]
 Since $q_{ji}>0$, this inequality can hold only if all of the $v_i$ are
-equal.  \qed
+equal.  \end{proof}
 
 
 \begin{thm} \label{T:convergetoeig}
@@ -2110,7 +2110,7 @@ where $V$ is the eigenvector of $P^t$ with eigenvalue $1$ such that the
 sum of the entries in $V$ is equal to the sum of the entries in $v_0$.
 \end{thm} \index{matrix!Markov}\index{matrix!Markov}
 
-\proof  (a) After a similarity transformation, if needed, 
+\begin{proof}  (a) After a similarity transformation, if needed, 
 we can assume that $Q$ is in 
 Jordan normal form.  More precisely, we can assume that 
 \[
@@ -2138,7 +2138,7 @@ dominant eigenvalue of $P^t$.  It follows from Part (a) that
 for some scalar $c$.  But Theorem~\ref{T:Markov} in 
 Chapter~\ref{chap:matrices} implies that the sum of the
 entries in $v_0$ equals the sum of the entries in $cV$ which, by assumption
-equals the sum of the entries in $V$.  Thus, $c=1$.   \qed
+equals the sum of the entries in $V$.  Thus, $c=1$.   \end{proof}
 
 
 
@@ -2178,7 +2178,7 @@ distinct eigenvalues of $A$, and let $A_j = A-\lambda_jI_n$.
 The linear mappings $A_i$ and $A_j$ commute.
 \end{lemma}
 
-\proof Just compute
+\begin{proof} Just compute
 \[
 A_iA_j = (A-\lambda_iI_n)(A-\lambda_jI_n)= A^2-\lambda_iA-\lambda_jA+
 \lambda_i\lambda_jI_n,
@@ -2188,7 +2188,7 @@ and
 A_jA_i = (A-\lambda_jI_n)(A-\lambda_iI_n)= A^2-\lambda_jA-\lambda_iA+
 \lambda_j\lambda_iI_n.
 \]
-So $A_iA_j=A_jA_i$, as claimed.  \qed
+So $A_iA_j=A_jA_i$, as claimed.  \end{proof}
 
 Let $V_j$ be the generalized eigenspace corresponding to eigenvalue 
 $\lambda_j$. 
@@ -2197,7 +2197,7 @@ $\lambda_j$.
 $A_i:V_j\to V_j$ is invertible when $i\neq j$.
 \end{lemma}
 
-\proof  Recall from Lemma~\ref{L:Jordan} that $V_j=\nulls(A_j^k)$ for some 
+\begin{proof}  Recall from Lemma~\ref{L:Jordan} that $V_j=\nulls(A_j^k)$ for some 
 $k\ge 1$.  Suppose that $v\in V_j$.  We first verify that $A_iv$ is also in 
 $V_j$.  Using Lemma~\ref{L:commute}, just compute 
 \[
@@ -2225,7 +2225,7 @@ Hence the nullity of $B$ is zero.  We conclude that
 \dim{\rm range}(B) = \dim(V_j).
 \]
 Thus, $B$ is invertible, since the domain and range of $B$ are the same
-space.  \qed
+space.  \end{proof}
 
 \begin{lemma}  \label{L:independentVj}
 Nonzero vectors taken from different generalized eigenspaces $V_j$ are 
@@ -2236,21 +2236,21 @@ w = w_1 + \cdots + w_s = 0,
 then $w_j=0$.  
 \end{lemma}
 
-\proof Let $V_j=\nulls(A_j^{k_j})$ for some integer $k_j$.  Let
+\begin{proof} Let $V_j=\nulls(A_j^{k_j})$ for some integer $k_j$.  Let
 $C=A_2^{k_2}\compose\cdots\compose A_s^{k_s}$. Then 
 \[
 0 = Cw = Cw_1,
 \]
 since $A_j^{k_j}w_j=0$ for $j=2,\ldots,s$.   But Lemma~\ref{L:Ajinvertible} 
 implies that $C|V_1$ is invertible.  Therefore, $w_1=0$.  Similarly, all of 
-the remaining $w_j$ have to vanish.  \qed
+the remaining $w_j$ have to vanish.  \end{proof}
 
 \begin{lemma}  \label{L:spanVj}
 Every vector in $\R^n$ is a linear combination of vectors in the generalized 
 eigenspaces $V_j$.
 \end{lemma}
 
-\proof  Let $W$ be the subspace
+\begin{proof}  Let $W$ be the subspace
 of $\R^n$ consisting of all vectors of the form $z_1+\cdots +z_s$ where 
 $z_j\in V_j$.  We need to verify that $W=\R^n$.  Suppose that $W$ is a 
 proper subspace.  Then choose a basis $w_1,\ldots,w_t$ of $W$ and extend
@@ -2262,7 +2262,7 @@ $[A]_{\cal W}$ has block form, that is,
 where $A_{22}$ is an $(n-t)\times(n-t)$ matrix.  The eigenvalues of $A_{22}$ 
 are eigenvalues of $A$.  Since all of the distinct eigenvalues and 
 eigenvectors of $A$ are accounted for in $W$ (that is, in $A_{11}$), we have 
-a contradiction.  So $W=\R^n$, as claimed.  \qed
+a contradiction.  So $W=\R^n$, as claimed.  \end{proof}
 
 \begin{lemma}  \label{L:basisunion}
 Let ${\cal V}_j$ be a basis for the generalized eigenspaces $V_j$ and let 
@@ -2270,7 +2270,7 @@ ${\cal V}$ be the union of the sets ${\cal V}_j$.  Then ${\cal V}$ is a basis
 for $\R^n$.
 \end{lemma}
 
-\proof  We first show that the vectors in ${\cal V}$ span $\R^n$.  It follows 
+\begin{proof}  We first show that the vectors in ${\cal V}$ span $\R^n$.  It follows 
 from Lemma~\ref{L:spanVj} that every vector in $\R^n$ is a linear combination
 of vectors in $V_j$.  But each vector in $V_j$ is a linear combination of
 vectors in ${\cal V}_j$.  Hence, the vectors in ${\cal V}$ span $\R^n$.
@@ -2288,7 +2288,7 @@ combinations $w_j$ must all be zero.  Hence, the vectors in ${\cal V}$ are
 linearly independent.
 
 Finally, it follows from Theorem~\ref{basis=span+indep} of 
-Chapter~\ref{C:vectorspaces} that ${\cal V}$ is a basis.  \qed
+Chapter~\ref{C:vectorspaces} that ${\cal V}$ is a basis.  \end{proof}
 
 \begin{lemma} \label{L:diagVj}
 In the basis ${\cal V}$ of $\R^n$ guaranteed by Lemma~\ref{L:basisunion}, the 
@@ -2300,11 +2300,11 @@ matrix $[A]_{\cal V}$ is block diagonal, that is,
 where all of the eigenvalues of $A_{jj}$ equal $\lambda_j$.
 \end{lemma}
 
-\proof  It follows from Lemma~\ref{L:commute} that $A:V_j\to V_j$.  Suppose
+\begin{proof}  It follows from Lemma~\ref{L:commute} that $A:V_j\to V_j$.  Suppose
 that $v_j\in {\cal V}_j$.   Then $Av_j$ is in $V_j$ and $Av_j$ is a linear
 combination of vectors in ${\cal V}_j$.   The block diagonalization of 
 $[A]_{\cal V}$ follows.  Since $V_j=\nulls(A_j^{k_j})$, it follows that all
-eigenvalues of $A_{jj}$ equal $\lambda_j$.   \qed
+eigenvalues of $A_{jj}$ equal $\lambda_j$.   \end{proof}
 
 Lemma~\ref{L:diagVj} implies that to prove the Jordan normal form theorem, 
 we must find a basis in which the matrix $A_{jj}$ is in Jordan normal form.  

@@ -1271,10 +1271,10 @@ Then $x(t)=x_0$ is an equilibrium \index{equilibrium} if and only
 if $g(x_0)=0$.
 \end{lemma}
 
-\proof Suppose that $x(t)=x_0$ is an equilibrium solution to
+\begin{proof} Suppose that $x(t)=x_0$ is an equilibrium solution to
 \Ref{aut}. Then $g(x_0)=0$, since $dx/dt = 0$.  Conversely,
 suppose $g(x_0)=0$.  Then $x(t)=x_0$ is a solution to \Ref{aut}.
-\qed
+\end{proof}
 
 We now return to {\sf pline} and the autonomous equation
 $g(x)=-0.8x$.  If we continue the integration by pushing {\sf
@@ -2937,11 +2937,11 @@ Then $\alpha v$ is also an eigenvector of $C$ with eigenvalue $\lambda$
 as long as $\alpha\neq 0$.
 \end{lemma}
 
-\proof By assumption, $Cv=\lambda v$ and $v$ is nonzero. Now calculate
+\begin{proof} By assumption, $Cv=\lambda v$ and $v$ is nonzero. Now calculate
 \[
 C(\alpha v) = \alpha Cv = \alpha\lambda v = \lambda(\alpha v).
 \]
-The lemma follows from the definition of eigenvector.  \qed
+The lemma follows from the definition of eigenvector.  \end{proof}
 
 It follows from \Ref{E:diffdir} and \Ref{e:eigendef} that if $v$ is
 an eigenvector of $C$ with eigenvalue $\lambda$, then
@@ -3368,7 +3368,7 @@ discriminant:
 \end{itemize}
 \end{thm} \index{eigenvalue}
 
-\proof We can find the roots of the characteristic polynomial
+\begin{proof} We can find the roots of the characteristic polynomial
 using the form of $p_A$ given in \Ref{e:invcharpoly} and the
 quadratic formula.  The roots are:
 \[
@@ -3378,7 +3378,7 @@ quadratic formula.  The roots are:
 The proof of the theorem now follows.  If $D>0$, then the
 eigenvalues of $A$ are real and distinct; if $D<0$, then
 eigenvalues are complex conjugates; and if $D=0$, then the
-eigenvalues are real and equal.  \qed
+eigenvalues are real and equal.  \end{proof}
 
 \subsection*{Eigenvectors}
 
@@ -3393,7 +3393,7 @@ Av = \lambda v.
 \end{lemma} \index{eigenvector}
 
 
-\proof  When the eigenvalue $\lambda$ is real we know that an
+\begin{proof}  When the eigenvalue $\lambda$ is real we know that an
 eigenvector $v\in\R^2$ exists.  However, when $\lambda$ is complex,
 then we must show that there is a complex eigenvector $v\in\C^2$,
 and this we have not yet done.  More precisely, we must show that
@@ -3421,7 +3421,7 @@ the matrix
 \]
 \arrayfinish
 This matrix is not row equivalent to the identity matrix since
-$p_A(\lambda)=0$.  \qed
+$p_A(\lambda)=0$.  \end{proof}
 
 \subsubsection*{An Example of a Matrix with Real Eigenvectors}
 
@@ -4299,13 +4299,13 @@ steps is the $i^{th}$ entry in the vector $V_k\equiv (P^t)^kV_0$.
 \end{enumerate}
 \end{prop}
 
-\proof Only minor changes in our discussion of the cat example proves parts
+\begin{proof} Only minor changes in our discussion of the cat example proves parts
 (a) and (b) of the proposition.
 
 (c) The assumption that it is possible to move from each site~$i$ to each
 site~$j$ in exactly $k$ steps means that the $(i,j)^{th}$ entry of $P^k$ is
 positive.  For that $k$, all of the entries of $P^k$ are positive.  In the
-cat example, all entries of $P^3$ are positive.  \qed
+cat example, all entries of $P^3$ are positive.  \end{proof}
 
 Proposition~\ref{T:Markoveasy} gives the answer to Question (A) and the first
 part of Question (B) for general Markov chains.
@@ -4327,7 +4327,7 @@ time steps is the same as the initial number.
 \end{enumerate}
 \end{thm}
 
-\proof  (a) By induction it is sufficient to show that $\#(V_1)=\#(V_0)$.  We
+\begin{proof}  (a) By induction it is sufficient to show that $\#(V_1)=\#(V_0)$.  We
 do
 this by calculating from $V_1 = P^tV_0$ that
 \begin{eqnarray*}
@@ -4351,7 +4351,7 @@ that $\#(V)=\#(V_0)$.
 P^tV = P^t(\lim_{k\to\infty}V_k) = P^t(\lim_{k\to\infty}(P^t)^kV_0)
 = \lim_{k\to\infty}(P^t)^{k+1}V_0 = \lim_{k\to\infty}(P^t)^kV_0 = V,
 \]
-which proves (c).   \qed
+which proves (c).   \end{proof}
 
 Theorem~\ref{T:Markov}(b) gives the answer to the second part of Question (B)
 for general Markov chains.  Next we discuss Question (C).
@@ -4385,7 +4385,7 @@ The verification of these statements is beyond the scope of this text.
 For those interested, the idea of the proof of the second part is roughly the
 following.  Fix $k$ large enough so that $(P^t)^k$ is close to $Q$.  Then when
 $N$ is large, much larger than $k$, the sum of the first $k$ terms in the
-series is nearly zero.  \qed
+series is nearly zero.  \end{proof}
 
 
 Theorem~\ref{T:ergodic} gives the answer to Question (C) for a general Markov

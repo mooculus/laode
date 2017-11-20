@@ -2049,7 +2049,7 @@ Every matrix is row equivalent \index{row!equivalent} to a matrix
 in reduced echelon form.
 \end{thm}
 
-\proof Let $A$ be a matrix.  Proposition~\ref{P:echform} states
+\begin{proof} Let $A$ be a matrix.  Proposition~\ref{P:echform} states
 that we can transform $A$ by elementary row operations to a matrix
 $E$ in echelon form.  Next we transform $E$ into reduced echelon
 form by some additional elementary row operations, as follows.
@@ -2063,7 +2063,7 @@ the process of back substitution.)
 
 Again we proceed inductively by choosing the pivot in the
 $(\ell-1)^{st}$ row, which is $1$, and zeroing out all entries
-above that pivot using elementary row operations.  \qed
+above that pivot using elementary row operations.  \end{proof}
 
 \subsection*{Reduced Echelon Form in \Matlab}
 
@@ -2121,7 +2121,7 @@ parameters.
 \end{enumerate} \index{inconsistent} \index{consistent}
 \end{thm}
 
-\proof  Suppose that the last nonzero row in $E$ has its
+\begin{proof}  Suppose that the last nonzero row in $E$ has its
 pivot in the $(n+1)^{st}$ column. Then the corresponding
 equation is:
 \[
@@ -2158,7 +2158,7 @@ $x_{\ell+1},\ldots,x_n$ uniquely determines values of
 $x_1,\ldots,x_\ell$ so that $x_1,\ldots,x_n$ is a solution to
 this system.  In particular, the system is consistent, so (a) is
 proved; and the set of all solutions is parameterized by
-$n-\ell$ numbers, so (b) is proved.  \qed
+$n-\ell$ numbers, so (b) is proved.  \end{proof}
 
 \subsubsection*{Two Examples Illustrating Theorem~\ref{number}}
 
@@ -2197,14 +2197,14 @@ linear equations whose augmented matrix is $(A|0)$ has a nonzero
 solution.
 \end{cor}
 
-\proof Perform elementary row operations on the augmented matrix $(A|0)$
+\begin{proof} Perform elementary row operations on the augmented matrix $(A|0)$
 to arrive at the reduced echelon form matrix $(E|0)$.  Since the zero
 vector is a solution, the associated system of equations is consistent.
 Now the number of nonzero rows $\ell$ in $(E|0)$ is less than or equal to
 the number of rows $m$ in $E$.  By assumption $m<n$ and hence $\ell<n$.
 It follows from Theorem~\ref{number} that solutions to the linear system
 are parametrized by $n-\ell \ge 1$ parameters and that there are nonzero
-solutions.   \qed
+solutions.   \end{proof}
 
 Recall that two $m\times n$ matrices are row equivalent if one
 can be transformed to the other by elementary row operations.
@@ -2216,7 +2216,7 @@ if and only if the system of linear equations whose augmented
 matrix is $(A|b)$ has a unique solution.
 \end{cor} \index{matrix!identity}  \index{matrix!augmented}
 
-\proof	Suppose that $A$ is row equivalent to $I_n$.  Then, by using
+\begin{proof}	Suppose that $A$ is row equivalent to $I_n$.  Then, by using
 the same sequence of elementary row operations, it follows that
 the $n\times (n+1)$ augmented matrix $(A|b)$ is row equivalent
 to $(I_n|c)$ for some vector $c\in\R^n$.  The system of linear
@@ -2249,7 +2249,7 @@ $(n+1)^{st}$.  It follows that the reduced echelon matrix
 $E=(I_n|c)$ for some $c\in\R^n$.  Since $(A|b)$ is row
 equivalent to $(I_n|c)$, it follows, by using the same sequence
 of elementary row operations, that $A$ is row equivalent to
-$I_n$.  \qed
+$I_n$.  \end{proof}
 
 \subsection*{Uniqueness of Reduced Echelon Form and Rank}
 
@@ -2611,11 +2611,11 @@ solution to the system corresponding to the augmented matrix
 $(A|b)$ and this solution has rational numbers as entries.
 \end{thm}
 
-\proof Since $A$ is row equivalent to $I_n$,
+\begin{proof} Since $A$ is row equivalent to $I_n$,
 Corollary~\ref{consistent} states that this linear system
 has a unique solution $x$.  As we have just discussed, solutions
 are found using elementary row operations --- hence the entries
-of $x$ are rational numbers.  \qed
+of $x$ are rational numbers.  \end{proof}
 
 
 \subsection*{Complex Numbers} \index{complex numbers}
@@ -2874,7 +2874,7 @@ x_{\ell+1}=0,\; x_{\ell+2}=1,\; x_{\ell+3}=\cdots= x_n=0
 through
 \[
 x_{\ell+1}=\cdots = x_{n-1}=0,\; x_n=1.
-\]  \qed
+\]  \end{proof}
 
 
 

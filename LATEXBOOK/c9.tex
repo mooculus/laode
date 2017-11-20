@@ -116,7 +116,7 @@ basis for $V$ and let $\{w_1,\ldots,w_n\}$ be $n$ vectors in $W$.
 Then there exists a unique linear map $L:V\to W$ such that $L(v_i)=w_i$.
 \end{thm}\index{linear!mapping!construction}
 
-\proof Let $v\in V$ be a vector.  Since $\Span\{v_1,\ldots,v_n\}=V$, we may
+\begin{proof} Let $v\in V$ be a vector.  Since $\Span\{v_1,\ldots,v_n\}=V$, we may
 write $v$ as
 \[
 v = \alpha_1v_1 + \cdots + \alpha_nv_n,
@@ -172,7 +172,7 @@ L(v) & = & L(\alpha_1v_1+\ldots +\alpha_nv_n)\\
 & = & M(\alpha_1v_1 + \cdots +\alpha_nv_n)\\
 & = & M(v).
 \end{eqnarray*}
-Thus $L=M$ and the linear mapping is uniquely defined.  \qed
+Thus $L=M$ and the linear mapping is uniquely defined.  \end{proof}
 
 
 There are two assertions made in Theorem~\ref{L:linmapfrombasis}.
@@ -287,8 +287,8 @@ Let $U,V,W$ be vector spaces and $L:V\to W$ and $M:U\to V$ be linear maps.
 Then $L\compose M :U\to W$ is linear.
 \end{lemma}\index{composition!of linear mappings}
 
-\proof The proof of Lemma~\ref{L:compose} is identical to that of
-Chapter~\ref{chap:matrices}, Lemma~\ref{complin}. \qed
+\begin{proof} The proof of Lemma~\ref{L:compose} is identical to that of
+Chapter~\ref{chap:matrices}, Lemma~\ref{complin}. \end{proof}
 
 A linear map $L:V\to W$ is {\em invertible\/} \index{invertible} if there
 exists a linear map $M:W\to V$ such that $L\compose M:W\to W$ is the identity
@@ -301,7 +301,7 @@ Then $L$ is invertible
 if and only if $w_1,\ldots,w_n$ is a basis for $W$ where $w_j=L(v_j)$.
 \end{thm}
 
-\proof  If $w_1,\ldots,w_n$ is a basis for $W$, then use
+\begin{proof}  If $w_1,\ldots,w_n$ is a basis for $W$, then use
 Theorem~\ref{L:linmapfrombasis} to define a linear map $M:W\to V$ by
 $M(w_j)=v_j$.  Note that
 \[
@@ -336,7 +336,7 @@ Applying $L$ to both sides of this equation yields
 \[
 w = L\compose M(w) = \beta_1w_1+\cdots+\beta_nw_n.
 \]
-Therefore, the $w_j$ span $W$.  \qed
+Therefore, the $w_j$ span $W$.  \end{proof}
 
 \begin{cor}
 Let $V$ and $W$ be finite dimensional vector spaces.  Then there exists
@@ -344,7 +344,7 @@ an invertible\index{invertible} linear map $L:V\to W$
 if and only if $\dim(V)=\dim(W)$.
 \end{cor}
 
-\proof  Suppose that $L:V\to W$ is an invertible linear map.  Let
+\begin{proof}  Suppose that $L:V\to W$ is an invertible linear map.  Let
 $v_1,\ldots,v_n$ be a basis for $V$ where $n=\dim(V)$.  Then
 Theorem~\ref{T:invertbasis} implies that $L(v_1),\ldots,L(v_n)$ is a basis
 for $W$ and $\dim(W)=n=\dim(V)$.
@@ -352,7 +352,7 @@ for $W$ and $\dim(W)=n=\dim(V)$.
 Conversely, suppose that $\dim(V)=\dim(W)=n$.  Let $v_1,\ldots,v_n$ be a
 basis for $V$ and let $w_1,\ldots,w_n$ be a basis for $W$.  Using
 Theorem~\ref{L:linmapfrombasis} define the linear map $L:V\to W$ by
-$L(v_j)=w_j$.  Theorem~\ref{T:invertbasis} states that $L$ is invertible. \qed
+$L(v_j)=w_j$.  Theorem~\ref{T:invertbasis} states that $L$ is invertible. \end{proof}
 
 \EXER
 
@@ -468,7 +468,7 @@ Let $L:V\to W$ be a linear map between vector spaces.  Then the null space of
 $L$ is a subspace of $V$ and the range of $L$ is a subspace of $W$.
 \end{lemma}\index{subspace}
 
-\proof  The proof that the null space of $L$ is a subspace of $V$ follows
+\begin{proof}  The proof that the null space of $L$ is a subspace of $V$ follows
 from linearity in precisely the same way that the null space of an
 $m\times n$ matrix is a subspace of $\R^n$.  That is, if $v_1$ and $v_2$ are
 in the null space of $L$, then
@@ -493,7 +493,7 @@ Therefore, $w_1+w_2$ is in the range of $L$.  Similarly,
 L(cv_1) = cL(v_1) = cw_1.
 \]
 So the range of $L$ is closed under addition and scalar multiplication and is
-a subspace of $W$.  \qed
+a subspace of $W$.  \end{proof}
 
 Suppose that $A$ is an $m\times n$ matrix and $L_A:\R^n\to\R^m$ is the
 associated linear map.  Then the null space of $L_A$ is precisely the null
@@ -516,7 +516,7 @@ $L:V\to W$ be a linear map.  Then
 \]\index{dimension}\index{null space} \index{range}
 \end{thm}
 
-\proof   Since $V$ is finite dimensional, the null space of $L$ is finite 
+\begin{proof}   Since $V$ is finite dimensional, the null space of $L$ is finite 
 dimensional (since the null space is a subspace of $V$) and the range of $L$ 
 is finite dimensional (since it is spanned by the vectors $L(v_j)$ where 
 $v_1,\ldots,v_n$ is a basis for $V$).  Let $u_1,\ldots,u_k$ be a basis for 
@@ -561,7 +561,7 @@ is in the null space of $L$.  Hence there exist scalars $\alpha_j$ such that
 u = \alpha_1u_1+\cdots+\alpha_ku_k.
 \]
 Thus, $v$ is in the span of $u_1,\ldots,u_k,y_1,\ldots,y_\ell$, as desired.
-\qed
+\end{proof}
 
 \subsection*{Row Rank and Column Rank}
 
@@ -727,7 +727,7 @@ v = \alpha_1w_1 +\cdots + \alpha_nw_n,
 for uniquely defined scalars $\alpha_1,\ldots,\alpha_n$.
 \end{lemma}
 
-\proof  Since ${\cal W}$ is a basis, Theorem~\ref{basis=span+indep} of
+\begin{proof}  Since ${\cal W}$ is a basis, Theorem~\ref{basis=span+indep} of
 Chapter~\ref{C:vectorspaces} implies that the vectors $w_1,\ldots,w_n$ span
 $V$ and are linearly independent.  Therefore, we can write $v$ in $V$ as a
 linear combination of vectors in ${\cal B}$.   That is, there are scalars
@@ -746,7 +746,7 @@ for scalars $\beta_1,\ldots,\beta_n$.  Then
 (\alpha_1-\beta_1)w_1 + \cdots + (\alpha_n-\beta_n)w_n = 0.
 \]
 Since the vectors in ${\cal W}$ are linearly independent, it
-follows that $\alpha_j=\beta_j$ for all $j$.  \qed
+follows that $\alpha_j=\beta_j$ for all $j$.  \end{proof}
 
 \begin{Def}  \label{D:coordinates}
 Let ${\cal W} = \{w_1,\ldots,w_n\}$ be a basis in a vector space $V$.
@@ -818,7 +818,7 @@ The coordinate vector of $L(v)$ relative to the basis ${\cal W}$ is
 \end{equation}
 \end{lemma}  \index{coordinates}
 
-\proof The process of choosing the coordinates of vectors relative to
+\begin{proof} The process of choosing the coordinates of vectors relative to
 a given basis ${\cal W} =\{w_1,\ldots,w_n\}$ of a vector space $V$
 is itself linear.  Indeed,
 \begin{eqnarray*}
@@ -861,7 +861,7 @@ hand side of \Ref{e:matrixofL} is:
 which is just the $j^{th}$ column of $[L]_{\cal W}$.  The left hand side of
 \Ref{e:matrixofL} is the vector $[L(w_j)]_{\cal W}$, which by definition is
 also the $j^{th}$ column of $[L]_{\cal W}$
-(see Definition~\ref{D:matrixincoord}).    \qed
+(see Definition~\ref{D:matrixincoord}).    \end{proof}
 
 
 \subsection*{Computations of Vectors in Coordinates in $\R^n$}
@@ -1094,7 +1094,7 @@ Then ${\cal W}=\{w_1,w_2\}$ is a basis and
 \end{itemize}
 \end{thm}
 
-\proof
+\begin{proof}
 The verification of (a) was discussed in \Ref{e:diagcoord}.  The
 verification of (b) follows from Chapter~\ref{Chap:Planar},
 \Ref{e:complexcoord} on equating $w_1$ with $v$ and $w_2$ with $w$.
@@ -1102,7 +1102,7 @@ The verification of (c) follows directly from \Ref{e:Lw=lw+v} as
 \[
 [L(w_1)]_{\cal W} = \lambda e_1 \AND [L(w_2)]_{\cal W} = e_1+\lambda e_2.
 \]
-\qed
+\end{proof}
 
 
 
@@ -1326,7 +1326,7 @@ z_n & = & c_{1n}w_1 + \cdots + c_{nn}w_n \nonumber
 for scalars $c_{ij}$.
 \end{thm}
 
-\proof
+\begin{proof}
 We can restate \Ref{e:wtoz} as
 \[
 [z_j]_{\cal W} = \left(\begin{array}{c} c_{1j} \\ \vdots \\c_{nj}
@@ -1343,7 +1343,7 @@ $v\in V$, it must satisfy this relation for $v=z_j$.  Therefore,
 [z_j]_{\cal W} = C_{{\cal W}{\cal Z}}[z_j]_{\cal Z} = C_{{\cal W}{\cal Z}}e_j.
 \]
 It follows that $[z_j]_{\cal W}$ is the $j^{th}$ column of
-$C_{{\cal W}{\cal Z}}$, which proves the theorem.  \qed
+$C_{{\cal W}{\cal Z}}$, which proves the theorem.  \end{proof}
 
 \subsubsection*{A Formula for $C_{\cal WZ}$ when $V=\R^n$}
 
@@ -1464,7 +1464,7 @@ are similar \index{similar} matrices.  More precisely,
 \end{equation}
 \end{thm}
 
-\proof  For every $v\in\R^n$ we compute
+\begin{proof}  For every $v\in\R^n$ we compute
 \begin{eqnarray*}
 C_{{\cal Z}{\cal W}}[L]_{\cal W}[v]_{\cal W} & = &
 C_{{\cal Z}{\cal W}}[L(v)]_{\cal W} \\
@@ -1476,7 +1476,7 @@ Since this computation holds for every $[v]_{\cal W}$, it follows that
 \[
 C_{{\cal Z}{\cal W}}[L]_{\cal W} = [L]_{\cal Z} C_{{\cal Z}{\cal W}}.
 \]
-Thus \Ref{e:matrixcoord} is valid.  \qed
+Thus \Ref{e:matrixcoord} is valid.  \end{proof}
 
 
 

@@ -63,7 +63,7 @@ Nonzero orthogonal vectors are
 linearly independent\index{linearly!independent}.
 \end{lemma}
 
-\proof  Let $v_1,\ldots,v_k$ be a set of nonzero orthogonal vectors in $\R^n$
+\begin{proof}  Let $v_1,\ldots,v_k$ be a set of nonzero orthogonal vectors in $\R^n$
 and suppose that
 \[
 \alpha_1v_1 + \cdots + \alpha_kv_k = 0.
@@ -74,15 +74,15 @@ $v_i\cdot v_j = 0$ for $i\not= j$,
 \alpha_jv_j\cdot v_j = \alpha_1v_1\cdot v_j + \cdots + \alpha_kv_k\cdot v_j =
 (\alpha_1v_1 + \cdots +\alpha_kv_k)\cdot v_j = 0\cdot v_j = 0.
 \]
-Since $v_j\cdot v_j = ||v_j||^2> 0$, it follows that $\alpha_j=0$.  \qed
+Since $v_j\cdot v_j = ||v_j||^2> 0$, it follows that $\alpha_j=0$.  \end{proof}
 
 \begin{cor}
 A set of $n$ nonzero orthogonal vectors in $\R^n$ is a basis.
 \end{cor}
 
-\proof  Lemma~\ref{L:orthog} implies that the $n$ vectors are linearly
+\begin{proof}  Lemma~\ref{L:orthog} implies that the $n$ vectors are linearly
 independent, and Chapter~\ref{C:vectorspaces}, Corollary~\ref{C:dim=n} states
-that $n$ linearly independent vectors in $\R^n$ form a basis.  \qed
+that $n$ linearly independent vectors in $\R^n$ form a basis.  \end{proof}
 
 Next we discuss how to find coordinates of a vector in an
 {\em orthonormal basis}\index{basis!orthonormal},
@@ -101,7 +101,7 @@ where
 \]
 \end{thm}
 
-\proof  Since $\{v_1,\ldots,v_k\}$ is a basis of $V$, we can write
+\begin{proof}  Since $\{v_1,\ldots,v_k\}$ is a basis of $V$, we can write
 \[
 v = \alpha_1v_1 + \cdots + \alpha_kv_k
 \]
@@ -109,7 +109,7 @@ for some scalars $\alpha_j$.  It follows that
 \[
 v\cdot v_j = (\alpha_1v_1 + \cdots + \alpha_kv_k)\cdot v_j = \alpha_j,
 \]
-as claimed.   \qed
+as claimed.   \end{proof}
 
 \subsubsection{An Example in $\R^3$}
 
@@ -300,14 +300,14 @@ The vector $w_0\in W$ is the closest vector to $x_0\in\R^n$ if the vector
 $x_0-w_0$ is orthogonal to every vector in $W$. (See Figure~\ref{F:nearest}.)
 \end{lemma}
 
-\proof  Write $x_0-w=z_1+z_2$ where $z_1=x_0-w_0$ and $z_2=w_0-w$.  By 
+\begin{proof}  Write $x_0-w=z_1+z_2$ where $z_1=x_0-w_0$ and $z_2=w_0-w$.  By 
 assumption, $x_0-w_0$ is orthogonal to every vector in $W$; so $z_1$ and 
 $z_2\in W$ are orthogonal.  It follows from \Ref{E:LP} that
 \[
 ||x_0-w||^2 = ||x_0-w_0||^2 + ||w_0-w||^2.
 \]
 Since $||w_0-w||^2\ge 0$, \Ref{E:leastsq} is valid, and $w_0$ is the vector 
-nearest to $x_0$ in $W$. \qed
+nearest to $x_0$ in $W$. \end{proof}
 
 \subsubsection*{Least Squares Distance to a Line}
 \index{least squares!distance to a line}
@@ -368,7 +368,7 @@ where $A=(w_1|\cdots|w_k)$ is the $n\times k$ matrix whose columns are the
 basis vectors of $W$.
 \end{thm}
 
-\proof Observe that the vector $x_0-w_0$ is orthogonal to every vector in $W$
+\begin{proof} Observe that the vector $x_0-w_0$ is orthogonal to every vector in $W$
 precisely when $x_0-w_0$ is orthogonal to each basis vector $w_j$.  It
 follows from Lemma~\ref{L:orthoLSA} that $w_0$ is the closest vector to $x_0$
 in $W$ if
@@ -412,7 +412,7 @@ z_1w_1 + \cdots + z_kw_k = 0.
 \]
 Since the $w_j$ are linearly independent, it follows that the $z_j=0$.  In
 particular, $z=0$.  Since $A^tA$ is invertible, \Ref{E:nearestvector} is
-valid, and the theorem is proved. \qed
+valid, and the theorem is proved. \end{proof}
 
 
 \subsection*{Gram-Schmidt Orthonormalization Process}
@@ -498,7 +498,7 @@ Then $v_1,\ldots,v_k$ is an orthonormal basis of $W$ such that for each $j$
 \end{thm}\index{Gram-Schmidt orthonormalization}
 \index{basis!orthonormal}
 
-\proof  We assume that we have constructed orthonormal vectors $v_1,\ldots,v_j$
+\begin{proof}  We assume that we have constructed orthonormal vectors $v_1,\ldots,v_j$
 such that
 \[
 \Span\{v_1,\ldots,v_j\} = \Span\{w_1,\ldots,w_j\}.
@@ -528,7 +528,7 @@ w_{j+1}\cdot v_k -  w_{j+1}\cdot v_k = 0.
 \]
 Define $v_{j+1}$ as in
 \Ref{eq:gsnormal}.  It follows that $v_1,\ldots,v_{j+1}$ are orthonormal and
-that each vector is a linear combination of $w_1,\ldots,w_{j+1}$.  \qed
+that each vector is a linear combination of $w_1,\ldots,w_{j+1}$.  \end{proof}
 
 
 \subsubsection*{An Example of Orthonormalization}
@@ -1211,7 +1211,7 @@ $Av=\lambda v$ we can use \Ref{e:symminv} to compute
 = \overline{\lambda} \langle v,v \rangle.
 \]
 Since $\langle v,v \rangle = ||v||^2 > 0$, it follows that
-$\lambda=\overline{\lambda}$ and $\lambda$ is real.  \qed
+$\lambda=\overline{\lambda}$ and $\lambda$ is real.  \end{proof}
 
 
 \noindent{\bf Proof of Theorem~\ref{T:symmetricmat}(b):}
@@ -1270,7 +1270,7 @@ convenience let $z_1=e_1$ and compute
 \langle z_i,z_j \rangle,
 \]
 since $PP^t= I_n$.  Thus the vectors $v_j$ form an orthonormal basis since
-the vectors $z_j$ form an orthonormal basis.  \qed
+the vectors $z_j$ form an orthonormal basis.  \end{proof}
 
 
 
@@ -1365,7 +1365,7 @@ Let $Q$ be an $n\times n$ matrix.  Then
 an orthogonal matrix.
 \end{itemize}
 \end{lemma}
-\proof  (a) Let $Q=(v_1|\cdots|v_n)$.  Since $Q$ is orthogonal, the $v_j$
+\begin{proof}  (a) Let $Q=(v_1|\cdots|v_n)$.  Since $Q$ is orthogonal, the $v_j$
 form an orthonormal basis.  By direct computation note that
 $Q^tQ=\{(v_i\cdot v_j)\}=I_n$, since the $v_j$ are orthonormal. Note that
 (b) is simply a restatement of (a).
@@ -1374,7 +1374,7 @@ $Q^tQ=\{(v_i\cdot v_j)\}=I_n$, since the $v_j$ are orthonormal. Note that
 \[
 (Q_1Q_2)^t(Q_1Q_2) = Q_2^tQ_1^tQ_1Q_2 = Q_2^tQ_2 = I_n,
 \]
-thus proving (c).  \qed
+thus proving (c).  \end{proof}
 
 The previous lemma together with \Ref{e:orthosym} in the proof of
 Theorem~\ref{T:symmetricmat}(b) lead to the following result:
@@ -1412,7 +1412,7 @@ to $u$.  Then the Householder matrix $H$ is a
 reflection\index{reflection} across $V$ and is orthogonal.
 \end{lemma}
 
-\proof
+\begin{proof}
 By definition every vector $v\in V$ satisfies $u^tv=u\cdot v =0$.  Therefore,
 \[
 Hv = v - \frac{2}{u^tu} u u^tv = v,
@@ -1430,7 +1430,7 @@ To show that $H$ is orthogonal, we first calculate
 H^t = I_n^t - \frac{2}{u^tu} (uu^t)^t= I_n - \frac{2}{u^tu}uu^t = H.
 \]
 Therefore $I_n = H H = HH^t$ and $H^t=H\inv$.  Now apply
-Lemma~\ref{lem:orthprop}(b).   \qed
+Lemma~\ref{lem:orthprop}(b).   \end{proof}
 
 \subsection*{$QR$ Decompositions}
 
@@ -1541,7 +1541,7 @@ Hz = \left(\begin{array}{c} z_1\\  \vdots\\z_{j-1}\\ r \\ 0\\ \vdots\\ 0
 holds for the Householder matrix $H=I_n-\frac{2}{u^tu}uu^t$.
 \end{prop}
 
-\proof  Begin by computing
+\begin{proof}  Begin by computing
 \begin{eqnarray*}
 u^t z &=& u_j z_j + z_{j+1}^2 + \cdots + z_n^2 \\
 & = & z_j^2 -rz_j +  z_{j+1}^2 + \cdots + z_n^2 \\
@@ -1560,7 +1560,7 @@ So, compute
 \[
 Hz = \left(I_n - \frac{2}{u^tu} u u^t\right)z = z -\frac{2u^t z}{u^tu} u = z-u
 \]
-to see that \Ref{eq:Housej} is valid.  \qed
+to see that \Ref{eq:Housej} is valid.  \end{proof}
 
 An inspection of the proof of Proposition~\ref{prop:Housej} shows that we
 could have chosen
