@@ -116,51 +116,109 @@ block diagonal matrix with one $2\times 2$ block and one $3\times 3$ block is:
 \noindent In Exercises~\ref{c1.1.01a} -- \ref{c1.1.01e} decide whether or
 not the given matrix is symmetric.
 \begin{exercise} \label{c1.1.01a}
- $\mattwo{2}{1}{1}{5}$.
+  $\mattwo{2}{1}{1}{5}$.
+  \begin{multipleChoice}
+    \choice[correct]{The matrix is symmetric.}
+    \choice{The matrix is not symmetric.}    
+  \end{multipleChoice}
 \end{exercise}
 \begin{exercise} \label{c1.1.01b}
- $\mattwo{1}{1}{0}{-5}$.
+  $\mattwo{1}{1}{0}{-5}$.
+  \begin{multipleChoice}
+    \choice{The matrix is symmetric.}
+    \choice[correct]{The matrix is not symmetric.}    
+  \end{multipleChoice}  
 \end{exercise}
 \begin{exercise} \label{c1.1.01c}
- $(3)$.
+  $(3)$.
+  \begin{multipleChoice}
+    \choice[correct]{The matrix is symmetric.}
+    \choice{The matrix is not symmetric.}    
+  \end{multipleChoice}  
 \end{exercise}
 \begin{exercise} \label{c1.1.01d}
- $\left( \begin{array}{rr}
- 3 & 4 \\
- 4 & 3 \\
- 0 & 1 \end{array} \right)$.
+  $\left( \begin{array}{rr}
+            3 & 4 \\
+            4 & 3 \\
+            0 & 1 \end{array} \right)$.
+  \begin{multipleChoice}
+    \choice{The matrix is symmetric.}
+    \choice[correct]{The matrix is not symmetric.}    
+  \end{multipleChoice}          
 \end{exercise}
 \begin{exercise} \label{c1.1.01e}
  $\left( \begin{array}{rrr}
  3 & 4 & -1\\
  4 & 3 &  1\\
- -1 & 1 & 10\end{array} \right)$.
+           -1 & 1 & 10\end{array} \right)$.
+  \begin{multipleChoice}
+    \choice[correct]{The matrix is symmetric.}
+    \choice{The matrix is not symmetric.}    
+  \end{multipleChoice}
+       
 \end{exercise}
 
-\noindent In Exercises~\ref{c1.1.02a} -- \ref{c1.1.02e} decide which of
-the given matrices are upper triangular and which are strictly upper
-triangular.
+\noindent In Exercises~\ref{c1.1.02a} -- \ref{c1.1.02e} decide which
+of the given matrices are upper (or lower) triangular and which are
+strictly upper (or lower) triangular.
 
 \begin{exercise} \label{c1.1.02a}
- $\mattwo{2}{0}{-1}{-2}$.
+  $\mattwo{2}{0}{-1}{-2}$.
+  \begin{multipleChoice}
+    \choice[correct]{The matrix is lower triangular.}
+    \choice{The matrix is strictly lower triangular.}
+    \choice{The matrix is upper triangular.}
+    \choice{The matrix is strictly upper triangular.}
+    \choice{None of the above.}
+  \end{multipleChoice}  
 \end{exercise}
 \begin{exercise} \label{c1.1.02b}
- $\mattwo{0}{4}{0}{0}$.
+  $\mattwo{0}{4}{0}{0}$.
+  \begin{multipleChoice}
+    \choice{The matrix is lower triangular.}
+    \choice{The matrix is strictly lower triangular.}
+    \choice{The matrix is upper triangular.}
+    \choice[correct]{The matrix is strictly upper triangular.}
+    \choice{None of the above.}    
+  \end{multipleChoice}
 \end{exercise}
 \begin{exercise} \label{c1.1.02c}
- $(2)$.
+  $(2)$.
+  \begin{multipleChoice}
+    \choice[correct]{The matrix is upper triangular.}
+    \choice{The matrix is strictly upper triangular.}
+  \end{multipleChoice}  
 \end{exercise}
 \begin{exercise} \label{c1.1.02d}
- $\left( \begin{array}{rr}
- 3 & 2 \\
- 0 & 1 \\
- 0 & 0 \end{array} \right)$.
+  $\left( \begin{array}{rr}
+            3 & 2 \\
+            0 & 1 \\
+            0 & 0 \end{array} \right)$.
+        \begin{multipleChoice}
+          \choice{The matrix is lower triangular.}
+          \choice{The matrix is strictly lower triangular.}
+          \choice{The matrix is upper triangular.}
+          \choice{The matrix is strictly upper triangular.}
+          \choice[correct]{None of the above.}    
+        \end{multipleChoice}
+        \begin{feedback}
+          The matrix is not upper or lower triangular because a triangular
+          matrix must be square.          
+        \end{feedback}
 \end{exercise}
 \begin{exercise} \label{c1.1.02e}
- $\left( \begin{array}{rrr}
- 0 & 2 & -4\\
- 0 & 7 & -2\\
- 0 & 0 & 0\end{array} \right)$.
+  $\left( \begin{array}{rrr}
+            0 & 2 & -4\\
+            0 & 7 & -2\\
+            0 & 0 & 0\end{array} \right)$.
+        \begin{multipleChoice}
+          \choice{The matrix is lower triangular.}
+          \choice{The matrix is strictly lower triangular.}
+          \choice[correct]{The matrix is upper triangular.}
+          \choice{The matrix is strictly upper triangular.}
+          \choice{None of the above.}    
+        \end{multipleChoice}
+       
 \end{exercise}
 
 
@@ -170,38 +228,68 @@ needed to specify each $2\times 2$ diagonal matrix.  In
 Exercises~\ref{c1.3.1a} -- \ref{c1.3.3c}, how many unknown real numbers
 are needed to specify each of the given matrices:
 \begin{exercise}  \label{c1.3.1a}
-An upper triangular $2\times 2$ matrix?
+An upper triangular $2\times 2$ matrix? \begin{prompt}$\answer{3}$\end{prompt}
 \end{exercise}
 \begin{exercise}  \label{c1.3.1b}
-A symmetric $2\times 2$ matrix?
+A symmetric $2\times 2$ matrix? \begin{prompt}$\answer{3}$\end{prompt}
 \end{exercise}
 \begin{exercise}  \label{c1.3.2}
-An $m\times n$ matrix?
+An $m\times n$ matrix? \begin{prompt}$\answer{mn}$\end{prompt}
 \end{exercise}
 \begin{exercise}  \label{c1.3.3a}
-A diagonal $n\times n$ matrix?
+A diagonal $n\times n$ matrix? \begin{prompt}$\answer{n}$\end{prompt}
 \end{exercise}
 \begin{exercise}  \label{c1.3.3b}
-An upper triangular $n\times n$ matrix?   {\bf Hint:}  Recall the
-summation formula:
-\[
-1 + 2 + \cdots + k = \frac{k(k+1)}{2}.
-\]
+  An upper triangular $n\times n$ matrix? \begin{prompt}$\answer{n(n+1)/2}$\end{prompt}
+  \begin{hint}Recall the
+    summation formula:
+    \[
+      1 + 2 + \cdots + k = \frac{k(k+1)}{2}.
+    \]
+  \end{hint}
 \end{exercise}
 \begin{exercise}  \label{c1.3.3c}
-A symmetric $n\times n$ matrix? 
+A symmetric $n\times n$ matrix?   \begin{prompt}$\answer{n(n+1)/2}$\end{prompt}
 \end{exercise}
 
 \noindent In each of Exercises~\ref{c1.3.4a} -- \ref{c1.3.4c} determine
 whether the statement is {\em True\/} or {\em False\/}?
 \begin{exercise} \label{c1.3.4a}
- Every symmetric, upper triangular matrix is diagonal.
+  Every symmetric, upper triangular matrix is diagonal.
+  \begin{multipleChoice}
+    \choice[correct]{True}
+    \choice{False}    
+  \end{multipleChoice}
 \end{exercise}
 \begin{exercise} \label{c1.3.4b}
- Every diagonal matrix is a multiple of the identity matrix.
+  Every diagonal matrix is a multiple of the identity matrix.
+  \begin{multipleChoice}
+    \choice{True}
+    \choice[correct]{False}    
+  \end{multipleChoice}
+  \begin{feedback}
+    That's right.   An example is
+    \[\left(\begin{array}{ccc}
+              2 & 0 & 0 \\
+              0 & 1 & 0 \\
+              0 & 0 & 3 \end{array}\right).\]
+  \end{feedback}
 \end{exercise}
 \begin{exercise} \label{c1.3.4c}
- Every block diagonal matrix is symmetric.
+  Every block diagonal matrix is symmetric.
+  \begin{multipleChoice}
+    \choice{True}
+    \choice[correct]{False}    
+  \end{multipleChoice}
+  \begin{feedback}
+    That's right.   An example is
+    \[ \left(\begin{array}{ccc}
+               1 & 2 & 0 \\
+               3 & 1 & 0 \\
+               0 & 0 & 4
+             \end{array}\right).
+         \]
+  \end{feedback}  
 \end{exercise}
 
 \CEXER
