@@ -346,6 +346,20 @@ as {\tt .*}.
 \begin{exercise} \label{c2.2.5}
 Find the equation for the plane perpendicular to the vector $(2,3,1)$
 and containing the point $(-1,-2,3)$.
+\begin{prompt}
+  The equation of the desired plane is $\answer{2}x + \answer{3}y + z = -5$.
+\end{prompt}
+\begin{hint}
+  Note that a vector perpendicular to a plane is orthogonal
+to any vector connecting two points in the plane.  So,
+if $X_0 = (-1,-2,3)$ is one point in the plane perpendicular to
+$N = (2,3,1)$ and $X = (x,y,z)$ is any other point in that plane,
+then $(X - X_0) \cdot N = 0$.  Substituting into this formula, we obtain
+\[
+2(x + 1) + 3(y + 1) + 1(z - 3) = 0\quad\mbox{or}\quad
+2x + 3y + z = -5.
+\]
+\end{hint}
 \end{exercise}
 
 \begin{exercise} \label{c2.2.6}
@@ -353,11 +367,63 @@ Determine three systems of two linear equations in two unknowns
 so that the first system has a unique solution, the second
 system has an infinite number of solutions, and the third system
 has no solutions.
+
+\begin{prompt}
+  For example, the system
+  \[\begin{array}{rrrrr}
+x & + & y & = & 2 \\
+x & - & y & = & 0\end{array}\]
+has\ldots
+\begin{multipleChoice}
+  \choice{No solutions.}  
+  \choice[correct]{Exactly one solution.}
+  \choice{Infinitely many solutions.}    
+\end{multipleChoice}
+
+The system
+\[\begin{array}{rrrrr}
+x & + & y & = & 2 \\
+    2x & + & 2y & = & 4\end{array}\]
+has\ldots
+\begin{multipleChoice}
+  \choice{No solutions.}  
+  \choice{Exactly one solution.}
+  \choice[correct]{Infinitely many solutions.}    
+\end{multipleChoice}
+while the system
+\[\begin{array}{rrrrr}
+x & + & y & = & 2 \\
+    x & + & y & = & 4\end{array}\]
+has\ldots
+\begin{multipleChoice}
+  \choice[correct]{No solutions.}  
+  \choice{Exactly one solution.}
+  \choice{Infinitely many solutions.}    
+\end{multipleChoice}
+\end{prompt}
 \end{exercise}
 
 \begin{exercise} \label{c2.2.7}
 Write the equation of the plane through the origin containing the
 vectors $(1,0,1)$ and $(2,-1,2)$.
+\begin{prompt}
+  The equation for the plane is $z = \answer{x}$.
+\end{prompt}
+\begin{hint}
+  Note that the plane goes through the origin and contains the
+vectors $(1,0,1)$ and $(2,-1,2)$, and therefore contains the points
+$(0,0,0)$, $(1,0,1)$, and $(2,-1,2)$.  The general equation for a plane
+is $ax + by + cz = d$.  We can substitute the coordinates of the three
+points into this equation to get the linear system
+\[
+\begin{array}{rrrrrrr}
+ & & & & 0 & = & d \\
+a & & & + & c & = & d \\
+2a & - & b & + & 2c & = & d\end{array}
+\]
+We can solve the system by substitution to get $b = d = 0$ and $a = -c$,
+which yields the equation of the plane.
+\end{hint}
 \end{exercise}
 
 \begin{exercise} \label{c2.2.8}
@@ -369,11 +435,31 @@ multiples of the vector $(1,2,1)$.
 \begin{exercise} \label{c2.2.9}
 \begin{itemize}
 \item[(a)] Find a vector $u$ normal to the plane $2x+2y+z=3$.
+  \begin{prompt}
+    \begin{validator}[(ux==uy) && (uy==2*uz) && (uy != 0)]
+      \[
+        \left( \answer[format=integer,id=ux]{2}, \answer[format=integer,id=uy]{2}, \answer[format=integer,id=uz]{1} \right)
+      \]
+    \end{validator}
+  \end{prompt}
 \item[(b)] Find a vector $v$ normal to the plane $x+y+2z=4$.
-\item[(c)] Find the cosine of the angle between the vectors $u$ and $v$.
-Use \Matlab to find the angle in degrees.
+  \begin{prompt}
+    \begin{validator}[(vx==vy) && (2*vy==vz) && (vy != 0)]
+      \[
+        \left( \answer[format=integer,id=vx]{1}, \answer[format=integer,id=vy]{1}, \answer[format=integer,id=vz]{2} \right)
+      \]
+    \end{validator}
+  \end{prompt}
+\item[(c)] Find the cosine of the angle $\theta$ between the vectors $u$ and $v$.
+  \begin{prompt}
+    \[
+      \cos \theta = \answer{\frac{2}{\sqrt{6}}}
+    \]
+  \end{prompt}
 \end{itemize}
 \end{exercise}
+
+\CEXER
 
 \begin{exercise} \label{c2.2.10}
 Determine graphically the geometry of the set of solutions to the
@@ -392,8 +478,6 @@ enter the last equation as {\tt z = 2 - 0*x - 0*y} and the first two
 equations with {\tt 0*y} terms.  Try different views --- but include
 {\tt view([0 1 0])} as one view.)
 \end{exercise}
-
-\CEXER
 
 \begin{exercise} \label{c2.2.1}
 Use \Matlab to solve graphically the planar system of linear
