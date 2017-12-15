@@ -395,30 +395,65 @@ $A=\left(\begin{array}{rrrr}
 1 &  2 & 1 & 6\\
 3 &  6 & 1 & 14\\
 1 &  2 & 2 & 8
-\end{array}\right)$
+         \end{array}\right)$
+       \begin{prompt}
+       The reduced echelon form of the matrix is:
+\[
+A = \left(\begin{array}{rrrr} 1 & \answer{2} & \answer{0} & \answer{4} \\ 0 & \answer{0} & \answer{1} & \answer{2} \\ 0 & 0 & \answer{0}
+& 0\end{array}\right)
+\]
+The rank of $A$ is $\answer{2}$, since the reduced echelon matrix has $\answer{2}$ nonzero
+rows.         
+       \end{prompt}
 \end{exercise}
 \begin{exercise} \label{c2.4.1b}
 $B=\left(\begin{array}{rrr}
 1 &  -2 & 3\\
 3 &  -6 & 9 \\
 1 &  -8 & 2
-\end{array}\right)$
+         \end{array}\right)$
+       \begin{prompt}
+       The reduced echelon form of the matrix is:
+\[
+B=\left(\begin{array}{rrr} 1 & 0 & \answer{\frac{10}{3}} \\ 
+0 & 1 & \answer{\frac{1}{6}} \\ 0 & 0 & \answer{0} \end{array}\right)
+\]
+The rank of $B$ is $\answer{2}$, since the reduced echelon matrix has $\answer{2}$ nonzero
+rows.
+       \end{prompt}
 \end{exercise}
 
 \begin{exercise} \label{c2.4.2}
 The augmented matrix of a consistent system of five equations in seven
 unknowns has rank equal to three.  How many parameters are needed to
 specify all solutions?
+\begin{prompt}
+  There are $\answer{4}$ parameters needed to specify all solutions.
+\end{prompt}
+\begin{hint}
+  According to Theorem \ref{number}, $n - \ell$
+parameters are needed to parameterize the set of all solutions of a
+linear system, where $n$ is the number of unknowns, and $\ell$ is the
+rank of the reduced echelon matrix.  In this case, $n = 7$ and $\ell =
+3$.
+\end{hint}
 \end{exercise}
 
 \begin{exercise} \label{c2.4.2b}
 The augmented matrix of a consistent system of nine equations in twelve
 unknowns has rank equal to five.  How many parameters are needed to
 specify all solutions?
+\begin{prompt}
+  There are $\answer{7}$ parameters needed to specify all solutions.
+\end{prompt}
+\begin{hint}
+  According to Theorem \ref{number}, $n - \ell$
+parameters are needed to parameterize the set of all solutions of a
+linear system, where $n$ is the number of unknowns, and $\ell$ is the
+rank of the reduced echelon matrix.  In this case, $n = 12$ and $\ell =
+5$.
+\end{hint}
 \end{exercise}
-
-
-
 
 \CEXER
 

@@ -601,19 +601,31 @@ whether the given matrix is in reduced echelon form.
 $\left(\begin{array}{rrrr}
 1 & -1 &  0 &   1   \\
 0 &  1 &  0 &  -6    \\
-0 &  0 &  1 &   0   \end{array}\right)$.
+         0 &  0 &  1 &   0   \end{array}\right)$.
+     \begin{multipleChoice}
+       \choice{The matrix is in reduced echelon form.}         
+       \choice[correct]{The matrix is not in reduced echelon form.}         
+     \end{multipleChoice}
 \end{exercise}
 \begin{exercise} \label{c2.3.6b}
 $\left(\begin{array}{rrrr}
 1 &  0 & -2 &   0   \\
 0 &  1 &  4 &   0    \\
-0 &  0 &  0 &   1  \end{array}\right)$.
+         0 &  0 &  0 &   1  \end{array}\right)$.
+     \begin{multipleChoice}
+       \choice[correct]{The matrix is in reduced echelon form.}         
+       \choice{The matrix is not in reduced echelon form.}         
+     \end{multipleChoice}     
 \end{exercise}
 \begin{exercise} \label{c2.3.6c}
 $\left(\begin{array}{rrrr}
 0 &  1 &  0 &   3   \\
 0 &  0 &  2 &   1    \\
-0 &  0 &  0 &   0   \end{array}\right)$.
+         0 &  0 &  0 &   0   \end{array}\right)$.
+     \begin{multipleChoice}
+       \choice{The matrix is in reduced echelon form.}         
+       \choice[correct]{The matrix is not in reduced echelon form.}         
+     \end{multipleChoice}     
 \end{exercise}
 
 \noindent In Exercises~\ref{c2.3.7a} -- \ref{c2.3.7c} we list
@@ -626,21 +638,65 @@ $\left(\begin{array}{rrr|r}
  1  &  4 & 0 & 0\\
  0  &  0 & 1 & 5\\
  0  &  0 & 0 & 0
-\end{array}\right)$.
+       \end{array}\right)$.
+     \begin{selectAll}
+       \choice[correct]{The $1^{st}$ column contains a pivot.}
+       \choice{The $2^{nd}$ column contains a pivot.}
+       \choice[correct]{The $3^{rd}$ column contains a pivot.}
+       \choice{The $4^{th}$ column contains a pivot.}
+       \choice{The $5^{th}$ column contains a pivot.}
+     \end{selectAll}
+     
+     \begin{exercise}
+       The solutions of the system are:
+\[
+\left(\begin{array}{r} x_1 \\ x_2 \\ x_3\end{array} \right)
+= \left(\begin{array}{c} \answer{-4}x_2 \\ x_2 \\ \answer{5}\end{array} \right)
+\]
+     \end{exercise}
 \end{exercise}
 \begin{exercise} \label{c2.3.7b}
 $\left(\begin{array}{rrrr|r}
  1  &  2 & 0 & 0 & 0\\
  0  &  0 & 1 & 1 & 0\\
  0  &  0 & 0 & 0 & 1
-\end{array}\right)$.
+       \end{array}\right)$.
+     \begin{selectAll}
+       \choice[correct]{The $1^{st}$ column contains a pivot.}
+       \choice{The $2^{nd}$ column contains a pivot.}
+       \choice[correct]{The $3^{rd}$ column contains a pivot.}
+       \choice{The $4^{th}$ column contains a pivot.}
+       \choice[correct]{The $5^{th}$ column contains a pivot.}
+     \end{selectAll}
+     \begin{exercise}
+       The system of linear equations corresponding to this matrix has\ldots
+       \begin{multipleChoice}
+         \choice[correct]{No solutions.}
+         \choice{Exactly one solution.}
+         \choice{Infinitely many solutions.}
+       \end{multipleChoice}
+     \end{exercise}
 \end{exercise}
 \begin{exercise} \label{c2.3.7c}
 $\left(\begin{array}{rrrr|r}
  1  & -6 & 0 & 0 & 1\\
  0  &  0 & 1 & 0 & 9 \\
  0  &  0 & 0 & 0 & 0
-\end{array}\right)$.
+       \end{array}\right)$.
+     \begin{selectAll}
+       \choice[correct]{The $1^{st}$ column contains a pivot.}
+       \choice{The $2^{nd}$ column contains a pivot.}
+       \choice[correct]{The $3^{rd}$ column contains a pivot.}
+       \choice{The $4^{th}$ column contains a pivot.}
+       \choice{The $5^{th}$ column contains a pivot.}
+     \end{selectAll}
+     \begin{exercise}
+       The solutions of the system are:
+\[
+\left(\begin{array}{r} x_1 \\ x_2 \\ x_3\\ x_4\end{array} \right)
+= \left(\begin{array}{c} 1 + \answer{6}x_2 \\ x_2 \\ \answer{9} \\ x_4\end{array} \right)
+\]
+     \end{exercise}
 \end{exercise}
 
 
@@ -652,11 +708,46 @@ $\left(\begin{array}{rrrr|r}
 where $a,b,c\in\R$ and $a\neq 0$.  Show that \Ref{e:2x2}
 is row equivalent to the matrix
 \[
-\left(\begin{array}{cc} 1 & \frac{b}{a} \\ 0 & \frac{a-bc}{a}
+\left(\begin{array}{cc} 1 & \frac{b}{a} \\ 0 & \frac{\answer[given]{a-bc}}{a}
 \end{array} \right).
 \]
 (b)  Show that \Ref{e:2x2} is row equivalent to the
-identity matrix if and only if $a\neq bc$.
+identity matrix if and only if $a\neq \answer[given]{bc}$.
+
+\begin{hint}
+Two matrices are row equivalent if there is a sequence of row operations
+that leads from one to the other.  In this case: Divide the $1^{st}$ row of \Ref{e:2x2} by $a$.
+\end{hint}
+\begin{hint}
+Then subtract $c$ times the $1^{st}$ row from the $2^{nd}$ row.
+\end{hint}
+\begin{hint}
+The result is
+\[
+\left(\begin{array}{cc} 1 & \frac{b}{a} \\ 0 & \frac{a - bc}{a}\end{array}
+\right).
+\]
+\end{hint}
+\begin{hint}
+For (b), if $a \neq bc$, then we can row reduce \Ref{e:2x2} to $I_2$.  First
+perform the two row operations in part (a).
+\end{hint}
+\begin{hint}
+  Then multiply the $2^{nd}$ row by $\frac{a}{a - bc}$.
+\end{hint}
+\begin{hint}
+  Finally subtract $\frac{b}{a}$ times the second row from the first row.
+\end{hint}
+\begin{hint}
+This will give us the identity matrix $I_2$.
+\end{hint}
+\begin{hint}
+  If $a = bc$, then $\frac{a - bc}{a} = 0$, and the matrix is
+\[
+\left(\begin{array}{cc} 1 & \frac{b}{a} \\ 0 & 0\end{array} \right).
+\]
+which has only one pivot and cannot be row reduced to $I_2$.
+\end{hint}
 \end{exercise}
 
 \begin{exercise} \label{c2.3.9}
@@ -668,8 +759,35 @@ system of two equations in three unknowns:
 2x_1 & + & x_2 & - & x_3 & = & -1
 \end{array}
 \]
-Is $(1,2,2)$ a solution to this system?  If not, is there a
-solution for which $x_3=2$?
+\begin{hint}
+   Row reduce the augmented matrix of the system:
+\[
+\left(\begin{array}{rrr|r} 1 & -1 & 1 & 1 \\ 2 & 1 & -1 & -1\end{array}\right)
+\longrightarrow
+\left(\begin{array}{rrr|r} 1 & 0 & 0 & 0 \\ 0 & 1 & -1 & -1\end{array}\right).
+\]
+\end{hint}
+\begin{prompt}
+  The solution to this system is
+\[
+\left(\begin{array}{c} x_1 \\ x_2 \\ x_3\end{array}\right) =
+\left(\begin{array}{c} \answer{0} \\ x_3 - \answer{1} \\ x_3\end{array}\right),
+\]
+where $x_3$ is any real number.
+\end{prompt}
+Is $(1,2,2)$ a solution to this system?
+\begin{multipleChoice}
+  \choice{Yes, $(1,2,2)$ is a solution.}
+  \choice[correct]{No, $(1,2,2)$ is not a solution.}
+\end{multipleChoice}
+If not, is there a solution for which $x_3=2$?
+\begin{multipleChoice}
+  \choice[correct]{Yes, there is a solution for which $x_3 = 2$.}
+  \choice{No, there is no solution for which $x_3 = 2$.}  
+\end{multipleChoice}
+\begin{hint}
+  There is a solution for which $x_3 = 2$, namely $(0,1,2)$.
+\end{hint}
 \end{exercise}
 
 \noindent In Exercises~\ref{c2.3.10a} -- \ref{c2.3.10b} determine the
@@ -678,12 +796,14 @@ augmented matrix and all solutions for each system of linear equations
 $\begin{array}{rcl}
 x-y+z & = & 1 \\
 4x+y+z & = & 5 \\
-2x+3y-z & = & 2 \end{array}$.
+   2x+3y-z & = & 2 \end{array}$.
+ %BADBAD
 \end{exercise}
 \begin{exercise} \label{c2.3.10b}
 $\begin{array}{rcl}
 2x-y+z+w & = & 1\\
-x+2y-z+w & = & 7 \end{array}$.
+   x+2y-z+w & = & 7 \end{array}$.
+  %BADBAD
 \end{exercise}
 
 \noindent In Exercises~\ref{c2.3.11a} -- \ref{c2.3.11d} consider the
@@ -695,19 +815,74 @@ assigned arbitrary values.
 \end{itemize}
 \begin{exercise} \label{c2.3.11a}
 $\left(\begin{array}{ccc|c} 1 & 0 & 0 &3 \\0 & 2 & 1 & 1\\ 0 & 0 & 0 & 0
-\end{array}\right)$.
+       \end{array}\right)$.
+     \begin{multipleChoice}
+       \choice{There are no solutions.}
+       \choice{There is exactly one solution.}
+       \choice[correct]{There are infinitely many solutions.}
+     \end{multipleChoice}
+     \begin{hint}
+       The row-reduced form of the matrix is:
+\[
+\left(\begin{array}{rrr|r} 1 & 0 & 0 & 3 \\ 0 & 1 &
+\frac{1}{2} & \frac{1}{2} \\ 0 & 0 & 0 & 0\end{array}\right).
+\]
+     \end{hint}
+     \begin{exercise}
+       There is/are $\answer{1}$ variable(s) that may be assigned arbitrary values.
+     \end{exercise}
 \end{exercise}
 \begin{exercise} \label{c2.3.11b}
 $\left(\begin{array}{cccc|c} 1 & 2 & 0 & 0 & 3\\ 0 & 1 & 1 & 0 & 1\\
-0 & 0 & 0 & 0 & 2 \end{array}\right)$.
+         0 & 0 & 0 & 0 & 2 \end{array}\right)$.
+     \begin{multipleChoice}
+       \choice[correct]{There are no solutions.}
+       \choice{There is exactly one solution.}
+       \choice{There are infinitely many solutions.}
+     \end{multipleChoice}
+     \begin{hint}
+       The row-reduced form of the matrix is:
+\[
+\left(\begin{array}{rrrr|r} 1 & 2 & 0 & 0 & 3 \\
+0 & 1 & 1 & 0 & 1 \\ 0 & 0 & 0 & 0 & 1\end{array}\right).
+\]
+     \end{hint}
 \end{exercise}
 \begin{exercise} \label{c2.3.11c}
 $\left(\begin{array}{ccc|c}  1 & 0 & 2 & 1\\ 0 & 5 & 0 & 2 \\ 0 & 0 & 4 & 3
-\end{array}\right)$.
+       \end{array}\right)$.
+     \begin{multipleChoice}
+       \choice{There are no solutions.}
+       \choice[correct]{There is exactly one solution.}
+       \choice{There are infinitely many solutions.}
+     \end{multipleChoice}
+     \begin{hint}
+       The row-reduced form of the matrix is:
+\[
+\left(\begin{array}{rrr|r} 1 & 0 & 2 & 1 \\ 0 & 1 & 0 & \frac{2}{5}
+\\ 0 & 0 & 1 & \frac{3}{4}\end{array}\right).
+\]
+     \end{hint}
 \end{exercise}
 \begin{exercise} \label{c2.3.11d}
 $\left(\begin{array}{cccc|c} 1 & 0 & 2 & 0 & 3 \\ 2 & 3 & 6 & 1 & 16\\
-0 & 3 & 2 & 1 & 10 \\ 0 & 0 & 0 & 0 & 0  \end{array}\right)$.
+         0 & 3 & 2 & 1 & 10 \\ 0 & 0 & 0 & 0 & 0  \end{array}\right)$.
+     \begin{hint}
+       \soln The row-reduced form of the matrix is:
+\[
+\left(\begin{array}{rrrr|r} 1 & 0 & 2 & 0 & 3 \\ 0 & 1 & \frac{2}{3}
+& \frac{1}{3} & \frac{10}{3} \\ 0 & 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 & 0
+\end{array}\right).
+\]
+     \end{hint}
+          \begin{multipleChoice}
+       \choice{There are no solutions.}
+       \choice{There is exactly one solution.}
+       \choice[correct]{There are infinitely many solutions.}
+     \end{multipleChoice}
+     \begin{exercise}
+       There is/are $\answer{2}$ variable(s) that may be assigned arbitrary values.
+     \end{exercise}
 \end{exercise}
 
 \noindent A system of $m$ equations in $n$ unknowns is linear if it has
@@ -722,6 +897,10 @@ is linear or nonlinear.
 2x_1 + 5x_2 - 3x_3 + 12x_4 & = & -1
 \end{array}
 \]
+\begin{multipleChoice}
+  \choice[correct]{The system is linear.}
+  \choice{The system is not linear.}  
+\end{multipleChoice}
 \end{exercise}
 \begin{exercise} \label{c2.3.12b}
 \[
@@ -730,6 +909,10 @@ is linear or nonlinear.
 2x_1 - e x_2    & = & 1
 \end{array}
 \]
+\begin{multipleChoice}
+  \choice[correct]{The system is linear.}
+  \choice{The system is not linear.}  
+\end{multipleChoice}
 \end{exercise}
 \begin{exercise} \label{c2.3.12c}
 \[
@@ -738,6 +921,14 @@ is linear or nonlinear.
 2x_1 -   x_2^2    & = & -5
 \end{array}
 \]
+\begin{multipleChoice}
+  \choice{The system is linear.}
+  \choice[correct]{The system is not linear.}  
+\end{multipleChoice}
+\begin{hint}
+  The term $3x_1x_2$ contains two variables, and the term $x_2^2$
+contains a variable squared.  Thus, these terms are not linear.
+\end{hint}
 \end{exercise}
 \begin{exercise} \label{c2.3.12d}
 \[
@@ -746,6 +937,13 @@ is linear or nonlinear.
 2x_1 -   x_2    & = & -5
 \end{array}
 \]
+\begin{multipleChoice}
+  \choice[correct]{The system is linear.}
+  \choice{The system is not linear.}  
+\end{multipleChoice}
+\begin{hint}
+  You may be distracted by $\cos(12)$ but note that $\cos(12)$ is constant.
+\end{hint}
 \end{exercise}
 \begin{exercise} \label{c2.3.12e}
 \[
@@ -754,6 +952,13 @@ is linear or nonlinear.
 2x_1 -   x_3    & = & -5
 \end{array}
 \]
+\begin{multipleChoice}
+  \choice{The system is linear.}
+  \choice[correct]{The system is not linear.}  
+\end{multipleChoice}
+\begin{hint}
+  The term $\sin(x_2)$ is not linear.
+\end{hint}
 \end{exercise}
 
 \CEXER
