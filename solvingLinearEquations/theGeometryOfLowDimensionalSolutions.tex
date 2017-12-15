@@ -430,6 +430,26 @@ which yields the equation of the plane.
 Find a system of two linear equations in three
 unknowns whose solution set is the line consisting of scalar
 multiples of the vector $(1,2,1)$.
+
+\begin{prompt}
+  For example, one such system is:
+\[
+\begin{array}{rrrrrrr}
+x & - & y & + & z & = & 0 \\
+\answer{2}x & + & y & - & \answer{4}z & = & 0\end{array}
+\]
+\end{prompt}
+\begin{hint}
+  The solution set contains all multiples of the vector $(1,2,1)$,
+so it contains the origin, since $0(1,2,1) = (0,0,0)$.  The equation
+of any plane containing the origin is $ax + by + cz = 0$. 
+Substituting the point $(1,2,1)$ implies that $a + 2b + c = 0$. 
+Any two equations which satisfy that condition and are not multiples
+of one another will have the appropriate line as a solution set. 
+For example, let $(a,b,c) = (1,-1,1)$ in the first equation, and
+$(a,b,c) = (2,1,-4)$ in the second equation to obtain the system
+given here.
+\end{hint}
 \end{exercise}
 
 \begin{exercise} \label{c2.2.9}
@@ -437,17 +457,17 @@ multiples of the vector $(1,2,1)$.
 \item[(a)] Find a vector $u$ normal to the plane $2x+2y+z=3$.
   \begin{prompt}
     \begin{validator}[(ux==uy) && (uy==2*uz) && (uy != 0)]
-      \[
-        \left( \answer[format=integer,id=ux]{2}, \answer[format=integer,id=uy]{2}, \answer[format=integer,id=uz]{1} \right)
-      \]
+      \(
+        u = \left( \answer[format=integer,id=ux]{2}, \answer[format=integer,id=uy]{2}, \answer[format=integer,id=uz]{1} \right)
+      \)
     \end{validator}
   \end{prompt}
 \item[(b)] Find a vector $v$ normal to the plane $x+y+2z=4$.
   \begin{prompt}
     \begin{validator}[(vx==vy) && (2*vy==vz) && (vy != 0)]
-      \[
-        \left( \answer[format=integer,id=vx]{1}, \answer[format=integer,id=vy]{1}, \answer[format=integer,id=vz]{2} \right)
-      \]
+      \(
+        v = \left( \answer[format=integer,id=vx]{1}, \answer[format=integer,id=vy]{1}, \answer[format=integer,id=vz]{2} \right)
+      \)
     \end{validator}
   \end{prompt}
 \item[(c)] Find the cosine of the angle $\theta$ between the vectors $u$ and $v$.
