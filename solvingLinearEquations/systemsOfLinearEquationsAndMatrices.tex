@@ -334,6 +334,9 @@ to the given system of linear equations.
  2x & - & y & = & 0 \\
  3x &   &   & = & 6 \end{array}
 \]
+\begin{prompt}
+  Then $(x,y) = (\answer{2},\answer{4})$.
+\end{prompt}
 \end{exercise}
 \begin{exercise} \label{c2.1.8b}
 \[
@@ -342,6 +345,9 @@ to the given system of linear equations.
     &   & 2y & + & z  & = & 1\\
     &   &    &   & 3z & = & 9 \end{array}
 \]
+\begin{prompt}
+  Then  $(x,y,z) = (\answer{-\frac{2}{3}}, \answer{-1}, \answer{3})$.
+\end{prompt}
 \end{exercise}
 \begin{exercise} \label{c2.1.8c}
 \[
@@ -349,11 +355,29 @@ to the given system of linear equations.
  -2x & + &  y & = &  9 \\
   3x & + & 3y & = & -9 \end{array}
 \]
+\begin{prompt}
+  Then $(x,y) = (\answer{-4},\answer{1})$.
+\end{prompt}
 \end{exercise}
 
 \begin{exercise} \label{c2.1.8A}
 Write the coefficient matrices for each of the systems of linear equations 
 given in Exercises~\ref{c2.1.8a} -- \ref{c2.1.8c}.
+\begin{prompt}
+  For Exercise~\ref{c2.1.8a}, the coefficient matrix is
+  \[
+    \mattwo{\answer{2}}{\answer{-1}}{3}{\answer{0}}
+  \]
+  For Exercise~\ref{c2.1.8b}, the coefficient matrix is
+  \[
+    \matthree{\answer{3}}{\answer{-4}}{0}{0}{\answer{2}}{1}{0}{0}{3}
+  \]
+  For Exercise~\ref{c2.1.8c}, the coefficient matrix is
+  \[
+    \mattwo{\answer{-2}}{\answer{1}}{\answer{3}}{\answer{3}}.
+  \]
+\end{prompt}
+
 \end{exercise}
 
 \begin{exercise} \label{c2.1.9}
@@ -373,30 +397,117 @@ cannot be solved uniquely.
     &   & 2y & - & 3z & = & -4
 \end{array}
 \]
+\begin{prompt}
+  The matrix in part~(a) has
+  \begin{multipleChoice}
+    \choice{No solutions.}    
+    \choice{Exactly one solution.}
+    \choice[correct]{Infinitely many solutions.}
+  \end{multipleChoice}
+
+  The matrix in part~(b) has
+  \begin{multipleChoice}
+    \choice[correct]{No solutions.}    
+    \choice{Exactly one solution.}
+    \choice{Infinitely many solutions.}
+  \end{multipleChoice}
+\end{prompt}
+
+\begin{hint}
+For part~(a), replace $x$ in the second and third equations with
+$4 + y$ to obtain $4y - 2z = -10$ and $6y - 3z = -15$.  Since these
+equations have identical solutions, the system can be restated as
+\[
+\begin{array}{rrrrrrr}
+x & = & y & + & 4 \\ 
+z & = & -2y & + & 5\end{array}
+\]
+\end{hint}
+\begin{hint}
+So, for each choice of $y$, there exists a single solution.  For
+example, if $y = 1$, then $x = 5$ and $z = 3$; or if $y = 0$, then
+$x = 4$ and $z = 5$.  
+\end{hint}
+\begin{hint}
+For part~(b), if we again substitute for $x$ using the first equation, the
+second and third equations become
+\[
+2y - 3z = -2 \AND 2y - 3z = -4
+\]
+\end{hint}
+\begin{hint}
+These two expressions contradict each other, so there is no solution
+for this system.  
+\end{hint}
 \end{exercise}
 
 \begin{exercise} \label{c2.1.10}
 Last year Dick was twice as old as Jane.  Four years ago the
 sum of Dick's age and Jane's age was twice Jane's age now.  How
 old are Dick and Jane?
-
-{\bf Hint:} Rewrite the two statements
-as linear equations in $D$ --- Dick's age now --- and $J$ ---
-Jane's age now.  Then solve the system of linear equations.
+\begin{prompt}
+  Dick is $\answer{17}$ and Jane is $\answer{9}$.
+\end{prompt}
+\begin{hint}
+  Rewrite the two statements
+  as linear equations in $D$ --- Dick's age now --- and $J$ ---
+  Jane's age now.  Then solve the system of linear equations.
+\end{hint}
 \end{exercise}
 
 \begin{exercise} \label{c2.1.11}
 \begin{itemize}
 \item[(a)] Find a quadratic polynomial $p(x) = ax^2 + bx + c$
-satisfying $p(0) = 1$, $p(1) = 5$, and $p(-1) = -5$.
+  satisfying $p(0) = 1$, $p(1) = 5$, and $p(-1) = -5$.
+  \begin{prompt}
+    The quadratic $p(x) = \answer{-x^2 + 5x + 1}$ satisfies these conditions.
+  \end{prompt}
+  \begin{hint}
+    Since $p(x) = ax^2 + bx + c$ for any quadratic equation, we find
+this solution by evaluating $p(0) = 1$, $p(1) = 5$, and $p(-1) = -5$,
+which yields the system of equations
+\[
+\begin{array}{lrrrrrrrr}
+p(0) & = & & & & & c & = & 1 \\
+p(1) & = & a & + & b & + & c & = & 5 \\
+p(-1) & = & a & - & b & + & c & = & -5\end{array}
+\]
+We solve this system to obtain $(a,b,c) = (-1,5,1)$, then substitute
+these coefficients into the general quadratic.
+  \end{hint}
 \item[(b)] Prove that for every triple of real numbers $L$, $M$,
 and $N$, there is a quadratic polynomial satisfying $p(0) = L$,
 $p(1) = M$, and $p(-1) = N$.
+\begin{hint}
+   Let $p(x) = ax^2 + bx + c$ be a quadratic equation.  Then, the
+assumptions $p(0) = L$, $p(1) = M$, and $p(-1) = N$ imply:
+\[
+\begin{array}{lrrrrrrrr}
+p(0) & = & & & & & c & = & L \\
+p(1) & = & a & + & b & + & c & = & M \\
+p(-1) & = & a & - & b & + & c & = & N\end{array}
+\]
+The unique solution to this system is $(a,b,c) =
+(\frac{M + N - 2L}{2},\frac{M - N}{2},L)$.
+\end{hint}
 \item[(c)] Let $x_1,x_2,x_3$ be three unequal real
 numbers and let $A_1,A_2,A_3$ be three real numbers.  Show
 that finding a quadratic polynomial $q(x)$ that satisfies
 $q(x_i) = A_i$ is equivalent to solving a system of three
 linear equations.
+\begin{hint}
+   Substituting $q(x_i) = A_i$, for $i = 1,2,3$, into the standard
+quadratic equation $q(x) = ax^2 + bx + c$ yields
+\[
+\begin{array}{ccccccc}
+ax_1^2 & + & bx_1 & + & c & = & A_1 \\
+ax_2^2 & + & bx_2 & + & c & = & A_2 \\
+ax_3^2 & + & bx_3 & + & c & = & A_3\end{array}
+\]
+Finding the appropriate quadratic polynomial would be equivalent to
+solving this system of linear equations for $a$, $b$, and $c$ in
+terms of $A_1$, $A_2$, and $A_3$.
+\end{hint}
 \end{itemize}
 \end{exercise}
 
