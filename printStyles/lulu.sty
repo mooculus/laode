@@ -23,81 +23,81 @@
 %\usepackage[margin=.5in, includehead, includefoot, hmargin={.8in,.5in}, paperwidth=11in, paperheight=8.5in]{geometry}
 
 % Store usual maketitle as othermaketitle
-\let\othermaketitle\maketitle
+%% \let\othermaketitle\maketitle
 
 
-\makeatletter
-% % Redefine maketitle to give course packet title page and toc.
-\renewcommand{\maketitle}{ %
-\pagestyle{empty}
-\onecolumn
-\begin{flushright}
-  \begin{tikzpicture}[opacity=1]
-  \node at (1,0) {\scalebox{4}{\Huge\textsf{\textbf{\textcolor{black}{linear algebra}}}}};
-  \node at (8,1.19) {\scalebox{10}{\Huge\textsf{\textbf{\textcolor{gray}{1}}}}};  %% Aligned with subtitle
-  %\node at (8,1.85) {\scalebox{10}{\Huge\textsf{\textbf{\textcolor{gray}{1}}}}}; %% Aligned with title
-  \node at (1.1,-1.6) {\resizebox{4.8in}{.2in}{\Huge\textsf{\textcolor{gray}
-          {with free online interactive materials}
-    }}};
+%% \makeatletter
+%% % % Redefine maketitle to give course packet title page and toc.
+%% \renewcommand{\maketitle}{ %
+%% \pagestyle{empty}
+%% \onecolumn
+%% \begin{flushright}
+%%   \begin{tikzpicture}[opacity=1]
+%%   \node at (1,0) {\scalebox{4}{\Huge\textsf{\textbf{\textcolor{black}{linear algebra}}}}};
+%%   \node at (8,1.19) {\scalebox{10}{\Huge\textsf{\textbf{\textcolor{gray}{1}}}}};  %% Aligned with subtitle
+%%   %\node at (8,1.85) {\scalebox{10}{\Huge\textsf{\textbf{\textcolor{gray}{1}}}}}; %% Aligned with title
+%%   \node at (1.1,-1.6) {\resizebox{4.8in}{.2in}{\Huge\textsf{\textcolor{gray}
+%%           {with free online interactive materials}
+%%     }}};
  
-\vspace{-.4in}
-\begin{flushleft}\hspace*{-.12in}
-\begin{tikzpicture}
-  \node[anchor=west] at (0,0) {\scalebox{1}{\Huge\textsf{\ccbyncsa}}};
-  \node[anchor=west] at (4,-.25) {\large\textsf{developed in \textbf{XIMERA}}};
-  \node[anchor=east] at (7in,-.25) {\small\textsf{This document was typeset on \today.}};
-\end{tikzpicture}
-\end{flushleft}
-\thispagestyle{empty}
+%% \vspace{-.4in}
+%% \begin{flushleft}\hspace*{-.12in}
+%% \begin{tikzpicture}
+%%   \node[anchor=west] at (0,0) {\scalebox{1}{\Huge\textsf{\ccbyncsa}}};
+%%   \node[anchor=west] at (4,-.25) {\large\textsf{developed in \textbf{XIMERA}}};
+%%   \node[anchor=east] at (7in,-.25) {\small\textsf{This document was typeset on \today.}};
+%% \end{tikzpicture}
+%% \end{flushleft}
+%% \thispagestyle{empty}
 
-~\vfill
+%% ~\vfill
 
-\noindent
-Copyright \copyright\ 1998 Martin Golubitsky and Michael Dellnitz 
+%% \noindent
+%% Copyright \copyright\ 1998 Martin Golubitsky and Michael Dellnitz 
 
-\noindent
-This work is licensed under the Creative Commons
-Attribution-NonCommercial-ShareAlike License. To view a copy of this
-license, visit \url{http://creativecommons.org/licenses/by-nc-sa/4.0/}
+%% \noindent
+%% This work is licensed under the Creative Commons
+%% Attribution-NonCommercial-ShareAlike License. To view a copy of this
+%% license, visit \url{http://creativecommons.org/licenses/by-nc-sa/4.0/}
 
-If you distribute this work or a derivative, include the history of
-the document.  The source code is available at:
+%% If you distribute this work or a derivative, include the history of
+%% the document.  The source code is available at:
 
-\url{http://github.com/mooculus/calculus/}
+%% \url{http://github.com/mooculus/calculus/}
 
-\noindent
-This text contains source material from several other open-source
-texts:
-\begin{itemize}
-\item \textsl{Single and Multivariable Calculus: Early
-  Transcendentals}. Guichard. Copyright \copyright\ 2015 Guichard,
-  Creative Commons Attribution-NonCommercial-ShareAlike License 3.0.
-  \url{http://communitycalculus.org}
-\item \textsl{APEX Calculus}. Hartman, Heinold, Siemers, Chalishajar,
-  Bowen (Ed.). Copyright \copyright\ 2014 Hartman, Creative Commons Attribution-Noncommercial 3.0. \url{http://www.apexcalculus.com/}
-\item \textsl{Elementary Calculus: An Infinitesimal
-  Approach}. Keisler. Copyright \copyright\ 2015 Keisler, Creative
-  Commons Attribution-NonCommercial-ShareAlike License 3.0.
-  \url{http://www.math.wisc.edu/~keisler/calc.html}
-\end{itemize}
+%% \noindent
+%% This text contains source material from several other open-source
+%% texts:
+%% \begin{itemize}
+%% \item \textsl{Single and Multivariable Calculus: Early
+%%   Transcendentals}. Guichard. Copyright \copyright\ 2015 Guichard,
+%%   Creative Commons Attribution-NonCommercial-ShareAlike License 3.0.
+%%   \url{http://communitycalculus.org}
+%% \item \textsl{APEX Calculus}. Hartman, Heinold, Siemers, Chalishajar,
+%%   Bowen (Ed.). Copyright \copyright\ 2014 Hartman, Creative Commons Attribution-Noncommercial 3.0. \url{http://www.apexcalculus.com/}
+%% \item \textsl{Elementary Calculus: An Infinitesimal
+%%   Approach}. Keisler. Copyright \copyright\ 2015 Keisler, Creative
+%%   Commons Attribution-NonCommercial-ShareAlike License 3.0.
+%%   \url{http://www.math.wisc.edu/~keisler/calc.html}
+%% \end{itemize}
 
-\noindent This book is typeset in the STIX and Gillius fonts.
+%% \noindent This book is typeset in the STIX and Gillius fonts.
 
 
 
-\noindent We will be glad to receive corrections and suggestions for
-improvement at: \texttt{ximera@math.osu.edu}
+%% \noindent We will be glad to receive corrections and suggestions for
+%% improvement at: \texttt{ximera@math.osu.edu}
 
-\twocolumn
-\clearpage
-\ifnotoc\else % When notoc option is used, we do not include a table of contents.  Otherwise:
-	\tableofcontents\clearpage % we include a table of contents in every course packet.  
-	\clearpage
-        \fi
-\pagestyle{main} %switch to main pagestyle, just like ximera documents.
-\let\maketitle\othermaketitle % renew maketitle to usual definition.
-}
-\makeatother
+%% \twocolumn
+%% \clearpage
+%% \ifnotoc\else % When notoc option is used, we do not include a table of contents.  Otherwise:
+%% 	\tableofcontents\clearpage % we include a table of contents in every course packet.  
+%% 	\clearpage
+%%         \fi
+%% \pagestyle{main} %switch to main pagestyle, just like ximera documents.
+%% \let\maketitle\othermaketitle % renew maketitle to usual definition.
+%% }
+%% \makeatother
 
 
 
@@ -124,13 +124,16 @@ improvement at: \texttt{ximera@math.osu.edu}
 %\newcounter{sectiontitlenumber}
 %\setcounter{secnumdepth}{0}
 
+\newcounter{chapter}
+
 \renewcommand\chapterstyle{%
   \def\maketitle{%
     \addtocounter{titlenumber}{1}%
+    \addtocounter{chapter}{1}%
     \addcontentsline{toc}{section}{\textbf{\thetitlenumber\quad\@title}}%
                     {\flushleft\small\sffamily\bfseries\@pretitle\par\vspace{-1.5em}}%
                     {\flushleft\LARGE\sffamily\bfseries\thetitlenumber\quad\@title \par }%
-                    {\setcounter{problem}{0}\setcounter{sectiontitlenumber}{0}}%
+                    {\setcounter{exercise}{0}\setcounter{sectiontitlenumber}{0}}%
                     \par}}
 
 \renewcommand\sectionstyle{%
@@ -205,6 +208,13 @@ improvement at: \texttt{ximera@math.osu.edu}
                                     {\normalfont\normalsize\sffamily\bfseries}}
 
 
+% kills multipleChoice
+\let\multipleChoice\relax
+\let\endmultipleChoice\relax
+\NewEnviron{multipleChoice}{}
+
+
+
 % remove italics def
 \let\definition\relax
 \let\enddefinition\relax
@@ -221,7 +231,7 @@ improvement at: \texttt{ximera@math.osu.edu}
 \let\endtheorem\relax
 \let\c@theorem\relax 
 \theoremstyle{theorem}
-\newtheorem{theorem}{Theorem}
+\newtheorem{theorem}{Theorem}[chapter]
 
 \let\question\relax
 \let\endquestion\relax
@@ -237,7 +247,7 @@ improvement at: \texttt{ximera@math.osu.edu}
 \let\exercise\relax
 \let\endexercise\relax
 \let\c@exercise\relax 
-\newtheorem{exercise}{Exercise}
+\newtheorem{exercise}{}
 
 
 \let\warning\relax
