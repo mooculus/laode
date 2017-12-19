@@ -12,6 +12,11 @@
 
 \usepackage{microtype}
 
+
+\renewcommand{\EXER}{\section*{Exercises}\vspace*{0.2in}\hrule\small\setcounter{exercise}{0}}
+
+
+
 \usepackage{imakeidx}
 \makeindex[intoc]
 %\renewcommand{\dfn}[1]{\textbf{#1}\index{#1}}
@@ -125,7 +130,8 @@
 %\setcounter{secnumdepth}{0}
 
 \newcounter{chapter}
-
+\setcounter{chapter}{0}
+\setcounter{titlenumber}{-1}
 \renewcommand\chapterstyle{%
   \def\maketitle{%
     \addtocounter{titlenumber}{1}%
@@ -233,6 +239,12 @@
 \theoremstyle{theorem}
 \newtheorem{theorem}{Theorem}[chapter]
 
+\let\lemma\relax
+\let\endlemma\relax
+\let\c@lemma\relax 
+\theoremstyle{theorem}
+\newtheorem{lemma}[theorem]{lemma}
+
 \let\question\relax
 \let\endquestion\relax
 \let\c@question\relax 
@@ -248,6 +260,18 @@
 \let\endexercise\relax
 \let\c@exercise\relax 
 \newtheorem{exercise}{}
+%% \newif\ifoutsideexercise% Condition for zapping inside exercises
+%% \outsideexercisetrue
+%% \newenvironment{exercise}
+%%                {
+%%                  \ifoutsideexercise\global\outsideexercisefalse
+%%                  \begin{trivlist}\item[\hskip\labelsep\sffamily\bfseries\theexercise
+%%                  \else\setbox0\vbox\bgroup\fi
+%%                }
+%%                {
+                 
+%%                  \outsideexercisetrue
+%%                }
 
 
 \let\warning\relax
