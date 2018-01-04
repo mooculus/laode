@@ -154,6 +154,12 @@
     {\flushleft\Large\sffamily\bfseries\thetitlenumber.\thesectiontitlenumber\quad\@title \par}%
     \par}}
 
+\newcommand{\labelchapter}[1]{%
+  \@bsphack
+  \csname phantomsection\endcsname % in case hyperref is used
+  \def\@currentlabel{\thetitlenumber}{\label{#1}}%
+  \@esphack
+}
 %% redefine Part
 \renewcommand\part{%
   \if@openright
@@ -212,15 +218,23 @@
                                      {-3.25ex\@plus -1ex \@minus -.2ex}%
                                      {1.5ex \@plus .2ex}%
                                      {\normalfont\large\sffamily\bfseries}}
+                                   
 \renewcommand\subsection{\@startsection{subparagraph}{10}{\z@}%
                                     {3.25ex \@plus1ex \@minus.2ex}%
                                     {-1em}%
                                     {\normalfont\normalsize\sffamily\bfseries}}
+                                  
 \renewcommand\subsubsection{\@startsection{subparagraph}{10}{\z@}%
                                     {3.25ex \@plus1ex \@minus.2ex}%
                                     {-1em}%
                                     {\normalfont\normalsize\sffamily}}
 
+\renewcommand\paragraph{\@startsection{subparagraph}{10}{\z@}%
+                                    {3.25ex \@plus1ex \@minus.2ex}%
+                                    {-1em}%
+                                    {\normalfont\normalsize\sffamily}}
+
+                                  
 
 % kills multipleChoice
 \let\multipleChoice\relax
