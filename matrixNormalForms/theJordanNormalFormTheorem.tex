@@ -151,10 +151,10 @@ This observation follows directly from Lemma~\ref{L:detblockdiag}.  Since
 A^k = \mattwoc{A_1^k}{0}{0}{A_2^k},
 \]
 it follows that 
-\[
-p_A(A) = \mattwoc{p_A(A_1)}{0}{0}{p_A(A_2)}
- = \mattwoc{p_{A_1}(A_1)p_{A_2}(A_1)}{0}{0}{p_{A_1}(A_2)p_{A_2}(A_2)}.
-\]
+\begin{align*}
+p_A(A) &= \mattwoc{p_A(A_1)}{0}{0}{p_A(A_2)} \\
+  &= \mattwoc{p_{A_1}(A_1)p_{A_2}(A_1)}{0}{0}{p_{A_1}(A_2)p_{A_2}(A_2)}.
+\end{align*}
 It now follows from this calculation that if the Cayley Hamilton theorem is 
 valid for Jordan blocks, then $p_{A_1}(A_1)=0=p_{A_2}(A_2)$.  So $p_A(A)=0$ 
 and the Cayley Hamilton theorem is valid for all matrices.
@@ -190,7 +190,7 @@ poly(A)
 The output is
 \begin{verbatim}
 ans =
-     1.0000   -2.0000  -15.0000   -0.0000   -0.0000
+  1.0000   -2.0000  -15.0000   -0.0000   -0.0000
 \end{verbatim}
 Note that since $A$ is a matrix of integers we know that the coefficients 
 of the characteristic polynomial of $A$ must be integers.   Thus the 
@@ -517,3 +517,8 @@ A = \left(\begin{array}{rrrrr}
 
 
 \end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../linearAlgebra"
+%%% End:

@@ -101,8 +101,11 @@ Definition~\ref{D:determinants} implies that
 \det \left(\begin{array}{cc} 0 & 1\\1 & 0 \end{array}\right)=-1.
 \end{equation}
 We verify this by observing that 
-\begin{equation} \label{e:swapdecomp}
-\left(\begin{array}{cc} 0 & 1\\1 & 0 \end{array}\right) =
+\begin{equation*} 
+  \left(\begin{array}{cc} 0 & 1\\1 & 0 \end{array}\right)
+\end{equation*}
+equals
+\begin{equation}\label{e:swapdecomp}
 \left(\begin{array}{cr} 1 & -1\\0 & 1 \end{array}\right)
 \left(\begin{array}{cc} 1 & 0\\1 & 1 \end{array}\right)
 \left(\begin{array}{cr} 1 & 0\\0 & -1 \end{array}\right)
@@ -339,12 +342,12 @@ row of the matrix by $2$, we multiply the whole result by $2$, obtaining
 \] 
 We continue row reduction by zeroing out the last two entries in
 the $2^{nd}$ column, obtaining
-\[
-\det(A) = -2\det\left(\begin{array}{rrrr} 1 & 2 & 4 & 0\\ 0 & 1 & 5 & -1 \\
-0 & 0 & -23 & 2 \\ 0 & 0 & 8 & -3 \end{array}\right)
-= 46\det\left(\begin{array}{rrrr} 1 & 2 & 4 & 0\\ 0 & 1 & 5 & -1 \\
+\begin{align*}
+\det(A) &= -2\det\left(\begin{array}{rrrr} 1 & 2 & 4 & 0\\ 0 & 1 & 5 & -1 \\
+0 & 0 & -23 & 2 \\ 0 & 0 & 8 & -3 \end{array}\right) \\
+&= 46\det\left(\begin{array}{rrrr} 1 & 2 & 4 & 0\\ 0 & 1 & 5 & -1 \\
 0 & 0 & 1 & -\frac{2}{23} \\ 0 & 0 & 8 & -3 \end{array}\right).
-\] 
+\end{align*}
 Thus
 \[
 \det(A) = 46\det\left(\begin{array}{rrrr} 1 & 2 & 4 & 0\\ 0 & 1 & 5 & -1 \\
@@ -407,12 +410,13 @@ $i^{th}$ row and the $j^{th}$ column.  The matrices $(-1)^{i+j}A_{ij}$ are
 called {\em cofactor\/} \index{cofactor} matrices of $A$.  
 
 Inductively we define the determinant of an $n\times n$ matrix $A$ by:
-\begin{eqnarray}  
-\det(A) & = & \sum^n_{j=1} (-1)^{1+j}a_{1j}\det(A_{1j}) \nonumber
-\\  & = &
-a_{11}\det(A_{11})-a_{12}\det(A_{12})+\cdots+(-1)^{n+1}a_{1n}\det(A_{1n}).
+\begin{align}
+\det(A) & = \sum^n_{j=1} (-1)^{1+j}a_{1j}\det(A_{1j}) \nonumber
+\\  & = 
+      a_{11}\det(A_{11})-a_{12}\det(A_{12})+\cdots \nonumber\\
+  & \quad +(-1)^{n+1}a_{1n}\det(A_{1n}).
     \label{e:inductdet}
-\end{eqnarray} \index{determinant}
+\end{align} \index{determinant}
 In Appendix~\ref{A:det} we show that the determinant function defined by 
 \Ref{e:inductdet} satisfies all properties of a determinant function.
 Formula \Ref{e:inductdet} is also called {\em expansion by cofactors along 
@@ -445,20 +449,19 @@ matrices given in \Ref{e:determinantn=2}.
  
 Similarly, we can now find a formula for the determinant of
 $3\times 3$ matrices $A$ as follows.
-\begin{eqnarray} 
-\det(A) & = & a_{11}
+\begin{align}
+\det(A) & = a_{11}
 \det \left(\begin{array}{cc} a_{22} & a_{23}\\a_{32} & a_{33}
 \end{array}\right) 
 - a_{12}
 \det \left(\begin{array}{cc} a_{21} & a_{23}\\a_{31} & a_{33}
-\end{array}\right) 
-+ a_{13}
+           \end{array}\right)  \nonumber\\
+  &\quad + a_{13}
 \det\left(\begin{array}{cc} a_{21} & a_{22}\\a_{31} & a_{32}
-\end{array}\right) \nonumber \\
- & & \label{e:det3} \\
-& = & a_{11}a_{22}a_{33} + a_{12}a_{23}a_{31} + a_{13}a_{21}a_{32}
-- a_{11}a_{23}a_{32} - a_{12}a_{21}a_{33} - a_{13}a_{22}a_{31}. \nonumber
-\end{eqnarray}  
+\end{array}\right)  \nonumber\\
+        & = a_{11}a_{22}a_{33} + a_{12}a_{23}a_{31} + a_{13}a_{21}a_{32}  \nonumber\\
+  &\quad - a_{11}a_{23}a_{32} - a_{12}a_{21}a_{33} - a_{13}a_{22}a_{31}. \label{e:det3}
+\end{align}  
 
 As an example, compute
 \[
@@ -466,10 +469,11 @@ As an example, compute
 \end{array}\right) 
 \]
 using formula \Ref{e:det3} as
-\[
-2(-1)(-2) + 1\cdot3\cdot5 + 4\cdot6\cdot1 -4(-1)5 -3\cdot6\cdot2
-- (-2)1\cdot1  = 4+15+24+20 -36 +2 = 29. 
-\]
+\begin{align*}
+2(-1)(-2) & + 1\cdot3\cdot5 + 4\cdot6\cdot1 -4(-1)5 -3\cdot6\cdot2
+            - (-2)1\cdot1 \\
+  &= 4+15+24+20 -36 +2 = 29. 
+\end{align*}
 
 There is a visual mnemonic for remembering how to compute the six
 terms in formula \Ref{e:det3} for the determinant of 
@@ -477,13 +481,13 @@ $3\times 3$ matrices\index{determinant!of $3\times 3$ matrices}.
 Write the matrix as a $3\times 5$ array by repeating the first 
 two columns, as shown in bold face in Figure~\ref{F:det3}:
 \index{determinant!computation}
-\begin{figure}[htb]
+\begin{figure*}[htb]
            \centerline{%
             \psfig{file=../figures/det3.eps,height=2.5in}}
            \caption{Mnemonic for computation of determinants of 
 		$3\times 3$ matrices.}
            \label{F:det3}
-\end{figure}
+\end{figure*}
 Then add the product of terms connected by solid lines sloping down and 
 to the right and subtract the products of terms connected by dashed lines 
 sloping up and to the right.  Warning: this nice crisscross algorithm 
@@ -533,11 +537,12 @@ column. By induction on $k$
 \det(A_{1j}) = \det(B_{1j})\det(D).
 \]
 It follows that 
-\begin{eqnarray*}
-\det(A) & = & \left(b_{11}\det(B_{11})-b_{12}\det(B_{12}) + \cdots\pm
+\begin{align*}
+  \det(A) & = \left(b_{11}\det(B_{11})-b_{12}\det(B_{12}) + \cdots \right. \\
+  &\quad \left. \pm
 b_{1k}\det(B_{1k})\right)\det(D) \\
-& = & \det(B)\det(D),
-\end{eqnarray*}
+& = \det(B)\det(D),
+\end{align*}
 as desired.  \end{proof}
 
 
@@ -586,7 +591,8 @@ A =
 \end{verbatim}
 To clear the $2^{nd}$ column below the $2^{nd}$ row type 
 \begin{verbatim}
-A(3,:) = A(3,:) + A(2,:);A(4,:) = A(4,:) - A(4,2)*A(2,:)/A(2,2)\end{verbatim}
+A(3,:) = A(3,:) + A(2,:);A(4,:)
+= A(4,:) - A(4,2)*A(2,:)/A(2,2)\end{verbatim}
 obtaining
 \begin{verbatim}
 A =
@@ -748,3 +754,8 @@ Using this product, compute the determinant of $B_j$ and verify \Ref{E:cramer2}.
 \end{exercise}
 
 \end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../linearAlgebra"
+%%% End:

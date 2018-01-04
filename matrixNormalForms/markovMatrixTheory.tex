@@ -93,12 +93,13 @@ we use the binomial theorem\index{binomial theorem}.
 We can write a nontrivial Jordan block as
 $\lambda I_n+N$ where $N^{k+1}=0$ for some integer $k$.  We just discussed 
 the case $k=1$.  In this case
-\[
-(\lambda I_n+N)^m = \lambda^mI_n+m\lambda^{m-1}N + 
+\begin{align*}
+(\lambda I_n+N)^m &= \lambda^mI_n+m\lambda^{m-1}N + 
 \left(\begin{array}{@{}c@{}} m\\2\end{array}\right)\lambda^{m-2}N^2
-+\cdots+
+  +\cdots \\
+  &\quad + 
 \left(\begin{array}{@{}c@{}} m\\k \end{array}\right)\lambda^{m-k}N^k,
-\]
+\end{align*}
 where
 \[
 \left(\begin{array}{@{}c@{}} m \\ j\end{array}\right)
@@ -257,3 +258,8 @@ satisfy $|\lambda|<1$.
 
 
 \end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../linearAlgebra"
+%%% End:

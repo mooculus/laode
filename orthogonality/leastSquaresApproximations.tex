@@ -48,10 +48,11 @@ Before continuing, we state and prove the {\em Law of Phythagorus\/}.
 ||z_1+z_2||^2 = ||z_1||^2 + ||z_2||^2.
 \end{equation}
 To verify \Ref{E:LP} calculate 
-\[
-||z_1+z_2||^2=(z_1+z_2)\cdot(z_1+z_2)=z_1\cdot z_1 +2z_1\cdot z_2+z_2\cdot z_2
-=||z_1||^2 + 2z_1\cdot z_2 +||z_2||^2.
-\]
+\begin{align*}
+  ||z_1+z_2||^2&=(z_1+z_2)\cdot(z_1+z_2) \\
+  &=z_1\cdot z_1 +2z_1\cdot z_2+z_2\cdot z_2 \\
+  &=||z_1||^2 + 2z_1\cdot z_2 +||z_2||^2.
+\end{align*}
 Since $z_1$ and $z_2$ are orthogonal, $z_1\cdot z_2=0$ and the Law of 
 Phythagorus is valid.
 
@@ -248,11 +249,11 @@ plane\index{plane} spanned by $w_1$ and $w_2$.
 \begin{theorem} (Gram-Schmidt Orthonormalization) \label{T:orthobasis}
 Let $w_1,\ldots,w_k$ be a basis for the subspace $W\subset\R^n$.  Define
 $v_1$ as in \Ref{E:ortho1} and then define inductively
-\begin{eqnarray}
-v'_{j+1} & = & w_{j+1} -(w_{j+1}\cdot v_1)v_1- \cdots -(w_{j+1}\cdot v_j)v_j
-\label{E:inductiveGS} \\
-v_{j+1} & = & \frac{1}{||v'_{j+1}||}v'_{j+1}. \label{eq:gsnormal}
-\end{eqnarray}
+\begin{align}
+  v'_{j+1} & =  w_{j+1} -(w_{j+1}\cdot v_1)v_1- \cdots \nonumber\\
+  &\quad -(w_{j+1}\cdot v_j)v_j \label{E:inductiveGS} \\
+v_{j+1} & =  \frac{1}{||v'_{j+1}||}v'_{j+1}. \label{eq:gsnormal}
+\end{align}
 Then $v_1,\ldots,v_k$ is an orthonormal basis of $W$ such that for each $j$
 \[
 \Span\{v_1,\ldots,v_j\} = \Span\{w_1,\ldots,w_j\}
@@ -301,17 +302,18 @@ w_1=(1,0,-1,0),\quad w_2=(2,-1,0,1),\quad w_3=(0,0,-2,1).
 \end{equation}
 We find an orthonormal basis for $W$ using Gram-Schmidt orthonormalization.
 
-\begin{itemize}
+\begin{description}
 \item[Step 1:]   Set
 \[
 v_1 = \frac{1}{||w_1||}w_1=\frac{1}{\sqrt{2}}(1,0,-1,0).
 \]
 \item[Step 2:] Following the Gram-Schmidt process, use \Ref{E:inductiveGS} to
 define
-\[
-v'_2 = w_2-(w_2\cdot v_1)v_1= (2,-1,0,1)-\sqrt{2}\frac{1}{\sqrt{2}}(1,0,-1,0)
-=(1,-1,1,1).
-\]
+\begin{align*}
+  v'_2 &= w_2-(w_2\cdot v_1)v_1 \\
+  &= (2,-1,0,1)-\sqrt{2}\frac{1}{\sqrt{2}}(1,0,-1,0) \\
+  &=(1,-1,1,1).
+\end{align*}
 Normalization using \Ref{eq:gsnormal} yields
 \[
 v_2 = \frac{1}{||v'_2||}v'_2 = \frac{1}{2}(1,-1,1,1).
@@ -319,25 +321,27 @@ v_2 = \frac{1}{||v'_2||}v'_2 = \frac{1}{2}(1,-1,1,1).
 \item[Step 3:] Using \Ref{E:inductiveGS} set
 \begin{eqnarray*}
 v'_3 &=& w_3-(w_3\cdot v_1)v_1-(w_3\cdot v_2)v_2\\
-&=&(0,0,-2,1) - \sqrt{2}\frac{1}{\sqrt{2}}(1,0,-1,0)
--\left(-\frac{1}{2}\right)\frac{1}{2}(1,-1,1,1)\\
+     &=&(0,0,-2,1) - \sqrt{2}\frac{1}{\sqrt{2}}(1,0,-1,0) - \\
+         & & \left(-\frac{1}{2}\right)\frac{1}{2}(1,-1,1,1)\\
 &=&\frac{1}{4}(-3,-1,-3,5).
 \end{eqnarray*}
 Normalization using \Ref{eq:gsnormal} yields
 \[
 v_3 = \frac{1}{||v'_3||}v'_3 = \frac{4}{\sqrt{44}}(-3,-1,-3,5).
 \]
-\end{itemize}
+\end{description}
 
 Hence we have constructed an orthonormal basis $\{v_1,v_2,v_3\}$ for $W$,
 namely
 \begin{equation}
 \label{eq:gsoresult}
 \begin{array}{rcccl}
-v_1 & = & \frac{1}{\sqrt{2}}(1,0,-1,0) & \approx & (0.7071,0,-0.7071,0)\\
-v_2 & = & \frac{1}{2}(1,-1,1,1) & = & (0.5,-0.5,0.5,0.5)\\
-v_3 & = & \frac{4}{\sqrt{44}}(-3,-1,-3,5) & \approx &
-(-0.4523,-0.1508,-0.4523,0.7538)
+  v_1 & = & \frac{1}{\sqrt{2}}(1,0,-1,0) \\
+      & \approx & (0.7071,0,-0.7071,0)\\
+  v_2 & = & \frac{1}{2}(1,-1,1,1) \\
+    & = & (0.5,-0.5,0.5,0.5)\\
+  v_3 & = & \frac{4}{\sqrt{44}}(-3,-1,-3,5) \\
+    & \approx & (-0.4523,-0.1508,-0.4523,0.7538)
 \end{array}
 \end{equation}
 
@@ -378,3 +382,8 @@ Extend this basis to an orthonormal basis of $\R^5$.
 
 
 \end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../linearAlgebra"
+%%% End:

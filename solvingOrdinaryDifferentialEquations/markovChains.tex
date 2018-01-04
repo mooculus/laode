@@ -328,10 +328,10 @@ Theorem~\ref{T:convergetoeig}.  Once $V$ exists it follows directly from (a)
 that $\#(V)=\#(V_0)$.
 
 (c)   	Just calculate that
-\[
-P^tV = P^t(\lim_{k\to\infty}V_k) = P^t(\lim_{k\to\infty}(P^t)^kV_0)
-= \lim_{k\to\infty}(P^t)^{k+1}V_0 = \lim_{k\to\infty}(P^t)^kV_0 = V,
-\]
+\begin{align*}
+P^tV &= P^t(\lim_{k\to\infty}V_k) = P^t(\lim_{k\to\infty}(P^t)^kV_0) \\
+&= \lim_{k\to\infty}(P^t)^{k+1}V_0 = \lim_{k\to\infty}(P^t)^kV_0 = V,
+\end{align*}
 which proves (c).   \end{proof}
 
 Theorem~\ref{T:Markov}(b) gives the answer to the second part of Question (B)
@@ -415,7 +415,8 @@ following transition matrices:
 \[
 P = \left(\begin{array}{ccccc} 1 & 0 & 0 & 0 & 0 \\
   p & 1-p & 0 & 0 & 0 \\ 0 & p & 1-p & 0 & 0 \\ 0 & 0 & p & 1-p & 0 \\
- 0 & 0 & 0 & p & 1-p \end{array}\right); \quad
+            0 & 0 & 0 & p & 1-p \end{array}\right);\]
+      \[
 Q = \left(\begin{array}{ccccc} 1-q & q & 0 & 0 & 0 \\
   0 & 1-q & q & 0 & 0 \\ 0 & 0 & 1-q & q & 0 \\ 0 & 0 & 0 & 1-q & q \\
  0 & 0 & 0 & 0 & 1 \end{array}\right)
@@ -425,7 +426,9 @@ Specifically,
 P =
 \left(\begin{array}{ccccc} 1 & 0 & 0 & 0 & 0 \\
   0.2 & 0.8 & 0 & 0 & 0 \\ 0 & 0.2 & 0.8 & 0 & 0 \\ 0 & 0 & 0.2 & 0.8 & 0 \\
- 0 & 0 & 0 & 0.2 & 0.8 \end{array}\right) \AND
+        0 & 0 & 0 & 0.2 & 0.8 \end{array}\right)
+  \end{equation*}
+  \begin{equation*}
 Q =
 \left(\begin{array}{ccccc} 0.7 & 0.3 & 0 & 0 & 0 \\
   0 & 0.7 & 0.3 & 0 & 0 \\ 0 & 0 & 0.7 & 0.3 & 0 \\ 0 & 0 & 0 & 0.7 & 0.3 \\
@@ -600,3 +603,8 @@ will get wet going to work?
 
 
 \end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../linearAlgebra"
+%%% End:

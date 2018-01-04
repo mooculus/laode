@@ -44,10 +44,10 @@ and suppose that
 \]
 To prove the lemma we must show that each $\alpha_j=0$.  Since
 $v_i\cdot v_j = 0$ for $i\not= j$,
-\[
-\alpha_jv_j\cdot v_j = \alpha_1v_1\cdot v_j + \cdots + \alpha_kv_k\cdot v_j =
-(\alpha_1v_1 + \cdots +\alpha_kv_k)\cdot v_j = 0\cdot v_j = 0.
-\]
+\begin{align*}
+  \alpha_jv_j\cdot v_j &= \alpha_1v_1\cdot v_j + \cdots + \alpha_kv_k\cdot v_j \\
+  &= (\alpha_1v_1 + \cdots +\alpha_kv_k)\cdot v_j = 0\cdot v_j = 0.
+\end{align*}
 Since $v_j\cdot v_j = ||v_j||^2> 0$, it follows that $\alpha_j=0$.  \end{proof}
 
 \begin{corollary}
@@ -88,10 +88,11 @@ as claimed.   \end{proof}
 \subsubsection{An Example in $\R^3$}
 
 Let
-\[
-v_1 = \frac{1}{\sqrt{3}}(1,1,1), \quad v_2 = \frac{1}{\sqrt{6}}(1,-2,1)
-\AND v_3 = \frac{1}{\sqrt{2}}(1,0,-1).
-\]
+\begin{align*}
+  v_1 &= \frac{1}{\sqrt{3}}(1,1,1), \\
+  v_2 &= \frac{1}{\sqrt{6}}(1,-2,1), \\
+  v_3 &= \frac{1}{\sqrt{2}}(1,0,-1).
+\end{align*}
 It is a straightforward calculation to verify that these vectors have
 unit length and are pairwise orthogonal.  Let $v=(1,2,3)$ be a vector
 and determine the coordinates of $v$ in the basis ${\cal V}=\{v_1,v_2,v_3\}$.
@@ -222,3 +223,8 @@ Verify that the result is an orthonormal basis for the column space of $A$.
 
 
 \end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../linearAlgebra"
+%%% End:

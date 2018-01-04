@@ -83,10 +83,11 @@ on the main diagonal for all time $t$ must have the form
 \end{equation}
 for some real-valued function $u(t)$.  When a function of form
 \Ref{e:diagform} is a solution to \Ref{-13}, it satisfies:
-\[
-\dot{u}(t)\vectwo{1}{1} = \vectwo{\dot{x}(t)}{\dot{y}(t)} =
-C \vectwo{x(t)}{y(t)} = C u(t)\vectwo{1}{1} = u(t) C \vectwo{1}{1}.
-\]
+\begin{align*}
+  \dot{u}(t)\vectwo{1}{1} &= \vectwo{\dot{x}(t)}{\dot{y}(t)} 
+                            = C \vectwo{x(t)}{y(t)} \\
+                          &= C u(t)\vectwo{1}{1} = u(t) C \vectwo{1}{1}.
+\end{align*}
 A calculation shows that
 \[
 C \vectwo{1}{1} = 2 \vectwo{1}{1}.
@@ -500,3 +501,8 @@ input} starting at $(x(0),y(0)) = (0,1)$ and then use the
 
 
 \end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../linearAlgebra"
+%%% End:

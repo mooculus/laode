@@ -155,11 +155,12 @@ it follows that  $v_1,v_2,\ldots,v_n$ is a basis of $\R^n$ consisting of
 eigenvectors of $A$.  We need only show that the $v_j$ form an orthonormal
 basis of $\R^n$.   This is done using \Ref{e:symminv}.  For notational
 convenience let $z_1=e_1$ and compute
-\[
-\langle v_i,v_j \rangle  =\langle P\inv z_i,P\inv z_j\rangle =
-\langle P^tz_i, P^tz_j \rangle = \langle z_i, PP^t z_j \rangle =
+\begin{align*}
+\langle v_i,v_j \rangle  &=\langle P\inv z_i,P\inv z_j\rangle =
+                           \langle P^tz_i, P^tz_j \rangle \\
+  &= \langle z_i, PP^t z_j \rangle =
 \langle z_i,z_j \rangle,
-\]
+\end{align*}
 since $PP^t= I_n$.  Thus the vectors $v_j$ form an orthonormal basis since
 the vectors $z_j$ form an orthonormal basis.  \end{proof}
 
@@ -227,3 +228,8 @@ in those exercises and why?
 
 
 \end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../linearAlgebra"
+%%% End:

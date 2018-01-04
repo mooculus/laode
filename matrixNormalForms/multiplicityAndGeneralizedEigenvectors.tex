@@ -224,10 +224,11 @@ generalized eigenvectors (there are $n$ independent generalized eigenvectors).
 Let $\lambda_0$ be an eigenvalue of the $n\times n$ matrix $A$ and let 
 $A_0 = A-\lambda_0 I_n$.  For simplicity, assume that $\lambda_0$ is real.
 Note that 
-\[
-\nulls(A_0)\subset\nulls(A_0^2)\subset\cdots\subset\nulls(A_0^k)\subset\cdots
-\subset\R^n.
-\]
+\begin{align*}
+  \nulls(A_0) &\subset \nulls(A_0^2)\subset\cdots \\
+  &\subset\nulls(A_0^k)\subset\cdots \\
+  &\subset\R^n.
+\end{align*}
 Therefore, the dimensions of the null spaces are bounded above by $n$ and
 there must be a smallest $k$ such that 
 \[
@@ -391,3 +392,8 @@ B=\left(\begin{array}{rrrrr} 179 & -230 & 0 & 10 & -30 \\
 
 
 \end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../linearAlgebra"
+%%% End:

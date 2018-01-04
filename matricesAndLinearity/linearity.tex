@@ -31,12 +31,12 @@ A(cx) & = & c(Ax). \label{product}
 \end{eqnarray}
 Using \Matlab we can also verify that the identities \Ref{sum}
 and \Ref{product} are valid for some particular choices of $x$,
-$y$, $c$ and $A$.  For example, let
+$y$, $c$ and $A$.  For example, let $c=5$ and
 \begin{equation*}
 A = \left(\begin{array}{cccc} 2 & 3 & 4 & 1\\ 1 & 1 & 2 & 3
 \end{array}\right), \quad x = \left(\begin{array}{r} 1 \\ 5 \\ 4 \\
 3 \end{array}\right), \quad y = \left(\begin{array}{r} 1 \\ -1 \\ -1 \\
-4 \end{array}\right), \AND c=5.
+4 \end{array}\right).
 \end{equation*}
 Typing {\tt e3\_3\_3} enters this information into \Matlabp.  Now
 type
@@ -263,7 +263,10 @@ matrix $A$ associated to a linear mapping $L$ is $L(e_j)$ viewed as a column
 vector.  As an example, let $L:\R^2\to\R^2$ be rotation clockwise through
 $90^\circ$.  Geometrically, it is easy to see that
 \[
-L(e_1) = L\left(\vectwo{1}{0}\right) = \vectwo{0}{-1} \AND
+  L(e_1) = L\left(\vectwo{1}{0}\right) = \vectwo{0}{-1}
+\]
+and
+\[
 L(e_2) = L\left(\vectwo{0}{1}\right) = \vectwo{1}{0}.
 \]
 Since we know that rotations are linear maps, it follows that the matrix
@@ -466,7 +469,9 @@ x=\left(
  3   \\
  -1
 \end{array}
-\right),\quad
+\right)
+\end{equation*}
+\begin{equation*}
 y=\left(
 \begin{array}{r}
  2   \\
@@ -483,3 +488,8 @@ y=\left(
 
 
 \end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../linearAlgebra"
+%%% End:

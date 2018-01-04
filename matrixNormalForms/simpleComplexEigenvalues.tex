@@ -430,15 +430,15 @@ Equating real and imaginary parts leads to
 Aw_1^i & = &   -\tau_1w_1^r+\sigma_1w_1^i. \end{array}
 \end{equation}
 Using \Ref{e:complexsimple}, compute
-\[
-(S\inv AS)e_{k+1} = S\inv Aw_1^r = S\inv(\sigma_1w_1^r+\tau_1w_1^i) 
-= \sigma_1e_{k+1} + \tau_1e_{k+2}.
-\]
+\begin{align*}
+(S\inv AS)e_{k+1} &= S\inv Aw_1^r = S\inv(\sigma_1w_1^r+\tau_1w_1^i)  \\
+&= \sigma_1e_{k+1} + \tau_1e_{k+2}.
+\end{align*}
 Similarly, 
-\[
-(S\inv AS)e_{k+2} = S\inv Aw_1^i = S\inv(-\tau_1w_1^r+\sigma_1w_1^i)
-= -\tau_1e_{k+1} + \sigma_1e_{k+2}.
-\]
+\begin{align*}
+(S\inv AS)e_{k+2} &= S\inv Aw_1^i = S\inv(-\tau_1w_1^r+\sigma_1w_1^i) \\
+&= -\tau_1e_{k+1} + \sigma_1e_{k+2}.
+\end{align*}
 Thus, the $k^{th}$ and $(k+1)^{st}$ columns of $S\inv AS$ have the desired
 diagonal block in the $k^{th}$ and $(k+1)^{st}$ rows, and have all other 
 entries equal to zero.
@@ -629,3 +629,8 @@ A = \left(\begin{array}{rrr}
 
 
 \end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../linearAlgebra"
+%%% End:

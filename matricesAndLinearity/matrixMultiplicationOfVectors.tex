@@ -102,32 +102,32 @@ a_{21}x_1 + a_{22}x_2 + a_{23}x_3
 \right).
 \end{equation}
 As a specific example, compute
-\[
+\begin{align*}
 \left(
-\begin{array}{rrr}
+\begin{matrix}
  2  & 3 & -1 \\
  4  & 1 &  5
-\end{array}
+\end{matrix}
 \right)
 \left(
-\begin{array}{r}
+\begin{matrix}
 2 \\ -3 \\ 4
-\end{array}
+\end{matrix}
 \right)
-=
+&=
 \left(
-\begin{array}{ccccc}
+\begin{matrix}
 2\cdot 2 & + & 3\cdot(-3) & + & (-1)\cdot 4 \\
 4\cdot 2 & + & 1\cdot(-3) & + & 5\cdot 4
-\end{array}
-\right)
-=
+\end{matrix}
+\right) \\
+&=
 \left(
-\begin{array}{r}
+\begin{matrix}
 -9 \\ 25
-\end{array}
+\end{matrix}
 \right).
-\]
+\end{align*}
 
 
 Using \Ref{Atimesx} we have a compact notation for writing
@@ -451,7 +451,9 @@ A=\left(
    -33 &  31  &  2 &  41 &  65 & -48 &  48\\
     31 &  68  & 55 &  -3 &  35 &  19 & -14
 \end{array}
-\right)\AND
+\right)\end{equation*}
+and
+\begin{equation*}
 x = \left( \begin{array}{r} 2.7\\   6.1\\   -8.3\\    8.9\\    8.3\\    2\\
   -4.9
 \end{array}\right).
@@ -497,3 +499,8 @@ using \Matlabp.  (Then pray that there is an easier way.)
 
 
 \end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

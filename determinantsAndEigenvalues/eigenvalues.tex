@@ -117,10 +117,11 @@ $(-1)^n$.  Again, we verify this statement by induction.  This
 statement is easily verified for $1\times 1$ matrices --- we
 assume that it is true for $(n-1)\times (n-1)$ matrices.  Again
 use \Ref{e:inductdet} to compute
-\[
-\det(A-\lambda I_n) = (a_{11}-\lambda)\det(B_{11})-a_{12}\det(B_{12}) 
-+\cdots+(-1)^{n+1}a_{1n}\det(B_{1n}).
-\]
+\begin{align*}
+\det(A-\lambda I_n) &= (a_{11}-\lambda)\det(B_{11})-a_{12}\det(B_{12}) 
+                      +\cdots \\
+  &\quad +(-1)^{n+1}a_{1n}\det(B_{1n}).
+\end{align*}
 where $B_{1j}$ are the cofactor \index{cofactor} matrices of
 $A-\lambda I_n$.  Using our previous observation all of the
 terms $\det(B_{1j})$ are polynomials of degree at most $n-1$.
@@ -178,12 +179,12 @@ To verify this point, suppose that
 p(\lambda) = c_n\lambda^n + c_{n-1}\lambda^{n-1} + \cdots + c_0,
 \]
 where each $c_j\in\R$.  Then
-\[
-\overline{p(\lambda)}
-=\overline{c_n\lambda^n + c_{n-1}\lambda^{n-1} + \cdots + c_0} 
-= c_n\overline{\lambda}^n + c_{n-1}\overline{\lambda}^{n-1} + \cdots + c_0
+\begin{align*}
+\overline{p(\lambda)} \\
+&=\overline{c_n\lambda^n + c_{n-1}\lambda^{n-1} + \cdots + c_0}  \\
+&= c_n\overline{\lambda}^n + c_{n-1}\overline{\lambda}^{n-1} + \cdots + c_0 \\
 = p(\overline{\lambda})
-\]
+\end{align*}
 If $\lambda_0$ is a root of $p(\lambda)$, then
 \[
 p(\overline{\lambda_0}) = \overline{p(\lambda_0)}=\overline{0}=0.
@@ -279,10 +280,10 @@ and hence the eigenvalues of $A$ and $B$ are identical.
 \begin{proof}  Since $B$ and $A$ are similar, there exists an 
 invertible $n\times n$ matrix $S$ such that $B=S\inv AS$.  It 
 follows that 
-\[
-\det(B-\lambda I_n) = \det(S\inv AS-\lambda I_n)
-= \det(S\inv(A-\lambda I_n)S) = \det(A-\lambda I_n),
-\]
+\begin{align*}
+\det(B-\lambda I_n) &= \det(S\inv AS-\lambda I_n) \\
+&= \det(S\inv(A-\lambda I_n)S) = \det(A-\lambda I_n),
+\end{align*}
 which verifies that $p_A=p_B$.  \end{proof}
 
 Recall that the {\em trace\/}\index{trace} of an 

@@ -313,7 +313,7 @@ sinusoidal function $g(T)$.
 
 
 
-\begin{table}[htb]
+\begin{table*}[htb]
 \begin{center}
 \begin{tabular}{|c||c|c||c|c|||c||c|c||c|c|}
 \hline
@@ -333,7 +333,7 @@ Month & High & Low & High & Low & Month & High & Low & High & Low\\
 Janeiro.}
 \label{T:parrio}
 \end{center}
-\end{table}
+\end{table*}
 
 Note that each data set consists of twelve entries --- one for each month.
 Let $T=(1,2,\ldots,12)^t$ be the vector $X\in\R^{12}$ in the general
@@ -386,18 +386,19 @@ xlabel('time (months)')
 ylabel('temperature (Fahrenheit)')
 hold on
 xx = linspace(0,13);
-yy = b(1) + b(2)*cos(2*pi*xx/12) + b(3)*sin(2*pi*xx/12);
+yy = b(1) + b(2)*cos(2*pi*xx/12) + 
+     b(3)*sin(2*pi*xx/12);
 plot(xx,yy)
 \end{verbatim}
 
-\begin{figure}[htb]
+\begin{figure*}[htb]
      \centerline{%
      \psfig{file=../figures/ParisH.eps,width=2.5in}
      \psfig{file=../figures/RioH.eps,width=2.5in}}
      \caption{Monthly averages of daily high temperatures in Paris (left) and
 	Rio de Janeiro (right) with best sinusoidal approximation.}
      \label{F:ParisH}
-\end{figure}
+\end{figure*}
 
 A similar exercise allows us to compute the best approximation to the
 Rio de Janeiro high temperatures obtaining
@@ -513,3 +514,8 @@ Duluth 		&  136 & 52 & Salt Lake City 	&   99 & 59 \\
 
 
 \end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../linearAlgebra"
+%%% End:

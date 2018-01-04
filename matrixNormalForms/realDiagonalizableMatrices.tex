@@ -128,10 +128,10 @@ corresponding eigenvalues of $A$; that is, $Av_j=\lambda_jv_j$.
 Let $S=(v_1|\cdots|v_n)$ be the $n\times n$ matrix whose columns are the 
 eigenvectors $v_j$.  We claim that $D=S\inv AS$ is a diagonal matrix.
 Compute
-\[
-D=S\inv AS=S\inv A(v_1|\cdots|v_n)=S\inv(Av_1|\cdots|Av_n)=
-S\inv(\lambda_1v_1|\cdots|\lambda_nv_n).
-\]
+\begin{align*}
+  D&=S\inv AS=S\inv A(v_1|\cdots|v_n)=S\inv(Av_1|\cdots|Av_n)\\
+  &=S\inv(\lambda_1v_1|\cdots|\lambda_nv_n).
+\end{align*}
 It follows that 
 \[
 D=(\lambda_1S\inv v_1|\cdots|\lambda_nS\inv v_n).

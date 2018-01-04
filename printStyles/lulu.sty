@@ -3,6 +3,7 @@
 \ProvidesPackage{lulu}[2015/12/17 v0.75]
 \ProcessOptions\relax
 
+\usetikzlibrary{patterns}
 \usepackage{stix}
 %%%\usepackage[T1]{fontenc} Clobbers \d!!!
 \usepackage{gillius}
@@ -12,10 +13,11 @@
 
 \usepackage{microtype}
 
+\renewcommand{\EXER}{\section*{Exercises\leaders\vrule height 3pt depth -2.8pt \hfill \null}\vspace*{0.2in}\small\setcounter{exercise}{0}}
+\renewcommand{\CEXER}{\subsection*{Computer Exercises}}
+%\renewcommand{\TEXER}{\subsection*{Computer Exercises}}
 
-\renewcommand{\EXER}{\section*{Exercises}\vspace*{0.2in}\hrule\small\setcounter{exercise}{0}}
-
-
+\numberwithin{equation}{subsection}
 
 \usepackage{imakeidx}
 \makeindex[intoc]
@@ -28,7 +30,7 @@
 %\usepackage[margin=.5in, includehead, includefoot, hmargin={.8in,.5in}, paperwidth=11in, paperheight=8.5in]{geometry}
 
 % Store usual maketitle as othermaketitle
-%% \let\othermaketitle\maketitle
+%\let\othermaketitle\maketitle
 
 
 %% \makeatletter
@@ -136,6 +138,7 @@
   \def\maketitle{%
     \addtocounter{titlenumber}{1}%
     \addtocounter{chapter}{1}%
+    \stepcounter{section}
     \addcontentsline{toc}{section}{\textbf{\thetitlenumber\quad\@title}}%
                     {\flushleft\small\sffamily\bfseries\@pretitle\par\vspace{-1.5em}}%
                     {\flushleft\LARGE\sffamily\bfseries\thetitlenumber\quad\@title \par }%
@@ -145,6 +148,7 @@
 \renewcommand\sectionstyle{%
   \def\maketitle{%
     \addtocounter{sectiontitlenumber}{1}
+    \stepcounter{subsection}    
     \addcontentsline{toc}{subsection}{\thetitlenumber.\thesectiontitlenumber\quad\@title}%
     {\flushleft\small\sffamily\bfseries\@pretitle\par\vspace{-1.5em}}%
     {\flushleft\Large\sffamily\bfseries\thetitlenumber.\thesectiontitlenumber\quad\@title \par}%
@@ -212,6 +216,10 @@
                                     {3.25ex \@plus1ex \@minus.2ex}%
                                     {-1em}%
                                     {\normalfont\normalsize\sffamily\bfseries}}
+\renewcommand\subsubsection{\@startsection{subparagraph}{10}{\z@}%
+                                    {3.25ex \@plus1ex \@minus.2ex}%
+                                    {-1em}%
+                                    {\normalfont\normalsize\sffamily}}
 
 
 % kills multipleChoice
@@ -220,12 +228,12 @@
 \NewEnviron{multipleChoice}{}
 
 
+% kills selectAll
+\let\selectAll\relax
+\let\endselectAll\relax
+\NewEnviron{selectAll}{}
 
-% remove italics def
-\let\definition\relax
-\let\enddefinition\relax
-\theoremstyle{definition}
-\newtheorem*{definition}{Definition}
+
 
 % remove italics def
 \let\remark\relax
@@ -237,13 +245,19 @@
 \let\endtheorem\relax
 \let\c@theorem\relax 
 \theoremstyle{theorem}
-\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{theorem}{Theorem}[subsection]
 
 \let\lemma\relax
 \let\endlemma\relax
-\let\c@lemma\relax 
+%\let\c@lemma\relax 
 \theoremstyle{theorem}
-\newtheorem{lemma}[theorem]{lemma}
+\newtheorem{lemma}[theorem]{Lemma}
+
+% remove italics def
+\let\definition\relax
+\let\enddefinition\relax
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Theorem}
 
 \let\question\relax
 \let\endquestion\relax
@@ -305,6 +319,75 @@
    \end{description}\normalsize%
 }
 
+\makeatletter
+% % Redefine maketitle to give course packet title page and toc.
+\renewcommand{\maketitle}{ %
+\pagestyle{empty}
+\onecolumn
+\begin{center}
+  {\scalebox{3}{\huge\textsf{\textbf{\textcolor{black}{Linear Algebra}}}}} \\[1ex]
+    {\scalebox{3}{\large\textsf{\textbf{\textcolor{black}{and Differential Equations}}}}}
+\end{center}
+
+\vfill
+
+\begin{center}
+  \huge\textsf{by Martin Golubitsky and Michael Dellnitz}
+\end{center}
+
+\vfill
+\vfill
+
+\begin{flushleft}\hspace*{-.12in}
+\begin{tikzpicture}
+  \node[anchor=west] at (0,0) {\scalebox{1}{\Huge\textsf{\ccbysa}}};
+  \node[anchor=east] at (7in,-.25) {\small\textsf{This document was typeset on \today.}};
+\end{tikzpicture}
+\end{flushleft}
+\thispagestyle{empty}
+
+\pagebreak
+
+~\vfill
+
+\noindent
+Copyright \copyright\ \the\year\  Martin Golubitsky and Michael Dellnitz
+
+\noindent
+This work is licensed under the Creative Commons
+Attribution-ShareAlike License.
+
+\noindent To view a copy of this
+license, visit \url{http://creativecommons.org/licenses/by-sa/4.0/}
+
+If you distribute this work or a derivative, include the history of
+the document.  The source code is available at:
+
+\quad\url{http://github.com/mooculus/laode/}
+
+\noindent This book is typeset using \LaTeX\ and the STIX and Gillius fonts.
+
+\noindent This book uses the \textsf{\textbf{XIMERA}} document class.
+
+\noindent We will be glad to receive corrections and suggestions for
+improvement at \texttt{ximera@math.osu.edu}
+
+\twocolumn
+\clearpage
+\ifnotoc\else % When notoc option is used, we do not include a table of contents.  Otherwise:
+\tableofcontents\clearpage % we include a table of contents in every course packet.
+	\clearpage
+        \fi
+\pagestyle{main} %switch to main pagestyle, just like ximera documents.
+\let\maketitle\othermaketitle % renew maketitle to usual definition.
+}
+
+\newcommand{\frontmatter}{%
+\pagenumbering{roman}%
+\setcounter{page}{1}}
+\newcommand{\mainmatter}{%
+  \pagenumbering{arabic}%
+\setcounter{page}{1}}
 
 %% Fix weird index issue.
 \makeatletter
