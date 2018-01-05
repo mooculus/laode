@@ -172,16 +172,16 @@ C^2 = -I_2, \quad C^3 = -C, \AND C^4 = I_n.
 \]
 Therefore, by collecting terms of odd and even power in the series
 expansion for the matrix exponential we obtain
-\begin{eqnarray*}
-e^{tC} & = & I_2 + tC + \frac{t^2}{2!} C^2 +  \frac{t^3}{3!}C^3 +\cdots\\
-     & = & I_2 + tC - \frac{t^2}{2!}I_2 - \frac{t^3}{3!}C +\cdots\\
-     & = & \left(1 - \frac{t^2}{2!} + \frac{t^4}{4!} - \frac{t^6}{6!} +
-		\cdots \right)I_2
-	 + \left(t - \frac{t^3}{3!} + \frac{t^5}{5!} - \frac{t^7}{7!} +
+\begin{align*}
+e^{tC} & =  I_2 + tC + \frac{t^2}{2!} C^2 +  \frac{t^3}{3!}C^3 +\cdots\\
+     & =  I_2 + tC - \frac{t^2}{2!}I_2 - \frac{t^3}{3!}C +\cdots\\
+     & =  \left(1 - \frac{t^2}{2!} + \frac{t^4}{4!} - \frac{t^6}{6!} +
+		\cdots \right)I_2 + \\
+	 &\quad \left(t - \frac{t^3}{3!} + \frac{t^5}{5!} - \frac{t^7}{7!} +
 	\cdots \right)C \\
-     & = & (\cos t)I_2 + (\sin t)C \\
-     & = & \mattwo{\cos t}{-\sin t}{\sin t}{\cos t}.
-     \end{eqnarray*}
+     & =  (\cos t)I_2 + (\sin t)C \\
+     & =  \mattwo{\cos t}{-\sin t}{\sin t}{\cos t}.
+     \end{align*}
 In this computation we have used the fact that the trigonometric
 functions $\cos t$ and $\sin t$ have the power series expansions:
 \begin{eqnarray*}
