@@ -77,17 +77,18 @@ Next we claim that
 \end{equation}
 We verify the claim by supposing that we can differentiate
 \Ref{eq:MatrixExp} term by term with respect to $t$. Then
-\begin{eqnarray*}
-  \dps\frac{d}{dt} e^{tC} & = & \frac{d}{dt}(I_n) + \frac{d}{dt}(tC)
-  + \frac{d}{dt}\left(\frac{t^2}{2!} C^2\right) +
-  \frac{d}{dt}\left(\frac{t^3}{3!} C^3\right) +
+\begin{align*}
+  \dps\frac{d}{dt} e^{tC} & = \frac{d}{dt}(I_n) + \frac{d}{dt}(tC)
+  + \frac{d}{dt}\left(\frac{t^2}{2!} C^2\right) + 
+                            \frac{d}{dt}\left(\frac{t^3}{3!} C^3\right) + \\
+                          &\quad
   \frac{d}{dt}\left(\frac{t^4}{4!}C^4\right) + \cdots\\
-     & = & 0 + C + t C^2 + \frac{t^2}{2!} C^3 +
+     & = 0 + C + t C^2 + \frac{t^2}{2!} C^3 +
 \frac{t^3}{3!} C^4 + \cdots\\
-     & = & C\left(I_n + tC + \frac{t^2}{2!} C^2 + \frac{t^3}{3!} C^3
+     & = C\left(I_n + tC + \frac{t^2}{2!} C^2 + \frac{t^3}{3!} C^3
 +\cdots\right)\\
-     & = & Ce^{tC}.
-\end{eqnarray*}
+     & = Ce^{tC}.
+\end{align*}
 It follows that the function $X(t) = e^{tC}X_0$ is a solution of
 \Ref{eq:x=Mx} for each $X_0\in\R^n$; that is,
 \[
@@ -134,11 +135,12 @@ e^{\alpha I_n} = e^{\alpha} I_n.
 \end{equation}
 That is, $e^{\alpha I_n}$ is a scalar multiple of the
 identity.  To verify \Ref{ex:expm}, compute
-\[
-e^{\alpha I_n} = I_n + \alpha I_n + \frac{\alpha^2}{2!} I_n^2 +
-\frac{\alpha^3}{3!} I_n^3 +\cdots = (1+\alpha+\frac{\alpha^2}{2!}
+\begin{align*}
+e^{\alpha I_n} &= I_n + \alpha I_n + \frac{\alpha^2}{2!} I_n^2 +
+                 \frac{\alpha^3}{3!} I_n^3 +\cdots \\
+  &= (1+\alpha+\frac{\alpha^2}{2!}
 +\frac{\alpha^3}{3!}+\cdots)I_n = e^{\alpha} I_n.
-\]
+\end{align*}
 
 \noindent (b) \quad Let $C$ be a $2\times 2$ diagonal matrix,
      \[
@@ -394,13 +396,14 @@ in each row of $A$, and then take the maximum of these sums.  Prove that:
 ||AB||_m \leq ||A||_m ||B||_m.
 \]
 {\bf Hint:} Begin by noting that
-\[
-||AB||_m =
+\begin{align*}
+||AB||_m &=
 \max_{1\leq i\leq n}\left(\sum_{j=1}^n\left|\sum_{k=1}^na_{ik}b_{kj}\right|
 \right)\leq \max_{1\leq i\leq n}\left(\sum_{j=1}^n\sum_{k=1}^n\left|a_{ik}b_{kj}
-\right|\right) = \max_{1\leq i\leq n}\left(\sum_{k=1}^n\sum_{j=1}^n
+           \right|\right) \\
+  &= \max_{1\leq i\leq n}\left(\sum_{k=1}^n\sum_{j=1}^n
 \left|a_{ik}b_{kj}\right|\right).
-\]
+\end{align*}
 \end{exercise}
 
 \begin{exercise} \label{c6.2.8}
