@@ -234,7 +234,13 @@
                                     {-1em}%
                                     {\normalfont\normalsize\sffamily}}
 
-                                  
+\newpagestyle{numbered}{
+\sethead[\textsl{\ifnumbers \textsection\thetitlenumber\ifnum\value{sectiontitlenumber}>0.\thesectiontitlenumber\else\fi \quad\fi\@title}][][] % even
+{}{}{\textsl{\ifnumbers \fi\@title\quad\textsection\thetitlenumber\ifnum\value{sectiontitlenumber}>0.\thesectiontitlenumber\else\fi}} % odd
+\setfoot[\thepage][][] % even
+{}{}{\thepage} % odd
+}
+\pagestyle{numbered}
 
 % kills multipleChoice
 \let\multipleChoice\relax
@@ -397,7 +403,7 @@ improvement at \texttt{ximera@math.osu.edu}
 \tableofcontents\clearpage % we include a table of contents in every course packet.
 	\clearpage
         \fi
-\pagestyle{main} %switch to main pagestyle, just like ximera documents.
+\pagestyle{numbered} %switch to main pagestyle, just like ximera documents.
 \let\maketitle\othermaketitle % renew maketitle to usual definition.
 }
 
