@@ -140,25 +140,25 @@ It is instructive to note how the time series $x_1(t)$ damps down to the
 origin in the three cases listed in Theorem~\ref{C:asympstlin}.
 In Figure~\ref{F:oscil} we present the time series for the three
 coefficient matrices:
-\[
-C_1 = \mattwo{-2}{0}{0}{-1} \qquad
-C_2 = \mattwo{-1}{-55}{55}{-1} \qquad
-C_3 = \mattwo{-2}{1}{0}{-2}.
-\]
+\begin{align*}
+C_1 &= \mattwo{-2}{0}{0}{-1}, \\
+C_2 &= \mattwo{-1}{-55}{55}{-1}, \\
+C_3 &= \mattwo{-2}{1}{0}{-2}.
+\end{align*}
 In this figure, we can see the exponential decay to zero associated with the
 unequal real eigenvalues of $C_1$; the damped oscillation associated with the
 complex eigenvalues of $C_2$; and the initial growth of the time series due
 to the $te^{-2t}$ term followed by exponential decay to zero in the equal
 eigenvalue $C_3$ example.
 
-\begin{figure}[htb]
+\begin{figure*}[htb]
            \centerline{%
            \psfig{file=../figures/expdamp.eps,width=2.2in}
 	   \psfig{file=../figures/oscil.eps,width=2.2in}
 	   \psfig{file=../figures/grdecay.eps,width=2.2in}}
            \caption{Time series for different sinks.}
            \label{F:oscil}
-\end{figure}
+\end{figure*}
 
 
 \subsubsection*{Linear Stability}
@@ -203,14 +203,14 @@ how to draw schematic phase portraits for
 sources\index{phase!portrait!for a source}.  The trajectories are
 the same --- but the arrows point in the opposite direction.
 
-\begin{figure}[htb]
+\begin{figure*}[htb]
            \centerline{%
 	   \psfig{file=../figures/asink.eps,width=3.2in}
            \psfig{file=../figures/asource.eps,width=3.2in}}
            \caption{(Left) Sink $\dot{X}=BX$ where $B$ is given in
 \protect{\Ref{E:SS}}.  (Right) Source $\dot{X}=-BX$.}
            \label{F:SS}
-\end{figure}
+\end{figure*}
 
 
 \subsection*{Phase Portraits for Saddles}
@@ -229,14 +229,14 @@ as in Figure~\ref{F:linsaddle}.  The important feature of saddles
 is that there are special trajectories (the eigendirections) that
 limit on the origin in either forward or backward time.
 
-\begin{figure}[htb]
+\begin{figure*}[htb]
            \centerline{%
 	   \psfig{file=../figures/linpnb.eps,width=3.5in}
            \psfig{file=../figures/linpnts.eps,width=3.5in}}
            \caption{(Left) Saddle phase portrait.
 	(Right) First quadrant solution time series.}
            \label{F:linsaddle}
-\end{figure}
+\end{figure*}
 
 \begin{definition} \label{D:stablemfld}
 The {\em stable manifold\/} or {\em stable orbit\/} of a saddle consists of

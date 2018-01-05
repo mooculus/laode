@@ -322,28 +322,26 @@ P = \mattwo{2}{0}{-1}{-3} \AND P\inv = \frac{1}{6}\mattwo{3}{0}{-1}{-2}.
 \]
 It follows from \Ref{e:exp0ev} that the solution to the initial value problem
 is
-\begin{eqnarray*}
+{\scriptsize \begin{eqnarray*}
 X(t) & =  &
 e^{-2t}P\mattwo{\cos(3t)}{-\sin(3t)}{\sin(3t)}{\cos(3t)}P\inv X_0 \\ & = &
 \frac{1}{6}e^{-2t}\mattwo{2}{0}{-1}{-3}
 \mattwo{\cos(3t)}{-\sin(3t)}{\sin(3t)}{\cos(3t)}
 \mattwo{3}{0}{-1}{-2}\vectwo{1}{1}.
-\end{eqnarray*}
+\end{eqnarray*}\normalsize}
 A calculation gives
-\begin{eqnarray*}
+{\scriptsize\begin{eqnarray*}
 X(t) & = & \frac{1}{2}e^{-2t}\mattwo{2}{0}{-1}{-3}
 \mattwo{\cos(3t)}{-\sin(3t)}{\sin(3t)}{\cos(3t)}\vectwo{1}{-1}  \\
 & = & e^{-2t}
 \vectwoc{\cos(3t)+\sin(3t)}{\cos(3t)-2\sin(3t)}.
-\end{eqnarray*}
+\end{eqnarray*}\normalsize}            
 Thus the solution to \Ref{e:complexexample} that we have found using 
 similarity of matrices is identical to the solution \Ref{e:complexexampleans}
 that we found by the direct method.
 
 Solving systems with either distinct real eigenvalues or equal eigenvalues
 works in a similar fashion.
-
-
 
 \EXER
 
@@ -389,3 +387,8 @@ Check your answer using \Matlabp.
 
 
 \end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../linearAlgebra"
+%%% End:

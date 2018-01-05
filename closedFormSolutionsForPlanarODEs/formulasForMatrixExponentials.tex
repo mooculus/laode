@@ -72,10 +72,10 @@ e^{tC} =  e^{-2t}\left(I_2+t\mattwo{3}{-1}{9}{-3}\right)
 = e^{-2t}\mattwoc{1+3t}{-t}{9t}{1-3t}.
 \end{equation}
 Hence the solution to the initial value problem is:
-\[
-X(t) = e^{tC}X_0 = e^{-2t}\mattwoc{1+3t}{-t}{9t}{1-3t}\vectwo{2}{3}
- = e^{-2t}\vectwo{2+3t}{3+9t}.
-\]
+\begin{align*}
+X(t) &= e^{tC}X_0 = e^{-2t}\mattwoc{1+3t}{-t}{9t}{1-3t}\vectwo{2}{3} \\
+  &= e^{-2t}\vectwo{2+3t}{3+9t}.
+\end{align*}
 
 \subsection*{The Cayley Hamilton Theorem} \index{Cayley Hamilton theorem}
 
@@ -95,16 +95,17 @@ p_A(A) = A^2 + aA + bI_2 = 0.
 \begin{proof}  Suppose $B=P\inv AP$ and $A$ are similar matrices.  We claim that
 if $p_A(A)=0$, then $p_B(B)=0$.  To verify this claim, recall from
 Lemma~\ref{L:simdettr} that $p_A=p_B$ and calculate
-\[
-p_B(B) = p_A(P\inv AP) = (P\inv AP)^2 + aP\inv AP + bI_2 = P\inv p_A(A)P= 0.
-\]
+\begin{align*}
+  p_B(B) &= p_A(P\inv AP) = (P\inv AP)^2 + aP\inv AP + bI_2 \\
+  &= P\inv p_A(A)P= 0.
+\end{align*}
 Theorem~\ref{T:putinform} classifies $2\times 2$ matrices up to similarity.
 Thus, we need only verify this theorem for the matrices
-\[
-C =  \mattwoc{\lambda_1}{0}{0}{\lambda_2} \qquad
-D =  \mattwo{\sigma}{-\tau}{\tau}{\sigma} \qquad
-E =  \mattwoc{\lambda_1}{1}{0}{\lambda_1},
-\]
+\begin{align*}
+C &=  \mattwoc{\lambda_1}{0}{0}{\lambda_2},
+D &=  \mattwo{\sigma}{-\tau}{\tau}{\sigma},
+E &=  \mattwoc{\lambda_1}{1}{0}{\lambda_1},
+\end{align*}
 that is, we need to verify that
 \[
 p_C(C) = 0 \qquad p_D(D)=0 \qquad p_E(E)=0.
@@ -118,17 +119,20 @@ p_D(\lambda) & = & \lambda^2 - 2\sigma \lambda + (\sigma^2+\tau^2) \\
 p_E(\lambda) & = & (\lambda-\lambda_1)^2.
 \end{eqnarray*}
 It now follows that
-\[
-p_C(C) = (C-\lambda_1I_2)(C-\lambda_2I_2) =
-\mattwoc{0}{0}{0}{\lambda_2-\lambda_1}\mattwoc{\lambda_1-\lambda_2}{0}{0}{0}
-=0,
-\]
-\[
-p_D(D) =
-\mattwoc{\sigma^2-\tau^2}{-2\sigma\tau}{2\sigma\tau}{\sigma^2-\tau^2}
--2\sigma \mattwo{\sigma}{-\tau}{\tau}{\sigma} +
-(\sigma^2+\tau^2)\mattwo{1}{0}{0}{1} = 0,
-\]
+\begin{align*}
+  p_C(C) &= (C-\lambda_1I_2)(C-\lambda_2I_2) 
+           \\
+&=\mattwoc{0}{0}{0}{\lambda_2-\lambda_1}\mattwoc{\lambda_1-\lambda_2}{0}{0}{0} \\
+&=0,
+\end{align*}
+and
+\begin{align*}
+p_D(D) &=
+\mattwoc{\sigma^2-\tau^2}{-2\sigma\tau}{2\sigma\tau}{\sigma^2-\tau^2} -\\
+       &\quad 2\sigma \mattwo{\sigma}{-\tau}{\tau}{\sigma} + \\
+  &\quad (\sigma^2+\tau^2)\mattwo{1}{0}{0}{1} = 0,
+\end{align*}
+and
 \[
 p_E(E) = (E-\lambda_1I_2)^2 = \mattwo{0}{1}{0}{0}^2 = 0.
 \]

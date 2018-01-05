@@ -356,7 +356,7 @@
 \begin{flushleft}\hspace*{-.12in}
 \begin{tikzpicture}
   \node[anchor=west] at (0,0) {\scalebox{1}{\Huge\textsf{\ccbysa}}};
-  \node[anchor=east] at (7in,-.25) {\small\textsf{This document was typeset on \today.}};
+  \node[anchor=east] at (7in,-.25) {\parbox{7in}{\begin{flushright}\small\textsf{This document was typeset on \today.} \\ \texttt{\input{.git/refs/heads/master}}\end{flushright}}};
 \end{tikzpicture}
 \end{flushleft}
 \thispagestyle{empty}
