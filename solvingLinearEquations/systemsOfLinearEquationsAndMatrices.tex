@@ -112,7 +112,7 @@ five equations in five unknowns --- but it does not need to keep
 track of the unknowns $(x_1,x_2,x_3,x_4,x_5)$ by name.  Indeed,
 the computer just needs to know the {\em matrix of
 coefficients\/} \index{matrix!coefficient} in \Ref{big}
-\begin{equation*}  \label{bigmatrix}
+\begin{matlabEquation}  \label{bigmatrix}
 \left(
 \begin{array}{rrrrr}
  5 & -4 &  3 & -6 &  2 \\
@@ -122,9 +122,9 @@ coefficients\/} \index{matrix!coefficient} in \Ref{big}
  1 & -6 &  1 &  1 &  4
 \end{array}
 \right)
-\end{equation*}
+\end{matlabEquation}
 and the {\em vector\/} on the right hand side of \Ref{big}
-\begin{equation*} \label{bigRHS}
+\begin{matlabEquation} \label{bigRHS}
 \left(
 \begin{array}{r}
   4 \\
@@ -134,12 +134,12 @@ and the {\em vector\/} on the right hand side of \Ref{big}
   4
 \end{array}
 \right).
-\end{equation*}
+\end{matlabEquation}
 
 We now describe how we enter this information into \Matlabp.  To
 reduce the drudgery and to allow us to focus on ideas, the entries
-in equations having a $*$ after their label
-(such as \Ref{bigmatrix}*) have been entered in the {\tt laode}
+in equations having a $*$ after their label,
+such as \Ref{bigmatrix}, have been entered in the {\tt laode}
 toolbox. This information can be accessed as follows.  After
 starting your \Matlab session, type
 \begin{verbatim}
@@ -518,7 +518,7 @@ terms of $A_1$, $A_2$, and $A_3$.
 \begin{exercise} \label{c2.1.1}
 Using \Matlab type the commands {\tt e2\_1\_8} and {\tt e2\_1\_9}
 to load the matrices:
-\begin{equation*}
+\begin{matlabEquation}\label{MATLAB:15}
 A = \left(
 \begin{array}{rrrrrr}
    -5.6 &  0.4 & -9.8 &  8.6 &  4.0 & -3.4\\
@@ -529,9 +529,9 @@ A = \left(
    -2.3 &  3.4 &  1.8 & -1.7 &  4.7 & -5.1
 \end{array}
 \right)
-\end{equation*}
+\end{matlabEquation}
 and the {\em vector\/}
-\begin{equation*}
+\begin{matlabEquation}\label{MATLAB:16}
 b = \left(
 \begin{array}{r}
     9.7\\
@@ -542,7 +542,7 @@ b = \left(
     2.6
 \end{array}
 \right)
-\end{equation*}
+\end{matlabEquation}
 Solve the corresponding system of linear equations.
 \end{exercise}
 

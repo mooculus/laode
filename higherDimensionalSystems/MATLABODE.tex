@@ -50,9 +50,9 @@ Functions that are used by \Matlab are defined via
 {\em m-files}.  We now show how to construct m-files with two examples.
 
 Suppose that we want the function $g:\R^2\to\R$, defined by
-\begin{equation*}  \label{eq:gexam}
+\begin{matlabEquation}  \label{eq:gexam}
 g(y,z) = yz^2 + \sin y,
-\end{equation*}
+\end{matlabEquation}
 to be available in \Matlabp.
 Then we specify $g$ by writing a \Matlab m-file that contains the information 
 defining this function.  The m-file {\tt gexam.m} that defines the function 
@@ -93,9 +93,9 @@ typing {\tt f14\_3\_2(1,2)} with {\tt gexam(1,2)}.
 Both the input arguments and the output variable in an m-file can consist of 
 vectors\index{vector}.  For instance, suppose that we want to define the function 
 $h:\R^3\to\R^2$ where $u=(u_1,u_2,u_3)^t\in\R^3$ and  
-\begin{equation*}
+\begin{matlabEquation}\label{MATLAB:42}
 h(u) = \left(\begin{array}{c} u_1 u_2\\ u_2-u_1 u_3 \end{array}\right).
-\end{equation*}
+\end{matlabEquation}
 As a second exercise, write the m-file\index{\computer!m-file} {\tt hexam.m} 
 as follows:
 \begin{verbatim}
@@ -114,9 +114,9 @@ which is indeed $h(1,2,3)$.  This m-file has been stored as {\tt f14\_3\_3.m}.
 
 We now return to the initial value problem \Ref{eq:fexam}.
 The function 
-\begin{equation*}
+\begin{matlabEquation}\label{MATLAB:43}
 f(t,x)=x+t
-\end{equation*}
+\end{matlabEquation}
 on the right hand side is available to \Matlab in the m-file 
 {\tt f14\_3\_4.m}, which is stored with the other {\sf laode\/} files: 
 \begin{verbatim}

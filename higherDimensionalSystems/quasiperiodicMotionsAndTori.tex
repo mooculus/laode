@@ -105,14 +105,14 @@ Now let
 $A=PBP\inv$ so that $A$ is just a matrix whose 
 Jordan normal form\index{Jordan normal form} is $B$.
 A calculation (using \Matlabp) shows that
-\begin{equation*}  \label{e:tor4}
+\begin{matlabEquation}  \label{e:tor4}
 A = \left(\begin{array}{rrrr}
    10.6722 &  -16.0417 &    5.4028 &  -12.2597\\
     5.3472 &   -8.1375 &    2.7569 &   -3.6597\\
     2.1574 &   -3.5194 &    1.1954 &   -0.3144\\
     5.3287 &   -7.9931 &    2.6644 &   -3.7301
 \end{array}\right).
-\end{equation*}
+\end{matlabEquation}
 By typing
 \begin{verbatim}
 e14_5_1
@@ -178,9 +178,9 @@ in a similar way.
 \index{torus!in dimension four}
 
 Consider the system of four differential equations 
-\begin{equation*}  \label{e:nonlintor}
+\begin{matlabEquation}  \label{e:nonlintor}
 \dot{X} = (A+\epsilon I_4)X - ||X||^2X,
-\end{equation*}
+\end{matlabEquation}
 where $A$ has two pairs of complex conjugate purely imaginary eigenvalues
 and $\epsilon>0$.  We see that $X=0$ is an equilibrium for \Ref{e:nonlintor}
 and the Jacobian\index{matrix!Jacobian} 
@@ -252,13 +252,13 @@ exist.
 Consider the autonomous nonlinear system of ODEs\footnote{This system of
 equations is taken from W.F. Langford, Numerical studies of torus bifurcations, 
 ISNM {\bf 70}, Birkh\"auser, 1984.}:
-\begin{equation*}  \label{e:ftor3}
+\begin{matlabEquation}  \label{e:ftor3}
 \begin{array}{rcl}
 \dot{x}_1 & = & (x_3-0.7)x_1 - 3.5x_2\\
 \dot{x}_2 & = &  3.5x_1 + (x_3-0.7)x_2 \\
 \dot{x}_3 & = & 0.6 + x_3 - 0.33x_3^3 - (x_1^2+x_2^2)(1+.25x_3).
 \end{array}
-\end{equation*}
+\end{matlabEquation}
 The m-file for this system of equations is 
 {\tt f14\_5\_3.m} and contains
 \begin{verbatim}
@@ -320,29 +320,29 @@ Use Jordan normal forms to explain why your numerical answer is correct.
 out whether the system of differential equations $\dot X= AX$ for
 the given matrix $A$ has quasiperiodic solutions.
 \begin{exercise} \label{c14.5.2a}
-\begin{equation*}
+\begin{matlabEquation}\label{MATLAB:57}
 A=\left(\begin{array}{rrrr}
     4.9666  &  2.2833  &  0.8000  &  5.3666\\
    -0.9889  & -0.0944  & -1.6000  & -1.7889\\
     2.9889  &  4.0944  & -0.4000  &  1.7889\\
    -8.9443  & -4.4721  &       0  & -4.4721
 \end{array}\right).
-\end{equation*}
+\end{matlabEquation}
 \end{exercise}
 
 \begin{exercise} \label{c14.5.2b}
-\begin{equation*}
+\begin{matlabEquation}\label{MATLAB:58}
 A=\left(\begin{array}{rrrr}
     2.7666  &  0.2833  &  1.4000  &  4.5666\\
     2.4111  &  1.9056  & -1.8000  & -0.1889\\
    -0.4111  &  2.0944  & -0.2000  &  0.1889\\
    -7.9443  & -2.4721  & -1.0000  & -4.4721
 \end{array}\right).
-\end{equation*}
+\end{matlabEquation}
 \end{exercise}
 
 \begin{exercise} \label{c14.5.2c}
-\begin{equation*}
+\begin{matlabEquation}\label{MATLAB:59}
 A=\left(\begin{array}{rrrrr}
     0.7130  & 24.8184  & 32.0740  &  2.8959  & 15.3610\\
     0.0552  & 17.0732  & 21.1395  &  6.6120  & 11.0843\\
@@ -350,11 +350,11 @@ A=\left(\begin{array}{rrrrr}
     1.0410  & -3.3312  & -2.0820  & -3.3312  & -3.1230\\
    -0.5205  &  1.6656  &  1.0410  &  1.6656  &  1.5615
 \end{array}\right).
-\end{equation*}
+\end{matlabEquation}
 \end{exercise}
 
 \begin{exercise} \label{c14.5.2d}
-\begin{equation*}
+\begin{matlabEquation}\label{MATLAB:60}
 A=\left(\begin{array}{rrrrr}
   -10.2870 &  40.8184 &  30.0740 &  19.8959 &  38.3610\\
    -7.4448 &  25.0732 &  16.1395 &  15.8620 &  26.0843\\
@@ -362,7 +362,7 @@ A=\left(\begin{array}{rrrrr}
     1.0410 &  -3.3312 &  -2.0820 &  -3.3312 &  -3.1230\\
    -0.5205 &   1.6656 &   1.0410 &   1.1656 &   0.5615
 \end{array}\right).
-\end{equation*}
+\end{matlabEquation}
 \end{exercise}
 
 

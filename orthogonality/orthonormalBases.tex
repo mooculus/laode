@@ -146,11 +146,11 @@ Here we note that certain commands in \Matlab produce bases for vector spaces.
 For those commands \Matlab always produces an orthonormal basis.  For example,
 {\tt null(A)}\index{\computer!null} produces a basis for the null space
 \index{null space} of $A$.  Take the $3\times 5$ matrix
-\begin{equation*}
+\begin{matlabEquation}
 \label{eq:Anull1}
 A = \left(\begin{array}{rrrrr} 1 & 2 & 3 & 4 & 5\\ 0 & 1 & 2 & 3 & 4\\
 2 & 3 & 4 & 0 & 0 \end{array}\right).
-\end{equation*}
+\end{matlabEquation}
 Since $\rank(A)=3$, it follows that the null space of $A$ is two-dimensional.
 Typing {\tt B = null(A)} in \Matlab produces
 \begin{verbatim}

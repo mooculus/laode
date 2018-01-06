@@ -196,12 +196,12 @@ affect the local phase portrait of the nonlinear system.
 
 As an example, consider the system of ODEs
 \arraystart
-\begin{equation*} \label{e1:exer}
+\begin{matlabEquation} \label{e1:exer}
 \begin{array}{crcl}
 (a) & \dps\frac{dx}{dt} & = & 1 + x - y^2  \\
 (b) & \dps\frac{dy}{dt} & = & -1 +6y + x^2 - 5y^2 
 \end{array}
-\end{equation*}
+\end{matlabEquation}
 \arrayfinish
 We find all of the equilibria of this system of differential
 equations, and their type.  (The coefficients have been chosen
@@ -283,12 +283,12 @@ source connections.
 
 As a second example consider the system of differential
 equations
-\begin{equation*} \label{e:gradexam}
+\begin{matlabEquation} \label{e:gradexam}
 \begin{array}{rcl}
 \dot{x} & = & x + y + x^2 - y^2 + 0.1 \\
 \dot{y} & = & y - 2xy + 0.5x^2 + y^2.
 \end{array}
-\end{equation*}
+\end{matlabEquation}
 It is difficult to find the equilibria in \Ref{e:gradexam} explicitly.
 We can, however, construct the phase plane of this equation with the 
 help of {\sf pplane5}.  First we choose a square in which to display 
@@ -470,12 +470,12 @@ Also determine the types of each of these equilibria.
 
 \begin{exercise}  \label{E:nonhyp}
 \noindent (a)  Show that the origin is the only equilibrium of 
-\begin{equation*}  \label{e:nonhypcenter}
+\begin{matlabEquation}  \label{e:nonhypcenter}
 \begin{array}{rcl}
 \dot{x} & = & y -x^3 -2xy^2 \\
 \dot{y} & = & -x - y^3
 \end{array}
-\end{equation*}
+\end{matlabEquation}
 and that the linearized system about the origin is a 
 center\index{center}. Hence the origin is not hyperbolic.
 
@@ -504,12 +504,12 @@ to nonhyperbolic equilibria.
 
 \begin{exercise} \label{c8.2.11}
 Consider the system of differential equations 
-\begin{equation*}
+\begin{matlabEquation}\label{MATLAB:6}
 \begin{array}{rcl}
 \dot{x} & = & -x - y + x^2 - y^2\\
 \dot{y} & = & 0.25x - 3y - 2xy + y^2
 \end{array}
-\end{equation*}
+\end{matlabEquation}
 \begin{itemize}
 \item[(a)] Use {\sf pplane5} to verify that the origin is a nodal
 sink\index{nodal sink} with 
@@ -523,12 +523,12 @@ corresponding to the eigenvalue $\lambda_2$.
 
 \begin{exercise} \label{c8.2.12}
 Using {\sf pplane5}, find all equilibria of 
-\begin{equation*}
+\begin{matlabEquation}\label{MATLAB:7}
 \begin{array}{rcl}
 \dot{x} & = & 3x-2y-3x^2+y^2 \\
 \dot{y} & = & -x+y-3xy
 \end{array}
-\end{equation*}
+\end{matlabEquation}
 on the square $-2\leq x,y \leq 2$.  Determine the type of 
 equilibria and draw a phase portrait for this system of equations. 
 \end{exercise}

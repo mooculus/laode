@@ -62,12 +62,12 @@ Let $x$ denote the size of the prey population
 the size of the predator population\index{predator population}.  
 The simplest model that 
 incorporates these four assumptions is:
-\begin{equation*} \label{e:PP}
+\begin{matlabEquation} \label{e:PP}
 \begin{array}{lcr}
 \dot{x} & = & x(\mu_1 + \sigma_1y)\; \\
 \dot{y} & = & y(\mu_2 + \sigma_2x),
 \end{array}
-\end{equation*}\index{predator-prey equation}
+\end{matlabEquation}\index{predator-prey equation}
 where $\mu_1,\mu_2,\sigma_1,\sigma_2$ are constants.  Assumptions
 (a)--(d) can be restated simply as 
 \begin{itemize}
@@ -173,12 +173,12 @@ We now make a judicious choice of the three constants $\alpha,\beta,
 \gamma = -\frac{1}{\mu_2}.
 \end{equation}
 These choices lead to the system of differential equations
-\begin{equation*}  \label{e:PP2}
+\begin{matlabEquation}  \label{e:PP2}
 \begin{array}{lcl}
 \dot{X} & = & X(\mu - Y) \\
 \dot{Y} & = & Y(-1 + X),
 \end{array}
-\end{equation*}% \index{predator-prey equation}
+\end{matlabEquation}% \index{predator-prey equation}
 where $\mu = \left|\frac{\mu_1}{\mu_2}\right|>0$.  It is easy to 
 check that the scaled predator-prey equations \Ref{e:PP2} have 
 an equilibrium at $(X,Y)=(1,\mu)$ that is a center.  It is also 
@@ -268,12 +268,12 @@ We wish to compare the dynamics of these equations with those of
 the predator-prey model \Ref{e:PP}. To facilitate this 
 comparison, we assume that $\eta=0$ and study the system of 
 equations
-\begin{equation*} \label{e:pop3}
+\begin{matlabEquation} \label{e:pop3}
 \begin{array}{rcl}
 \dot{x} & = & x(\mu + \rho x -       y) \\
 \dot{y} & = & y( -1 +       x).
 \end{array}
-\end{equation*}
+\end{matlabEquation}
 There is one equilibrium\index{equilibrium} where neither species 
 is extinct
 (that is, where $x>0$ and $y>0$).  For population dynamics the 
@@ -353,12 +353,12 @@ center?
 Consider the Volterra-Lotka equations when $\mu_1,\mu_2>0$, 
 $\rho_1,\rho_2 < 0$, and $\sigma_1<0,\sigma_2>0$. Scaling these 
 equations leads to the system
-\begin{equation*}
+\begin{matlabEquation}\label{MATLAB:22}
 \begin{array}{rcl}
 \dot{x} & = & x(\mu + \rho x -         y)  \\
 \dot{y} & = & y(  1 +        x +  \eta y),
 \end{array}
-\end{equation*}
+\end{matlabEquation}
 where $\mu>0$ and $\rho,\eta<0$.  
 \begin{itemize}
 \item[(a)]  There are four possible equilibria depending on whether $x$ and 

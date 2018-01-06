@@ -31,12 +31,12 @@ Rather than explaining step length control mechanisms in detail
 we give an example illustrating such a mechanism used in
 {\tt ode45}.  Consider the initial value problem
 \arraystart
-\begin{equation*}  \label{eq:odestepivp}
+\begin{matlabEquation}  \label{eq:odestepivp}
 \begin{array}{rcl}
 \dps \frac{dx}{dt}(t) & = & -e^{10t}x^2 \\
  x(0) & = & 3.
 \end{array}
-\end{equation*}
+\end{matlabEquation}
 \arrayfinish
 Store the right hand side in the m-file {\tt f18\_4\_1.m}
 \begin{verbatim}

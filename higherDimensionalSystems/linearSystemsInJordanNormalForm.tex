@@ -300,10 +300,10 @@ equation $\dot{X}=AX$ in principle by multiplying $Y(t)$ by $S$.  This
 approach is clean in theory, but messy in practice.  
 
 As an example, consider the differential equation $\dot{X}=AX$ where
-\begin{equation*}
+\begin{matlabEquation}\label{MATLAB:44}
 A = \left(\begin{array}{rrrr} 12 & 4 & 3 & 6 \\ 5 & 22 & 6 & -6\\
 -34 & -69 & -22 & 7\\ -5 & 16 & 3 & -10 \end{array}\right),
-\end{equation*}
+\end{matlabEquation}
 with initial condition $X_0=(1,-1,0,1)^t$.  Use {\tt eig(A)} in \Matlab to 
 verify that the eigenvalues of $A$ are $-1,-1,2,2$.  Since the nullities of 
 $A+I_n$ and $A-2I_n$ both equal $1$, it follows that both double eigenvalues
@@ -464,21 +464,21 @@ value problem $\dot{X}=AX$ for the given matrix $A$ and initial vector
 $X_0$ in the form of \Ref{E:solvedebf} by converting $A$ to Jordan normal
 form.
 \begin{exercise} \label{c11.1.5A}
-\begin{equation*}
+\begin{matlabEquation}\label{MATLAB:45}
 A=\left(\begin{array}{rrr}  
     -3  &  -7 &   -2\\
     11  &  19  &   5\\
    -32  & -51 &  -13 \end{array} \right) \AND X_0=(1,0,-1)^t.
-\end{equation*}
+\end{matlabEquation}
 \end{exercise}
 \begin{exercise} \label{c11.1.5B}
-\begin{equation*}
+\begin{matlabEquation}\label{MATLAB:46}
 A=\left(\begin{array}{rrrr}  
   103 &  138 &  124 &  -215 \\
   -67 &  -85 &  -68 &   142 \\
    22 &   27 &   20 &   -47 \\
    19 &   27 &   27 &   -39 \end{array} \right) \AND X_0=(1,2,0,3)^t.
-\end{equation*}
+\end{matlabEquation}
 \end{exercise}
 
 In Exercises~\ref{c11.1.6A} -- \ref{c11.1.6B}, components of solutions to 
@@ -490,16 +490,16 @@ precise values of $j$ and $\lambda$ for each of the given matrices.  Do not
 attempt to write down the closed form solutions to these systems of
 differential equations.
 \begin{exercise} \label{c11.1.6A}
-\begin{equation*}
+\begin{matlabEquation}\label{MATLAB:47}
 A=\left(\begin{array}{rrrr}  
    -3 &  77 & -124 & -225 \\
    10 &  -1 &   69 &  105 \\
   -26 & -47 & -112 & -148 \\
    18 &  24 &   89 &  124 \end{array} \right).
-\end{equation*}
+\end{matlabEquation}
 \end{exercise}
 \begin{exercise} \label{c11.1.6B}
-\begin{equation*}
+\begin{matlabEquation}\label{MATLAB:48}
 A=\left(\begin{array}{rrrrrr}  
    29 &  27 &  -4 &  -7 &  -3 & -20 \\
   -26 & -23 &   5 &   9 &   3 &  23 \\
@@ -507,7 +507,7 @@ A=\left(\begin{array}{rrrrrr}
    12 &  12 &  -3 &  -1 &  -1 & -13 \\
    -8 & -10 &   4 &  -3 &   1 &  16 \\
    -4 &  -8 &   2 &  -9 &  -2 &  10  \end{array} \right).
-\end{equation*}
+\end{matlabEquation}
 \end{exercise}
 
 

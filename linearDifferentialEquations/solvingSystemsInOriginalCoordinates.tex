@@ -111,7 +111,7 @@ multiple.
 
 \noindent (a)  Find all the solutions of the linear system of ODEs
 \arraystart
-\begin{equation*}  \label{eq:exsyslinc1}
+\begin{matlabEquation}  \label{eq:exsyslinc1}
 \left(\begin{array}{c}
 \dps\frac{dx_1}{dt} \\ \dps\frac{dx_2}{dt} \\ \dps\frac{dx_3}{dt}
 \end{array}\right)
@@ -124,7 +124,7 @@ multiple.
 \left(\begin{array}{c}
 x_1 \\ x_2 \\ x_3
 \end{array}\right).
-\end{equation*}
+\end{matlabEquation}
 \arrayfinish
 We load the coefficient matrix $A$ of \Ref{eq:exsyslinc1} by typing 
 {\tt e15\_1\_5} and compute its eigenvalues and eigenvectors using the 
@@ -208,14 +208,14 @@ X(t) = \frac{1}{2}\left(\begin{array}{c}
 
 
 \noindent (b) As a second example, consider the system $\dot{X} = AX$ where
-\begin{equation*} \label{eq:exsyslin1}
+\begin{matlabEquation} \label{eq:exsyslin1}
 A = 
 \left(\begin{array}{rrr}
 -2 & -2 & -4 \\
  0 & 0 & 4 \\
  0 & 2 & 2
 \end{array}\right)
-\end{equation*}
+\end{matlabEquation}
 By inspection, we see that the three eigenvalues of $A$ are $-2$ and the two
 eigenvalues of the matrix $\mattwo{0}{4}{2}{2}$.  A quick calculation shows
 that the eigenvalues of this $2\times 2$ matrix are $-2$ and $4$.  So the 
@@ -342,14 +342,14 @@ X_3(t)&=&e^{\lambda t} \left(\frac{t^2}{2}w_1+tw_2+w_3\right).
 \subsubsection*{An Example}
 
 Consider the system $\dot{X}=AX$, where 
-\begin{equation*}    \label{eq:exsyslin2}
+\begin{matlabEquation}    \label{eq:exsyslin2}
 A =
 \left(\begin{array}{rrr}
      6  &  6  &  6\\
      5  & 11  & -1\\
      1  & -5  &  7
 \end{array}\right).
-\end{equation*}
+\end{matlabEquation}
 The eigenvalues of $A$ (using {\tt eig(A)})\index{\computer!eig} are
 \[
 \lambda_1=0\quad \mbox{and}\quad \lambda_2=\lambda_3=12.

@@ -202,11 +202,11 @@ parameter is varied in differential equations with any number of
 variables.  Here we consider one example of a planar system of 
 differential equations where a saddle-node bifurcation occurs.
 Consider the system of differential equations 
-\begin{equation*}  \label{E:ssys}
+\begin{matlabEquation}  \label{E:ssys}
 \begin{array}{rcl}
 \dot{x} & = & x^2 - \rho + y \\
 \dot{y} & = & -y(x^2+1).  \end{array}
-\end{equation*}
+\end{matlabEquation}
 
 From the $\dot{y}$ equation we see that equilibria only occur 
 when $y=0$.  Substituting $y=0$ into the $\dot{x}$ equation yields
@@ -314,11 +314,11 @@ equilibrium.  This type of bifurcation is commonly called {\em Hopf
 bifurcation\/}.  We begin our discussion with a numerical example.  
 
 Load the planar system of differential equations 
-\begin{equation*} \label{E:Hopfbif}
+\begin{matlabEquation} \label{E:Hopfbif}
 \begin{array}{rcl}
 \dot{x} & = & y \\
 \dot{y} & = & -x + \rho y - y^3  \end{array}
-\end{equation*}
+\end{matlabEquation}
 into {\sf pplane5}.
 It is straightforward to see that the origin is an equilibrium of 
 \Ref{E:Hopfbif} for all values of $\rho$ --- indeed, the origin is 
@@ -409,12 +409,12 @@ where $J= (dF)_{(X_0,\rho_0)}$.
 
 We can use \Ref{E:NCHB} to find possible points of Hopf bifurcation.  For 
 example, consider the system
-\begin{equation*}  \label{E:hopfdetect}
+\begin{matlabEquation}  \label{E:hopfdetect}
 \begin{array}{rcl}
 \dot{x} & = & 2y - \rho + x^2 - 2y^2\\
 \dot{y} & = & -x + y^2.
 \end{array}
-\end{equation*}
+\end{matlabEquation}
 A point of Hopf bifurcation in \Ref{E:hopfdetect} must satisfy the three 
 equations
 \[
@@ -475,12 +475,12 @@ There is a second way that planar systems of differential equations
 can have periodic solutions appear or disappear as parameters are varied.  
 This  change is called a {\em homoclinic bifurcation\/}.  For example,
 consider the system of differential equations
-\begin{equation*}  \label{E:homobif}
+\begin{matlabEquation}  \label{E:homobif}
 \begin{array}{rcl} 
 \dot{x} & = & \rho x - y \\
 \dot{y} & = &  x + x^2 + xy.
 \end{array}
-\end{equation*}
+\end{matlabEquation}
 Begin by noting that the origin is an equilibrium of \Ref{E:homobif}
 for every value of $\rho$ and the linearized equation about this equilibrium 
 is:
@@ -628,12 +628,12 @@ function $\rho=3x^4 - 8x^3 - 6x^2 + 24x$ by finding its maxima and minima.
 
 \begin{exercise} \label{c9.4.1}
 The unforced Van der Pol equation is: \index{Van der Pol equation}
-\begin{equation*}
+\begin{matlabEquation}\label{MATLAB:23}
 \begin{array}{rcl}
 \dot{x} & = & \rho x - y -x^3 \\
 \dot{y} & = & x.
 \end{array}
-\end{equation*}
+\end{matlabEquation}
 Verify analytically that the origin is the only equilibrium of this equation
 and that the only value of $\rho$ where that equilibrium could be a point of
 Hopf bifurcation is $\rho=0$.  Use {\sf pplane5} to verify that there is a 
@@ -643,12 +643,12 @@ unique limit cycle when $\rho>0$.
 
 \begin{exercise} \label{c9.4.2}
 At what point $(x_0,y_0)$ is it possible for the differential equation 
-\begin{equation*}  \label{E:hopfex}
+\begin{matlabEquation}  \label{E:hopfex}
 \begin{array}{rcl}
 \dot{x} & = & -4 +3x -4y +x^2 -2y^2 \\
 \dot{y} & = & -21 -(1+\rho)y + 7x^2 - 3xy
 \end{array}
-\end{equation*}
+\end{matlabEquation}
 to have a Hopf bifurcation when $\rho=0$.  
 \end{exercise}
 
@@ -686,11 +686,11 @@ and those in Figure~\ref{F:Hopfbif}. Draw the bifurcation diagram.
 
 \begin{exercise} \label{c9.7.4}
 Consider the system of differential equations
-\begin{equation*}  \label{E:hbifex}
+\begin{matlabEquation}  \label{E:hbifex}
 \begin{array}{rcl}
 \dot{x} & = & -1 + \rho + 5x + 2.5y + x^2 - x^3 \\
 \dot{y} & = & -5 - x + 4y - y^2.  \end{array}
-\end{equation*}
+\end{matlabEquation}
 \begin{itemize}
 \item[(a)]  Verify that \Ref{E:hbifex} has an equilibrium at $X_0=(-1,2)$ 
 when $\rho=-1$.
@@ -708,12 +708,12 @@ has a second Hopf bifurcation.
 
 \begin{exercise} \label{c9.7.5}
 Consider the differential equation:
-\begin{equation*} \label{e:homo}
+\begin{matlabEquation} \label{e:homo}
 \begin{array}{rcl}
 \dot{x} & = &  y \\
 \dot{y} & = &  -\rho + y + x^2 + xy
 \end{array}
-\end{equation*}
+\end{matlabEquation}
 \begin{itemize}
 \item[(a)]  Show analytically that \Ref{e:homo} has two equilibria at 
 $(\pm\sqrt{\rho},0)$ when $\rho>0$. 
@@ -727,12 +727,12 @@ has a homoclinic trajectory between $\rho=1.7$ and $\rho=1.8$.
 
 \noindent In Exercises~\ref{c9.4.3a} -- \ref{c9.4.3c}, 
 consider the system of differential equations \Ref{E:duff}
-\begin{equation*}  \label{E:duff}
+\begin{matlabEquation}  \label{E:duff}
 \begin{array}{rcl}
 \dot{x} & = & y - \mu x - x^2   \\
 \dot{y} & = & -x - \mu y + x^2.
 \end{array}
-\end{equation*}
+\end{matlabEquation}
 \begin{exercise} \label{c9.4.3a}
 Show that \Ref{E:duff} undergoes a Hopf bifurcation near the origin when 
 $\mu=0$.  Sketch the qualitative phase portraits on either 

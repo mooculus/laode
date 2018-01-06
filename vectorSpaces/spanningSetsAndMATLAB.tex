@@ -126,11 +126,11 @@ and ask the question whether $v=(-2,4,-3,4)$ is in $\Span\{w_1,w_2\}$.
 
 In \Matlab load the matrix $A$ having $w_1$ and
 $w_2$ as its columns and the vector $v$ by typing {\tt e5\_3\_5}
-\begin{equation*}  \label{e:Aandv}
+\begin{matlabEquation}  \label{e:Aandv}
 A=\left(\begin{array}{rr} 2 & 2 \\ 0 & -1 \\ -1 & 0 \\ 4 & 2
 \end{array}\right) \AND
 v=\left(\begin{array}{r} -2 \\ 4 \\ -3 \\ 4 \end{array}\right).
-\end{equation*}%
+\end{matlabEquation}%
 We can solve the system of equations using \Matlabp.
 First, form the augmented matrix by typing
 \begin{verbatim}
@@ -176,29 +176,29 @@ thus $v$ is no longer in the span\index{span} of $w_1$ and $w_2$.
 command in \Matlab to find all the solutions of the linear system of
 equations $Ax=0$.  \index{\computer!null}
 \begin{exercise} \label{c5.3.1a}
-\begin{equation*} \label{e:BCDa}
+\begin{matlabEquation} \label{e:BCDa}
           A=    \left(\begin{array}{cccc}
                 -4 & 0 & -4 & 3\\
                 -4 & 1 & -1 & 1
                 \end{array}\right) \quad
-\end{equation*}
+\end{matlabEquation}
 \end{exercise}
 \begin{exercise} \label{c5.3.1b}
-\begin{equation*} \label{e:BCDb}
+\begin{matlabEquation} \label{e:BCDb}
            A=    \left(\begin{array}{rr}
                 1 & 2 \\
                 1 & 0 \\
                 3 & -2
                 \end{array}\right) \quad
-\end{equation*}
+\end{matlabEquation}
 \end{exercise}
 \begin{exercise} \label{c5.3.1c}
-\begin{equation*} \label{e:BCDc}
+\begin{matlabEquation} \label{e:BCDc}
           A=      \left(\begin{array}{rrr}
                1  &  1  &  2\\
               -1  &  2  & -1
                 \end{array}\right).
-\end{equation*}
+\end{matlabEquation}
 \end{exercise}
 
 \begin{exercise} \label{c5.3.2}
@@ -214,9 +214,9 @@ answer using {\tt null}?  If not, explain why.
 
 \noindent In Exercises~\ref{c5.3.4a} -- \ref{c5.3.4c} let $W\subset\R^5$
 be the subspace spanned by the vectors
-\begin{equation*}
+\begin{matlabEquation}\label{MATLAB:65}
      w_1=(2,0,-1,3,4),\quad w_2=(1,0,0,-1,2),\quad w_3=(0,1,0,0,-1).
-\end{equation*}
+\end{matlabEquation}
 Use \Matlab to decide whether the given vectors are elements of $W$.
 \begin{exercise} \label{c5.3.4a}
 $v_1=(2,1,-2,8,3)$.

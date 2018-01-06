@@ -108,6 +108,18 @@
 
 \author{Martin Golubitsky and Michael Dellnitz}
 
+%\newenvironment{matlabEquation}%
+%{\renewcommand\endequation{\eqno (\theequation*) $$}%
+%   \begin{equation}}%
+%   {\end{equation}\renewcommand\endequation{\eqno \@eqnnum
+% $$\global\@ignoretrue}}
 
 
+\newenvironment{matlabEquation}%
+{\let\oldtheequation\theequation\renewcommand{\theequation}{\oldtheequation*}\begin{equation}}%
+  {\end{equation}\let\theequation\oldtheequation}
 
+%{\renewcommand\endequation{\eqno (\theequation*) $$}%
+%   \begin{equation}}%
+%   {\end{equation}\renewcommand\endequation{\eqno \@eqnnum
+% $$\global\@ignoretrue}}

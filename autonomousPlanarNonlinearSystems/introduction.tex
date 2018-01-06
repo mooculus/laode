@@ -106,12 +106,12 @@ eigenvalues and eigenvectors of the coefficient matrix.  We
 review some of this material in Section~\ref{S:linearization}. 
 For example, the origin\index{origin} is a saddle\index{saddle}
 in the system of differential equations
-\begin{equation*}  \label{e:localexam}
+\begin{matlabEquation}  \label{e:localexam}
 \begin{array}{rcl} 
 \dps\frac{dx}{dt} & = & y \\
 \dps\frac{dy}{dt} & = & 2.2x+2.1y 
 \end{array}
-\end{equation*}
+\end{matlabEquation}
 \arrayfinish
 \noindent {\bf Note:} The * after the label \Ref{e:localexam} indicates 
 that this differential equation has been preloaded in the file {\tt 
@@ -186,12 +186,12 @@ Next we discuss what happens to solutions when nonlinear terms are added to
 \index{nonlinear!system of differential equations}
 \index{differential equation!nonlinear}
 \arraystart
-\begin{equation*}  \label{e:globalexam}
+\begin{matlabEquation}  \label{e:globalexam}
 \begin{array}{rcl} 
 \dps\frac{dx}{dt} & = & y \\
 \dps\frac{dy}{dt} & = & 2.2x+2.1y +x^2+xy. 
 \end{array}
-\end{equation*}
+\end{matlabEquation}
 \arrayfinish
 We study the phase plane of \Ref{e:globalexam} using {\sf pplane5} and find 
 that trajectories\index{trajectory} for the nonlinear system on the square 
@@ -298,12 +298,12 @@ and whether or not they are asymptotically stable.
 \begin{exercise} \label{c8.1.2}
 Using {\sf pplane5}, explore the phase portraits of the nonlinear 
 systems
-\begin{equation*}  \label{e:global2exam}
+\begin{matlabEquation}  \label{e:global2exam}
 \begin{array}{rcl}
 \dot{x} & = & y \\
 \dot{y} & = & 2.2x + 2.1y - x^3 + axy 
 \end{array}
-\end{equation*} 
+\end{matlabEquation} 
 where $a=1.6$ and $a=1$.  Observe that the phase planes of 
 \Ref{e:global2exam} resembles the phase plane of the linear system 
 \Ref{e:localexam} in the square $-0.5\leq x,y \leq 0.5$.  In the 

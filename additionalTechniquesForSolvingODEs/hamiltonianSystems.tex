@@ -99,12 +99,12 @@ equal to
 V(x) = \frac{1}{4}x^4 - \frac{1}{2}x^2.
 \]
 The corresponding Hamiltonian system is:
-\begin{equation*}  \label{e:hamex1}
+\begin{matlabEquation}  \label{e:hamex1}
 \begin{array}{rcl} 
 \dot{x} & = & y \\
 \dot{y} & = & x-x^3 
 \end{array}
-\end{equation*}%
+\end{matlabEquation}%
 since $V'(x)=x^3-x$.  It is easy to verify that \Ref{e:hamex1} has three 
 equilibria at $(1,0)$, $(0,0)$, and $(-1,0)$.  
 
@@ -175,12 +175,12 @@ force acting on the pendulum, let $x$ be the angle that the pendulum makes
 with the vertical, as in Figure~\ref{F:pendulum}.  In that figure, the angle
 $z=\frac{\pi}{2}-x$.  Then the force on the pendulum is $g\cos z=g\sin x$ 
 and the pendulum equation is:
-\begin{equation*} \label{e:pendulum}
+\begin{matlabEquation} \label{e:pendulum}
 \begin{array}{rcl} 
 \dot{x} & = & y \\
 \dot{y} & = & -g\sin x. 
 \end{array}
-\end{equation*}
+\end{matlabEquation}
 \end{itemize}
 \begin{figure}[htb]
            \centerline{%
@@ -220,12 +220,12 @@ V(x) =  \frac{1}{mx^2} - \frac{\ell^2}{m^2x^3}.
 \]
 For two unit masses $m_1=m_2=1$ (that is, $m=1/2$) with angular momentum 
 $\ell = 1$, we can rewrite the second order equation as the first order system 
-\begin{equation*} \label{e:tbp}
+\begin{matlabEquation} \label{e:tbp}
 \begin{array}{rcl}
 \dot{x} & = & y \\
 \dot{y} & = & -\frac{2}{x^2} + \frac{4}{x^3}.
 \end{array}
-\end{equation*}
+\end{matlabEquation}
 The phase portrait of \Ref{e:tbp} is shown in Figure~\ref{fig:tbp}.  In 
 physical space, the steady-state solution $(x,y)=(2,0)$ corresponds to a 
 circular motion of the two bodies around their common center of mass and 

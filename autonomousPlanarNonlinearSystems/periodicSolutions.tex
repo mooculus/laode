@@ -89,22 +89,22 @@ equilibria\index{equilibrium!nonhyperbolic}, and higher
 order terms will change the 
 phase portrait of a center\index{phase!portrait!for a center} --- even
 near the origin.  For example, consider the system  \index{hyperbolic}
-\begin{equation*}  \label{e:nonlincenter}
+\begin{matlabEquation}  \label{e:nonlincenter}
 \begin{array}{rcl}
 \dot{x} & = & -2y -(x^2+y^2)x \\
 \dot{y} & = & 2x - (x^2+y^2)y.
 \end{array}
-\end{equation*}
+\end{matlabEquation}
 A trajectory in the phase portrait of \Ref{e:nonlincenter} that
 spirals into the origin is shown in Figure~\ref{F:nonlincenter}
 (left). Equation \Ref{e:nonlincenter} can be modified to produce
 a single periodic solution, as follows:
-\begin{equation*}  \label{e:nonlincenter2}
+\begin{matlabEquation}  \label{e:nonlincenter2}
 \begin{array}{rcl}
 \dot{x} & = & x-2y -(x^2+y^2)x \\
 \dot{y} & = & 2x+y - (x^2+y^2)y.
 \end{array}
-\end{equation*}
+\end{matlabEquation}
 See Figure~\ref{F:nonlincenter} (right).  This example shows the necessity 
 of assuming hyperbolicity as a hypothesis in Theorem~\ref{T:linearization}.  
 
@@ -352,24 +352,24 @@ periodic.
 
 \begin{exercise} \label{c8.3.2}
 Verify that the system of differential equations
-\begin{equation*} \label{8.3.2eq} 
+\begin{matlabEquation} \label{8.3.2eq} 
 \begin{array}{rcl}
 \dot{x} & = & x-2y -(x^2+y^2)x + 0.1x^2\\
 \dot{y} & = & 2x+y - (x^2+y^2)y - 0.2(y^2-x^2)
 \end{array}
-\end{equation*}
+\end{matlabEquation}
 has a single limit cycle.  Compare the phase portrait of this
 equation with that of \Ref{e:nonlincenter2}.
 \end{exercise}
 
 \begin{exercise} \label{c8.3.3}
 Verify that the system of differential equations
-\begin{equation*} \label{8.3.3eq} 
+\begin{matlabEquation} \label{8.3.3eq} 
 \begin{array}{rcl}
 \dot{x} & = & x-2y + (x^2+y^2)^2x - 4x^3\\
 \dot{y} & = & 2x+y + (x^2+y^2)^2y - 7(y^2-x^2)y
 \end{array}
-\end{equation*}
+\end{matlabEquation}
 has a single limit cycle in the square $-2.5\leq x,y \leq 2.5$.  How many 
 equilibria does \Ref{8.3.3eq} have in this square?  
 \end{exercise}

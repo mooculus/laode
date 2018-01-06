@@ -28,13 +28,13 @@ The prototypical example of chaos is the {\em Lorenz system}.
 \index{Lorenz system}  The Lorenz system consists of three first order 
 (almost linear) ordinary differential equations (there are just two quadratic 
 terms):
-\begin{equation*}  \label{e:Lorenz}
+\begin{matlabEquation}  \label{e:Lorenz}
 \begin{array}{rcl}
 \dot{x}_1 & = & \sigma(x_2-x_1)\\
 \dot{x}_2 & = & \rho x_1 - x_2 - x_1x_3\\
 \dot{x}_3 & = & -\beta x_3 + x_1x_2,
 \end{array}
-\end{equation*}
+\end{matlabEquation}
 where $\sigma$, $\rho$ and $\beta$ are real constants.  We consider here
 solutions to \Ref{e:Lorenz} when
 \[
@@ -320,91 +320,91 @@ behavior that has not been described previously.
 \begin{exercise}  \label{c11.6.1a}
 Solve the system \Ref{e11.6.1a} with initial conditions 
 $X_0 = (0.10, 0.20, 0.25)^t$:
-\begin{equation*} \label{e11.6.1a}
+\begin{matlabEquation} \label{e11.6.1a}
 \begin{array}{rcl} 
 \dot{x}_1 & = & 1 - x_1 - x_2^2 \\
 \dot{x}_2 & = & -x_2-x_3^2   \\
 \dot{x}_3 & = & x_3 +x_1x_2-x_3^3.   \end{array} 
-\end{equation*}
+\end{matlabEquation}
 \end{exercise}
 
 \begin{exercise}  \label{c11.6.1d}
 Solve the system \Ref{e11.6.1d} with initial conditions 
 $X_0 = (0.10, 0.24, 0.14)^t$:
-\begin{equation*} \label{e11.6.1d}
+\begin{matlabEquation} \label{e11.6.1d}
 \begin{array}{rcl} 
 \dot{x}_1 & = &   (x_3 - 1.3)x_1 - 3.5x_2 \\
 \dot{x}_2 & = & 3.5x_1 + (x_3-1.3)x_2  \\
 \dot{x}_3 & = &
 0.6+x_3-\frac{1}{3}x_3^3-(x_1^2+x_2^2)(1+\frac{1}{4}x_3).\end{array}
-\end{equation*}
+\end{matlabEquation}
 \end{exercise}
 
 \begin{exercise}  \label{c11.6.1c}
 Solve the system \Ref{e11.6.1c} with initial conditions 
 $X_0 = (0.10, 0.23, 0.15)^t$:
-\begin{equation*} \label{e11.6.1c}
+\begin{matlabEquation} \label{e11.6.1c}
 \begin{array}{rcl} 
 \dot{x}_1 & = & x_1 - (x_1^2 + 1.5x_2^2 + 0.6x_3^2)x_1 \\
 \dot{x}_2 & = & x_2 - (0.6x_1^2 + x_2^2 + 1.5x_3^2)x_2  \\
 \dot{x}_3 & = & x_3 - (1.5x_1^2 + 0.6x_2^2 + x_3^2)x_3.   \end{array}. 
-\end{equation*}
+\end{matlabEquation}
 \end{exercise}
 
 \begin{exercise}  \label{c11.6.1b}
 Solve the system \Ref{e11.6.1b} with initial conditions 
 $X_0 = (0.10, 0.23, 0.15)^t$:
-\begin{equation*} \label{e11.6.1b}
+\begin{matlabEquation} \label{e11.6.1b}
 \begin{array}{rcl} 
 \dot{x}_1 & = & x_1 - (x_1^2 + 0.5x_2^2 + 0.7x_3^2)x_1 \\
 \dot{x}_2 & = & x_2 - (0.7x_1^2 + x_2^2 + 0.5x_3^2)x_2  \\
 \dot{x}_3 & = & x_3 - (0.5x_1^2 + 0.7x_2^2 + x_3^2)x_3.   \end{array}
-\end{equation*}
+\end{matlabEquation}
 \end{exercise}
 
 \begin{exercise}  \label{c11.6.1e}             
 Solve the system \Ref{e11.6.1e} with initial conditions 
 $X_0 = (0.10, 0.11, 0.15)^t$:
-\begin{equation*} \label{e11.6.1e}
+\begin{matlabEquation} \label{e11.6.1e}
 \begin{array}{rcl} 
 \dot{x}_1 & = & -x_2-x_3  \\
 \dot{x}_2 & = &  x_1 + 0.2x_2 \\
 \dot{x}_3 & = & 0.2 + x_3(x_1 - 5.7). \end{array}
-\end{equation*}
+\end{matlabEquation}
 \end{exercise}
 
 \begin{exercise}  \label{c11.6.1g} 
 Solve the system \Ref{e11.6.1g} with initial conditions 
 $X_0 = (0.1,0.2, -0.2)^t$:
-\begin{equation*} \label{e11.6.1g}
+\begin{matlabEquation} \label{e11.6.1g}
 \begin{array}{rcl} 
 \dot{x}_1 & = & 0.65 + x_1 - x_1^{10} - (x_3^2 + x_2^2)(1 + 0.25x_1)  \\
 \dot{x}_2 & = & 3.5x_3 + (x_1 - 0.7)x_2  \\
 \dot{x}_3 & = & (x_1 - 0.7)x_3 - 3.5x_2.
 \end{array}
-\end{equation*}
+\end{matlabEquation}
 \end{exercise}
 
 \begin{exercise}  \label{c11.6.1f}
 Solve the system \Ref{e11.6.1f} with initial conditions 
 $X_0 = (2.0, 0.5, 1.0)^t$:
-\begin{equation*} \label{e11.6.1f}
+\begin{matlabEquation} \label{e11.6.1f}
 \begin{array}{rcl} 
 \dot{x}_1 & = & -x_2-x_3  \\
 \dot{x}_2 & = &  x_1 + 0.2x_2 \\
 \dot{x}_3 & = & 0.2 + x_3(x_1 - 1). \end{array}
-\end{equation*}
+\end{matlabEquation}
 \end{exercise}
 
 \begin{exercise}  \label{c11.6.1h} 
 Solve the system \Ref{e11.6.1h} with initial conditions 
 $X_0 = (3.0084, 3.0983, 2.7673)^t$: 
-\begin{equation*} \label{e11.6.1h}
+\begin{matlabEquation} \label{e11.6.1h}
 \begin{array}{rcl} 
 \dot{x}_1 & = &  -1.5x_1 + (x_3-0.2)x_2 \\
 \dot{x}_2 & = &  -1.5x_2 + x_1x_3\\
 \dot{x}_3 & = &  1 - x_1x_2.
 \end{array}
-\end{equation*}
+\end{matlabEquation}
 \end{exercise}
 \end{document}

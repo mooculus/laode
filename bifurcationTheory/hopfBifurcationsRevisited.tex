@@ -46,12 +46,12 @@ Condition \Ref{e:2dhopf} is called the {\em eigenvalue crossing condition\/}.
 \subsection*{Two Examples}
 
 As a first example, consider the linear system
-\begin{equation*}  \label{e:Hopflin}
+\begin{matlabEquation}  \label{e:Hopflin}
 \begin{array}{rcl}
 \dot{x} & = & \rho x - y \\
 \dot{y} & = & x + \rho y.
 \end{array}
-\end{equation*}
+\end{matlabEquation}
 It is easy to check that $\trace(J)=2\rho$ and that \Ref{e:2dhopf}
 is satisfied.  Note that the origin is a spiral sink when $\rho<0$ 
 and a spiral source when $\rho>0$.  When $\rho=0$, the origin is a
@@ -192,9 +192,9 @@ is called {\em exchange of stability\/}.
 We can understand how typical Hopf bifurcations behave by looking at
 phase-ampli\-tude equations of ODEs. The system is:  
 \index{phase-amplitude equations}
-\begin{equation*}  \label{e:nonlinhopf}
+\begin{matlabEquation}  \label{e:nonlinhopf}
 \frac{d}{dt}\vectwo{x}{y} = (\rho +a(x^2+y^2))\vectwo{x}{y} + \vectwo{-y}{x}.
-\end{equation*}
+\end{matlabEquation}
 In amplitude $r$ and phase $\theta$, \Ref{e:nonlinhopf} becomes
 \begin{eqnarray*}
 \dot{r} & = & (\rho+ar^2)r \\

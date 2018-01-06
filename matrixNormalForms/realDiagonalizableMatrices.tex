@@ -178,11 +178,11 @@ Lemma~\ref{L:eigenv-diag} implies that $A$ is diagonalizable.  \end{proof}
 \index{diagonalization!in \protect\Matlab}
 
 Let
-\begin{equation*}
+\begin{matlabEquation}\label{MATLAB:16}
 A= \left( \begin{array}{rrr} -6 & 12 & 4 \\
  8 & -21 & -8 \\
   -29 & 72 & 27 \end{array} \right).
-\end{equation*}
+\end{matlabEquation}
 We use \Matlab to answer the questions:  Is $A$ real diagonalizable 
 and, if it is, can we find the matrix $S$ such that $S\inv AS$ is diagonal?
 We can find the eigenvalues of $A$ by typing {\tt eig(A)}. \Matlabp's
@@ -336,10 +336,10 @@ Show that if $A$ is diagonalizable, the $A^2=A$.
 
 \begin{exercise} \label{c10.3.7}
 Consider the $4\times 4$ matrix
-\begin{equation*}
+\begin{matlabEquation}\label{MATLAB:17}
 C =\left(\begin{array}{rrrr}  12 & 48 & 68 & 88 \\ -19 & -54 & -57 & -68\\
 22 & 52 & 66 & 96 \\ -11 & -26 & -41 & -64 \end{array}\right).
-\end{equation*}
+\end{matlabEquation}
 Use \Matlab to show that the eigenvalues of $C$ are real and distinct.
 Find a matrix $S$ so that $S\inv CS$ is diagonal.  
 \end{exercise}
@@ -347,7 +347,7 @@ Find a matrix $S$ so that $S\inv CS$ is diagonal.
 \noindent In Exercises~\ref{c10.3.8a} -- \ref{c10.3.8b} use \Matlab 
 to decide whether or not the given matrix is real diagonalizable.
 \begin{exercise} \label{c10.3.8a}
-\begin{equation*}
+\begin{matlabEquation}\label{MATLAB:18}
 A=\left(
 \begin{array}{rrrr}
       -2.2 & 4.1&-1.5&-0.2\\
@@ -356,10 +356,10 @@ A=\left(
      -14.5 &17.8&-6.7& 0.6
 \end{array}
 \right).
-\end{equation*}
+\end{matlabEquation}
 \end{exercise}
 \begin{exercise} \label{c10.3.8b}
-\begin{equation*}
+\begin{matlabEquation}\label{MATLAB:19}
 B=\left(
 \begin{array}{rrrrr}
       1.9 & 2.2 & 1.5 & -1.6 & -2.8\\
@@ -368,7 +368,7 @@ B=\left(
       4.8 & 3.6 & 1.5 & -3.1 & -5.2\\
      -2.1 & 1.2 & 1.7 & -0.2 &  0.0
 \end{array} \right).
-\end{equation*}
+\end{matlabEquation}
 \end{exercise}
 
 

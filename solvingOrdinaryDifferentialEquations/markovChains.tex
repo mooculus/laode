@@ -62,14 +62,14 @@ p_{41} = 0 \qquad p_{42} = \frac{1}{3} \qquad p_{43} =
 
 Putting these probabilities together yields the
 {\em transition matrix}\index{matrix!transition}:
-\begin{equation*} \label{E:Pexamp}
+\begin{matlabEquation} \label{E:Pexamp}
 P = \left(\begin{array}{cccc}
 \frac{1}{4} & \frac{1}{4} & \frac{1}{4} & \frac{1}{4} \\
 \half & \half & 0 & 0 \\
  0 & 0 & \half & \half\\
 0 & \frac{1}{3} & \frac{1}{3} & \frac{1}{3}
 \end{array}\right)
-\end{equation*}
+\end{matlabEquation}
 This transition matrix has the properties that all entries are nonnegative
 and that the entries in each row sum to $1$.
 
@@ -158,9 +158,9 @@ like the matrix $P$ in \Ref{E:Pexamp}.  But first we explore the answer to
 this question numerically using \Matlabp.
 
 Suppose, for example, that the initial vector is
-\begin{equation*}
+\begin{matlabEquation}\label{MATLAB:9}
 V_0 =\left(\begin{array}{c} 2 \\ 43 \\ 21 \\ 34 \end{array}\right).
-\end{equation*}
+\end{matlabEquation}
 Typing {\tt e4\_10\_1} and {\tt e4\_10\_4} enters the matrix $P$ and the
 initial vector $V_0$ into \Matlabp.  To compute $V_{20}$, the distribution
 of cats after $20$ steps, type
@@ -422,18 +422,18 @@ Q = \left(\begin{array}{ccccc} 1-q & q & 0 & 0 & 0 \\
  0 & 0 & 0 & 0 & 1 \end{array}\right)
 \]
 Specifically,
-\begin{equation*}
+\begin{matlabEquation}\label{MATLAB:10}
 P =
 \left(\begin{array}{ccccc} 1 & 0 & 0 & 0 & 0 \\
   0.2 & 0.8 & 0 & 0 & 0 \\ 0 & 0.2 & 0.8 & 0 & 0 \\ 0 & 0 & 0.2 & 0.8 & 0 \\
         0 & 0 & 0 & 0.2 & 0.8 \end{array}\right)
-  \end{equation*}
-  \begin{equation*}
+  \end{matlabEquation}
+\begin{matlabEquation}\label{MATLAB:11}
 Q =
 \left(\begin{array}{ccccc} 0.7 & 0.3 & 0 & 0 & 0 \\
   0 & 0.7 & 0.3 & 0 & 0 \\ 0 & 0 & 0.7 & 0.3 & 0 \\ 0 & 0 & 0 & 0.7 & 0.3 \\
  0 & 0 & 0 & 0 & 1 \end{array}\right)
-\end{equation*}
+\end{matlabEquation}
 
 The transition matrix\index{matrix!transition} $M$ from
 moving from state $s_i$ on one morning to
@@ -566,7 +566,7 @@ approximately constant from one week to the next?
 
 \begin{exercise} \label{c4.10.7}
 Let
-\begin{equation*}
+\begin{matlabEquation}\label{MATLAB:12}
 P = \left(\begin{array}{ccccc}
  0.10 & 0.20 & 0.30 & 0.15 & 0.25\\
  0.05 & 0.35 & 0.10 & 0.40 & 0.10\\
@@ -574,7 +574,7 @@ P = \left(\begin{array}{ccccc}
  0.25 & 0.25 & 0.25 & 0.25 &   0\\
  0.33 & 0.32 &   0  &   0  & 0.35
 \end{array}\right)
-\end{equation*}
+\end{matlabEquation}
 be the transition matrix of a Markov chain.
 \begin{itemize}
 \item[(a)]  What is the probability that an individual at site~2 will move to

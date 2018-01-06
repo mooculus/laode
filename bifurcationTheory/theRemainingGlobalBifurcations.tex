@@ -30,12 +30,12 @@ bifurcation of equilibria in the amplitude equation.
 \index{bifurcation!saddle-node!for periodic solutions}
 
 Let $X=(x,y)$ and consider the system of differential equations 
-\begin{equation*}  \label{e:papp}
+\begin{matlabEquation}  \label{e:papp}
 \begin{array}{rcl}
 \dot{x} = a(x^2+y^2,\rho)x - 3y \\
 \dot{y} = a(x^2+y^2,\rho)y + 3x,
 \end{array}
-\end{equation*}
+\end{matlabEquation}
 where $r^2=x^2+y^2$ and
 \begin{equation}  \label{e:app}  
 a(r^2,\rho) = \rho - (r^2-1)^2.
@@ -102,12 +102,12 @@ saddle.  This connecting trajectory is called a {\em heteroclinic\/}
 trajectory.\index{trajectory!heteroclinic}
 
 We begin our discussion of heteroclinic connections with a simple example:
-\begin{equation*} \label{e:hetero}
+\begin{matlabEquation} \label{e:hetero}
 \begin{array}{rcl}
 \dot{x} & = &  x^2-x  \\
 \dot{y} & = &  y(0.5-x) + \rho x.
 \end{array}
-\end{equation*}
+\end{matlabEquation}
 When $\rho=0$ the only equilibria of these equations are $(0,0)$ and 
 $(1,0)$.  Note that when $y=0$ it follows that $\dot{y}=0$.  Hence
 the $x$-axis is an invariant line for the dynamics of this equation. 
@@ -187,12 +187,12 @@ trajectory\index{trajectory!homoclinic}.
 
 \begin{exercise} \label{c9.5.1}
 Use {\sf pplane5} to analyze the phase portraits for the system
-\begin{equation*}
+\begin{matlabEquation}\label{MATLAB:21}
 \begin{array}{rcl}
 \dot{x} & = & (-\rho+3(0.5x^2+y^2)-(x^2+y^2)^2)x-2y \\
 \dot{y} & = & (-\rho+3(x^2+y^2)-(1.3x^2+y^2)^2)y+x
 \end{array}
-\end{equation*}
+\end{matlabEquation}
 for $\rho=0.7$ and $\rho=1.1$ on the square $-2\leq x,y\leq 2$.  Is there 
 a bifurcation between these two values of $\rho$?  If so, what kind of 
 bifurcation is it and what is the bifurcation value of $\rho$ to within 
@@ -201,12 +201,12 @@ $\pm 0.02$?
 
 \noindent In Exercises~\ref{c9.6.2a} -- \ref{c9.6.2c}, consider the system 
 of differential equations \Ref{E:homo2}
-\begin{equation*}  \label{E:homo2}
+\begin{matlabEquation}  \label{E:homo2}
 \begin{array}{rcl}
 \dot{x} & = & -y + \rho x + 0.1 x^2 - 0.5 y^5 \\
 \dot{y} & = & x +\rho y + 0.1 y^3 - x^4
 \end{array}
-\end{equation*}
+\end{matlabEquation}
 in the square $-1.5\leq x,y\leq 1.5$.
 \begin{exercise} \label{c9.6.2a}
 Verify numerically that \Ref{E:homo2} appears to have a limit cycle for 
@@ -223,12 +223,12 @@ where \Ref{E:homo2} has a homoclinic bifurcation.
 
 \noindent In Exercises~\ref{c9.6.3a} -- \ref{c9.6.3b}, consider the system 
 of differential equations \Ref{E:infinity}.
-\begin{equation*}  \label{E:infinity}
+\begin{matlabEquation}  \label{E:infinity}
 \begin{array}{rcl}
 \dot{x} & = & y \\
 \dot{y} & = & -x +\rho y + \frac{1}{2}\cos(x)y
 \end{array}
-\end{equation*}
+\end{matlabEquation}
 \begin{exercise} \label{c9.6.3a}
 How many periodic solutions does \Ref{E:infinity} appear to have 
 when $\rho=0$?  Be careful when answering this question.  First use 
@@ -245,12 +245,12 @@ bifurcation?
 
 \noindent In Exercises~\ref{c9.6.4a} -- \ref{c9.6.4c}, consider the system 
 of differential equations \Ref{E:twoeq}
-\begin{equation*}  \label{E:twoeq}
+\begin{matlabEquation}  \label{E:twoeq}
 \begin{array}{rcl}
 \dot{x} & = & y - x + (x-\rho)^2 \\
 \dot{y} & = & y - x^3 +3x
 \end{array}
-\end{equation*}
+\end{matlabEquation}
 in the square $-5 \leq x,y \leq 5$.
 \begin{exercise} \label{c9.6.4a}
 How many equilibria does \Ref{E:twoeq} have in this square when 
@@ -282,12 +282,12 @@ $-0.1$ to $\rho=0.3$.
 
 \noindent In Exercises~\ref{c9.6.5a} -- \ref{c9.6.5c}, consider the system 
 of differential equations \Ref{E:saddleconn}.
-\begin{equation*}  \label{E:saddleconn}
+\begin{matlabEquation}  \label{E:saddleconn}
 \begin{array}{rcl}
 \dot{x} & = & y  \\
 \dot{y} & = & -x - 0.1y + x^3 + \rho x^2.
 \end{array}
-\end{equation*}
+\end{matlabEquation}
 \begin{exercise} \label{c9.6.5a}
 How many equilibria does \Ref{E:saddleconn} have for each value of 
 $\rho$ and of what type are they?  

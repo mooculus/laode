@@ -166,12 +166,12 @@ of the reactant increases at a rate proportional to $cA(y)$.
 Since the concentration $c$ is proportional to $x+1$, these
 assumptions lead to the nonlinear system of differential
 equations
-\begin{equation*} \label{e:CSTR}
+\begin{matlabEquation} \label{e:CSTR}
 \begin{array}{rcl}
 \dot{x} & = & -\rho x  - Z(x+1)A(y) \\
 \dot{y} & = & -(\rho+1)y + \eta + hZ(x+1)A(y),
 \end{array}
-\end{equation*}
+\end{matlabEquation}
 where $Z$ and $h$ are proportionality constants.  In this form
 the equations have two state variables $x,y$ and five constants
 $\rho,\eta,\gamma,Z,h$.  (The CSTR equation in {\tt e12\_3\_5.pps} has

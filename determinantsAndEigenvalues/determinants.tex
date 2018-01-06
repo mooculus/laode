@@ -101,9 +101,9 @@ Definition~\ref{D:determinants} implies that
 \det \left(\begin{array}{cc} 0 & 1\\1 & 0 \end{array}\right)=-1.
 \end{equation}
 We verify this by observing that 
-\begin{equation*} 
+\begin{matlabEquation}\label{MATLAB:41}
   \left(\begin{array}{cc} 0 & 1\\1 & 0 \end{array}\right)
-\end{equation*}
+\end{matlabEquation}
 equals
 \begin{equation}\label{e:swapdecomp}
 \left(\begin{array}{cr} 1 & -1\\0 & 1 \end{array}\right)
@@ -552,13 +552,13 @@ as desired.  \end{proof}
 The determinant function has been preprogrammed in \Matlab and
 is quite easy to use.  For example, typing {\tt e8\_1\_11} will
 load the matrix
-\begin{equation*}  \label{e:A4x4}
+\begin{matlabEquation}  \label{e:A4x4}
 A = \left(\begin{array}{rrrr}
      1   &  2  &   3  &   0\\
      2   &  1  &   4  &   1\\
     -2   & -1  &   0  &   1\\
     -1   &  0  &  -2  &   3  \end{array} \right).
-\end{equation*}
+\end{matlabEquation}
 To compute the determinant of $A$ just type {\tt det(A)} and
 obtain the answer \index{\computer!det}
 \begin{verbatim}

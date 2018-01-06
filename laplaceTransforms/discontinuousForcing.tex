@@ -303,12 +303,12 @@ Use the \Matlab command {\tt ode45} to compute the solution of the grand
 finale initial value problem \Ref{eq:lapendexam}.  
 More precisely, write \Ref{eq:lapendexam} as a nonautonomous first order 
 system of ODEs by setting $y=\dot{x}$ and obtaining
-\begin{equation*}
+\begin{matlabEquation}\label{MATLAB:8}
 \begin{array}{rcl}
 \dot{x} & = & y \\
 \dot{y} & = & -5x-4y+\delta_1(t)+2H_3(t).
 \end{array}
-\end{equation*}
+\end{matlabEquation}
 
 There is a numerical difficulty when attempting to compute delta functions. 
 A standard way around this difficulty is to approximate the Dirac delta 
