@@ -235,8 +235,8 @@
                                     {\normalfont\normalsize\sffamily}}
 
 \newpagestyle{numbered}{
-\sethead[\textsl{\ifnumbers \textsection\thetitlenumber\ifnum\value{sectiontitlenumber}>0.\thesectiontitlenumber\else\fi \quad\fi\@title}][][] % even
-{}{}{\textsl{\ifnumbers \fi\@title\quad\textsection\thetitlenumber\ifnum\value{sectiontitlenumber}>0.\thesectiontitlenumber\else\fi}} % odd
+  \sethead[\textsl{\ifnumbers\ifnum\value{titlenumber}>0\textsection\thetitlenumber\ifnum\value{sectiontitlenumber}>0.\thesectiontitlenumber\else\fi\fi\quad\fi\@title}][][] % even
+{}{}{\textsl{\ifnumbers \fi\@title\quad\ifnum\value{titlenumber}>0\textsection\thetitlenumber\ifnum\value{sectiontitlenumber}>0.\thesectiontitlenumber\else\fi\fi}} % odd
 \setfoot[\thepage][][] % even
 {}{}{\thepage} % odd
 }
@@ -347,7 +347,7 @@
 \begin{center}
   {\scalebox{3}{\large\textsf{\textbf{\textcolor{black}{Linear Algebra}}}}} \\[1ex]
   {\scalebox{3}{\large\textsf{\textbf{\textcolor{black}{and Differential Equations}}}}} \\[1ex]
-  {\scalebox{3}{\large\textsf{\textbf{\textcolor{black}{with MATLAB}}}}}
+  {\scalebox{3}{\large\textsf{\textbf{\textcolor{black}{using MATLAB}}}}}
 \end{center}
 
 \vfill
