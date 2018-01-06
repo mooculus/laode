@@ -30,7 +30,6 @@
 %\usepackage[margin=.5in, includehead, includefoot, hmargin={.8in,.5in}, paperwidth=11in, paperheight=8.5in]{geometry}
 
 % Store usual maketitle as othermaketitle
-%\let\othermaketitle\maketitle
 
 
 %% \makeatletter
@@ -130,6 +129,19 @@
 \makeatletter
 %\newcounter{sectiontitlenumber}
 %\setcounter{secnumdepth}{0}
+
+% no numbering on the initial preface pieces
+\renewcommand\maketitle{%
+  \addtocounter{titlenumber}{1}\phantomsection 
+  \addcontentsline{toc}{section}{\@title}
+  {\flushleft\large\bfseries \@pretitle\par\vspace{-1em}}
+  {\flushleft\LARGE\bfseries {}{\hspace{0em}}\@title \par }
+  \vskip .6em\noindent\textit\theabstract\setcounter{problem}{0}\setcounter{section}{0}\setcounter{subsection}{0}\par\vspace{2em}
+  \aftergroup\@afterindentfalse
+  \aftergroup\@afterheading}
+
+\let\othermaketitle\maketitle
+
 
 \newcounter{chapter}
 \setcounter{chapter}{0}
@@ -235,8 +247,8 @@
                                     {\normalfont\normalsize\sffamily}}
 
 \newpagestyle{numbered}{
-  \sethead[\textsl{\ifnumbers\ifnum\value{titlenumber}>0\textsection\thetitlenumber\ifnum\value{sectiontitlenumber}>0.\thesectiontitlenumber\else\fi\fi\quad\fi\@title}][][] % even
-{}{}{\textsl{\ifnumbers \fi\@title\quad\ifnum\value{titlenumber}>0\textsection\thetitlenumber\ifnum\value{sectiontitlenumber}>0.\thesectiontitlenumber\else\fi\fi}} % odd
+  \sethead[\textsl{\ifnumbers\ifnum\value{titlenumber}>0\textsection\thetitlenumber\ifnum\value{sectiontitlenumber}>0.\thesectiontitlenumber\else\fi\quad\fi\fi\@title}][][] % even
+{}{}{\textsl{\ifnumbers \fi\@title\ifnum\value{titlenumber}>0\quad\textsection\thetitlenumber\ifnum\value{sectiontitlenumber}>0.\thesectiontitlenumber\else\fi\fi}} % odd
 \setfoot[\thepage][][] % even
 {}{}{\thepage} % odd
 }
@@ -253,7 +265,7 @@
 \let\endselectAll\relax
 \NewEnviron{selectAll}{}
 
-
+\renewcommand{\thesection}{\arabic{section}} 
 
 % remove italics def
 \let\remark\relax
@@ -283,12 +295,12 @@
 \let\endquestion\relax
 \let\c@question\relax 
 \theoremstyle{theorem}
-\newtheorem{question}{Question}
+\newtheorem{question}[theorem]{Question}
 
-\let\problem\relax
-\let\endproblem\relax
-\let\c@problem\relax 
-\newtheorem{problem}{Problem}
+\let\example\relax
+\let\endexample\relax
+%\let\c@example\relax 
+\newtheorem{example}[theorem]{Example}
 
 \let\exercise\relax
 \let\endexercise\relax
