@@ -28,26 +28,26 @@ $s$ in such a way that:
 (c) & {\cal L}[\dot{x}](s) = s{\cal L}[x](s) - x(0).
 \end{array}
 \end{equation}\index{Laplace transform!general properties}
-Note that \Ref{Tprops}(c) relates the transform of the derivative of a 
+Note that \eqref{Tprops}(c) relates the transform of the derivative of a 
 function to the transform of the function itself.  We call a transform that 
-satisfies \Ref{Tprops} the {\em Laplace transform\/}, as there is only one 
+satisfies \eqref{Tprops} the {\em Laplace transform\/}, as there is only one 
 transform that satisfies these three properties.
 
 \subsubsection*{The Laplace Transform of $e^{at}$}
 
-We can use properties \Ref{Tprops} to compute the Laplace transform of the
+We can use properties \eqref{Tprops} to compute the Laplace transform of the
 function $x(t) = e^{at}$.  To perform this calculation we need only recall 
 that $e^{at}$ is the unique solution to the differential equation 
 $\dot{x}=ax$ with initial value $x(0)=1$.  In essence, we can compute the 
 Laplace transform of $e^{at}$ without actually having defined the Laplace 
 transform.
 
-It follows from the differential equation $\dot{x}=ax$ and \Ref{Tprops}(a) 
+It follows from the differential equation $\dot{x}=ax$ and \eqref{Tprops}(a) 
 that
 \[
 {\cal L}[\dot{x}](s) = {\cal L}[ae^{at}](s) = a{\cal L}[e^{at}](s)
 \]
-and from \Ref{Tprops}(c) that
+and from \eqref{Tprops}(c) that
 \[
 {\cal L}[\dot{x}](s) = s{\cal L}[e^{at}](s)-1.
 \]
@@ -62,7 +62,7 @@ and hence to
 
 \subsubsection*{Solving an Inhomogeneous Equation by Laplace Transforms}
 
-Properties \Ref{Tprops} and formula \Ref{eq:Lexp} allow us to solve the 
+Properties \eqref{Tprops} and formula \eqref{eq:Lexp} allow us to solve the 
 initial value problem 
 \begin{equation} \label{eq:expODE}
 \begin{array}{crcl}
@@ -71,28 +71,28 @@ initial value problem
 \end{array}
 \end{equation}
 
-Before proceeding, note that \Ref{eq:expODE} can be solved directly using
+Before proceeding, note that \eqref{eq:expODE} can be solved directly using
 the method of undetermined coefficients.  \index{undetermined coefficients}  
 Indeed, undetermined coefficients show that $x_p(t) = 2e^{2t}$ is a 
-particular solution to \Ref{eq:expODE}(a).  Since the general solution to the 
+particular solution to \eqref{eq:expODE}(a).  Since the general solution to the 
 homogeneous equation is $\alpha e^{3t}$, the general solution to the 
-inhomogeneous equation \Ref{eq:expODE}(a) is:
+inhomogeneous equation \eqref{eq:expODE}(a) is:
 \[
 x(t) = 2e^{2t} + \alpha e^{3t}.
 \]
-Setting $\alpha=-1$ solves the initial value problem \Ref{eq:expODE}(b).
+Setting $\alpha=-1$ solves the initial value problem \eqref{eq:expODE}(b).
 
-We illustrate the method of Laplace transforms by solving \Ref{eq:expODE} 
+We illustrate the method of Laplace transforms by solving \eqref{eq:expODE} 
 using Laplace transforms.  Apply the transform ${\cal L}$ to both sides of 
-\Ref{eq:expODE}, obtaining 
+\eqref{eq:expODE}, obtaining 
 \[
 {\cal L}[\dot{x}-3x](s) = {\cal L}[e^{2t}](s).
 \]
-From \Ref{eq:Lexp} with $a=2$, we see that
+From \eqref{eq:Lexp} with $a=2$, we see that
 \[
 {\cal L}[e^{2t}](s) = \frac{1}{s-2}
 \]
-Using \Ref{Tprops}(c,a), we see that  
+Using \eqref{Tprops}(c,a), we see that  
 \[
 {\cal L}[\dot{x}-3x](s) = (s-3){\cal L}[x](s) - 1.
 \]
@@ -113,15 +113,15 @@ We describe the method of partial fractions in more detail in
 Section~\ref{S:PF}.  The particular uses of partial fractions in this section 
 all follow from Exercise~\ref{Ex:pf}. 
 
-Finally, from \Ref{eq:Lexp} we see that 
+Finally, from \eqref{eq:Lexp} we see that 
 \[
 {\cal L}[2e^{3t}-e^{2t}](s) = \frac{2}{s-3} - \frac{1}{s-2},
 \]
-and using \Ref{Tprops}(b) we conclude that
+and using \eqref{Tprops}(b) we conclude that
 \[
 x(t) = 2e^{3t}-e^{2t} 
 \]
-is the unique solution to the initial value problem \Ref{eq:expODE}. 
+is the unique solution to the initial value problem \eqref{eq:expODE}. 
 
 \subsection*{Three Steps in Solving Equations by Laplace Transforms} 
 
@@ -137,9 +137,9 @@ ${\cal L}\inv[Y(s)]$.
 The summary of the Laplace transform method is: 
 \begin{enumerate}
 \item	Compute the Laplace transforms of both sides of the differential 
-equation in \Ref{e:2ndforced} using the linearity of Laplace transforms, the 
-formulas for Laplace transforms of derivatives \Ref{Tprops}(c), and specific 
-Laplace transforms such as in \Ref{eq:Lexp}.
+equation in \eqref{e:2ndforced} using the linearity of Laplace transforms, the 
+formulas for Laplace transforms of derivatives \eqref{Tprops}(c), and specific 
+Laplace transforms such as in \eqref{eq:Lexp}.
 \item	Explicitly solve the transformed equation for 
 ${\cal L}[x(t)](s)=Y(s)$.
 \item	Find a function $x(t)$ whose Laplace transform is $Y(s)$; that is, 
@@ -158,7 +158,7 @@ problem:
 \end{equation}
 
 The first step is to apply the Laplace transform to both sides of the 
-differential equation.  Using formula \Ref{Tprops}(c) and the linearity of 
+differential equation.  Using formula \eqref{Tprops}(c) and the linearity of 
 ${\cal L}$, we obtain
 \[
 \frac{2}{s} = {\cal L}[2] = {\cal L}[\dot x]-{\cal L}[x] = 
@@ -174,7 +174,7 @@ obtaining
 \end{equation}
 Note that we have simplified the right hand side by use of partial fractions.
 
-The third step requires using \Ref{eq:Lexp} to see that
+The third step requires using \eqref{eq:Lexp} to see that
 \[
 x(t) = {\cal L}\inv\left[\frac{6}{s-1} - \frac{2}{s}\right](t) = 
 6{\cal L}\inv\left[\frac{1}{s-1}\right](t) -
@@ -210,7 +210,7 @@ equation:
 \dot{x}(0) & = & 2.
 \end{array}
 \end{equation}
-We begin by applying \Ref{Tprops}(c) twice to obtain
+We begin by applying \eqref{Tprops}(c) twice to obtain
 \[
 \begin{array}{rcl}
 {\cal L}[\ddot{x}](s) & = & s{\cal L}[\dot{x}](s) - \dot{x}(0)\\
@@ -224,8 +224,8 @@ to read.  For instance, the previous equation is:
 \begin{equation}  \label{eq:dderLap}
 {\cal L}[\ddot{x}] = s^2{\cal L}[x] - sx(0) - \dot{x}(0).
 \end{equation}
-Now apply \Ref{Tprops} and \Ref{eq:dderLap} to the differential
-equation \Ref{Lexam2} to obtain
+Now apply \eqref{Tprops} and \eqref{eq:dderLap} to the differential
+equation \eqref{Lexam2} to obtain
 \begin{eqnarray*}
 0 & = & {\cal L}[\ddot{x} + 3\dot{x} +2x] \\
 & = & (s^2{\cal L}[x] - sx(0) - \dot{x}(0)) + 
@@ -238,7 +238,7 @@ Next, use this equation and partial fractions to solve for ${\cal L}[x]$ as
 \[
 \dps{\cal L}[x] = \frac{s+5}{(s+1)(s+2)} = 4\frac{1}{s+1} - 3\frac{1}{s+2}.
 \]
-Using linearity and \Ref{eq:Lexp}, we see that 
+Using linearity and \eqref{eq:Lexp}, we see that 
 \[
 {\cal L}[4e^{-t}-3e^{-2t}] = 4\frac{1}{s+1} - 3\frac{1}{s+2}.
 \]
@@ -246,15 +246,15 @@ Hence
 \[
 x(t) = 4e^{-t}-3e^{-2t}
 \]
-is the solution to \Ref{Lexam2}.
+is the solution to \eqref{Lexam2}.
 
 
 \subsubsection*{Information Needed to Solve Second Order Equations}
 
 What information about Laplace transforms will we need to solve the 
-initial value problem \Ref{e:2ndforced} in general?  We can answer this 
-question just by taking the Laplace transform of \Ref{e:2ndforced} and 
-solving for ${\cal L}[x]$.  Using \Ref{eq:dderLap} and \Ref{Tprops}(c), 
+initial value problem \eqref{e:2ndforced} in general?  We can answer this 
+question just by taking the Laplace transform of \eqref{e:2ndforced} and 
+solving for ${\cal L}[x]$.  Using \eqref{eq:dderLap} and \eqref{Tprops}(c), 
 compute 
 \begin{eqnarray*}
 {\cal L}[g(t)] & = & {\cal L}[\ddot{x}+a\dot{x} + bx] \\
@@ -266,10 +266,10 @@ Then solve for ${\cal L}[x]$ as
 \begin{equation}  \label{e:laplace2nd}
 {\cal L}[x] = \frac{x_0s + ax_0+\dot{x}_0}{s^2+as+b} + \frac{G(s)}{s^2+as+b}
 \end{equation}
-where $G = {\cal L}[g(t)]$.  The third step in solving \Ref{e:2ndforced}
+where $G = {\cal L}[g(t)]$.  The third step in solving \eqref{e:2ndforced}
 by Laplace transforms is to compute the inverse Laplace transform
 \index{Laplace transform!inverse} of the right hand side of 
-\Ref{e:laplace2nd}.  
+\eqref{e:laplace2nd}.  
 
 To find the inverse Laplace transform of the first term, we use partial 
 fractions.  For example, suppose that the polynomial $s^2+as+b$ 
@@ -278,7 +278,7 @@ term as
 \[
 \frac{c_1}{s-r_1} + \frac{c_2}{s-r_2}
 \]
-for some real constants $c_1$ and $c_2$.  We can now use \Ref{eq:Lexp}
+for some real constants $c_1$ and $c_2$.  We can now use \eqref{eq:Lexp}
 to find the inverse Laplace transform of this first term.  
 
 If this polynomial has a double real root or a complex conjugate pair of 
@@ -297,9 +297,9 @@ to solve forced second order linear equations, we must be able to
 \begin{itemize}
 \item	compute partial fraction\index{partial fractions} expansions,
 \item	compute the inverse Laplace transforms
-\index{Laplace transform!inverse} for functions in \Ref{e:sampleLT}, and
+\index{Laplace transform!inverse} for functions in \eqref{e:sampleLT}, and
 \item   compute the inverse Laplace transforms of the second term in 
-\Ref{e:laplace2nd}, which involves the forcing function $g(t)$.
+\eqref{e:laplace2nd}, which involves the forcing function $g(t)$.
 \end{itemize}
 
 
@@ -321,7 +321,7 @@ that
 \begin{equation} \label{E:pfquad}
 \frac{1}{(s-r_1)(s-r_2)} = \frac{a_1}{s-r_1} + \frac{a_2}{s-r_2}
 \end{equation}
-for some scalars $a_1$ and $a_2$.  By putting the right side of \Ref{E:pfquad}
+for some scalars $a_1$ and $a_2$.  By putting the right side of \eqref{E:pfquad}
 over a common denominator, verify that $a_1$ and $a_2$ are found by solving 
 the system of linear equations
 \begin{eqnarray*}
@@ -364,13 +364,13 @@ has the Laplace transform
 \end{exercise}
 
 \begin{exercise}   \label{exer:kderLap}
-Identity \Ref{eq:dderLap}\index{Laplace transform!derivative property} may be 
+Identity \eqref{eq:dderLap}\index{Laplace transform!derivative property} may be 
 generalized to: 
 \begin{equation}  \label{LapDerk}
 {\cal L}\left[\frac{d^k y}{dt^k}\right] =
 s^k{\cal L}[y] - s^{k-1} y(0) - \cdots - \frac{d^{k-1} y}{dt^{k-1}}(0).
 \end{equation}
-Use induction to verify \Ref{LapDerk}. 
+Use induction to verify \eqref{LapDerk}. 
 \end{exercise}
 
 

@@ -56,7 +56,7 @@ g(y,z) = yz^2 + \sin y,
 to be available in \Matlabp.
 Then we specify $g$ by writing a \Matlab m-file that contains the information 
 defining this function.  The m-file {\tt gexam.m} that defines the function 
-$g(y,z)$ in \Ref{eq:gexam} has two lines:
+$g(y,z)$ in \eqref{eq:gexam} has two lines:
 \begin{verbatim}
 function g = gexam(y,z)
 g = y*z^2 + sin(y);
@@ -112,7 +112,7 @@ which is indeed $h(1,2,3)$.  This m-file has been stored as {\tt f14\_3\_3.m}.
 
 \subsection*{The \Matlab Command {\tt ode45}}\index{\computer!ode45}
 
-We now return to the initial value problem \Ref{eq:fexam}.
+We now return to the initial value problem \eqref{eq:fexam}.
 The function 
 \begin{matlabEquation}\label{MATLAB:43}
 f(t,x)=x+t
@@ -129,7 +129,7 @@ The \Matlab command
 {\tt ode45('f14\_3\_4',[t0 te],x0)}
 \end{center}\index{\computer!ode45} 
 computes a numerical approximation to the solution to the initial value 
-problem \Ref{eq:fexam} on the interval {\tt [t0,te]}.
+problem \eqref{eq:fexam} on the interval {\tt [t0,te]}.
 For instance, we can use {\tt ode45} to solve the initial value problem
 \begin{equation}  \label{eq:fexam1}
 \begin{array}{rcl}
@@ -163,11 +163,11 @@ The result is shown in Figure~\ref{fig:ode45ex1}.
    \centerline{%
    \psfig{file=../figures/ode45ex1.eps,width=3.2in}}
    \caption{Approximation of the solution of
-   \protect\Ref{eq:fexam1} obtained by {\tt ode45} in \protect\Matlabp.}
+   \protect\eqref{eq:fexam1} obtained by {\tt ode45} in \protect\Matlabp.}
    \label{fig:ode45ex1}
 \end{figure}
 
-In fact, the initial value problem \Ref{eq:fexam1} has a simple closed form 
+In fact, the initial value problem \eqref{eq:fexam1} has a simple closed form 
 solution
 \[
 x(t) = 4e^{t-1}-t-1,
@@ -191,7 +191,7 @@ covers the plot of the numerically computed solution.
 We now discuss the error made by {\tt ode45} in more detail.
 \index{\computer!ode45}
 Using {\tt ode45} we obtained an approximation of the solution of
-the initial value problem \Ref{eq:fexam1} at the times $t_k={\tt t(k)}$
+the initial value problem \eqref{eq:fexam1} at the times $t_k={\tt t(k)}$
 for $k=1,2,\ldots,45$.  The exact solution at these points is
 \[
 x(t_k)=4e^{t_k-1}-t_k-1,
@@ -225,7 +225,7 @@ computed solution given in Figure~\ref{fig:ode45ex1}.
    \centerline{%
    \psfig{file=../figures/ode45err0.eps,width=3.2in}}
    \caption{Absolute error in the approximation of the solution of
-   \protect\Ref{eq:fexam1} obtained by {\tt ode45} in \protect\Matlab with 
+   \protect\eqref{eq:fexam1} obtained by {\tt ode45} in \protect\Matlab with 
 	default error bound {\tt 1e-6}.}
    \label{fig:ode45err0}
 \end{figure}
@@ -259,7 +259,7 @@ error oscillates, but is always smaller than $3\cdot 10^{-7}$.
    \centerline{%
    \psfig{file=../figures/ode45err1.eps,width=3.2in}}
    \caption{Relative error in the approximation of the solution of
-   \protect\Ref{eq:fexam1} obtained by {\tt ode45} in \protect\Matlab with 
+   \protect\eqref{eq:fexam1} obtained by {\tt ode45} in \protect\Matlab with 
 	default error bound {\tt 1e-3}.}
    \label{fig:ode45err1}
 \end{figure}
@@ -291,7 +291,7 @@ in Figure~\ref{fig:ode45err2}.  In an attempt to guarantee the reduced error,
    \centerline{%
    \psfig{file=../figures/ode45err2.eps,width=3.2in}}
    \caption{Relative error in the approximation of the solution of
-   \protect\Ref{eq:fexam1} obtained by {\tt ode45} in \protect\Matlab with 
+   \protect\eqref{eq:fexam1} obtained by {\tt ode45} in \protect\Matlab with 
 	{\tt 1e-8} error bound.}
    \label{fig:ode45err2}
 \end{figure}

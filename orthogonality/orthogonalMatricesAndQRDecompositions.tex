@@ -50,7 +50,7 @@ $Q^tQ=\{(v_i\cdot v_j)\}=I_n$, since the $v_j$ are orthonormal. Note that
 \]
 thus proving (c).  \end{proof}
 
-The previous lemma together with \Ref{e:orthosym} in the proof of
+The previous lemma together with \eqref{e:orthosym} in the proof of
 Theorem~\ref{T:symmetricmat}(b) lead to the following result:
 \begin{proposition}  For each symmetric $n\times n$ matrix $A$, there exists an
 orthogonal matrix $P$ such that $P^tAP$ is a diagonal matrix.
@@ -229,12 +229,12 @@ u^t u & = &  (z_j-r)(z_j-r) + z_{j+1}^2 + \cdots + z_n^2 \\
 \end{eqnarray*}
 Hence $2u^tz = u^t u$, as claimed.
 
-Note that $z-u$ is the vector on the right hand side of \Ref{eq:Housej}.
+Note that $z-u$ is the vector on the right hand side of \eqref{eq:Housej}.
 So, compute
 \[
 Hz = \left(I_n - \frac{2}{u^tu} u u^t\right)z = z -\frac{2u^t z}{u^tu} u = z-u
 \]
-to see that \Ref{eq:Housej} is valid.  \end{proof}
+to see that \eqref{eq:Housej} is valid.  \end{proof}
 
 An inspection of the proof of Proposition~\ref{prop:Housej} shows that we
 could have chosen
@@ -313,7 +313,7 @@ Householder transformations.
 
 The syntax of the $QR$ decomposition in \Matlab is quite simple.  For example,
 let $w_1=(1,0,-1,0)$, $w_2=(2,-1,0,1)$ and $w_3=(0,0,-2,1)$ be the three
-vectors in \Ref{eq:gsexam}.  In Section~\ref{S:5.5} we computed an orthonormal
+vectors in \eqref{eq:gsexam}.  In Section~\ref{S:5.5} we computed an orthonormal
 basis for the subspace of $\R^4$ spanned by $w_1,w_2,w_3$.  Here we use the
 \Matlab command {\tt qr} to find an orthonormal basis for this subspace.
 Let $A$ be the matrix having the vectors $w_1^t,w_2^t$ and $w_3^t$
@@ -337,7 +337,7 @@ R =
          0    2.0000   -0.5000
          0         0    1.6583
 \end{verbatim}
-A comparison with \Ref{eq:gsoresult} shows that the columns of the matrix
+A comparison with \eqref{eq:gsoresult} shows that the columns of the matrix
 {\tt Q} are the elements in the orthonormal basis.  The only difference
 is that the sign of the first vector is opposite.  However, this is
 not surprising since we know that there is some freedom in the choice of
@@ -345,7 +345,7 @@ Householder matrices, as remarked after Proposition~\ref{prop:Housej}.
 
 In addition, the command {\tt qr} produces the matrix {\tt R} whose
 entries $r_{ij}$ are the coordinates of the vectors $w_j$ in the
-new orthonormal basis as in \Ref{eq:wrv}.  For instance, the second
+new orthonormal basis as in \eqref{eq:wrv}.  For instance, the second
 column of {\tt R} tells us that
 \[
 w_2 = r_{12}v_1 + r_{22}v_2 + r_{32}v_3 = -1.4142 v_1 + 2.0000 v_2.

@@ -14,7 +14,7 @@
 
 This section divides into three parts.  In the first part, we give an explicit 
 formula for the Laplace transform and verify that this formula satisfies 
-properties \Ref{Tprops}.  In the second part, we compute a table of Laplace
+properties \eqref{Tprops}.  In the second part, we compute a table of Laplace
 transforms for a number of special functions including step functions and
 impulse functions.  In the third part we discuss two properties of Laplace
 transforms that are useful when computing inverse Laplace transforms of
@@ -34,7 +34,7 @@ integral --- which implies that some care must be taken when discussing
 its properties.  Indeed, for some functions the Laplace transform does 
 not exist for all values of $s$.  What usually happens is that 
 the Laplace transform exists for all values of $s$ larger than some 
-number $a$.  As an example, we compute \Ref{eq:Lexp} directly using 
+number $a$.  As an example, we compute \eqref{eq:Lexp} directly using 
 Definition~\ref{D:laplace}.  Let $x(t)=e^{at}$ and compute 
 \begin{equation}  \label{e:expat}
 {\cal L}[x](s) = \int_0^{\infty} e^{(a-s)t}\; dt=
@@ -46,9 +46,9 @@ Definition~\ref{D:laplace}.  Let $x(t)=e^{at}$ and compute
 \subsubsection*{The Laplace Transform is Linear}
 \index{Laplace transform!linearity}
 
-The first step in verifying properties \Ref{Tprops} is to show that the 
+The first step in verifying properties \eqref{Tprops} is to show that the 
 Laplace transform ${\cal L}$ is linear, that is, to 
-show that \Ref{Tprops}(a) holds.
+show that \eqref{Tprops}(a) holds.
 \begin{proposition}  \label{prop:linLap}
 Suppose $x(t)$ and $y(t)$ are functions for which the Laplace transforms
 ${\cal L}[x](s)$, ${\cal L}[y](s)$ exist for $s>a$, and let $c$ be real. 
@@ -73,7 +73,7 @@ multiplication.  \end{proof}
 \subsubsection*{The Derivative Property of Laplace Transforms is Valid}
 \index{Laplace transform!derivative property}
 
-Next we verify the important derivative property \Ref{Tprops}(c) of the 
+Next we verify the important derivative property \eqref{Tprops}(c) of the 
 Laplace transform.  
 
 \begin{proposition}  \label{prop:derLap}
@@ -116,7 +116,7 @@ s\lim\limits_{h\to \infty} \int_0^h e^{-st} x(t)\; dt\\
 \end{eqnarray*}
 for $s>a$.  \end{proof}
 
-Finally, we remark that \Ref{Tprops}(b) is valid, but that its proof is 
+Finally, we remark that \eqref{Tprops}(b) is valid, but that its proof is 
 beyond the scope of this course.  One method of proof is to develop an 
 explicit integral formula for the inverse Laplace transform. 
 
@@ -146,12 +146,12 @@ function $\delta_c(t)$.  See Figure~\ref{F:H1} for a graph of $H_1$.
 \end{figure}
 
 We derive some of these formulas by using the Laplace transform formulas for 
-derivatives \Ref{Tprops}(c) and \Ref{eq:dderLap}.  (We could compute these 
+derivatives \eqref{Tprops}(c) and \eqref{eq:dderLap}.  (We could compute these 
 transforms directly by integration from Definition~\ref{D:laplace}, but the 
 method we choose is simpler and illustrates the power of the derivative 
 formulas.)  Note that we have already computed the Laplace transforms 
 of the first two functions in Table~\ref{tab:Laplist} when deriving 
-\Ref{eq:Lexp}.
+\eqref{eq:Lexp}.
 
 \begin{table}[htb]
 \begin{center}
@@ -184,7 +184,7 @@ a solution to the initial value problem
 x(0) & = & 1 \\ 
 \dot{x}(0) & = & 0.
 \end{eqnarray*}
-It follows from \Ref{eq:dderLap} that
+It follows from \eqref{eq:dderLap} that
 \[
 s^2{\cal L}[x] - s + \tau^2 {\cal L}[x] = 0.
 \]
@@ -204,7 +204,7 @@ identically as the computation of ${\cal L}[\cos(\tau t)]$.
 
 \subsubsection*{The Laplace Transform: ${\cal L}[t^n]$}
 
-Next, we compute ${\cal L}[t^n]$ by applying \Ref{Tprops}(c) $n$ times.
+Next, we compute ${\cal L}[t^n]$ by applying \eqref{Tprops}(c) $n$ times.
 That is, 
 \[
 {\cal L}[t^n] = \frac{n}{s}{\cal L}[t^{n-1}] = \cdots =
@@ -237,7 +237,7 @@ g_h(t) & =  &
 \end{array}
 \end{equation}
 The graph of $g_h$ is given in Figure~\ref{fig:deltah}.  It is not clear how 
-to take the limit of $g_h(t)$ as $h\to 0$ in \Ref{eq:deltah}, since this limit 
+to take the limit of $g_h(t)$ as $h\to 0$ in \eqref{eq:deltah}, since this limit 
 leads to a `function' that is infinity at $c$ and zero elsewhere.  Despite 
 this difficulty, the limit is called the {\em Dirac delta function}
 \index{Dirac delta function} and is denoted by $\delta_c(t)$.  We compute the 
@@ -249,7 +249,7 @@ the Laplace transforms of the approximation as $h\to 0$.
            \centerline{%
            \psfig{file=../figures/deltah.eps,width=2.8in}}
            \caption{Graph of the approximating function $g_h(t)$ of  
-	   \protect\Ref{eq:deltah} for $c=1$ and $h=0.05$.}
+	   \protect\eqref{eq:deltah} for $c=1$ and $h=0.05$.}
            \label{fig:deltah}
 \end{figure}
 
@@ -296,12 +296,12 @@ and
 \frac{1}{(s-B)^2+C^2}G(s) \AND \frac{s-B}{(s-B)^2+C^2}G(s)
 \end{equation}
 where $G(s)$ is the Laplace transform of the forcing function $g(t)$.
-See \Ref{e:sampleLT}.  
+See \eqref{e:sampleLT}.  
 
 \subsubsection*{Inverse Laplace Transforms of Shifted Functions}
 
 The next proposition enables us to calculate inverse Laplace transforms for
-functions of type \Ref{E:1sttype}.
+functions of type \eqref{E:1sttype}.
 
 \begin{proposition}  \label{prop:eHcLap1}
 Suppose that $Y(s)={\cal L}[y(t)](s)$ exists.  Then
@@ -333,13 +333,13 @@ two squares and to shift the numerator.   That is,
 \frac{s+1}{(s+1)^2+4} - 2\frac{1}{(s+1)^2+4}.
 \end{equation}
 We can now find the inverse Laplace transform of the right hand side of 
-\Ref{e:pf1}.  Except for the shift of $s$ to $s+1$, the rearranged expression 
-\Ref{e:pf1} is one whose inverse Laplace transform can be read from 
+\eqref{e:pf1}.  Except for the shift of $s$ to $s+1$, the rearranged expression 
+\eqref{e:pf1} is one whose inverse Laplace transform can be read from 
 Table~\ref{tab:Laplist}.  More precisely, let 
 \[
 Y(s) = \frac{s}{s^2+4} - 2\frac{1}{s^2+4},
 \]
-so that the right hand side of \Ref{e:pf1} is $Y(s+1)$.  Using 
+so that the right hand side of \eqref{e:pf1} is $Y(s+1)$.  Using 
 Table~\ref{tab:Laplist} the inverse Laplace transform of $Y(s)$ is
 \begin{equation}  \label{e:exlappf2}
 {\cal L}\inv[Y(s)](t) = 
@@ -361,7 +361,7 @@ That is,
 
 Next, we examine the Laplace transform of a function that is multiplied 
 by the jump function $H_c(t)$ and by doing so we will be able to compute the
-inverse Laplace transform of functions like \Ref{2ndtype} when $G(s)$ is the 
+inverse Laplace transform of functions like \eqref{2ndtype} when $G(s)$ is the 
 Laplace transform of a discontinuous forcing function.
 
 \begin{proposition}  \label{prop:eHcLap2}
@@ -434,7 +434,7 @@ $\ddot{x} + 2\dot{x} - 8x = e^t, \quad x(0) = 1, \quad \dot{x}(0) = 2$.
 \end{exercise}
 
 \begin{exercise} \label{c13.1.2}
-Suppose that $z(t)=ty(t)$.  Using \Ref{E:laplace} show that
+Suppose that $z(t)=ty(t)$.  Using \eqref{E:laplace} show that
 \[
 {\cal L}[z](s) = -\frac{\dps d}{\dps ds} {\cal L}[y](s).
 \]

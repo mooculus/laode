@@ -78,7 +78,7 @@ and for any invertible $2\times 2$ matrix $P$
 \end{equation}
 
 Let $P$ be an invertible $2\times 2$ matrix so that $B=P\inv AP$.
-Using \Ref{e:detprod} and \Ref{e:detinv} we see that
+Using \eqref{e:detprod} and \eqref{e:detinv} we see that
 \begin{eqnarray*}
 p_B(\lambda) & = & \det(B-\lambda I_2) \\
  & = & \det(P\inv AP-\lambda I_2) \\
@@ -87,7 +87,7 @@ p_B(\lambda) & = & \det(B-\lambda I_2) \\
 & = & p_A(\lambda).
 \end{eqnarray*}
 Hence the eigenvalues of $A$ and $B$ are the same.  It follows
-from \Ref{e:treigen} and \Ref{e:deteigen} of Section~\ref{S:evchp}
+from \eqref{e:treigen} and \eqref{e:deteigen} of Section~\ref{S:evchp}
 that the determinants and traces of $A$ and $B$ are equal.   \end{proof}
 
 For example, if
@@ -131,7 +131,7 @@ e^C = P\inv e^BP.
 \[
 (P\inv BP)^k = P\inv B^kP.
 \]
-Next verify \Ref{e:similarexp} by computing
+Next verify \eqref{e:similarexp} by computing
 \begin{align*}
 e^C &=\sum^{\infty}_{k=0} \frac{1}{k!}C^k
  =  \sum^{\infty}_{k=0} \frac{1}{k!}(P\inv BP)^k \\
@@ -211,7 +211,7 @@ Similarly, the $2^{nd}$ column of $P\inv CP$ is
 thus verifying (a).
 
 (b) \quad  Lemma~\ref{L:rievind} implies that $v_1$ and $v_2$ are linearly
-independent and hence that $P$ is invertible.  Using \Ref{e:complexcoord},
+independent and hence that $P$ is invertible.  Using \eqref{e:complexcoord},
 with $\tau$ replaced by $-\tau$, $v$ replaced by $v_1$, and $w$ replaced by
 $w_1$, we calculate
 \[
@@ -231,7 +231,7 @@ as desired.
 
 
 (c) \quad   Let $v_1$ be an eigenvector and assume that $v_2$ is a
-generalized eigenvector satisfying \Ref{e:Cw=lw+v}.  By
+generalized eigenvector satisfying \eqref{e:Cw=lw+v}.  By
 Lemma~\ref{L:geneig2} the vectors $v_1$ and $v_2$ exist and are linearly
 independent.
 
@@ -303,7 +303,7 @@ is the solution to the initial value problem.
 \subsubsection*{The Example with Complex Eigenvalues Revisited}
 \index{eigenvalue!complex}
 
-Recall the example in \Ref{e:complexexample}
+Recall the example in \eqref{e:complexexample}
 \[
 \frac{dX}{dt} = \mattwo{-1}{2}{-5}{-3} X,
 \]
@@ -320,7 +320,7 @@ Thus the matrix $P$ that transforms $C$ into normal form is
 \[
 P = \mattwo{2}{0}{-1}{-3} \AND P\inv = \frac{1}{6}\mattwo{3}{0}{-1}{-2}.
 \]
-It follows from \Ref{e:exp0ev} that the solution to the initial value problem
+It follows from \eqref{e:exp0ev} that the solution to the initial value problem
 is
 {\scriptsize \begin{eqnarray*}
 X(t) & =  &
@@ -336,8 +336,8 @@ X(t) & = & \frac{1}{2}e^{-2t}\mattwo{2}{0}{-1}{-3}
 & = & e^{-2t}
 \vectwoc{\cos(3t)+\sin(3t)}{\cos(3t)-2\sin(3t)}.
 \end{eqnarray*}\normalsize}            
-Thus the solution to \Ref{e:complexexample} that we have found using 
-similarity of matrices is identical to the solution \Ref{e:complexexampleans}
+Thus the solution to \eqref{e:complexexample} that we have found using 
+similarity of matrices is identical to the solution \eqref{e:complexexampleans}
 that we found by the direct method.
 
 Solving systems with either distinct real eigenvalues or equal eigenvalues
@@ -354,7 +354,7 @@ matrices.
 \end{exercise}
 
 \begin{exercise} \label{c6.5.2}
-Use \Ref{e:trAB=trBA} in Chapter~\ref{chap:matrices} to verify that the
+Use \eqref{e:trAB=trBA} in Chapter~\ref{chap:matrices} to verify that the
 traces of similar matrices are equal.
 \end{exercise}
 

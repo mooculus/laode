@@ -29,10 +29,10 @@ where $a_j\in\R$ are constants with $a_n\neq 0$ and $g(t)$ is a
 continuous function. These equations are $n^{th}$ order and linear. 
 The constants $a_j$ are called the 
 {\em coefficients\/}\index{coefficients of a differential equation} of the 
-differential equation \Ref{eq:nconst}.  After dividing \Ref{eq:nconst} by 
+differential equation \eqref{eq:nconst}.  After dividing \eqref{eq:nconst} by 
 $a_n$, we may assume that $a_n=1$.  
 
-In analogy to systems of linear equations, we call \Ref{eq:nconst} 
+In analogy to systems of linear equations, we call \eqref{eq:nconst} 
 {\em homogeneous\/} if $g(t)=0$ for all $t$.  Otherwise the equation is 
 {\em inhomogeneous}.   In particular, the principle of superposition is 
 valid for the homogeneous equations.  \index{homogeneous}  
@@ -40,7 +40,7 @@ valid for the homogeneous equations.  \index{homogeneous}
 
 \subsection*{Reduction of Equations to First Order Systems}
 
-In principle, we can find solutions to \Ref{eq:nconst} by finding 
+In principle, we can find solutions to \eqref{eq:nconst} by finding 
 solutions of a corresponding 
 linear system of first order 
 ODEs\index{system of differential equations!linear} with 
@@ -51,11 +51,11 @@ Section~\ref{S:SOE}.  Let
 y_1(t)=x(t),\quad y_2(t)=\frac{dx}{dt}(t),\quad
 \ldots, \quad  y_n(t)=\frac{d^{n-1}x}{dt^{n-1}}(t).
 \end{equation}
-With these functions, \Ref{eq:nconst} (with $a_n=1$) can be rewritten as
+With these functions, \eqref{eq:nconst} (with $a_n=1$) can be rewritten as
 \[
 \frac{dy_n}{dt} + a_{n-1} y_n + \cdots + a_1 y_2 + a_0 y_1 = g(t).
 \]
-Hence, \Ref{eq:nconst} is equivalent to
+Hence, \eqref{eq:nconst} is equivalent to
 \arraystart
 \[
 \begin{array}{rcl}
@@ -86,9 +86,9 @@ Then we arrive at the system of ODEs
 \end{equation}
 Let us summarize.
 \begin{proposition}   \label{prop:ho1}
-The function $x(t)$ is a solution to the order $n$ ODE \Ref{eq:nconst}  
+The function $x(t)$ is a solution to the order $n$ ODE \eqref{eq:nconst}  
 if and only if the vector of functions $Y(t)=(y_1(t),\ldots,y_n(t))^t$ is 
-a solution of the first order system \Ref{eq:highrw}, where 
+a solution of the first order system \eqref{eq:highrw}, where 
 \[
 y_1(t) = x(t) \AND y_{j+1}(t)=\dps \frac{d^jx}{dt^j}(t) 
 \]
@@ -98,83 +98,83 @@ for $j=1,2,\ldots,n-1$.
 \subsection*{The Homogeneous Equation}
 \index{homogeneous}
 
-Now consider specifically the case when \Ref{eq:nconst} is homogeneous.  
+Now consider specifically the case when \eqref{eq:nconst} is homogeneous.  
 As before, we assume that $a_n=1$, and solve
 \begin{equation}  \label{eq:nconsthom}
 \frac{d^nx}{dt^n} + a_{n-1}\frac{d^{n-1}x}{dt^{n-1}} +
 \cdots + a_1\frac{dx}{dt}+a_0x = 0.
 \end{equation}
 Proposition~\ref{prop:ho1} implies that each solution
-of \Ref{eq:nconsthom} is the first component in a solution
+of \eqref{eq:nconsthom} is the first component in a solution
 to the $n\times n$ system 
 \begin{equation}  \label{eq:highrwh}
 \frac{dY}{dt} = QY,
 \end{equation}
-where $Q$ is the matrix defined in \Ref{eq:coefma}.  From the discussion 
+where $Q$ is the matrix defined in \eqref{eq:coefma}.  From the discussion 
 in Section~\ref{sec:LinHomSys}, it follows that we can find all solutions 
-to \Ref{eq:nconsthom} if we know the eigenvalues and the 
+to \eqref{eq:nconsthom} if we know the eigenvalues and the 
 Jordan block\index{Jordan block} 
 structure of $Q$.  In particular, the first component of solutions to 
-\Ref{eq:highrwh} is always just a linear combination of the 
+\eqref{eq:highrwh} is always just a linear combination of the 
 functions\index{linear!combination!of functions} 
 $t^je^{\lambda t}$ where $\lambda$ is an eigenvalue of $Q$.  In the 
 abstract, the only question that remains is which powers $t^j$ can 
 actually occur.  Certainly, $j$ must be less than the multiplicity of the 
 eigenvalue $\lambda$.  It also follows from Proposition~\ref{prop:ho1}
 that there are precisely $n$ linearly independent functions that are 
-solutions to \Ref{eq:nconsthom}.
+solutions to \eqref{eq:nconsthom}.
 
 We can use this abstract information to find a shortcut for solving 
-\Ref{eq:nconsthom}.  Suppose that $x(t)=e^{\lambda t}$.  Then we can 
-compute the left hand side of \Ref{eq:nconsthom} with this $x(t)$ 
+\eqref{eq:nconsthom}.  Suppose that $x(t)=e^{\lambda t}$.  Then we can 
+compute the left hand side of \eqref{eq:nconsthom} with this $x(t)$ 
 obtaining:
 \begin{equation}  \label{e:elam}
 e^{\lambda t}\left(\lambda^n + a_{n-1}\lambda^{n-1}+\cdots+a_1\lambda
 +a_0\right).
 \end{equation}
-Thus, $x(t)$ is a solution to \Ref{eq:nconsthom} precisely when $\lambda$
+Thus, $x(t)$ is a solution to \eqref{eq:nconsthom} precisely when $\lambda$
 is a root of 
 \begin{equation} \label{E:charpoly}
 p(\lambda) = \lambda^n + a_{n-1}\lambda^{n-1}+\cdots+a_1\lambda +a_0.
 \end{equation}
 We call $p(\lambda)$ the {\em characteristic polynomial\/}
 \index{characteristic polynomial!of higher order ODE} of the $n^{th}$ 
-order equation \Ref{eq:nconsthom}.  The roots of the characteristic polynomial
+order equation \eqref{eq:nconsthom}.  The roots of the characteristic polynomial
 are called {\em eigenvalues\/}.  \index{eigenvalue!of higher order ODE} 
 This terminology is explained in Section~\ref{S:LDO}.
  
 It follows immediately that there is one solution associated to 
 each eigenvalue of the characteristic polynomial $p(\lambda)$ in 
-\Ref{E:charpoly}.  If the eigenvalues $\lambda=\sigma\pm i\tau$ are complex, 
-then there are two solutions to \Ref{eq:nconsthom}, namely,
+\eqref{E:charpoly}.  If the eigenvalues $\lambda=\sigma\pm i\tau$ are complex, 
+then there are two solutions to \eqref{eq:nconsthom}, namely,
 $e^{\sigma t}\cos(\tau t)$ and $e^{\sigma t}\sin(\tau t)$.
 \begin{theorem} \label{T:hoe}
 Let $\lambda_1,\ldots,\lambda_k$ be the distinct eigenvalues of the 
 characteristic 
 polynomial\index{characteristic polynomial!of higher order ODE} 
-$p(\lambda)$ of \Ref{E:charpoly} with multiplicities 
+$p(\lambda)$ of \eqref{E:charpoly} with multiplicities 
 $m_1,\ldots,m_k$.  Then 
 \[
 \{t^je^{\lambda_\ell}: 1\leq\ell\leq k, 0\leq j<m_\ell\}
 \]
-is a basis of solutions\index{basis!of solutions} to \Ref{eq:nconsthom}.
+is a basis of solutions\index{basis!of solutions} to \eqref{eq:nconsthom}.
 \end{theorem} 
 
 \begin{proof}  The previous calculations show that if $\lambda$ is an eigenvalue 
-of $p(\lambda)$, then $e^{\lambda t}$ is a solution to \Ref{eq:nconsthom}.  
+of $p(\lambda)$, then $e^{\lambda t}$ is a solution to \eqref{eq:nconsthom}.  
 The difficulty in proving this theorem is in showing that $t^je^{\lambda t}$ 
-is also a solution to \Ref{eq:nconsthom} for any $j<m$, where $m$ is the 
+is also a solution to \eqref{eq:nconsthom} for any $j<m$, where $m$ is the 
 multiplicity of the eigenvalue $\lambda$.  We prove this theorem in two steps.
 First, we show in Lemma~\ref{lem:ho1} that the eigenvalues of $p$ are just the 
 eigenvalues of the characteristic polynomial of the coefficient matrix $Q$ in 
-\Ref{eq:coefma}.  Second, we show in Lemma~\ref{lem:ho2} that every eigenvalue 
+\eqref{eq:coefma}.  Second, we show in Lemma~\ref{lem:ho2} that every eigenvalue 
 of $Q$ is associated to precisely one Jordan block and that
 every eigenvector of $Q$ has a nonvanishing first component. 
 Then the result follows from Theorem~\ref{T:JBsoln}.  \end{proof}
 
 \begin{lemma}  \label{lem:ho1}
 The characteristic polynomial\index{characteristic polynomial} of 
-the matrix $Q$ in \Ref{eq:coefma} is 
+the matrix $Q$ in \eqref{eq:coefma} is 
 \[
 p_Q(\lambda) = (-1)^np(\lambda).
 \]
@@ -189,7 +189,7 @@ as desired.
 
 Now suppose that the result is valid for all matrices of order $n-1$.  
 Then we may expand the determinant\index{determinant} by cofactors
-\index{cofactor} along the $1^{st}$ column (see \Ref{e:inductdetc} in 
+\index{cofactor} along the $1^{st}$ column (see \eqref{e:inductdetc} in 
 Chapter~\ref{C:D&E}) and obtain 
 {\small 
 \[
@@ -276,15 +276,15 @@ as desired.  \end{proof}
 
 We restate the results in Theorem~\ref{T:hoe} in real form.
 \begin{theorem}   \label{thm:HOgen}
-Let $\lambda$ be an eigenvalue of \Ref{E:charpoly} with multiplicity $m$.
+Let $\lambda$ be an eigenvalue of \eqref{E:charpoly} with multiplicity $m$.
 \begin{itemize}
 \item[(a)] If $\lambda$ is real\index{eigenvalue!real}, then 
 $t^je^{\lambda t}$ is a solution 
-of \Ref{eq:nconsthom} for $0\leq j < m$.  
+of \eqref{eq:nconsthom} for $0\leq j < m$.  
 \item[(b)] If $\lambda=\sigma+i\tau$ is complex\index{eigenvalue!complex}, 
 then $t^je^{\sigma t}\cos(\tau t)$ and $t^je^{\sigma t}\sin(\tau t)$ are 
-solutions of \Ref{eq:nconsthom} for $0\leq j < m$.
-\item[(c)] Every solution of \Ref{eq:nconsthom} is a linear combination of
+solutions of \eqref{eq:nconsthom} for $0\leq j < m$.
+\item[(c)] Every solution of \eqref{eq:nconsthom} is a linear combination of
 the functions\index{linear!combination!of functions} constructed 
 in (a) and (b).
 \end{itemize}
@@ -307,7 +307,7 @@ First, we find all eigenvalues of the characteristic polynomial by solving
 \]
 This fourth order polynomial has two roots namely $\pm i$, each of
 algebraic multiplicity two.  By Theorem~\ref{thm:HOgen}, the general solution 
-of \Ref{eq:soex3} has the form
+of \eqref{eq:soex3} has the form
 \[
 x(t) = c_1 \cos(t)+ c_2 \sin(t) +c_3 t\cos(t)+ c_4 t\sin(t).
 \]
@@ -324,11 +324,11 @@ small deformation of the beam is given by $x(t)=c_2 \sin(t)$.
 
 In general, however, we can not expect to find the roots of a fourth order
 characteristic polynomial by inspection.  For example, suppose we add a first
-order term to \Ref{eq:soex3} obtaining the differential equation
+order term to \eqref{eq:soex3} obtaining the differential equation
 \begin{equation}  \label{eq:soex3a}
 \frac{d^4x}{dt^4} + 2\frac{d^2x}{dt^2} - \frac{dx}{dt} + x= 0.
 \end{equation}
-The characteristic polynomial of \Ref{eq:soex3a} is
+The characteristic polynomial of \eqref{eq:soex3a} is
 \[
 p(\lambda) = \lambda^4 + 2\lambda^2 - \lambda + 1 .
 \]
@@ -348,7 +348,7 @@ ans =
    0.3438 + 0.6254i
    0.3438 - 0.6254i
 \end{verbatim}
-By Theorem~\ref{thm:HOgen}, the general solution of \Ref{eq:soex3a} has the 
+By Theorem~\ref{thm:HOgen}, the general solution of \eqref{eq:soex3a} has the 
 form
 \[
 \begin{array}{rcl}
@@ -356,7 +356,7 @@ x(t) & = & (c_1 \cos(1.3584t)+ c_2 \sin(1.3584t))e^{-0.3438t} \\
  & & + (c_3 \cos(0.6254t)+ c_4 \sin(0.6254t))e^{0.3438t}.\end{array}
 \]
 Note that the typical solution to the fourth order differential equation 
-\Ref{eq:soex3a} contains sine and cosine terms with two different 
+\eqref{eq:soex3a} contains sine and cosine terms with two different 
 frequencies.  This is not surprising since the characteristic polynomial 
 has two distinct complex conjugate pairs of roots.  See Section~\ref{S:NLD}.
 
@@ -402,9 +402,9 @@ Chapter~\ref{Chap:Planar}).
 
 Linearity implies that to find the 
 general solution\index{general solution} the inhomogeneous
-equation \Ref{eq:nconst} we need to find one solution to that equation 
+equation \eqref{eq:nconst} we need to find one solution to that equation 
 and all solutions to the corresponding homogeneous equation 
-\Ref{eq:nconsthom}.  Sections~\ref{sec:2norderinhom} and \ref{S:resonance} 
+\eqref{eq:nconsthom}.  Sections~\ref{sec:2norderinhom} and \ref{S:resonance} 
 are devoted to finding specific solutions to inhomogeneous equations of 
 various types using the method of undetermined coefficients.  Our study of
 inhomogeneous equations will continue in Chapter~\ref{C:LT} where we use 

@@ -45,18 +45,18 @@ the Jordan normal form method of Section~\ref{sec:LinHomSys}.
 
 \subsection*{A Method Based on Eigenvectors}
  
-In this method we find a basis for solutions of \Ref{dotX=AX}.  First, we 
+In this method we find a basis for solutions of \eqref{dotX=AX}.  First, we 
 review the simpler case when there is a basis of eigenvectors and then we 
 consider (part of) the case when there is a deficiency of eigenvectors.
 
 \subsubsection*{A Complete Set of Eigenvectors}
 
-The simplest case in solving \Ref{dotX=AX} occurs when $A$ has a basis of 
+The simplest case in solving \eqref{dotX=AX} occurs when $A$ has a basis of 
 eigenvectors $v_1,\ldots,v_n$ corresponding to the (not necessarily distinct) 
 eigenvalues $\lambda_1,\ldots,\lambda_n$.  We showed how to find a basis for
-the solutions of \Ref{dotX=AX} in Section~\ref{S:TDM} but review the results
+the solutions of \eqref{dotX=AX} in Section~\ref{S:TDM} but review the results
 here.  Each eigenvector $v_j$ generates the solution 
-$X_j(t)=e^{\lambda_j t}v_j$ to \Ref{dotX=AX} and the general solution is:
+$X_j(t)=e^{\lambda_j t}v_j$ to \eqref{dotX=AX} and the general solution is:
 \begin{equation} \label{E:gensolns}
 X(t) = \alpha_1 X_1(t) + \cdots + \alpha_nX_n(t),
 \end{equation}
@@ -68,7 +68,7 @@ by finding scalars $\alpha_j$ so that
 \begin{equation}  \label{E:gensolnsic}
 X_0 = X(0) =\alpha_1v_1 + \cdots + \alpha_nv_n.
 \end{equation}
-The solution of \Ref{E:gensolnsic} is a well understood linear algebra 
+The solution of \eqref{E:gensolnsic} is a well understood linear algebra 
 problem.   
 
 \subsubsection*{Complex Eigenvalues}
@@ -88,7 +88,7 @@ X_1(t) = e^{\sigma t}(\cos(\tau t)u - \sin(\tau t)w)\quad
 \mbox{and}\quad
 X_2(t) = e^{\sigma t}(\sin(\tau t)u + \cos(\tau t)w)
 \end{equation}
-are solutions of the homogeneous equation \Ref{dotX=AX}.  Verifying that
+are solutions of the homogeneous equation \eqref{dotX=AX}.  Verifying that
 $X_1$ and $X_2$ are solutions proceeds as follows.  The solutions 
 corresponding to the eigenvalue $\lambda$ are 
 \[
@@ -126,7 +126,7 @@ x_1 \\ x_2 \\ x_3
 \end{array}\right).
 \end{matlabEquation}
 \arrayfinish
-We load the coefficient matrix $A$ of \Ref{eq:exsyslinc1} by typing 
+We load the coefficient matrix $A$ of \eqref{eq:exsyslinc1} by typing 
 {\tt e15\_1\_5} and compute its eigenvalues and eigenvectors using the 
 command 
 \begin{verbatim}
@@ -147,7 +147,7 @@ D =
 The matrix $A$ has the three distinct eigenvalues $\rho=4$,
 $\lambda=\sigma+i\tau = -4+2i$ and $\overline\lambda=\sigma-i\tau
 = -4-2i$.  We can use these data to find all the solutions of 
-\Ref{eq:exsyslinc1}.  Every solution of \Ref{eq:exsyslinc1} is a linear 
+\eqref{eq:exsyslinc1}.  Every solution of \eqref{eq:exsyslinc1} is a linear 
 combination of the functions
 \begin{eqnarray*}
 X_1(t) & = & e^{4t}\left(\begin{array}{r} 1\\1\\1\end{array}\right),\\
@@ -173,7 +173,7 @@ ans =
 \end{verbatim}
 and therefore $(1,-1,-1+2i)^t$ is also an eigenvector belonging to the
 eigenvalue $-4+2i$.  Using this eigenvector the two solutions in 
-\Ref{eq:reimsol} take the form
+\eqref{eq:reimsol} take the form
 \[
 X_2(t) = e^{-4t}\left(\begin{array}{c}
 \cos(2t)\\ -\cos(2t)\\ -\cos(2t)-2\sin(2t)\end{array}\right),\quad
@@ -275,7 +275,7 @@ We use this information to find $k$ linearly independent solutions to
 $\dot{X}=AX$.  See Theorem~\ref{T:JBsoln}.
 
 The theory of Section~\ref{sec:LinHomSys} tells us that solutions of
-\Ref{eq:linsys} have the form
+\eqref{eq:linsys} have the form
 \[
 X(t)=e^{\lambda t}(\alpha_1(t)w_1+\alpha_2(t)w_2+\cdots+\alpha_k(t)w_k),
 \]
@@ -287,7 +287,7 @@ compute
 \left(\lambda (\alpha_1w_1+\cdots+\alpha_kw_k)+
 \frac{d\alpha_1}{dt}w_1+\cdots+\frac{d\alpha_k}{dt}w_k\right).
 \]
-On the other hand, from \Ref{eq:genvec}
+On the other hand, from \eqref{eq:genvec}
 \begin{eqnarray*}
 AX(t) & = & e^{\lambda t}(\alpha_1\lambda w_1+\alpha_2(w_1+\lambda w_2)
 +\cdots+\alpha_k(w_{k-1}+\lambda w_k))\\
@@ -299,7 +299,7 @@ It follows that $X(t)$ is a solution if and only if
 \frac{d\alpha_1}{dt}w_1+\cdots+
 \frac{d\alpha_k}{dt}w_k= \alpha_2w_1 + \cdots+ \alpha_kw_{k-1}.
 \end{equation}
-Since $w_1,\ldots,w_k$ are linearly independent vectors, \Ref{E:alphas} is 
+Since $w_1,\ldots,w_k$ are linearly independent vectors, \eqref{E:alphas} is 
 equivalent to
 \begin{eqnarray*}
 \frac{d\alpha_1}{dt} & = & \alpha_2    \\
@@ -322,12 +322,12 @@ Then the function
 X_j(t)=e^{\lambda t} \left(\frac{t^{j-1}}{(j-1)!}w_1+\frac{t^{j-2}}{(j-2)!}w_2
 +\cdots+tw_{j-1}+w_j\right)
 \end{equation}
-is a solution of \Ref{eq:linsys}.   Moreover, since $X_j(0)=w_j$, the 
+is a solution of \eqref{eq:linsys}.   Moreover, since $X_j(0)=w_j$, the 
 solutions $X_1(t),\ldots,X_k(t)$ are linearly independent.  We have proved:
 \begin{theorem}  \label{T:JBsoln}
 Let $w_1,\ldots,w_k$ be a set of linearly independent generalized
-eigenvectors vectors satisfying \Ref{eq:genvec}. Then the functions 
-$X_1(t),\ldots,X_k(t)$ in \Ref{E:Xj} are a linearly independent set of 
+eigenvectors vectors satisfying \eqref{eq:genvec}. Then the functions 
+$X_1(t),\ldots,X_k(t)$ in \eqref{E:Xj} are a linearly independent set of 
 solutions\index{linearly!independent solutions} to $\dot{X}=AX$.
 \end{theorem}
 
@@ -372,7 +372,7 @@ is just one.  Typing
 null((A-12*eye(3))^2)
 \end{verbatim}\index{\computer!null}\index{\computer!eye}
 shows us that $w_2=(2,1,1)^t$ is a generalized eigenvector of $A$.
-Set $w_1=(A-12I_3)w_2=(0,8,-8)^t$.  Then all solutions of \Ref{eq:exsyslin2}
+Set $w_1=(A-12I_3)w_2=(0,8,-8)^t$.  Then all solutions of \eqref{eq:exsyslin2}
 are linear combinations of
 \[
 X_1(t)=\left(\begin{array}{r}
@@ -430,7 +430,7 @@ of the form
 \frac{c_{j1}}{(\lambda_j-\lambda)} + \cdots + \frac{c_{jm_j}}{(\lambda_j-\lambda)^{m_j}},
 \]
 for scalars $c_{ji}$.  Putting these terms over a common denominator proves 
-\Ref{e:1/p}.
+\eqref{e:1/p}.
 
 Define the polynomials 
 \begin{equation}  \label{e:Pj}
@@ -461,14 +461,14 @@ combinations of $t^je^{\lambda_\ell t}$ where $j\leq m_\ell-1$.  These
 are just the type of terms that appeared in our discussion of solutions 
 of equations in Jordan normal form in Section~\ref{sec:LinHomSys}.
 
-\begin{proof} Multiplying \Ref{e:1/p} by $p_A(\lambda)$ yields the identity
+\begin{proof} Multiplying \eqref{e:1/p} by $p_A(\lambda)$ yields the identity
 \begin{equation}  \label{e:p=aP}
 1 = a_1(\lambda)P_1(\lambda) + \cdots + a_k(\lambda)P_k(\lambda).
 \end{equation}
-Identity \Ref{e:p=aP} is valid for every number $\lambda$.  This is 
+Identity \eqref{e:p=aP} is valid for every number $\lambda$.  This is 
 possible only if, for each $j>0$, the sum of all coefficients of terms 
 with $\lambda^j$ is zero.  Therefore, we can substitute $A$ into 
-\Ref{e:p=aP} and obtain
+\eqref{e:p=aP} and obtain
 \begin{equation}  \label{e:p=AP}
 I_n = a_1(A)P_1(A) + \cdots + a_k(A)P_k(A).
 \end{equation}
@@ -493,7 +493,7 @@ and therefore
 a_\ell(A)P_\ell(A)e^{tA} = e^{\lambda_\ell t}a_\ell(A)
 \sum_{j=0}^{m_\ell-1}\frac{1}{j!}t^jP_\ell(A)(A-\lambda_\ell I_n)^j.
 \]
-Finally, we sum over the index $\ell$ and use \Ref{e:p=AP} to conclude that
+Finally, we sum over the index $\ell$ and use \eqref{e:p=AP} to conclude that
 \[
 e^{tA} = \sum_{\ell=1}^ka_\ell(A)P_\ell(A)e^{tA} = 
 \sum_{\ell=1}^k\left[ e^{\lambda_\ell t}a_\ell(A)P_\ell(A)
@@ -516,7 +516,7 @@ e^{tA} = \sum_{\ell=1}^n a_\ell e^{\lambda_\ell t} P_\ell(A).
 
 \subsubsection*{An Example with Distinct Eigenvalues}
 
-We revisit the example in \Ref{eq:exsyslinc1}, that is, 
+We revisit the example in \eqref{eq:exsyslinc1}, that is, 
 \[
 A = \left(\begin{array}{rrr}
      0  &  3  &  1\\
@@ -625,12 +625,12 @@ X(t) = e^{tA}X_0 = \frac{1}{2}e^{4t}
 -1\\1\\3\end{array}\right)+\sin(2t)
 \left(\begin{array}{r} -1\\1\\-1 \end{array}\right)\right) 
 \]
-Compare this result with \Ref{E:ecp}.
+Compare this result with \eqref{E:ecp}.
 
 
 \subsubsection*{An Example with Multiple Eigenvalues}
 
-As an example, recall the matrix \Ref{eq:exsyslin2}
+As an example, recall the matrix \eqref{eq:exsyslin2}
 \[
 A =
 \left(\begin{array}{rrr}

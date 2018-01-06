@@ -58,7 +58,7 @@ where $k$ is a lumped parameter that depends on a variety of
 physical quantities including heat transfer area and specific
 heat.  
 
-So far, the model in \Ref{e:CSTRlin} is an inhomogeneous uncoupled system
+So far, the model in \eqref{e:CSTRlin} is an inhomogeneous uncoupled system
 of linear differential equations.  We have assumed that the concentration 
 of the reactant grows exponentially to the feed concentration at rate
 $r$.  The fate of the temperature inside the vessel is less
@@ -107,13 +107,13 @@ Observe that
 \frac{dx}{dt}(t)=\frac{1}{kc_f}\frac{dc}{dt}\left(\frac{t}{k}\right) \AND
 \frac{dy}{dt}(t)=\frac{1}{kT_f}\frac{dT}{dt}\left(\frac{t}{k}\right).
 \]
-Coupling this observation with \Ref{e:CSTRlin} yields the equations 
+Coupling this observation with \eqref{e:CSTRlin} yields the equations 
 for the reactionless CSTR in nondimensionalized form:
 \begin{eqnarray}
 \dot{x} & = & -\rho x \label{e:ndCSTRlina} \\
 \dot{y} & = & -(\rho+1)y + \eta. \label{e:ndCSTRlinb}
 \end{eqnarray}\index{CSTR}
-The solution to \Ref{e:ndCSTRlina} is 
+The solution to \eqref{e:ndCSTRlina} is 
 \[
 x(t) = e^{-\rho t}x_0,
 \]
@@ -121,7 +121,7 @@ and, in the absence of a reaction, the scaled concentration
 decays exponentially to $x=0$, that is, to the feed
 concentration.
 
-The solution to \Ref{e:ndCSTRlinb} is slightly more complicated
+The solution to \eqref{e:ndCSTRlinb} is slightly more complicated
 to obtain in closed form, as this is an example of an
 inhomogeneous linear equation.  Using 
 superposition\index{superposition}, we can find
@@ -135,7 +135,7 @@ inhomogeneous equation.  Just set
 y = \frac{\eta}{\rho+1},
 \end{equation}
 and check that this constant is a solution to
-\Ref{e:ndCSTRlinb}.  As we know,
+\eqref{e:ndCSTRlinb}.  As we know,
 \[
 y(t) = e^{-(\rho+1)t}K
 \]
@@ -143,8 +143,8 @@ is the general solution to the homogeneous equation, and
 \[
 y(t) = e^{-(\rho+1)t}K + \frac{\eta}{\rho+1}
 \]
-is the general solution to \Ref{e:ndCSTRlinb}.  Thus,
-temperature decays exponentially to \Ref{e:basetemp}, the
+is the general solution to \eqref{e:ndCSTRlinb}.  Thus,
+temperature decays exponentially to \eqref{e:basetemp}, the
 coolant temperature in nondimensionalized form scaled by the
 nondimensionalized flow rate\index{flow rate}.
 
@@ -246,7 +246,7 @@ is varied.  The five different phase planes are shown in Figure~\ref{F:CSTR}.
  		\vspace*{-0.8in}
 		
 		\hspace{2.6in} $\rho=0.72$
-          \caption{Phase portraits of CSTR \protect\Ref{e:CSTR} 
+          \caption{Phase portraits of CSTR \protect\eqref{e:CSTR} 
 	with $\gamma=4$, $\eta=-0.75$, $Z=0.5$, $h =3$.}
            \label{F:CSTR}
 \end{figure}
@@ -351,8 +351,8 @@ unstable limit cycle (that surrounds the high temperature equilibrium).
 \CEXER
 
 \begin{exercise}  \label{E:CSTR5}
-Consider the CSTR equations \Ref{e:CSTR} with parameters 
-\Ref{e:CSTRparam}. Set $\rho=0.5$ and use 
+Consider the CSTR equations \eqref{e:CSTR} with parameters 
+\eqref{e:CSTRparam}. Set $\rho=0.5$ and use 
 {\sf pplane5}\index{\computer!pplane5} to verify 
 that there are two equilibria --- a low temperature nodal sink 
 and a middle temperature saddle-node equilibrium.  Then change 
@@ -361,7 +361,7 @@ into two equilibria --- a saddle and a spiral source.
 \end{exercise}
 
 \begin{exercise} \label{c9.2.2}
-Use {\sf pplane5} to explore the CSTR equations \Ref{e:CSTR} with
+Use {\sf pplane5} to explore the CSTR equations \eqref{e:CSTR} with
 parameters:
 \[
 h=2, \quad Z=0.5, \quad \eta=-0.5, \quad \gamma=5,

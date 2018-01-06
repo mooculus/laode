@@ -27,7 +27,7 @@ in $n$ unknowns has the form
 \end{array}
 \end{equation}
 The entries $a_{ij}$ and $b_i$ are constants.  Our task is to find
-a method for solving \Ref{general} for the variables
+a method for solving \eqref{general} for the variables
 $x_1,\ldots,x_n$.
 
 \subsection*{Easily Solved Equations}
@@ -56,16 +56,16 @@ unknowns ($n=3$):
       &   &      &   &  x_3 & = &   3  & \! . \\
 \end{array}
 \end{equation}
-The $2^{nd}$ equation in \Ref{e23} states that $x_3=3$.
+The $2^{nd}$ equation in \eqref{e23} states that $x_3=3$.
 Substituting
 this value into the $1^{st}$ equation leads to the equation
 \[
 x_1 = 1-2x_2.
 \]
-We have shown that every solution to \Ref{e23} has the form
+We have shown that every solution to \eqref{e23} has the form
 $(x_1,x_2,x_3)=(1-2x_2,x_2,3)$ and that every vector
-$(1-2x_2,x_2,3)$ is a solution of \Ref{e23}.  Thus, there is an
-infinite number of solutions to \Ref{e23}, and these solutions
+$(1-2x_2,x_2,3)$ is a solution of \eqref{e23}.  Thus, there is an
+infinite number of solutions to \eqref{e23}, and these solutions
 can be parameterized by one number $x_2$.
 
 \subsection*{Equations Having No Solutions}
@@ -83,14 +83,14 @@ system has no solutions and {\em consistent\/} if the system
 does have solutions.
 \end{definition} \index{consistent} \index{inconsistent}
 
-As discussed in the previous section, \Ref{incon} is an example
+As discussed in the previous section, \eqref{incon} is an example
 of a linear system that \Matlab cannot solve.  In fact, that
 system is inconsistent --- inspect the $2^{nd}$ and $4^{th}$
-equations in \Ref{incon}.
+equations in \eqref{incon}.
 
 Gaussian elimination is an algorithm for finding all solutions
 to a system of linear equations by reducing the given system to
-ones like \Ref{examp3} and \Ref{e23}, that are easily solved by
+ones like \eqref{examp3} and \eqref{e23}, that are easily solved by
 back substitution.  Consequently, Gaussian elimination can also be
 used to determine whether a system is consistent or inconsistent.
 
@@ -139,7 +139,7 @@ This yields
 \end{equation}
 Now, divide the $2^{nd}$ equation by $5$ and the $3^{rd}$
 equation by $-2$ to obtain a system of equations identical to
-our first example \Ref{examp3}, which we solved by back
+our first example \eqref{examp3}, which we solved by back
 substitution.
 
 
@@ -149,7 +149,7 @@ The process of performing Gaussian elimination when the number
 of equations is greater than two or three is painful.  The
 computer, however, can help with the manipulations.  We begin by
 introducing the {\em augmented matrix\/}. \index{matrix!augmented}
-The augmented matrix associated with \Ref{general} has
+The augmented matrix associated with \eqref{general} has
 $m$ rows and $n+1$ columns and is written as:
 \begin{equation}  \label{augmented}
 \left(
@@ -162,7 +162,7 @@ $m$ rows and $n+1$ columns and is written as:
 \right)
 \end{equation}
 The augmented matrix contains all of the information that is
-needed to solve system \Ref{general}.
+needed to solve system \eqref{general}.
 
 \subsection*{Elementary Row Operations} \index{elementary row
 operations}
@@ -408,7 +408,7 @@ that can now be solved by back substitution.  We obtain
         x_4 = 4,\quad x_3 = 1,\quad x_2 = -2,\quad x_1 = 2.
 \end{equation}
 We return to the original set of equations corresponding to
-\Ref{examp4}
+\eqref{examp4}
 \begin{matlabEquation}    \label{examp4_con}
 \arraycolsep 2pt
 \begin{array}{rcrcrcrcrl}
@@ -422,13 +422,13 @@ Load the corresponding linear system into \Matlab by typing
 \begin{verbatim}
 e2_3_11
 \end{verbatim}
-The information in \Ref{examp4_con} is contained in the
+The information in \eqref{examp4_con} is contained in the
 coefficient matrix {\tt C} and the right hand side {\tt b}.
 A direct solution is found by typing
 \begin{verbatim}
 x = C\b
 \end{verbatim}
-which yields the same answer as in \Ref{ans1}, namely,
+which yields the same answer as in \eqref{ans1}, namely,
 \begin{verbatim}
 x =
     2.0000
@@ -586,7 +586,7 @@ equations in terms of the variables $x_5$ and $x_6$,
 \end{equation}
 It is important to note that every consistent system of linear equations
 corresponding to an augmented matrix in reduced echelon form can be
-solved as in \Ref{e:refexamp6} --- and this is one reason for emphasizing
+solved as in \eqref{e:refexamp6} --- and this is one reason for emphasizing
 reduced echelon form.  We will discuss the reduction to reduced echelon
 form in more detail in the next section.
 
@@ -632,7 +632,7 @@ $\left(\begin{array}{rrrr}
 the reduced echelon form of an augmented matrix of a system of
 linear equations.  Which columns in these augmented matrices
 contain pivots?  Describe all solutions to these systems of
-equations in the form of \Ref{e:refexamp6}.
+equations in the form of \eqref{e:refexamp6}.
 \begin{exercise} \label{c2.3.7a}
 $\left(\begin{array}{rrr|r}
  1  &  4 & 0 & 0\\
@@ -705,18 +705,18 @@ $\left(\begin{array}{rrrr|r}
 \begin{equation}  \label{e:2x2}
 \mattwo{a}{b}{c}{1}
 \end{equation}
-where $a,b,c\in\R$ and $a\neq 0$.  Show that \Ref{e:2x2}
+where $a,b,c\in\R$ and $a\neq 0$.  Show that \eqref{e:2x2}
 is row equivalent to the matrix
 \[
 \left(\begin{array}{cc} 1 & \frac{b}{a} \\ 0 & \frac{\answer[given]{a-bc}}{a}
 \end{array} \right).
 \]
-(b)  Show that \Ref{e:2x2} is row equivalent to the
+(b)  Show that \eqref{e:2x2} is row equivalent to the
 identity matrix if and only if $a\neq \answer[given]{bc}$.
 
 \begin{hint}
 Two matrices are row equivalent if there is a sequence of row operations
-that leads from one to the other.  In this case: Divide the $1^{st}$ row of \Ref{e:2x2} by $a$.
+that leads from one to the other.  In this case: Divide the $1^{st}$ row of \eqref{e:2x2} by $a$.
 \end{hint}
 \begin{hint}
 Then subtract $c$ times the $1^{st}$ row from the $2^{nd}$ row.
@@ -729,7 +729,7 @@ The result is
 \]
 \end{hint}
 \begin{hint}
-For (b), if $a \neq bc$, then we can row reduce \Ref{e:2x2} to $I_2$.  First
+For (b), if $a \neq bc$, then we can row reduce \eqref{e:2x2} to $I_2$.  First
 perform the two row operations in part (a).
 \end{hint}
 \begin{hint}
@@ -886,7 +886,7 @@ $\left(\begin{array}{cccc|c} 1 & 0 & 2 & 0 & 3 \\ 2 & 3 & 6 & 1 & 16\\
 \end{exercise}
 
 \noindent A system of $m$ equations in $n$ unknowns is linear if it has
-the form \Ref{general}; any other system of equations is called 
+the form \eqref{general}; any other system of equations is called 
 {\em nonlinear\/}. \index{nonlinear}  In Exercises~\ref{c2.3.12a} -- 
 \ref{c2.3.12e} decide whether each of the given systems of equations 
 is linear or nonlinear.

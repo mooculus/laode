@@ -37,7 +37,7 @@ where $\lambda_j\in\R$.  Note that
 Av_j\cdot v_i =  \left\{\begin{array}{rl} \lambda_j & \qquad i=j\\
 			0 & \qquad i\neq j \end{array}\right.
 \]
-It follows from \Ref{e:coordorthomat} that
+It follows from \eqref{e:coordorthomat} that
 \[
 [A]_{\cal V}= \left(\begin{array}{ccc} \lambda_1 & & 0 \\  & \ddots & \\
 	0 &  & \lambda_n \end{array}\right)
@@ -96,7 +96,7 @@ since $\overline{A}^t= A^t = A$.
 
 \begin{proof}[Theorem~\ref{T:symmetricmat}(a)]  Let $\lambda$
 be an eigenvalue of $A$ and let $v$ be the associated eigenvector. Since
-$Av=\lambda v$ we can use \Ref{e:symminv} to compute
+$Av=\lambda v$ we can use \eqref{e:symminv} to compute
 \[
 \lambda \langle v,v \rangle = \langle Av,v \rangle = \langle v,Av \rangle
 = \overline{\lambda} \langle v,v \rangle.
@@ -153,7 +153,7 @@ $\R^n$ consisting of eigenvectors of $B$.
 Finally, let $v_j=P\inv z_j$ for $j=2,\ldots,n$.  Since $v_1=P\inv e_1$,
 it follows that  $v_1,v_2,\ldots,v_n$ is a basis of $\R^n$ consisting of
 eigenvectors of $A$.  We need only show that the $v_j$ form an orthonormal
-basis of $\R^n$.   This is done using \Ref{e:symminv}.  For notational
+basis of $\R^n$.   This is done using \eqref{e:symminv}.  For notational
 convenience let $z_1=e_1$ and compute
 \begin{align*}
 \langle v_i,v_j \rangle  &=\langle P\inv z_i,P\inv z_j\rangle =

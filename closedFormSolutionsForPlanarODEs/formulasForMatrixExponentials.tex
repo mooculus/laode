@@ -41,14 +41,14 @@ e^{tC} = e^{\lambda_1 t}(I_2 + tN)
 \end{equation}
 where $N = C - \lambda_1I_2$.
 
-Note that when computing the matrix exponential using either \Ref{E:exdist}
-or \Ref{E:exeq}, it is not necessary to compute the eigenvectors of $C$.
+Note that when computing the matrix exponential using either \eqref{E:exdist}
+or \eqref{E:exeq}, it is not necessary to compute the eigenvectors of $C$.
 This is a substantial simplification.  But it is with the use of formula
-\Ref{E:exeq} that the greatest simplification occurs.
+\eqref{E:exeq} that the greatest simplification occurs.
 
 \subsubsection*{The Example with Equal Eigenvalues Revisited}
 
-Let us reconsider the system of differential equations \Ref{e:shearexample}
+Let us reconsider the system of differential equations \eqref{e:shearexample}
 \[
 \frac{dX}{dt} = \mattwo{1}{-1}{9}{-5} X = CX
 \]
@@ -66,7 +66,7 @@ where
 \[
 N = \mattwo{3}{-1}{9}{-3}.
 \]
-It follows from \Ref{E:exeq} that
+It follows from \eqref{E:exeq} that
 \begin{equation}  \label{e:solntob}
 e^{tC} =  e^{-2t}\left(I_2+t\mattwo{3}{-1}{9}{-3}\right)
 = e^{-2t}\mattwoc{1+3t}{-t}{9t}{1-3t}.
@@ -140,7 +140,7 @@ p_E(E) = (E-\lambda_1I_2)^2 = \mattwo{0}{1}{0}{0}^2 = 0.
 
 
 
-\subsection*{Verification of \protect\Ref{E:exdist}}
+\subsection*{Verification of \protect\eqref{E:exdist}}
 
 Let $C$ be a $2\times 2$ matrix with eigenvalues $\lambda_1\neq\lambda_2$.
 Then the characteristic polynomial of $C$ is:
@@ -148,7 +148,7 @@ Then the characteristic polynomial of $C$ is:
 p_C(\lambda) = (\lambda-\lambda_1)(\lambda-\lambda_2).
 \]
 
-We begin our verification of \Ref{E:exdist} by showing that
+We begin our verification of \eqref{E:exdist} by showing that
 \begin{equation}  \label{E:Inpart}
 I_2 = a_1 (A - \lambda_2I_2) + a_2 (A - \lambda_1I_2),
 \end{equation}
@@ -161,8 +161,8 @@ Using partial fractions we can write
 \frac{1}{p_C(\lambda)} = \frac{a_1}{\lambda-\lambda_1} +
 \frac{a_2}{\lambda-\lambda_2},
 \end{equation}
-where $a_j$ is as in \Ref{E:pfcoeff}.
-Multiplying \Ref{E:partfrac} by $p_C(\lambda)$ yields
+where $a_j$ is as in \eqref{E:pfcoeff}.
+Multiplying \eqref{E:partfrac} by $p_C(\lambda)$ yields
 \[
 1 = a_1 (\lambda-\lambda_2) + a_2 (\lambda-\lambda_1).
 \]
@@ -176,7 +176,7 @@ Similarly,
 \[
 (a_1 (C - \lambda_2I_2) + a_2 (C - \lambda_1I_2))v_2 = v_2.
 \]
-Since $v_1$ and $v_2$ form a basis, \Ref{E:Inpart} holds by linearity.
+Since $v_1$ and $v_2$ form a basis, \eqref{E:Inpart} holds by linearity.
 
 We use the Cayley Hamilton theorem to show that
 \begin{equation}  \label{E:almost}
@@ -185,17 +185,17 @@ We use the Cayley Hamilton theorem to show that
 (C - \lambda_1I_2)e^{tC} & = & e^{\lambda_2 t}(C - \lambda_1I_2)
 \end{array}
 \end{equation}
-Assuming that \Ref{E:almost} is valid, we see that
+Assuming that \eqref{E:almost} is valid, we see that
 \[
 e^{tC} = (a_1 (C - \lambda_2I_2) + a_2 (C - \lambda_1I_2))e^{tC}
 \]
-by \Ref{E:Inpart} and that
+by \eqref{E:Inpart} and that
 \[
 e^{tC} = a_1 e^{\lambda_1 t}(C - \lambda_2I_2) +
 a_2 e^{\lambda_2 t}(C - \lambda_1I_2)
 \]
-by \Ref{E:almost}.  Thus we have verified formula \Ref{E:exdist}.
-To validate \Ref{E:almost}, calculate
+by \eqref{E:almost}.  Thus we have verified formula \eqref{E:exdist}.
+To validate \eqref{E:almost}, calculate
 \[
 e^{tC} = e^{tC - \lambda_1 tI_2 + \lambda_1 tI_2} =
 e^{\lambda_1t}e^{t(C - \lambda_1 I_2)}
@@ -213,12 +213,12 @@ since every other term in the infinite series contains a factor of
 p_C(C) = (C - \lambda_2I_2)(C - \lambda_1 I_2)
 \]
 which vanishes by the Cayley Hamilton theorem.  The second equation in
-\Ref{E:almost} is proved similarly by interchanging the roles of $\lambda_1$
+\eqref{E:almost} is proved similarly by interchanging the roles of $\lambda_1$
 and $\lambda_2$.
 
-\subsection*{Verification of \protect\Ref{E:exeq}}
+\subsection*{Verification of \protect\eqref{E:exeq}}
 
-The verification of \Ref{E:exeq} is less complicated.  Since $C$ is assumed
+The verification of \eqref{E:exeq} is less complicated.  Since $C$ is assumed
 to have a double eigenvalue $\lambda_1$, it follows that
 \[
 N = C - \lambda_1 I_2

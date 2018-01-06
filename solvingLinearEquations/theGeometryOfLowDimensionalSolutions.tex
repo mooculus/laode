@@ -36,7 +36,7 @@ will plot the points $(X(1),Y(1))$, $(X(2),Y(2))$, \ldots,
 $(X(n),Y(n))$ in the $xy$-plane.  
 
 To plot points on the line
-\Ref{2x-y=6} we need to enter the $x$-coordinates of the points
+\eqref{2x-y=6} we need to enter the $x$-coordinates of the points
 we wish to plot.  If we want to plot a hundred points, we would
 be facing a tedious task.  \Matlab has a command to simplify
 this task. Typing
@@ -59,7 +59,7 @@ Typing
 y = 2*x - 6;
 \end{verbatim}
 produces a vector whose entries correspond to the
-$y$-coordinates of points on the line \Ref{2x-y=6}.  Then typing
+$y$-coordinates of points on the line \eqref{2x-y=6}.  Then typing
 \begin{verbatim}
 plot(x,y)
 \end{verbatim}
@@ -70,8 +70,8 @@ xlabel('x')
 ylabel('y')
 \end{verbatim} \index{\computer!xlabel}\index{\computer!ylabel}
 
-We can now use \Matlab to solve the equation \Ref{small}
-graphically.  Recall that \Ref{small} is:
+We can now use \Matlab to solve the equation \eqref{small}
+graphically.  Recall that \eqref{small} is:
 \[
 \arraycolsep 2pt
 \begin{array}{rcrcr}
@@ -107,7 +107,7 @@ we already knew.
 \begin{figure}[htb]
                        \centerline{%
                        \psfig{file=../figures/lineint.eps,width=3.5in}}
-                       \caption{Graph of equations in \protect\Ref{small}}
+                       \caption{Graph of equations in \protect\eqref{small}}
                        \label{lineint}
 \end{figure}
 
@@ -136,13 +136,13 @@ form a plane that is perpendicular to the vector $(a,b,c)$ ---
 assuming of course that the vector $(a,b,c)$ is nonzero.
 
 This fact is most easily proved using the {\em dot product\/}.
-Recall from Chapter~\ref{chap:prelim} \Ref{e:dotproduct} that
+Recall from Chapter~\ref{chap:prelim} \eqref{e:dotproduct} that
 the dot product\index{dot product} is defined by
 \[
 X\cdot Y = x_1y_1+x_2y_2+x_3y_3,
 \]
 where $X=(x_1,x_2,x_3)$ and $Y=(y_1,y_2,y_3)$.  We recall from
-Chapter~\ref{chap:prelim} \Ref{dotprod=0} the following important
+Chapter~\ref{chap:prelim} \eqref{dotprod=0} the following important
 fact concerning dot products:
 \[
 X\cdot Y = 0
@@ -160,7 +160,7 @@ If we use the notation
 \[
 X=(x,y,z) \quad \mbox{ and } \quad X_0=(x_0,y_0,z_0),
 \]
-then \Ref{XX_0} becomes
+then \eqref{XX_0} becomes
 \[
 a(x-x_0)+b(y-y_0)+c(z-z_0)=0.
 \]
@@ -168,7 +168,7 @@ Setting
 \[
 d=ax_0 + by_0 + cz_0
 \]
-puts equation \Ref{XX_0} into the form \Ref{abcd}.  In this way
+puts equation \eqref{XX_0} into the form \eqref{abcd}.  In this way
 we see that the set of solutions to a single linear equation in
 three variables forms a plane.  See Figure~\ref{F:plane}.
 
@@ -187,7 +187,7 @@ Suppose that we wish to plot the solutions to the equation
 \begin{equation} \label{-2x+3y+z=2}
 -2x+3y+z=2.
 \end{equation}
-We can rewrite \Ref{-2x+3y+z=2} as
+We can rewrite \eqref{-2x+3y+z=2} as
 \[
 z=2x-3y+2.
 \]
@@ -202,7 +202,7 @@ The first command tells \Matlab to create a square grid in the
 $xy$-plane.  Grid points are
 equally spaced between $-5$ and $5$ at intervals of $0.5$ on
 both the $x$ and $y$ axes. The second command tells \Matlab to
-compute the $z$ value of the solution to \Ref{-2x+3y+z=2} at
+compute the $z$ value of the solution to \eqref{-2x+3y+z=2} at
 each grid point.  The third command tells \Matlab to graph the
 surface containing the points $(x,y,z)$.  See
 Figure~\ref{F:p1int}.
@@ -210,7 +210,7 @@ Figure~\ref{F:p1int}.
 \begin{figure}[htb]
               \centerline{%
               \psfig{file=../figures/p1int.eps,width=3.0in}}
-              \caption{Graph of \protect\Ref{-2x+3y+z=2}.}
+              \caption{Graph of \protect\eqref{-2x+3y+z=2}.}
               \label{F:p1int}
 \end{figure}
 
@@ -325,7 +325,7 @@ x = linspace(-2,5);
 y = x.*x - 2*x + 3;
 plot(x,y)
 \end{verbatim}\index{\computer!{\tt .*}}
-produces the graph of \Ref{E:quadex} in Figure~\ref{F:quadex}.
+produces the graph of \eqref{E:quadex} in Figure~\ref{F:quadex}.
 \begin{figure}[htb]
               \centerline{%
               \psfig{file=../figures/quadex.eps,width=3.0in}}

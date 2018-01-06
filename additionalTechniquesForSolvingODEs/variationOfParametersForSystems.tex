@@ -47,7 +47,7 @@ system of $n$ nonconstant coefficient linear differential equations
 \dot{X} = A(t) X
 \end{equation}
 a similar statement is true.   It should be noted, however, that only in 
-special cases can \Ref{E:NCCH} be solved in closed form.
+special cases can \eqref{E:NCCH} be solved in closed form.
 
 \begin{proposition}  \label{P:NCCH}
 Let $v_1,\ldots,v_n$ be a basis\index{basis} 
@@ -55,28 +55,28 @@ for $\R^n$.  Then there exist solutions
 \[
 X_1(t),\ldots,X_n(t)
 \]
-of \Ref{E:NCCH} satisfying $X_j(0)=v_j$ and these
+of \eqref{E:NCCH} satisfying $X_j(0)=v_j$ and these
 solutions form a basis of solutions\index{basis!of solutions} 
-to \Ref{E:NCCH}.
+to \eqref{E:NCCH}.
 \end{proposition}
 
 \begin{proof} The theory of differential equations implies that there exists a 
-unique solution to \Ref{E:NCCH}  satisfying the initial condition $X(0)=X_0$ 
+unique solution to \eqref{E:NCCH}  satisfying the initial condition $X(0)=X_0$ 
 for any $X_0\in\R^n$.   Therefore, there exist solutions $X_j(t)$ such that 
 $X_1(0)=v_j$.  We claim that these solutions form a basis for the vector 
-space of all solutions to \Ref{E:NCCH}.   
+space of all solutions to \eqref{E:NCCH}.   
 
-Let $X(t)$ be any solution to \Ref{E:NCCH} with initial condition $X(0)=X_0$. 
+Let $X(t)$ be any solution to \eqref{E:NCCH} with initial condition $X(0)=X_0$. 
 Since $\{X_1(0),\ldots,X_n(0)\}$ is a basis for $\R^n$, we can find scalars 
 $\alpha_j$ such that 
 \[
 X_0 = \alpha_1X_1(0) + \cdots + \alpha_nX_n(0).
 \]
-Linearity of \Ref{E:NCCH} implies that 
+Linearity of \eqref{E:NCCH} implies that 
 \[
 \alpha_1X_1(t) + \cdots + \alpha_nX_n(t)
 \]
-is a solution.  Therefore, uniqueness of solutions to \Ref{E:NCCH} implies 
+is a solution.  Therefore, uniqueness of solutions to \eqref{E:NCCH} implies 
 that 
 \[
 X(t) = \alpha_1X_1(t) + \cdots + \alpha_nX_n(t)
@@ -88,7 +88,7 @@ guarantees that the vectors $X_1(t_0),\ldots,X_n(t_0)$ must be linearly
 independent\index{linearly!independent}.  
 Indeed, since $X_1(t),\ldots,X_n(t)$ is a 
 basis of solutions\index{basis!of solutions} to
-\Ref{E:NCCH}, we must be able to write 
+\eqref{E:NCCH}, we must be able to write 
 \[
 X_0 = \alpha_1X_1(t_0) + \cdots + \alpha_nX_n(t_0)
 \]
@@ -99,7 +99,7 @@ independent.  We have proved the following:
 
 \begin{lemma}  \label{L:DEspan}
 Let $X_1,\ldots,X_n$ be a linearly independent\index{linearly!independent} 
-set of solutions to \Ref{E:NCCH}.
+set of solutions to \eqref{E:NCCH}.
 Then, for every $t$, the matrix 
 \begin{equation}   \label{E:Y(t)}
 Y(t) = \left(X_1(t)|\cdots |X_n(t)\right) 
@@ -113,7 +113,7 @@ linearly independent.  Hence $Y(t)$ is invertible.  \end{proof}
 Rather than relying on the general existence and uniqueness theory for
 systems of differential equations, there is a computationally direct way of 
 proving Lemma~\ref{L:DEspan}.   It is possible to show that the determinant 
-of the matrix $Y(t)$ in \Ref{E:Y(t)} is nonzero and hence $Y(t)$ is invertible.
+of the matrix $Y(t)$ in \eqref{E:Y(t)} is nonzero and hence $Y(t)$ is invertible.
 This approach is carried out in Section~\ref{S:wronskian}
 
 
@@ -123,13 +123,13 @@ This approach is carried out in Section~\ref{S:wronskian}
 Let $X_1(t),\ldots,X_n(t)$ be a 
 basis of solutions\index{basis!of solutions} to the homogeneous 
 system $\dot{X}=A(t)X$.   In the method of variation of parameters we look 
-for solutions to  the inhomogeneous system \Ref{eq:linihsys} of the form
+for solutions to  the inhomogeneous system \eqref{eq:linihsys} of the form
 \[
 X(t) = c_1(t)X_1(t) + \cdots + c_n(t)X_n(t),
 \]
 where $c_1(t),\ldots,c_n(t)$ are differentiable functions.  In order to 
 find a method for determining the functions $c_j$, we assume that $X$ is 
-a solution to \Ref{eq:linihsys}.  
+a solution to \eqref{eq:linihsys}.  
 
 Use the product rule\index{product rule} to compute
 \begin{eqnarray*}
@@ -138,23 +138,23 @@ Use the product rule\index{product rule} to compute
 & = & \sum_{j=1}^n\left( c_jAX_j+\frac{dc_j}{dt}X_j\right)\\
 & = & AX+\sum_{j=1}^n \frac{dc_j}{dt}X_j.
 \end{eqnarray*}
-It follows that $X$ is a solution of \Ref{eq:linihsys} if and only if
+It follows that $X$ is a solution of \eqref{eq:linihsys} if and only if
 \begin{equation}  \label{eq:dcjXj}
 G(t) = \frac{dc_1}{dt}(t) X_1(t) + \cdots + \frac{dc_n}{dt}(t) X_n(t).
 \end{equation}
 So variation of parameters works if we can find functions $c_j$ that 
-satisfy \Ref{eq:dcjXj}.
+satisfy \eqref{eq:dcjXj}.
 
 We claim that it is always possible to find functions $d_j(t)$ so that 
 \begin{equation}  \label{E:djXj}
 G(t) = d_1(t)X_1(t) + \cdots + d_n(t)X_n(t).
 \end{equation} 
-To verify \Ref{E:djXj}, note that  \Ref{E:djXj} can be rewritten in matrix 
+To verify \eqref{E:djXj}, note that  \eqref{E:djXj} can be rewritten in matrix 
 form as
 \[
 Y(t) D(t) = G(t)
 \]
-where $Y(t)$ is defined in \Ref{E:Y(t)} and
+where $Y(t)$ is defined in \eqref{E:Y(t)} and
 \[
 D(t)=(d_1(t),\ldots,d_n(t))^t.
 \]
@@ -163,9 +163,9 @@ $Y(t)$, as proved in Lemma~\ref{L:DEspan}, we find that
 \[
 D(t) = Y(t)\inv G(t).
 \] 
-It now follows that \Ref{eq:dcjXj} is satisfied by integrating the 
+It now follows that \eqref{eq:dcjXj} is satisfied by integrating the 
 differential equations $\dot{c}_j=d_j$, where the functions $d_j(t)$ 
-are defined in \Ref{E:djXj}, to find the functions $c_j$.  
+are defined in \eqref{E:djXj}, to find the functions $c_j$.  
 
 We summarize this discussion as follows. 
 \begin{theorem}[Variation of Parameters: Systems] \label{thm:varparsys}
@@ -181,7 +181,7 @@ X(t_0) & = & X_0.
 \item[(a)]  Let $X_1(t),\ldots,X_n(t)$ be a 
 basis of solutions\index{basis!of solutions} to 
 the homogeneous differential equation $\dot{X}=A(t)X$.  
-\item[(b)]  Let $Y(t)$ be defined as in \Ref{E:Y(t)} and define 
+\item[(b)]  Let $Y(t)$ be defined as in \eqref{E:Y(t)} and define 
 $D(t)=(d_1(t),\ldots,d_n(t))^t$ by 
 \begin{equation}  \label{e:D(t)}
 D(t) = Y(t)\inv G(t).
@@ -196,7 +196,7 @@ Then
 \[
 X(t) =  c_1(t)X_1(t) + \cdots + c_n(t)X_n(t)
 \]
-is the unique solution\index{uniqueness of solutions} of \Ref{eq:VPS}.
+is the unique solution\index{uniqueness of solutions} of \eqref{eq:VPS}.
 \end{theorem}
 
 Note that when $n\ge 3$, the hand computation of $Y(t)\inv$ can be  
@@ -212,7 +212,7 @@ forced systems of differential equations of the form
 
 \subsubsection*{An Example with Two Real Simple Eigenvalues}
 
-Consider the initial value problem \Ref{eq:VPS} where
+Consider the initial value problem \eqref{eq:VPS} where
 \begin{equation}  \label{eq:exinhom2}
 A=\mattwo{-1}{-8}{-16}{7}, \quad G(t)= \vectwo{1-t}{-2-t}, \quad 
 X_0 =  \vectwo{-1}{-1}.
@@ -264,7 +264,7 @@ c_2(t) & = & \int_0^t e^{-15t}d\tau & = & \frac{1}{15}\left(1-e^{-15t}\right).
 \]
 
 \paragraph{Step 4: Write out the solution.}  The solution $X(t)$ of the 
-initial value problem \Ref{eq:exinhom2} is now given by
+initial value problem \eqref{eq:exinhom2} is now given by
 \begin{eqnarray*}
 X(t) & = & c_1(t)e^{-9t}\vectwo{1}{1} + c_2(t)e^{15t}\vectwo{1}{-2} \\
 & = &  \left(\begin{array}{c}
@@ -320,7 +320,7 @@ c_2(t) & = & -\frac{1}{2}(e^{-2t}+1).
 \end{eqnarray*}
 
 \paragraph{Step 4:}  It follows from Theorem~\ref{thm:varparsys} that the 
-solution to \Ref{e:2djb} is
+solution to \eqref{e:2djb} is
 \[
 X(t) = c_1(t)X_1(t) + c_2(t)X_2(t) = -\frac{1}{2}\left(\begin{array}{c}
 t(1+e^{2t})-2e^{2t} \\ e^{2t}+1 \end{array}\right).

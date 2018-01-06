@@ -30,7 +30,7 @@ $x_1(t),\ldots,x_n(t)$ by
 x_1(t)=x(t),\quad x_2(t)=\frac{dx}{dt}(t),\quad
 \ldots, \quad  x_n(t)=\frac{d^{n-1}x}{dt^{n-1}}(t)
 \]
-and see that \Ref{E:noncc} is equivalent to
+and see that \eqref{E:noncc} is equivalent to
 \arraystart
 \[
 \begin{array}{rcl}
@@ -44,7 +44,7 @@ Introducing the vectors
 X(t) = (x_1(t),\ldots,x_n(t))^t  \AND
 G(t) = (0,\ldots,0,g(t))^t
 \]
-we conclude that \Ref{E:noncc} is equivalent to the 
+we conclude that \eqref{E:noncc} is equivalent to the 
 first order system\index{first order!reduction to}
 \[
 \frac{dX}{dt} = A(t)X+G(t),
@@ -59,7 +59,7 @@ A(t) = \left(\begin{array}{ccccc}
 -a_0(t) & -a_1(t) &  -a_2(t) & \cdots & -a_{n-1}(t)
 \end{array}\right).
 \]
-In particular, $x_1(t)$ is a solution of \Ref{E:noncc} if 
+In particular, $x_1(t)$ is a solution of \eqref{E:noncc} if 
 $X(t)=(x_1(t),\ldots,x_n(t))^t$ is a solution of the system
 $\dot X = A(t)X+G(t)$ which can in principle be solved by
 variation of parameters.
@@ -121,12 +121,12 @@ c_2(t) & = & t.
 \end{eqnarray*}
 
 \paragraph{Step 4:}  Theorem~\ref{thm:varparsys} implies that the 
-solution to \Ref{E:2ndexam} is
+solution to \eqref{E:2ndexam} is
 \[
 X(t) = c_1(t)X_1(t) + c_2(t)X_2(t) = \left(\begin{array}{c}
 \frac{t}{2}(t^2-1)\\ \frac{1}{2}(3t^2-1) \end{array}\right),
 \]
-and hence the solution of \Ref{E:2ndorderex} is given by
+and hence the solution of \eqref{E:2ndorderex} is given by
 \[
 x(t) = \frac{t}{2}(t^2-1).
 \]
@@ -152,7 +152,7 @@ where $x(t)$ is the voltage drop at the capacitor,
 $R$ is the resistance, $L$ is the inductance,
 $C$ is the capacitance, and a voltage source\index{voltage source} 
 is producing a time 
-dependent voltage $V(t)$, see \Ref{e:eleccirc} in Chapter~\ref{C:LT}.
+dependent voltage $V(t)$, see \eqref{e:eleccirc} in Chapter~\ref{C:LT}.
 Now we assume that the circuit additionally
 contains a microphone\index{microphone} that has a time dependent 
 resistance $R_{mic}(t)$ of the form
@@ -191,14 +191,14 @@ In fact, it is not even clear how to construct solutions of the
 homogeneous equation.  Hence we have to rely on numerical methods
 and compute solutions using {\tt ode45}\index{\computer!ode45} 
 in \Matlabp.  The right hand
-side in \Ref{E:RCLM} is stored in the function m-file {\tt f17\_4\_5.m}.
+side in \eqref{E:RCLM} is stored in the function m-file {\tt f17\_4\_5.m}.
 For completeness,
 \begin{verbatim}
 function f = f17_4_5(t,x)
 A = [0  1; -1  -(1+cos(t))];
 f = A*x + [0; 1];
 \end{verbatim}
-We compute the solution of \Ref{E:RCLM} with initial condition $X(0)=(1,1)^t$
+We compute the solution of \eqref{E:RCLM} with initial condition $X(0)=(1,1)^t$
 for $t\in[0,30]$ by typing
 \begin{verbatim}
 [t,x] = ode45('f17_4_5',[0 30],[1,1]');
@@ -209,13 +209,13 @@ The result of this computation is shown in Figure~\ref{Fig:micro1}.
            \psfig{file=../figures/microx1.eps,width=3.0in}
 	   \psfig{file=../figures/microx2.eps,width=3.0in}}
            \caption{The two components of the solution of 
-	   \protect\Ref{E:RCLM} for $t\in[0,30]$ with initial
+	   \protect\eqref{E:RCLM} for $t\in[0,30]$ with initial
 	   condition $X(0)=(1,1)^t$.}
            \label{Fig:micro1}
 \end{figure}
 It can be observed that $x_1(t)$ tends to $1$ and $x_2(t)$ tends to
 $0$ for increasing time $t$.  In other words, the solution approaches the 
-time independent solution $X(t)=(1,0)^t$ of \Ref{E:RCLM}.
+time independent solution $X(t)=(1,0)^t$ of \eqref{E:RCLM}.
 
 \subsection*{Reduction of Order}
 \index{reduction of order}
@@ -249,18 +249,18 @@ $\ddot{x} + a_1(t)\dot{x} + a_0(t)x = 0$.
 In analogy to the method of variation of
 parameters, we try to find a solution $x(t)$ of the 
 inhomogeneous\index{inhomogeneous} equation
-\Ref{e:inhom2} of the form
+\eqref{e:inhom2} of the form
 \[
 x(t) = c(t) x_h(t),
 \]
 where $c(t)$ is a smooth function.  To determine $c(t)$ we substitute $x(t)$
-into the inhomogeneous equation \Ref{e:inhom2}.  Before proceeding, we
+into the inhomogeneous equation \eqref{e:inhom2}.  Before proceeding, we
 compute the derivatives of $x(t)$:
 \begin{eqnarray*}
 \dot x  & = & \dot c x_h + c \dot{x}_h,\\
 \ddot x & = & \ddot c x_h + 2 \dot c \dot{x}_h + c \ddot{x}_h.
 \end{eqnarray*}
-Next, we substitute $\dot{x}$ and $\ddot{x}$ into \Ref{e:inhom2} and find
+Next, we substitute $\dot{x}$ and $\ddot{x}$ into \eqref{e:inhom2} and find
 \begin{eqnarray*}
 && \ddot c x_h +2\dot c \dot{x}_h + c \ddot{x}_h +
 a_1(t)\left(\dot c x_h + c \dot{x}_h \right)+ a_0(t) c x_h =\\
@@ -282,9 +282,9 @@ $y(t)$ of this equation then we can compute $c(t)$ by integration
 and we have constructed a 
 particular solution\index{reduction of order!particular solution} 
 $x(t)=c(t)x_h(t)$ of the
-inhomogeneous equation \Ref{e:inhom2}. Thus
+inhomogeneous equation \eqref{e:inhom2}. Thus
 \begin{theorem}[Reduction of Order]  \label{thm:redord}
-Consider the inhomogeneous linear ODE of second order \Ref{e:inhom2}.
+Consider the inhomogeneous linear ODE of second order \eqref{e:inhom2}.
 \begin{itemize}
 \item[(a)] Let $x_h(t)$ be a nonzero solution of the homogeneous equation
 \[
@@ -299,10 +299,10 @@ $\dot c(t)$ is a solution of the linear differential equation
 \end{itemize}
 Then $x_p(t)=c(t) x_h(t)$ is a particular 
 solution\index{reduction of order!particular solution} of the second
-order inhomogeneous equation \Ref{e:inhom2}.
+order inhomogeneous equation \eqref{e:inhom2}.
 \end{theorem}\index{reduction of order}
 
-Observe that \Ref{eq:ro} is again a scalar first order differential
+Observe that \eqref{eq:ro} is again a scalar first order differential
 equation that can in principle be solved by variation of 
 parameters\index{variation of parameters} (see Theorem~\ref{thm:varpar}).
 Indeed, to see this one has to substitute
@@ -314,7 +314,7 @@ for
 \[
 a(t) \AND g(t)
 \]
-in \Ref{eq:linode1}.
+in \eqref{eq:linode1}.
 
 
 
@@ -327,14 +327,14 @@ real root of the characteristic
 polynomial\index{characteristic polynomial!of higher order ODE} 
 of the homogeneous equation
 $\ddot{x} + a_1\dot{x} + a_0x = 0$.  Then we can choose $x_h(t)=e^{\lambda t}$
-and \Ref{eq:ro} becomes
+and \eqref{eq:ro} becomes
 \begin{equation}  \label{eq:redeqreal}
 \frac{dy}{dt} = -(2\lambda +a_1) y + e^{-\lambda t}g(t).
 \end{equation}
-If $\dot c(t)$ is a solution to \Ref{eq:redeqreal}, then
+If $\dot c(t)$ is a solution to \eqref{eq:redeqreal}, then
 $x(t)=c(t) e^{\lambda t}$ is a particular 
 solution\index{reduction of order!particular solution} 
-of the second order inhomogeneous equation \Ref{e:inhom2}.
+of the second order inhomogeneous equation \eqref{e:inhom2}.
 
 As an example, apply reduction of order to find a solution to the inhomogeneous
 ODE
@@ -343,12 +343,12 @@ ODE
 \end{equation}
 Observe that this equation cannot be solved by the method of undetermined
 coefficients\index{undetermined coefficients} since the right hand 
-side in \Ref{e:inhomex1} is not a
+side in \eqref{e:inhomex1} is not a
 solution of a homogeneous linear differential equation with constant 
 coefficients.
 
-The characteristic polynomial of \Ref{e:inhomex1} has the double eigenvalue 
-$\lambda = 1$.  Since $a_1=-2$ and $g(t) = e^t/t^3$, \Ref{eq:redeqreal} takes 
+The characteristic polynomial of \eqref{e:inhomex1} has the double eigenvalue 
+$\lambda = 1$.  Since $a_1=-2$ and $g(t) = e^t/t^3$, \eqref{eq:redeqreal} takes 
 the form
 \[
 \frac{dy}{dt} = -(2\lambda -2) y + e^{-\lambda t}\left( \frac{e^t}{t^3}\right)
@@ -366,7 +366,7 @@ Now Theorem~\ref{thm:redord} guarantees that
 \[
 x(t) = c(t)e^t = \frac{e^t}{2t}
 \]
-is a solution to \Ref{e:inhomex1}.  The other solutions to the inhomogeneous
+is a solution to \eqref{e:inhomex1}.  The other solutions to the inhomogeneous
 equation are found by adding the general solution\index{general solution} 
 to the homogeneous equation.
 
@@ -428,12 +428,12 @@ Suppose that
 \[
 x_1(t) = 1, \quad  x_2(t) = 1+t, \AND x_3(t) = 1+t+t^2
 \]
-are all solutions to \Ref{ex:at1}.  Then determine $p(t)$, $q(t)$, and
+are all solutions to \eqref{ex:at1}.  Then determine $p(t)$, $q(t)$, and
 $g(t)$.
 \end{exercise}
 
 \begin{exercise} \label{c14.3.4A}
-Set $R=0$ and $C=L=1$ in the electrical circuit equation \Ref{E:RCLMcir}. 
+Set $R=0$ and $C=L=1$ in the electrical circuit equation \eqref{E:RCLMcir}. 
 Show that this equation may be rewritten as the first order system
 \begin{equation} \label{E:ECsy}
 \begin{array}{rcl}
@@ -447,8 +447,8 @@ Show that this equation may be rewritten as the first order system
 
 \noindent In Exercises~\ref{c14.3.7a} -- \ref{c14.3.7d} use \Matlab
 to find solutions for the electrical circuit\index{electrical circuit} 
-\Ref{E:RCLMcir}.  In each exercise, set $R=0$ and $C=L=1$ in addition to 
-the specified information, and use the first order system \Ref{E:ECsy}.
+\eqref{E:RCLMcir}.  In each exercise, set $R=0$ and $C=L=1$ in addition to 
+the specified information, and use the first order system \eqref{E:ECsy}.
 
 \begin{exercise} \label{c14.3.7a}
 Parameters for the circuit: $R_{mic}(t) = 1+\cos(5t)$ and $V(t) = 1$;\\

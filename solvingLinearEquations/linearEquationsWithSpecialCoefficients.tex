@@ -35,7 +35,7 @@ two equations might have been
 \end{eqnarray} \index{\computer!sqrt}  \index{\computer!pi}
 \index{\computer!exp(1)}
 
-Suppose that we solve \Ref{e:irrat} by elementary row
+Suppose that we solve \eqref{e:irrat} by elementary row
 operations.  In  matrix form we have the augmented matrix
 \[
 \left(\begin{array}{cc|c} \sqrt{2} & 2\pi & 22.4\\
@@ -120,7 +120,7 @@ ans =
 \end{verbatim}
 
 The reader may check that this answer agrees with the answer in
-\Ref{e:irratans} to \Matlab output accuracy by typing
+\eqref{e:irratans} to \Matlab output accuracy by typing
 \begin{verbatim}
 x1 = 11.2*sqrt(2)-pi*sqrt(2)*(exp(1)-33.6*sqrt(2))/(36.2-3*pi*sqrt(2))
 x2 = (exp(1)-33.6*sqrt(2))/(36.2-3*pi*sqrt(2))
@@ -145,7 +145,7 @@ display, type
 \begin{verbatim}
 format long
 \end{verbatim} \index{\computer!format!long}
-Now solve the system of equations \Ref{e:irrat} again by typing
+Now solve the system of equations \eqref{e:irrat} again by typing
 \begin{verbatim}
 A\b
 \end{verbatim}  \index{\computer!$\backslash$}

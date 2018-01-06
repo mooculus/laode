@@ -34,8 +34,8 @@ eigenvectors\index{eigenvector!linearly independent}.
 
 The prototypical examples of matrices having fewer eigenvectors than 
 eigenvalues are the matrices $J_n(\lambda)$ for $\lambda$ real (see
-\Ref{E:JnR}) and $\widehat{J}_n(\lambda)$ for $\lambda$ complex (see
-\Ref{E:JnC}).
+\eqref{E:JnR}) and $\widehat{J}_n(\lambda)$ for $\lambda$ complex (see
+\eqref{E:JnC}).
 \begin{definition} 
 A matrix is in {\em Jordan normal form\/} if it is block diagonal and 
 the matrix in each block on the diagonal is a Jordan block, that is, 
@@ -162,13 +162,13 @@ and the Cayley Hamilton theorem is valid for all matrices.
 A direct calculation shows that Jordan blocks satisfy the 
 Cayley Hamilton theorem.  To begin, suppose that the eigenvalue of the 
 Jordan block is real.  Note that the characteristic polynomial of 
-the Jordan block $J_n(\lambda_0)$ in \Ref{E:JnR} is $(\lambda-\lambda_0)^n$.
+the Jordan block $J_n(\lambda_0)$ in \eqref{E:JnR} is $(\lambda-\lambda_0)^n$.
 Indeed, $J_n(\lambda_0)-\lambda_0I_n$ is strictly upper triangular and 
 $(J_n(\lambda_0)-\lambda_0I_n)^n=0$.  If $\lambda_0$ is complex, then either
 repeat this calculation using the complex Jordan form or show by direct 
 calculation that $(A-\lambda_0I_n)(A-\overline{\lambda_0}I_n)$ is strictly 
 upper triangular when $A=\widehat{J}_n(\lambda_0)$ is the real Jordan form of 
-the Jordan block in \Ref{E:JnC}.  \end{proof}
+the Jordan block in \eqref{E:JnC}.  \end{proof}
 
 
 
@@ -307,7 +307,7 @@ $\lambda^2=0$, as we shall see.
 
 For example, on a
 {\em Sun SPARCstation 10\/} using \Matlab version 4.2c, the eigenvalues 
-of the $4\times 4$ matrix $A$ in \Ref{e:Aexamp} (in {\tt format long}) 
+of the $4\times 4$ matrix $A$ in \eqref{e:Aexamp} (in {\tt format long}) 
 obtained using {\tt eig(A)} are:
 \begin{verbatim}
 ans = 
@@ -444,7 +444,7 @@ An $n\times n$ matrix $N$ is
 {\em nilpotent\/}\index{nilpotent}\index{matrix!nilpotent} 
 if $N^k=0$ for some positive integer $k$.
 \begin{itemize}
-\item[(a)]  Show that the matrix $N$ defined in \Ref{e:Ndef} is nilpotent.
+\item[(a)]  Show that the matrix $N$ defined in \eqref{e:Ndef} is nilpotent.
 \item[(b)]  Show that all eigenvalues of a nilpotent matrix equal zero.
 \item[(c)]  Show that any matrix similar to a nilpotent matrix is also 
 	nilpotent.

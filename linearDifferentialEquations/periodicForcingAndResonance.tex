@@ -45,7 +45,7 @@ where $\omega>0$.
 
 We focus on three features of solutions to this equation.
 \begin{itemize}
-\item[(a)]	Generally, solutions to \Ref{eq:uspf} are quasiperiodic 
+\item[(a)]	Generally, solutions to \eqref{eq:uspf} are quasiperiodic 
 \index{motion!quasiperiodic}
 having two frequencies\index{frequency} --- just like the torus 
 solutions mentioned in Section~\ref{S:NLD}.
@@ -63,36 +63,36 @@ forcing frequency and an internal frequency is the periodically forced
 \index{forcing!periodic} undamped spring.
 
 The motion of a forced undamped spring is described by the spring equation 
-given in Chapter~\ref{Chap:Planar}, \Ref{e:springeq} with $\mu = 0$.
+given in Chapter~\ref{Chap:Planar}, \eqref{e:springeq} with $\mu = 0$.
 To simplify the computations, we set the mass to be $m=1$ and suppose that 
 the spring constant is $\kappa=1$.  Then, with periodic forcing 
-$g(t)=\cos(\omega t)$, we obtain the differential equation \Ref{eq:uspf}.
+$g(t)=\cos(\omega t)$, we obtain the differential equation \eqref{eq:uspf}.
 
-\subsection*{Closed Form Solutions to \protect{\Ref{eq:uspf}} by Undetermined 
+\subsection*{Closed Form Solutions to \protect{\eqref{eq:uspf}} by Undetermined 
 Coefficients}\index{closed form solution}\index{undetermined coefficients}
 
-We can apply the method of undetermined coefficients to solve \Ref{eq:uspf}, 
+We can apply the method of undetermined coefficients to solve \eqref{eq:uspf}, 
 but there are two cases: $\omega=1$ and $\omega\neq 1$. 
 
 \subsubsection*{The Case $\omega\not= 1$}  
 
 We use undetermined coefficients to find a particular solution to the 
-inhomogeneous equation \Ref{eq:uspf}.  The forcing term $\cos(\omega t)$ is 
+inhomogeneous equation \eqref{eq:uspf}.  The forcing term $\cos(\omega t)$ is 
 a solution to the differential equation 
 \begin{equation}  \label{E:omega}
 \ddot{y} + \omega^2y = 0.
 \end{equation}
 Thus the annihilator\index{annihilator} 
 of $\cos(\omega t)$ is $q(D)=D^2+\omega^2$.  The 
-eigenvalues of the homogeneous equation associated to \Ref{eq:uspf} are 
+eigenvalues of the homogeneous equation associated to \eqref{eq:uspf} are 
 $\pm i$ and the eigenvalues of $q(\lambda)$ are $\pm\omega i$.  Thus when 
 $\omega\neq 1$ we can use undetermined coefficients by choosing the general 
-solution to \Ref{E:omega} as the trial space\index{trial!space} 
-for \Ref{eq:uspf}.  So we set
+solution to \eqref{E:omega} as the trial space\index{trial!space} 
+for \eqref{eq:uspf}.  So we set
 \[
 y(t) = c_1\cos(\omega t) + c_2\sin(\omega t).
 \]
-Next, substitute $y$ into \Ref{eq:uspf}, obtaining
+Next, substitute $y$ into \eqref{eq:uspf}, obtaining
 \[
 (1-\omega ^2)(c_1\cos(\omega t) + c_2\sin(\omega t)) = \cos(\omega t).
 \]
@@ -102,11 +102,11 @@ c_1 = \frac{1}{1-\omega ^2} \AND c_2=0.
 \]
 Since the general solution\index{general solution} of the 
 homogeneous\index{homogeneous} equation associated 
-to \Ref{eq:uspf} is
+to \eqref{eq:uspf} is
 \[
 \alpha \cos(t)+\beta\sin(t),
 \]
-the general solution to \Ref{eq:uspf} is
+the general solution to \eqref{eq:uspf} is
 \[
 x(t) =\frac{1}{1-\omega ^2}\cos(\omega t) + \alpha\cos(t) + \beta\sin(t),
 \]
@@ -125,17 +125,17 @@ This solution is
 x(t) = \alpha_1\cos t + \alpha_2\sin t + c_1t\cos t + c_2t\sin t.
 \]
 On setting the solutions to the homogeneous equation associated to 
-\Ref{eq:uspf} to zero (that is, on setting $\alpha_1=\alpha_2=0$), we 
-find that the trial space for \Ref{eq:uspf} is:
+\eqref{eq:uspf} to zero (that is, on setting $\alpha_1=\alpha_2=0$), we 
+find that the trial space for \eqref{eq:uspf} is:
 \[
 y(t) = c_1t\cos t + c_2t\sin t.
 \]
-Substituting $y(t)$ into \Ref{eq:uspf} yields:
+Substituting $y(t)$ into \eqref{eq:uspf} yields:
 \[
 \ddot{y} + y \equiv -2c_1\sin t + 2c_2\cos t = \cos t.
 \]
 Therefore, $c_1=0$ and $c_2=\frac{1}{2}$, and a particular solution of 
-\Ref{eq:uspf} is 
+\eqref{eq:uspf} is 
 \[
 x_p(t) = \frac{1}{2}t\sin t.
 \]
@@ -144,15 +144,15 @@ The general solution can be written as
 x(t) = \frac{1}{2}t\sin t+\alpha\cos t+\beta\sin t.
 \]
 
-To summarize: the general closed form solution to \Ref{eq:uspf} is
+To summarize: the general closed form solution to \eqref{eq:uspf} is
 \begin{equation}  \label{eq:uspfsoln}
 x(t) = \alpha\cos t+\beta\sin t + \left\{\begin{array}{lr}
 \frac{1}{1-\omega ^2}\cos(\omega t)  & 0<\omega\neq 1\\  
 \frac{1}{2}t\sin t & \omega=1 \end{array}\right.\end{equation}
 
-\subsection*{Types of Solutions to \Ref{eq:uspf}}
+\subsection*{Types of Solutions to \eqref{eq:uspf}}
 
-We use the closed form solution \Ref{eq:uspfsoln} to \Ref{eq:uspf} to
+We use the closed form solution \eqref{eq:uspfsoln} to \eqref{eq:uspf} to
 identify three different types of solutions: quasiperiodic two-frequency 
 motion, beats, and resonance.
 
@@ -160,7 +160,7 @@ motion, beats, and resonance.
 \index{motion!two frequency}
 
 In our discussion we now specify initial conditions.  In particular, the 
-solution to \Ref{eq:uspf} with initial conditions $x(0)=1$ and 
+solution to \eqref{eq:uspf} with initial conditions $x(0)=1$ and 
 $\dot{x}(0)=0$ is:
 \arraystart
 \begin{equation}  \label{e:x(t)reson}
@@ -169,7 +169,7 @@ x(t) = \cos t + \left\{\begin{array}{ll}
 \frac{1}{2}t\sin t & \omega=1  \end{array}\right.
 \end{equation}
 \arrayfinish
-In particular, when $\omega\neq 1$, the solution \Ref{e:x(t)reson} is
+In particular, when $\omega\neq 1$, the solution \eqref{e:x(t)reson} is
 just a linear combination of two periodic 
 functions\index{linear!combination!of periodic functions} with different 
 frequencies\index{frequency}:
@@ -183,7 +183,7 @@ with two frequencies.
 When $\omega$ is far from $1$, the solution is very close to the solution
 to the undamped unforced spring equation\index{spring!undamped}.  
 Indeed, note that when the frequency
-$\omega$ is large, then it follows from \Ref{e:x(t)reson2} that $x(t)$ is 
+$\omega$ is large, then it follows from \eqref{e:x(t)reson2} that $x(t)$ is 
 approximately equal to $\cos t$.  See Figure~\ref{F:nonreson}.
 \begin{figure}[htb]
            \centerline{%
@@ -209,7 +209,7 @@ x(t) \approx  \frac{1}{1-\omega^2} (\cos(\omega t)-\cos(t))=
 \sin\left(\frac{\omega+1}{2}t\right)\sin\left(\frac{\omega-1}{2}t\right)
 \end{equation}
 when $\omega$ is close to $1$.  Note that the first sine term on the right hand
-side of \Ref{e:x(t)reson3} has period about $2\pi$ while the second sine term 
+side of \eqref{e:x(t)reson3} has period about $2\pi$ while the second sine term 
 has a large period of $4\pi/(\omega-1)$.  For example, when $\omega=1.05$, this
 fact leads to periodic behavior of period about $2\pi$ and a 
 modulation\index{modulation} 
@@ -217,7 +217,7 @@ of period about $80\pi$.  See Figure~\ref{F:beats}.
 \begin{figure}[htb]
            \centerline{%
            \psfig{file=../figures/beats.eps,width=3.5in}}
-           \caption{Beats in the solution $x(t)$ to \protect{\Ref{e:x(t)reson}} 
+           \caption{Beats in the solution $x(t)$ to \protect{\eqref{e:x(t)reson}} 
 		when $\omega =1.05$ and $0\leq t\leq 100\pi$.}
            \label{F:beats}
 \end{figure}  \index{beats}
@@ -225,12 +225,12 @@ of period about $80\pi$.  See Figure~\ref{F:beats}.
 \subsubsection*{Resonance}
 \index{resonance}
 
-When $\omega = 1$ it follows from \Ref{eq:uspfsoln} that every
-solution to \Ref{eq:uspf} is unbounded as $t$ goes to infinity.  This
+When $\omega = 1$ it follows from \eqref{eq:uspfsoln} that every
+solution to \eqref{eq:uspf} is unbounded as $t$ goes to infinity.  This
 phenomenon is called {\em resonance\/}, and is due to the fact that the
 internal frequency\index{frequency!internal} is the same as the 
 forcing frequency\index{frequency!forcing}.  The solution
-to \Ref{eq:uspf} for $\omega=1$ is shown in Figure~\ref{F:reson} (right).
+to \eqref{eq:uspf} for $\omega=1$ is shown in Figure~\ref{F:reson} (right).
 Resonance shows that when the forcing frequency equals the internal 
 frequency, the forcing amplifies the internal dynamics.
 
@@ -243,7 +243,7 @@ while the nearby solution has long term modulation or beats.
            \centerline{%
            \psfig{file=../figures/resona.eps,width=3.5in}
            \psfig{file=../figures/resonb.eps,width=3.5in}}
-           \caption{Two solutions $x(t)$ from \protect{\Ref{e:x(t)reson}} when
+           \caption{Two solutions $x(t)$ from \protect{\eqref{e:x(t)reson}} when
                 $\omega =1.05$ and $\omega =1$ for $0\leq t\leq 30\pi$.}
            \label{F:reson}
 \end{figure}  \index{resonance}
@@ -286,8 +286,8 @@ is going to infinity.
 \end{exercise}
 
 \begin{exercise} \label{c12.5.3}
-Let $x_\omega(t)$ be the solution to \Ref{eq:uspf} given in 
-\Ref{e:x(t)reson}.  Show that 
+Let $x_\omega(t)$ be the solution to \eqref{eq:uspf} given in 
+\eqref{e:x(t)reson}.  Show that 
 \[
 \lim_{\omega\to 1}x_\omega(t) = x_1(t)
 \]
@@ -310,17 +310,17 @@ $\ddot{x} + 9x = \cos(-3t).$
 \end{exercise}
 
 \begin{exercise}  \label{c12.5.4}
-Recall the sinusoidally forced second order equation \Ref{eq:uspf}
+Recall the sinusoidally forced second order equation \eqref{eq:uspf}
 \[
 \ddot x + x = \cos(\omega t).
 \]
 The second order differential operator that annihilates $\cos(\omega t)$ is
-$q(D)=D^2+\omega^2$.  It follows that any solution to \Ref{eq:uspf} must
+$q(D)=D^2+\omega^2$.  It follows that any solution to \eqref{eq:uspf} must
 satisfy the fourth order equation 
 \begin{equation} \label{E:ann=res}
 q(D)(\ddot x + x)=0.
 \end{equation}
-Compute the characteristic polynomial of \Ref{E:ann=res} and its roots. Since
+Compute the characteristic polynomial of \eqref{E:ann=res} and its roots. Since
 the roots typically form two complex conjugate pairs, observe that there is a
 connection between the quasiperiodic solutions of this section and those of
 Section~\ref{S:NLD}.  What is the special property of these roots that leads

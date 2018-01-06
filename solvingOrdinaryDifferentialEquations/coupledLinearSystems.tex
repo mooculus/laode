@@ -23,11 +23,11 @@ $x_1,x_2$ is:
 \end{equation}
 \renewcommand{\arraystretch}{1.0}%
 The uncoupled systems studied in Section~\ref{sec:UncoupledLS} are obtained 
-by setting $b=c=0$ in \Ref{lin3}.  We have discussed how to solve \Ref{lin3} 
-by formula \Ref{e:explicitsoln} when the system is uncoupled.  We have also 
+by setting $b=c=0$ in \eqref{lin3}.  We have discussed how to solve \eqref{lin3} 
+by formula \eqref{e:explicitsoln} when the system is uncoupled.  We have also 
 discussed how to visualize the phase plane for different choices of the 
 diagonal entries $a$ and $d$.  At present, we cannot
-solve \Ref{lin3} by formula when the coefficient matrix is not diagonal.
+solve \eqref{lin3} by formula when the coefficient matrix is not diagonal.
 But we may use {\sf pplane5} to solve the initial value problems numerically 
 for these coupled systems.  We illustrate this point by solving
 \begin{eqnarray*}
@@ -62,7 +62,7 @@ conditions $(x_0,y_0)=(1,1)$ and $(x_0,y_0)=(1,-1)$.
 \begin{figure}[htb]
      \centerline{%
      \psfig{file=../figures/invline.eps,width=3.5in}}
-     \caption{{\sf PPLANE5 Display} for \protect\Ref{lin3} with
+     \caption{{\sf PPLANE5 Display} for \protect\eqref{lin3} with
              $a=-1=d$; $b=3=c$; and $x,y\in [-5,5]$.
 	Solutions going through $(\pm 0.5,0)$ and $(0,\pm 0.5)$ are shown.}
      \label{F:invariantlines}
@@ -120,7 +120,7 @@ $x(t)$ whose second derivative is $-x(t)$.  From calculus, we know
 that $x(t)=\cos t$ is such a function.
 
 Let $y(t)=\dot{x}(t)$.  Then
-\Ref{E:2ndordera} may be rewritten as a first order coupled system
+\eqref{E:2ndordera} may be rewritten as a first order coupled system
 in $x(t)$ and $y(t)$ as follows:
 \begin{equation}  \label{E:2nd->1st}
 \begin{array}{rcl}
@@ -128,7 +128,7 @@ in $x(t)$ and $y(t)$ as follows:
 \dot{y} & = & -x.
 \end{array}
 \end{equation}
-Observe that if $x(t)$ is a solution to \Ref{E:2ndordera}, then
+Observe that if $x(t)$ is a solution to \eqref{E:2ndordera}, then
 \[
 0 = \frac{d^2x}{dt^2} + x = \frac{dy}{dt} + x.
 \]
@@ -136,18 +136,18 @@ Hence,
 \[
 \dot{y} = -x
 \]
-Conversely, if $(x(t),y(t))$ is a solution to \Ref{E:2nd->1st}, then
-$x(t)$ is a solution to \Ref{E:2ndordera}.  That is,
+Conversely, if $(x(t),y(t))$ is a solution to \eqref{E:2nd->1st}, then
+$x(t)$ is a solution to \eqref{E:2ndordera}.  That is,
 \[
 \frac{d^2x}{dt^2} + x = \frac{dy}{dt} + x = -x + x = 0.
 \]
 
 It follows from the discussion that $(x(t),y(t))=(\cos t,\sin t)$ is 
-a solution to the differential equation \Ref{E:2nd->1st}.  We have shown 
+a solution to the differential equation \eqref{E:2nd->1st}.  We have shown 
 analytically that the unit circle centered at the origin is a solution 
-trajectory for \Ref{E:2nd->1st}.  Hence \Ref{E:2nd->1st} has no 
+trajectory for \eqref{E:2nd->1st}.  Hence \eqref{E:2nd->1st} has no 
 eigendirections.  It may be checked using \Matlab that all solution 
-trajectories for \Ref{E:2nd->1st} are just circles centered at the origin.
+trajectories for \eqref{E:2nd->1st} are just circles centered at the origin.
 
 
 \EXER

@@ -50,12 +50,12 @@ where $f$ is some continuous function.  In words, this equation asks us
 to find all functions $x(t)$ whose derivative is $f(t)$.  The fundamental
 theorem of calculus tells us the answer: $x(t)$ is an antiderivative of
 $f(t)$.  Thus to find all solutions, we just integrate both sides of
-\Ref{e:intcalc} with respect to $t$.  Formally, using indefinite integrals, 
+\eqref{e:intcalc} with respect to $t$.  Formally, using indefinite integrals, 
 \begin{equation}  \label{E:integrate}
 \int \frac{dx}{dt}(t)dt = \int f(t)dt + C,
 \end{equation}
 where $C$ is an arbitrary constant.  (It is tempting to put a constant of
-integration on both sides of \Ref{E:integrate}, but two constants are not 
+integration on both sides of \eqref{E:integrate}, but two constants are not 
 needed, as we can just combine both constants on the right hand side of
 this equation.)   Since the indefinite integral of $dx/dt$ is just the
 function $x(t)$, we have 
@@ -63,22 +63,22 @@ function $x(t)$, we have
 x(t) = \int f(\tau) d\tau + C.
 \end{equation}
 In particular, finding closed form solutions to differential equations
-of the type \Ref{e:intcalc} is equivalent to finding all definite
+of the type \eqref{e:intcalc} is equivalent to finding all definite
 integrals of the function $f(t)$.  Indeed, to find closed form solutions 
-to differential equations like \Ref{e:intcalc} we need to know all of the 
+to differential equations like \eqref{e:intcalc} we need to know all of the 
 techniques of integration from integral calculus.
 
 \subsubsection*{Initial Conditions and the Role of the Integration Constant 
 $C$}
 
-Equation \Ref{e:intcalcsoln} tells us that there are an infinite number of
-solutions to the differential equation \Ref{e:intcalc}, each one
+Equation \eqref{e:intcalcsoln} tells us that there are an infinite number of
+solutions to the differential equation \eqref{e:intcalc}, each one
 corresponding to a different choice of the constant $C$.  To understand how
 to interpret the constant $C$, consider the example
 \[
 \dps\frac{dx}{dt}(t) = \cos t.
 \]
-Using \Ref{e:intcalcsoln} we see that the answer is
+Using \eqref{e:intcalcsoln} we see that the answer is
 \[
 x(t) = \int \cos\tau d\tau  + C = \sin t + C.
 \]
@@ -103,35 +103,35 @@ Are the functions
 \[
 x_1(t) = t^2 \AND x_2(t) = e^{t^2/2}
 \]
-solutions to the differential equation \Ref{E:verify}?
+solutions to the differential equation \eqref{E:verify}?
 
 To test whether or not the function $x_1(t)$ is a solution, we compute
-the left and right hand sides of \Ref{E:verify}:
+the left and right hand sides of \eqref{E:verify}:
 \begin{eqnarray*}
 {\rm LHS:} & \frac{d}{dt}x_1(t) & = 2t\\
 {\rm RHS:} &  tx_1(t) & = t^3.
 \end{eqnarray*}
 Since the left and right hand sides are unequal, the function $x_1(t)$
-is not a solution to \Ref{E:verify}.
+is not a solution to \eqref{E:verify}.
 
 To test whether or not the function $x_2(t)$ is a solution, we again
-compute the left and right hand sides of \Ref{E:verify}:
+compute the left and right hand sides of \eqref{E:verify}:
 \begin{eqnarray*}
 {\rm LHS:} & \frac{d}{dt}x_2(t) & = te^{t^2/2}\\
 {\rm RHS:} &  tx_2(t) & = te^{t^2/2}.
 \end{eqnarray*}
 Since the left and right hand sides are equal, the function $x_2(t)$
-is a solution to \Ref{E:verify}.
+is a solution to \eqref{E:verify}.
 
 Note that we have not discussed how we knew that the function $x_2(t)$
-is a solution to \Ref{E:verify}.  For the most part, the issue of how
+is a solution to \eqref{E:verify}.  For the most part, the issue of how
 one finds solutions to a differential equation will be discussed in later
 chapters, though we do determine solutions to a very important equation next.
 
 \subsubsection*{The Linear Differential Equation of Growth and Decay}
 
 The real subject of differential equations begins when the function $f$
-on the right hand side of \Ref{e:intcalc} depends explicitly on the
+on the right hand side of \eqref{e:intcalc} depends explicitly on the
 function $x$, and the simplest such differential equation is:
 \[
 \frac{dx}{dt}(t) = x(t).
@@ -141,13 +141,13 @@ we can solve the slightly more complicated equation
 \begin{equation}  \label{lin1}
 \frac{dx}{dt}(t) = \lambda x(t),
 \end{equation}
-where $\lambda\in\R$ is a constant.  The differential equation \Ref{lin1} is 
+where $\lambda\in\R$ is a constant.  The differential equation \eqref{lin1} is 
 {\em linear\/} since $x(t)$ appears by itself on the right hand side.  
-Moreover, \Ref{lin1} is {\em homogeneous\/} since the constant function 
+Moreover, \eqref{lin1} is {\em homogeneous\/} since the constant function 
 $x(t)=0$ is a solution.
 
 
-In words \Ref{lin1} asks: For which functions $x(t)$ is the
+In words \eqref{lin1} asks: For which functions $x(t)$ is the
 derivative of $x(t)$ a scalar multiple of $x(t)$.  The function
 \[
 x(t)=e^{\lambda t}
@@ -161,17 +161,17 @@ More generally, the function
 \begin{equation} \label{soln1}
 x(t) = K e^{\lambda t}
 \end{equation}
-is a solution to \Ref{lin1} for any real constant $K$.  We claim
-that the functions \Ref{soln1} list all (differentiable)
-functions that solve \Ref{lin1}.
+is a solution to \eqref{lin1} for any real constant $K$.  We claim
+that the functions \eqref{soln1} list all (differentiable)
+functions that solve \eqref{lin1}.
 
-To verify this claim, we let $x(t)$ be a solution to \Ref{lin1}
+To verify this claim, we let $x(t)$ be a solution to \eqref{lin1}
 and show that the ratio 
 \[
 \frac{x(t)}{e^{\lambda t}} = x(t)e^{-\lambda t}
 \]
 is a constant (independent of $t$).  Using the product rule 
-\index{product rule} and \Ref{lin1}, compute
+\index{product rule} and \eqref{lin1}, compute
 \begin{eqnarray*}
 \frac{d}{dt}\left[x(t)e^{-\lambda t}\right] & = &
 \frac{d}{dt}\left(x(t)\right) e^{-\lambda t} +
@@ -186,22 +186,22 @@ identically zero are the constant functions.  Thus,
 x(t) e^{-\lambda t} = K
 \]
 for some constant $K\in\R$.  Hence $x(t)$ has the form
-\Ref{soln1}, as claimed.
+\eqref{soln1}, as claimed.
 
 Next, we discuss the role of the constant $K$.  We have written
 the function as $x(t)$, and we have meant the reader to think of
 the variable $t$ as time.  Thus $x(0)$ is the initial value of
 the function $x(t)$ at time $t=0$; we say that $x(0)$ is the
 {\em initial value\/}\index{initial value problem} of $x(t)$.
-From \Ref{soln1} we see that
+From \eqref{soln1} we see that
 \[
 x(0) = K,
 \]
-and that $K$ is the initial value of the solution of \Ref{lin1}.
+and that $K$ is the initial value of the solution of \eqref{lin1}.
 Henceforth, we write $K$ as $x_0$ so that the notation calls
 attention to the special meaning of this constant.
 
-By deriving \Ref{soln1} we have proved:
+By deriving \eqref{soln1} we have proved:
 \begin{theorem}  \label{T:singleeqn}
 There is a unique solution to the {\em initial value problem\/}
 \index{initial value problem}
@@ -221,7 +221,7 @@ x(t) = x_0e^{\lambda t}.
 
 As a consequence of Theorem~\ref{T:singleeqn} we see that there
 is a qualitative difference in the behavior of solutions to
-\Ref{ivp1} depending on whether $\lambda>0$ or $\lambda<0$.
+\eqref{ivp1} depending on whether $\lambda>0$ or $\lambda<0$.
 Suppose that $x_0>0$.  Then
 \begin{equation}  \label{explimits}
 \lim_{t\to\infty} x(t) = \lim_{t\to\infty} x_0e^{\lambda t} =\left\{
@@ -254,12 +254,12 @@ The result of this calculation is shown in
 Figure~\ref{graph_labelfig}.  In this way we can actually see
 the difference between exponential growth ($\lambda=0.5$) and
 exponential decay ($\lambda=-0.5$), as discussed in
-\Ref{explimits}.
+\eqref{explimits}.
 
 \begin{figure}[htb]
      \centerline{%
      \psfig{file=../figures/graph1.eps,width=3.5in}}
-     \caption{Solutions of \protect\Ref{lin1}
+     \caption{Solutions of \protect\eqref{lin1}
               for $t\in [-1,4]$, $x_0=1$ and $\lambda=\pm 0.5$.}
      \label{graph_labelfig}
 \end{figure}
@@ -267,8 +267,8 @@ exponential decay ($\lambda=-0.5$), as discussed in
 
   \subsubsection*{The Inhomogeneous Linear Differential Equation}
 
-It follows from \Ref{explimits} that solutions to the linear homogeneous
-differential equation \Ref{ivp1} are either unbounded as $t\to \infty$ or 
+It follows from \eqref{explimits} that solutions to the linear homogeneous
+differential equation \eqref{ivp1} are either unbounded as $t\to \infty$ or 
 they approach zero.  Now we consider an inhomogeneous differential 
 equation and show that solutions can approach fixed values for increasing 
 $t$ that are neither zero nor infinity.
@@ -277,12 +277,12 @@ As an example, consider the linear differential equation
 \begin{equation} \label{E:ivp2}
 \frac{dx}{dt} = -2x-6.
 \end{equation}
-Observe that $x(t)=0$ is not a solution of \Ref{E:ivp2} and therefore
-that \Ref{E:ivp2} is {\em inhomogeneous}.  It is easy to verify, however, 
+Observe that $x(t)=0$ is not a solution of \eqref{E:ivp2} and therefore
+that \eqref{E:ivp2} is {\em inhomogeneous}.  It is easy to verify, however, 
 that the constant function $x(t)=-3$ is a solution.
 
-Equation~\Ref{E:ivp2} can be solved by introducing a new function that 
-transforms \Ref{E:ivp2} into a homogeneous equation.  Let
+Equation~\eqref{E:ivp2} can be solved by introducing a new function that 
+transforms \eqref{E:ivp2} into a homogeneous equation.  Let
 \[
 y(t) = x(t) + 3,
 \]
@@ -299,7 +299,7 @@ Therefore
 \[
 x(t) =  y_0e^{-2t}-3
 \]
-is a solution of \Ref{E:ivp2} for every constant $y_0$.  Moreover, 
+is a solution of \eqref{E:ivp2} for every constant $y_0$.  Moreover, 
 \[
 \lim_{t\to\infty} x(t) = \lim_{t\to\infty} y_0e^{-2t} -3=-3,
 \]
@@ -313,7 +313,7 @@ can be solved in a similar fashion.  Just set
 \[
 y(t) = x(t) + \frac{\rho}{\lambda}.
 \]
-It follows from \Ref{ivp2} that
+It follows from \eqref{ivp2} that
 \[
 \frac{dy}{dt} = \frac{dx}{dt} = \lambda x(t) +\rho =
 \lambda\left( y(t)-\frac{\rho}{\lambda}\right) +\rho = \lambda y(t).
@@ -328,9 +328,9 @@ $\lambda<0$.
 
 
 
-\subsection*{Some Examples of \protect\Ref{ivp1}}
+\subsection*{Some Examples of \protect\eqref{ivp1}}
 
-Even though the differential equation \Ref{lin1} is one of the
+Even though the differential equation \eqref{lin1} is one of the
 simplest differential equations, it still has some use in applications.
 We present two here: compound interest and population dynamics.
 
@@ -402,7 +402,7 @@ interest rate when compounding $N$ times is:
 \]
 
 For the curious, we can write a program in \Matlab to compute
-\Ref{compint}.  Suppose we assume that the initial deposit $P_0=\$1,000$,
+\eqref{compint}.  Suppose we assume that the initial deposit $P_0=\$1,000$,
 the simple interest rate is $6\%$ per year, and the interest payments
 are made monthly. In \Matlab type
 \begin{verbatim}
@@ -467,7 +467,7 @@ the maximum effective interest rate is $6.18365\%$.
 \index{population dynamics}
 
 To provide a second interpretation of the constant $\lambda$ in
-\Ref{lin1}, we discuss a simplified model for population dynamics.
+\eqref{lin1}, we discuss a simplified model for population dynamics.
 Let $p(t)$ be the size of a population of a certain species at
 time $t$ and let $r$ be the rate at which the population $p$ is
 changing at time $t$.  In general, $r$ depends on the time $t$
@@ -488,10 +488,10 @@ as the time $t$, that is, $r$ is a function $r(p,t)$.
 The simplest population model\index{population model} --- which
 we now assume --- is the
 one in which $r$ is assumed to be constant.  Then equation
-\Ref{pop_model} is identical to \Ref{lin1} after identifying $p$
+\eqref{pop_model} is identical to \eqref{lin1} after identifying $p$
 with $x$ and $r$ with $\lambda$.  Hence we may interpret $r$ as
 the growth rate for the population.  The form of the solution in
-\Ref{soln1} shows that the size of a population grows
+\eqref{soln1} shows that the size of a population grows
 exponentially if $r>0$ and decays exponentially if $r<0$.
 
 The mathematical description of this simplest population model
@@ -584,7 +584,7 @@ constant temperature of the surrounding medium, and $\alpha$ is the
 constant of proportionality.  Suppose the
 body is in air of temperature $50^\circ$ and the body cools from
 $100^\circ$ to $75^\circ$ in $20$ minutes.  What will the temperature
-of the body be after one hour?  {\bf Hint:} Rewrite \Ref{e:Newton} in
+of the body be after one hour?  {\bf Hint:} Rewrite \eqref{e:Newton} in
 terms of $U(t) = T(t) - T_m$.
 \end{exercise}
 
@@ -592,7 +592,7 @@ terms of $U(t) = T(t) - T_m$.
 \index{population dynamics}
 Let $p(t)$ be the population of group Grk at time $t$ measured in years.
 Let $r$ be the growth rate of the group Grk.  Suppose that the population
-of Grks changes according to the differential equation \Ref{pop_model}.
+of Grks changes according to the differential equation \eqref{pop_model}.
 Find $r$ so that the population of Grks doubles every $50$ years.  How
 large must $r$ be so that the population doubles every $25$ years?
 \end{exercise}
@@ -605,7 +605,7 @@ account after one year?
 \end{exercise}
 
 \begin{exercise} \label{c3.1.7}
-As an application of \Ref{e:intcalcsoln} answer the following question
+As an application of \eqref{e:intcalcsoln} answer the following question
 (posed by R.P. Agnew).
 \begin{quote}
 One day it started snowing at a steady rate.  A snowplow started at

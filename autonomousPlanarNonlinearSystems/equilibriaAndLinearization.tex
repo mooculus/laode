@@ -12,7 +12,7 @@
  \label{S:linearization}
 \index{equilibrium}  \index{linearization}
 
-Recall that equilibrium solutions of \Ref{e:nonlinear2}
+Recall that equilibrium solutions of \eqref{e:nonlinear2}
 are found by solving simultaneously the algebraic equations
 \begin{equation}
 \begin{array}{rcl} 
@@ -23,7 +23,7 @@ g(x,y) & = & 0.
 In general, it is a difficult task to solve these algebraic
 equations explicitly, except in the simplest of cases. One
 example where an explicit solution may be found is
-\Ref{e:globalexam}.  In that example, equilibria satisfy
+\eqref{e:globalexam}.  In that example, equilibria satisfy
 \[
 y  =  0 \AND x(2.2+x) = 0.
 \]
@@ -75,9 +75,9 @@ best linear approximation to a linear system is itself.
 
 \begin{theorem} \label{T:linearization} \index{linearization}
 Suppose that the system of differential equations
-\Ref{e:nonlinear2} has a hyperbolic equilibrium at
+\eqref{e:nonlinear2} has a hyperbolic equilibrium at
 $Z_0=(x_0,y_0)$.  Then, on a sufficiently small neighborhood of
-$Z_0$, the phase plane for \Ref{e:nonlinear2} is the {\em
+$Z_0$, the phase plane for \eqref{e:nonlinear2} is the {\em
 same\/} as the phase plane\index{phase!plane} of the system of 
 linear differential equations
 \begin{equation}  \label{e:linearizedeqn}
@@ -89,7 +89,7 @@ It is difficult to define precisely what we mean by the word
 $Z_0$ there is a nonlinear change of coordinates that 
 transforms the nonlinear equation into the linear one.
 
-For example, the Jacobian matrix of \Ref{e:globalexam} at the
+For example, the Jacobian matrix of \eqref{e:globalexam} at the
 equilibrium $Z_2=(-2.2,0)$ is 
 \[
 (dF)_{Z_2} = \left.\mattwoc{0}{1}{2.2+2x+y}{2.1+x}\right|_{(x,y)=(-2.2,0)} 
@@ -113,7 +113,7 @@ near the spiral sink.
            \centerline{%
 	   \psfig{file=../figures/spirala.eps,width=3.5in}
            \psfig{file=../figures/spiralb.eps,width=3.0in}}
-           \caption{(Left) Trajectory of \protect\Ref{e:linearizedeqn} 
+           \caption{(Left) Trajectory of \protect\eqref{e:linearizedeqn} 
 	     near the spiral sink $Z_2$. (Right) The time series $x$ 
 		versus $t$ for this solution.}
            \label{F:spiral}
@@ -184,7 +184,7 @@ Figure~\ref{F:globalb} for an example.
 
 \subsubsection*{Sinks}   \index{sink}
 
-In \Ref{e:globalexam} we have also seen that the spiraling behavior near a
+In \eqref{e:globalexam} we have also seen that the spiraling behavior near a
 spiral equilibrium is unaffected by higher order terms (see
 Figure~\ref{F:globalb}); this remark is also a consequence of
 Theorem~\ref{T:linearization}. Similarly, Theorem~\ref{T:linearization} 
@@ -208,8 +208,8 @@ equations, and their type.  (The coefficients have been chosen
 so that the calculations are feasible.  Nevertheless, it is
 instructive to verify the details.)
 
-Note that $x=y^2-1$ is the solution to \Ref{e1:exer}(a), which we
-may substitute into \Ref{e1:exer}(b) to obtain
+Note that $x=y^2-1$ is the solution to \eqref{e1:exer}(a), which we
+may substitute into \eqref{e1:exer}(b) to obtain
 \[
 y^4 - 7y^2 + 6y =0.
 \]
@@ -253,7 +253,7 @@ $(3,2)$ & $10$ & $-13$ & 129 & nodal sink \\
 $(8,-3)$ & $-60$ & --- & --- & saddle\\
 \hline
 \end{tabular}
-\caption{Types of equilibria in Example~\protect\Ref{e1:exer}.}
+\caption{Types of equilibria in Example~\protect\eqref{e1:exer}.}
 \label{t:exertype}
 \end{center}
 \end{table}\index{nodal source}\index{saddle}\index{nodal sink}
@@ -261,7 +261,7 @@ $(8,-3)$ & $-60$ & --- & --- & saddle\\
 Next we use the information about equilibria contained in 
 Table~\ref{t:exertype} and {\sf pplane5}
 \index{\computer!pplane5} to compute numerically the 
-phase portrait\index{phase!portrait} of equations \Ref{e1:exer}.  Using 
+phase portrait\index{phase!portrait} of equations \eqref{e1:exer}.  Using 
 the {\sf Find the equilibrium} button, put circles around
 the four equilibria.  (Remember to make the display screen large
 enough --- say $-2\leq x \leq 10$ and $-4\leq y \leq 4$.) Also
@@ -275,7 +275,7 @@ source connections.
 \begin{figure}[htb]
            \centerline{%
            \psfig{file=../figures/ex12exam.eps,width=3.5in}}
-		\caption{Equilibria and connections of \protect\Ref{e1:exer}.} 
+		\caption{Equilibria and connections of \protect\eqref{e1:exer}.} 
            \label{F:ex12}
 \end{figure}
 
@@ -289,7 +289,7 @@ equations
 \dot{y} & = & y - 2xy + 0.5x^2 + y^2.
 \end{array}
 \end{matlabEquation}
-It is difficult to find the equilibria in \Ref{e:gradexam} explicitly.
+It is difficult to find the equilibria in \eqref{e:gradexam} explicitly.
 We can, however, construct the phase plane of this equation with the 
 help of {\sf pplane5}.  First we choose a square in which to display 
 the direction field\index{direction field} --- say $-5\leq x,y \leq 5$. See 
@@ -317,7 +317,7 @@ in Figure~\ref{F:gradexamstyle}. \index{stylized phase portrait}
            \centerline{%
 	   \psfig{file=../figures/saddlea.eps,width=3.2in}
            \psfig{file=../figures/saddleb.eps,width=3.2in}}
-           \caption{(Left) Direction field of \protect\Ref{e:gradexam}.
+           \caption{(Left) Direction field of \protect\eqref{e:gradexam}.
 	(Right) Phase plane with equilibria and stable orbits.}
            \label{F:gradexam}
 \end{figure}
@@ -325,7 +325,7 @@ in Figure~\ref{F:gradexamstyle}. \index{stylized phase portrait}
 \begin{figure}[htb]
            \centerline{%
            \psfig{file=../figures/grad.eps,width=3.in}}
-           \caption{Stylized phase plane portrait of \protect\Ref{e:gradexam}.}
+           \caption{Stylized phase plane portrait of \protect\eqref{e:gradexam}.}
            \label{F:gradexamstyle}
 \end{figure}
 
@@ -340,9 +340,9 @@ equation
 \begin{equation}  \label{E:quad}
 \frac{dx}{dt} = -x^2 +3x -2.
 \end{equation}
-\item[(b)] Let $x(t)$ be the solution to \Ref{E:quad} satisfying
+\item[(b)] Let $x(t)$ be the solution to \eqref{E:quad} satisfying
 $x(0)=-1$.  Determine $\dps\lim_{t\to\infty} x(t)$. 
-\item[(c)] Let $y(t)$ be a solution to \Ref{E:quad} satisfying
+\item[(c)] Let $y(t)$ be a solution to \eqref{E:quad} satisfying
 $y(0)=0.5$. Sketch the time series of this solution.
 \end{enumerate}
 \end{exercise}
@@ -379,16 +379,16 @@ increases, that is, $\frac{d\lambda}{dp} < 0$ for all $p$.
 \end{enumerate}
 Consider the following:
 \begin{enumerate}
-\item[(a)] Show that equation \Ref{E:pop} has at most one
+\item[(a)] Show that equation \eqref{E:pop} has at most one
 positive equilibrium $p_e>0$.
-\item[(b)] Let $p(t)$ be a solution to \Ref{E:pop} with
+\item[(b)] Let $p(t)$ be a solution to \eqref{E:pop} with
 $p(0)>0$. Determine the asymptotic limit of the population in
 forward time, that is, determine $\dps\lim_{t\to\infty} p(t)$. 
 \item[(c)] Relate your answer in (b) to the solution to
 Exercise~\ref{E:popex}. 
 \end{enumerate}
 {\bf Hint:} There are two possible answers to (b) depending on
-whether \Ref{E:pop} has one positive equilibrium or no positive 
+whether \eqref{E:pop} has one positive equilibrium or no positive 
 equilibria.
 \end{exercise}
 
@@ -444,7 +444,7 @@ Consider the planar nonlinear system of ODEs
 \end{exercise}
 
 \begin{exercise} \label{c8.2.7}
-Consider the system of differential equations \Ref{e:global2exam}
+Consider the system of differential equations \eqref{e:global2exam}
 that depends on the constant $a$.  
 \begin{itemize}
 \item[(a)]	Find the equilibria of this system.
@@ -480,13 +480,13 @@ and that the linearized system about the origin is a
 center\index{center}. Hence the origin is not hyperbolic.
 
 \noindent (b)  Let $r=\sqrt{x^2+y^2}$ be the distance of $(x,y)$ from the 
-origin.  Let $(x(t),y(t))$ be a solution to \Ref{e:nonhypcenter} and show 
+origin.  Let $(x(t),y(t))$ be a solution to \eqref{e:nonhypcenter} and show 
 that $r(t)$ satisfies the differential equation
 \[
 \dot{r}(t) = -r(t)^3
 \]
 Use this fact to show that the origin is an asymptotically stable equilibrium
-of \Ref{e:nonhypcenter}.  (Hence the phase portraits of the linearized and 
+of \eqref{e:nonhypcenter}.  (Hence the phase portraits of the linearized and 
 nonlinear systems are different on all neighborhoods of the origin and  
 the hyperbolicity assumption in Theorem~\ref{T:linearization} is needed.)
 \end{exercise}
@@ -495,7 +495,7 @@ the hyperbolicity assumption in Theorem~\ref{T:linearization} is needed.)
 
 \begin{exercise} \label{c8.2.10}
 Use {\sf pplane5} to determine the phase portraits of the nonlinear system
-\Ref{e:nonhypcenter}.  Verify that {\sf pplane5} finds (approximately) 
+\eqref{e:nonhypcenter}.  Verify that {\sf pplane5} finds (approximately) 
 periodic solutions on sufficiently small neighborhoods of the origin.  This 
 experiment, coupled with the results from Exercise~\ref{E:nonhyp}, suggests 
 that the numerical methods employed by {\sf pplane5} fail sufficiently close 

@@ -142,7 +142,7 @@ found in yet higher dimensional linear systems.
    \centerline{%
    \psfig{file=../figures/ftor4ts.eps,width=5.3in}}
    \caption{Time series showing quasiperiodic two-frequency motion for the 
-	solution of the linear system \protect\Ref{e:tor4} with initial 
+	solution of the linear system \protect\eqref{e:tor4} with initial 
 	condition $X_0=(0.2,0.6,-0.5,0.1)$.}
    \label{F:ftor4ts}
 \end{figure}
@@ -160,7 +160,7 @@ experiment with different initial conditions and see Exercise~\ref{EX:tor4}.
    \psfig{file=../figures/ftor4ps1.eps,width=3.0in}
    \psfig{file=../figures/ftor4ps2.eps,width=3.0in}}
    \caption{Phase space projections showing quasiperiodic motion on a torus of 
-	the solution of the linear system \protect\Ref{e:tor4} with initial 
+	the solution of the linear system \protect\eqref{e:tor4} with initial 
 	condition $X_0=(0.2,0.6,-0.5,0.1)$.}
    \label{F:ftorphase}
 \end{figure}
@@ -182,19 +182,19 @@ Consider the system of four differential equations
 \dot{X} = (A+\epsilon I_4)X - ||X||^2X,
 \end{matlabEquation}
 where $A$ has two pairs of complex conjugate purely imaginary eigenvalues
-and $\epsilon>0$.  We see that $X=0$ is an equilibrium for \Ref{e:nonlintor}
+and $\epsilon>0$.  We see that $X=0$ is an equilibrium for \eqref{e:nonlintor}
 and the Jacobian\index{matrix!Jacobian} 
 matrix is $A+\epsilon I_4$ whose eigenvalues 
 are $\lambda+\epsilon$ where $\lambda$ is an eigenvalue of $A$.  Since all 
 of the eigenvalues of the Jacobian have positive real part, the origin is a 
 source\index{source} in four dimensions.  On the other hand, the term 
-$-||X||^2X$ in \Ref{e:nonlintor} always drives solutions toward the origin. 
+$-||X||^2X$ in \eqref{e:nonlintor} always drives solutions toward the origin. 
 The two forces balance and result in one asymptotically stable invariant 
 torus.   The reasoning here is similar to that used to find limit cycles in
 planar phase/amplitude equations.
 
-Let $A$ be the matrix \Ref{e:tor4} and solve numerically the corresponding
-differential equation \Ref{e:nonlintor} using the preloaded m-file 
+Let $A$ be the matrix \eqref{e:tor4} and solve numerically the corresponding
+differential equation \eqref{e:nonlintor} using the preloaded m-file 
 {\tt f14\_5\_2.m}. That m-file is:
 \begin{verbatim}
 function f = f14_5_2(t,x)
@@ -220,7 +220,7 @@ in Figure~\ref{F:tornlps}.  Here the transient is more visible.
    \centerline{%
    \psfig{file=../figures/ftornlts.eps,width=5.3in}}
    \caption{Time series showing quasiperiodic two-frequency motion for the 
-	solution of the nonlinear system \protect\Ref{e:nonlintor} with 
+	solution of the nonlinear system \protect\eqref{e:nonlintor} with 
 	initial condition $X_0=(0.2,0.6,-0.5,0.1)$.}
    \label{F:tornlts}
 \end{figure}
@@ -229,7 +229,7 @@ in Figure~\ref{F:tornlps}.  Here the transient is more visible.
    \centerline{%
    \psfig{file=../figures/ftornlps.eps,width=5.0in}}
    \caption{Phase space projections showing motion on a torus for the 
-	solution of the nonlinear system \protect\Ref{e:nonlintor} with 
+	solution of the nonlinear system \protect\eqref{e:nonlintor} with 
 	initial condition $X_0=(0.2,0.6,-0.5,0.1)$.}
    \label{F:tornlps}
 \end{figure}
@@ -267,11 +267,11 @@ f = [(x(3)-0.7)*x(1) - 3.5*x(2);
      3.5*x(1) + (x(3)-0.7)*x(2); 
      0.6 + x(3) - x(3)^3/3 - (x(1)^2+x(2)^2)*(1+0.25*x(3))];
 \end{verbatim}
-The differential equation \Ref{e:ftor3} is solved by typing
+The differential equation \eqref{e:ftor3} is solved by typing
 \begin{verbatim}
 [t,x] = ode45('f14_5_3',[0 100],[0.1,0.03,0.001]');
 \end{verbatim}\index{\computer!ode45}
-The time series for the system \Ref{e:ftor3} are given in 
+The time series for the system \eqref{e:ftor3} are given in 
 Figure~\ref{F:tor3ts} and the three dimensional phase space
 \index{phase!space} picture is given in Figure~\ref{F:tor3ps}.
 
@@ -279,7 +279,7 @@ Figure~\ref{F:tor3ts} and the three dimensional phase space
    \centerline{%
    \psfig{file=../figures/ftor3ts.eps,width=5.0in}}
    \caption{Time series showing quasiperiodic two-frequency motion for the 
-	solution of the nonlinear system \protect\Ref{e:ftor3} with initial 
+	solution of the nonlinear system \protect\eqref{e:ftor3} with initial 
 	condition $X_0=(0.1,0.03,0.001)$.}
    \label{F:tor3ts}
 \end{figure}
@@ -288,7 +288,7 @@ Figure~\ref{F:tor3ts} and the three dimensional phase space
    \centerline{%
    \psfig{file=../figures/ftor3ps.eps,width=5.0in}}
    \caption{Phase space showing motion on a torus for the solution trajectory 
-	of the nonlinear system \protect\Ref{e:ftor3} with initial condition 
+	of the nonlinear system \protect\eqref{e:ftor3} with initial condition 
 	$X_0=(0.1,0.03,0.001)$.}
    \label{F:tor3ps}
 \end{figure}
@@ -299,7 +299,7 @@ Figure~\ref{F:tor3ts} and the three dimensional phase space
 \CEXER
 
 \begin{exercise}  \label{EX:tor4}
-Let A be the $4\times 4$ torus example given in \Ref{e:tor4}.  Choose three 
+Let A be the $4\times 4$ torus example given in \eqref{e:tor4}.  Choose three 
 different initial conditions to the system of ODEs $\dot{X}=AX$ and use 
 {\tt ode45} compute solutions with these initial conditions.  (To decrease 
 the length of time needed by the computer to do these calculations, shorten 

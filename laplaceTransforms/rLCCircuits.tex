@@ -74,16 +74,16 @@ V_{coil} = L\frac{dI}{dt} = LC\frac{d^2x}{dt^2},
 where $L$ is the inductance of the coil measured in henrys.
 \end{itemize}
 
-Combining (a,b,c) with \Ref{e:kirchhoff}, we obtain the differential equation:
+Combining (a,b,c) with \eqref{e:kirchhoff}, we obtain the differential equation:
 \[
 V(t) = LC\ddot{x} + RC\dot{x} +  x.
 \]
-After dividing by $LC$, we obtain the second order equation \Ref{e:eleccirc};
+After dividing by $LC$, we obtain the second order equation \eqref{e:eleccirc};
 and, on setting 
 \[
 a = \frac{R}{L}, \quad b = \frac{1}{CL}, \AND g(t) = \frac{1}{CL}V(t),
 \] 
-we have an initial value problem in the form \Ref{e:2ndforced}.
+we have an initial value problem in the form \eqref{e:2ndforced}.
 
 A typical input at the voltage source\index{voltage source} 
 (associated to alternating current) is 
@@ -114,7 +114,7 @@ transforms.
 
 We now show how Laplace transforms can be used to solve second order
 equations with periodic discontinuous forcing.  As an example we consider
-the equation \Ref{eq:ivH1} where the external force $g(t)$ is
+the equation \eqref{eq:ivH1} where the external force $g(t)$ is
 given by
 \begin{equation}
 g(t) =  
@@ -138,7 +138,7 @@ integrations leads to
 &=& \frac{1}{s(1+e^{-s})}.
 \end{eqnarray*}
 Hence an application of the Laplace transform to the differential equation 
-\Ref{eq:ivH1} gives
+\eqref{eq:ivH1} gives
 \[
 s^2{\cal L}[x]-s + 4{\cal L}[x] = {\cal L}[g] = \frac{1}{s(1+e^{-s})},
 \]
@@ -178,14 +178,14 @@ x(t)&=&\frac{1}{4}\left(1+3\cos(2t)+\sum_{k=1}^\infty (-1)^k H_k(t)
 \end{eqnarray*}
 In Figure~\ref{fig:lapperi} we show the solution for $t\in [0,20]$.  Observe 
 that this solution is certainly not periodic in time.  Indeed, since the 
-internal frequency\index{frequency!internal} of equation \Ref{eq:ivH1} is 
+internal frequency\index{frequency!internal} of equation \eqref{eq:ivH1} is 
 $1/\pi$ and the frequency of the external periodic forcing is $1/2$ we expect 
 to obtain a quasiperiodic motion\index{motion!quasiperiodic}.
 \begin{figure}[htb]
            \centerline{%
            \psfig{file=../figures/lapperi.eps,width=3.5in}}
            \caption{The solution of the initial value problem
-	   \protect\Ref{eq:ivH1} where the external force is
+	   \protect\eqref{eq:ivH1} where the external force is
    	   given by a periodic discontinuous function.}
            \label{fig:lapperi}
 \end{figure}

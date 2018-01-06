@@ -13,7 +13,7 @@
 \label{A:det}
 
 The purpose of this appendix is to verify the inductive
-definition of determinant \Ref{e:inductdet}. We have already
+definition of determinant \eqref{e:inductdet}. We have already
 shown that if a determinant function exists, then it is unique.
 We also know that the determinant function exists for $1\times
 1$ matrices. So we assume by induction that the determinant function
@@ -54,7 +54,7 @@ D(EB) = D(E) D(B)
 \end{equation} 
 \end{lemma}
 
-\begin{proof} We verify \Ref{e:proddetE} for each of the three types of
+\begin{proof} We verify \eqref{e:proddetE} for each of the three types of
 elementary row operations. \index{elementary row operations}
 
 \noindent (I) Suppose that $E$ multiplies the $i^{th}$ row by a
@@ -62,10 +62,10 @@ nonzero scalar $c$.  If $i>1$, then the cofactor matrix
 $(EA)_{1j}$ is obtained from the cofactor matrix $A_{1j}$ by
 multiplying the $(i-1)^{st}$ row by $c$.  By induction,
 $\det(EA)_{1j}= c\det(A_{1j})$ and $D(EA)=cD(A)$.  On the other
-hand, $D(E)=\det(E_{11})=c$.  So \Ref{e:proddetE} is verified in
+hand, $D(E)=\det(E_{11})=c$.  So \eqref{e:proddetE} is verified in
 this instance.  If $i=1$, then the $1^{st}$ row of $EA$ is
 $(ca_{11},\ldots,ca_{1n})$ from which it is easy to verify
-\Ref{e:proddetE}.
+\eqref{e:proddetE}.
 
 \noindent (II) Next suppose that $E$ adds a multiple $c$ of the
 $i^{th}$ row to the $j^{th}$ row.  We note that $D(E)=1$.  When
@@ -104,7 +104,7 @@ $2^{nd}$.  Hence we need only verify this fact when $i=2$.
 
 \noindent (III) $E$ is the matrix that swaps two rows.   
 
-As we saw earlier \Ref{e:swapdecomp}, $E$ is the product of four
+As we saw earlier \eqref{e:swapdecomp}, $E$ is the product of four
 matrices of types (I) and (II).  It follows that $D(E)=-1$ and
 $D(EA)=-D(A)=D(E)D(A)$.  
 
@@ -176,7 +176,7 @@ and (c) of being a determinant.  We begin by showing that
 $D(A)=0$ if $A$ has a row that is identically zero.  Suppose
 that the zero row is the $i^{th}$ row and let $E$ be the matrix
 that multiplies the $i^{th}$ row of $A$ by $c$.  Then $EA=A$.
-Using \Ref{e:proddetE} we see that
+Using \eqref{e:proddetE} we see that
 \[
 D(A)=D(EA)=D(E)D(A)=cD(A),
 \]
@@ -190,7 +190,7 @@ A=E_s\cdots E_1R
 where the $E_j$ are elementary row matrices and $R$ is in
 reduced echelon form\index{echelon form!reduced}.  
 Since $A$ is singular, the last row of
-$R$ is identically zero.  Hence $D(R)=0$ and \Ref{e:proddetE}
+$R$ is identically zero.  Hence $D(R)=0$ and \eqref{e:proddetE}
 implies that $D(A)=0$.  
 
 We now verify property (b).  Suppose that $A$ is singular; we
@@ -218,7 +218,7 @@ $A$ is nonsingular.  It follows that
 \[
 AB = E_s\cdots E_1B.
 \]
-Using \Ref{e:proddetE} we see that
+Using \eqref{e:proddetE} we see that
 \[
 D(AB)=D(E_s)\cdots D(E_1)D(B) = D(E_s\cdots E_1)D(B) = D(A)D(B),
 \]

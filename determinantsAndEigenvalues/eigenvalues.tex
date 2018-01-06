@@ -48,13 +48,13 @@ characteristic polynomial.  \index{eigenvalue} Conversely, if
 $\lambda$ is a real root of $p_A$, then
 Theorem~\ref{T:detandinv} states that the matrix $A-\lambda I_n$
 is singular and therefore that there exists a nonzero vector $v$
-such that \Ref{e:eigen} is satisfied.  Similarly, by using this
+such that \eqref{e:eigen} is satisfied.  Similarly, by using this
 extended algebraic definition of eigenvalues we allow the
 possibility of complex eigenvalues\index{eigenvalue!complex}.  
 The complex analog of
 Theorem~\ref{T:detandinv} shows that if $\lambda$ is a complex
 eigenvalue, then there exists a nonzero complex $n$-vector $v$
-such that \Ref{e:eigen} is satisfied.
+such that \eqref{e:eigen} is satisfied.
 
 \begin{example} \label{E:triangular}
 Let $A$ be an $n\times n$ lower triangular matrix.  Then the
@@ -74,7 +74,7 @@ characteristic polynomial. A similar argument works if $A$ is
 upper triangular.}
 \end{example}  
  
-It follows from \Ref{e:triangpoly} that the characteristic
+It follows from \eqref{e:triangpoly} that the characteristic
 polynomial of a triangular matrix
 \index{characteristic polynomial!of triangular matrices}
 is a polynomial of degree $n$ and that
@@ -86,7 +86,7 @@ statement is true in general.
 
 \begin{theorem}  \label{T:charpolyn}
 Let $A$ be an $n\times n$ matrix.  Then $p_A$ is a polynomial of
-degree $n$ of the form \Ref{e:leadingterm}.
+degree $n$ of the form \eqref{e:leadingterm}.
 \end{theorem} \index{characteristic polynomial}
 
 \begin{proof} Let $C$ be an $n\times n$ matrix whose entries have
@@ -97,7 +97,7 @@ $C=(c+d\lambda)$ for some real numbers $c$ and $d$. Then
 $\det(C)=c+d\lambda$ which is a polynomial of degree at most
 one.  (It may have degree zero, if $d=0$.) So assume that this
 statement is true for $(n-1)\times (n-1)$ matrices. Recall from
-\Ref{e:inductdet} that 
+\eqref{e:inductdet} that 
 \[
 \det(C) = (c_{11}+d_{11}\lambda)\det(C_{11})
 +\cdots+(-1)^{n+1}(c_{1n}+d_{1n}\lambda)\det(C_{1n}).
@@ -116,7 +116,7 @@ theorem we need to show that the coefficient of $\lambda^n$ is
 $(-1)^n$.  Again, we verify this statement by induction.  This
 statement is easily verified for $1\times 1$ matrices --- we
 assume that it is true for $(n-1)\times (n-1)$ matrices.  Again
-use \Ref{e:inductdet} to compute
+use \eqref{e:inductdet} to compute
 \begin{align*}
 \det(A-\lambda I_n) &= (a_{11}-\lambda)\det(B_{11})-a_{12}\det(B_{12}) 
                       +\cdots \\
@@ -206,11 +206,11 @@ or complex conjugate pairs.  Moreover,
 \begin{proof} Since the characteristic polynomial $p_A$ is a polynomial
 of degree $n$ with real coefficients, the first part of the
 theorem follows from the preceding discussion. In particular, it follows
-from \Ref{e:factoring} that 
+from \eqref{e:factoring} that 
 \[
 p_A(\lambda) = c(\lambda_1-\lambda)\cdots(\lambda_n-\lambda),
 \]
-for some constant $c$.  Formula \Ref{e:leadingterm} implies that
+for some constant $c$.  Formula \eqref{e:leadingterm} implies that
 $c=1$ --- which proves (a).  Since $p_A(\lambda)=\det(A-\lambda I_n)$, 
 it follows that $p_A(0)=\det(A)$.  Thus (a) implies 
 that $p_A(0)=\lambda_1\cdots\lambda_n$, thus proving (b).  \end{proof}
@@ -312,7 +312,7 @@ eigenvalues of square matrices are straightforward in \Matlab.
 In particular, for an $n\times n$ matrix $A$, the \Matlab command
  {\tt poly(A)} returns the coefficients of $(-1)^np_A(\lambda)$.
 
-For example, reload the $4\times 4$ matrix $A$ of \Ref{e:A4x4}
+For example, reload the $4\times 4$ matrix $A$ of \eqref{e:A4x4}
 by typing {\tt e8\_1\_11}.  The characteristic polynomial of $A$ is
 found by typing
 \begin{verbatim}

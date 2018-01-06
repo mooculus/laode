@@ -23,13 +23,13 @@ has the form
 \end{array}
 \end{equation}
 where $f$ and $g$ are functions of the two variables $x$
-and $y$.  Solutions to \Ref{e:aut2} are pairs of functions
+and $y$.  Solutions to \eqref{e:aut2} are pairs of functions
 $(x(t),y(t))$.
 
-As in the single equation \Ref{aut}, the simplest
+As in the single equation \eqref{aut}, the simplest
 solutions are equilibria.  An {\em equilibrium\/} \index{equilibrium}
 solution to
-\Ref{e:aut2} is a solution where both functions $x(t)$
+\eqref{e:aut2} is a solution where both functions $x(t)$
 and $y(t)$ are constant functions; that is,
 \[
 x(t) = x_0 \AND  y(t)=y_0.
@@ -38,7 +38,7 @@ For equilibria, it follows that both
 \[
 \frac{dx}{dt} = 0 \AND \frac{dy}{dt} = 0.
 \]
-Hence, equilibria of \Ref{e:aut2} can be found by
+Hence, equilibria of \eqref{e:aut2} can be found by
 simultaneously solving the equations
 \begin{eqnarray*}
 f(x,y) & = & 0 \\
@@ -74,7 +74,7 @@ differential equations by considering uncoupled
 Since the system is {\em uncoupled\/} (that is, the equation for
 $\dot{x}$ does not depend on $y$ and the equation for $\dot{y}$
 does not depend on $x$), we can solve this system by solving each
-equation independently, as we did for \Ref{lin1}:
+equation independently, as we did for \eqref{lin1}:
 \begin{equation} \label{e:explicitsoln}
 \begin{array}{ccc}
 x(t) & = & x_0e^{at} \\
@@ -86,15 +86,15 @@ There are now two initial conditions that are identified by
 x(0) = x_0 \AND y(0) = y_0.
 \]
 
-Having found all the solutions to \Ref{lin2} in \Ref{e:explicitsoln},
+Having found all the solutions to \eqref{lin2} in \eqref{e:explicitsoln},
 we now explore the geometry of the phase plane for
 these uncoupled systems both analytically and by using \Matlabp.
 
 
 \subsection*{Asymptotic Stability of the Origin}
 
-As we did for the single equation \Ref{lin1}, we ask
-what happens to solutions to \Ref{lin2} starting at $(x_0,y_0)$ as
+As we did for the single equation \eqref{lin1}, we ask
+what happens to solutions to \eqref{lin2} starting at $(x_0,y_0)$ as
 time $t$ increases.  That is, we compute
 \[
 \lim_{t\to\infty}(x(t),y(t))=\lim_{t\to\infty}(x_0e^{a t},y_0e^{d t}).
@@ -121,7 +121,7 @@ equilibrium that move far away from that equilibrium.
 
 At this stage, it is not clear how to determine whether the
 origin is asymptotically stable for a general linear system
-\Ref{e:autlin}.  However, for uncoupled linear systems we
+\eqref{e:autlin}.  However, for uncoupled linear systems we
 have shown that the origin is an asymptotically stable
 equilibrium when both $a < 0$ and $d < 0$.  If either
 $a >0$ or $d > 0$, then $(0,0)$ is unstable.
@@ -137,7 +137,7 @@ on the $y$-axis, then the solution $(0,y_0e^{dt})$ lies on the
 $y$-axis for all time.
 
 This invariance of the coordinate axes for uncoupled systems
-follows directly from \Ref{e:explicitsoln}.  It turns out that
+follows directly from \eqref{e:explicitsoln}.  It turns out that
 many linear systems of differential equations have invariant
 lines; this is a topic to which we return later in this chapter.
 
@@ -145,7 +145,7 @@ lines; this is a topic to which we return later in this chapter.
 \index{\computer!pplane5}
 
 How can we visualize a solution $(x(t),y(t))$ to a system of
-differential equations \Ref{e:aut2}?  The time series approach
+differential equations \eqref{e:aut2}?  The time series approach
 suggests that we should graph $(x(t),y(t))$ as a function of $t$;
 that is, we should plot the curve
 \[
@@ -180,7 +180,7 @@ it is useful to use the computer.
 The method used to integrate planar systems of autonomous
 differential equations is similar to that used to integrate
 nonautonomous single equations in {\sf dfield5}.  The solution
-curve $(x(t),y(t))$ to \Ref{e:aut2} at a point $(x_0,y_0)$ is
+curve $(x(t),y(t))$ to \eqref{e:aut2} at a point $(x_0,y_0)$ is
 tangent to the direction $(f(x_0,y_0),g(x_0,y_0))$.  So
 the differential equation solver plots the direction field
 \index{direction field}
@@ -201,7 +201,7 @@ parameters in the {\sf linear system} are given by capitals rather than
 lower case {\sf a,b,c,d}.)
 
 To integrate the uncoupled linear system, set the parameters $b$
-and $c$ equal to zero. We now have the system \Ref{lin2} with
+and $c$ equal to zero. We now have the system \eqref{lin2} with
 $a = 2$ and $d = -3$.  After pushing {\sf Proceed}, a display window
 similar to {\sf dfield5} appears.  The main difference is that
 the plane is filled by vectors $(f,g)$ indicating directions,
@@ -216,7 +216,7 @@ Figure~\ref{pp_dsp1} displays.
 \begin{figure*}[htb]
      \centerline{%
      \psfig{file=../figures/pp_dsp1.eps,width=3.5in}}
-     \caption{{\sf PPLANE5 Display} for \protect\Ref{lin2} with
+     \caption{{\sf PPLANE5 Display} for \protect\eqref{lin2} with
              $a=2$, $d=-3$ and $x,y\in [-5,5]$. Solutions
              going through $(\pm 1,\pm 1)$ are shown.}
      \label{pp_dsp1}
@@ -232,7 +232,7 @@ precisely one solution that goes through a specified point in
 the $(x,y)$-plane. We prove this fact in
 Section~\ref{S:Matrixexp}.
 
-\subsection*{Saddles, Sinks, and Sources for the Uncoupled System \protect{\Ref{lin2}}}
+\subsection*{Saddles, Sinks, and Sources for the Uncoupled System \protect{\eqref{lin2}}}
 
 In a qualitative fashion, the trajectories of uncoupled linear
 systems are determined by the invariance of the coordinate axes
@@ -308,7 +308,7 @@ the {\sf Composite} button.  See Figure~\ref{plotall}.
      \centerline{%
      \psfig{file=../figures/plot3d.eps,width=3.0in}
      \psfig{file=../figures/plotall.eps,width=3.0in}}
-     \caption{{\sf PPLANE5 Display} for \protect\Ref{lin2} with
+     \caption{{\sf PPLANE5 Display} for \protect\eqref{lin2} with
              $a=2$, $d=-3$ and $x\in [0,25], y\in [0,20]$. The solution
              going through $(1,1)$ is shown. UL: $(t,x(t))$;
 	UR: $(t,y(t))$; LL: $(x(t),y(t),t)$; LR: all plots.}
@@ -337,7 +337,7 @@ the given system of nonlinear autonomous differential equations.
 
 
 \noindent In Exercises~\ref{E:uncoupleda} -- \ref{E:uncoupledc}
-consider the uncoupled system of differential equations \Ref{lin2}.
+consider the uncoupled system of differential equations \eqref{lin2}.
 For each choice of $a$ and $d$, determine whether the origin is a
 saddle, source, or sink.
 \begin{exercise} \label{E:uncoupleda}
@@ -351,7 +351,7 @@ $a=0$ and $d=-2.3$.
 \end{exercise}
 
 \begin{exercise} \label{c3.4.2}
-Let $(x(t),y(t))$ be the solution \Ref{e:explicitsoln} of \Ref{lin2}
+Let $(x(t),y(t))$ be the solution \eqref{e:explicitsoln} of \eqref{lin2}
 with initial condition $(x(0),y(0))=(x_0,y_0)$, where $x_0\neq 0 \neq y_0$.
 \begin{itemize}
 \item[(a)] Show that the points $(x(t),y(t))$ lie on the curve whose 

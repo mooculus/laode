@@ -16,35 +16,35 @@ We illustrate the idea behind exact equations with the following example:
 \begin{equation}  \label{eq:exactex1}
 \frac{dx}{dt} = \frac{x-1}{2x-t}.
 \end{equation}
-Since the right hand side of \Ref{eq:exactex1} is neither of the form 
+Since the right hand side of \eqref{eq:exactex1} is neither of the form 
 $g(x)h(t)$ nor of the form $F\left(\frac{x}{t}\right)$, it cannot be 
 solved either by separation of variables or by substitution.  However, 
-it is possible to determine all solutions of \Ref{eq:exactex1}, as we now 
+it is possible to determine all solutions of \eqref{eq:exactex1}, as we now 
 explain.
 
-We may rewrite \Ref{eq:exactex1} as
+We may rewrite \eqref{eq:exactex1} as
 \begin{equation} \label{eq:exactex1a}
 (2x-t)\frac{dx}{dt} =(x-1). 
 \end{equation}
 
-Suppose that $x(t)$ is a solution to \Ref{eq:exactex1} and let 
+Suppose that $x(t)$ is a solution to \eqref{eq:exactex1} and let 
 $y(t)=x(t)^2 - x(t)t + t$.  Then differentiation shows that 
 \[
 \dot{y} = 2x\dot{x} -\dot{x}t-x + 1 = (2x-t)\dot{x} -(x-1) =0,
 \]
-with the last equality coming from \Ref{eq:exactex1a}.  Thus, if $x(t)$ is a 
+with the last equality coming from \eqref{eq:exactex1a}.  Thus, if $x(t)$ is a 
 solution, then the function $y(t)=x(t)^2 - x(t)t + t$ is constant.  It 
 follows that for each solution $x(t)$ there is a real constant $c$ such that
 \begin{equation} \label{eq:xc}
 x(t)^2 - x(t)t + t = c.
 \end{equation}
-Since \Ref{eq:xc} is quadratic in $x$, the quadratic formula determines  
+Since \eqref{eq:xc} is quadratic in $x$, the quadratic formula determines  
 two solutions for each value of $c$, namely,
 \begin{equation}  \label{E:twosolns}
 x_\pm(t) = \frac{t\pm\sqrt{t^2-4t+4c}}{2}.
 \end{equation}
-When $c=1$, the radical in \Ref{E:twosolns} is a perfect square and the 
-two solutions to \Ref{eq:exactex1} are:
+When $c=1$, the radical in \eqref{E:twosolns} is a perfect square and the 
+two solutions to \eqref{eq:exactex1} are:
 \[
 x_+(t) = t-1 \AND x_-(t) = 1,
 \]
@@ -52,7 +52,7 @@ as can readily be checked.
 
 \subsubsection*{Solutions Lie on Level Contours}
 
-To derive a geometric interpretation for the identity \Ref{eq:xc},
+To derive a geometric interpretation for the identity \eqref{eq:xc},
 define the function $F:\R^2\rightarrow \R$ by
 \[
 F(t,x) = x^2 - xt + t.
@@ -63,8 +63,8 @@ the set of points in the $(t,x)$-plane for which
 \[
 F(t,x) = c,
 \]
-for some real constant $c$.  Thus, \Ref{eq:xc} can now be restated
-as follows: solutions $x(t)$ of the differential equation \Ref{eq:exactex1} 
+for some real constant $c$.  Thus, \eqref{eq:xc} can now be restated
+as follows: solutions $x(t)$ of the differential equation \eqref{eq:exactex1} 
 lie on the level sets of $F$, since $F(t,x(t))=c$.
 
 \subsubsection*{Drawing Contours Using \Matlab}
@@ -113,14 +113,14 @@ see from Figure~\ref{Fig:contour1} that the contour lines for
 the levels $c=0,-1,-2$ have a turning point, that is, they
 cannot be parameterized entirely by $t$.  
 
-Setting $c=0$ in \Ref{E:twosolns} we find the expressions
+Setting $c=0$ in \eqref{E:twosolns} we find the expressions
 \[
 x_+(t) = \frac{1}{2}\left(t+\sqrt{t(t-4)}\right) \AND
 x_-(t) = \frac{1}{2}\left(t-\sqrt{t(t-4)}\right).
 \]
 These functions are not real-valued for $t\in (0,4)$.  In
 particular, they cannot correspond to solutions of
-\Ref{eq:exactex1} for these values of $t$.  This provides
+\eqref{eq:exactex1} for these values of $t$.  This provides
 an explanation for the existence of the turning point at
 $(t,x)=(0,0)$ and why the solutions $x_+(t)$ and $x_-(t)$
 ``collide'' at this point.
@@ -143,7 +143,7 @@ not defined at $(0,0)$.
 \begin{figure}[htb]
   \centerline{%
   \psfig{file=../figures/contour2.eps,width=3.7in}}
-  \caption{The solution of \protect\Ref{eq:exactex1} for the
+  \caption{The solution of \protect\eqref{eq:exactex1} for the
   initial value $(t_0,x_0)=(-0.5,-1)$ computed by {\sf dfield5}.}
   \label{Fig:contour2}
 \end{figure}
@@ -157,34 +157,34 @@ equation of the form
 \frac{dx}{dt} = \frac{G(t,x)}{H(t,x)},
 \end{equation}
 where $G$ and $H$ are real-valued continuous functions.  In 
-\Ref{eq:exactex1}, $G(t,x)=x-1$ and $H(t,x) = 2x-t$.
-The differential equation \Ref{eq:exact} is {\em exact\/} 
+\eqref{eq:exactex1}, $G(t,x)=x-1$ and $H(t,x) = 2x-t$.
+The differential equation \eqref{eq:exact} is {\em exact\/} 
 \index{differential equation!exact} if
 there is a function $F(t,x)$ such that
 \begin{equation}  \label{e:FGH}
 \frac{\partial F}{\partial t} = -G \AND
 \frac{\partial F}{\partial x} =  H.
 \end{equation}
-Indeed, the differential equation \Ref{eq:exactex1} is exact --- just set 
+Indeed, the differential equation \eqref{eq:exactex1} is exact --- just set 
 $F(t,x) = x^2 - xt + t$.
 
-Supposing that the differential equation \Ref{eq:exact} is exact, proceed as 
-in the example by rewriting \Ref{eq:exact} as 
+Supposing that the differential equation \eqref{eq:exact} is exact, proceed as 
+in the example by rewriting \eqref{eq:exact} as 
 \begin{equation} \label{eq:exacta}
 H(t,x)\frac{dx}{dt} - G(t,x) = 0.
 \end{equation}
-Let $x(t)$ be a solution to \Ref{eq:exactex1} and use the chain rule, 
-\Ref{e:FGH}, and \Ref{eq:exacta} to obtain
+Let $x(t)$ be a solution to \eqref{eq:exactex1} and use the chain rule, 
+\eqref{e:FGH}, and \eqref{eq:exacta} to obtain
 \[
 \frac{d}{dt} F(t,x(t)) = \frac{\partial F}{\partial x}\frac{dx}{dt} + 
 \frac{\partial F}{\partial t} = H\frac{dx}{dt}-G = 0.
 \]
-Hence, solutions of \Ref{eq:exact} must lie on a level set of $F$ defined 
+Hence, solutions of \eqref{eq:exact} must lie on a level set of $F$ defined 
 by $F(t,x) = c$. We have proved:
 
 \begin{theorem} \label{thm:exact}
-Assume that the differential equation \Ref{eq:exact} is exact.  Then, for any 
-solution $x(t)$ of \Ref{eq:exact} with $x(t_0)=x_0$, there is a constant $c$ 
+Assume that the differential equation \eqref{eq:exact} is exact.  Then, for any 
+solution $x(t)$ of \eqref{eq:exact} with $x(t_0)=x_0$, there is a constant $c$ 
 such that for all $t$ close to $t_0$, $F(t,x(t)) = c$.
 \end{theorem}\index{differential equation!exact}
 
@@ -195,7 +195,7 @@ In order to solve exact differential equations,
 questions: 
 \begin{itemize}
 \item When does a function $F$ exist that satisfies the 
-conditions in \Ref{e:FGH}?
+conditions in \eqref{e:FGH}?
 \item If the function $F$ exists, then how can we compute it?
 \end{itemize}
 The following proposition, based on the equality of mixed partial derivatives, 
@@ -205,14 +205,14 @@ gives a necessary condition for having a positive answer to the first question.
 Let $G,H:\R^2\to\R$ be differentiable functions such that
 $\partial G/\partial x$ and $\partial H/\partial t$ are
 continuous.  Suppose that the corresponding differential
-equation \Ref{eq:exact} is exact.  Then
+equation \eqref{eq:exact} is exact.  Then
 \begin{equation} \label{eq:Gy=Hs}
 -\frac{\partial G}{\partial x} (t,x) = \frac{\partial H}{\partial
 t} (t,x).
 \end{equation}
 \end{proposition}
 
-\begin{proof} Using \Ref{e:FGH} we compute
+\begin{proof} Using \eqref{e:FGH} we compute
 \[
 \frac{\partial^2 F}{\partial x\partial t} = 
 -\frac{\partial G}{\partial x} (t,x) \AND 
@@ -230,7 +230,7 @@ continuous, equality of mixed partial derivatives holds, and
 as desired. \end{proof}
 
 \begin{remark} \label{rmk:exact}
-{\rm It can be shown that criterion \Ref{eq:Gy=Hs} is also
+{\rm It can be shown that criterion \eqref{eq:Gy=Hs} is also
 sufficient for the exactness of the corresponding differential
 equation, if this criterion is satisfied in a region in the
 $(t,x)$-plane having no holes. The proof of this result can be
@@ -242,9 +242,9 @@ found in any text on multidimensional calculus.}
 
 We use two examples to illustrate the test for exactness
 \index{differential equation!exact!test for}
-of the underlying differential equation given by \Ref{eq:Gy=Hs}.
+of the underlying differential equation given by \eqref{eq:Gy=Hs}.
 
-\noindent (a) Consider \Ref{eq:exactex1}, that is, suppose $G(t,x)=x-1$ and 
+\noindent (a) Consider \eqref{eq:exactex1}, that is, suppose $G(t,x)=x-1$ and 
 $H(t,x)=2x-t$.  Then
 \[
 -\frac{\partial G}{\partial x} = -1 = 
@@ -258,12 +258,12 @@ properties may be found.
 -\frac{\partial G}{\partial x} (t,x) = 0\not= 1 = 
 \frac{\partial H}{\partial t} (t,x),
 \]
-and by Proposition~\ref{prop:exact} a function $F$ satisfying \Ref{e:FGH} 
+and by Proposition~\ref{prop:exact} a function $F$ satisfying \eqref{e:FGH} 
 cannot exist.
 
 \subsection*{On the Computation of $F$}
 Next, consider the second question, namely, how can $F$ be
-computed when it exists.  By \Ref{e:FGH} we have
+computed when it exists.  By \eqref{e:FGH} we have
 \[
 \frac{\partial F}{\partial t}(t,x) = -G(t,x).
 \]
@@ -277,7 +277,7 @@ where
 \Gamma(t,x)=\int G(\tau,x) d\tau
 \]
 is an indefinite integral of $G$ with respect to the variable $t$.
-Condition \Ref{e:FGH} also implies that
+Condition \eqref{e:FGH} also implies that
 \[
 H(t,x) = \frac{\partial F}{\partial x}(t,x) =
 -\frac{\partial}{\partial x}\Gamma(t,x) + g'(x),
@@ -286,7 +286,7 @@ that is
 \begin{equation} \label{eq:defg}
 g'(x) = \frac{\partial}{\partial x}\Gamma(t,x) + H(t,x).
 \end{equation}
-Equations \Ref{eq:defg} and \Ref{eq:defGamma} can now be used 
+Equations \eqref{eq:defg} and \eqref{eq:defGamma} can now be used 
 to compute the function $F$ as long as the corresponding
 integrations can be performed.  
 
@@ -295,7 +295,7 @@ Equivalently, we can first integrate the condition $F_x=H$ to obtain
 F(t,x) = \Omega(t,x) + h(t),
 \end{equation}
 where $\Omega(t,x)=\int H(t,x)dx$ is an indefinite integral of $H$ with
-respect to $x$.  Then \Ref{e:FGH} leads to
+respect to $x$.  Then \eqref{e:FGH} leads to
 \[
 h'(t) = -\frac{\partial}{\partial t}\Omega(t,x) - G(t,x).
 \]
@@ -304,16 +304,16 @@ integrations are easier to perform.
 
 \subsubsection*{Two Examples}
 
-\noindent (a) Reconsider \Ref{eq:exactex1}, that is, suppose $G(t,x)=x-1$ and 
+\noindent (a) Reconsider \eqref{eq:exactex1}, that is, suppose $G(t,x)=x-1$ and 
 $H(t,x)=2x-t$.  We can choose
 \[
 \Gamma(t,x)=\int G(\tau,y)d\tau = tx-t,
 \]
-and \Ref{eq:defg} becomes
+and \eqref{eq:defg} becomes
 \[
 g'(x) = t + H(t,x) = 2x.
 \]
-We can then choose $g(x)=x^2$ and, by \Ref{eq:defGamma}, obtain
+We can then choose $g(x)=x^2$ and, by \eqref{eq:defGamma}, obtain
 \[
 F(t,x) = -\Gamma(t,x) + g(x) = -tx + t + x^2.
 \]
@@ -339,15 +339,15 @@ $\Omega(t,x)=\int H(s,x)dx$.  We choose
 \[
 \Gamma(t,x) = t^2(1-x^2) - tx^6,
 \]
-and \Ref{eq:defg} becomes
+and \eqref{eq:defg} becomes
 \[
 g'(x) = -(2t^2 x + 6tx^5) + x(2t^2+3x+6tx^4) = 3x^2.
 \]
-Now we use \Ref{eq:defGamma} to obtain
+Now we use \eqref{eq:defGamma} to obtain
 \[
 F(t,x) = t^2(x^2-1) + tx^6 + x^3.
 \]
-Solutions of the differential equation \Ref{eq:exacex2} lie on
+Solutions of the differential equation \eqref{eq:exacex2} lie on
 level sets of $F$.  In particular, the solution $x(t)$
 determined by the initial condition $x(2)=1$ satisfies 
 \[
@@ -373,7 +373,7 @@ The result is shown in Figure~\ref{Fig:contour3}.
   \centerline{%
   \psfig{file=../figures/contour3.eps,width=3.5in}}
   \caption{Solutions of the differential equation
-\protect\Ref{eq:exacex2}
+\protect\eqref{eq:exacex2}
   corresponding to the levels $c=0,3,6,9,12$ in the rectangle
   $[1,3]\times [0.5,1.5]$.}
 \label{Fig:contour3}
@@ -416,12 +416,12 @@ Show that the differential equation
 \frac{dx}{dt} = -\frac{1+3tx}{t^2}
 \end{equation}
 is not exact.  Now multiply both the numerator and denominator of the 
-right side of \Ref{Ex:nexact} by $t$ and show that this `new' differential
+right side of \eqref{Ex:nexact} by $t$ and show that this `new' differential
 equation 
 \[
 \frac{dx}{dt} = -\frac{t+3t^2x}{t^3}
 \]
-is exact. Now find all solutions to \Ref{Ex:nexact}.
+is exact. Now find all solutions to \eqref{Ex:nexact}.
 \end{exercise}
 
 \begin{exercise}  \label{ex:if2}
@@ -430,12 +430,12 @@ Show that the differential equation
 \frac{dx}{dt} = -\frac{3x}{2t}
 \end{equation}
 is not exact.  Now multiply both the numerator and denominator of the 
-right side of \Ref{Ex:nexact2} by $t^2x$ and show that this `new' differential
+right side of \eqref{Ex:nexact2} by $t^2x$ and show that this `new' differential
 equation 
 \[
 \frac{dx}{dt} = -\frac{3t^2x^2}{2t^3x}
 \]
-is exact.  Now find all solutions to \Ref{Ex:nexact2}.
+is exact.  Now find all solutions to \eqref{Ex:nexact2}.
 \end{exercise}
 
 \begin{exercise} \label{c14.6.7}
@@ -444,13 +444,13 @@ equation
 \begin{equation}  \label{eq:if1}
 \frac{dx}{dt} = \frac{G(t,x)}{H(t,x)}
 \end{equation}
-is {\bf not} exact.   An {\em integrating factor\/} for \Ref{eq:if1} is 
+is {\bf not} exact.   An {\em integrating factor\/} for \eqref{eq:if1} is 
 a function $\rho:\R^2\rightarrow\R$ such that the differential equation
 \[
 \frac{dx}{dt} = \frac{\rho(t,x) G(t,x)}{\rho(t,x)H(t,x)}
 \]
 is exact.  Suppose that there exists an integrating factor $\rho(t)$ for 
-\Ref{eq:if1} that is a function of $t$ alone.  Show that $\rho$ satisfies
+\eqref{eq:if1} that is a function of $t$ alone.  Show that $\rho$ satisfies
 \[
 \frac{d\rho}{dt} = -\frac{\rho}{H}
 \left( \frac{\partial G}{\partial x}+\frac{\partial H}{\partial t}\right).

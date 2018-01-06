@@ -40,7 +40,7 @@ zero with nonzero speed is:
 \begin{equation}  \label{e:2dhopf}
 \frac{d}{d\rho} \trace(J_{X(\rho)}) \neq 0.
 \end{equation}
-Condition \Ref{e:2dhopf} is called the {\em eigenvalue crossing condition\/}.
+Condition \eqref{e:2dhopf} is called the {\em eigenvalue crossing condition\/}.
 
 
 \subsection*{Two Examples}
@@ -52,7 +52,7 @@ As a first example, consider the linear system
 \dot{y} & = & x + \rho y.
 \end{array}
 \end{matlabEquation}
-It is easy to check that $\trace(J)=2\rho$ and that \Ref{e:2dhopf}
+It is easy to check that $\trace(J)=2\rho$ and that \eqref{e:2dhopf}
 is satisfied.  Note that the origin is a spiral sink when $\rho<0$ 
 and a spiral source when $\rho>0$.  When $\rho=0$, the origin is a
 center, and there is a continuous family of periodic solutions
@@ -66,13 +66,13 @@ surrounding this center.  See Figure~\ref{F:Hopfabc}
 	\vspace*{-0.2in}
 	\hspace{0.3in} $\rho=-0.1$  \hspace{1.7in} $\rho=0$
 		\hspace{1.8in} $\rho=0.1$ 
-           \caption{Phase planes for \protect\Ref{e:Hopflin}.}
+           \caption{Phase planes for \protect\eqref{e:Hopflin}.}
            \label{F:Hopfabc}
 \end{figure}
 
 
 As a second example, consider the predator-prey Volterra-Lotka 
-equations \Ref{e:pop3}.  These equations are: \index{Volterra-Lotka equations}
+equations \eqref{e:pop3}.  These equations are: \index{Volterra-Lotka equations}
 \begin{equation} \label{e:pop3a}
 \begin{array}{rcl}
 \dot{x} & = & x(\mu + \rho x -       y) \\
@@ -80,11 +80,11 @@ equations \Ref{e:pop3}.  These equations are: \index{Volterra-Lotka equations}
 \end{array}
 \end{equation}   
 We fix $\mu>0$ and vary the parameter $\rho$.  Our previous 
-calculations showed that \Ref{e:pop3a} has a center when 
+calculations showed that \eqref{e:pop3a} has a center when 
 $\rho=0$.  Indeed, these equations have a nontrivial equilibrium 
 at $(x_0,y_0)=(1, \mu+\rho)$.  So $X(\rho)=(1,\mu+\rho)$.
 
-The Jacobian matrix of \Ref{e:pop3a} is
+The Jacobian matrix of \eqref{e:pop3a} is
 \[
 J_{(x,y)} = \left(\begin{array}{cc} \mu + 2\rho x - y & -x \\
 y & -1 + x \end{array}\right).
@@ -103,23 +103,23 @@ and hence
 \frac{d}{d\rho} \trace(J_{X(\rho)}) = 1 \neq 0.
 \]
 So the eigenvalue crossing condition is satisfied for equation 
-\Ref{e:pop3a}.  
+\eqref{e:pop3a}.  
 
 \begin{theorem}[simple Hopf bifurcation]  \label{T:2dhopf}
-Suppose that the system of differential equations \Ref{e:2deqn}
+Suppose that the system of differential equations \eqref{e:2deqn}
 has a point of Hopf bifurcation at $(X_0,\rho_0)$.  Suppose, in 
 addition, that the 
 eigenvalue crossing\index{eigenvalue crossing condition} 
-condition \Ref{e:2dhopf} 
+condition \eqref{e:2dhopf} 
 is satisfied.  Then there exists a unique branch of periodic 
-solutions to \Ref{e:2deqn} emanating from $(X_0,\rho_0)$. 
+solutions to \eqref{e:2deqn} emanating from $(X_0,\rho_0)$. 
 
-Moreover, every periodic solution to \Ref{e:2deqn} that occurs for
+Moreover, every periodic solution to \eqref{e:2deqn} that occurs for
 a parameter value $\rho$ near $\rho_0$ and in phase space near $X_0$ 
 is included in this branch of periodic solutions.
 \end{theorem}  \index{bifurcation!Hopf}
 
-Recall that the predator-prey equations are obtained from \Ref{e:pop3a}
+Recall that the predator-prey equations are obtained from \eqref{e:pop3a}
 by setting $\rho=0$.  We have seen in our numerical analysis of the 
 predator-prey equations that for all values of $\mu>0$ there is a center 
 surrounded by a continuous family of periodic solutions.  (We 
@@ -168,7 +168,7 @@ values of $\rho$ greater than the one where Hopf bifurcation occurs) or
 \index{stability!exchange of}
 
 Assume that the equilibrium solution is stable at values below the 
-bifurcation value and that the eigenvalue crossing condition \Ref{e:2dhopf} 
+bifurcation value and that the eigenvalue crossing condition \eqref{e:2dhopf} 
 holds.  Then typically the periodic solutions will appear above 
 the bifurcation value and be asymptotically 
 stable\index{stability!asymptotic} or they will 
@@ -176,8 +176,8 @@ appear below the bifurcation value and be unstable.  Which one of these
 scenarios actually occurs depends on the sign of a certain coefficient 
 computed from the second and third order terms of the differential equation.  
 This coefficient plays the same role in Hopf bifurcation that condition 
-\Ref{e:2dbifur} plays in saddle-node bifurcations.  The coefficient is 
-much more complicated than \Ref{e:2dbifur} and we do not attempt to give 
+\eqref{e:2dbifur} plays in saddle-node bifurcations.  The coefficient is 
+much more complicated than \eqref{e:2dbifur} and we do not attempt to give 
 its explicit form here.
 
 If, on the other hand, the equilibrium solution is unstable at values below 
@@ -195,7 +195,7 @@ phase-ampli\-tude equations of ODEs. The system is:
 \begin{matlabEquation}  \label{e:nonlinhopf}
 \frac{d}{dt}\vectwo{x}{y} = (\rho +a(x^2+y^2))\vectwo{x}{y} + \vectwo{-y}{x}.
 \end{matlabEquation}
-In amplitude $r$ and phase $\theta$, \Ref{e:nonlinhopf} becomes
+In amplitude $r$ and phase $\theta$, \eqref{e:nonlinhopf} becomes
 \begin{eqnarray*}
 \dot{r} & = & (\rho+ar^2)r \\
 \dot{\theta} & = & 1.
@@ -205,9 +205,9 @@ periodic solutions in the original system --- are
 \[
 \rho = -a r^2.
 \]
-It follows that there is one periodic trajectory of \Ref{e:nonlinhopf}
+It follows that there is one periodic trajectory of \eqref{e:nonlinhopf}
 for $\rho>0$ when $a<0$ and for $\rho<0$ when $a>0$.  
-Phase portraits for \Ref{e:nonlinhopf} when $a=-1$ are presented in 
+Phase portraits for \eqref{e:nonlinhopf} when $a=-1$ are presented in 
 Figure~\ref{F:nonlinhopf}.  Note the existence of a stable limit 
 cycle\index{limit cycle!stable}
 when $\rho>0$ and the slowness of the convergence of trajectories 
@@ -221,7 +221,7 @@ to the origin when $\rho=0$.
  	\vspace*{-0.2in}
 	\hspace{0.3in} $\rho=-0.1$  \hspace{1.7in} $\rho=0$
 		\hspace{1.8in} $\rho=0.1$ 
-          \caption{Phase planes for \protect\Ref{e:nonlinhopf} with $a=-1$.}
+          \caption{Phase planes for \protect\eqref{e:nonlinhopf} with $a=-1$.}
            \label{F:nonlinhopf}
 \end{figure}
 
@@ -233,7 +233,7 @@ to the origin when $\rho=0$.
 
 \noindent In Exercises~\ref{c9.6.1a} -- \ref{c9.6.1b} find points of Hopf
 bifurcation and check for these points whether the eigenvalue crossing
-condition \Ref{e:2dhopf} is satisfied.
+condition \eqref{e:2dhopf} is satisfied.
 \begin{exercise} \label{c9.6.1a}
 $\begin{array}{rcl}
 \dot{x} & = & \rho x - y -x^3 \\

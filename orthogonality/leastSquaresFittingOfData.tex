@@ -40,7 +40,7 @@ ylabel('y')
 \begin{figure}[htb]
      \centerline{%
      \psfig{file=../figures/linreg.eps,width=2.5in}}
-     \caption{Scatter plot of data in \protect\Ref{E:scatterdata}.}
+     \caption{Scatter plot of data in \protect\eqref{E:scatterdata}.}
      \label{F:linreg}
 \end{figure}
 
@@ -95,7 +95,7 @@ in the Section~\ref{S:LSA}.
 We can use \Matlab to compute the values of $b_1^0$ and $b_2^0$ that give the
 best linear approximation to $Y$.  If we set the matrix $A=(F_1|X)$, then
 Theorem~\ref{T:nearestvector} implies that the values of $b_1^0$ and $b_2^0$
-are obtained using \Ref{E:nearestvector}.  In particular, type {\tt e10\_3\_1}
+are obtained using \eqref{E:nearestvector}.  In particular, type {\tt e10\_3\_1}
 to call the vectors {\tt X, Y, F1} into \Matlabp, and then type
 \begin{verbatim}
 A = [F1 X];
@@ -116,7 +116,7 @@ $E(2,-4)=2.0928$.
 \begin{figure}[htb]
      \centerline{%
      \psfig{file=../figures/linreg2.eps,width=2.5in}}
-     \caption{Scatter plot of data in \protect\Ref{E:scatterdata} with best
+     \caption{Scatter plot of data in \protect\eqref{E:scatterdata} with best
 	linear approximation.}
      \label{F:linreg2}
 \end{figure}
@@ -138,7 +138,7 @@ a vector in $W=\Span\{F_1,X\}\subset\R^n$ that is nearest to $Y$.  Let
 A=(F_1|X)
 \]
 be the $n\times 2$ matrix.  This problem is solved by least squares in
-\Ref{E:nearestvector} as
+\eqref{E:nearestvector} as
 \begin{equation}  \label{E:LSlinfit}
 \vectwo{b_1^0}{b_2^0} = (A^tA)\inv A^tY.
 \end{equation}
@@ -168,13 +168,13 @@ We solve the minimization problem as before.  In this case, the space of
 possible approximations to the data $W$ is three dimensional; indeed,
 $W=\Span\{F_1,X,X^{(2)}\}$.  As in the case of fits to lines we try to
 find a point in $W$ that is nearest to the vector $Y\in\R^n$.  By
-\Ref{E:nearestvector}, the answer is:
+\eqref{E:nearestvector}, the answer is:
 \[
 b = (A^tA)\inv A^tY,
 \]
 where $A=(F_1|X|X^{(2)})$ is an $n\times 3$ matrix.
 
-Suppose that we try to fit the data in \Ref{E:scatterdata} with a quadratic
+Suppose that we try to fit the data in \eqref{E:scatterdata} with a quadratic
 polynomial rather than a linear one.   Use \Matlab as follows
 \begin{verbatim}
 e10_3_1
@@ -198,7 +198,7 @@ quadratic fit onto Figure~\ref{F:linreg2}.
 \begin{figure}[htb]
      \centerline{%
      \psfig{file=../figures/linreg3.eps,width=2.5in}}
-     \caption{Scatter plot of data in \protect\Ref{E:scatterdata} with best
+     \caption{Scatter plot of data in \protect\eqref{E:scatterdata} with best
 	linear and quadratic approximations.  The best linear fit is plotted
 	with a dashed line.}
      \label{F:linreg3}
@@ -249,7 +249,7 @@ the vector $Y$.  This is just a least squares problem.  Let $W\subset\R^n$ be
 the vector subspace spanned by the evaluations of function $g\in{\cal C}$ on
 the data points $x_i$, that is, the vectors $G$.  The minimization problem
 is to find a vector in $W$ that is nearest to $Y$.  This can be solved in
-general using \Ref{E:nearestvector}.  That is, let $A$ be the $n\times m$
+general using \eqref{E:nearestvector}.  That is, let $A$ be the $n\times m$
 matrix
 \[
 A = (F_1|\cdots|F_m)
@@ -360,7 +360,7 @@ By typing {\tt temper}, we enter the temperatures and the vectors {\tt T},
 {\tt F1},  {\tt F2} and {\tt F3} into \Matlabp.
 
 To find the best fit to the data by a sinusoidal function $g(T)$, we use
-\Ref{E:nearestvector}.  Let $A$ be the $12\times 3$ matrix
+\eqref{E:nearestvector}.  Let $A$ be the $12\times 3$ matrix
 \begin{verbatim}
 A = [F1 F2 F3];
 \end{verbatim}
@@ -421,7 +421,7 @@ than in Rio.
 
 \subsubsection*{Least Squares Fit in \Matlabp}
 
-The general formula for a least squares fit of data \Ref{E:LSFG} has been
+The general formula for a least squares fit of data \eqref{E:LSFG} has been
 preprogrammed in \Matlabp.  After setting up the matrix $A$ whose columns are 
 the vectors $F_j$ just type
 \begin{verbatim}

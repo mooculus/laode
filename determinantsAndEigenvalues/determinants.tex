@@ -17,7 +17,7 @@ are easily motivated.  We prefer to define determinants through the properties
 they satisfy rather than by formula.  These properties actually enable us to 
 compute determinants of $n\times n$ matrices where $n>3$, which further 
 justifies the approach. Later on, we will give an inductive formula 
-\Ref{e:inductdet} for computing the determinant. 
+\eqref{e:inductdet} for computing the determinant. 
  
 \begin{definition}  \label{D:determinants}
 A {\em determinant\/} of a square $n\times n$ matrix $A$ is a real
@@ -58,7 +58,7 @@ zero, then $\det(A)=0$.
 \end{lemma}
 
 \begin{proof}  (a) Note that Definition~\ref{D:determinants}(a) implies that 
-$\det(cI_n)=c^n$.  It follows from \Ref{e:detproduct} that
+$\det(cI_n)=c^n$.  It follows from \eqref{e:detproduct} that
 \[
 \det(cA) = \det(cI_n A) = \det(cI_n)\det(A) = c^n\det(A).
 \]
@@ -69,7 +69,7 @@ of $A$ is zero.  Let $J$ be an $n\times n$
 diagonal matrix with a $1$ in every diagonal entry except the $i^{th}$ 
 diagonal entry which is $0$.  A matrix calculation shows that $JA=A$. 
 It follows from Definition~\ref{D:determinants}(a) that $\det(J)=0$ and 
-from \Ref{e:detproduct} that $\det(A)=0$.  \end{proof} 
+from \eqref{e:detproduct} that $\det(A)=0$.  \end{proof} 
 
 
 
@@ -77,7 +77,7 @@ from \Ref{e:detproduct} that $\det(A)=0$.  \end{proof}
 \index{determinant!of $2\times 2$ matrices} 
  
 Before discussing how to compute determinants, we discuss the
-special case of $2\times 2$ matrices.  Recall from \Ref{D:determinant} of 
+special case of $2\times 2$ matrices.  Recall from \eqref{D:determinant} of 
 Section~\ref{S:det2x2} that when 
 \[
 A=\left(\begin{array}{cc} a & b\\c & d \end{array}\right)
@@ -86,7 +86,7 @@ we defined
 \begin{equation}  \label{e:determinantn=2}
 \det(A)=ad-bc.
 \end{equation}
-We check that \Ref{e:determinantn=2} satisfies the three
+We check that \eqref{e:determinantn=2} satisfies the three
 properties in Definition~\ref{D:determinants}.  Observe that when
 $A$ is lower triangular, then $b=0$ and $\det(A)=ad$.  So (a) is
 satisfied.  It is straightforward to verify (b).  We already
@@ -95,7 +95,7 @@ verified (c) in Chapter~\ref{chap:matrices}, Proposition~\ref{propdet}.
 It is less obvious perhaps --- but true nonetheless --- that the
 three properties of $\det(A)$ actually force the determinant of
 $2\times 2$ matrices to be given by formula
-\Ref{e:determinantn=2}. We begin by showing that
+\eqref{e:determinantn=2}. We begin by showing that
 Definition~\ref{D:determinants} implies that 
 \begin{equation}  \label{e:detswap}
 \det \left(\begin{array}{cc} 0 & 1\\1 & 0 \end{array}\right)=-1.
@@ -116,9 +116,9 @@ Hence property (c), (a) and (b) imply that
 \det \left(\begin{array}{cc} 0 & 1\\1 & 0 \end{array}\right) =
 1\cdot 1\cdot (-1) \cdot 1 = -1.
 \]
-It is helpful to interpret the matrices in \Ref{e:swapdecomp} as
+It is helpful to interpret the matrices in \eqref{e:swapdecomp} as
 elementary row operations\index{elementary row operations}.  
-Then \Ref{e:swapdecomp} states that
+Then \eqref{e:swapdecomp} states that
 swapping two rows in a $2\times 2$ matrix is the same as
 performing the following row operations in order:
 \begin{itemize}
@@ -147,7 +147,7 @@ A=\left(\begin{array}{cc} a & b\\c & 0 \end{array}\right) =
 \left(\begin{array}{cc} 0 & 1\\1 & 0 \end{array}\right)
 \left(\begin{array}{cc} c & 0\\a & b \end{array}\right).
 \]
-Using \Ref{e:detswap} we see that 
+Using \eqref{e:detswap} we see that 
 \[
 \det(A) = -\det \left(\begin{array}{cc} c & 0\\a & b
 \end{array}\right) = -bc,
@@ -156,7 +156,7 @@ as desired.
  
 We have verified that the only possible determinant function for
 $2\times 2$ matrices is the determinant function defined by
-\Ref{e:determinantn=2}. 
+\eqref{e:determinantn=2}. 
  
 
 
@@ -247,7 +247,7 @@ row by $c$ is $c$.
 \begin{proof} The matrix that swaps the $i^{th}$ row with the $j^{th}$
 row is the matrix whose nonzero elements are $a_{kk}=1$ where
 $k\neq i,j$ and $a_{ij}=1=a_{ji}$.  Using a similar argument as
-in \Ref{e:detswap} we see that the determinants of these
+in \eqref{e:detswap} we see that the determinants of these
 matrices are equal to $-1$.
  
 The matrix that adds a multiple of one row to another is
@@ -299,7 +299,7 @@ We still need to show that determinant functions exist when $n>2$.  More
 precisely, we know that the reduced echelon form matrix $E$ is uniquely 
 defined from $A$ (Chapter~\ref{lineq}, Theorem~\ref{uniquerowechelon}), but 
 there is more than one way to perform elementary row operations on $A$ to 
-get to $E$.  Thus, we can write $A$ in the form \Ref{e:detformula} in many 
+get to $E$.  Thus, we can write $A$ in the form \eqref{e:detformula} in many 
 different ways, and these different decompositions might lead to different 
 values for $\det A$.  (They don't.)
 
@@ -317,7 +317,7 @@ $4\times 4$ matrix
 A = \left(\begin{array}{rrrr} 0 & 2 & 10 & -2 \\ 1 & 2 & 4 & 0\\
 1 & 6 & 1 & -2 \\ 2 & 1 & 1 & 0 \end{array}\right).
 \]
-The idea is to use \Ref{e:pracdet} to keep track of the 
+The idea is to use \eqref{e:pracdet} to keep track of the 
 determinant while row reducing $A$ to upper triangular form. 
 For instance, swapping rows changes the sign of the determinant; 
 so
@@ -373,7 +373,7 @@ Moreover, if $A\inv$ exists, then
 \[
 \det(A)\det(A\inv) = \det(AA\inv) = \det(I_n) =1.
 \]
-Thus $\det(A)\neq 0$ and \Ref{E:detinv} is valid. In particular, the 
+Thus $\det(A)\neq 0$ and \eqref{E:detinv} is valid. In particular, the 
 determinants of elementary row matrices are nonzero, since they are all
 invertible. (This point was proved by direct calculation in
 Lemma~\ref{L:detelemrowmat}.)
@@ -382,7 +382,7 @@ If $A$ is singular, then $A$ is row equivalent to a non-identity
 reduced echelon form matrix $E$ whose determinant is zero (since
 $E$ is upper triangular and its last diagonal entry is zero).
 So it follows from
-\Ref{e:rowreduction} that 
+\eqref{e:rowreduction} that 
 \[
 0=\det(E) = \det(R_1)\cdots\det(R_s)\det(A)
 \]
@@ -418,10 +418,10 @@ Inductively we define the determinant of an $n\times n$ matrix $A$ by:
     \label{e:inductdet}
 \end{align} \index{determinant}
 In Appendix~\ref{A:det} we show that the determinant function defined by 
-\Ref{e:inductdet} satisfies all properties of a determinant function.
-Formula \Ref{e:inductdet} is also called {\em expansion by cofactors along 
+\eqref{e:inductdet} satisfies all properties of a determinant function.
+Formula \eqref{e:inductdet} is also called {\em expansion by cofactors along 
 the $1^{st}$ row\/}, since the $a_{1j}$ are taken from the $1^{st}$ row 
-of $A$.  Since $\det(A)=\det(A^t)$, it follows that if \Ref{e:inductdet} is 
+of $A$.  Since $\det(A)=\det(A^t)$, it follows that if \eqref{e:inductdet} is 
 valid as an inductive definition of determinant, then expansion by cofactors 
 along the $1^{st}$ column is also valid.  That is,
 \begin{equation}  \label{e:inductdetc}
@@ -436,7 +436,7 @@ $1\times 1$ matrix is just
 \[
 \det(a) = a.
 \]
-Therefore, using \Ref{e:inductdet}, the determinant of a $2\times
+Therefore, using \eqref{e:inductdet}, the determinant of a $2\times
 2$ matrix is:
 \[
 \det\left(\begin{array}{cc} a_{11} & a_{12}\\a_{21} & a_{22}
@@ -445,7 +445,7 @@ a_{11}a_{22} - a_{12}a_{21},
 \]
 which is just the formula for determinants of $2\times 2$
 \index{determinant!of $2\times 2$ matrices}
-matrices given in \Ref{e:determinantn=2}. 
+matrices given in \eqref{e:determinantn=2}. 
  
 Similarly, we can now find a formula for the determinant of
 $3\times 3$ matrices $A$ as follows.
@@ -468,7 +468,7 @@ As an example, compute
 \det\left(\begin{array}{rrr} 2 & 1 & 4\\ 1 & -1 & 3\\ 5 & 6 & -2
 \end{array}\right) 
 \]
-using formula \Ref{e:det3} as
+using formula \eqref{e:det3} as
 \begin{align*}
 2(-1)(-2) & + 1\cdot3\cdot5 + 4\cdot6\cdot1 -4(-1)5 -3\cdot6\cdot2
             - (-2)1\cdot1 \\
@@ -476,7 +476,7 @@ using formula \Ref{e:det3} as
 \end{align*}
 
 There is a visual mnemonic for remembering how to compute the six
-terms in formula \Ref{e:det3} for the determinant of 
+terms in formula \eqref{e:det3} for the determinant of 
 $3\times 3$ matrices\index{determinant!of $3\times 3$ matrices}.
 Write the matrix as a $3\times 5$ array by repeating the first 
 two columns, as shown in bold face in Figure~\ref{F:det3}:
@@ -496,9 +496,9 @@ to $n\times n$ matrices.
  
 When computing determinants of $n\times n$ matrices when $n>3$,
 it is usually more efficient to compute the determinant using row
-reduction rather than by using formula \Ref{e:inductdet}.  In the
+reduction rather than by using formula \eqref{e:inductdet}.  In the
 appendix to this chapter, Section~\ref{A:det}, we verify that formula 
-\Ref{e:inductdet} actually satisfies the three properties of a determinant, 
+\eqref{e:inductdet} actually satisfies the three properties of a determinant, 
 thus completing the proof of Theorem~\ref{T:determinants}.  
 
 An interesting and useful formula for reducing the effort in 
@@ -515,10 +515,10 @@ matrix.  Then
 \]
 \end{lemma}
 
-\begin{proof} We prove this result using \Ref{e:inductdet} coupled with 
+\begin{proof} We prove this result using \eqref{e:inductdet} coupled with 
 induction. Assume that this lemma is valid or all $(n-1)\times
 (n-1)$ matrices of the appropriate form.  Now use
-\Ref{e:inductdet} to compute
+\eqref{e:inductdet} to compute
 \begin{eqnarray*}
 \det(A) & = & a_{11}\det(A_{11})-a_{12}\det(A_{12}) + \cdots\pm
 a_{1n}\det(A_{1n}) \\
@@ -750,7 +750,7 @@ that $A_j = Ae_j$.  Show that
 \[
 B_j = A (e_1|\cdots|e_{j-1}|x|e_{j+1}|\cdots|e_n).
 \]
-Using this product, compute the determinant of $B_j$ and verify \Ref{E:cramer2}.
+Using this product, compute the determinant of $B_j$ and verify \eqref{E:cramer2}.
 \end{exercise}
 
 \end{document}

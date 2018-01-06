@@ -37,15 +37,15 @@ is a subspace of $\R^n$.
 \end{lemma}
 
 \begin{proof}
-Suppose that $x$ and $y$ are solutions to \Ref{Ax=0}.  Then
+Suppose that $x$ and $y$ are solutions to \eqref{Ax=0}.  Then
 \[
 A(x+y) = Ax+Ay = 0+0 = 0;
 \]
-so $x+y$ is a solution of \Ref{Ax=0}.  Similarly, for $r\in\R$
+so $x+y$ is a solution of \eqref{Ax=0}.  Similarly, for $r\in\R$
 \[
 A(rx) = rAx = r0 = 0;
 \]
-so $rx$ is a solution of \Ref{Ax=0}.  Thus, $x+y$ and $rx$ are
+so $rx$ is a solution of \eqref{Ax=0}.  Thus, $x+y$ and $rx$ are
 in the null space of $A$, and the null space is closed under addition 
 and scalar multiplication.  So Theorem~\ref{T:subspaces} implies that
 the null space is a subspace of the vector space $\R^n$.   \end{proof}
@@ -58,15 +58,15 @@ the linear system of ordinary differential equations
 \begin{equation} \label{Cx(t)}
 \frac{dx}{dt}(t) = Cx(t).
 \end{equation}
-We will see later that a solution to \Ref{Cx(t)} has coordinate
+We will see later that a solution to \eqref{Cx(t)} has coordinate
 functions $x_j(t)$ in $\CCone$.  The principle of superposition
 then shows that $W$ is a subspace of $(\CCone)^n$.  Suppose
-$x(t)$ and $y(t)$ are solutions of \Ref{Cx(t)}.  Then
+$x(t)$ and $y(t)$ are solutions of \eqref{Cx(t)}.  Then
 \[
 \frac{d}{dt}(x(t)+y(t)) = \frac{dx}{dt}(t) + \frac{dy}{dt}(t) =
 Cx(t) + Cy(t) = C(x(t)+y(t));
 \]
-so $x(t)+y(t)$ is a solution of \Ref{Cx(t)} and in $W$.  A
+so $x(t)+y(t)$ is a solution of \eqref{Cx(t)} and in $W$.  A
 similar calculation shows that $rx(t)$ is also in $W$ and
 that $W\subset(\CCone)^n$ is a subspace.
 
@@ -138,7 +138,7 @@ in a vector space $V$ is the {\em span\/} of $v_1,\ldots,v_k$ and is
 denoted by $\Span\{v_1,\ldots,v_k\}$.
 \end{definition} \index{span}
 
-For example, the vector on the left hand side in \Ref{eq:SpanSol}
+For example, the vector on the left hand side in \eqref{eq:SpanSol}
 is a linear combination of the two vectors on the right hand side.
 
 The simplest example of a span is $\R^n$ itself.  Let $v_j=e_j$
@@ -197,10 +197,10 @@ x_1 - 2x_2 + x_3 = 0,
 \end{equation}
 that is, the $1^{st}$ coordinate minus twice the $2^{nd}$ coordinate 
 plus the $3^{rd}$ coordinate equals zero.  Moreover, you may verify 
-that every solution of \Ref{ex1} is a linear combination
-of the vectors $v$ and $w$ in \Ref{e:vandw}.  Thus, the set of
+that every solution of \eqref{ex1} is a linear combination
+of the vectors $v$ and $w$ in \eqref{e:vandw}.  Thus, the set of
 solutions to the homogeneous\index{homogeneous} linear equation
-\Ref{ex1} is a
+\eqref{ex1} is a
 subspace, and that subspace can be written as the span of
 all linear combinations of the vectors $v$ and $w$.
 

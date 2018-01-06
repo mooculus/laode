@@ -14,7 +14,7 @@
 
 In Section~\ref{S:growthmodels} we showed that the solution of the single
 ordinary differential equation $\dot x(t) = \lambda x(t)$ with initial
-condition $x(0)=x_0$ is $x(t) = e^{t\lambda}x_0$ (see \Ref{lin1} in
+condition $x(0)=x_0$ is $x(t) = e^{t\lambda}x_0$ (see \eqref{lin1} in
 Chapter~\ref{chap:SolveOdes}).  In this section we show that we
 may write solutions of systems of equations in a similar form.
 In particular, we show that the solution to the linear system of ODEs
@@ -30,7 +30,7 @@ where $C$ is an $n\times n$ matrix and $X_0\in\R^n$, is
 X(t) = e^{tC}X_0.
 \end{equation}
 
-In order to make sense of the solution \Ref{matrixsoln} we need
+In order to make sense of the solution \eqref{matrixsoln} we need
 to understand matrix exponentials. More precisely, since $tC$ is
 an $n\times n$ matrix for each $t\in\R$, we need to make sense
 of the expression $e^L$ where $L$ is an $n\times n$ matrix.  For
@@ -57,10 +57,10 @@ $e^L$ is an $n\times n$ matrix and is the infinite sum of $n\times n$
 matrices.
 
 \noindent {\bf Remark:}   The infinite series for matrix exponentials
-\Ref{e:expL} does converge for all $n\times n$ matrices $L$, and this fact
+\eqref{e:expL} does converge for all $n\times n$ matrices $L$, and this fact
 is proved in Exercises~\ref{c6.2.7} and \ref{c6.2.8}.
 
-Using \Ref{e:expL}, we can write the matrix exponential of $tC$
+Using \eqref{e:expL}, we can write the matrix exponential of $tC$
 for each real number $t$.  Since $(tC)^k = t^k C^k$ we obtain
 \arraystart
 \begin{equation}  \label{eq:MatrixExp}
@@ -76,7 +76,7 @@ Next we claim that
   \frac{d}{dt} e^{tC} = Ce^{tC}.
 \end{equation}
 We verify the claim by supposing that we can differentiate
-\Ref{eq:MatrixExp} term by term with respect to $t$. Then
+\eqref{eq:MatrixExp} term by term with respect to $t$. Then
 \begin{align*}
   \dps\frac{d}{dt} e^{tC} & = \frac{d}{dt}(I_n) + \frac{d}{dt}(tC)
   + \frac{d}{dt}\left(\frac{t^2}{2!} C^2\right) + 
@@ -90,15 +90,15 @@ We verify the claim by supposing that we can differentiate
      & = Ce^{tC}.
 \end{align*}
 It follows that the function $X(t) = e^{tC}X_0$ is a solution of
-\Ref{eq:x=Mx} for each $X_0\in\R^n$; that is,
+\eqref{eq:x=Mx} for each $X_0\in\R^n$; that is,
 \[
      \frac{d}{dt} X(t) =  \frac{d}{dt}  e^{tC}X_0
      = C e^{tC}X_0 = C X(t).
 \]
-Since \Ref{e:expL} implies that $e^{0C} = e^0 = I_n$, it follows
-that $X(t) = e^{tC}X_0$ is a solution of \Ref{eq:x=Mx} with
+Since \eqref{e:expL} implies that $e^{0C} = e^0 = I_n$, it follows
+that $X(t) = e^{tC}X_0$ is a solution of \eqref{eq:x=Mx} with
 initial condition $X(0)=X_0$.  This discussion shows that solving
-\Ref{eq:x=Mx} in closed form is equivalent to finding a closed
+\eqref{eq:x=Mx} in closed form is equivalent to finding a closed
 form expression for the matrix exponential $e^{tC}$.
 
 \begin{theorem}  \label{T:linODEsoln}
@@ -134,7 +134,7 @@ is, let $L = \alpha I_n$ where $\alpha$ is a real number.  Then
 e^{\alpha I_n} = e^{\alpha} I_n.
 \end{equation}
 That is, $e^{\alpha I_n}$ is a scalar multiple of the
-identity.  To verify \Ref{ex:expm}, compute
+identity.  To verify \eqref{ex:expm}, compute
 \begin{align*}
 e^{\alpha I_n} &= I_n + \alpha I_n + \frac{\alpha^2}{2!} I_n^2 +
                  \frac{\alpha^3}{3!} I_n^3 +\cdots \\
@@ -150,7 +150,7 @@ where $\lambda_1$ and $\lambda_2$ are real constants.  Then
 \begin{equation}  \label{e:expdiag}
 e^{tC} = \mattwo{e^{\lambda_1 t}}{0}{0}{e^{\lambda_2 t}}.
 \end{equation}
-To verify \Ref{e:expdiag} compute
+To verify \eqref{e:expdiag} compute
 \begin{eqnarray*}
    e^{tC} & = & I_2 + tC + \frac{t^2}{2!} C^2 +  \frac{t^3}{3!} C^3 +\cdots\\
         & = & \mattwo{1}{0}{0}{1} + \mattwo{\lambda_1 t}{0}{0}{\lambda_2 t} +
@@ -190,7 +190,7 @@ functions $\cos t$ and $\sin t$ have the power series expansions:
 \sin t & = & t-\frac{1}{3!} t^3 + \frac{1}{5!} t^5 + \cdots
    = \sum\limits_{k=0}^\infty \frac{(-1)^k}{(2k+1)!} t^{2k+1}.
 \end{eqnarray*}
-See Exercise~\ref{c6.2.5C} for an alternative proof of \Ref{e:exprotate}.
+See Exercise~\ref{c6.2.5C} for an alternative proof of \eqref{e:exprotate}.
 
 To compute the matrix exponential
 \Matlab\index{matrix!exponential!in \protect\Matlab} provides the command
@@ -211,7 +211,7 @@ ans =
     0.7071   -0.7071
     0.7071    0.7071
 \end{verbatim}
-Indeed, this is precisely what we expect by \Ref{e:exprotate},
+Indeed, this is precisely what we expect by \eqref{e:exprotate},
 since
 \[
 \cos\left(\frac{\pi}{4}\right)=\sin\left(\frac{\pi}{4}\right)=
@@ -320,7 +320,7 @@ x(0) & = & e^s
 \end{array}
 \end{equation}
 \item[(b)] Fix $s$ and verify that $z(t) = e^te^s$ is also a solution to
-\Ref{E:init1}.
+\eqref{E:init1}.
 \item[(c)]  Use Theorem~\ref{exist&unique} to conclude that $y(t)=z(t)$ for
 every $s$.
 \end{itemize}
@@ -341,7 +341,7 @@ X(0) & = & e^{sA}X_0
 \end{array}
 \end{equation}
 \item[(b)] Fix $s$ and verify that $Z(t) = e^{tA}\left(e^{sA}X_0\right)$ is
-also a solution to \Ref{E:init2}.
+also a solution to \eqref{E:init2}.
 \item[(c)]  Use the $n$ dimensional version of Theorem~\ref{exist&unique} to
 conclude that $Y(t)=Z(t)$ for every $s$ and every $X_0$.
 \end{itemize}
@@ -370,7 +370,7 @@ for $j=1,2$.
 \begin{equation}   \label{E:0-110}
 X_j(t) = \exp\left(t\mattwo{0}{-1}{1}{0}\right)e_j.
 \end{equation}
-\item[(c)]  Show that \Ref{E:0-110} proves \Ref{E:0-110E}
+\item[(c)]  Show that \eqref{E:0-110} proves \eqref{E:0-110E}
 \end{itemize}
 \end{exercise}
 

@@ -19,13 +19,13 @@ linear differential equation is:
 \end{equation}
 This equation does not have constant coefficients, since the coefficient 
 $a$ depends on $t$.  The equation is linear as linear combinations of 
-solutions are solutions.  Note that \Ref{eq:linhomo1} is of the form 
-\Ref{eq:ghivp} and can be solved by separation of variables. 
+solutions are solutions.  Note that \eqref{eq:linhomo1} is of the form 
+\eqref{eq:ghivp} and can be solved by separation of variables. 
 \index{separation of variables}
 
 If $x(t_0)=0$, then $x(t)=0$ is the solution to the initial value problem
-\Ref{eq:linhomo1}.
-To solve the initial value problem $x(t_0)=x_0$ for \Ref{eq:linhomo1}
+\eqref{eq:linhomo1}.
+To solve the initial value problem $x(t_0)=x_0$ for \eqref{eq:linhomo1}
 when $x_0\neq 0$, we apply the technique of separation of variables to 
 this equation, which yields
 \[
@@ -49,23 +49,23 @@ x(t) = x_0 e^{H(t)}
 \end{equation}
 is the unique solution\index{uniqueness of solutions} 
 to the initial value problem\index{initial value problem} 
-\Ref{eq:linhomo1} where $x(t_0)=x_0$.
+\eqref{eq:linhomo1} where $x(t_0)=x_0$.
 
 \subsubsection*{An Example of a Nonconstant Coefficient Equation}
 
-We illustrate \Ref{E:ssv} by an example. Solve the initial value problem
+We illustrate \eqref{E:ssv} by an example. Solve the initial value problem
 \[
 \begin{array}{rcl}
 \dps \frac{dx}{dt} & = & -\dps \frac{x}{t} \\
 x(2) & = & 5.
 \end{array}
 \]
-Since $a(t)=-\frac{1}{t}$, we can use \Ref{e:H(t)} to compute
+Since $a(t)=-\frac{1}{t}$, we can use \eqref{e:H(t)} to compute
 \[
 H(t)=-\int_2^t \frac{1}{\tau}d\tau = -\ln t +\ln 2 =
 \ln\left(\frac{2}{t}\right).
 \]
-Then the solution \Ref{E:ssv} is given by
+Then the solution \eqref{E:ssv} is given by
 \[
 x(t) = 5 e^{\ln(2/t)} = \frac{10}{t}.
 \]
@@ -78,7 +78,7 @@ Next, we consider forced linear differential equations of the type
 \frac{dx}{dt} = a(t)x + g(t),
 \end{equation}
 where $a$ and $g$ are continuous functions of $t$.  The differential  
-equation \Ref{eq:linode1} is homogeneous when $g=0$  and 
+equation \eqref{eq:linode1} is homogeneous when $g=0$  and 
 \index{homogeneous} inhomogeneous otherwise.  As is always the 
 case, we find the general solution\index{general solution} 
 to the inhomogeneous equation 
@@ -94,7 +94,7 @@ the inhomogeneous equation.
 \end{equation}
 By inspection, the constant function $x_p(t)=-1$ is a 
 particular solution\index{particular solution} 
-of \Ref{E:ie1}. 
+of \eqref{E:ie1}. 
 Since all solutions of the homogeneous equation are of the form $Ke^{t^3}$
 for some real constant $K$, it follows that the general solution of the 
 inhomogeneous equation is
@@ -106,7 +106,7 @@ x(t) = -1 + Ke^{t^3}.
 \begin{equation}  \label{E:ie2}
 \frac{dx}{dt} = \left(\frac{5}{t}-t\right) x + t^6.
 \end{equation}
-A calculation shows that $x_p(t)=t^5$ is a particular solution of \Ref{E:ie2}. 
+A calculation shows that $x_p(t)=t^5$ is a particular solution of \eqref{E:ie2}. 
 Since all solutions to the homogeneous equation are of the form 
 $Kt^5 e^{-t^2/2}$ for some real constant $K$, it follows that the general
 solution of the inhomogeneous equation is
@@ -117,11 +117,11 @@ x(t) = t^5 + Kt^5 e^{-t^2/2}.
 \subsection*{Inhomogeneous Equations and Variation of Parameters}
 \index{variation of parameters}
 
-In Examples~\Ref{E:ie1} and \Ref{E:ie2} we guessed or were given a
+In Examples~\eqref{E:ie1} and \eqref{E:ie2} we guessed or were given a
 particular solution\index{particular solution!variation of parameters} 
 to the inhomogeneous equation.  Now we discuss 
 a method for finding a particular solution to the inhomogeneous
-equation \Ref{eq:linode1} when $g(t)$ is a nonzero function.   This 
+equation \eqref{eq:linode1} when $g(t)$ is a nonzero function.   This 
 technique for finding a particular solution is called 
 {\em variation of parameters\/}.  
 
@@ -134,7 +134,7 @@ More precisely, assume that a solution $x(t)$ has the form
 x(t) = c(t)e^{H(t)},
 \]
 where $c$ is a differentiable function of $t$.  Substituting $x(t)$ in 
-\Ref{eq:linode1}, using the product rule for differentiation and suppressing
+\eqref{eq:linode1}, using the product rule for differentiation and suppressing
 the explicit dependence of functions on $t$, leads to the identity
 \[
 \frac{dc}{dt}e^{H}+ce^{H}a =  ace^{H}+g,
@@ -194,7 +194,7 @@ which implies that
 \begin{equation}  \label{e:solnth}
 x(t)=\left(1-\frac{1}{t^2}\right)\frac{1}{t}
 \end{equation}
-is the solution. For comparison we show the graph of \Ref{e:solnth} in 
+is the solution. For comparison we show the graph of \eqref{e:solnth} in 
 Figure~\ref{F:solnmd}(left) and the result of a numerical computation of 
 the initial value problem using {\sf dfield5}\index{\computer!dfield5} 
 in Figure~\ref{F:solnmd}(right).
@@ -203,9 +203,9 @@ in Figure~\ref{F:solnmd}(right).
            \centerline{%
            \psfig{file=../figures/solnm.eps,width=2.8in}
            \psfig{file=../figures/solnd.eps,width=3.0in}}
-           \caption{(Left) Graph of solution~\protect\Ref{e:solnth} to equation 
-	\protect\Ref{e:solntheq}. (Right) The time series for solution to 
-	\protect\Ref{e:solntheq} with initial condition $x(1)=0$ using 
+           \caption{(Left) Graph of solution~\protect\eqref{e:solnth} to equation 
+	\protect\eqref{e:solntheq}. (Right) The time series for solution to 
+	\protect\eqref{e:solntheq} with initial condition $x(1)=0$ using 
 	{\sf dfield5}.}
            \label{F:solnmd}
 \end{figure}

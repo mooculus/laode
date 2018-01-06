@@ -17,8 +17,8 @@
 The simplest steady-state bifurcations --- and the ones that are most
 likely to occur --- are the saddle-node bifurcations.  In 
 Section~\ref{S:bifurcation} we found necessary conditions for the existence 
-of saddle-node bifurcations in one dimension \Ref{E:DCSN} and two 
-dimensions \Ref{E:DCSN2}.  In this section we describe necessary and 
+of saddle-node bifurcations in one dimension \eqref{E:DCSN} and two 
+dimensions \eqref{E:DCSN2}.  In this section we describe necessary and 
 sufficient conditions for the existence of saddle-node bifurcations.
 
 
@@ -33,12 +33,12 @@ found by solving the algebraic equation
 \begin{equation} \label{e:1dstst}
 f(x,\rho) = 0.
 \end{equation}
-We can study how the equilibria in phase portraits for \Ref{e:1dbif} 
+We can study how the equilibria in phase portraits for \eqref{e:1dbif} 
 change when $\rho$ is varied by plotting
-solutions to \Ref{e:1dstst} in the $\rho x$-plane.  The solutions to
-\Ref{e:1dstst} form the bifurcation diagram of \Ref{e:1dbif}.
+solutions to \eqref{e:1dstst} in the $\rho x$-plane.  The solutions to
+\eqref{e:1dstst} form the bifurcation diagram of \eqref{e:1dbif}.
 
-Recall from \Ref{E:DCSN} that  
+Recall from \eqref{E:DCSN} that  
 \begin{equation}  \label{e:1dbifcond}
 \begin{array}{rcl}
 f(x_0,\rho_0) & = & 0 \\
@@ -51,7 +51,7 @@ $(x_0,\rho_0)$.  The simplest example of a saddle-node bifurcation is:
 f(x,\rho) = a x^2 + \rho,
 \end{equation}
 where $a$ is a nonzero constant.  The exact bifurcation diagram for 
-\Ref{e:1dsaddlenf} depends on the sign of $a$.  See Figure~\ref{F:1dsaddle}.  
+\eqref{e:1dsaddlenf} depends on the sign of $a$.  See Figure~\ref{F:1dsaddle}.  
 Note that the bifurcation diagram is just a parabola pointing either to the 
 left or to the right.  The general saddle-node bifurcation is one whose 
 bifurcation diagram looks `parabolic-like'.  Theorem~\ref{T:saddlenode}
@@ -62,13 +62,13 @@ makes this idea precise.
 	   \psfig{file=../figures/sbifBIF.eps,width=2.5in} \qquad \qquad
 	   \psfig{file=../figures/sbifBIF2.eps,width=2.5in}}
 	 \hspace{1.0in} $a<0$ \hspace{2.8in}  $a>0$  
-           \caption{Bifurcation diagrams for \protect\Ref{e:1dsaddlenf}.}
+           \caption{Bifurcation diagrams for \protect\eqref{e:1dsaddlenf}.}
            \label{F:1dsaddle}
 \end{figure}
 
 \begin{theorem}  \label{T:saddlenode} \index{bifurcation!saddle-node}
-Suppose that the differential equation \Ref{e:1dbif} has an equilibrium
-at $(x_0,\rho_0)$ satisfying the bifurcation conditions \Ref{e:1dbifcond}
+Suppose that the differential equation \eqref{e:1dbif} has an equilibrium
+at $(x_0,\rho_0)$ satisfying the bifurcation conditions \eqref{e:1dbifcond}
 and the nondegeneracy conditions\index{nondegeneracy conditions}
 \begin{equation}  \label{e:nondegen1}
 \begin{array}{rcl} 
@@ -102,7 +102,7 @@ parabolic in shape as in Figure~\ref{F:1dsaddle} --- opening either to the
 left or to the right depending on the sign of $R''(x_0)$.
 
 We use implicit differentiation to verify these claims. Differentiating
-\Ref{e:implicit0} twice yields 
+\eqref{e:implicit0} twice yields 
 \begin{equation}  \label{e:implicit1}
 f_x(x,R(x)) + f_\rho(x,R(x))R'(x) \equiv 0,
 \end{equation}
@@ -112,7 +112,7 @@ f_{xx}(x,R(x)) + 2f_{x\rho}(x,R(x))R'(x) + f_{\rho\rho}(x,R(x))R'(x)^2
 + f_\rho(x,R(x))R''(x) \equiv 0.
 \end{equation}
 
-Evaluating \Ref{e:implicit1} at $x=x_0$ yields
+Evaluating \eqref{e:implicit1} at $x=x_0$ yields
 \[
 f_x(x_0,\rho_0) + f_\rho(x_0,\rho_0)R'(x_0) = 0. 
 \]
@@ -121,11 +121,11 @@ it follows that
 \[
 R'(x_0)=0.
 \]
-Evaluating \Ref{e:implicit2} at $x=x_0$ now yields
+Evaluating \eqref{e:implicit2} at $x=x_0$ now yields
 \[
 f_{xx}(x_0,\rho_0) +  f_\rho(x_0,\rho_0)R''(x_0) = 0
 \]
-The nondegeneracy assumptions \Ref{e:nondegen1} imply
+The nondegeneracy assumptions \eqref{e:nondegen1} imply
 \[
 R''(x_0) = -\frac{f_{xx}(x_0,\rho_0)}{f_\rho(x_0,\rho_0)} \neq 0.
 \]
@@ -140,7 +140,7 @@ Consider the following example of a saddle-node bifurcation.  Let
 \begin{equation}  \label{e:sn1}
 f(x,\rho) = -x^3 + 3x^2 - \rho x - 4.
 \end{equation}
-A quick check shows that $x=2$ is an equilibrium for \Ref{e:sn1} 
+A quick check shows that $x=2$ is an equilibrium for \eqref{e:sn1} 
 when $\rho=0$.  Moreover, 
 \[
 f(2,0)=0, \quad f_x(2,0)=0, \quad f_\rho(2,0)=-2\neq 0, 
@@ -165,7 +165,7 @@ values where the Jacobian matrix\index{matrix!Jacobian}
 has a zero eigenvalue.  In one dimension,
 the $1\times 1$ Jacobian matrix is the number $f_x$.  Such a 
 Jacobian matrix has a zero eigenvalue precisely when $f_x$ vanishes
---- which is just the condition in \Ref{e:1dbifcond}.  
+--- which is just the condition in \eqref{e:1dbifcond}.  
 
 In two dimensions, the Jacobian matrix $J$ is a saddle-node matrix when
 it has a single zero eigenvalue, that is, when $\det(J)=0$ and 
@@ -175,9 +175,9 @@ depending on a parameter $\rho$.  We write this system as
 \dot{X} = F(X,\rho),
 \end{equation}
 where $X=(x,y)\in\R^2$ and $F=(g,h)$ in coordinates.  Sufficient conditions
-for the existence of a saddle-node bifurcation in \Ref{e:2deqn} are as follows.
+for the existence of a saddle-node bifurcation in \eqref{e:2deqn} are as follows.
 \begin{enumerate}
-\item Equation~\Ref{e:2deqn} has an equilibrium at $(X_0,\rho_0)$; so 
+\item Equation~\eqref{e:2deqn} has an equilibrium at $(X_0,\rho_0)$; so 
 \[
 F(X_0,\rho_0) = 0.
 \]
@@ -191,13 +191,13 @@ in the null space of $J^t$.  Assume
 \begin{equation}  \label{e:2deig}
 w \cdot F_\rho(X_0,\rho_0) \neq 0,
 \end{equation}
-where $F_\rho=(g_\rho,h_\rho)$.  (In one dimension, \Ref{e:2deig} just states 
+where $F_\rho=(g_\rho,h_\rho)$.  (In one dimension, \eqref{e:2deig} just states 
 that $f_\rho(X_0,\rho_0)$ is nonzero; that is, the first
 nondegeneracy condition\index{nondegeneracy conditions} in 
-\Ref{e:nondegen1} is valid.) 
+\eqref{e:nondegen1} is valid.) 
 \item   Let $v=(v_1,v_2)$ be a nonzero vector in the null space of $J$.
 The following is an analogue in two dimensions for the second nondegeneracy
-condition in \Ref{e:nondegen1}, $f_{xx}(x_0,\rho_0)\neq 0$. Define $F_0$ to 
+condition in \eqref{e:nondegen1}, $f_{xx}(x_0,\rho_0)\neq 0$. Define $F_0$ to 
 be the vector
 \[
 F_0 = v_1^2\vectwo{g_{xx}}{h_{xx}} + 2v_1v_2\vectwo{g_{xy}}{h_{xy}}
@@ -210,7 +210,7 @@ w \cdot F_0 \neq 0.
 \end{equation}
 \end{enumerate}
 A steady-state bifurcation is a {\em saddle-node bifurcation\/} if 
-\Ref{e:2deig} and \Ref{e:2dbifur} are valid.  At a saddle-node bifurcation 
+\eqref{e:2deig} and \eqref{e:2dbifur} are valid.  At a saddle-node bifurcation 
 two equilibria coalesce as $\rho$ is varied, and the bifurcation diagram 
 resembles that in Figure~\ref{F:1dsaddle}.
 
@@ -223,7 +223,7 @@ As an example, consider the system of differential equations
 \dot{y} & = & -\rho + 2x + 6y + 3x^2 & \equiv & h(x,y).  
 \end{array}
 \end{matlabEquation}
-At $\rho = 0$, \Ref{e:snex} has an equilibrium at the origin with 
+At $\rho = 0$, \eqref{e:snex} has an equilibrium at the origin with 
 Jacobian matrix
 \[
 J = \mattwo{1}{3}{2}{6}.
@@ -245,7 +245,7 @@ Therefore
 \[
 w \cdot F_\rho = \vectwo{2}{-1} \cdot \vectwo{1}{-1} = 3 \neq 0,
 \]
-and \Ref{e:2deig} is satisfied.  
+and \eqref{e:2deig} is satisfied.  
 
 Next compute
 \[
@@ -260,12 +260,12 @@ and
 \[
 w\cdot F_0 = \vectwo{2}{-1} \cdot \vectwo{6}{54} = -42 \neq 0.
 \]
-So \Ref{e:2dbifur} is satisfied. These conditions show that there is
+So \eqref{e:2dbifur} is satisfied. These conditions show that there is
 a saddle-node bifurcation at the origin and that two equilibria 
 coalesce as $\rho$ varies through zero. 
 
 Some experimentation will convince you that it is complicated to find 
-a closed form analytic solution for the equilibria of \Ref{e:snex}.  
+a closed form analytic solution for the equilibria of \eqref{e:snex}.  
 We can, however, verify the existence of a saddle-node bifurcation 
 using {\sf pplane5}.  The phase plane portraits are shown in 
 Figure~\ref{F:snex}.
@@ -276,7 +276,7 @@ Figure~\ref{F:snex}.
 	   \psfig{file=../figures/snexb.eps,width=3.2in}}
 	\vspace*{-0.2in}
 	\hspace{1.0in} $\rho=-0.1$  \hspace{2.55in} $\rho=0.1$ 
-           \caption{Phase plane portrait for \protect\Ref{e:snex} on 
+           \caption{Phase plane portrait for \protect\eqref{e:snex} on 
 	the square $-1\leq x,y \leq 1$.  Note that there are no 
 	equilibria when $\rho=-0.1$ and two equilibria when $\rho=0.1$.}
            \label{F:snex}
@@ -295,7 +295,7 @@ f_2(x,\rho) & = & \rho x - x^2.
 \end{eqnarray*}
 \begin{itemize}
 \item[(a)] Verify that both $f_1$ and $f_2$ satisfy the bifurcation conditions 
-\Ref{e:1dbifcond} at $x=0$ when $\rho=0$.
+\eqref{e:1dbifcond} at $x=0$ when $\rho=0$.
 \item[(b)] Show that neither $f_1$ nor $f_2$ has a saddle-node bifurcation
 at $x=0$ when $\rho=0$. 
 \item[(c)] Draw the bifurcation diagrams $f_1(x,\rho)=0$ and 

@@ -78,7 +78,7 @@ Let  $r$ be the $k$-vector
 \[
 r= \left(\begin{array}{c} r_1 \\ \vdots \\ r_k\end{array}\right).
 \]
-Then we may rewrite equation \Ref{e:lindepeqn} as
+Then we may rewrite equation \eqref{e:lindepeqn} as
 \begin{equation}  \label{E:Ar=v}
    Ar=v.
 \end{equation}
@@ -86,11 +86,11 @@ To summarize:
 \begin{lemma}
 Let $w_1,\ldots,w_k$ and $v$ be vectors in $\R^n$.  Then $v$
 is in $\Span\{w_1,\ldots,w_k\}$ if and only if the system of linear
-equations \Ref{E:Ar=v} has a solution where $A$ is the $n\times k$
-defined in \Ref{E:Abycol}.
+equations \eqref{E:Ar=v} has a solution where $A$ is the $n\times k$
+defined in \eqref{E:Abycol}.
 \end{lemma}
 
-To solve \Ref{E:Ar=v} we row reduce the
+To solve \eqref{E:Ar=v} we row reduce the
 augmented matrix\index{matrix!augmented} $(A|v)$.
 For example, is $v=(2,1)$ in the span of $w_1=(1,1)$ and $w_2=(1,-1)$?
 That is, do there exist scalars $r_1,r_2$ such that
@@ -208,7 +208,7 @@ Exercises~\ref{c5.2.2a} and \ref{c5.2.2b}.
 
 \begin{exercise} \label{c5.3.3}
 Use row reduction to find the solutions to $Ax=0$ where $A$ is
-given in \Ref{e:BCDa}.  Does your answer agree with the \Matlab
+given in \eqref{e:BCDa}.  Does your answer agree with the \Matlab
 answer using {\tt null}?  If not, explain why.
 \end{exercise}
 

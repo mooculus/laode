@@ -47,7 +47,7 @@ Figure~\ref{F:pp1d}.
            \centerline{%
             \psfig{file=../figures/pp1d.eps,height=0.6in}}
            \caption{Phase line plot for the one dimensional equation
-	\protect\Ref{e:1dexample}.}
+	\protect\eqref{e:1dexample}.}
            \label{F:pp1d}
 \end{figure}
 
@@ -59,7 +59,7 @@ equilibria $0$ and $1$ approaches $1$ in forward time
 This information is 
 encoded in the arrows on the figure.  Using {\sf dfield5}
 \index{\computer!dfield5} we can 
-find the time series of \Ref{e:1dexample} for an initial condition 
+find the time series of \eqref{e:1dexample} for an initial condition 
 between $0$ and $1$.  See Figure~\ref{F:pp1dt}. Alternatively, this  
 phase line tells us the equilibria and the trajectories that connect 
 equilibria.  If we assume a finite number of equilibria and that the
@@ -69,7 +69,7 @@ there is nothing else that can happen in the dynamics.
 \begin{figure}[htb]
            \centerline{%
             \psfig{file=../figures/pp1dt.eps,height=2.0in}}
-           \caption{Time series for solution to \protect\Ref{e:1dexample}
+           \caption{Time series for solution to \protect\eqref{e:1dexample}
 	with initial condition between $0$ and $1$.}
            \label{F:pp1dt}
 \end{figure}
@@ -113,17 +113,17 @@ in the system of differential equations
 \end{array}
 \end{matlabEquation}
 \arrayfinish
-\noindent {\bf Note:} The * after the label \Ref{e:localexam} indicates 
+\noindent {\bf Note:} The * after the label \eqref{e:localexam} indicates 
 that this differential equation has been preloaded in the file {\tt 
 e11\_1\_3.pps} and can be addressed from {\sf pplane5}
 \index{\computer!pplane5} by clicking sequentially on the 
 {\sf File} button in the {\sf PPLANE5 Setup} window, the 
 {\sf Load a system from...} button, and the {\tt laode toolbox} button.  
 Then click on the {\tt e11\_1\_3.pps} file and the {\sf Done} button to 
-load the differential equation \Ref{e:localexam} into {\sf pplane5}.
+load the differential equation \eqref{e:localexam} into {\sf pplane5}.
 
-The fact that the origin in \Ref{e:localexam} is a saddle is seen by 
-examining the coefficient matrix of \Ref{e:localexam}
+The fact that the origin in \eqref{e:localexam} is a saddle is seen by 
+examining the coefficient matrix of \eqref{e:localexam}
 \[
 C = \mattwo{0}{1}{2.2}{2.1}.
 \]
@@ -159,9 +159,9 @@ D =
 \end{verbatim} 
 The eigenvectors are the columns of the matrix $V$ and this 
 information allows us to sketch the dynamics of
-\Ref{e:localexam} as in Figure~\ref{F:local} (left).  Indeed, we
+\eqref{e:localexam} as in Figure~\ref{F:local} (left).  Indeed, we
 can use {\sf pplane5} to plot more accurately the phase plane
-picture associated to \Ref{e:localexam}, as shown in
+picture associated to \eqref{e:localexam}, as shown in
 Figure~\ref{F:local} (right).  Note also that the eigenvalue and eigenvector
 information is determined in {\sf pplane5}.  In the {\sf PPLANE5 Display}
 window click on the {\sf solutions} button and then on the {\sf Find an 
@@ -173,16 +173,16 @@ and eigenvectors in the {\sf PPLANE5 Equilibrium point data} window.
            \centerline{%
            \psfig{file=../figures/locala.eps,height=1.8in}
            \psfig{file=../figures/localb.eps,height=2.0in}}
-           \caption{(Left) Sketch of phase plane of \protect\Ref{e:localexam} 
+           \caption{(Left) Sketch of phase plane of \protect\eqref{e:localexam} 
 	based on eigenvalues and eigenvectors of $C$. (Right) Trajectories 
-	of \protect\Ref{e:localexam} using {\sf pplane5}.}
+	of \protect\eqref{e:localexam} using {\sf pplane5}.}
            \label{F:local}
 \end{figure}
 
 \subsubsection*{The Addition of Nonlinear Terms}
  
 Next we discuss what happens to solutions when nonlinear terms are added to 
-\Ref{e:localexam}.  For example, consider the system
+\eqref{e:localexam}.  For example, consider the system
 \index{nonlinear!system of differential equations}
 \index{differential equation!nonlinear}
 \arraystart
@@ -193,17 +193,17 @@ Next we discuss what happens to solutions when nonlinear terms are added to
 \end{array}
 \end{matlabEquation}
 \arrayfinish
-We study the phase plane of \Ref{e:globalexam} using {\sf pplane5} and find 
+We study the phase plane of \eqref{e:globalexam} using {\sf pplane5} and find 
 that trajectories\index{trajectory} for the nonlinear system on the square 
 $-0.5\leq x,y \leq 0.5$ look very much like those for the linear system 
-\Ref{e:localexam} --- even though we do not know how to solve the nonlinear
+\eqref{e:localexam} --- even though we do not know how to solve the nonlinear
 system in closed form, as we can for the linear system. See 
 Figure~\ref{F:globala} and note the similarity of this figure with 
 Figure~\ref{F:local} (right).
 \begin{figure}[hbt]
            \centerline{%
            \psfig{file=../figures/globala.eps,height=2.0in}}
-           \caption{Trajectories of \protect\Ref{e:globalexam} 
+           \caption{Trajectories of \protect\eqref{e:globalexam} 
 	on the square $-0.5\leq x,y \leq 0.5$ using {\sf pplane5}.}
            \label{F:globala}
 \end{figure}
@@ -219,7 +219,7 @@ these numerical calculations were performed, this theorem appears
 to be correct.
 
 However, when we compute the solution trajectories to
-\Ref{e:globalexam} on the larger square $-5\leq x,y\leq 5$, it
+\eqref{e:globalexam} on the larger square $-5\leq x,y\leq 5$, it
 becomes clear that the phase plane\index{phase!plane} picture of 
 the nonlinear
 system no longer resembles the phase plane picture of the linear
@@ -228,7 +228,7 @@ system.  See Figure~\ref{F:globalb} (left).
            \centerline{%
 	   \psfig{file=../figures/globalb.eps,height=2.0in}
            \psfig{file=../figures/globalc.eps,height=2.0in}}
-           \caption{(Left) Trajectories of \protect\Ref{e:globalexam} 
+           \caption{(Left) Trajectories of \protect\eqref{e:globalexam} 
 on the square $-5\leq x,y \leq 5$ using {\sf pplane5}. (Right) A
 phase plane portrait of this equation.}
            \label{F:globalb}
@@ -262,7 +262,7 @@ solution.
            \centerline{%
 	   \psfig{file=../figures/nltraj.eps,height=2.5in}
            \psfig{file=../figures/nlts.eps,height=2.0in}}
-           \caption{(Left) Trajectory of \protect\Ref{e:globalexam} 
+           \caption{(Left) Trajectory of \protect\eqref{e:globalexam} 
 	through $(-0.1,0.1)$. (Right) Time series $y$ versus $t$ of
 this solution.}
            \label{F:nltraj}
@@ -305,15 +305,15 @@ systems
 \end{array}
 \end{matlabEquation} 
 where $a=1.6$ and $a=1$.  Observe that the phase planes of 
-\Ref{e:global2exam} resembles the phase plane of the linear system 
-\Ref{e:localexam} in the square $-0.5\leq x,y \leq 0.5$.  In the 
+\eqref{e:global2exam} resembles the phase plane of the linear system 
+\eqref{e:localexam} in the square $-0.5\leq x,y \leq 0.5$.  In the 
 square $-5\leq x,y\leq 5$, discuss how these phase planes differ 
-from each other and from the phase plane of \Ref{e:globalexam} 
+from each other and from the phase plane of \eqref{e:globalexam} 
 shown in Figure~\ref{F:globalb}.
 \end{exercise}
 
 \noindent In Exercises~\ref{c8.1.3a} -- \ref{c8.1.3c} use {\sf pplane5}
-to find a solution to \Ref{e:global2exam} (with $a=1.6$) satisfying the 
+to find a solution to \eqref{e:global2exam} (with $a=1.6$) satisfying the 
 given properties. Plot the time series of $y$ versus $t$ for that solution 
 and describe the differences in the three time series.
 \begin{exercise} \label{c8.1.3a}

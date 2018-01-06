@@ -71,7 +71,7 @@ Ne_1 & = & 0 & \\
 Ne_j & = & e_{j-1} & \quad j=2,\ldots,n .
 \end{array}
 \end{equation}
-Note that \Ref{e:Ndef} implies that $N^n=0$.
+Note that \eqref{e:Ndef} implies that $N^n=0$.
 
 The $n\times n$ matrix $N$ motivates the following definitions.  
 \begin{definition} \label{D:multiplicities}
@@ -208,14 +208,14 @@ $n\times n$ matrix $A$ with eigenvalue $\lambda$ if
 (A-\lambda I_n)^kv = 0
 \end{equation}
 for some positive integer $k$. The smallest integer $k$ for which
-\Ref{e:geneig} is satisfied is called the {\em index\/}
+\eqref{e:geneig} is satisfied is called the {\em index\/}
 \index{index} of the generalized eigenvector $v$.
 \end{definition}  \index{eigenvector!generalized}
 Note: Eigenvectors\index{eigenvector} are generalized eigenvectors with
 index equal to $1$.
 
 Let $\lambda_0$ be a real number and let $N=J_n(\lambda_0)-\lambda_0 I_n$.  
-Recall that \Ref{e:Ndef} implies that $N^n=0$.  Hence every vector in $\R^n$ 
+Recall that \eqref{e:Ndef} implies that $N^n=0$.  Hence every vector in $\R^n$ 
 is a generalized eigenvector for the matrix $J_n(\lambda_0)$.  So 
 $J_n(\lambda_0)$ provides a good example of a matrix whose lack of 
 eigenvectors (there is only one independent eigenvector) is made up for by 
@@ -241,7 +241,7 @@ It follows that
 \begin{lemma}  \label{L:Jordan}
 Let $\lambda_0$ be a real eigenvalue of the $n\times n$ matrix $A$ and let 
 $A_0 = A-\lambda_0 I_n$.  Let $k$ be the smallest integer for which 
-\Ref{E:nullsequal} is valid.  Then 
+\eqref{E:nullsequal} is valid.  Then 
 \[
 \nulls(A_0^k)=\nulls(A_0^{k+j})
 \]
@@ -260,7 +260,7 @@ Let $w\in\nulls(A_0^{k+2})$.  It follows that
 \[
 A^{k+1}Aw = A^{k+2}w = 0;
 \]
-so $Aw\in\nulls(A_0^{k+1})=\nulls(A_0^k)$, by \Ref{E:nullsequal}.  Therefore,
+so $Aw\in\nulls(A_0^{k+1})=\nulls(A_0^k)$, by \eqref{E:nullsequal}.  Therefore,
 \[
 A^{k+1}w = A^k(Aw) = 0,
 \]
@@ -268,7 +268,7 @@ which verifies that $w\in\nulls(A_0^{k+1})$.  \end{proof}
 
 Let $V_{\lambda_0}$ be the set of all generalized eigenvectors of $A$ with 
 eigenvalue $\lambda_0$.  Let $k$ be the smallest integer satisfying
-\Ref{E:nullsequal}, then Lemma~\ref{L:Jordan} implies that 
+\eqref{E:nullsequal}, then Lemma~\ref{L:Jordan} implies that 
 \[
 V_{\lambda_0}=\nulls(A_0^k)\subset \R^n
 \]

@@ -33,7 +33,7 @@ this question by finding an $n\times n$ matrix $C_{{\cal W}{\cal Z}}$ such that
 \begin{equation} \label{e:coordchange}
 \vect{\alpha}{n} = C_{{\cal W}{\cal Z}} \vect{\beta}{n}.
 \end{equation}
-We may rewrite \Ref{e:coordchange} as
+We may rewrite \eqref{e:coordchange} as
 \begin{equation}  \label{e:coordchange2}
 [v]_{\cal W} = C_{{\cal W}{\cal Z}}[v]_{\cal Z}.
 \end{equation}
@@ -42,7 +42,7 @@ We may rewrite \Ref{e:coordchange} as
 Let ${\cal W}$ and ${\cal Z}$ be bases\index{basis} for the $n$-dimensional
 vector space $V$.  The $n\times n$ matrix $C_{{\cal W}{\cal Z}}$
 is a {\em transition\/} matrix if $C_{{\cal W}{\cal Z}}$ satisfies
-\Ref{e:coordchange2}.
+\eqref{e:coordchange2}.
 \end{definition}  \index{matrix!transition}
 
 
@@ -74,7 +74,7 @@ for scalars $c_{ij}$.
 \end{theorem}
 
 \begin{proof}
-We can restate \Ref{e:wtoz} as
+We can restate \eqref{e:wtoz} as
 \[
 [z_j]_{\cal W} = \left(\begin{array}{c} c_{1j} \\ \vdots \\c_{nj}
 \end{array} \right).
@@ -98,7 +98,7 @@ For bases in $\R^n$, there is a formula for finding transition
 matrices\index{matrix!transition}.  Let ${\cal W} =\{w_1,\ldots,w_n\}$
 and ${\cal Z} = \{z_1,\ldots,z_n\}$ be bases of $\R^n$ --- written as row
 vectors.
-Also, let $v\in\R^n$ be written as a row vector.  Then \Ref{e:coordRn}
+Also, let $v\in\R^n$ be written as a row vector.  Then \eqref{e:coordRn}
 implies that
 \[
 [v]_{\cal W} = P_{\cal W}\inv v^t \AND [v]_{\cal Z} = P_{\cal Z}\inv v^t,
@@ -189,7 +189,7 @@ vector relative to two different bases.
 Note that the program {\sf ccoord} prints the transition matrix
 $C_{\cal WZ}$ in the \Matlab control window.  We can verify the
 calculations of the program {\sf ccoord} on this example by hand.
-Recall that \Ref{e:coordformn} states that
+Recall that \eqref{e:coordformn} states that
 \begin{eqnarray*}
 C_{\cal WZ} & = & \mattwo{1}{2}{2}{3}\inv\mattwo{1}{2}{4}{1} \\
 & = & \mattwo{-3}{2}{2}{-1}\mattwo{1}{2}{4}{1} \\
@@ -223,7 +223,7 @@ Since this computation holds for every $[v]_{\cal W}$, it follows that
 \[
 C_{{\cal Z}{\cal W}}[L]_{\cal W} = [L]_{\cal Z} C_{{\cal Z}{\cal W}}.
 \]
-Thus \Ref{e:matrixcoord} is valid.  \end{proof}
+Thus \eqref{e:matrixcoord} is valid.  \end{proof}
 
 
 

@@ -34,7 +34,7 @@ and $a$ is acceleration\index{acceleration}.
 \subsubsection*{Newton's Second Law and Particle Motion on a Line}
 \index{particle motion}
 
-For a point mass moving along a line, \Ref{e:2ndlaw} is
+For a point mass moving along a line, \eqref{e:2ndlaw} is
 \begin{equation} \label{E:F=ma}
 F=m\frac{d^2x}{dt^2},
 \end{equation}
@@ -56,7 +56,7 @@ Figure~\ref{F:spring2}.  Assume that the spring has zero mass and that
 an object of mass $m$ is attached to the end of the spring.  Let $L$ be
 the natural length of the spring, and let $x(t)$ measure the distance
 that the spring is extended (or compressed).  It follows from Newton's
-Law that \Ref{E:F=ma} is satisfied.  Hooke's law \index{Hooke's law}
+Law that \eqref{E:F=ma} is satisfied.  Hooke's law \index{Hooke's law}
 states that the force $F$ acting on a spring is
 \[
  F = -\kappa x,
@@ -92,12 +92,12 @@ which is again a second order ordinary differential equation.
 There is a simple trick that reduces a single linear second order
 differential equation to a system of two linear first order equations.
 For example, consider the linear homogeneous ordinary differential
-equation \Ref{eq:soex1}.  To reduce this second order equation to a first order
-system, just set $y=\dot{x}$.  Then \Ref{eq:soex1} becomes
+equation \eqref{eq:soex1}.  To reduce this second order equation to a first order
+system, just set $y=\dot{x}$.  Then \eqref{eq:soex1} becomes
 \[
 \dot{y} + by + ax = 0.
 \]
-It follows that if $x(t)$ is a solution to \Ref{eq:soex1} and
+It follows that if $x(t)$ is a solution to \eqref{eq:soex1} and
 $y(t)=\dot{x}(t)$, then $(x(t),y(t))$ is a solution to
 \begin{equation}  \label{e:soex1sys}
 \begin{array}{rcl}
@@ -105,7 +105,7 @@ $y(t)=\dot{x}(t)$, then $(x(t),y(t))$ is a solution to
 \dot{y} & = & -ax - by.
 \end{array}
 \end{equation}
-We can rewrite \Ref{e:soex1sys} as
+We can rewrite \eqref{e:soex1sys} as
 \[
 \dot{X} = Q X.
 \]
@@ -113,15 +113,15 @@ where
 \begin{equation}  \label{e:coeffmatQ}
 Q =  \mattwo{0}{1}{-a}{-b}.
 \end{equation}
-Note that if $(x(t),y(t))$ is a solution to \Ref{e:soex1sys}, then
-$x(t)$ is a solution to \Ref{eq:soex1}.  Thus solving the single
+Note that if $(x(t),y(t))$ is a solution to \eqref{e:soex1sys}, then
+$x(t)$ is a solution to \eqref{eq:soex1}.  Thus solving the single
 second order linear equation is exactly the same as solving the
 corresponding first order linear system.
 
 \subsubsection*{The Initial Value Problem}
 \index{initial value problem!for second order equations}
 
-To solve the homogeneous system \Ref{e:soex1sys} we need to specify
+To solve the homogeneous system \eqref{e:soex1sys} we need to specify
 two initial conditions $X(0)=(x(0),y(0))^t$.  It follows that to
 solve the single second order equation we need to specify two initial
 conditions $x(0)$ and $\dot{x}(0)$; that is, we need to specify
@@ -131,29 +131,29 @@ initial velocity\index{initial velocity}.
 \subsection*{The General Solution}
 
 There are two ways in which we can solve
-the second order homogeneous equation \Ref{eq:soex1}.  First,
-we know how to solve the system \Ref{e:soex1sys} by finding the
+the second order homogeneous equation \eqref{eq:soex1}.  First,
+we know how to solve the system \eqref{e:soex1sys} by finding the
 eigenvalues and eigenvectors of the coefficient matrix $Q$ in
-\Ref{e:coeffmatQ}.  Second, we know from the general theory of
+\eqref{e:coeffmatQ}.  Second, we know from the general theory of
 planar systems that solutions will have the form $x(t)=e^{\lambda_0t}$
 for some scalar $\lambda_0$.  We need only determine the values of
-$\lambda_0$ for which we get solutions to \Ref{eq:soex1}.
+$\lambda_0$ for which we get solutions to \eqref{eq:soex1}.
 
 We now discuss the second approach.  Suppose that $x(t)=e^{\lambda_0t}$
-is a solution to \Ref{eq:soex1}.  Substituting this form of $x(t)$ in
-\Ref{eq:soex1} yields the equation
+is a solution to \eqref{eq:soex1}.  Substituting this form of $x(t)$ in
+\eqref{eq:soex1} yields the equation
 \[
 \left(\lambda_0^2 + b\lambda_0 + a\right)e^{\lambda_0t} = 0.
 \]
-So $x(t)=e^{\lambda_0t}$ is a solution to \Ref{eq:soex1} precisely
+So $x(t)=e^{\lambda_0t}$ is a solution to \eqref{eq:soex1} precisely
 when $p_Q(\lambda_0)=0$, where
 \begin{equation} \label{E:charQ}
 p_Q(\lambda) = \lambda^2 + b\lambda + a
 \end{equation}
-is the characteristic polynomial of the matrix $Q$ in \Ref{e:coeffmatQ}.
+is the characteristic polynomial of the matrix $Q$ in \eqref{e:coeffmatQ}.
 
 Suppose that $\lambda_1$ and $\lambda_2$ are distinct real roots of $p_Q$.
-Then the general solution\index{general solution} to \Ref{eq:soex1} is
+Then the general solution\index{general solution} to \eqref{eq:soex1} is
 \[
 x(t) = \alpha_1e^{\lambda_1t} +  \alpha_2e^{\lambda_2t},
 \]
@@ -171,7 +171,7 @@ polynomial is
 p_Q(\lambda) = \lambda^2 + 3\lambda + 2 = (\lambda+2)(\lambda+1),
 \]
 whose roots are $\lambda_1=-1$ and $\lambda_2=-2$.  So the general solution
-to \Ref{e:ex12} is
+to \eqref{e:ex12} is
 \[
 x(t) = \alpha_1e^{-t} + \alpha_2e^{-2t}
 \]
@@ -183,7 +183,7 @@ x(0) & = & \alpha_1 + \alpha_2 & = & 0 \\
 \end{array}
 \]
 So $\alpha_1 = -2$, $\alpha_2=2$, and the solution to the initial value problem
-for \Ref{e:ex12} is
+for \eqref{e:ex12} is
 \[
 x(t) = -2e^{-t} + 2e^{-2t}
 \]
@@ -194,9 +194,9 @@ Consider the differential equation
 \begin{equation} \label{E:ex13}
 \ddot{x} -2\dot{x} + 5x = 0.
 \end{equation}
-The roots of the characteristic polynomial associated to \Ref{E:ex13} are
+The roots of the characteristic polynomial associated to \eqref{E:ex13} are
 $\lambda_1=1+2i$ and $\lambda_2=1-2i$.  It follows from the discussion in
-the previous section that the general solution to \Ref{E:ex13} is
+the previous section that the general solution to \eqref{E:ex13} is
 \[
 x(t) = \RE\left(\alpha_1 e^{\lambda_1 t} + \alpha_2 e^{\lambda_2t}\right)
 \]
@@ -216,7 +216,7 @@ x(t) = e^{\sigma t}\left(\beta_1\cos(\tau t) + \beta_2\sin(\tau t)\right).
 \subsubsection*{An Example with Multiple Eigenvalues}
 
 Note that the coefficient matrix $Q$ of the associated first order system
-in \Ref{e:coeffmatQ} is never a multiple of $I_2$.  It follows from the
+in \eqref{e:coeffmatQ} is never a multiple of $I_2$.  It follows from the
 previous section
 that when the roots of the characteristic polynomial are real and equal,
 the general solution has the form
@@ -242,7 +242,7 @@ that is made more clearly in the next example.
 \subsection*{Solving the Spring Equation}
 
 Consider the equation for the frictionless spring without
-external forcing.  From \Ref{e:springeq} we get  \index{spring equation}
+external forcing.  From \eqref{e:springeq} we get  \index{spring equation}
 \index{spring!undamped}
 \begin{equation} \label{ex:uspring}
 m\ddot{x} + \kappa x = 0.
@@ -304,7 +304,7 @@ undamped and damped springs.
 \TEXER
 
 \begin{exercise} \label{c6.7.1}
-By direct integration solve the differential equation \Ref{e:pointpart}
+By direct integration solve the differential equation \eqref{e:pointpart}
 for a point particle moving only under the influence of gravity.  Find the
 solution for a particle starting at a height of $10$ feet above ground with
 an upward velocity of $20$ feet/sec.  At what time will the particle hit
@@ -312,7 +312,7 @@ the ground?  (Recall that acceleration due to gravity is $32$ feet/sec$^2$.)
 \end{exercise}
 
 \begin{exercise} \label{c6.7.2}
-By direct integration solve the differential equation \Ref{e:pointpart}
+By direct integration solve the differential equation \eqref{e:pointpart}
 for a point particle moving only under the influence of gravity.  Show
 that the solution is
 \[
@@ -353,7 +353,7 @@ Show that $\dps\lim_{t\to\infty} x(t) = 0$.
 
 \noindent In Exercises~\ref{c6.6.tfa} -- \ref{c6.6.tfc}, let $x(t)$ be a
 solution to the second order linear homogeneous differential equation
-\Ref{eq:soex1}.  Determine whether the given statement is {\em true\/}
+\eqref{eq:soex1}.  Determine whether the given statement is {\em true\/}
 or {\em false}.
 \begin{exercise} \label{c6.6.tfa}
 If $x(t)$ is nonconstant and time periodic, then the
@@ -373,7 +373,7 @@ Consider the second order differential equation
 \begin{equation}  \label{E:2ndorder}
 \frac{d^2x}{dt^2} + a(x)\frac{dx}{dt} + b(x) = 0.
 \end{equation}
-Let $y(t)=\dot{x}(t)$ and show that \Ref{E:2ndorder} may be
+Let $y(t)=\dot{x}(t)$ and show that \eqref{E:2ndorder} may be
 rewritten as a first order coupled system in $x(t)$ and $y(t)$
 as follows:
 \begin{eqnarray*}

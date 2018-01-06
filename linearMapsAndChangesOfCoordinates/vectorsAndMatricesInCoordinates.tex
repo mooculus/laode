@@ -162,7 +162,7 @@ mapping by $[\cdot]_{\cal W}:V\to\R^n$.
 
 
 It now follows that both the left hand and right hand sides of
-\Ref{e:matrixofL} can be thought of as linear mappings of $V\to\R^n$.
+\eqref{e:matrixofL} can be thought of as linear mappings of $V\to\R^n$.
 In verifying this comment, we recall Lemma~\ref{L:compose} of
 Chapter~\ref{C:vectorspaces} that states that the composition of linear
 maps is linear.  On the left hand side we have the mapping
@@ -170,7 +170,7 @@ maps is linear.  On the left hand side we have the mapping
 v \mapsto L(v) \mapsto [L(v)]_{\cal W},
 \]
 which is the composition of the linear maps: $[\cdot]_{\cal W}$ with
-$L$.  See \Ref{e:coordmap}.  The right hand side is
+$L$.  See \eqref{e:coordmap}.  The right hand side is
 \[
 v \mapsto [v]_{\cal W} \mapsto [L]_{\cal W} [v]_{\cal W},
 \]
@@ -179,14 +179,14 @@ matrix $[L]_{\cal W}$ with $[\cdot]_{\cal W}$.
 
 Theorem~\ref{L:linmapfrombasis} of Chapter~\ref{C:vectorspaces}
 states that linear mappings are determined by their actions on a
-basis.  Thus to verify \Ref{e:matrixofL}, we need only verify this
+basis.  Thus to verify \eqref{e:matrixofL}, we need only verify this
 equality for $v=w_j$ for all $j$.  Since $[w_j]_{\cal W}=e_j$, the right
-hand side of \Ref{e:matrixofL} is:
+hand side of \eqref{e:matrixofL} is:
 \[
 [L]_{\cal W} [w_j]_{\cal W} =  [L]_{\cal W} e_j,
 \]
 which is just the $j^{th}$ column of $[L]_{\cal W}$.  The left hand side of
-\Ref{e:matrixofL} is the vector $[L(w_j)]_{\cal W}$, which by definition is
+\eqref{e:matrixofL} is the vector $[L(w_j)]_{\cal W}$, which by definition is
 also the $j^{th}$ column of $[L]_{\cal W}$
 (see Definition~\ref{D:matrixincoord}).    \end{proof}
 
@@ -232,7 +232,7 @@ which is solved by inverting the matrix to obtain:
 \vectwo{\alpha_1}{\alpha_2}= \frac{1}{3}\mattwo{2}{1}{1}{-1}
 \vectwo{v_1}{v_2}.
 \end{equation}
-For example, suppose $v=(2.0,0.5)$.  Using \Ref{change1} we find that
+For example, suppose $v=(2.0,0.5)$.  Using \eqref{change1} we find that
 $(\alpha_1,\alpha_2)=(1.5,0.5)$; that is, we can write
 \[
 v = 1.5w_1 + 0.5w_2,
@@ -240,7 +240,7 @@ v = 1.5w_1 + 0.5w_2,
 and $(1.5,0.5)$ are the {\em coordinates\/} \index{coordinates} of
 $v$ in the basis $\{w_1,w_2\}$.
 
-Using the notation in \Ref{e:coordnot}, we may rewrite \Ref{change1} as
+Using the notation in \eqref{e:coordnot}, we may rewrite \eqref{change1} as
 \[
 [v]_{\cal W} = \frac{1}{3}\mattwo{2}{1}{1}{-1} [v]_{\cal E},
 \]
@@ -280,7 +280,7 @@ $\R^n$ and a vector $v\in\R^n$.  How do we find the coordinates
 $[v]_{\cal W}$ of $v$ in the basis ${\cal W}$?
 
 For definiteness, assume that $v$ and the $w_j$ are row vectors.  Equation
-\Ref{e:coordv} may be rewritten as
+\eqref{e:coordv} may be rewritten as
 \[
 v^t = (w_1^t|\cdots|w_n^t)\vect{\alpha}{n}.
 \]
@@ -293,7 +293,7 @@ $\R^n$, the columns of the matrix $P_{\cal W}$ are linearly independent, and
 $P_{\cal W}$ is invertible.
 
 
-We may use \Ref{e:coordRn} to compute $[v]_{\cal W}$ using
+We may use \eqref{e:coordRn} to compute $[v]_{\cal W}$ using
 \Matlabp.  For example, let
 \[
 v  =  (4,1,3)
@@ -325,11 +325,11 @@ Suppose that we are given the linear map $L_A:\R^n\to\R^n$ associated to
 the matrix $A$ in standard coordinates and a basis $w_1,\ldots,w_n$ of $\R^n$.
 How do we find the matrix $[L_A]_{\cal W}$. As above, we assume that the
 vectors $w_j$ and the vector $v$ are row vectors  Since $L_A(v)=Av^t$ we can
-rewrite \Ref{e:matrixofL} as
+rewrite \eqref{e:matrixofL} as
 \[
 [L_A]_{\cal W}[v]_{\cal W} = [Av^t]_{\cal W}
 \]
-As above, let $P_{\cal W}=(w_1^t|\cdots|w_n^t)$.  Using \Ref{e:coordRn} we
+As above, let $P_{\cal W}=(w_1^t|\cdots|w_n^t)$.  Using \eqref{e:coordRn} we
 see that
 \[
 [L_A]_{\cal W}P_{\cal W}\inv v^t = P_{\cal W}\inv Av^t.
@@ -422,10 +422,10 @@ Then ${\cal W}=\{w_1,w_2\}$ is a basis and
 \end{theorem}
 
 \begin{proof}
-The verification of (a) was discussed in \Ref{e:diagcoord}.  The
+The verification of (a) was discussed in \eqref{e:diagcoord}.  The
 verification of (b) follows from Chapter~\ref{Chap:Planar},
-\Ref{e:complexcoord} on equating $w_1$ with $v$ and $w_2$ with $w$.
-The verification of (c) follows directly from \Ref{e:Lw=lw+v} as
+\eqref{e:complexcoord} on equating $w_1$ with $v$ and $w_2$ with $w$.
+The verification of (c) follows directly from \eqref{e:Lw=lw+v} as
 \[
 [L(w_1)]_{\cal W} = \lambda e_1 \AND [L(w_2)]_{\cal W} = e_1+\lambda e_2.
 \]
@@ -462,7 +462,7 @@ As a second example note that the matrices
 C = \mattwo{0}{2}{-2}{0} \AND B = \mattwo{6}{-4}{10}{-6}
 \]
 are similar matrices, and both are centers.   Indeed, $B = P\inv CP$
-where $P$ is the same matrix as in \Ref{e:Pchange}.  The phase portraits
+where $P$ is the same matrix as in \eqref{e:Pchange}.  The phase portraits
 of the differential equations $\dot{X}=BX$ and $\dot{X}=CX$ are shown in
 Figure~\ref{F:comparesim2}.  Note that both phase portraits are pictures
 of the {\em same\/} center\index{center} --- just in different coordinate

@@ -22,14 +22,14 @@ Jordan normal form\index{Jordan normal form}. Let
 where $A=(a_{ij})$ is a constant $n\times n$ matrix and $X$ is an 
 $n$ vector.  In Theorem~\ref{T:linODEsoln} of Chapter~\ref{Chap:Planar} 
 we showed that the general solution\index{general solution} to 
-\Ref{eq:linsys} is
+\eqref{eq:linsys} is
 \[
 X(t) = e^{tA}X_0,
 \]
 where $X_0=X(0)$ is the initial condition\index{initial condition}.  
 In Chapter~\ref{Chap:Planar} 
 we used this theorem to solve planar systems of ODEs in closed form.
-Now we apply matrix exponentials to solve \Ref{eq:linsys} for an 
+Now we apply matrix exponentials to solve \eqref{eq:linsys} for an 
 arbitrary matrix $A$ --- at least in principle.
 There were three ideas behind finding solutions to planar systems:
 \begin{itemize}
@@ -83,7 +83,7 @@ e^A = \mattwo{e^{C_1}}{0}{0}{e^{C_2}}.
 A^k = \mattwo{C_1^k}{0}{0}{C_2^k},
 \]
 and applying the power series definition of matrix exponential.  
-See Chapter~\ref{Chap:Planar}, \Ref{e:expL}. \end{proof}
+See Chapter~\ref{Chap:Planar}, \eqref{e:expL}. \end{proof}
 
 \subsection*{Matrix Exponentials of Jordan Normal Forms}
 
@@ -108,7 +108,7 @@ eigenvalue\index{Jordan block!with real eigenvalue} $\lambda$ is
 \lambda I_k + N
 \]
 where the only nonzero entries in $N$ are the $1$s on the superdiagonal.  
-Recall that \Ref{e:Ndef} in Chapter~\ref{C:HDeigenvalues} implies that 
+Recall that \eqref{e:Ndef} in Chapter~\ref{C:HDeigenvalues} implies that 
 $N^k=0$.  Since $I_k$ and $N$ commute, Proposition~\ref{P:expAB} of 
 Chapter~\ref{Chap:Planar} implies that $e^{t(I_n+N)}=e^{tI_n}e^{tN}$.  We 
 can compute the solution to the differential equation as:
@@ -159,7 +159,7 @@ dominates the quadratic growth.  See Exercise~\ref{c11.1.4}.
 \index{Jordan block}\index{Jordan block!with complex eigenvalue}
 
 If $A$ is the Jordan block corresponding to a simple complex eigenvalue
-$\lambda=\sigma+i\tau$, then \Ref{eq:linsys} is the two dimensional system 
+$\lambda=\sigma+i\tau$, then \eqref{eq:linsys} is the two dimensional system 
 \[
 \frac{dX}{dt}=\mattwo{\sigma}{-\tau}{\tau}{\sigma} X
 \]
@@ -218,7 +218,7 @@ with initial condition
 X_0 = (1, 3, -2, 0, 0, 4).
 \]
 
-Using the notation of \Ref{e:JM} we have
+Using the notation of \eqref{e:JM} we have
 \[
 J = \left(\begin{array}{rr|rr|rr} 
  2 & 1 & 0 & 0 & 0 & 0\\
@@ -295,7 +295,7 @@ solution to
 \end{equation}
 
 Suppose that $B$ is in Jordan normal form; then we know how to solve 
-\Ref{E:JNFDE} using matrix exponentials and can then solve the original
+\eqref{E:JNFDE} using matrix exponentials and can then solve the original
 equation $\dot{X}=AX$ in principle by multiplying $Y(t)$ by $S$.  This 
 approach is clean in theory, but messy in practice.  
 
@@ -312,7 +312,7 @@ have nontrivial Jordan blocks, and
 B = \mattwoc{\mattwo{-1}{1}{0}{-1}}{0}{0}{\mattwo{2}{1}{0}{2}}
 \]
 is the Jordan normal form of $A$.  As noted previously, we can solve 
-\Ref{E:JNFDE} using matrix exponentials, obtaining
+\eqref{E:JNFDE} using matrix exponentials, obtaining
 \[
 Y(t) =
 \mattwoc{e^{-t}\mattwo{1}{t}{0}{1}}{0}{0}{e^{2t}\mattwo{1}{t}{0}{1}}Y_0.
@@ -362,11 +362,11 @@ where $k$ is the size of the largest Jordan block associated to the given
 eigenvalue. 
 \end{lemma}
 
-\begin{proof}  Formula \Ref{e:expsoln} verifies this statement when $A$ is in Jordan 
+\begin{proof}  Formula \eqref{e:expsoln} verifies this statement when $A$ is in Jordan 
 normal form with real eigenvalues.  A similar formula holds with $J$ and $M$ 
 when $A$ has complex eigenvalues.  Solutions to the general matrix equation 
 are just linear combinations of solutions to the corresponding Jordan normal 
-form equations.  Indeed, as noted in the discussion leading to \Ref{E:JNFDE}, 
+form equations.  Indeed, as noted in the discussion leading to \eqref{E:JNFDE}, 
 solutions to the general system equation are obtained from the Jordan normal 
 form equations by multiplying these special solutions by the constant matrix
 $S$.  This multiplication does not alter the statement that the coordinate
@@ -456,12 +456,12 @@ J = \left(\begin{array}{rrrrr}
 
 \begin{exercise} \label{c11.1.4}
 Use calculus to compute the maximum value of the function $x_1(t)$ 
-defined in \Ref{E:x1examp} and graphed in Figure~\ref{F:Jordan}.
+defined in \eqref{E:x1examp} and graphed in Figure~\ref{F:Jordan}.
 \end{exercise}
 
 \noindent In Exercises~\ref{c11.1.5A} -- \ref{c11.1.5B} solve the initial 
 value problem $\dot{X}=AX$ for the given matrix $A$ and initial vector
-$X_0$ in the form of \Ref{E:solvedebf} by converting $A$ to Jordan normal
+$X_0$ in the form of \eqref{E:solvedebf} by converting $A$ to Jordan normal
 form.
 \begin{exercise} \label{c11.1.5A}
 \begin{matlabEquation}\label{MATLAB:45}

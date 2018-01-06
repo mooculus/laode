@@ -37,12 +37,12 @@ In general, none of the techniques
 described so far can be applied to this equation.  
 
 Since the function $x(t)/t$ appears as the argument of $F$ in
-the equation it seems plausible to write down \Ref{eq:homcoeff}
+the equation it seems plausible to write down \eqref{eq:homcoeff}
 in terms of this function.  Having this in mind, define
 \[
 v(t) = \frac{x(t)}{t}.
 \]
-Then $x(t) = t v(t)$ and \Ref{eq:homcoeff} becomes
+Then $x(t) = t v(t)$ and \eqref{eq:homcoeff} becomes
 \[
 v(t) + t \frac{dv}{dt}(t) = F(v(t)).
 \]
@@ -53,13 +53,13 @@ When $t\not= 0$, this equation is equivalent to
 \end{equation}
 We have arrived at an equation to which we can apply separation
 of variables\index{separation of variables}.  
-Once a solution $v(t)$ of \Ref{eq:homsep} is
-found, we obtain a solution of \Ref{eq:homcoeff} by setting
+Once a solution $v(t)$ of \eqref{eq:homsep} is
+found, we obtain a solution of \eqref{eq:homcoeff} by setting
 \[
 x(t) = t v(t).
 \]
 If an initial condition $x(t_0)=x_0$ is specified in
-\Ref{eq:homcoeff}, then we have to solve \Ref{eq:homsep} with
+\eqref{eq:homcoeff}, then we have to solve \eqref{eq:homsep} with
 the transformed initial condition $v(t_0)=x_0/t_0$.
 
 \subsubsection*{An Example}
@@ -75,9 +75,9 @@ x(2) & = & 6.
 \[
 F\left(\frac{x}{t}\right) = 2\frac{t}{x}+\frac{x}{t},
 \]
-we see that \Ref{eq:homcoex1} has homogeneous 
+we see that \eqref{eq:homcoex1} has homogeneous 
 coefficients\index{homogeneous coefficients}.  We
-set $v(t) = x(t)/t$. By \Ref{eq:homsep} we have to solve the
+set $v(t) = x(t)/t$. By \eqref{eq:homsep} we have to solve the
 initial value problem\index{initial value problem}
 \[
 \begin{array}{rcl}
@@ -117,7 +117,7 @@ Hence we assume that
 p\not= 0,1.
 \]
 The idea is to substitute $x(t)$ in such a way that also for these
-values of $p$ \Ref{eq:bern1} becomes linear in the new function $v(t)$.  
+values of $p$ \eqref{eq:bern1} becomes linear in the new function $v(t)$.  
 We try the guess
 \[
 v(t) = x(t)^{1/\alpha},
@@ -128,7 +128,7 @@ v(t)^\alpha$, we compute
 \[
 \frac{dx}{dt} = \alpha v^{\alpha-1} \frac{dv}{dt}.
 \]
-Substitution into \Ref{eq:bern1} yields
+Substitution into \eqref{eq:bern1} yields
 \[
 \alpha v^{\alpha-1} \frac{dv}{dt} = r(t)v^\alpha + s(t)v^{p\alpha}.
 \]
@@ -150,13 +150,13 @@ Then we arrive at the {\em linear\/} equation
 which we can, in principle, be solved by 
 variation of parameters\index{variation of parameters}.
 If this can be done, then we obtain a solution $x(t)$ of
-\Ref{eq:bern1} by setting 
+\eqref{eq:bern1} by setting 
 \[
 x(t) = (v(t))^{\frac{1}{1-p}}.
 \]
 If an initial condition $x(t_0)=x_0$ is specified in
-\Ref{eq:bern1},
-then we have to solve \Ref{eq:bern2} with the transformed initial
+\eqref{eq:bern1},
+then we have to solve \eqref{eq:bern2} with the transformed initial
 condition
 $v(t_0)=x_0^{1/\alpha}=x_0^{1-p}$.
 
@@ -173,7 +173,7 @@ x(0) & = & 27.
 r(t) = 3t^2,\quad s(t)=3t^2, \AND p=\frac{2}{3}.
 \]
 Hence we have to find a solution of the linear initial value
-problem (see \Ref{eq:bern2})
+problem (see \eqref{eq:bern2})
 \[
 \begin{array}{rcl}
 \dps \frac{dv}{dt} & = &  t^2 v + t^2 \\
@@ -231,7 +231,7 @@ $\dps \frac{dx}{dt} = \frac{x(x+t)}{t^2}$ where $x(1)=1$.
 
 \begin{exercise} \label{c14.5.10}
 We set $v(t) = x(t)^{1-p}$ to transform the Bernoulli equation 
-\Ref{eq:bern1} into the equation
+\eqref{eq:bern1} into the equation
 \[
 \frac{dv}{dt} = (1-p) r(t) v + (1-p) s(t).
 \]

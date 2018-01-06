@@ -36,7 +36,7 @@ Indeed, by Taylor's formula
 \end{equation}
 \arrayfinish
 with an appropriate $0<\theta<1$.  Thus, the error made in the
-approximation in \Ref{eq:eul1} is the size $h^2$
+approximation in \eqref{eq:eul1} is the size $h^2$
 as long as the second derivative of $x(t)$ is bounded.
 Consequently, if we know the value of the solution $x$ at time $t$, 
 then we can use the right hand side $f$ in the differential equation 
@@ -46,13 +46,13 @@ to compute an approximation of the solution $x$ at time $t+h$.
 \index{Euler's method!explicit}
 
 Since $f(t,x(t))$ is the derivative of $x$ at time $t$,
-there is a simple geometric interpretation of \Ref{eq:eul1}
+there is a simple geometric interpretation of \eqref{eq:eul1}
 (see Figure~\ref{fig:eul1ill}).  Recall that the tangent line to the 
 graph of the function $x(t)$ at the point $(t,x(t))$ is the line 
 going through the point $(t,x(t))$ whose slope is $\dot{x}(t)=f(t,x(t))$.  
 The approximation of $x$ at time $t+h$ is just the one given by the value 
 of that tangent line at $t+h$.  The numerical method that is based on 
-\Ref{eq:eul1} is called {\em Euler's method}.
+\eqref{eq:eul1} is called {\em Euler's method}.
 It seems evident that smaller values of $h$ should lead to a more 
 accurate approximation of the solution $x$ on the interval
 $[t,t+h]$.  On the other hand, note that simultaneously the 
@@ -71,7 +71,7 @@ Concretely, Euler's method produces a sequence of approximations
 to a solution of an initial value problem.  To understand this point, 
 begin the numerical integration at the exact initial value $(t_0,x_0)$.  
 Choose a {\em step size\/} \index{step size}
-$h>0$.  Use \Ref{eq:eul1} to obtain after 
+$h>0$.  Use \eqref{eq:eul1} to obtain after 
 one {\em integration step\/} \index{integration step}
 the approximation $x(t_1)\approx x_1$ where
 \[
@@ -97,7 +97,7 @@ We illustrate how Euler's method works for the example
 by using \Matlab to compute an approximation to $x(3)$.  Suppose that we
 set the step size to $h = 0.2$.  Then the number of steps needed to reach 
 $t=3$ is $K=10$.  The code for computing the sequence in 
-\Ref{eq:eulmethod} is:
+\eqref{eq:eulmethod} is:
 
 \begin{verbatim}
 h    = 0.2;
@@ -120,7 +120,7 @@ numerically computed points and the {\sf '-\,-'} in the command
 {\tt plot(t,x,'--')} interpolates dashed lines between successive o's. 
 Moreover, the statements within the {\tt for} loop --- that is the
 lines from {\tt for k = 1:K} up to the {\tt end} --- 
-reproduce the iteration procedure given in \Ref{eq:eulmethod}.
+reproduce the iteration procedure given in \eqref{eq:eulmethod}.
 (In \Matlab the index of a vector is not allowed to be zero. Therefore, 
 the {\tt for} loop is programmed to run from $k=1,\ldots,K$ rather than 
 from $k=0,\ldots,K-1$.)
@@ -129,7 +129,7 @@ from $k=0,\ldots,K-1$.)
 \index{solution!numerical}\index{solution!exact}
 
 We now compare the numerical approximation with the exact solution 
-of \Ref{eq:eulexivp}, that is given by
+of \eqref{eq:eulexivp}, that is given by
 \[
 x(t) = 4e^{t-1}-t-1.
 \]
@@ -148,7 +148,7 @@ different from the one in Figure~\ref{fig:eulex1}(a).
    \psfig{file=../figures/eulex1.eps,width=3in}
    \psfig{file=../figures/eulex2.eps,width=3in}}
    \caption{Approximation of the solution of 
-   \protect\Ref{eq:eulexivp} by Euler's method.  
+   \protect\eqref{eq:eulexivp} by Euler's method.  
    (a) Circles mark the computed points; dashed lines 
     are linear interpolations between the o's.  (b)  A comparison is 
     made to the exact solution pictured as a solid line.}
@@ -171,12 +171,12 @@ but that also quite a few iterations of Euler's method are needed
 to produce this result.  Therefore the latter approach has 
 generally proved preferable and one idea for improving accuracy is 
 to replace $f(t_k,x_k)$ in the right hand side of 
-\Ref{eq:eulmethod} by another expression in ways that we now explain.
+\eqref{eq:eulmethod} by another expression in ways that we now explain.
 \begin{figure}[htb]
    \centerline{%
    \psfig{file=../figures/eulimpr.eps,width=3.4in}}
    \caption{Approximation of the solution of
-   \protect\Ref{eq:eulexivp} by Euler's method with step size
+   \protect\eqref{eq:eulexivp} by Euler's method with step size
    $h=0.05$.  (Marks and lines as in Figure~\protect\ref{fig:eulex1}.)}
    \label{fig:eulimpr}
 \end{figure}
@@ -229,7 +229,7 @@ this can also be done numerically, but such solutions
 require much numerical effort.  This problem can partly be overcome by 
 using a clever idea discovered by {\sc Runge} (1895).  We illustrate 
 this idea on the implicit trapezoidal rule.  Rather than determining 
-$x_{k+1}$ directly from \Ref{eq:imtrap}, first estimate 
+$x_{k+1}$ directly from \eqref{eq:imtrap}, first estimate 
 $x_{k+1}$ by $y_{k+1}$ using Euler's 
 (tangent line) method.  Then use the estimate $y_{k+1}$ in the implicit 
 trapezoidal rule\index{implicit trapezoidal rule}.
@@ -254,7 +254,7 @@ The resulting numerical method is called the {\em modified Euler method}.
 
 Let us use \Matlab to solve the initial value problem
 \index{initial value problem!numerical solution}
-\Ref{eq:eulexivp} by the modified Euler method.  
+\eqref{eq:eulexivp} by the modified Euler method.  
 Using the same data as in the previous example we type
 \begin{verbatim}
 h    = 0.2;
@@ -285,7 +285,7 @@ approximation is still acceptable.  See Figure~\ref{fig:mEul}(b).
    \psfig{file=../figures/meul1.eps,width=3in}
    \psfig{file=../figures/meul2.eps,width=3in}}
    \caption{Approximations of the solution of
-   \protect\Ref{eq:eulexivp} by the modified Euler method
+   \protect\eqref{eq:eulexivp} by the modified Euler method
    with step sizes: (a) $h=0.2$; (b) $h=0.4$.
    The exact solution is shown with a solid line.}
    \label{fig:mEul}
@@ -317,7 +317,7 @@ x_{k+1} = x_k+\frac{h}{6}(f_1+2f_2+2f_3+f_4).
 \]
 By this method we can approximate solutions of differential equations
 in a very precise way.  We illustrate this by an application to 
-the initial value problem \Ref{eq:eulexivp}.  In Figure~\ref{fig:rk1} we
+the initial value problem \eqref{eq:eulexivp}.  In Figure~\ref{fig:rk1} we
 show the approximation obtained with the step size $h=0.6$ for $K=20$
 steps.  The result is particularly convincing --- observe that
 in contrast to Figures~\ref{fig:eulex1}--\ref{fig:mEul} the solution is
@@ -326,7 +326,7 @@ approximated on a significantly larger interval.
    \centerline{%
    \psfig{file=../figures/runkut1.eps,width=3.6in}}
    \caption{Approximation of the solution of
-   \protect\Ref{eq:eulexivp} obtained by the fourth order Runge-Kutta
+   \protect\eqref{eq:eulexivp} obtained by the fourth order Runge-Kutta
    method.  The exact solution is superimposed (solid line).}
    \label{fig:rk1}
 \end{figure}
@@ -355,7 +355,7 @@ Suppose that $(x(t),y(t))$ is a solution of the initial value problem
 \end{array}
 \end{equation}
 \arrayfinish
-where $(x(t_0),y(t_0))= (x_0,y_0)$.  As in \Ref{eq:eul1}
+where $(x(t_0),y(t_0))= (x_0,y_0)$.  As in \eqref{eq:eul1}
 we obtain for the components $x(t)$ and $y(t)$
 by using the differential equation 
 \begin{eqnarray*}
@@ -364,7 +364,7 @@ y(t+h) & \approx & y(t) + h \frac{dy}{dt}(t) = y(t) + h g(t,x(t),y(t)).
 \end{eqnarray*}
 Again $h>0$ is called the step size\index{step size}.
 We can now proceed as in the case of a scalar differential equation 
-and obtain in analogy to \Ref{eq:eulmethod} 
+and obtain in analogy to \eqref{eq:eulmethod} 
 \begin{eqnarray*}
 t_{k+1} = t_k+h \AND 
 \left\{\begin{array}{rcl}
@@ -374,7 +374,7 @@ y_{k+1} &=& y_k + h g(t_k,x_k,y_k)
 \quad (k=0,1,\ldots,K-1).
 \end{eqnarray*}
 Using vector notation Euler's method applied to the initial value problem
-\Ref{eq:numanalsys} can be written as
+\eqref{eq:numanalsys} can be written as
 \arraystart
 \begin{equation}
 \begin{array}{rcl}
@@ -431,7 +431,7 @@ The result is shown in Figure~\ref{fig:sysEul1}.
    \centerline{%
    \psfig{file=../figures/eulsys1.eps,width=3.6in}}
    \caption{Approximation of the solution of
-   \protect\Ref{eq:numanalex1} by Euler's method
+   \protect\eqref{eq:numanalex1} by Euler's method
    with step size $h=0.05$.  The single points of
    the approximation are marked by circles.}
    \label{fig:sysEul1}
@@ -449,7 +449,7 @@ it can be seen that the step size is indeed constant.
    \psfig{file=../figures/eulsys2.eps,width=3in}
    \psfig{file=../figures/eulsys3.eps,width=3in}}
    \caption{Approximation of the $x$- and $y$-components
-   of the solution of \protect\Ref{eq:numanalex1} by Euler's method
+   of the solution of \protect\eqref{eq:numanalex1} by Euler's method
    with step size $h=0.05$.}
    \label{fig:sysEul2}
 \end{figure}
@@ -520,7 +520,7 @@ x_{k+1} &=& x_k + h \left(\frac{1}{2}f_1 + \frac{1}{2}f_2\right)\\
 &=& x_k + \frac{h}{2}
 \Big( f(t_k, x_k)+f(t_{k+1}, x_k + h f(t_k, x_k))\Big).
 \end{eqnarray*}
-Hence we have obtained \Ref{eq:meulmethod}.
+Hence we have obtained \eqref{eq:meulmethod}.
 \item[(c)] {\em Fourth order Runge-Kutta method:} 
 \index{fourth order Runge-Kutta method}
 \index{Runge-Kutta method!fourth order}
@@ -556,7 +556,7 @@ that is $x_k=x(t_k)$ for all $k$.
 
 \begin{exercise} \label{c15.1.2}
 Write down the implicit trapezoidal rule for the initial
-value problem \Ref{eq:numanalsys}.
+value problem \eqref{eq:numanalsys}.
 \end{exercise}
 
 \noindent In Exercises~\ref{c15.1.3a} -- \ref{c15.1.3c}
@@ -592,7 +592,7 @@ fourth order Runge-Kutta method.
 \end{exercise}
 
 \begin{exercise} \label{c15.1.4a}
-Use formula \Ref{eq:tfeul} to show that the first step in
+Use formula \eqref{eq:tfeul} to show that the first step in
 the numerical approximations shown in Figures~\ref{fig:eulex1}(b)
 and \ref{fig:eulimpr} have to lie below the graph of
 the exact solution $x(t)$.
@@ -628,8 +628,8 @@ Use \Matlab to solve the initial value problem
 (a) by the implicit Euler method, and (b) by the implicit trapezoidal 
 rule on the interval $[0,2]$.  In each case use the step size $h=0.1$.
 {\bf Hint:} Before working with \Matlabp, use this specific differential
-equation to solve explicitly for $x_{k+1}$ in \Ref{eq:impleulit} and 
-\Ref{eq:imtrap}.
+equation to solve explicitly for $x_{k+1}$ in \eqref{eq:impleulit} and 
+\eqref{eq:imtrap}.
 \end{exercise}
 
 

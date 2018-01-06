@@ -24,7 +24,7 @@ ordinary differential equations has the form
 \arrayfinish
 Computer experiments using {\sf pplane5} always appear to find a unique
 solution to initial value problems.  More precisely, we are led to
-believe that there is just one solution to \Ref{2dsystem} satisfying
+believe that there is just one solution to \eqref{2dsystem} satisfying
 the initial conditions\index{initial condition}
 \begin{eqnarray*}
 x(0) & = & x_0 \\
@@ -40,10 +40,10 @@ equations, as the following theorem shows.
 
 \begin{theorem}  \label{exist&unique}
 Suppose that the functions $f$ and $g$ in the system of
-differential equations \Ref{2dsystem} are differentiable near
+differential equations \eqref{2dsystem} are differentiable near
 $(x_0,y_0)$ and that the partial derivatives $f_x,f_y,g_x,g_y$
 are continuous near $(x_0,y_0)$.  Then there exists a unique
-solution to \Ref{2dsystem} with initial conditions
+solution to \eqref{2dsystem} with initial conditions
 $(x(0),y(0))=(x_0,y_0)$.
 \end{theorem} \index{uniqueness of solutions}
 
@@ -57,11 +57,11 @@ differential equations:
 \end{array}
 \end{equation}
 \arrayfinish
-In \Ref{2dlinsystem}, $f(x,y)=ax+by$ and $g(x,y)=cx+dy$.  The partial
+In \eqref{2dlinsystem}, $f(x,y)=ax+by$ and $g(x,y)=cx+dy$.  The partial
 derivatives of $f$ and $g$ are easy to calculate; they are: $f_x=a$, $f_y=b$,
 $g_x=c$, and $g_y=d$.  As constant functions, all of these partial
 derivatives are continuous.  Hence, existence and uniqueness of solutions to
-the initial value problem for \Ref{2dlinsystem} are guaranteed by
+the initial value problem for \eqref{2dlinsystem} are guaranteed by
 Theorem~\ref{exist&unique}.
 
 
@@ -93,19 +93,19 @@ with the initial condition
 \[
 x(0)=0.
 \]
-Certainly the constant function $x(t)=0$ is a solution to \Ref{nonunique}
+Certainly the constant function $x(t)=0$ is a solution to \eqref{nonunique}
 satisfying the initial value $x(0)=0$.  In addition, the function
 \[
 x(t) = t^3
 \]
-is a solution to \Ref{nonunique}.  This fact is checked by direct
+is a solution to \eqref{nonunique}.  This fact is checked by direct
 calculation:
 \[
 \frac{dx}{dt} = 3t^2 \AND  3x^{2/3}= 3(t^3)^{2/3} = 3t^2.
 \]
 
-Example \Ref{nonunique} shows that hypotheses like those in
-Theorem~\ref{exist&unique} are needed.  Indeed, in \Ref{nonunique}
+Example \eqref{nonunique} shows that hypotheses like those in
+Theorem~\ref{exist&unique} are needed.  Indeed, in \eqref{nonunique}
 \[
 f(x)=3x^{2/3} \AND f'(x) = \frac{2}{x^{1/3}}.
 \]
@@ -137,7 +137,7 @@ a solution that looks like $x=t^3$.  See Figure~\ref{nonuniquefig}.
         \centerline{%
         \psfig{file=../figures/nonuniqa.eps,width=3.2in}
 	\psfig{file=../figures/nonuniqb.eps,width=3.2in}}
-        \caption{Solutions for \protect\Ref{nonunique}
+        \caption{Solutions for \protect\eqref{nonunique}
               for $t\in [-3,3]$ and $x\in [-4,4]$. Left: $x(0)=0$.
 	      Right: $x(0)=0.00001$.}
         \label{nonuniquefig}
@@ -150,13 +150,13 @@ method employed by {\sf dfield5}.
 \index{initial value problem}
 
 In this chapter we discuss how to find solutions $(x(t),y(t))$ to
-\Ref{2dlinsystem} satisfying the initial values $x(0)=x_0$ and $y(0)=y_0$.
-It is convenient to rewrite \Ref{2dlinsystem} in matrix form as:
+\eqref{2dlinsystem} satisfying the initial values $x(0)=x_0$ and $y(0)=y_0$.
+It is convenient to rewrite \eqref{2dlinsystem} in matrix form as:
 \begin{equation} \label{ndlinsystem}
 \frac{dX}{dt}(t) = CX(t).
 \end{equation}
 The initial value problem is then stated as:  Find a solution to
-\Ref{ndlinsystem} satisfying $X(0)=X_0$ where $X_0=(x_0,y_0)^t$.
+\eqref{ndlinsystem} satisfying $X(0)=X_0$ where $X_0=(x_0,y_0)^t$.
 Everything that we have said here works equally well for $n$
 dimensional systems of linear differential equations.  Just let
 $C$ be an $n\times n$ matrix and let $X_0$ be an $n$ vector
@@ -164,10 +164,10 @@ of initial conditions.
 
 \subsubsection*{Solving the Initial Value Problem Using Superposition}
 
-In Section~\ref{S:IVPR} we discussed how to solve~\Ref{ndlinsystem} when the
+In Section~\ref{S:IVPR} we discussed how to solve~\eqref{ndlinsystem} when the
 eigenvalues of $C$ are real and distinct.  Recall that when $\lambda_1$ and
 $\lambda_2$ are distinct real eigenvalues of $C$ with associated
-eigenvectors $v_1$ and $v_2$, there are two solutions to \Ref{ndlinsystem}
+eigenvectors $v_1$ and $v_2$, there are two solutions to \eqref{ndlinsystem}
 given by the explicit formulas
 \[
 X_1(t) = e^{\lambda_1 t}v_1 \AND X_2(t) = e^{\lambda_2 t}v_2.
@@ -177,24 +177,24 @@ Superposition guarantees that every linear combination of these solutions
 X(t) = \alpha_1X_1(t)+\alpha_2X_2(t) =
 \alpha_1e^{\lambda_1 t}v_1 + \alpha_2e^{\lambda_2 t}v_2
 \]
-is a solution to \Ref{ndlinsystem}.  In addition, we can always choose
+is a solution to \eqref{ndlinsystem}.  In addition, we can always choose
 scalars $\alpha_1,\alpha_2\in\R$ to solve any given initial value problem
-of \Ref{ndlinsystem}.   It follows from the uniqueness of solutions to
+of \eqref{ndlinsystem}.   It follows from the uniqueness of solutions to
 initial value problems stated in Theorem~\ref{exist&unique} that all
-solutions to \Ref{ndlinsystem} are included in this family of solutions.
+solutions to \eqref{ndlinsystem} are included in this family of solutions.
 
 We generalize this discussion so that we will be able to find closed form 
-solutions to \Ref{ndlinsystem} in Section~\ref{S:TDM} when the eigenvalues 
+solutions to \eqref{ndlinsystem} in Section~\ref{S:TDM} when the eigenvalues 
 of $C$ are complex or are real and equal.
 
-Suppose that $X_1(t)$ and $X_2(t)$ are two solutions to \Ref{2dlinsystem} such
+Suppose that $X_1(t)$ and $X_2(t)$ are two solutions to \eqref{2dlinsystem} such
 that
 \[
 v_1=X_1(0) \AND v_2=X_2(0)
 \]
 are linearly independent\index{linearly!independent}.  The existence part of
 Theorem~\ref{exist&unique}
-guarantees that such solutions exist.  Then all solutions to \Ref{2dlinsystem}
+guarantees that such solutions exist.  Then all solutions to \eqref{2dlinsystem}
 are linear combinations of these two solutions.  We verify this statement as
 follows.  Corollary~\ref{C:dim=n} of Chapter~\ref{C:vectorspaces} states
 that since $\{v_1,v_2\}$ is a linearly independent set in $\R^2$, it is
@@ -212,7 +212,7 @@ is the unique solution whose initial condition vector is $X_0$.
 
 We have proved that every solution to this linear system of differential
 equations is a linear combination of these two solutions --- that is, we
-have proved that the dimension of the space of solutions to \Ref{ndlinsystem}
+have proved that the dimension of the space of solutions to \eqref{ndlinsystem}
 is two.  This proof generalizes immediately to a proof of the following
 theorem for $n\times n$ systems.
 
@@ -222,7 +222,7 @@ theorem for $n\times n$ systems.
   \]
 are  solutions to $\dot{X}=CX$ such that the vectors of initial conditions
 $v_j=X_j(0)$ are linearly independent in $\R^n$.  Then the unique solution
-to the system \Ref{ndlinsystem} with initial condition $X(0)=X_0$ is
+to the system \eqref{ndlinsystem} with initial condition $X(0)=X_0$ is
 \begin{equation}  \label{E:genlsoln}
 X(t)=r_1X_1(t) + \cdots + r_nX_n(t),
 \end{equation}
@@ -232,7 +232,7 @@ X_0 = r_1v_1 + \cdots + r_nv_n.
 \end{equation}
 \end{theorem}\index{initial condition!linear independence}
 
-We call \Ref{E:genlsoln} the {\em general solution\/} \index{general solution}
+We call \eqref{E:genlsoln} the {\em general solution\/} \index{general solution}
 to the system of differential equations $\dot{X}=CX$.  When solving the
 initial value problem we find a {\em particular solution\/}\index{particular
 solution}
@@ -253,12 +253,12 @@ real eigenvalues $\lambda_1,\ldots,\lambda_n$.  Then the functions
 $X_j(t)=e^{\lambda_j t}v_j$ are solutions to $\dot{X}=CX$.
 Corollary~\ref{C:indsoln} implies that the functions $X_j$ form a basis for
 the space of solutions of this system of differential equations.  Indeed,
-the general solution to \Ref{ndlinsystem} is
+the general solution to \eqref{ndlinsystem} is
 \begin{equation}  \label{e:gensoln}
 X(t) = r_1e^{\lambda_1 t}v_1 + \cdots + r_ne^{\lambda_n t}v_n.
 \end{equation}
 The particular solution that solves the initial value $X(0)=X_0$ is found by
-solving \Ref{findscalars} for the scalars $r_1,\ldots,r_n$.
+solving \eqref{findscalars} for the scalars $r_1,\ldots,r_n$.
 
 
 
@@ -281,19 +281,19 @@ Verify that
 \[
 v_1 = \vectwo{2}{-3} \AND v_2 = \vectwo{-7}{11}
 \]
-are eigenvectors of the coefficient matrix of \Ref{Ex.1.03} and find
+are eigenvectors of the coefficient matrix of \eqref{Ex.1.03} and find
 the associated eigenvalues.
 \end{exercise}
 \begin{exercise} \label{c6.1.03b}
-Find the solution to \Ref{Ex.1.03} satisfying initial conditions $X(0) =
+Find the solution to \eqref{Ex.1.03} satisfying initial conditions $X(0) =
 (-14,22)^t$.
 \end{exercise}
 \begin{exercise} \label{c6.1.03c}
-Find the solution to \Ref{Ex.1.03} satisfying initial conditions $X(0) =
+Find the solution to \eqref{Ex.1.03} satisfying initial conditions $X(0) =
 (-3,5)^t$.
 \end{exercise}
 \begin{exercise} \label{c6.1.03d}
-Find the solution to \Ref{Ex.1.03} satisfying initial conditions $X(0) =
+Find the solution to \eqref{Ex.1.03} satisfying initial conditions $X(0) =
 (9,-14)^t$.
 \end{exercise}
 
@@ -306,19 +306,19 @@ differential equations
 \end{array}
 \end{equation}
 \begin{exercise} \label{c6.1.06a}
-The eigenvalues of the coefficient matrix of \Ref{Ex.1.06} are $0$ and $2$.
+The eigenvalues of the coefficient matrix of \eqref{Ex.1.06} are $0$ and $2$.
 Find the associated eigenvectors.
 \end{exercise}
 \begin{exercise} \label{c6.1.06b}
-Find the solution to \Ref{Ex.1.06} satisfying initial conditions
+Find the solution to \eqref{Ex.1.06} satisfying initial conditions
 $X(0)=(2,-2)^t$.
 \end{exercise}
 \begin{exercise} \label{c6.1.06c}
-Find the solution to \Ref{Ex.1.06} satisfying initial conditions
+Find the solution to \eqref{Ex.1.06} satisfying initial conditions
 $X(0)=(2,6)^t$.
 \end{exercise}
 \begin{exercise} \label{c6.1.06d}
-Find the solution to \Ref{Ex.1.06} satisfying initial conditions
+Find the solution to \eqref{Ex.1.06} satisfying initial conditions
 $X(0)=(1,0)^t$.
 \end{exercise}
 
@@ -332,18 +332,18 @@ differential equations
 \end{array}
 \end{equation}
 \begin{exercise} \label{c6.1.1a}
-Show that $(x_1(t),y_1(t)) = (\cos t,\sin t)$ is a solution to \Ref{E:c6.1.1}.
+Show that $(x_1(t),y_1(t)) = (\cos t,\sin t)$ is a solution to \eqref{E:c6.1.1}.
 \end{exercise}
 \begin{exercise} \label{c6.1.1b}
-Show that $(x_2(t),y_2(t)) = (-\sin t,\cos t)$ is a solution to \Ref{E:c6.1.1}.
+Show that $(x_2(t),y_2(t)) = (-\sin t,\cos t)$ is a solution to \eqref{E:c6.1.1}.
 \end{exercise}
 \begin{exercise} \label{c6.1.1c}
 Using Exercises~\ref{c6.1.1a} and \ref{c6.1.1b}, find a solution $(x(t),y(t))$
-to \Ref{E:c6.1.1} that satisfies $(x(0),y(0)) = (0,1)$.
+to \eqref{E:c6.1.1} that satisfies $(x(0),y(0)) = (0,1)$.
 \end{exercise}
 \begin{exercise} \label{c6.1.1d}
 Using Exercises~\ref{c6.1.1a} and \ref{c6.1.1b}, find a solution $(x(t),y(t))$
-to \Ref{E:c6.1.1} that satisfies $(x(0),y(0)) = (1,1)$.
+to \eqref{E:c6.1.1} that satisfies $(x(0),y(0)) = (1,1)$.
 \end{exercise}
 
 \noindent In Exercises~\ref{c6.1.2a} -- \ref{c6.1.2b}, consider the system of
@@ -355,11 +355,11 @@ differential equations
 \end{array}
 \end{equation}
 \begin{exercise} \label{c6.1.2a}
-Find a solution to \Ref{E:c6.1.2}
+Find a solution to \eqref{E:c6.1.2}
 satisfying the initial condition $(x(0),y(0)) = (1,0)$.
 \end{exercise}
 \begin{exercise} \label{c6.1.2b}
-Find a solution to \Ref{E:c6.1.2}
+Find a solution to \eqref{E:c6.1.2}
 satisfying the initial condition $(x(0),y(0)) = (-1,2)$.
 \end{exercise}
 
@@ -407,10 +407,10 @@ of differential equations
 \end{equation}
 \begin{itemize}
 \item[(a)] Use {\sf pplane5} to find two independent eigendirections (and
-hence eigenvectors) for \Ref{Ex.1.4}.
+hence eigenvectors) for \eqref{Ex.1.4}.
 \item[(b)] Using (a), find the eigenvalues of the coefficient matrix of
-\Ref{Ex.1.4}.
-\item[(c)] Find a closed form solution to \Ref{Ex.1.4} satisfying the initial
+\eqref{Ex.1.4}.
+\item[(c)] Find a closed form solution to \eqref{Ex.1.4} satisfying the initial
 condition
 \[
 X(0) = \vectwo{4}{-1}.

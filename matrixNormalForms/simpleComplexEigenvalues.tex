@@ -40,17 +40,17 @@ then $A$ is similar to the matrix
 \begin{equation} \label{E:normalfm2}
 \mattwo{\sigma}{-\tau}{\tau}{\sigma}.
 \end{equation}
-Moreover, the basis in which $A$ has the form \Ref{E:normalfm2} is found
+Moreover, the basis in which $A$ has the form \eqref{E:normalfm2} is found
 as follows.  Let $v=w_1+iw_2$ be the eigenvector of $A$ corresponding to 
 the eigenvalue $\sigma-i\tau$.  Then $\{w_1,w_2\}$ is the desired 
 basis.\index{basis}
 
-Geometrically, multiplication of vectors in $\R^2$ by \Ref{E:normalfm2} is 
+Geometrically, multiplication of vectors in $\R^2$ by \eqref{E:normalfm2} is 
 the same as a rotation followed by a dilatation\index{dilatation}.  More 
 specifically, let $r=\sqrt{\sigma^2+\tau^2}$.  So the point $(\sigma,\tau)$ 
 lies on the circle of radius $r$ about the origin, and there is an angle 
 $\theta$ such that $(\sigma,\tau)=(r\cos\theta,r\sin\theta)$.  Now we can 
-rewrite \Ref{E:normalfm2} as
+rewrite \eqref{E:normalfm2} as
 \[
 \mattwo{\sigma}{-\tau}{\tau}{\sigma}
 = r\mattwo{\cos\theta}{-\sin{\theta}}{\sin\theta}{\cos\theta}=rR_{\theta},
@@ -85,9 +85,9 @@ factor of $\sqrt{2}$.  See Exercise~\ref{c10.4.rotate}.
 \subsubsection*{The Algebra of Complex Eigenvalues: Complex Multiplication}
 \index{eigenvalue!complex}
 
-We have shown that the normal form\index{normal form} \Ref{E:normalfm2} can 
+We have shown that the normal form\index{normal form} \eqref{E:normalfm2} can 
 be interpreted geometrically as a rotation followed by a dilatation.  There 
-is a second algebraic interpretation of \Ref{E:normalfm2}, and this 
+is a second algebraic interpretation of \eqref{E:normalfm2}, and this 
 interpretation is based on multiplication by complex numbers.
 
 Let $\lambda=\sigma+i\tau$ be a complex number and consider the matrix 
@@ -96,7 +96,7 @@ associated with complex multiplication, that is, the linear mapping
 z\mapsto \lambda z
 \end{equation}
 on the complex plane.  By identifying real and imaginary parts, we can 
-rewrite \Ref{e:cplxmap} as a real $2\times 2$ matrix in the following way. 
+rewrite \eqref{e:cplxmap} as a real $2\times 2$ matrix in the following way. 
 Let $z=x + iy$.  Then
 \[
 \lambda z = (\sigma+i\tau)(x+iy) = (\sigma x - \tau y) + 
@@ -106,25 +106,25 @@ Now identify $z$ with the vector $(x,y)$; that is, the vector whose first
 component is the real part of $z$ and whose second component is the 
 imaginary part.  Using this identification the complex number $\lambda z$
 is identified with the vector $(\sigma x - \tau y,\tau x + \sigma y)$. 
-So, in real coordinates and in matrix form, \Ref{e:cplxmap} becomes
+So, in real coordinates and in matrix form, \eqref{e:cplxmap} becomes
 \[
 \vectwo{x}{y}\mapsto \vectwo{\sigma x - \tau y}{\tau x + \sigma y} =
 \mattwo{\sigma}{-\tau}{\tau}{\sigma} \vectwo{x}{y}.
 \]
 That is, the matrix corresponding to multiplication of $z=x+iy$ by the 
 complex number $\lambda=\sigma+i\tau$ is the one that multiplies the 
-vector $(x,y)^t$ by the normal form matrix \Ref{E:normalfm2}.
+vector $(x,y)^t$ by the normal form matrix \eqref{E:normalfm2}.
 
 \subsubsection*{Direct Agreement Between the Two Interpretations of 
-\protect\Ref{E:normalfm2}}   
+\protect\eqref{E:normalfm2}}   
 
-We have shown that matrix multiplication by \Ref{E:normalfm2} may be thought 
+We have shown that matrix multiplication by \eqref{E:normalfm2} may be thought 
 of either algebraically as multiplication by a complex number (an eigenvalue)
 or geometrically as a rotation followed by a dilatation.  We now show how to
 go directly from the algebraic interpretation to the geometric interpretation.
 
 Euler's formula\index{Euler's formula} (Chapter~\ref{Chap:Planar}, 
-\Ref{E:Euler}) states that
+\eqref{E:Euler}) states that
 \[
 e^{i\theta} = \cos\theta + i\sin\theta
 \]
@@ -208,7 +208,7 @@ invertible, to the matrix $(I_n|T\inv)$.
 \subsubsection*{Two Examples}
 
 As a first example, consider the normal form $2\times 2$ matrix 
-\Ref{E:normalfm2} that has eigenvalues $\lambda$ and $\overline{\lambda}$, 
+\eqref{E:normalfm2} that has eigenvalues $\lambda$ and $\overline{\lambda}$, 
 where $\lambda=\sigma+i\tau$.   Let 
 \[
 B = \mattwo{\sigma}{-\tau}{\tau}{\sigma} \AND 
@@ -277,7 +277,7 @@ and dilatations for real $n\times n$ matrices $A$.  In this normal form
 we determine all matrices $A$ that have distinct eigenvalues --- up to 
 similarity by real $n\times n$ matrices $S$.  The normal form results in 
 matrices that are block diagonal with either $1\times 1$ blocks or 
-$2\times 2$ blocks of the form \Ref{E:normalfm2} on the diagonal.
+$2\times 2$ blocks of the form \eqref{E:normalfm2} on the diagonal.
 
 A real $n\times n$ matrix is in 
 {\em real block diagonal form\/}
@@ -330,11 +330,11 @@ lemma is trivially valid, as $\alpha v=0$ for $v\neq 0$ implies that
 $\alpha=0$, even when $\alpha\in\C$ and $v\in\C^n$.  
 
 By induction assume the lemma is valid for $q-1$.  Now apply $A$ to 
-\Ref{E:indepcomplx} obtaining
+\eqref{E:indepcomplx} obtaining
 \[
 \alpha_1\lambda_1v_1 + \cdots + \alpha_q\lambda_qv_q = 0.
 \]
-Subtract this identity from $\lambda_q$ times \Ref{E:indepcomplx}, and obtain
+Subtract this identity from $\lambda_q$ times \eqref{E:indepcomplx}, and obtain
 \[
 \alpha_1(\lambda_1-\lambda_q)v_1 + \cdots +
 \alpha_{q-1}(\lambda_{q-1}-\lambda_q)v_{q-1} = 0.
@@ -344,7 +344,7 @@ By induction
 \alpha_j(\lambda_j-\lambda_q) = 0
 \]
 for $j=1,\ldots, q-1$.  Since the $\lambda_j$ are distinct it follows that 
-$\alpha_j=0$ for $j=1,\ldots, q-1$.  Hence \Ref{E:indepcomplx} implies that 
+$\alpha_j=0$ for $j=1,\ldots, q-1$.  Hence \eqref{E:indepcomplx} implies that 
 $\alpha_qv_q = 0$; since $v_q\neq 0$, $\alpha_q=0$.  \end{proof}
 
 \begin{lemma}  \label{L:rlcmplx}
@@ -364,7 +364,7 @@ $\beta^i$ be real scalars.  Then
 \begin{equation}  \label{E:realcmplx}
 \beta^rw^r + \beta^iw^i = \beta w + \overline{\beta} \overline{w},
 \end{equation}
-where $\beta = \frac{1}{2}(\beta^r-i\beta^i)$.  Identity \Ref{E:realcmplx} 
+where $\beta = \frac{1}{2}(\beta^r-i\beta^i)$.  Identity \eqref{E:realcmplx} 
 is verified by direct calculation.
 
 Suppose now that 
@@ -373,7 +373,7 @@ Suppose now that
 \beta_\ell^rw_\ell^r+\beta_\ell^iw_\ell^i = 0
 \end{equation}
 for real scalars $\alpha_j$, $\beta_j^r$ and $\beta_j^i$.  Using 
-\Ref{E:realcmplx} we can rewrite \Ref{E:rlcplxlc} as
+\eqref{E:realcmplx} we can rewrite \eqref{E:rlcplxlc} as
 \[
 \alpha_1v_1+\cdots+\alpha_kv_k + \beta_1w_1+\overline{\beta}_1\overline{w}_1 
 + \cdots + \beta_\ell w_\ell+\overline{\beta}_\ell\overline{w}_\ell = 0,
@@ -401,7 +401,7 @@ v_1,\ldots,v_k,w_1^r,w_1^i,\ldots,w_\ell^r,w_\ell^i
 are linearly independent and hence form a basis for $\R^n$.
 
 We now show that $A$ is real block diagonalizable.  Let $S$ be the $n\times
-n$ matrix whose columns are the vectors in \Ref{e:complexeigen}.  Since
+n$ matrix whose columns are the vectors in \eqref{e:complexeigen}.  Since
 these vectors are linearly independent, $S$ is invertible.  We claim that 
 $S\inv AS$ is real block diagonal.  This statement is verified by direct
 calculation.
@@ -429,7 +429,7 @@ Equating real and imaginary parts leads to
 \begin{array}{ccc} Aw_1^r & = & \sigma_1w_1^r+\tau_1w_1^i\\
 Aw_1^i & = &   -\tau_1w_1^r+\sigma_1w_1^i. \end{array}
 \end{equation}
-Using \Ref{e:complexsimple}, compute
+Using \eqref{e:complexsimple}, compute
 \begin{align*}
 (S\inv AS)e_{k+1} &= S\inv Aw_1^r = S\inv(\sigma_1w_1^r+\tau_1w_1^i)  \\
 &= \sigma_1e_{k+1} + \tau_1e_{k+2}.
@@ -554,7 +554,7 @@ block diagonal form.
 
 \begin{exercise} \label{c10.4.rotate}
 Use {\sf map}\index{\computer!map} to verify that 
-the normal form matrices \Ref{E:normalfm2} are 
+the normal form matrices \eqref{E:normalfm2} are 
 just rotations followed by dilatations.  In particular, use {\sf map} to 
 study the normal form matrix
 \[

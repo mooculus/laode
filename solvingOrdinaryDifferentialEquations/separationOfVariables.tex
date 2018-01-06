@@ -23,18 +23,18 @@ These particular equations are {\em separable equations\/} having the form
 \frac{dx}{dt} = g(x) h(t),
 \end{equation}
 where $g,h:\R\to\R$ are continuous functions.   There are two special cases 
-of \Ref{eq:gh}: the case $g(x)=1$ and the case $h(t)=1$.  
+of \eqref{eq:gh}: the case $g(x)=1$ and the case $h(t)=1$.  
 
 \subsubsection*{The Special Case $g(x)=1$: Integration Theory}
 
-The assumption that $g(x)=1$ in \Ref{eq:gh} leads to the differential 
+The assumption that $g(x)=1$ in \eqref{eq:gh} leads to the differential 
 equation 
 \begin{equation}  \label{e:g=1}
 \frac{dx}{dt} = h(t).
 \end{equation}
 In Section~\ref{S:growthmodels} we saw that this differential equation  
 is easily solved by direct integration.  For example, if $h(t)=t^2$ then 
-the solution to \Ref{e:g=1} with initial condition $x(2)=5$ is found as
+the solution to \eqref{e:g=1} with initial condition $x(2)=5$ is found as
 follows.  By direct integration,
 \[
 x(t) = \int t^2 dt = \frac{1}{3}t^3 + C.
@@ -52,18 +52,18 @@ C = 5 - \frac{8}{3} = \frac{7}{3}.
 \subsubsection*{The Special Case $h(t)=1$: Autonomous Equations}
 \index{autonomous}
 
-The second special case in \Ref{eq:gh} leads to the autonomous 
+The second special case in \eqref{eq:gh} leads to the autonomous 
 differential equation
 \begin{equation}  \label{e:h=1}
 \frac{dx}{dt} = g(x).
 \end{equation}
-Begin by noting that equilibria are special solutions to \Ref{e:h=1} that we 
+Begin by noting that equilibria are special solutions to \eqref{e:h=1} that we 
 can find by solving the equation $g(x)=0$.  More precisely, if $g(x_0)=0$, 
-then $x(t)=x_0$ is a constant solution to \Ref{e:h=1}.  
+then $x(t)=x_0$ is a constant solution to \eqref{e:h=1}.  
 
 We find the 
 nonequilibrium solutions by direct integration --- but only after 
-using change of variables in integration.  To solve \Ref{e:h=1},
+using change of variables in integration.  To solve \eqref{e:h=1},
 just divide both sides of this equation by $g(x)$, obtaining
 \[
 \frac{1}{g(x)}\frac{dx}{dt} = 1,
@@ -82,7 +82,7 @@ Replacing $y$ by $x$, we obtain
 \int\frac{1}{g(x)}dx = t + C.
 \]
 
-As a simple example, solve the growth rate equation \Ref{lin1} 
+As a simple example, solve the growth rate equation \eqref{lin1} 
 \begin{equation}  \label{lin1a} 
 \frac{dx}{dt} = \lambda x
 \end{equation}
@@ -90,7 +90,7 @@ using this technique of integration.  It follows that
 \[
 \int \frac{1}{x}dx = \lambda t + C.
 \]
-So, to solve \Ref{lin1a}, we need to know how to integrate the function 
+So, to solve \eqref{lin1a}, we need to know how to integrate the function 
 $1/x$.  Recalling that this integral is just $\ln |x|$ we obtain
 \[
 \ln |x(t)| = \lambda t + C.
@@ -104,10 +104,10 @@ where $K = e^C \geq 0$.  On dropping the absolute value signs, we obtain
 x(t) =   K e^{\lambda t},
 \]
 for arbitrary $K$.  Of course, this is precisely the solution that we 
-found in \Ref{soln1}.  
+found in \eqref{soln1}.  
 
 It is worth reflecting on the information from calculus that we needed to 
-solve \Ref{lin1a}.  In Section~\ref{S:growthmodels} we found the solution to 
+solve \eqref{lin1a}.  In Section~\ref{S:growthmodels} we found the solution to 
 this equation by asking what function has a derivative that is a multiple of 
 itself.  We then had to remember that $e^{\lambda t}$ is such a function and 
 then prove that up to the constant $K$ this was the only such function 
@@ -115,8 +115,8 @@ then prove that up to the constant $K$ this was the only such function
 indefinite integral of $1/x$ and then solve for $x$ in terms of $t$.  
 
 We now summarize this technique for solving the autonomous differential 
-equation \Ref{e:h=1}.  Let $G(x)$ be an indefinite integral of $1/g(x)$. 
-Then, after division by $g(x)$, integrating both sides of \Ref{e:h=1} 
+equation \eqref{e:h=1}.  Let $G(x)$ be an indefinite integral of $1/g(x)$. 
+Then, after division by $g(x)$, integrating both sides of \eqref{e:h=1} 
 with respect to $t$ leads to the equation 
 \[
 G(x) = t + C.
@@ -126,7 +126,7 @@ last step is often quite difficult, as we show by example below.
 
 There is one additional point that needs to be remembered when using 
 this technique.  The constant $C$ is, as usual, related to an initial
-condition.  Indeed, if we wish to solve \Ref{e:h=1} with the initial
+condition.  Indeed, if we wish to solve \eqref{e:h=1} with the initial
 condition $x(t_0)=x_0$, then we can solve for 
 \[
 C = G(x_0) - t_0.
@@ -140,7 +140,7 @@ Consider the nonlinear differential equation
 \frac{dx}{dt} = x^2
 \end{equation}
 satisfying the initial condition $x(t_0)=x_0$.  Using the preceding 
-discussion, we can solve \Ref{e:x^2} by integration.  Specifically,
+discussion, we can solve \eqref{e:x^2} by integration.  Specifically,
 on division we obtain
 \[
 \frac{1}{x^2}\frac{dx}{dt} = 1,
@@ -177,21 +177,21 @@ For example, if $t_0=0.1$ and $x_0=2$, then $K=0.6$ and
 x(t) = \frac{1}{0.6-t}.
 \end{equation}
 
-Example~\Ref{e:x^2} shows that solutions to nonlinear differential
+Example~\eqref{e:x^2} shows that solutions to nonlinear differential
 equations\index{differential equation!nonlinear} possess 
 qualitative properties that are different from 
 those of the linear equation $\dot{x}=\lambda x$.  In particular:
 \begin{itemize}
 \item Solutions can approach infinity in finite time.   For example, 
-the solution \Ref{E:solnx^2} with initial condition $x(0.1)=2$ goes to 
+the solution \eqref{E:solnx^2} with initial condition $x(0.1)=2$ goes to 
 infinity as $t$ approaches $0.6$.   
 \item Solutions may not be defined for all $t\in\R$.  Indeed, the 
-solution \Ref{E:solnx^2} has a singularity at $t=0.6$ and is defined 
+solution \eqref{E:solnx^2} has a singularity at $t=0.6$ and is defined 
 for either $t> 0.6$ or $t<0.6$.  
 \end{itemize}
 
 
-We can solve equation \Ref{e:x^2} using 
+We can solve equation \eqref{e:x^2} using 
 {\sf dfield5}\index{\computer!dfield5}.
 Using {\sf Keyboard input} set the initial condition at
 $(x_0,t_0)=(2,0.1)$ and obtain the trajectory in
@@ -200,7 +200,7 @@ in forward time while approaching $t=0.6$.  Now set the initial
 condition to $(x_0,t_0)=(1,-2.5)$ and see that the solution goes
 to negative infinity as $t$ approaches $0.6$ from above.  See
 Figure~\ref{F:x^2}(right).  Finally note that both of these
-solutions are given by the same formula \Ref{E:solnx^2}.
+solutions are given by the same formula \eqref{E:solnx^2}.
 
 \begin{figure*}[htb]
            \centerline{%
@@ -218,7 +218,7 @@ Consider the differential equation
 \begin{equation}  \label{E:ncf}
 \frac{dx}{dt} = \frac{x}{x-1}
 \end{equation}
-with initial condition $x(1)=2$. On division \Ref{E:ncf} becomes 
+with initial condition $x(1)=2$. On division \eqref{E:ncf} becomes 
 \[
 \left(1-\frac{1}{x}\right)\frac{dx}{dt} = 1.
 \]
@@ -240,7 +240,7 @@ as a function of $t$; that is, there is no closed form
 solution\index{closed form solution} 
 for $x(t)$.  Nevertheless, $x(t)$ is defined 
 {\em implicitly\/}\index{solution!implicitly defined} 
-by \Ref{e:solnncf}.  This equation can, however, be solved numerically by
+by \eqref{e:solnncf}.  This equation can, however, be solved numerically by
 {\sf dfield5} just as easily as equations that have closed form solutions.
 See Exercise~\ref{c14.1.17}. 
 
@@ -256,11 +256,11 @@ where $x(t_0) = x_0$, is obtained by combining the integrations of the two
 special cases just considered.  
 
 Note that if $g(x_0)=0$, then $x(t)=x_0$ is an equilibrium solution to 
-\Ref{eq:ghivp}.  So we can assume 
+\eqref{eq:ghivp}.  So we can assume 
 \begin{equation} \label{eq:gx0}
 g(x_0)\not=0,
 \end{equation}
-and divide \Ref{eq:ghivp} by $g(x)$ to obtain
+and divide \eqref{eq:ghivp} by $g(x)$ to obtain
 \[
 \frac{1}{g(x)}\frac{dx}{dt}= h(t).
 \]
@@ -272,7 +272,7 @@ As before, on changing variables, we obtain
 \[
 \int\frac{1}{g(x)} dx = \int h(t) dt.
 \]
-Thus, the abstract solution to \Ref{eq:ghivp} can be written as
+Thus, the abstract solution to \eqref{eq:ghivp} can be written as
 \begin{equation} \label{E:G=H+K}
 G(x) = H(t) + C,
 \end{equation}
@@ -296,11 +296,11 @@ where $x(1)=2$.  Here $g(x) = 1/x^2$ and $h(t) = t$, so that
 \[
 G(x)=\int x^2 dx= \frac{1}{3}x^3 \AND H(t) = \int t dt = \frac{1}{2}t^2.
 \]
-Since $t_0=1$ and $x_0=2$, we can use \Ref{E:G=H+Kinit} to see that 
+Since $t_0=1$ and $x_0=2$, we can use \eqref{E:G=H+Kinit} to see that 
 \[
 C = G(2)-H(1) = \frac{8}{3} -\frac{1}{2} = \frac{13}{6},
 \]
-and \Ref{E:G=H+K} to see that the solution $x(t)$ satisfies
+and \eqref{E:G=H+K} to see that the solution $x(t)$ satisfies
 \[
 \frac{1}{3}x(t)^3 = \frac{1}{2}t^2 + \frac{13}{6}.
 \]
@@ -315,7 +315,7 @@ satisfying the specified initial condition.
 \index{separation of variables!general solution}
 
 With this example, we illustrate how to use separation of variables to find 
-all solutions of a differential equation in the form \Ref{eq:gh}.  Consider
+all solutions of a differential equation in the form \eqref{eq:gh}.  Consider
 \begin{equation} \label{eq:x1t2}
 \frac{dx}{dt} = \frac{(x+1)(t^2+1)}{t}
 \end{equation}
@@ -324,12 +324,12 @@ for $t>0$.  Using our notation we have
 g(x) = x+1 \AND h(t) = t+\frac{1}{t}.
 \]
 Note that $g(-1)=0$ and hence that $x(t)=-1$ is the constant equilibrium 
-solution to \Ref{eq:x1t2}.  For all the other initial conditions, we obtain 
+solution to \eqref{eq:x1t2}.  For all the other initial conditions, we obtain 
 \[
 G(x)=\int \frac{1}{x+1} dx = \ln|x+1| \AND 
 H(t) = \int\left(t + \frac{1}{t}\right)dt = \frac{1}{2}t^2 + \ln |t|.
 \]
-Thus, in this example, identity \Ref{E:G=H+K} implies that the 
+Thus, in this example, identity \eqref{E:G=H+K} implies that the 
 solution $x(t)$ satisfies
 \[
 \ln |x(t)+1| = \frac{1}{2}t^2 + \ln |t| + C.
@@ -338,7 +338,7 @@ Hence
 \[
 |x(t)+1| = K|t|e^{t^2/2},
 \]
-for some constant $K>0$ and nonconstant solutions of \Ref{eq:x1t2} are in 
+for some constant $K>0$ and nonconstant solutions of \eqref{eq:x1t2} are in 
 one-to-one correspondence with functions
 \[
 x(t) = Kte^{t^2/2}-1
@@ -397,7 +397,7 @@ $\dps \frac{dx}{dt} = \frac{\sin t}{x}$.
 \noindent We have studied the autonomous linear differential equation 
 $\dot{x}=\lambda x$ when $\lambda\neq 0$ and have shown that solutions 
 exist for all time and tend either to $0$ or to $\pm\infty$ as $t\to\pm\infty$.
-See \Ref{explimits} and Figure~\ref{df_dsp1}.  In Exercises~\ref{c14.1.11a} -- 
+See \eqref{explimits} and Figure~\ref{df_dsp1}.  In Exercises~\ref{c14.1.11a} -- 
 \ref{c14.1.11f} explore the behavior of solutions $x(t)$ of the given 
 nonlinear (and often nonautonomous) differential equation using {\sf dfield5}.  
 Where possible, describe the differences between the behavior of solutions of 
@@ -440,7 +440,7 @@ $\dps\frac{dx}{dt} = \frac{t}{x^2}$.
 \end{exercise}
 
 \begin{exercise} \label{c14.1.17}
-Recall that the differential equation \Ref{E:ncf} $\dot{x}=x/(x-1)$ cannot be 
+Recall that the differential equation \eqref{E:ncf} $\dot{x}=x/(x-1)$ cannot be 
 solved in closed form.  
 \begin{itemize}
 \item[(a)]	Use {\sf dfield5}\index{\computer!dfield5} 
@@ -466,15 +466,15 @@ equation
 \end{equation}
 \begin{itemize}
 \item[(a)] Use separation of variables to find the solution $x(t)$ to the 
-initial value problem $x(0.001) = 2/1999$ of \Ref{eq:exivp}.
+initial value problem $x(0.001) = 2/1999$ of \eqref{eq:exivp}.
 \item[(b)] Show that $\dps\lim_{t\to 2^-}x(t)=\infty$ for the solution of 
-\Ref{eq:exivp} obtained in (a).
+\eqref{eq:exivp} obtained in (a).
 \item[(c)] For the initial condition specified in (a) compare the analytic 
-solution of \Ref{eq:exivp} to the numerical solution computed by {\sf dfield5} 
+solution of \eqref{eq:exivp} to the numerical solution computed by {\sf dfield5} 
 in the region where the maximum value of $t$ is $2.5$ and the maximum value of 
 $x$ is $100$.  How does the behavior of the numerically computed solution 
-to \Ref{eq:exivp} differ from that of the analytically computed solution?
-\item[(d)]  Compute the solution of \Ref{eq:exivp} using the general initial 
+to \eqref{eq:exivp} differ from that of the analytically computed solution?
+\item[(d)]  Compute the solution of \eqref{eq:exivp} using the general initial 
 condition $x(t_0) = x_0$ where $t_0,x_0>0$ and show that 
 $\lim_{t\to 0^+}x(t)=0$ for every such solution. 
 \end{itemize}

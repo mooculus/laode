@@ -90,7 +90,7 @@ A = \mattwo{-1}{3}{2}{-5},
 \]
 as matrix multiplication shows that $AB=I_2$ and $BA=I_2$. In fact, there is 
 an elementary formula for finding inverses of $2\times 2$ matrices (when they 
-exist); see \Ref{e:formAinv} in Section~\ref{S:det2x2}.
+exist); see \eqref{e:formAinv} in Section~\ref{S:det2x2}.
 
 On the other hand, not all matrices are invertible.  For example, the zero 
 matrix is noninvertible, since $0B=0$ for any matrix $B$.
@@ -143,7 +143,7 @@ $A^t$ is invertible and
 \end{proposition}
 
 \begin{proof}  We must show that $(A\inv)^t$ is the inverse of $A^t$.  Identity
-\Ref{e:transposeprod} implies that
+\eqref{e:transposeprod} implies that
 \[
 (A\inv)^tA^t = (AA\inv)^t = (I_n)^t = I_n,
 \]
@@ -164,10 +164,10 @@ where $A$ is an $n\times n$ matrix and $b\in\R^n$.
 
 \begin{proposition} \label{P:inv=>unique}\index{uniqueness of solutions}
 Let $A$ be an invertible $n\times n$ matrix and let $b$ be in $\R^n$.
-Then the system of linear equations \Ref{squarematrix} has a unique solution.
+Then the system of linear equations \eqref{squarematrix} has a unique solution.
 \end{proposition}
 
-\begin{proof}  We can solve the linear system \Ref{squarematrix} by setting
+\begin{proof}  We can solve the linear system \eqref{squarematrix} by setting
 \begin{equation}  \label{soln}
 x=A\inv b.
 \end{equation}
@@ -175,7 +175,7 @@ This solution is easily verified by calculating
 \[
 Ax=A(A\inv b) = (AA\inv)b = I_nb = b.
 \]
-Next, suppose that $x$ is a solution to \Ref{squarematrix}.  Then
+Next, suppose that $x$ is a solution to \eqref{squarematrix}.  Then
 \[
 x = I_n x = (A\inv A)x = A\inv(Ax) = A\inv b.
 \]
@@ -239,7 +239,7 @@ $b\in\R^n$.
 is just Proposition~\ref{P:inv=>unique}.
 
 $(b) \Rightarrow (c)$ This implication is straightforward --- just
-take $b=0$ in \Ref{squarematrix}.
+take $b=0$ in \eqref{squarematrix}.
 
 $(c) \Rightarrow (d)$  This implication is just a restatement of
 Chapter~\ref{lineq}, Corollary~\ref{consistent}.
@@ -298,7 +298,7 @@ which can be verified by matrix multiplication.
 \subsubsection*{Computing the Inverse Using \Matlab}
 
 There are two ways that we can compute inverses using \Matlab.
-Either we can perform the row reduction of \Ref{e:M} directly
+Either we can perform the row reduction of \eqref{e:M} directly
 or we can use the \Matlab the command {\tt inv}.  We illustrate
 both of these methods. First type {\tt e3\_7\_4} to recall the matrix
 \begin{matlabEquation}\label{MATLAB:31}
@@ -306,7 +306,7 @@ A = \left(\begin{array}{rrr} 1 & 2 & 4 \\ 3 & 1 & 1 \\ 2 & 0 & -1
 \end{array}\right).
 \end{matlabEquation}
 
-To perform the row reduction of \Ref{e:M} we need to form the matrix
+To perform the row reduction of \eqref{e:M} we need to form the matrix
 $M$. The \Matlab command for generating an $n\times n$ identity
 matrix is {\tt eye(n)}.  Therefore, typing
 \begin{verbatim}
@@ -389,7 +389,7 @@ ans =
 \end{verbatim}
 
 We illustrate again this simple method for computing the inverse
-of a matrix $A$.  For example, reload the matrix in \Ref{eq:5matrix}
+of a matrix $A$.  For example, reload the matrix in \eqref{eq:5matrix}
 by typing \verb+ e3_1_4+ and obtaining:
 \begin{verbatim}
 A =
@@ -428,7 +428,7 @@ x =
    -1.0000
     3.0000
 \end{verbatim}
-as desired (see \Ref{eq:5rhs}).  With this computation we have confirmed
+as desired (see \eqref{eq:5rhs}).  With this computation we have confirmed
 the analytical results of the previous subsections.
 
 

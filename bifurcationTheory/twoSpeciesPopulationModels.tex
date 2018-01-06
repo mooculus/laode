@@ -29,13 +29,13 @@ first order system of autonomous equations, then the model has the form
 \frac{dy}{dt} & = & yf_2(x,y) \label{e:pop1b}
 \end{eqnarray}  \index{population model!two species}
 where $x,y \ge 0$.
-The presence of the factor $x$ in \Ref{e:pop1a} and the factor
-$y$ in \Ref{e:pop1b} insures that extinct populations remain
+The presence of the factor $x$ in \eqref{e:pop1a} and the factor
+$y$ in \eqref{e:pop1b} insures that extinct populations remain
 extinct. The factors $f_j$ are the {\em growth rates\/} of the 
 species.\index{growth rate}
 
 If $f_1(x,y) = \mu_1$ and $f_2(x,y)=\mu_2$ are constants, then 
-the system \Ref{e:pop1a},\Ref{e:pop1b} is an uncoupled system 
+the system \eqref{e:pop1a},\eqref{e:pop1b} is an uncoupled system 
 of linear equations, and the two species evolve independently.  
 In this model, the population of species $j$ either grows
 exponentially ($\mu_j>0$) or decays exponentially ($\mu_j<0$)
@@ -79,7 +79,7 @@ where $\mu_1,\mu_2,\sigma_1,\sigma_2$ are constants.  Assumptions
   
 Under these assumptions, what can we expect the fate of predator-prey 
 populations to be?  Remarkably, most solutions to the differential equations 
-\Ref{e:PP} are periodic solutions\index{periodic solution}.  
+\eqref{e:PP} are periodic solutions\index{periodic solution}.  
 We test this statement using 
 {\sf pplane5}\index{\computer!pplane5}.   
 Loading system {\tt e12\_1\_3.pps} into {\sf pplane5}
@@ -96,14 +96,14 @@ trajectories.
            \centerline{%
 	   \psfig{file=../figures/pp1.eps,height=3.0in}}
            \caption{Phase portrait for predator-prey equations 
-		\protect\Ref{e:PP}.}
+		\protect\eqref{e:PP}.}
            \label{F:PP1}
 \end{figure}
 
 Note that if a solution to the predator-prey equation is time periodic, then 
 the predator population and the prey population both vary periodically with 
 the same period.  The assumptions (a)--(d) that went into forming the
-predator-prey equations \Ref{e:PP} are reflected in the time periodic 
+predator-prey equations \eqref{e:PP} are reflected in the time periodic 
 solutions drawn in Figure~\ref{F:PP1}.  To see this correspondence, note that 
 when the predator and the prey populations are near their minimum values, then 
 the prey population increases while the predator population remains nearly 
@@ -129,7 +129,7 @@ $\mu_1,\mu_2,\sigma_1,\sigma_2$ will show.
 It is also surprising that a differential equation depending on four
 parameters would have similar phase portraits for every one of
 these parameters (assuming the appropriate sign restrictions on
-the parameters).  We continue our discussion of \Ref{e:PP} by using scaling
+the parameters).  We continue our discussion of \eqref{e:PP} by using scaling
 arguments to show that three of these parameters are inessential.  
 
 The idea behind scaling is simple.  We think of $x(t)$ as measuring the 
@@ -149,12 +149,12 @@ where $\alpha,\beta,\gamma$ are positive scaling constants.
 
 Next, we derive differential equations for $X$ and $Y$ using the
 chain rule\index{chain rule} and the differential 
-equations \Ref{e:PP}. Observe that 
+equations \eqref{e:PP}. Observe that 
 \[
 \frac{dX}{dt}(t) = \alpha \gamma \frac{dx}{dt}(\gamma t) \AND  
 \frac{dY}{dt}(t) = \beta \gamma \frac{dy}{dt}(\gamma t),
 \]
-and from \Ref{e:PP} that 
+and from \eqref{e:PP} that 
 \begin{eqnarray*}
 \frac{dX}{dt}(t) & = & \alpha \gamma \frac{dx}{dt}(\gamma t) \\
 & = & \alpha \gamma x(\gamma t)(\mu_1 + \sigma_1y(\gamma t)) \\
@@ -180,16 +180,16 @@ These choices lead to the system of differential equations
 \end{array}
 \end{matlabEquation}% \index{predator-prey equation}
 where $\mu = \left|\frac{\mu_1}{\mu_2}\right|>0$.  It is easy to 
-check that the scaled predator-prey equations \Ref{e:PP2} have 
+check that the scaled predator-prey equations \eqref{e:PP2} have 
 an equilibrium at $(X,Y)=(1,\mu)$ that is a center.  It is also 
 easy to check using {\sf pplane5} that for each $\mu$ the phase 
-portrait of \Ref{e:PP2} appears to have periodic solutions 
+portrait of \eqref{e:PP2} appears to have periodic solutions 
 surrounding this center.
 
 \subsection*{The Volterra-Lotka Equations}
 \index{Volterra-Lotka equations}
 
-Next we show that if the population model \Ref{e:PP} is extended to 
+Next we show that if the population model \eqref{e:PP} is extended to 
 a more complicated model, then the family of periodic 
 solutions\index{family of periodic solutions} in 
 the predator-prey equations disappears.  To understand better the 
@@ -222,7 +222,7 @@ have the form:
 \end{array}
 \end{equation}
 where $\sigma_1,\sigma_2$ are nonzero constants.  Note that when
-$\sigma_1=\sigma_2=0$ system \Ref{e:pop2} reduces to the
+$\sigma_1=\sigma_2=0$ system \eqref{e:pop2} reduces to the
 uncoupled logistic system. 
 
 These equations model three different types of situations.  If
@@ -238,11 +238,11 @@ species), and the first species acts like prey (the more of
 the first species there is, the higher the growth rate of the
 second species).  In this case, the Volterra-Lotka equations are
 a generalized predator-prey two species model.  Indeed,
-if $\rho_1=\rho_2=0$ in \Ref{e:pop2}, then we recover the
-predator-prey equations \Ref{e:PP}.  Thus, we may think of
+if $\rho_1=\rho_2=0$ in \eqref{e:pop2}, then we recover the
+predator-prey equations \eqref{e:PP}.  Thus, we may think of
 Volterra-Lotka equations as a small perturbation of the 
 predator-prey equations when $\rho_1$ and $\rho_2$ are small.
-The two other cases in \Ref{e:pop2} correspond to {\em competing\/} 
+The two other cases in \eqref{e:pop2} correspond to {\em competing\/} 
 species\index{competing species} ($\sigma_1,\sigma_2<0$) and 
 {\em cooperating\/} species\index{cooperating species}
 ($\sigma_1,\sigma_2>0$).
@@ -252,12 +252,12 @@ species\index{competing species} ($\sigma_1,\sigma_2<0$) and
 \index{predator-prey equation}\index{Volterra-Lotka equations}
 
 What kind of population dynamics are predicted by equations
-\Ref{e:pop2}?  The answer depends on the exact values of the 
+\eqref{e:pop2}?  The answer depends on the exact values of the 
 six parameters $\mu_j,\rho_j,\sigma_j$.  As in our previous
-discussion of the predator-prey equations \Ref{e:PP}, we assume
+discussion of the predator-prey equations \eqref{e:PP}, we assume
 that $\mu_1>0$ and $\mu_2<0$.  To simplify the notation, we
-perform the same scalings as we did when transforming \Ref{e:PP} 
-to \Ref{e:PP2}, and obtain
+perform the same scalings as we did when transforming \eqref{e:PP} 
+to \eqref{e:PP2}, and obtain
 \begin{eqnarray*} 
 \dot{x} & = & x(\mu + \rho x -       y) \\
 \dot{y} & = & y( -1 +       x + \eta y),
@@ -265,7 +265,7 @@ to \Ref{e:PP2}, and obtain
 where $\mu>0,\rho,\eta$ are constants.  \index{predator-prey equation}
 
 We wish to compare the dynamics of these equations with those of 
-the predator-prey model \Ref{e:PP}. To facilitate this 
+the predator-prey model \eqref{e:PP}. To facilitate this 
 comparison, we assume that $\eta=0$ and study the system of 
 equations
 \begin{matlabEquation} \label{e:pop3}
@@ -278,7 +278,7 @@ There is one equilibrium\index{equilibrium} where neither species
 is extinct
 (that is, where $x>0$ and $y>0$).  For population dynamics the 
 equilibrium $(x,y)=(1,\mu+\rho)$ is a relevant solution to 
-\Ref{e:pop3} only when $\mu+\rho>0$, as we care about solutions only 
+\eqref{e:pop3} only when $\mu+\rho>0$, as we care about solutions only 
 when $x\geq0, y\geq 0$.  To understand the dynamics near this
 equilibrium, we compute the Jacobian matrix
 \[
@@ -293,7 +293,7 @@ equilibrium is a spiral source\index{source}.  The
 phase portraits\index{phase!portrait} for these two cases are shown in
 Figure~\ref{F:pop3}.  So we see that as long as $\rho\neq 0$,
 the continuous family of periodic solutions found in the simpler
-predator-prey equations \Ref{e:PP} disappears.\index{periodic solution}
+predator-prey equations \eqref{e:PP} disappears.\index{periodic solution}
 
 
 \begin{figure}[htb]
@@ -303,7 +303,7 @@ predator-prey equations \Ref{e:PP} disappears.\index{periodic solution}
 		\vspace*{-0.2in}		
 		\hspace{1.0in} $\rho=-0.1$ \hspace{2.5in} $\rho=0.1$
            \caption{Phase portraits for Volterra-Lotka predator-prey 
-		equations \protect\Ref{e:pop3} with $\mu=0.4$.}
+		equations \protect\eqref{e:pop3} with $\mu=0.4$.}
            \label{F:pop3}
 \end{figure}
 
@@ -331,10 +331,10 @@ frequently than in the other.  Which one?
 \end{exercise}
 
 \begin{exercise} \label{c9.1.6}
-Show that the predator-prey equations \Ref{E:prpr1} and \Ref{E:prpr2} both 
-scale to the same equation \Ref{e:PP2}.  For each equation what are the 
+Show that the predator-prey equations \eqref{E:prpr1} and \eqref{E:prpr2} both 
+scale to the same equation \eqref{e:PP2}.  For each equation what are the 
 values of the scaling coefficients $\alpha,\beta,\gamma$ defined in 
-\Ref{E:scalingcoeff}?  What is the common value of $\mu$?
+\eqref{E:scalingcoeff}?  What is the common value of $\mu$?
 \end{exercise}
 
 
@@ -384,20 +384,20 @@ using {\sf pplane5}.
 
 \begin{exercise} \label{c9.1.3}
 Choose values for the constants in the predator-prey equations 
-\Ref{e:PP} and verify numerically that there is a unique 
+\eqref{e:PP} and verify numerically that there is a unique 
 equilibrium surrounded by periodic solutions in the first 
 quadrant of the phase portrait for these equations.
 \end{exercise}
 
 \begin{exercise} \label{c9.1.4}
 Choose values for the constants in the Volterra-Lotka predator-prey equations 
-\Ref{e:pop3} and verify numerically that there are no periodic solutions in 
+\eqref{e:pop3} and verify numerically that there are no periodic solutions in 
 the first quadrant for these equations.
 \end{exercise}
 
 \begin{exercise} \label{c9.1.7}
 Use {\sf pplane5} to describe the (numerical) differences between solutions 
-to the differential equations \Ref{E:prpr1} and \Ref{E:prpr2}.  In particular,
+to the differential equations \eqref{E:prpr1} and \eqref{E:prpr2}.  In particular,
 compare the maximum number of prey in one equation with the maximum number of 
 prey in the other equation when you start with the same number of predators 
 and prey in each equation.
@@ -409,10 +409,10 @@ In equilibrium, there are 200 foxes and 10,000 rabbits.  When isolated from
 the foxes, the rabbit population doubles every year.  When isolated from 
 the rabbits, the fox population decreases at the rate of 10\% per year. 
 Supposing that the fox-rabbit populations are modeled by the predator-prey
-equations \Ref{e:PP}, answer the following questions.
+equations \eqref{e:PP}, answer the following questions.
 \begin{itemize}
 \item[(a)]  	What are the values of $\mu_1,\mu_2,\sigma_1,\sigma_2$ in 
-\Ref{e:PP}.
+\eqref{e:PP}.
 \item[(b)]	After a storm 1,200 rabbits and 110 foxes remain in the area.
 According to this model, what will the fox population be after three years?  
 {\bf Hint:}  Use the {\sf Specify a computation interval} on the 

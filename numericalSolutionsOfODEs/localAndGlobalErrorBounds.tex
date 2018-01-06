@@ -32,7 +32,7 @@ For Euler's method, the local error is bounded by
 \delta(k)\le \delta_h \le C_E h^2,
 \]
 where $C_E >0$ is a constant depending on the length of the interval 
-$[0,T]$ on which the solution is approximated, see \Ref{eq:locerr}.  
+$[0,T]$ on which the solution is approximated, see \eqref{eq:locerr}.  
 (For example, $C_E =e^T/2$.)  In particular, on the interval
 $[0,T]$, the local error goes to zero at least as fast as a 
 quadratic function in the step size $h$.
@@ -42,10 +42,10 @@ For Euler's method the global error is bounded by
 |\epsilon(k)|\le Dh,
 \]
 with a constant $D>0$ that again just depends on $T$, see 
-\Ref{eq:globerr}.  Hence the global error tends to zero at least as fast 
+\eqref{eq:globerr}.  Hence the global error tends to zero at least as fast 
 as a linear function in the step size $h$.  Roughly speaking, one power 
 is lost going from the local to the global error, and this power is
-lost while going through the estimate in \Ref{eq:globest}.  The same
+lost while going through the estimate in \eqref{eq:globest}.  The same
 phenomenon occurs in the general error analysis.
 
 \subsection*{A General Form for a Numerical Method}
@@ -59,12 +59,12 @@ and
 x_{k+1} = x_k + h\Phi(t_k,x_k,h).
 \]
 
-In Euler's method \Ref{eq:eulmethod}
+In Euler's method \eqref{eq:eulmethod}
 \[
 \Phi(t_k,x_k,h)=f(t_k,x_k).
 \]
 In particular, in this case, $\Phi$ does not depend on the step size $h$.
-In the modified Euler method \Ref{eq:meulmethod}
+In the modified Euler method \eqref{eq:meulmethod}
 \[
 \Phi(t_k,x_k,h) = \frac{1}{2}
 \Big( f(t_k, x_k)+f(t_k+h, x_k + h f(t_k, x_k))\Big).
@@ -110,7 +110,7 @@ we assume that there is a constant $L>0$ such that for all $t,h,y,z$
 \begin{equation} \label{eq:PhiLip}
 |\Phi(t,y,h)-\Phi(t,z,h)|\le L|y-z|.
 \end{equation}
-For Euler's method $\Phi(t,x,h)=f(t,x)$ and therefore \Ref{eq:PhiLip} is
+For Euler's method $\Phi(t,x,h)=f(t,x)$ and therefore \eqref{eq:PhiLip} is
 satisfied if $f$ is (globally) Lipschitz 
 continuous\index{Lipschitz continuous} in $x$.
 \end{itemize}
@@ -126,8 +126,8 @@ On the other hand, the numerical method can be written as
 \[
 x_k = x_{k-1} + h\Phi(t_{k-1},x_{k-1},h).
 \]
-Subtracting these two equations from each other and using \Ref{eq:PhiLip},
-\Ref{eq:locerrbound} we obtain
+Subtracting these two equations from each other and using \eqref{eq:PhiLip},
+\eqref{eq:locerrbound} we obtain
 \begin{eqnarray*}
 |\epsilon(k)| &=& |x(t_k)-x_k|\\
 &=& |x(t_{k-1})-x_{k-1} + h[\Phi(t_{k-1},x(t_{k-1}),h)-
@@ -138,8 +138,8 @@ Subtracting these two equations from each other and using \Ref{eq:PhiLip},
 &=& (1+hL)|\epsilon(k-1)|+\delta_h.
 \end{eqnarray*}
 This inequality is of the same type as the inequality in first line in
-\Ref{eq:globest} --- one just has to replace the first $h$ by $hL$.
-Hence we can repeat the estimate in \Ref{eq:globest} and obtain
+\eqref{eq:globest} --- one just has to replace the first $h$ by $hL$.
+Hence we can repeat the estimate in \eqref{eq:globest} and obtain
 \[
 |\epsilon(k)| \le \frac{(1+hL)^k -1}{hL}\delta_h.
 \]
@@ -147,7 +147,7 @@ Since $1+hL\le e^{hL}$ we have proved the following result.
 \begin{theorem} \label{prop:glerr}
 \index{discretization error!global}
 \index{error bound}
-Suppose that \Ref{eq:locerrbound} and \Ref{eq:PhiLip} hold.  Then the
+Suppose that \eqref{eq:locerrbound} and \eqref{eq:PhiLip} hold.  Then the
 global discretization error of the numerical method given
 by the function $\Phi$ satisfies 
 \begin{equation} \label{eq:geestimate}
@@ -157,7 +157,7 @@ by the function $\Phi$ satisfies
 
 \subsubsection*{An Example Using Euler's Method}
 
-The estimate \Ref{eq:geestimate} indicates that the constant $L$
+The estimate \eqref{eq:geestimate} indicates that the constant $L$
 plays an important role for the size of the global discretization error.
 Indeed, let us illustrate this fact by applying Euler's method to the
 initial value problem
@@ -179,7 +179,7 @@ $\delta_h$ for this case as follows: we have
 \lambda h e^{\lambda t_k}) = e^{\lambda kh}(e^{\lambda h}-(1+\lambda h)),
 \]
 and since $e^{\lambda h}-(1+\lambda h)\le 
-e^{\lambda h}\frac{(\lambda h)^2}{2}$ we obtain (see also \Ref{eq:locerr})
+e^{\lambda h}\frac{(\lambda h)^2}{2}$ we obtain (see also \eqref{eq:locerr})
 \[
 \delta(k+1)\le e^{\lambda kh} e^{\lambda h}\frac{(\lambda h)^2}{2}\le 
 e^{\lambda T}\frac{(\lambda h)^2}{2}.
@@ -188,12 +188,12 @@ Therefore we can choose
 \begin{equation} \label{eq:dhlam}
 \delta_h = \lambda^2 e^{\lambda T} \frac{h^2}{2}.
 \end{equation}
-In fact, observe that for $\lambda=1$ we recover \Ref{eq:euldh}.
+In fact, observe that for $\lambda=1$ we recover \eqref{eq:euldh}.
 
 Proceeding as in Section~\ref{sec:EEEM} we set $\lambda =2$ and
 compute the global
 discretization error\index{Euler's method!global discretization error} 
-and its bound in \Ref{eq:geestimate} by
+and its bound in \eqref{eq:geestimate} by
 \Matlab on the interval $[0,1]$ for the step size $h=0.1$.  
 Concretely we type
 \begin{verbatim}
@@ -223,7 +223,7 @@ Section~\ref{sec:EEEM} this constant was one.
    \centerline{%
    \psfig{file=../figures/globerr3.eps,width=3.2in}}
    \caption{The global discretization error (marked by
-   $+$) and its bound given in \protect\Ref{eq:geestimate}
+   $+$) and its bound given in \protect\eqref{eq:geestimate}
    (marked by $\times$) for the step size $h=0.1$.}
    \label{fig:Lgeest}
 \end{figure}
@@ -291,7 +291,7 @@ C_E\le \frac{1}{2}\max\left\{ \left\vert\frac{\partial f}{\partial t}(s,y)
 x_\ell \le y \le x_u \right\}.
 \end{equation}
 
-As an example of \Ref{eq:CE} we approximate the solution of the initial 
+As an example of \eqref{eq:CE} we approximate the solution of the initial 
 value problem
 \begin{eqnarray*}
 \frac{dx}{dt} & = & 5 x\\
@@ -314,7 +314,7 @@ Therefore we can choose
 \]
 for any $\bar x$ such that $\bar x \ge x(T)$.  In particular,
 we have confirmed the result we have previously obtained, 
-see \Ref{eq:dhlam}.
+see \eqref{eq:dhlam}.
 
 The computation of the local discretization error using Taylor expansions 
 is quite tedious.  Therefore we just remark here that
@@ -340,7 +340,7 @@ Once the local discretization error is bounded we can use
 Theorem~\ref{prop:glerr} to obtain a bound on global discretization 
 error.  In particular, we can prove:
 \begin{proposition} \label{prop:errEMR}
-Suppose that \Ref{eq:PhiLip} holds.  Then there are constants $C_E$,
+Suppose that \eqref{eq:PhiLip} holds.  Then there are constants $C_E$,
 $C_M$ and $C_R$ such that the global discretization error of
 \begin{itemize}
 \item[(a)] \index{Euler's method!global discretization error}
@@ -376,7 +376,7 @@ Runge-Kutta method got its name.
 In principle, we can use Proposition~\ref{prop:errEMR} to find a step 
 size for which the global discretization error is not bigger than a
 specified tolerance.  To illustrate this point,  
-consider the initial value problem (see also \Ref{eq:eulexivp})
+consider the initial value problem (see also \eqref{eq:eulexivp})
 \begin{eqnarray*}
 \frac{dx}{dt} & = & x+t \\
 x(1) & = & 2.
@@ -399,7 +399,7 @@ We now find a bound for the constant $C_E$.  We compute
 \]
 We see from the ODE that the solution is monotonically increasing.
 Suppose that we know that for $t\in [1,3]$ the solution $x(t)$ is bounded
-by $40$ from above.  Using \Ref{eq:CE} we obtain an estimate for $C_E$ by
+by $40$ from above.  Using \eqref{eq:CE} we obtain an estimate for $C_E$ by
 \[
 C_E\le \frac{1}{2}\max\left\{\vert 1+1\cdot f(s,y)\vert,\, 1\le s\le 3,\,
 2 \le y \le 40 \right\}=\frac{44}{2}=22.
@@ -460,7 +460,7 @@ $\dps\frac{dx}{dt} = -x$ where $x(0) = 1$.
 
 \begin{exercise} \label{c15.3.3}
 Set $\lambda=0.2$ and the step size $h=0.1$.  Use \Matlab to compute 
-the global discretization error and its bound in \Ref{eq:geestimate}
+the global discretization error and its bound in \eqref{eq:geestimate}
 on the interval $[0,1]$.  Compare the result with the ones obtained 
 in Figures~\ref{fig:globerr1} and \ref{fig:Lgeest}.
 \end{exercise}

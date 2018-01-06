@@ -34,30 +34,30 @@ f(x,y) = \frac{\partial H}{\partial y}(x,y) \AND
 g(x,y) =-\frac{\partial H}{\partial x}(x,y).
 \]
 The function $H$ is called the {\em Hamiltonian\/}\index{Hamiltonian system}
-of the system \Ref{e:ham}.
+of the system \eqref{e:ham}.
 By the following result Hamiltonian systems can be solved in a way analogous 
 to exact systems.
 
 \begin{theorem}
-Every solution trajectory of the Hamiltonian system \Ref{e:ham} lies
+Every solution trajectory of the Hamiltonian system \eqref{e:ham} lies
 on a level curve\index{level curve} of the associated Hamiltonian $H$.
 \end{theorem}
 
 \begin{proof} 
-Let $(x(t),y(t))$ be a solution trajectory of \Ref{e:ham}.  We need to 
+Let $(x(t),y(t))$ be a solution trajectory of \eqref{e:ham}.  We need to 
 verify that $H(x(t),y(t))$ is constant in $t$.  This is most easily 
 accomplished by showing that 
 \begin{equation} \label{e:dH=0}
 \frac{d}{dt} H(x(t),y(t)) = 0.
 \end{equation}
-Evaluate the left hand side of \Ref{e:dH=0} by using the chain rule:
+Evaluate the left hand side of \eqref{e:dH=0} by using the chain rule:
 \begin{eqnarray*}
 \frac{d}{dt} H(x(t),y(t)) & = & \frac{\partial H}{\partial x}\frac{dx}{dt}
 + \frac{\partial H}{\partial y} \frac{dy}{dt} \\
 & = & -g\frac{dx}{dt} + f\frac{dy}{dt}, 
 \end{eqnarray*}
 where the last equality follows from the definition of the Hamiltonian.  
-Using the fact that $(x(t),y(t))$ is a solution of \Ref{e:ham} leads to 
+Using the fact that $(x(t),y(t))$ is a solution of \eqref{e:ham} leads to 
 \[
  \frac{d}{dt} H(x(t),y(t)) = -gf+fg = 0,
 \]
@@ -105,18 +105,18 @@ The corresponding Hamiltonian system is:
 \dot{y} & = & x-x^3 
 \end{array}
 \end{matlabEquation}%
-since $V'(x)=x^3-x$.  It is easy to verify that \Ref{e:hamex1} has three 
+since $V'(x)=x^3-x$.  It is easy to verify that \eqref{e:hamex1} has three 
 equilibria at $(1,0)$, $(0,0)$, and $(-1,0)$.  
 
-The Jacobian of \Ref{e:hamex} is
+The Jacobian of \eqref{e:hamex} is
 \[
 J = \left(\begin{array}{cc}  0 & 1 \\ -V''(x) & 0 \end{array}\right).
 \]
-Thus equilibria of \Ref{e:hamex} are saddles\index{saddle} 
+Thus equilibria of \eqref{e:hamex} are saddles\index{saddle} 
 if $V''<0$ or centers if $V''>0$.
 Indeed, this dichotomy is generally valid for Hamiltonian systems and 
 Hamiltonian systems are {\em not\/} usually Morse-Smale.  For instance, in
-\Ref{e:hamex1} 
+\eqref{e:hamex1} 
 \[
 V''(x) = 3x^2-1
 \]
@@ -135,11 +135,11 @@ the existence of two homoclinic trajectories\index{trajectory!homoclinic}.
 \begin{figure}[htb]
            \centerline{%
 	   \psfig{file=../figures/ham.eps,width=3.5in}}
-           \caption{Phase portrait of \protect\Ref{e:hamex1}}
+           \caption{Phase portrait of \protect\eqref{e:hamex1}}
            \label{F:hamex}
 \end{figure}
 
-We remark that the system \Ref{e:hamex} is just the one obtained from the 
+We remark that the system \eqref{e:hamex} is just the one obtained from the 
 second order equation 
 \begin{equation}  \label{e:V(x)}
 \ddot{x} + V(x) = 0
@@ -150,8 +150,8 @@ by the trick of setting $y=\dot{x}$ to obtain a planar system.
 \index{potential!system}
 
 There are several related interpretations of the potential $V$ in
-\Ref{e:hamex} all based on Newton's second law of motion. 
-\index{Newton's second law}  In particular, we can rewrite \Ref{e:V(x)} as 
+\eqref{e:hamex} all based on Newton's second law of motion. 
+\index{Newton's second law}  In particular, we can rewrite \eqref{e:V(x)} as 
 \[
 \ddot{x} =  -V(x)
 \]
@@ -193,7 +193,7 @@ The phase portrait for the pendulum equations is shown in Figure~\ref{F:ppen}.
            \centerline{%
 	   \psfig{file=../figures/ppen.eps,width=3.5in}}
            \caption{Phase portrait of the pendulum equation 
-		\protect\Ref{e:pendulum}}
+		\protect\eqref{e:pendulum}}
            \label{F:ppen}
 \end{figure}
 
@@ -214,7 +214,7 @@ m\ddot x = -\frac{1}{x^2} + \frac{\ell^2}{mx^3}.
 Here $x(t)$ is the distance between the two bodies at time $t$,  $\ell$ is 
 the (constant) {\em angular momentum\/} related to their rotational motion, 
 and $m=m_1 m_2/(m_1 + m_2)$ is the {\em reduced mass}. 
-We can rewrite \Ref{E:2body} in the form $\ddot{x}+V(x)=0$ where
+We can rewrite \eqref{E:2body} in the form $\ddot{x}+V(x)=0$ where
 \[
 V(x) =  \frac{1}{mx^2} - \frac{\ell^2}{m^2x^3}.
 \]
@@ -226,7 +226,7 @@ $\ell = 1$, we can rewrite the second order equation as the first order system
 \dot{y} & = & -\frac{2}{x^2} + \frac{4}{x^3}.
 \end{array}
 \end{matlabEquation}
-The phase portrait of \Ref{e:tbp} is shown in Figure~\ref{fig:tbp}.  In 
+The phase portrait of \eqref{e:tbp} is shown in Figure~\ref{fig:tbp}.  In 
 physical space, the steady-state solution $(x,y)=(2,0)$ corresponds to a 
 circular motion of the two bodies around their common center of mass and 
 the periodic solutions correspond to motions on ellipsoids.
@@ -235,7 +235,7 @@ the periodic solutions correspond to motions on ellipsoids.
            \centerline{%
            \psfig{file=../figures/tbp.eps,height=2.5in}}
            \caption{Phase portrait of the equation
-                \protect\Ref{e:tbp}}
+                \protect\eqref{e:tbp}}
            \label{fig:tbp}
 \end{figure}
 
@@ -246,7 +246,7 @@ the periodic solutions correspond to motions on ellipsoids.
 \TEXER
 
 %\begin{exercise}
-%Let $V(x) = x-x^3$.  Verify that the potential system \Ref{e:hamex} has
+%Let $V(x) = x-x^3$.  Verify that the potential system \eqref{e:hamex} has
 %three equilibria at the origin and at $(\pm 1,0)$.  Show that the origin 
 %is a center and that the other equilibria are saddles.  Use {\sf pplane5}
 %to find the phase portrait of this system.  How many heteroclinic 
@@ -302,7 +302,7 @@ types for this equilibrium?
 \end{exercise}
 
 \begin{exercise} \label{c14.7.9}
-Determine the equilibria in the pendulum equations \Ref{e:pendulum}.
+Determine the equilibria in the pendulum equations \eqref{e:pendulum}.
 Refer to the phase portrait of the ideal pendulum in Figure~\ref{F:ppen}
 and describe in words the motion of the pendulum corresponding to a periodic 
 solution surrounding one of the centers.  Describe the motion of the 

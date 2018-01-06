@@ -108,7 +108,7 @@ to be the matrix whose rows are the $w_j$s.  Then
 \end{equation}
 \end{lemma}\index{dimension}\index{rank}
 
-\begin{proof} To verify \Ref{e:dimW=rankM}, observe that the span of
+\begin{proof} To verify \eqref{e:dimW=rankM}, observe that the span of
 $w_1,\ldots,w_k$ is unchanged by
 \begin{itemize}
 \item[(a)] swapping $w_i$ and $w_j$,
@@ -138,7 +138,7 @@ a_1v_1 + \cdots + a_\ell v_\ell = 0.
 We show that $a_i$ must equal $0$ as follows.  In the $i^{th}$
 row, the pivot\index{pivot} must occur in some column --- say in the $j^{th}$
 column.  It follows that the $j^{th}$ entry in the vector of the
-left hand side of \Ref{e:rowsums} is
+left hand side of \eqref{e:rowsums} is
 \[
 0a_1 + \cdots + 0a_{i-1} +1a_i + 0a_{i+1} + \cdots + 0a_\ell =
 a_i,
@@ -221,7 +221,7 @@ x_5 \left(\begin{array}{r}  3 \\ 0 \\ -2 \\ 0 \\ 1 \\  0 \\ 0
 x_7 \left(\begin{array}{r} -8 \\ 0 \\ -4 \\ 0 \\ 0 \\ -2 \\ 1
 \end{array} \right).
 \end{matlabEquation}
-\noindent We can rewrite the right hand side of \Ref{e:expandsoln}
+\noindent We can rewrite the right hand side of \eqref{e:expandsoln}
 as a linear combination\index{linear!combination} of four
 vectors $w_2,w_4,w_5,w_7$
 \begin{equation}   \label{e:w'scomb}
@@ -232,7 +232,7 @@ This calculation shows that the null space of $A$, which is
 $W=\{x\in\R^7:Ax=0\}$, is spanned by the four vectors
 $w_2,w_4,w_5,w_7$.  Moreover, this same calculation shows that
 the four vectors  are linearly independent.
-From the left hand side of \Ref{e:expandsoln} we see that if this
+From the left hand side of \eqref{e:expandsoln} we see that if this
 linear combination sums to zero, then $x_2=x_4=x_5=x_7=0$.  It
 follows from Theorem~\ref{basis=span+indep} that $\dim W = 4$.
 
@@ -255,16 +255,16 @@ the null space is spanned by $p$ vectors where $p=n-\rank(A)$.  We
 must show that these vectors are linearly independent.
 
 Let $j_1,\ldots,j_p$ be the columns of $A$ that do not contain pivots.
-In example \Ref{E:nullityexamp} $p=4$ and
+In example \eqref{E:nullityexamp} $p=4$ and
 \[
 j_1 = 2, \qquad j_2 = 4, \qquad j_3 = 5, \qquad j_4 = 7.
 \]
 After solving for the variables corresponding to pivots, we find that
 the spanning set of the null space consists of $p$ vectors in $\R^n$,
-which we label as $\{w_{j_1},\ldots,w_{j_p}\}$.  See \Ref{e:expandsoln}.
+which we label as $\{w_{j_1},\ldots,w_{j_p}\}$.  See \eqref{e:expandsoln}.
 Note that the $j_m$$^{th}$  entry of $w_{j_m}$ is $1$ while the
 $j_m$$^{th}$ entry in all of the other $p-1$ vectors is $0$.  Again,
-see \Ref{e:expandsoln} as an example that supports this statement.  It
+see \eqref{e:expandsoln} as an example that supports this statement.  It
 follows that the set of spanning vectors is a linearly independent set.
 That is, suppose that
 \[

@@ -25,7 +25,7 @@ system of differential equations has the form
 \end{equation}
 \renewcommand{\arraystretch}{1.0}%
 where the coefficients $c_{ij}\in \R$ are constants.  Suppose that 
-\Ref{lingen} satisfies the initial conditions $x_1(0) = K_1$, \ldots,  
+\eqref{lingen} satisfies the initial conditions $x_1(0) = K_1$, \ldots,  
 $x_n(0) = K_n$.
 
 Using matrix multiplication of a vector and matrix, we can rewrite these 
@@ -54,7 +54,7 @@ x_1 \\ \vdots  \\ x_n
 \end{array}
 \right).
 \]
-Then \Ref{lingen} has the compact form
+Then \eqref{lingen} has the compact form
 \begin{equation}  \label{E:geneqn}
 \begin{array}{rcl}
 \dps\frac{dX}{dt} & = & CX\\
@@ -74,7 +74,7 @@ where
 C = \mattwo{-1}{3}{3}{-1}.
 \]
 In those calculations we observed that there is a solution to
-\Ref{-13} that stayed on the main diagonal for each moment in
+\eqref{-13} that stayed on the main diagonal for each moment in
 time.  Note that a vector is on the main diagonal if it is a
 scalar multiple of $\vectwo{1}{1}$.  Thus a solution that stays
 on the main diagonal for all time $t$ must have the form
@@ -82,7 +82,7 @@ on the main diagonal for all time $t$ must have the form
 \vectwo{x(t)}{y(t)} = u(t) \vectwo{1}{1}
 \end{equation}
 for some real-valued function $u(t)$.  When a function of form
-\Ref{e:diagform} is a solution to \Ref{-13}, it satisfies:
+\eqref{e:diagform} is a solution to \eqref{-13}, it satisfies:
 \begin{align*}
   \dot{u}(t)\vectwo{1}{1} &= \vectwo{\dot{x}(t)}{\dot{y}(t)} 
                             = C \vectwo{x(t)}{y(t)} \\
@@ -125,7 +125,7 @@ v(t) = \beta e^{-4t},
 for some real constant $\beta$.
 
 Thus, using matrix multiplication, we are able to prove
-analytically that there are solutions to \Ref{-13} of exactly
+analytically that there are solutions to \eqref{-13} of exactly
 the type suggested by our \Matlab experiments.  However, even
 more is true and this extension is based on the principle of 
 superposition that was introduced for algebraic equations in 
@@ -139,7 +139,7 @@ Consider a general linear differential equation of the form
 \frac{dX}{dt} = CX,
 \end{equation}
 where $C$ is an $n\times n$ matrix.  Suppose that $Y(t)$ and
-$Z(t)$ are solutions to \Ref{gen1} and $\alpha,\beta\in\R$ are
+$Z(t)$ are solutions to \eqref{gen1} and $\alpha,\beta\in\R$ are
 scalars.  Then $X(t)=\alpha Y(t)+\beta Z(t)$ is also a solution.
 We verify this fact using the `linearity' of $d/dt$.  Calculate
 \begin{eqnarray*}
@@ -156,7 +156,7 @@ So superposition is valid for solutions of linear differential equations.
 \index{initial value problem}
 
 Suppose that we wish to find a solution to
-\Ref{-13} satisfying the initial conditions\index{initial condition}
+\eqref{-13} satisfying the initial conditions\index{initial condition}
 \[
 \left(\begin{array}{c} x(0) \\ y(0) \end{array}\right) =
 \left(\begin{array}{c}1\\3\end{array}\right).
@@ -169,7 +169,7 @@ $\alpha,\beta\in\R$, the functions
 \alpha e^{2t}\left(\begin{array}{c}1\\1\end{array}\right) +
 \beta e^{-4t}\left(\begin{array}{r} 1\\-1\end{array}\right),
 \end{equation}
-are solutions to \Ref{-13}.  Moreover, for a solution of this form 
+are solutions to \eqref{-13}.  Moreover, for a solution of this form 
 \[
 \left(\begin{array}{c} x(0) \\ y(0) \end{array}\right) =
 \left(\begin{array}{c} \alpha+\beta \\ \alpha-\beta
@@ -201,7 +201,7 @@ nonzero real-valued function $u(t)$ such that
 \[
 X(t) = u(t) v
 \]
-is a solution to \Ref{gen1}?
+is a solution to \eqref{gen1}?
 
 Suppose that $X(t)$ is a solution to the system of differential
 equations $\dot{X}=CX$.  Then $u(t)$ and $v$ must satisfy
@@ -216,7 +216,7 @@ Cv = \lambda v,
 for some real number $\lambda$.
 
 \begin{definition}  \label{D:eigenvalue1}
-A nonzero vector $v$ satisfying \Ref{e:eigendef} is called an
+A nonzero vector $v$ satisfying \eqref{e:eigendef} is called an
 {\em eigenvector\/} \index{eigenvector} of the matrix $C$, and
 the number $\lambda$ is an {\em eigenvalue\/} \index{eigenvalue}
 of the matrix $C$.
@@ -238,7 +238,7 @@ C(\alpha v) = \alpha Cv = \alpha\lambda v = \lambda(\alpha v).
 \]
 The lemma follows from the definition of eigenvector.  \end{proof}
 
-It follows from \Ref{E:diffdir} and \Ref{e:eigendef} that if $v$ is
+It follows from \eqref{E:diffdir} and \eqref{e:eigendef} that if $v$ is
 an eigenvector of $C$ with eigenvalue $\lambda$, then
 \[
 \frac{du}{dt} = \lambda u.
@@ -287,7 +287,7 @@ $(x,y)$ such that
 C\left(\begin{array}{c} x\\y\end{array}\right) =
 \lambda  \left(\begin{array}{c} x\\y\end{array}\right)?
 \end{equation}
-Equation \Ref{E:eigexamp} implies that
+Equation \eqref{E:eigexamp} implies that
 \[
 \left(\begin{array}{cc} -1-\lambda & -2 \\ 3 & -1-\lambda
 \end{array}\right) \left(\begin{array}{c}
@@ -378,12 +378,12 @@ and let
 Y(t)=e^{2t} v_1 \AND Z(t)=e^{-t}v_2.
 \]
 \begin{itemize}
-\item[(a)] Show that $Y(t)$ and $Z(t)$ are solutions to \Ref{e:Ceqn}.
-\item[(b)] Show that $X(t)=2Y(t)-14Z(t)$ is a solution to \Ref{e:Ceqn}.
+\item[(a)] Show that $Y(t)$ and $Z(t)$ are solutions to \eqref{e:Ceqn}.
+\item[(b)] Show that $X(t)=2Y(t)-14Z(t)$ is a solution to \eqref{e:Ceqn}.
 \item[(c)] Use the principle of superposition to verify that
-$X(t)=\alpha Y(t) + \beta Z(t)$ is a solution to \Ref{e:Ceqn}.
+$X(t)=\alpha Y(t) + \beta Z(t)$ is a solution to \eqref{e:Ceqn}.
 \item[(d)] Using the general solution found in part (c), find a solution
-$X(t)$ to \Ref{e:Ceqn} such that
+$X(t)$ to \eqref{e:Ceqn} such that
 \[
 X(0) = \left(\begin{array}{r} 3\\-1\end{array}\right).
 \]

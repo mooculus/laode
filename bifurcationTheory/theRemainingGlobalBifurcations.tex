@@ -40,7 +40,7 @@ where $r^2=x^2+y^2$ and
 \begin{equation}  \label{e:app}  
 a(r^2,\rho) = \rho - (r^2-1)^2.
 \end{equation} 
-Recall from \Ref{e:amplitude},\Ref{e:phase} of Chapter~\ref{C:NPS}
+Recall from \eqref{e:amplitude},\eqref{e:phase} of Chapter~\ref{C:NPS}
 that in polar coordinates $(r,\theta)$ the 
 amplitude equation\index{amplitude!equation} is 
 \[
@@ -52,15 +52,15 @@ and the phase equation\index{phase!equation} is
 \]
 
 Recall that zeros of the amplitude equation $a(r^2,\rho)=0$ correspond to 
-periodic solutions of \Ref{e:papp}.  When $0<\rho<1$ there are two zeros of 
-the amplitude equation \Ref{e:app} that occur at 
+periodic solutions of \eqref{e:papp}.  When $0<\rho<1$ there are two zeros of 
+the amplitude equation \eqref{e:app} that occur at 
 \[
 r^2 = 1 \pm\sqrt{\rho}.
 \]
 When $\rho<0$ there are no zeros of the amplitude equation.  
 It follows that the amplitude equations undergo a saddle-node 
 bifurcation at $(r,\rho)=(1,0)$ and that two periodic solutions of 
-\Ref{e:papp} collide and disappear.  This assertion can be 
+\eqref{e:papp} collide and disappear.  This assertion can be 
 checked using {\sf pplane5}\index{\computer!pplane5}.  
 See Figure~\ref{F:papp}. Note that when $\rho=0$
 the circle $r=1$ is the trajectory of a periodic solution but that periodic 
@@ -77,7 +77,7 @@ from the unit circle in forward time.
  	\vspace*{-0.2in}
 	\hspace{0.3in} $\rho>0$  \hspace{1.9in} $\rho=0$
 		\hspace{1.9in} $\rho<0$ 
-           \caption{Phase portraits for \protect\Ref{e:papp}. 
+           \caption{Phase portraits for \protect\eqref{e:papp}. 
 Note that there are two limit cycles when $\rho>0$; one periodic solution 
 when  $\rho=0$; and no periodic solutions when $\rho<0$.}
            \label{F:papp}
@@ -120,7 +120,7 @@ equilibria.  This is an example of a heteroclinic trajectory. See
 Figure~\ref{F:hetero}.  The time series for the heteroclinic trajectory 
 is given in Figure~\ref{F:heteroT}.  Note the similarity to the time 
 series in Figure~\ref{F:pp1dt} of the one dimensional equation 
-\Ref{e:1dexample} discussed in the introduction to Chapter~\ref{C:NPS}. (In 
+\eqref{e:1dexample} discussed in the introduction to Chapter~\ref{C:NPS}. (In 
 that example the trajectory connected $0$ in negative time to $1$ in positive
 time, while in the present example the heteroclinic trajectory connects
 $1$ in negative time to $0$ in positive time.)
@@ -133,7 +133,7 @@ $1$ in negative time to $0$ in positive time.)
  	\vspace*{-0.2in}
 	\hspace{0.3in} $\rho=-0.1$  \hspace{1.7in} $\rho=0$
 		\hspace{1.8in} $\rho=0.1$ 
-           \caption{Phase portraits for \protect\Ref{e:hetero}. 
+           \caption{Phase portraits for \protect\eqref{e:hetero}. 
 	Note the heteroclinic trajectory when $\rho=0$.}
            \label{F:hetero}
 \end{figure}
@@ -142,7 +142,7 @@ $1$ in negative time to $0$ in positive time.)
            \centerline{%
 	   \psfig{file=../figures/heteroT.eps,width=2.5in}}
            \caption{Time series for heteroclinic trajectory 
-		in \protect\Ref{e:hetero} when $\rho=0$.}
+		in \protect\eqref{e:hetero} when $\rho=0$.}
            \label{F:heteroT}
 \end{figure}
 
@@ -200,7 +200,7 @@ $\pm 0.02$?
 \end{exercise}
 
 \noindent In Exercises~\ref{c9.6.2a} -- \ref{c9.6.2c}, consider the system 
-of differential equations \Ref{E:homo2}
+of differential equations \eqref{E:homo2}
 \begin{matlabEquation}  \label{E:homo2}
 \begin{array}{rcl}
 \dot{x} & = & -y + \rho x + 0.1 x^2 - 0.5 y^5 \\
@@ -209,20 +209,20 @@ of differential equations \Ref{E:homo2}
 \end{matlabEquation}
 in the square $-1.5\leq x,y\leq 1.5$.
 \begin{exercise} \label{c9.6.2a}
-Verify numerically that \Ref{E:homo2} appears to have a limit cycle for 
+Verify numerically that \eqref{E:homo2} appears to have a limit cycle for 
 $\rho=-0.02$.
 \end{exercise} 
 \begin{exercise} \label{c9.6.2b}
-Verify numerically that \Ref{E:homo2} does not appear to have a limit cycle 
+Verify numerically that \eqref{E:homo2} does not appear to have a limit cycle 
 when $\rho=-0.03$.
 \end{exercise} 
 \begin{exercise} \label{c9.6.2c}
 Determine numerically to two significant figures, the value of $\rho$
-where \Ref{E:homo2} has a homoclinic bifurcation. 
+where \eqref{E:homo2} has a homoclinic bifurcation. 
 \end{exercise} 
 
 \noindent In Exercises~\ref{c9.6.3a} -- \ref{c9.6.3b}, consider the system 
-of differential equations \Ref{E:infinity}.
+of differential equations \eqref{E:infinity}.
 \begin{matlabEquation}  \label{E:infinity}
 \begin{array}{rcl}
 \dot{x} & = & y \\
@@ -230,21 +230,21 @@ of differential equations \Ref{E:infinity}.
 \end{array}
 \end{matlabEquation}
 \begin{exercise} \label{c9.6.3a}
-How many periodic solutions does \Ref{E:infinity} appear to have 
+How many periodic solutions does \eqref{E:infinity} appear to have 
 when $\rho=0$?  Be careful when answering this question.  First use 
 {\sf pplane5} to determine the number of limit cycles on the square 
 $-\ell \leq x,y \leq\ell$ when $\ell=2$.  Then compute with $\ell=10$ and 
 $\ell=40$.
 \end{exercise}
 \begin{exercise} \label{c9.6.3b}
-Find the number of limit cycles to \Ref{E:infinity} on the square 
+Find the number of limit cycles to \eqref{E:infinity} on the square 
 with $\ell=7$ when $\rho=0.06$ and when $\rho=0.07$.  Has a bifurcation
  occurred between these two values of $\rho$ and, if so, what kind of 
 bifurcation?
 \end{exercise}
 
 \noindent In Exercises~\ref{c9.6.4a} -- \ref{c9.6.4c}, consider the system 
-of differential equations \Ref{E:twoeq}
+of differential equations \eqref{E:twoeq}
 \begin{matlabEquation}  \label{E:twoeq}
 \begin{array}{rcl}
 \dot{x} & = & y - x + (x-\rho)^2 \\
@@ -253,22 +253,22 @@ of differential equations \Ref{E:twoeq}
 \end{matlabEquation}
 in the square $-5 \leq x,y \leq 5$.
 \begin{exercise} \label{c9.6.4a}
-How many equilibria does \Ref{E:twoeq} have in this square when 
+How many equilibria does \eqref{E:twoeq} have in this square when 
 $\rho=1.7$ and of what type are they?  This question can be answered either 
 numerically using {\sf pplane5} (easy) or analytically (more difficult, but 
 possible).
 \end{exercise}
 \begin{exercise} \label{c9.6.4b}
-What type of bifurcation occurs in \Ref{E:twoeq} as $\rho$ is varied
+What type of bifurcation occurs in \eqref{E:twoeq} as $\rho$ is varied
 from $\rho=1.7$ to $\rho=1.85$?
 \end{exercise}
 \begin{exercise} \label{c9.6.4c}
-What type of bifurcation occurs in \Ref{E:twoeq} as $\rho$ is varied
+What type of bifurcation occurs in \eqref{E:twoeq} as $\rho$ is varied
 from $\rho=1.85$ to $\rho=2.1$?
 \end{exercise}
 
 \begin{exercise} \label{c9.6.6}
-Embed system \Ref{c8.4.5a} of Chapter~\ref{C:NPS} in the family of systems of 
+Embed system \eqref{c8.4.5a} of Chapter~\ref{C:NPS} in the family of systems of 
 differential equations 
 \begin{equation} \label{E:eqn2}
 \begin{array}{rcl}
@@ -276,12 +276,12 @@ differential equations
 \dot{y} & = & x-3x^2+2x^2y.
 \end{array}
 \end{equation}
-Find seven bifurcations that occur in \Ref{E:eqn2} as $\rho$ varies from 
+Find seven bifurcations that occur in \eqref{E:eqn2} as $\rho$ varies from 
 $-0.1$ to $\rho=0.3$. 
 \end{exercise}
 
 \noindent In Exercises~\ref{c9.6.5a} -- \ref{c9.6.5c}, consider the system 
-of differential equations \Ref{E:saddleconn}.
+of differential equations \eqref{E:saddleconn}.
 \begin{matlabEquation}  \label{E:saddleconn}
 \begin{array}{rcl}
 \dot{x} & = & y  \\
@@ -289,15 +289,15 @@ of differential equations \Ref{E:saddleconn}.
 \end{array}
 \end{matlabEquation}
 \begin{exercise} \label{c9.6.5a}
-How many equilibria does \Ref{E:saddleconn} have for each value of 
+How many equilibria does \eqref{E:saddleconn} have for each value of 
 $\rho$ and of what type are they?  
 \end{exercise}
 \begin{exercise} \label{c9.6.5b}
-How many bifurcations occur in \Ref{E:saddleconn} as $\rho$ is 
+How many bifurcations occur in \eqref{E:saddleconn} as $\rho$ is 
 varied from $\rho=0.1$ to $\rho=0.2$?
 \end{exercise}
 \begin{exercise} \label{c9.6.5c}
-What types of bifurcation occur in \Ref{E:saddleconn} as $\rho$ is 
+What types of bifurcation occur in \eqref{E:saddleconn} as $\rho$ is 
 varied from $\rho=0.1$ to $\rho=0.2$?
 \end{exercise}
 

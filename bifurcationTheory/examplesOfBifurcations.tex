@@ -31,9 +31,9 @@ Consider the differential equation
 \begin{equation}  \label{E:sbif}
 \dot{x} = \rho - x^2 \equiv f(x,\rho).
 \end{equation}
-We discuss how the phase line to \Ref{E:sbif} changes as $\rho$ increases 
+We discuss how the phase line to \eqref{E:sbif} changes as $\rho$ increases 
 through $0$.  A simple numerical experiment using {\sf pline} shows that
-the phase lines for \Ref{E:sbif} when $\rho=-1,0,1$ are those given in 
+the phase lines for \eqref{E:sbif} when $\rho=-1,0,1$ are those given in 
 Figure~\ref{F:sbif}.  From this figure we see that a pair of equilibria 
 is created as $\rho$ increases through $0$.
 
@@ -43,7 +43,7 @@ is created as $\rho$ increases through $0$.
            \centerline{%
            \psfig{file=../figures/sbif.eps,width=6.0in}}
            \caption{Phase lines for the differential equation 
-    		\protect\Ref{E:sbif}.}
+    		\protect\eqref{E:sbif}.}
            \label{F:sbif}
 \end{figure}\index{phase!line}
 
@@ -53,10 +53,10 @@ algebraic equation $f(x,\rho)=0$ and obtaining:
 \begin{equation} \label{E:sbife}
 x^2 = \rho.
 \end{equation}
-When $\rho<0$ there are no (real) solutions to \Ref{E:sbife}; when
-$\rho=0$ the only solution to \Ref{E:sbife} is $x=0$; and when $\rho>0$
-there are two solutions to \Ref{E:sbife} given by $x=\pm\sqrt{\rho}$.
-It follows that \Ref{E:sbif} has no equilibria when $\rho<0$, a single
+When $\rho<0$ there are no (real) solutions to \eqref{E:sbife}; when
+$\rho=0$ the only solution to \eqref{E:sbife} is $x=0$; and when $\rho>0$
+there are two solutions to \eqref{E:sbife} given by $x=\pm\sqrt{\rho}$.
+It follows that \eqref{E:sbif} has no equilibria when $\rho<0$, a single
 equilibrium when $\rho=0$, and two equilibria when $\rho>0$.
 
 Additionally, we can determine the stability\index{stability}
@@ -69,22 +69,22 @@ Therefore, $f_x<0$ at $x=\sqrt{\rho}$ and $f_x>0$ at $x=-\sqrt{\rho}$.
 Theorem~\ref{T:stability1} implies that the equilibrium at $x=-\sqrt{\rho}$ 
 is unstable and that the equilibrium at $x=\sqrt{\rho}$ is stable.
 
-We summarize the information about equilibria of \Ref{E:sbif} in the 
+We summarize the information about equilibria of \eqref{E:sbif} in the 
 bifurcation diagram\index{diagram!bifurcation} in Figure~\ref{F:sbifBIF}.  
 This bifurcation diagram is formed as follows: graph the points where 
 $f(x,\rho)=0$ in the $\rho x$ plane; that is, graph the parabola $\rho=x^2$.  
-On that graph we use a solid line when the equilibrium of \Ref{E:sbif} is 
+On that graph we use a solid line when the equilibrium of \eqref{E:sbif} is 
 stable and a dashed line when the equilibrium is unstable.
 
 \begin{figure}[htb]
            \centerline{%
            \psfig{file=../figures/sbifBIF.eps,width=4.0in}}
            \caption{Bifurcation diagram for the differential equation
-        \protect\Ref{E:sbif}. }
+        \protect\eqref{E:sbif}. }
            \label{F:sbifBIF}
 \end{figure}
 
-We have shown that at $\rho=0$ the differential equation \Ref{E:sbif} 
+We have shown that at $\rho=0$ the differential equation \eqref{E:sbif} 
 undergoes a saddle-node bifurcation\index{bifurcation!saddle-node}
 where a pair of equilibria is created.  Moreover, one of this pair is stable 
 and one is unstable.  Next, we consider a more complicated example:
@@ -96,17 +96,17 @@ the algebraic equation $f(x,\rho)=0$ for
 \begin{equation}  \label{E:rho=cubic}
 \rho = x^3 - 3x.
 \end{equation}
-Graphing \Ref{E:rho=cubic} in the $\rho x$ plane yields the bifurcation 
+Graphing \eqref{E:rho=cubic} in the $\rho x$ plane yields the bifurcation 
 diagram in Figure~\ref{F:cbifBIF}.  Note that two equilibria appear at 
 $\rho=-2$ as $\rho$ increases and that two equilibria disappear at 
-$\rho=2$.  Thus, there are two saddle-node bifurcations for \Ref{E:cbif}: 
+$\rho=2$.  Thus, there are two saddle-node bifurcations for \eqref{E:cbif}: 
 one at $\rho=-2$ and one at $\rho=2$.
 
 \begin{figure}[htb]
            \centerline{%
            \psfig{file=../figures/cbifBIF.eps,width=4.0in}}
            \caption{Bifurcation diagram for the differential equation
-        \protect\Ref{E:cbif}.}
+        \protect\eqref{E:cbif}.}
            \label{F:cbifBIF}
 \end{figure} \index{diagram!bifurcation}
 
@@ -129,7 +129,7 @@ calculations can be verified using {\sf pline}.
            \centerline{%
            \psfig{file=../figures/cbif.eps,width=6.0in}}
            \caption{Phase lines for the differential equation
-        \protect\Ref{E:cbif}.}
+        \protect\eqref{E:cbif}.}
            \label{F:cbif}
 \end{figure}
 
@@ -160,7 +160,7 @@ the differential equation:
 \[
 \dot{x} = 2x^2 +\rho x + 2
 \]
-by solving the two equations given in \Ref{E:DCSN}.  Set 
+by solving the two equations given in \eqref{E:DCSN}.  Set 
 \[
 f(x,\rho) = 2x^2 +\rho x + 2
 \]
@@ -184,13 +184,13 @@ saddle-node bifurcations can occur; they are:
 It can be checked using {\sf pline} that saddle-node bifurcations do actually
 occur at both points.
 
-Conditions \Ref{E:DCSN} are necessary conditions for the existence of a 
+Conditions \eqref{E:DCSN} are necessary conditions for the existence of a 
 saddle-node bifurcation; by themselves they are not sufficient.  For example, 
 consider
 \[
 f(x,\rho) = x^2 -\rho^2.
 \]
-Since $f(0,0)=0$ and $f_x(0,0)=0$, the origin satisfies \Ref{E:DCSN}.  But 
+Since $f(0,0)=0$ and $f_x(0,0)=0$, the origin satisfies \eqref{E:DCSN}.  But 
 the bifurcation is not a saddle-node bifurcation as there 
 are two equilibria for every nonzero value of $\rho$.
 
@@ -217,10 +217,10 @@ at
 X_{\pm}=(\pm\sqrt{\rho},0)
 \]
 for $\rho>0$.  The bifurcation diagram 
-for the system of differential equations \Ref{E:ssys} is identical to
-the one for the single equation \Ref{E:sbif} given in Figure~\ref{F:sbif}.
+for the system of differential equations \eqref{E:ssys} is identical to
+the one for the single equation \eqref{E:sbif} given in Figure~\ref{F:sbif}.
 
-In Figure~\ref{F:ssys}, the phase portraits of \Ref{E:ssys} are given for 
+In Figure~\ref{F:ssys}, the phase portraits of \eqref{E:ssys} are given for 
 two values of $\rho$; namely, $\rho=-1$ and $\rho=1$.  Note that when 
 $\rho=0$ the origin is a nonhyperbolic 
 equilibrium\index{equilibrium!nonhyperbolic} and when $\rho=1$
@@ -238,13 +238,13 @@ or a nodal sink.  See Exercise~\ref{e:source}.
 	   \psfig{file=../figures/ssys3.eps,height=2.0in}}
 		\vspace*{-0.2in}		
 		\hspace{1.3in} $\rho=-1$ \hspace{2.1in} $\rho=1$
-   \caption{Phase planes for the differential equation \protect\Ref{E:ssys}.}
+   \caption{Phase planes for the differential equation \protect\eqref{E:ssys}.}
            \label{F:ssys}
 \end{figure}
 
-It is instructive to determine the type of equilibria in \Ref{E:ssys} by
+It is instructive to determine the type of equilibria in \eqref{E:ssys} by
 computing the Jacobian matrix.  Let $F(x,y)$ denote the right hand side of 
-\Ref{E:ssys} and calculate:
+\eqref{E:ssys} and calculate:
 \begin{equation}  \label{E:SNJ}
 dF = \mattwoc{2x}{1}{-2xy}{-x^2-1} \AND 
 (dF)_{X_{\pm}}= \mattwoc{\pm 2\sqrt{\rho}}{1}{0}{-\rho-1}.
@@ -255,7 +255,7 @@ is the nonhyperbolic saddle-node
 \dot{X} = \mattwo{0}{1}{0}{-1}X,
 \]
 whose eigenvalues are $0$ and $1$.  See Section~\ref{S:6.9}. We can also check
-using \Ref{E:SNJ} that when $\rho>0$ the linearization at $X_{-}$ has two 
+using \eqref{E:SNJ} that when $\rho>0$ the linearization at $X_{-}$ has two 
 negative real eigenvalues ($-2\sqrt{\rho}$ and $-\rho-1$)  and is a node 
 while the linearization at $X_{+}$ has one positive ($2\sqrt{\rho}$) and one 
 negative ($-\rho-1$) eigenvalue and is a saddle.
@@ -282,7 +282,7 @@ equation just states that $(X_0,\rho_0)$ is an equilibrium and the second
 equation implies that the Jacobian has a zero eigenvalue.  Since 
 $\trace(J)\neq 0$, $J$ has a nonzero eigenvalue and is a saddle-node matrix.
 
-We can use \Ref{E:DCSN2} to find possible saddle-node bifurcation points in
+We can use \eqref{E:DCSN2} to find possible saddle-node bifurcation points in
 planar systems.  For example, consider the system
 \[
 \begin{array}{rcl} 
@@ -290,7 +290,7 @@ planar systems.  For example, consider the system
 \dot{y} & = & x + y -2.
 \end{array}
 \]
-The two parts of \Ref{E:DCSN2} lead to three equations:
+The two parts of \eqref{E:DCSN2} lead to three equations:
 \[
 \begin{array}{rcl} 
 x^2 + y^2 - \rho & = & 0\\
@@ -321,8 +321,8 @@ Load the planar system of differential equations
 \end{matlabEquation}
 into {\sf pplane5}.
 It is straightforward to see that the origin is an equilibrium of 
-\Ref{E:Hopfbif} for all values of $\rho$ --- indeed, the origin is 
-the only equilibrium of \Ref{E:Hopfbif}.  Now plot the phase 
+\eqref{E:Hopfbif} for all values of $\rho$ --- indeed, the origin is 
+the only equilibrium of \eqref{E:Hopfbif}.  Now plot the phase 
 portraits for $\rho=-1$ and $\rho=1$.  These plots are shown in 
 Figure~\ref{F:Hopfbif}.  
 
@@ -333,12 +333,12 @@ Figure~\ref{F:Hopfbif}.
 		\vspace*{-0.2in}		
 		\qquad\qquad\qquad $\rho=-1$ \hspace{2.8in} $\rho=1$
 	   \caption{Phase planes for the differential equation 
-      \protect\Ref{E:Hopfbif}.}
+      \protect\eqref{E:Hopfbif}.}
            \label{F:Hopfbif}
 \end{figure}
 
 
-The Jacobian of \Ref{E:Hopfbif} at the origin is:
+The Jacobian of \eqref{E:Hopfbif} at the origin is:
 \[
 \mattwoc{0}{1}{-1}{\rho}.
 \]
@@ -351,7 +351,7 @@ The main new feature of the phase portraits is the
 existence of an asymptotically stable\index{stability!asymptotic} 
 periodic solution when $\rho>0$.  
 Hopf bifurcations can also produce unstable periodic solutions
-\index{periodic solution!unstable} (see \Ref{E:hopfdetect} for an example).   
+\index{periodic solution!unstable} (see \eqref{E:hopfdetect} for an example).   
 
 \subsubsection*{Bifurcation Diagrams for Hopf Bifurcation}
 
@@ -366,13 +366,13 @@ solid line and unstable equilibria are indicated by a dashed line, as before.
 Stable limit cycles are indicated by a heavy dotted line and unstable limit 
 cycles are indicated by a dot-dashed line.  Note that the bifurcation diagram
 in Figure~\ref{F:Hopfbifdiag} describes the Hopf bifurcation in the system of
-differential equations \Ref{E:Hopfbif}. 
+differential equations \eqref{E:Hopfbif}. 
 
 \begin{figure}[htb]
            \centerline{%
            \psfig{file=../figures/Hopfbifa.eps,height=1.6in}}
   \caption{Schematic bifurcation diagram for the differential equation 
-    \protect\Ref{E:Hopfbif} with a branch of stable limit cycles emanating 
+    \protect\eqref{E:Hopfbif} with a branch of stable limit cycles emanating 
 	from a point of Hopf bifurcation indicated by a dotted line.}
            \label{F:Hopfbifdiag}
 \end{figure}
@@ -407,7 +407,7 @@ F(X_0,\rho_0) & = & 0\\
 \end{equation}
 where $J= (dF)_{(X_0,\rho_0)}$.
 
-We can use \Ref{E:NCHB} to find possible points of Hopf bifurcation.  For 
+We can use \eqref{E:NCHB} to find possible points of Hopf bifurcation.  For 
 example, consider the system
 \begin{matlabEquation}  \label{E:hopfdetect}
 \begin{array}{rcl}
@@ -415,7 +415,7 @@ example, consider the system
 \dot{y} & = & -x + y^2.
 \end{array}
 \end{matlabEquation}
-A point of Hopf bifurcation in \Ref{E:hopfdetect} must satisfy the three 
+A point of Hopf bifurcation in \eqref{E:hopfdetect} must satisfy the three 
 equations
 \[
 \begin{array}{rcl}
@@ -440,7 +440,7 @@ these points the determinant of the Jacobian matrix is $2$.  Hence the
 linearized equations at both point are centers, and there are two possible
 points of Hopf bifurcation.
 
-Numerical exploration of \Ref{E:hopfdetect} using {\sf pplane5} shows that 
+Numerical exploration of \eqref{E:hopfdetect} using {\sf pplane5} shows that 
 there are unstable limit cycles emanating from both of these points; hence 
 there are exactly two points of Hopf bifurcation in this system of equations.
 
@@ -458,7 +458,7 @@ In all bifurcation diagrams we will indicate
 \end{itemize}
 
 For example, the information contained in the Hopf bifurcation of 
-\Ref{E:Hopfbif} is summarized by the bifurcation diagram in 
+\eqref{E:Hopfbif} is summarized by the bifurcation diagram in 
 Figure~\ref{F:Hopfbifdiag}.
 In that figure, a curve of equilibria \index{curve of equilibria} 
 loses stability at $\rho=0$ as $\rho$ increases.  A branch of limit 
@@ -481,15 +481,15 @@ consider the system of differential equations
 \dot{y} & = &  x + x^2 + xy.
 \end{array}
 \end{matlabEquation}
-Begin by noting that the origin is an equilibrium of \Ref{E:homobif}
+Begin by noting that the origin is an equilibrium of \eqref{E:homobif}
 for every value of $\rho$ and the linearized equation about this equilibrium 
 is:
 \[
 \dot{X} = \mattwo{\rho}{-1}{1}{0}X.
 \]
-It follows that \Ref{E:homobif} has a Hopf bifurcation at the origin, as 
+It follows that \eqref{E:homobif} has a Hopf bifurcation at the origin, as 
 the origin changes from a spiral sink to a spiral source as $\rho$ 
-increases through zero.  Calculations show that \Ref{E:homobif} has a 
+increases through zero.  Calculations show that \eqref{E:homobif} has a 
 second equilibrium at 
 \[
 X_0 = -\frac{1}{1+\rho}(1,\rho)
@@ -505,11 +505,11 @@ and that this equilibrium is a saddle when $\rho>-1$.
 	$\rho=-0.07$ \hspace{1.8in} $\rho=0.07$ 
 		\hspace{1.8in} $\rho=0.14$
 	  \caption{Phase planes for the differential equation 
-	\protect\Ref{E:homobif}. }
+	\protect\eqref{E:homobif}. }
            \label{F:homobif}
 \end{figure}
 
-Use {\sf pplane5} to plot the phase plane portraits of \Ref{E:homobif}
+Use {\sf pplane5} to plot the phase plane portraits of \eqref{E:homobif}
 for $\rho=-0.07$, $\rho=0.07$, and $\rho=0.14$.  (These phase portraits 
 are most easily drawn by having {\sf pplane5} find the saddle point and
 then plot the stable and unstable orbits.)  The phase portraits are 
@@ -524,7 +524,7 @@ transitions are possible.  In bifurcation diagrams, a homoclinic
 bifurcation  is indicated by having a branch of periodic solutions
 terminate with a black dot.  In Figure~\ref{F:homobifdiag} we show the 
 bifurcation diagram for the system of differential equations 
-\Ref{E:homobif} for $\rho$ between $-0.1$ and $0.15$.  Note that there
+\eqref{E:homobif} for $\rho$ between $-0.1$ and $0.15$.  Note that there
 are branches for two equilibria and a 
 branch of limit cycles\index{branch of limit cycles} 
 beginning at a Hopf bifurcation and ending at a homoclinic bifurcation.
@@ -537,7 +537,7 @@ bifurcations and their types, and the limit cycles.
            \centerline{%
            \psfig{file=../figures/homobifdiag.eps,height=2.5in}}
   \caption{Schematic bifurcation diagram for the differential equation
-    \protect\Ref{E:homobif} indicating a branch of stable limit cycles
+    \protect\eqref{E:homobif} indicating a branch of stable limit cycles
         ending in a homoclinic bifurcation.}
            \label{F:homobifdiag}
 \end{figure}
@@ -546,7 +546,7 @@ bifurcations and their types, and the limit cycles.
 Homoclinic bifurcations are global bifurcations; the change in the phase 
 portrait does not occur in a small neighborhood of an equilibrium.  For 
 this reason we cannot detect homoclinic bifurcations analytically as we 
-did for saddle-node bifurcations in \Ref{E:DCSN} and \Ref{E:DCSN2} and Hopf bifurcations in \Ref{E:NCHB}.
+did for saddle-node bifurcations in \eqref{E:DCSN} and \eqref{E:DCSN2} and Hopf bifurcations in \eqref{E:NCHB}.
 
 
 
@@ -621,7 +621,7 @@ equations
 \begin{equation} \label{E:ex2}
 \dot{x} = 3x^4 - 8x^3 - 6x^2 + 24x - \rho.
 \end{equation}
-What is the maximum number of equilibria for \Ref{E:ex2} and for which 
+What is the maximum number of equilibria for \eqref{E:ex2} and for which 
 values of $\rho$ does this maximum number occur? {\bf Hint:} Graph the 
 function $\rho=3x^4 - 8x^3 - 6x^2 + 24x$ by finding its maxima and minima. 
 \end{exercise}
@@ -657,7 +657,7 @@ to have a Hopf bifurcation when $\rho=0$.
 \CEXER
 
 \begin{exercise} \label{e:source}
-Change the sign of the $\dot{y}$ equation in \Ref{E:ssys}, obtaining the 
+Change the sign of the $\dot{y}$ equation in \eqref{E:ssys}, obtaining the 
 system of differential equations:  
 \[
 \begin{array}{rcl}
@@ -666,13 +666,13 @@ system of differential equations:
 \]
 Show that a saddle-node bifurcation occurs at $\rho=0$ in this system by 
 plotting phase portraits for $\rho=-1$ and $\rho=1$.  How do the 
-phase portraits of this system differ from those of \Ref{E:ssys} 
+phase portraits of this system differ from those of \eqref{E:ssys} 
 given in Figure~\ref{F:ssys}.
 \end{exercise}
 
 \begin{exercise}  \label{e:uHopf}
 Change the sign of the $y^3$ term in the $\dot{y}$ equation in 
-\Ref{E:Hopfbif} and obtain the system of differential equations:
+\eqref{E:Hopfbif} and obtain the system of differential equations:
 \[
 \begin{array}{rcl}
 \dot{x} & = & y \\
@@ -692,16 +692,16 @@ Consider the system of differential equations
 \dot{y} & = & -5 - x + 4y - y^2.  \end{array}
 \end{matlabEquation}
 \begin{itemize}
-\item[(a)]  Verify that \Ref{E:hbifex} has an equilibrium at $X_0=(-1,2)$ 
+\item[(a)]  Verify that \eqref{E:hbifex} has an equilibrium at $X_0=(-1,2)$ 
 when $\rho=-1$.
-\item[(b)]  Show that the linearization of \Ref{E:hbifex} at $X_0$ is a 
+\item[(b)]  Show that the linearization of \eqref{E:hbifex} at $X_0$ is a 
 center when $\rho=-1$.  
 \item[(c)]  Let $\rho$ be a number close to $-1$.  Use {\sf pplane5} to 
-determine whether \Ref{E:hbifex} has a spiral sink when $\rho<-1$ or when 
+determine whether \eqref{E:hbifex} has a spiral sink when $\rho<-1$ or when 
 $\rho>-1$.  
 \item[(d)]  Determine whether limit cycles exist for $\rho<-1$ or for 
 $\rho>-1$.
-\item[(e)]  Find an approximate value of $\rho$ at which \Ref{E:hbifex}
+\item[(e)]  Find an approximate value of $\rho$ at which \eqref{E:hbifex}
 has a second Hopf bifurcation.
 \end{itemize} 
 \end{exercise}
@@ -715,18 +715,18 @@ Consider the differential equation:
 \end{array}
 \end{matlabEquation}
 \begin{itemize}
-\item[(a)]  Show analytically that \Ref{e:homo} has two equilibria at 
+\item[(a)]  Show analytically that \eqref{e:homo} has two equilibria at 
 $(\pm\sqrt{\rho},0)$ when $\rho>0$. 
 \item[(b)]  Show analytically that the equilibrium at $(\sqrt{\rho},0)$ is 
 always a saddle, while the equilibrium at $(-\sqrt{\rho},0)$ is a spiral sink 
 when $1<\rho<97$.  
-\item[(c)]  Use {\sf pplane5} to show that the phase portrait of \Ref{e:homo} 
+\item[(c)]  Use {\sf pplane5} to show that the phase portrait of \eqref{e:homo} 
 has a homoclinic trajectory between $\rho=1.7$ and $\rho=1.8$.  
 \end{itemize}
 \end{exercise}
 
 \noindent In Exercises~\ref{c9.4.3a} -- \ref{c9.4.3c}, 
-consider the system of differential equations \Ref{E:duff}
+consider the system of differential equations \eqref{E:duff}
 \begin{matlabEquation}  \label{E:duff}
 \begin{array}{rcl}
 \dot{x} & = & y - \mu x - x^2   \\
@@ -734,12 +734,12 @@ consider the system of differential equations \Ref{E:duff}
 \end{array}
 \end{matlabEquation}
 \begin{exercise} \label{c9.4.3a}
-Show that \Ref{E:duff} undergoes a Hopf bifurcation near the origin when 
+Show that \eqref{E:duff} undergoes a Hopf bifurcation near the origin when 
 $\mu=0$.  Sketch the qualitative phase portraits on either 
 side of the Hopf bifurcation.
 \end{exercise}
 \begin{exercise} \label{c9.4.3b}
-Show that another bifurcation takes place in \Ref{E:duff} near 
+Show that another bifurcation takes place in \eqref{E:duff} near 
 $\mu\approx -0.1$.  Sketch the new phase portrait that appears near this 
 bifurcation.    
 \end{exercise}
@@ -753,7 +753,7 @@ in both forward and backward time.
 
 \begin{exercise} \label{c9.4.4}
 Use {\sf pplane5} to determine whether there are small amplitude periodic 
-solutions to \Ref{E:hopfex} at $\rho>0$ or at $\rho<0$.
+solutions to \eqref{E:hopfex} at $\rho>0$ or at $\rho<0$.
 \end{exercise}
 
 

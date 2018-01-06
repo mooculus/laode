@@ -20,12 +20,12 @@ We return to the homogeneous system of linear differential equations
 \arrayfinish
 where $A(t)=(a_{ij}(t))$ is an $n\times n$ matrix.  Let $X_1,\ldots,X_n$ be a 
 linearly independent set of solutions\index{basis!of solutions} 
-to \Ref{eq:linihsys2} and let 
+to \eqref{eq:linihsys2} and let 
 \begin{equation}   \label{E:Y(t)2}
 Y(t) = \left(X_1(t)|\cdots |X_n(t)\right) 
 \end{equation}
 Using existence and uniqueness of solutions to the initial problem for
-\Ref{eq:linihsys2}, we showed in Lemma~\ref{L:DEspan} that $Y(t)$ is an 
+\eqref{eq:linihsys2}, we showed in Lemma~\ref{L:DEspan} that $Y(t)$ is an 
 invertible matrix for every time $t$.  In this section we prove this same 
 result by explicitly showing that the determinant\index{determinant} 
 of $Y(t)$ is always nonzero.
@@ -36,15 +36,15 @@ W(t) = \det Y(t).
 \]
 
 \begin{theorem}  \label{T:Wronskian}
-Let $X_1,\ldots,X_n$ be solutions to \Ref{E:NCCH} such that the vectors
+Let $X_1,\ldots,X_n$ be solutions to \eqref{E:NCCH} such that the vectors
 $X_j(0)$ form a basis of $\R^n$.  Let $Y(t)$ be the matrix defined in 
-\Ref{E:Y(t)}.  Then
+\eqref{E:Y(t)}.  Then
 \begin{equation}  \label{L:Wronskian}
 W(t) = e^{\int_0^t\trace(A(\tau))d\tau}W(0).
 \end{equation}
 \end{theorem}
 
-It follows directly from \Ref{L:Wronskian} that the determinant of $Y(t)$ is 
+It follows directly from \eqref{L:Wronskian} that the determinant of $Y(t)$ is 
 nonzero when the determinant of $Y(0)$ is nonzero.  But $\det Y(0)\neq 0$ 
 since the vectors $X_j(0)$ form a basis of $\R^n$. 
 
@@ -130,7 +130,7 @@ and let
 \[
 X_1(t) = \vectwo{x_1(t)}{y_1(t)} \AND  X_2(t) = \vectwo{x_2(t)}{y_2(t)}
 \]
-be solutions of \Ref{E:NCCH}.  It follows that 
+be solutions of \eqref{E:NCCH}.  It follows that 
 \begin{equation}   \label{E:xyderiv}
 \begin{array}{rcl}
 \dot{x}_1 & = & a_{11}x_1 + a_{12}y_1 \\
@@ -163,7 +163,7 @@ Use the product rule to compute
 \[
 \dot{W}  =  \dot{x}_1y_2 + x_1\dot{y}_2 - \dot{x}_2y_1 - x_2\dot{y}_1.
 \]
-Now substitute \Ref{E:xyderiv} to see that 
+Now substitute \eqref{E:xyderiv} to see that 
 \[
 \dot{W} = (a_{11}x_1 + a_{12}y_1)y_2 + x_1(a_{21}x_2 + a_{22}y_2)
 - (a_{11}x_2 + a_{12}y_2)y_1 - x_2(a_{21}x_1 + a_{22}y_1)
@@ -202,14 +202,14 @@ $Y(t) = \left(\begin{array}{ccc}
 \end{exercise}
 
 \begin{exercise}  \label{c14.w.2}
-Use \Ref{L:Wronskian} to verify that the Wronskian for solutions to the linear 
+Use \eqref{L:Wronskian} to verify that the Wronskian for solutions to the linear 
 constant coefficient system of ODE $\dot{X}=AX$ is
 \begin{equation}  \label{E:ccw}
 W(t) = e^{\trace(A)t}W(0).
 \end{equation}
 \end{exercise}
 
-\noindent In Exercises~\ref{c14.w.3a} -- \ref{c14.w.3c} verify \Ref{E:ccw} 
+\noindent In Exercises~\ref{c14.w.3a} -- \ref{c14.w.3c} verify \eqref{E:ccw} 
 for the given matrix $A$.  {\bf Hint:} First, you need to find linearly 
 independent solutions to the system $\dot{X}=AX$.
 \begin{exercise} 	\label{c14.w.3a}

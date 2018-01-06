@@ -27,7 +27,7 @@ which
 Av = \lambda v.
 \end{equation}
 The vector $v$ is called an eigenvector.  We may rewrite
-\Ref{eigeneqn} as:
+\eqref{eigeneqn} as:
 \[
 (A-\lambda I_n)v = 0.
 \]
@@ -38,7 +38,7 @@ Conversely, suppose that $A-\lambda I_n$ is singular for some
 real number $\lambda$.  Then Theorem~\ref{invertequiv} of 
 Chapter~\ref{chap:matrices} implies that there is a nonzero
 vector $v\in\R^n$ such that $(A-\lambda I_n)v = 0$. Hence
-\Ref{eigeneqn} holds and $\lambda$ is an eigenvalue of $A$.
+\eqref{eigeneqn} holds and $\lambda$ is an eigenvalue of $A$.
 So, if we had a direct method for determining when a matrix
 is singular, then we would have a method for determining
 eigenvalues.
@@ -52,7 +52,7 @@ an eigenvalue for the $2\times 2$ matrix $A$ precisely when
 \begin{equation} \label{deteqn}
 \det(A-\lambda I_2) = 0.
 \end{equation}
-We can compute \Ref{deteqn} explicitly as follows. Note that
+We can compute \eqref{deteqn} explicitly as follows. Note that
 \[
 A-\lambda I_2 = \left(\begin{array}{cc} a-\lambda & b \\
 c & d-\lambda \end{array} \right).
@@ -76,7 +76,7 @@ that is
 \begin{equation}  \label{e:tracedef}
 {\rm tr}(A) = a_{11} + \cdots + a_{nn}.
 \end{equation}
-Thus, using \Ref{e:charpoly}, we can rewrite the characteristic
+Thus, using \eqref{e:charpoly}, we can rewrite the characteristic
 polynomial for $2\times 2$ matrices as
 \begin{equation} \label{e:invcharpoly}
 p_A(\lambda)=\lambda^2 - {\rm tr}(A)\lambda + \det(A).
@@ -95,7 +95,7 @@ and
 \[
 p_A(\lambda) = (2-\lambda)(4-\lambda)-3 = \lambda^2-6\lambda+5.
 \]
-It is now easy to verify \Ref{e:invcharpoly} for \Ref{e:2x2ex}.
+It is now easy to verify \eqref{e:invcharpoly} for \eqref{e:2x2ex}.
 
 \subsubsection*{Eigenvalues}
 
@@ -114,8 +114,8 @@ It follows that
 p_A(\lambda) = (\lambda-\lambda_1)(\lambda-\lambda_2) =
 \lambda^2 - (\lambda_1+\lambda_2)\lambda + \lambda_1\lambda_2.
 \end{equation}
-Equating the two forms of $p_A$ \Ref{e:invcharpoly} and
-\Ref{e:charpolyprod} shows that
+Equating the two forms of $p_A$ \eqref{e:invcharpoly} and
+\eqref{e:charpolyprod} shows that
 \begin{eqnarray}
 \trace(A) & = & \lambda_1 + \lambda_2 \label{e:treigen}\\
 \det(A) & = & \lambda_1\lambda_2. \label{e:deteigen}
@@ -126,13 +126,13 @@ In Chapter~\ref{C:D&E}, Theorems~\ref{T:eigens}(b) and
 \ref{T:tracen} we show that these statements are also valid for
 $n\times n$ matrices.
 
-Recall that in example \Ref{e:2x2ex} the characteristic polynomial
+Recall that in example \eqref{e:2x2ex} the characteristic polynomial
 is
 \[
 p_A(\lambda) = \lambda^2-6\lambda+5=(\lambda-5)(\lambda-1).
 \]
 Thus the eigenvalues of $A$ are $\lambda_1=1$ and $\lambda_2=5$
-and identities \Ref{e:treigen} and \Ref{e:deteigen} are easily
+and identities \eqref{e:treigen} and \eqref{e:deteigen} are easily
 verified for this example.  
 
 Next, we consider an example with complex eigenvalues and verify that these 
@@ -173,7 +173,7 @@ discriminant:
 \end{theorem} \index{eigenvalue}
 
 \begin{proof} We can find the roots of the characteristic polynomial
-using the form of $p_A$ given in \Ref{e:invcharpoly} and the
+using the form of $p_A$ given in \eqref{e:invcharpoly} and the
 quadratic formula.  The roots are:
 \[
 \frac{1}{2}\left({\rm tr}(A)\pm \sqrt{[{\rm tr}(A)]^2-4\det(A)}\right)
@@ -234,7 +234,7 @@ showed previously that the matrix
 \[
 A=\mattwo{2}{3}{1}{4}.
 \]
-in \Ref{e:2x2ex} has eigenvalues $\lambda_1=1$ and $\lambda_2=5$.  
+in \eqref{e:2x2ex} has eigenvalues $\lambda_1=1$ and $\lambda_2=5$.  
 With this information we can find the associated eigenvectors.  To find 
 an eigenvector associated with the eigenvalue $\lambda_1=1$ compute
 \[
@@ -298,7 +298,7 @@ p_A(\lambda) & = & \lambda^2 -2\sigma\lambda+\sigma^2+\tau^2 \\
 and the eigenvalues of $A$ are the complex conjugates
 $\sigma\pm i\tau$.  Thus $A$ has no real eigenvectors.  The
 complex eigenvectors of $A$ are $v$ and $\overline{v}$ where $v$
-is defined in \Ref{e:eigenv}.
+is defined in \eqref{e:eigenv}.
 
 
 
@@ -353,7 +353,7 @@ calculation, show that
 {\rm tr}(AB) = {\rm tr}(BA).
 \end{equation}
 \item[(b)] Now let $A$ and $B$ be $n\times n$ matrices. Verify
-by direct calculation that \Ref{e:trAB=trBA} is still valid.
+by direct calculation that \eqref{e:trAB=trBA} is still valid.
 \end{itemize}
 \end{exercise}
 

@@ -21,21 +21,21 @@ It is a simple exercise to solve the system of two equations
 \end{array}
 \end{equation}
 to find that $x=5$ and $y=2$.  One way to solve
-system \Ref{small} is to add the two equations, obtaining
+system \eqref{small} is to add the two equations, obtaining
 \[
 4y=8;
 \]
 hence $y=2$.  Substituting $y=2$ into the $1^{st}$ equation in
-\Ref{small} yields $x=5$.
+\eqref{small} yields $x=5$.
 
 This system of equations can be solved in a more algorithmic
-fashion by solving the $1^{st}$ equation in \Ref{small} for $x$
+fashion by solving the $1^{st}$ equation in \eqref{small} for $x$
 as
 \[
 x = 7 - y,
 \]
 and substituting this answer into the $2^{nd}$ equation in
-\Ref{small}, to obtain
+\eqref{small}, to obtain
 \[
 -(7-y) +3y = 1.
 \]
@@ -61,17 +61,17 @@ equations such as:
 .
 \end{array}
 \end{equation}
-The algorithmic method used to solve \Ref{small} can be expanded
+The algorithmic method used to solve \eqref{small} can be expanded
 to produce a method, called {\em substitution\/},
 \index{substitution} for solving larger systems. We describe the
-substitution method as it applies to \Ref{big}.  Solve the
-$1^{st}$ equation in \Ref{big} for $x_1$, obtaining
+substitution method as it applies to \eqref{big}.  Solve the
+$1^{st}$ equation in \eqref{big} for $x_1$, obtaining
 \begin{equation} \label{x1}
 x_1 = \frac{4}{5}  + \frac{4}{5}x_2 - \frac{3}{5}x_3
    + \frac{6}{5}x_4 - \frac{2}{5}x_5.
 \end{equation}
-Then substitute the right hand side of \Ref{x1} for $x_1$ in the
-remaining four equations in \Ref{big} to obtain a new system of
+Then substitute the right hand side of \eqref{x1} for $x_1$ in the
+remaining four equations in \eqref{big} to obtain a new system of
 four equations in the four variables $x_2$,$x_3$,$x_4$,$x_5$.
 This procedure eliminates the variable $x_1$.  Now proceed
 inductively --- solve the $1^{st}$ equation in the new system
@@ -92,26 +92,26 @@ procedure without making a mistake in arithmetic?
 difficulty arise?
 \end{itemize}
 
-Almost surely, attempts to solve \Ref{big} by hand,
+Almost surely, attempts to solve \eqref{big} by hand,
 using the substitution procedure, will lead to arithmetic
 errors.  However, computers and software have developed to the
-point where solving a system such as \Ref{big} is routine.  In
+point where solving a system such as \eqref{big} is routine.  In
 this text, we use the software package \Matlab to illustrate
-just how easy it has become to solve equations such as \Ref{big}.
+just how easy it has become to solve equations such as \eqref{big}.
 
 The answer to the second question requires knowledge of the
 {\em theory\/} of linear algebra.  In fact, no difficulties will
-develop when trying to solve the particular system \Ref{big}
+develop when trying to solve the particular system \eqref{big}
 using the substitution algorithm.  We discuss why later.
 
 \subsection*{Solving Equations by \Matlab}
 
 We begin by discussing the information that is needed by \Matlab
-to solve \Ref{big}.  The computer needs to know that there are
+to solve \eqref{big}.  The computer needs to know that there are
 five equations in five unknowns --- but it does not need to keep
 track of the unknowns $(x_1,x_2,x_3,x_4,x_5)$ by name.  Indeed,
 the computer just needs to know the {\em matrix of
-coefficients\/} \index{matrix!coefficient} in \Ref{big}
+coefficients\/} \index{matrix!coefficient} in \eqref{big}
 \begin{matlabEquation}  \label{bigmatrix}
 \left(
 \begin{array}{rrrrr}
@@ -123,7 +123,7 @@ coefficients\/} \index{matrix!coefficient} in \Ref{big}
 \end{array}
 \right)
 \end{matlabEquation}
-and the {\em vector\/} on the right hand side of \Ref{big}
+and the {\em vector\/} on the right hand side of \eqref{big}
 \begin{matlabEquation} \label{bigRHS}
 \left(
 \begin{array}{r}
@@ -139,14 +139,14 @@ and the {\em vector\/} on the right hand side of \Ref{big}
 We now describe how we enter this information into \Matlabp.  To
 reduce the drudgery and to allow us to focus on ideas, the entries
 in equations having a $*$ after their label,
-such as \Ref{bigmatrix}, have been entered in the {\tt laode}
+such as \eqref{bigmatrix}, have been entered in the {\tt laode}
 toolbox. This information can be accessed as follows.  After
 starting your \Matlab session, type
 \begin{verbatim}
 e2_1_4
 \end{verbatim}
 followed by a carriage return.  This instruction tells \Matlab to
-load equation \Ref{bigmatrix} of Chapter~\ref{lineq}.  The matrix of
+load equation \eqref{bigmatrix} of Chapter~\ref{lineq}.  The matrix of
 coefficients is now available in \Matlabp; note that this matrix is
 stored in the $5\times 5$ array {\tt A}.  What should appear is:
 \begin{verbatim}
@@ -157,15 +157,15 @@ A =
     -2    -1    -1     1    -1
      1    -6     1     1     4
 \end{verbatim}
-Indeed, comparing this result with \Ref{bigmatrix}, we see that
+Indeed, comparing this result with \eqref{bigmatrix}, we see that
 {\tt A} contains precisely the same information.
 
-Since the label \Ref{bigRHS} is followed by a `$*$', we can enter
-the vector in \Ref{bigRHS} into \Matlab by typing
+Since the label \eqref{bigRHS} is followed by a `$*$', we can enter
+the vector in \eqref{bigRHS} into \Matlab by typing
 \begin{verbatim}
 e2_1_5
 \end{verbatim}
-Note that the right hand side of \Ref{big} is stored in the vector {\tt b}.
+Note that the right hand side of \eqref{big} is stored in the vector {\tt b}.
 \Matlab should have responded with
 \begin{verbatim}
 b =
@@ -176,7 +176,7 @@ b =
      4
 \end{verbatim}
 Now \Matlab has all the information it needs to solve the system
-of equations given in \Ref{big}.  To have \Matlab solve this
+of equations given in \eqref{big}.  To have \Matlab solve this
 system, type
 \begin{verbatim}
 x = A\b
@@ -196,9 +196,9 @@ $x$; that is,
 \begin{equation} \label{answer1}
  x_1 = 5,\quad x_2 = 2,\quad x_3 = 3,\quad x_4 = 4,\quad x_5 = 1.
 \end{equation}
-The reader may verify that \Ref{answer1} is indeed a solution of
-\Ref{big} by substituting the values in \Ref{answer1} into the
-equations in \Ref{big}.
+The reader may verify that \eqref{answer1} is indeed a solution of
+\eqref{big} by substituting the values in \eqref{answer1} into the
+equations in \eqref{big}.
 
 \subsection*{Changing Entries in \Matlab}
 
@@ -255,7 +255,7 @@ x_1 & - & 6x_2 & + & x_3 & + & x_4 & + & 4x_5 & = & 4 & \! .
 \end{array}
 \]
 As expected, this change in the coefficient matrix results in a
-change in the solution of system \Ref{big}, as well.  Typing
+change in the solution of system \eqref{big}, as well.  Typing
 \begin{verbatim}
 x = A\b
 \end{verbatim}
@@ -304,11 +304,11 @@ x =
 Obviously, something is {\em wrong\/}; \Matlab cannot find a
 solution to this system of equations!  Assuming that \Matlab is
 working correctly, we have shed light on one of our previous
-questions: the method of substitution described by \Ref{x1} need
+questions: the method of substitution described by \eqref{x1} need
 {\em not\/} always lead to a solution, even though the method
-does work for system \Ref{big}.  Why?  As we will see, this is
+does work for system \eqref{big}.  Why?  As we will see, this is
 one of the questions that is answered by the theory of linear
-algebra.  In the case of \Ref{incon}, it is fairly easy to see
+algebra.  In the case of \eqref{incon}, it is fairly easy to see
 what the difficulty is: the second and fourth equations
 have the form $y=6$ and $-y=-12$, respectively.
 

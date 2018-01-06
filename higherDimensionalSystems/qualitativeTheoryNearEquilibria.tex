@@ -106,7 +106,7 @@ and $k_s+k_u+k_c=n$.
 Using Proposition~\ref{P:SUC}, we can give a qualitative description of 
 every constant coefficient linear system of differential equations.
 \begin{theorem}  \label{T:SUC}
-Let $A$ be a Jordan normal form matrix in the block diagonal form \Ref{e:SUC}.
+Let $A$ be a Jordan normal form matrix in the block diagonal form \eqref{e:SUC}.
 Let $X=(x,y,z)\in\R^n$ where $x\in\R^{k_s}$, $y\in\R^{k_u}$ and $z\in\R^{k_c}$.
 Then every solution to the differential equation $\dot{X}=AX$ has the form
 \[
@@ -173,7 +173,7 @@ if $f(X_0)=0$.  As we have seen,
 $X_0=0$ is an equilibrium of any linear system where $f(X)=AX$ for some 
 $n\times n$ matrix $A$. 
 
-Suppose that $X_0$ is an equilibrium for \Ref{e:eqnn}.  Let 
+Suppose that $X_0$ is an equilibrium for \eqref{e:eqnn}.  Let 
 \[
 f(X) = (f_1(X),\ldots,f_n(X))
 \]
@@ -191,15 +191,15 @@ derivatives of $f$ and is denoted by $(df)_{X_0}$. \index{linearization}
 \dps\frac{\partial f_n}{\partial x_n}(X_0) \end{array}\right).
 \]
 \arrayfinish
-An equilibrium $X_0$ of \Ref{e:eqnn} is {\em hyperbolic\/} if the $n$
+An equilibrium $X_0$ of \eqref{e:eqnn} is {\em hyperbolic\/} if the $n$
 eigenvalues of $(df)_{X_0}$ all have nonzero real part. We now state 
 the analog of Theorem~\ref{T:linearization} of Chapter~\ref{C:NPS}.
 \index{hyperbolic}\index{equilibrium!hyperbolic}
 
 \begin{theorem}  \label{T:nlinearization}
-Suppose that the system of differential equations \Ref{e:eqnn} has a 
+Suppose that the system of differential equations \eqref{e:eqnn} has a 
 hyperbolic equilibrium at $X_0$.  Then, on a sufficiently small neighborhood 
-of $X_0$, the phase space for \Ref{e:eqnn} is the {\em same\/} as the phase 
+of $X_0$, the phase space for \eqref{e:eqnn} is the {\em same\/} as the phase 
 space of the system of linear differential equations
 \begin{equation}  \label{e:nlinearizedeqn}
 \frac{dX}{dt} = (df)_{X_0}X.
@@ -252,9 +252,9 @@ where $N(X)$ consists only of higher order terms.  For example, suppose
 N(X) = \left(\begin{array}{c} 2x_1^2-x_1x_2 \\ -x_4^3 \\  -x_3^2 \\ x_4x_1
 \end{array} \right).
 \end{equation}
-Then the Jacobian matrix of the right hand side in \Ref{e:fnonlin} at $X_0 = 0$ 
+Then the Jacobian matrix of the right hand side in \eqref{e:fnonlin} at $X_0 = 0$ 
 is given by $A$ and Theorem~\ref{T:nlinearization} guarantees that solutions to 
-the nonlinear equation \Ref{e:fnonlin} that have an initial condition near 
+the nonlinear equation \eqref{e:fnonlin} that have an initial condition near 
 enough to the origin will tend towards the origin in forward time.  It would be 
 nice to test the consequences of this theorem numerically, but until now we
 have not discussed how to integrate solutions to differential equations in

@@ -36,11 +36,11 @@ terms):
 \end{array}
 \end{matlabEquation}
 where $\sigma$, $\rho$ and $\beta$ are real constants.  We consider here
-solutions to \Ref{e:Lorenz} when
+solutions to \eqref{e:Lorenz} when
 \[
 \sigma=10,\quad \beta=\frac{8}{3},\quad \rho=28.
 \]
-The right hand side of \Ref{e:Lorenz} is stored in the m-file {\tt f14\_6\_1.m}:
+The right hand side of \eqref{e:Lorenz} is stored in the m-file {\tt f14\_6\_1.m}:
 \begin{verbatim}
 function f = f14_6_1(t,x)
 sigma = 10;  beta  = 8/3;  rho   = 28;
@@ -137,7 +137,7 @@ complicated (leading to trajectories lying on a torus), it does not exhibit
 sensitive dependence on initial conditions.  More precisely, the time series 
 of asymptotically stable quasiperiodic solutions remain almost unchanged 
 after small changes in initial conditions.  To verify this statement, we 
-return to the numerical solution of \Ref{e:ftor3}.  In Figure~\ref{F:tor3tsab}
+return to the numerical solution of \eqref{e:ftor3}.  In Figure~\ref{F:tor3tsab}
 we plot the time series for the $x_1$ component of solutions with nearly 
 identical initial conditions and note that the two time series are nearly 
 identical.
@@ -146,7 +146,7 @@ identical.
    \centerline{%
    \psfig{file=../figures/ftor3tsab.eps,width=3.0in}}
    \caption{Time series for a quasiperiodic two-frequency solution of the 
-	nonlinear system \protect\Ref{e:ftor3} illustrating a lack of sensitive 
+	nonlinear system \protect\eqref{e:ftor3} illustrating a lack of sensitive 
 	dependence on initial conditions: (a) $X_0=(0.1,0.03,0.001)$ and (b) 
 	$X_0=(0.11,0.031,0.0015)$.}
    \label{F:tor3tsab}
@@ -231,9 +231,9 @@ transient oscillation caused by a complex conjugate pair of eigenvalues in
 $A$.  The three-dimensional phase portrait Figure~\ref{fig:flinear2} indicates
 convergence of this solution trajectory to a point.  These types of time 
 series and phase portraits are equally valid for nonlinear systems near a sink,
-as was illustrated in Figure~\ref{F:fnonlin3} for the nonlinear system \Ref{E:fnonlin}.
+as was illustrated in Figure~\ref{F:fnonlin3} for the nonlinear system \eqref{E:fnonlin}.
 
-In example \Ref{E:3per}, we saw a solution to an autonomous three-dimensional 
+In example \eqref{E:3per}, we saw a solution to an autonomous three-dimensional 
 system of differential equations approach a limit cycle.  For such 
 examples, the time series converge to a periodic function, as in 
 Figure~\ref{F:3per}.  In phase space, such solutions converge to a closed 
@@ -250,12 +250,12 @@ systems when there are two complex conjugate pairs of purely imaginary
 eigenvalues with incommensurate frequencies.  Therefore, two-frequency 
 motions can only appear in linear systems with four or more variables.  
 However, two-frequency quasiperiodic motion can occur in three-dimensional 
-nonlinear systems, as illustrated in the time series plots of \Ref{e:ftor3} 
+nonlinear systems, as illustrated in the time series plots of \eqref{e:ftor3} 
 given in Figure~\ref{F:tor3ts}.  In phase space the images are even more 
 interesting as, after an initial transient, the solution fills out the 
 surface of a torus.  See Figure~\ref{F:tor3ps}.
 
-The Lorenz system \Ref{e:Lorenz} illustrates the possibility of yet more 
+The Lorenz system \eqref{e:Lorenz} illustrates the possibility of yet more 
 complicated motions occurring in three dimensions.  The time series in 
 Figures~\ref{fig:lorenz1} and \ref{fig:lorenz2} illustrate the phenomenon of 
 sensitive dependence on initial conditions, where the numerical values of 
@@ -279,7 +279,7 @@ topic, we will not pursue it here.
 
 
 \begin{exercise} \label{c11.4.1}
-Compute the three equilibria of the Lorenz system \Ref{e:Lorenz}
+Compute the three equilibria of the Lorenz system \eqref{e:Lorenz}
 \index{Lorenz system!equilibria}
 and use {\tt ode45} to decide whether or not these are stable.
 \end{exercise}
@@ -287,7 +287,7 @@ and use {\tt ode45} to decide whether or not these are stable.
 \begin{exercise} \label{c11.4.2}
 Fix the parameters $\sigma=10$ and $\beta = 8/3$.  Then
 use {\tt ode45} to investigate the behavior of the Lorenz system
-\Ref{e:Lorenz} for $\rho=0.8$, $\rho=6$, $\rho=20$ and $\rho=26$.
+\eqref{e:Lorenz} for $\rho=0.8$, $\rho=6$, $\rho=20$ and $\rho=26$.
 \end{exercise}
 
 \begin{exercise} \label{c11.4.3}
@@ -303,7 +303,7 @@ You will have to write your own m-file to complete this exercise.
 \end{exercise}
 
 \begin{exercise} \label{c11.4.3a}
-Numerically integrate the Lorenz equations \Ref{e:Lorenz} for the standard 
+Numerically integrate the Lorenz equations \eqref{e:Lorenz} for the standard 
 parameter values $\sigma=10$, $\beta=\frac{8}{3}$, $\rho=28$ using the initial 
 condition $X_0 =(5.01,5,30)$.  Compare the phase space plot of this solution 
 with that of Figure~\ref{fig:lorenz3}.  (You will need to use the same view
@@ -318,7 +318,7 @@ torus, exhibits sensitive dependence on initial conditions, or has a limiting
 behavior that has not been described previously.
 
 \begin{exercise}  \label{c11.6.1a}
-Solve the system \Ref{e11.6.1a} with initial conditions 
+Solve the system \eqref{e11.6.1a} with initial conditions 
 $X_0 = (0.10, 0.20, 0.25)^t$:
 \begin{matlabEquation} \label{e11.6.1a}
 \begin{array}{rcl} 
@@ -329,7 +329,7 @@ $X_0 = (0.10, 0.20, 0.25)^t$:
 \end{exercise}
 
 \begin{exercise}  \label{c11.6.1d}
-Solve the system \Ref{e11.6.1d} with initial conditions 
+Solve the system \eqref{e11.6.1d} with initial conditions 
 $X_0 = (0.10, 0.24, 0.14)^t$:
 \begin{matlabEquation} \label{e11.6.1d}
 \begin{array}{rcl} 
@@ -341,7 +341,7 @@ $X_0 = (0.10, 0.24, 0.14)^t$:
 \end{exercise}
 
 \begin{exercise}  \label{c11.6.1c}
-Solve the system \Ref{e11.6.1c} with initial conditions 
+Solve the system \eqref{e11.6.1c} with initial conditions 
 $X_0 = (0.10, 0.23, 0.15)^t$:
 \begin{matlabEquation} \label{e11.6.1c}
 \begin{array}{rcl} 
@@ -352,7 +352,7 @@ $X_0 = (0.10, 0.23, 0.15)^t$:
 \end{exercise}
 
 \begin{exercise}  \label{c11.6.1b}
-Solve the system \Ref{e11.6.1b} with initial conditions 
+Solve the system \eqref{e11.6.1b} with initial conditions 
 $X_0 = (0.10, 0.23, 0.15)^t$:
 \begin{matlabEquation} \label{e11.6.1b}
 \begin{array}{rcl} 
@@ -363,7 +363,7 @@ $X_0 = (0.10, 0.23, 0.15)^t$:
 \end{exercise}
 
 \begin{exercise}  \label{c11.6.1e}             
-Solve the system \Ref{e11.6.1e} with initial conditions 
+Solve the system \eqref{e11.6.1e} with initial conditions 
 $X_0 = (0.10, 0.11, 0.15)^t$:
 \begin{matlabEquation} \label{e11.6.1e}
 \begin{array}{rcl} 
@@ -374,7 +374,7 @@ $X_0 = (0.10, 0.11, 0.15)^t$:
 \end{exercise}
 
 \begin{exercise}  \label{c11.6.1g} 
-Solve the system \Ref{e11.6.1g} with initial conditions 
+Solve the system \eqref{e11.6.1g} with initial conditions 
 $X_0 = (0.1,0.2, -0.2)^t$:
 \begin{matlabEquation} \label{e11.6.1g}
 \begin{array}{rcl} 
@@ -386,7 +386,7 @@ $X_0 = (0.1,0.2, -0.2)^t$:
 \end{exercise}
 
 \begin{exercise}  \label{c11.6.1f}
-Solve the system \Ref{e11.6.1f} with initial conditions 
+Solve the system \eqref{e11.6.1f} with initial conditions 
 $X_0 = (2.0, 0.5, 1.0)^t$:
 \begin{matlabEquation} \label{e11.6.1f}
 \begin{array}{rcl} 
@@ -397,7 +397,7 @@ $X_0 = (2.0, 0.5, 1.0)^t$:
 \end{exercise}
 
 \begin{exercise}  \label{c11.6.1h} 
-Solve the system \Ref{e11.6.1h} with initial conditions 
+Solve the system \eqref{e11.6.1h} with initial conditions 
 $X_0 = (3.0084, 3.0983, 2.7673)^t$: 
 \begin{matlabEquation} \label{e11.6.1h}
 \begin{array}{rcl} 

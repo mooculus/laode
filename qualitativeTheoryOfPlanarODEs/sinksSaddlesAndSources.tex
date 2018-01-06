@@ -19,8 +19,8 @@ coefficient systems of differential equations
 \end{equation}
 are unchanged by similarity.
 
-Begin by noting that the origin is always an equilibrium for \Ref{e:C2}
-and suppose that $C$ is a $2\times 2$ matrix.  The origin for \Ref{e:C2}
+Begin by noting that the origin is always an equilibrium for \eqref{e:C2}
+and suppose that $C$ is a $2\times 2$ matrix.  The origin for \eqref{e:C2}
 is called a {\em sink\/}\index{sink} if the eigenvalues of $C$ both have
 negative real
 part and a {\em source\/}\index{source} if the eigenvalues both have
@@ -31,7 +31,7 @@ When $C$ has one eigenvalue of each sign, the origin is called a
 Now suppose that $B$ is a $2\times 2$ matrix that is similar to $C$.
 Lemma~\ref{L:simdettr} of Chapter~\ref{Chap:Planar} states that $B$ and
 $C$ have the same eigenvalues.  It follows that if the origin is a saddle
-for \Ref{e:C2}, then it is a saddle for $\dot{X}=BX$.  Similar statements
+for \eqref{e:C2}, then it is a saddle for $\dot{X}=BX$.  Similar statements
 hold for sinks and sources.
 
 \subsection*{Asymptotic Stability}
@@ -46,18 +46,18 @@ origin stays near $0$ for all positive $t$, and
 \]
 Recall also from Lemma~\ref{L:simsoln} of Chapter~\ref{Chap:Planar} that
 if $B=P\inv CP$, then $P\inv X(t)$ is a solution to $\dot{X}=BX$ whenever
-$X(t)$ is a solution to \Ref{e:C2}.  Since $P\inv$ is a matrix of constants
+$X(t)$ is a solution to \eqref{e:C2}.  Since $P\inv$ is a matrix of constants
 that do not depend on $t$, it follows that
 \[
 \lim_{t\to\infty}X(t) = 0 \Longleftrightarrow \lim_{t\to\infty}P\inv X(t) = 0.
 \]
 So the origin is asymptotically stable for $\dot{X}=BX$ if and only if it is
-asymptotically stable for \Ref{e:C2}.  With this observation in hand, we
+asymptotically stable for \eqref{e:C2}.  With this observation in hand, we
 prove that sinks are stable.
 
 \begin{theorem}  \label{C:asympstlin}
 If the eigenvalues of $C$ have negative real part, then the origin
-is an asymptotically stable equilibrium\index{equilibrium} for \Ref{e:C2}.
+is an asymptotically stable equilibrium\index{equilibrium} for \eqref{e:C2}.
 If one of the
 eigenvalues of $C$ has positive real part, then the origin is unstable.
 \end{theorem}
@@ -92,11 +92,11 @@ undergo exponential growth and the origin is unstable.
 \noindent (b) \quad If the eigenvalues of $C$ are the complex conjugates
 $\sigma\pm i\tau$ where $\tau\neq 0$, then Chapter~\ref{Chap:Planar},
 Theorem~\ref{T:putinform} states that after a similarity transformation
-\Ref{e:C2} has the form
+\eqref{e:C2} has the form
 \[
 \dot{X} = \mattwo{\sigma}{-\tau}{\tau}{\sigma}X,
 \]
-and solutions for this equation have the form \Ref{e:exp0ev} of
+and solutions for this equation have the form \eqref{e:exp0ev} of
 Chapter~\ref{Chap:Planar}, that is,
 \[
 X(t) = e^{\sigma t}
@@ -104,7 +104,7 @@ X(t) = e^{\sigma t}
 = e^{\sigma t}R_{\tau t}X_0,
 \]
 where $R_{\tau t}$ is a rotation matrix\index{rotation!matrix}
-(recall \Ref{e:rotmat} of
+(recall \eqref{e:rotmat} of
 Chapter~\ref{chap:matrices}).  It follows that as time evolves
 the vector $X_0$ is rotated about the origin and then expanded or contracted
 by the factor $e^{\sigma t}$.  So when $\sigma<0$, $\lim_{t\to\infty} X(t)=0$
@@ -114,7 +114,7 @@ that when $\sigma>0$ solutions spiral away from the origin.
 \noindent (c) \quad If the eigenvalues are both equal to $\lambda_1$
 and if there is only one independent eigenvector, then
 Chapter~\ref{Chap:Planar}, Theorem~\ref{T:putinform} states that after a
-similarity transformation \Ref{e:C2} has the form
+similarity transformation \eqref{e:C2} has the form
 \[
 \dot{X} = \mattwo{\lambda_1}{1}{0}{\lambda_1}X,
 \]
@@ -122,7 +122,7 @@ whose solutions are
 \[
 X(t) = e^{t\lambda}\mattwoc{1}{t}{0}{1} X_0
 \]
-using \Ref{e:expshear} of Chapter~\ref{Chap:Planar}. Note that the functions
+using \eqref{e:expshear} of Chapter~\ref{Chap:Planar}. Note that the functions
 $e^{\lambda_1 t} \AND te^{\lambda_1 t}$ both have limits equal to zero as
 $t\to\infty$.  In the second case, use l'H\^{o}spital's rule and the
 assumption that $-\lambda_1>0$ to compute
@@ -169,7 +169,7 @@ asymptotically stable if the eigenvalues have negative real part, that is,
 if the origin is a sink.  There is another term that is commonly used and
 is synonymous with sink.
 \begin{definition} \label{D:linstablin}
-The origin is a {\em linearly stable\/} equilibrium of \Ref{e:C2} if the
+The origin is a {\em linearly stable\/} equilibrium of \eqref{e:C2} if the
 eigenvalues of $C$ have negative real part.
 \end{definition}\index{stability!linear}
 So Theorem~\ref{C:asympstlin} may be restated as: linear stability
@@ -179,7 +179,7 @@ implies asymptotic stability of the origin.
 
 The explicit form of solutions to planar linear systems shows that solutions
 with initial conditions near the origin grow exponentially in forward time
-when the origin of \Ref{e:C2} is a source.  We can prove this point
+when the origin of \eqref{e:C2} is a source.  We can prove this point
 geometrically, as follows.
 
 The phase planes of sources and sinks are almost the same; they have the
@@ -188,10 +188,10 @@ that
 \begin{equation}  \label{e:C3}
 \dot{X}=-CX
 \end{equation}
-is a sink when \Ref{e:C2} is a source; observe that the trajectories of
-solutions of \Ref{e:C2} are the same as those of \Ref{e:C3} --- just with
-time running backwards.  For let $X(t)$ be a solution to \Ref{e:C2}; then
-$X(-t)$ is a solution to \Ref{e:C3}.   See Figure~\ref{F:SS} for plots of
+is a sink when \eqref{e:C2} is a source; observe that the trajectories of
+solutions of \eqref{e:C2} are the same as those of \eqref{e:C3} --- just with
+time running backwards.  For let $X(t)$ be a solution to \eqref{e:C2}; then
+$X(-t)$ is a solution to \eqref{e:C3}.   See Figure~\ref{F:SS} for plots of
 $\dot{X}=BX$ and $\dot{X}=-BX$ where
 \begin{equation}  \label{E:SS}
 B = \mattwo{-1}{-5}{5}{-1}.
@@ -208,7 +208,7 @@ the same --- but the arrows point in the opposite direction.
 	   \psfig{file=../figures/asink.eps,width=3.2in}
            \psfig{file=../figures/asource.eps,width=3.2in}}
            \caption{(Left) Sink $\dot{X}=BX$ where $B$ is given in
-\protect{\Ref{E:SS}}.  (Right) Source $\dot{X}=-BX$.}
+\protect{\eqref{E:SS}}.  (Right) Source $\dot{X}=-BX$.}
            \label{F:SS}
 \end{figure*}
 
@@ -258,7 +258,7 @@ The program {\sf pplane5} is programmed to draw the stable and unstable
 orbits of a saddle on command. Although the principal use of this
 feature is seen when analyzing nonlinear systems, it is useful to
 introduce this feature here.  As an example, load the linear system
-\Ref{e:saddlet} into {\sf pplane5} and click on {\sf Proceed}.  Now
+\eqref{e:saddlet} into {\sf pplane5} and click on {\sf Proceed}.  Now
 pull down the {\sf PPLANE5 Options} menu and click on {\sf Find an
 equilibrium}.  Click the cross hairs in the {\sf PPLANE5 Display}
 window on a point near the origin; {\sf pplane5} responds by

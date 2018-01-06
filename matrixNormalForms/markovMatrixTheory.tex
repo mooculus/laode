@@ -28,7 +28,7 @@ $A$ satisfy $|\lambda|<1$.  Then for every vector $v_0\in\R^n$
 
 \begin{proof}  Suppose that $A$ and $B$ are similar matrices; that is, $B=SAS\inv$
 for some invertible matrix $S$.  Then $B^k = SA^kS\inv$ and for any vector 
-$v_0\in\R^n$ \Ref{E:convergeto0} is valid if and only if
+$v_0\in\R^n$ \eqref{E:convergeto0} is valid if and only if
 \[
 \lim_{k\to\infty} B^kv_0 = 0.
 \]
@@ -45,7 +45,7 @@ matrix.  Then
 A^k = \mattwo{C^k}{0}{0}{D^k}.
 \]
 So for every vector $v_0=(w_0,u_0)\in\R^\ell\times\R^{n-\ell}$ 
-\Ref{E:convergeto0} is valid if and only if 
+\eqref{E:convergeto0} is valid if and only if 
 \[
 \lim_{k\to\infty} C^kv_0 = 0 \AND \lim_{k\to\infty} D^kv_0 = 0.
 \]
@@ -57,7 +57,7 @@ $A=(\lambda)$ where $\lambda$ is either real or complex.  Then
 \[
 A^kv_0 = \lambda^kv_0.
 \]
-It follows that \Ref{E:convergeto0} is valid precisely when $|\lambda|<1$.  
+It follows that \eqref{E:convergeto0} is valid precisely when $|\lambda|<1$.  
 Next, suppose that $A$ is a nontrivial Jordan block.  For example, let 
 \[
 A=\mattwo{\lambda}{1}{0}{\lambda} = \lambda I_2+N
@@ -67,7 +67,7 @@ where $N^2=0$.  It follows by induction that
 A^kv_0 = \lambda^kv_0 + k\lambda^{k-1}Nv_0 = \lambda^kv_0 + 
 k\lambda^k\frac{1}{\lambda}Nv_0.
 \]
-Thus \Ref{E:convergeto0} is valid precisely when $|\lambda|<1$.  The reason for this convergence is as follows.  The first term converges to $0$ as 
+Thus \eqref{E:convergeto0} is valid precisely when $|\lambda|<1$.  The reason for this convergence is as follows.  The first term converges to $0$ as 
 before but the second term is the product of three terms $k$, $\lambda^k$,
 and $\frac{1}{\lambda}Nv_0$.  The first increases to infinity, the second
 decreases to zero, and the third is constant independent of $k$.  In fact,
@@ -87,7 +87,7 @@ and $v_0=(1,0)^t$.  Then $A^8v_0 = (0.901,0.075)^t$ is the first vector in
 the sequence $A^kv_0$ whose norm is less than $1$; that is, $A^8v_0$ is the 
 first vector in the sequence closer to the origin than $v_0$.  
 
-It is also true that \Ref{E:convergeto0} is valid for any Jordan block 
+It is also true that \eqref{E:convergeto0} is valid for any Jordan block 
 $A$ and for all $v_0$ precisely when $|\lambda|<1$.  To verify this fact 
 we use the binomial theorem\index{binomial theorem}.  
 We can write a nontrivial Jordan block as
@@ -121,7 +121,7 @@ m(m-1)\cdots(m-j+1) \AND \lambda^m \AND \frac{1}{j!\lambda^j}N^j.
 The first term has polynomial growth to infinity dominated by $m^j$, the 
 second term decreases to zero geometrically, and the third term is 
 constant independent of $m$. The desired convergence to zero follows from 
-\Ref{E:PG}.  \end{proof}
+\eqref{E:PG}.  \end{proof}
 
 \begin{definition}  The $n\times n$ matrix $A$ has a {\em dominant\/} eigenvalue 
 $\lambda_0>0$ if $\lambda_0$ is a simple eigenvalue and all other eigenvalues
@@ -179,7 +179,7 @@ Hence
 \]
 This equality is valid only if all of the $v_i$ are nonnegative or all are 
 nonpositive.  Without loss of generality, we assume that all $v_i\geq 0$.
-It follows from \Ref{E:ineqM} that 
+It follows from \eqref{E:ineqM} that 
 \[
 v_j= q_{j1}v_1 + \cdots + q_{jn}v_n.
 \]

@@ -43,7 +43,7 @@ In the {\sf PLINE Setup} that parameter is {\sf lambda}.
 Moreover, we may choose the value for that parameter.  The
 default value in the {\sf PLINE Setup} is $-0.8$.  Hence, the
 default equation used by {\sf pline} is equation
-\Ref{lin1} with $\lambda = -0.8$.
+\eqref{lin1} with $\lambda = -0.8$.
 \end{enumerate}
 
 When we click with the left mouse button onto the button {\sf
@@ -89,8 +89,8 @@ if $g(x_0)=0$.
 \end{lemma}
 
 \begin{proof} Suppose that $x(t)=x_0$ is an equilibrium solution to
-\Ref{aut}. Then $g(x_0)=0$, since $dx/dt = 0$.  Conversely,
-suppose $g(x_0)=0$.  Then $x(t)=x_0$ is a solution to \Ref{aut}.
+\eqref{aut}. Then $g(x_0)=0$, since $dx/dt = 0$.  Conversely,
+suppose $g(x_0)=0$.  Then $x(t)=x_0$ is a solution to \eqref{aut}.
 \end{proof}
 
 We now return to {\sf pline} and the autonomous equation
@@ -119,7 +119,7 @@ stable\/} when $\lambda< 0$ and {\em unstable\/}
 when $\lambda> 0$.
 
 The dynamical behavior of autonomous differential equations of
-the form \Ref{aut} is essentially determined by the equilibria
+the form \eqref{aut} is essentially determined by the equilibria
 of $g$.  We explore this statement by using {\sf pline} to
 analyze the dynamical behavior of the ordinary differential
 equation
@@ -139,10 +139,10 @@ of {\sf lambda} to $-1$.
 Second,  push on {\sf Proceed} so that the $x$ axis becomes 
 visible in the display window.
 On integrating the system, we find that solutions seem
-to behave in a similar way to the solutions of \Ref{lin1} for
+to behave in a similar way to the solutions of \eqref{lin1} for
 $\lambda < 0$: all the solutions approach zero as $t$ goes to
 infinity.  Indeed, we can see that $x(t)=0$ is an equilibrium
-solution of \Ref{pitch_eq} for all values of $\lambda$.  When
+solution of \eqref{pitch_eq} for all values of $\lambda$.  When
 $\lambda<0$ numerical exploration suggests that $0$ is an
 asymptotically stable equilibrium.
 
@@ -156,7 +156,7 @@ $x(0)$ whereas they approach $-1$ if we start with a negative
 value for $x(0)$.  Even if we begin the numerical computation
 very close to $x=0$, the solutions tend to either $+1$ or $-1$.
 These calculations indicate that $0$ is an unstable equilibrium
-while both $+1$ and $-1$ are stable equilibria of \Ref{pitch_eq}
+while both $+1$ and $-1$ are stable equilibria of \eqref{pitch_eq}
 when $\lambda =1$.
 
 We use the {\sf Keyboard input} to check that $x(t) = +1$ or
@@ -167,7 +167,7 @@ equation
 \[
 x(1-x^2) = 0,
 \]
-to see that $x=0,1,-1$ are all equilibria of \Ref{pitch_eq} when
+to see that $x=0,1,-1$ are all equilibria of \eqref{pitch_eq} when
 $\lambda=1$.
 
 Our numerical computations indicate that changing the
@@ -175,11 +175,11 @@ value of $\lambda$ from $-1$ to $+1$ changes the stability
 property of the equilibrium $x(t)=0$.
 
 We can now discuss a method for completely determining the
-dynamics of a single autonomous differential equation \Ref{aut}
+dynamics of a single autonomous differential equation \eqref{aut}
 --- assuming that equilibria are isolated.
 
 \begin{itemize}
-\item Determine all equilibria of \Ref{aut} by solving the
+\item Determine all equilibria of \eqref{aut} by solving the
 equation $g(x)=0$.
 \item Choose an initial point between each pair of consecutive
 equilibria and determine the direction of motion (sign of $g$) at
@@ -201,7 +201,7 @@ Figure~\ref{pitch3}.
 
 \subsubsection*{Hyperbolic Equilibria}
 
-Suppose that $x_0$ is an equilibrium for \Ref{aut}; that is suppose
+Suppose that $x_0$ is an equilibrium for \eqref{aut}; that is suppose
 $g(x_0)=0$.  We denote the derivative of $g(x)$ with respect to $x$, 
 $dg/dx$, by $g'$.  The equilibrium $x_0$ is 
 {\em hyperbolic\/} \index{hyperbolic}
@@ -213,7 +213,7 @@ g(x) \approx g'(x_0)(x-x_0).
 \]
 It follows that if $g'(x_0)<0$, then $g(x)$ is negative when
 $x>x_0$ and positive when $x<x_0$.  So when $g'(x_0)<0$,
-solutions of \Ref{aut} starting just to the right of $x_0$ will
+solutions of \eqref{aut} starting just to the right of $x_0$ will
 move left ($g<0$) and tend towards $x_0$ and solutions starting
 just to the left of $x_0$ will move right ($g>0$) and tend
 towards $x_0$.  Similarly, if $g'(x_0)>0$, then $g(x)$ is positive
@@ -281,7 +281,7 @@ equation.   This graph is shown in Figure~\ref{pitch3a}(b).
 
 \begin{exercise} \label{c3.3.1}
 Use {\sf pline} to find an initial condition $x(0)$ for the
-ordinary differential equation \Ref{lin1} with $\lambda=-0.2$
+ordinary differential equation \eqref{lin1} with $\lambda=-0.2$
 such that the corresponding solution $x(t)$ satisfies
 $x(20)\in[0.001,0.002]$.
 \end{exercise}

@@ -34,7 +34,7 @@ polynomial
 q_j(s) = \frac{q(s)}{s-r_j} = 
 (s-r_1)\cdots(s-r_{j-1})(s-r_{j+1})\cdots(s-r_d).
 \]
-Multiply both sides of \Ref{E:PF} by $s-r_j$ and evaluate at $s=r_j$ to 
+Multiply both sides of \eqref{E:PF} by $s-r_j$ and evaluate at $s=r_j$ to 
 obtain
 \[
 c_j = \frac{p(r_j)}{q_j(r_j)}.
@@ -84,7 +84,7 @@ to write this expression as
 where $c=c_1+ic_2$.  
 
 In the third part of Section~\ref{S:13.3} we saw how to compute inverse 
-Laplace transforms of functions like those in \Ref{e:pfreal}.
+Laplace transforms of functions like those in \eqref{e:pfreal}.
 
 
 
@@ -111,7 +111,7 @@ To illustrate this command, find the partial fraction expansion of
 \[
 \frac{4s+2}{s^2-s}
 \]
-(which we computed previously in \Ref{eq:Lapdxx2}) by typing
+(which we computed previously in \eqref{eq:Lapdxx2}) by typing
 \begin{verbatim}
     p = [4 2];
     q = [1 -1 0];
@@ -126,7 +126,7 @@ r =
      1
      0
 \end{verbatim}
-Note that this result agrees with our previous calculation in \Ref{eq:Lapdxx2}.
+Note that this result agrees with our previous calculation in \eqref{eq:Lapdxx2}.
 
 Observe that the situation where the polynomial $q(s)$ has complex roots 
 is not excluded.  Indeed, let $p(s) = s+1$ and $q(s) = s^3+s^2-4s+6$, and type
@@ -167,9 +167,9 @@ for some complex scalar $c$.  These terms combine to give
 \[
 \frac{2c_1(s-r_1)-2c_2r_2}{(s-r_1)^2+r_2^2}
 \]
-where $c=c_1+ic_2$, as in \Ref{e:pfreal}.
+where $c=c_1+ic_2$, as in \eqref{e:pfreal}.
 
-We can write a \Matlab m-file to perform the computations in \Ref{e:pfreal}
+We can write a \Matlab m-file to perform the computations in \eqref{e:pfreal}
 as follows:
 \begin{verbatim}
 function [cr,rr] = realform(c,r)
@@ -181,7 +181,7 @@ This m-file is accessed using the command
 [num,denom] = realform(c(i),r(i))
 \end{verbatim}
 where {\tt i} is the index corresponding to the complex conjugate root of 
-$q(s)$.  For example, if we consider the expansion in \Ref{e:realfex}, then we 
+$q(s)$.  For example, if we consider the expansion in \eqref{e:realfex}, then we 
 type 
 \begin{verbatim}
 [num,denom] = realform(c(2),r(2))
@@ -206,7 +206,7 @@ Combining the second and third term on the right hand side leads to
 
 \subsubsection*{Repeating a Calculation Using \Matlab}
 
-The partial fraction expansion of \Ref{e:exlappf}, that is,
+The partial fraction expansion of \eqref{e:exlappf}, that is,
 \[
 \frac{s-1}{s^2+2s+5}
 \]
@@ -241,7 +241,7 @@ num =
 denom = 
     -1     4
 \end{verbatim}
-which corresponds to \Ref{e:pf1}.
+which corresponds to \eqref{e:pf1}.
 
 \EXER
 

@@ -104,7 +104,7 @@ p_{14}^{(2)} = \frac{1}{4}\times\frac{1}{4} + \frac{1}{4}\times0 +
 \frac{1}{4}\times\frac{1}{2} + \frac{1}{4}\times\frac{1}{3} =
 \frac{13}{48} \approx 0.27\;.
 \]
-It follows from \Ref{E:prob14} and the definition of matrix multiplication
+It follows from \eqref{E:prob14} and the definition of matrix multiplication
 that $p_{14}^{(2)}$ is just the $(1,4)^{th}$ entry in the matrix $P^2$.  An
 induction argument shows that the probability of the cat moving from
 room~$i$ to room~$j$ in $k$ steps is precisely the $(i,j)^{th}$ entry in the
@@ -142,7 +142,7 @@ is:
 \[
 \frac{1}{4}v_1 + \frac{1}{2}v_2 + \frac{1}{3}v_4.
 \]
-It now follows from \Ref{E:probt2}, the definition of the transpose of a
+It now follows from \eqref{E:probt2}, the definition of the transpose of a
 matrix, and the definition of matrix multiplication that $v_2^{(1)}$ is
 the $2^{nd}$ entry in the vector $P^tV_0$.  Indeed, it follows by induction
 that $v_i^{(k)}$ is the $i^{th}$ entry in the vector $(P^t)^kV_0$ which
@@ -154,7 +154,7 @@ V_k = (v_1^{k},v_2^{k},v_3^{k},v_4^{k})^t = (P^t)^kV_0.
 \]
 Question (B) actually asks: What will the vector $V_k$ look like for
 large $k$.  To answer that question we need some results about matrices
-like the matrix $P$ in \Ref{E:Pexamp}.  But first we explore the answer to
+like the matrix $P$ in \eqref{E:Pexamp}.  But first we explore the answer to
 this question numerically using \Matlabp.
 
 Suppose, for example, that the initial vector is
@@ -212,7 +212,7 @@ f = \frac{1}{100}(P^tV_0 + (P^t)^2V_0 + \cdots + (P^t)^{100}V_0).
 \end{equation}
 
 So, to answer Question (C), we need a way to sum the expression for $f$
-in \Ref{E:f}, at least approximately.  This is not an easy task --- though
+in \eqref{E:f}, at least approximately.  This is not an easy task --- though
 the answer itself is easy to explain.  Let $V$ be the eigenvector of $P^t$
 with eigenvalue $1$ such that the sum of the entries in $V$ is $1$.  The
 answer is: $f$ is approximately equal to $V$.  See Theorem~\ref{T:ergodic}
@@ -352,7 +352,7 @@ in the sum
 \[
 f_N = \frac{1}{N}(P^t + (P^t)^2 + \cdots + (P^t)^N)e_i.
 \]
-See \Ref{E:f}.  The proof of this theorem involves being able to calculate
+See \eqref{E:f}.  The proof of this theorem involves being able to calculate
 the limit of $f_N$ as $N\to\infty$.  There are two main ideas.  First, the
 limit of the matrix $(P^t)^N$ exists as $N$ approaches infinity --- call that
 limit $Q$.  Moreover, $Q$ is a matrix all of whose columns equal $V$.

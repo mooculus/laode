@@ -70,8 +70,8 @@ When the right hand side $f$ does not depend explicitly on the
 independent time variable $t$, then the equation is called {\em
 autonomous\/}\index{autonomous}\index{differential equation!autonomous}.
 More explicitly, in
-\Ref{nonaut2}, the differential equation is autonomous when
-$f(t,x)=g(x)$.  Equation \Ref{lin1} is an example of an
+\eqref{nonaut2}, the differential equation is autonomous when
+$f(t,x)=g(x)$.  Equation \eqref{lin1} is an example of an
 autonomous differential equation since $f(t,x)=\lambda x$.
 
 When $f$ depends explicitly on the independent time variable $t$,
@@ -88,7 +88,7 @@ This equation is an example of a nonautonomous differential equation
 since $f(t,P) = r(t)P$.   For instance, suppose that at time $t=0$ the
 principal in our account is $P_0$, and the interest rate is $5.5\%$.  
 Now suppose the bank changes the interest rate after six months to $4.5\%$. 
-Then $P(t)$ is a solution to \Ref{E:varinterest}, where
+Then $P(t)$ is a solution to \eqref{E:varinterest}, where
 \[
   r(t) = \left\{\begin{array}{l}
      0.055\quad\mbox{for $0\le t < 0.5$, and}\\
@@ -107,21 +107,21 @@ Another example of a nonautonomous differential equation is given by
 
 There are two different methods for visualizing the result of
 numerical integration of differential equations of the form
-\Ref{nonaut}: time series plots and phase space plots.  These
+\eqref{nonaut}: time series plots and phase space plots.  These
 two methods are based on interpreting the derivative $dx/dt$
 alternatively as either the slope of a tangent line or as the
 velocity of a particle.
 
 A {\em time series\/} \index{time series} plot for a solution to
-\Ref{nonaut} is found by plotting $x$ versus $t$ as we did for
+\eqref{nonaut} is found by plotting $x$ versus $t$ as we did for
 the closed form solution in Figure~\ref{graph_labelfig}.  However,
 when graphing time series of solutions we do not need to find closed
 form solutions.  To understand how this is done, we briefly discuss
-what equation \Ref{nonaut} is actually saying about a solution
+what equation \eqref{nonaut} is actually saying about a solution
 $x(t)$.  This equation states that the slope of the tangent line
 to the graph of the function $x(t)$ at time t ($dx/dt$) is known
 and equals $f(t,x(t))$.  Thus we can use the right hand side of
-\Ref{nonaut} to draw the tangent lines to $x(t)$ at each point
+\eqref{nonaut} to draw the tangent lines to $x(t)$ at each point
 in the $tx$-plane.  This leads to the notion of a line field.
 The rough idea behind the numerical integration scheme is to fit
 a curve $(t,x(t))$ into the $tx$-plane in such a way that the
@@ -150,7 +150,7 @@ We begin our discussion of line fields \index{line field} (or
 synonymously direction fields) \index{direction field} by
 focusing on the information about solutions that can directly
 be extracted from the equation itself.  To illustrate this we
-consider the differential equation \Ref{dfeq}.
+consider the differential equation \eqref{dfeq}.
 
 As mentioned, the differential equation $\dot{x}=x^2-t$ reflects the fact 
 that the value of the derivative of a solution $x(t)$ at time $t$ is
@@ -163,13 +163,13 @@ each point $(t_0,x_0)$ of a rectangle in the $tx$-plane.  We do
 this by drawing a small line segment at each point with the
 slope determined by the right hand side.  In this way we obtain the
 {\em line field}.  In Figure~\ref{df1_labelfig} we show a
-line field corresponding to the differential equation \Ref{dfeq}.
+line field corresponding to the differential equation \eqref{dfeq}.
 
 \begin{figure*}[htb]
         \centerline{%
         \psfig{file=../figures/df1.eps,width=3.0in}
 	\psfig{file=../figures/df3.eps,width=3.0in}}
-        \caption{Left: Line field for \protect\Ref{dfeq}
+        \caption{Left: Line field for \protect\eqref{dfeq}
               for $t\in [-3,10]$ and $x\in [-4,4]$.
 	      Right: a solution starting for $t=-2$ at $x(-2)=-4$.}
         \label{df1_labelfig}
@@ -178,7 +178,7 @@ line field corresponding to the differential equation \Ref{dfeq}.
 By looking at the left hand image in Figure~\ref{df1_labelfig}
 we can imagine how solution curves fit into the diagram; indeed,
 we can almost use this line field to make freehand sketches
-of solutions to \Ref{dfeq}.  The right hand image in
+of solutions to \eqref{dfeq}.  The right hand image in
 Figure~\ref{df1_labelfig} shows the solution starting at the
 initial condition $x(-2) = -4$, which is the point $(x,t)=(-4,-2)$.
 
@@ -187,13 +187,13 @@ initial condition $x(-2) = -4$, which is the point $(x,t)=(-4,-2)$.
 \index{\computer!dfield5}
 
 We now explain how to use \Matlab to display the graphs of
-solutions to the differential equation \Ref{dfeq} for different
+solutions to the differential equation \eqref{dfeq} for different
 choices of initial conditions.  It is a tedious process to use
 \Matlab directly to both compute and graphically display these
 solutions.  Instead, we use a program written in \Matlab by John
 Polking\index{Polking, John} for graphing both the line field and the time 
 series of a solution to any ordinary differential equation of the form
-\Ref{nonaut}.  In \Matlab this program is addressed by typing
+\eqref{nonaut}.  In \Matlab this program is addressed by typing
 \begin{verbatim}
 dfield5
 \end{verbatim}
@@ -203,7 +203,7 @@ displayed in the upper big grey frame.  In this case it is
 \[
 	x' = x^2 - t,
 \]
-which is \Ref{dfeq}.  Now use the left 
+which is \eqref{dfeq}.  Now use the left 
 mouse button to click onto the button {\sf Proceed}.  
 Then another window, having the title {\sf DFIELD5 Display},
 appears.  In this window, one should see the line
@@ -213,7 +213,7 @@ $(t,x)$-plane by clicking on that point with any mouse button.
 {\sf dfield5} should reproduce the right hand side in
 Figure~\ref{df1_labelfig}.
 
-Suppose that we want to solve numerically equation \Ref{lin1}
+Suppose that we want to solve numerically equation \eqref{lin1}
 using {\sf dfield5}. To enter this equation with $\lambda = 0.5$,
 we have to change the setup.  Begin by clicking into the window
 where the right hand side {\sf x\^{$\,\!$}2--t} can be found and
@@ -243,7 +243,7 @@ Figure~\ref{graph_labelfig} when $\lambda=0.5$.
 
 By clicking several times it appears that all solutions diverge
 to either plus or minus infinity as $t$ goes to infinity.
-Indeed, by \Ref{soln1} we know that the solutions are of the
+Indeed, by \eqref{soln1} we know that the solutions are of the
 form $x(t) = x_0 e^{0.5 t}$, and hence this behavior is expected
 for $x_0\not= 0$.  To compute a solution corresponding to the case
 when $x_0=0$, we bring up the menu {\sf DFIELD5 Options} and select
@@ -268,7 +268,7 @@ in Figure~\ref{df_dsp2}.
 
 By computing different solutions, it seems as though all of them
 converge to zero as $t$ goes to infinity, which agrees with
-\Ref{explimits}.
+\eqref{explimits}.
 
 
 \subsubsection*{Autonomous and Nonautonomous Equations in {\sf dfield5}}
@@ -286,7 +286,7 @@ Then
 x_2(t) = x_1(t-t_0).
 \end{equation}
 This statement can be verified by noting that the definition of
-$x_2(t)$ in \Ref{E:initdiff} satisfies the initial value
+$x_2(t)$ in \eqref{E:initdiff} satisfies the initial value
 \[
 x_2(t_0)=x_1(t_0-t_0)=x_1(0)=x_0,
 \]
@@ -397,7 +397,7 @@ the {\sf DFIELD5 Edit} menu to compute $x(2)$ to an accuracy of two decimal
 places.  (Drag a rectangle around the point you are interested in.  Repeat 
 this several times until you can read off the value $x(2)$ of the solution.)  
 \item[(b)] Use \Matlab to compute the value of the exact solution
-of the form \Ref{soln1} with initial value $x(0)=0.5$.  
+of the form \eqref{soln1} with initial value $x(0)=0.5$.  
 \item[(c)] Is your answer obtained using {\sf dfield5} in (a) accurate to 
 within two decimal places of the answer obtained using (b)?  If not, 
 which answer do you trust more, and why?
@@ -419,9 +419,9 @@ equation
 \begin{equation}  \label{E:freehand}
 \dot{x} = x^3-2t^2x-t.
 \end{equation}
-Print the line field of \Ref{E:freehand} on the intervals
+Print the line field of \eqref{E:freehand} on the intervals
 $t\in[-2,2]$ and $x\in[-2,3]$.  Use the line field to draw freehand
-the solution to \Ref{E:freehand} starting at $(t_0,x_0)=(-2,1)$.
+the solution to \eqref{E:freehand} starting at $(t_0,x_0)=(-2,1)$.
 Then set the initial condition using {\sf Keyboard input}
 and print the numerically computed solution. Finally, compare
 your freehand drawing with the numerically computed result.
@@ -438,9 +438,9 @@ Assuming that $x(2)=3$, estimate $x(137)$.
 \[
 x(t) = t + \sqrt{t^2-3}
 \]
-is the solution to \Ref{ex:at}.  Then show that $x(t)$ satisfies the
+is the solution to \eqref{ex:at}.  Then show that $x(t)$ satisfies the
 initial condition $x(2)=3$.
-\item[(c)]  Compare your estimate of the solution to \Ref{ex:at}
+\item[(c)]  Compare your estimate of the solution to \eqref{ex:at}
 obtained using {\sf dfield5} with the exact solution
 \[
 x(137)= 137 +\sqrt{18766} \approx 273.989
