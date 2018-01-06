@@ -166,7 +166,7 @@
     {\flushleft\Large\sffamily\bfseries\thetitlenumber.\thesectiontitlenumber\quad\@title \par}%
     \par}}
 
-\newcommand{\labelchapter}[1]{%
+\renewcommand{\labelchapter}[1]{%
   \@bsphack
   \csname phantomsection\endcsname % in case hyperref is used
   \def\@currentlabel{\thetitlenumber}{\label{#1}}%
