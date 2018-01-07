@@ -111,11 +111,16 @@
 % $$\global\@ignoretrue}}
 
 
+
+
+
+
+\ifxake
+\newenvironment{matlabEquation}{\begin{equation}}{\end{equation}}
+\else
 \newenvironment{matlabEquation}%
 {\let\oldtheequation\theequation\renewcommand{\theequation}{\oldtheequation*}\begin{equation}}%
   {\end{equation}\let\theequation\oldtheequation}
+\fi
 
-%{\renewcommand\endequation{\eqno (\theequation*) $$}%
-%   \begin{equation}}%
-%   {\end{equation}\renewcommand\endequation{\eqno \@eqnnum
-% $$\global\@ignoretrue}}
+\makeatother
