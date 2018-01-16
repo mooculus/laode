@@ -122,9 +122,8 @@ ans =
 The reader may check that this answer agrees with the answer in
 \eqref{e:irratans} to \Matlab output accuracy by typing
 \begin{verbatim}
-x1 = 11.2*sqrt(2)-pi*sqrt(2)* ...
-     (exp(1)-33.6*sqrt(2))/(36.2-3*pi*sqrt(2))
 x2 = (exp(1)-33.6*sqrt(2))/(36.2-3*pi*sqrt(2))
+x1 = 11.2*sqrt(2)-pi*sqrt(2)*x2
 \end{verbatim}
 to obtain
 \begin{verbatim}
