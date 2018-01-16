@@ -316,21 +316,26 @@
 
 \let\exercise\relax
 \let\endexercise\relax
-\let\c@exercise\relax 
-\newtheorem{exercise}{}
-%% \newif\ifoutsideexercise% Condition for zapping inside exercises
-%% \outsideexercisetrue
-%% \newenvironment{exercise}
-%%                {
-%%                  \ifoutsideexercise\global\outsideexercisefalse
-%%                  \begin{trivlist}\item[\hskip\labelsep\sffamily\bfseries\theexercise
-%%                  \else\setbox0\vbox\bgroup\fi
-%%                }
-%%                {
-                 
-%%                  \outsideexercisetrue
-%%                }
+\let\c@exercise\relax
+\newcounter{exercise}
+\newtheorem{actualexercise}[exercise]{}
 
+\newcounter{exercisedepth}
+\newenvironment{exercise}{
+  \stepcounter{exercisedepth}
+  \ifnum\value{exercisedepth}=1
+  \actualexercise
+  \else
+  \color{white}\tiny
+  \fi
+}{
+  \ifnum\value{exercisedepth}=1
+  \endactualexercise
+  \else
+  \color{black}\normalsize
+  \fi
+  \addtocounter{exercisedepth}{-1} 
+}
 
 \let\warning\relax
 \let\endwarning\relax
