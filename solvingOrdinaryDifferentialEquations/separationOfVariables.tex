@@ -192,7 +192,7 @@ for either $t> 0.6$ or $t<0.6$.
 
 
 We can solve equation \eqref{e:x^2} using 
-{\sf dfield5}\index{\computer!dfield5}.
+{\sf dfield8}\index{\computer!dfield8}.
 Using {\sf Keyboard input} set the initial condition at
 $(x_0,t_0)=(2,0.1)$ and obtain the trajectory in
 Figure~\ref{F:x^2}(left).  Note that this solution goes to infinity
@@ -206,7 +206,7 @@ solutions are given by the same formula \eqref{E:solnx^2}.
            \centerline{%
            \psfig{file=../figures/x2a.eps,width=3.5in}
 	   \psfig{file=../figures/x2b.eps,width=3.5in}}
-           \caption{Solutions using {\sf dfield5} for $\frac{dx}{dt} = x^2$ 
+           \caption{Solutions using {\sf dfield8} for $\frac{dx}{dt} = x^2$ 
 		with initial conditions: (left) $(x_0,t_0)=(2,0.1)$ and 
 		(right) $(x_0,t_0)=(1,-2.5)$.}
            \label{F:x^2}
@@ -241,7 +241,7 @@ solution\index{closed form solution}
 for $x(t)$.  Nevertheless, $x(t)$ is defined 
 {\em implicitly\/}\index{solution!implicitly defined} 
 by \eqref{e:solnncf}.  This equation can, however, be solved numerically by
-{\sf dfield5} just as easily as equations that have closed form solutions.
+{\sf dfield8} just as easily as equations that have closed form solutions.
 See Exercise~\ref{c14.1.17}. 
 
 \subsection*{The General Solution by Separation of Variables}
@@ -399,7 +399,7 @@ $\dot{x}=\lambda x$ when $\lambda\neq 0$ and have shown that solutions
 exist for all time and tend either to $0$ or to $\pm\infty$ as $t\to\pm\infty$.
 See \eqref{explimits} and Figure~\ref{df_dsp1}.  In Exercises~\ref{c14.1.11a} -- 
 \ref{c14.1.11f} explore the behavior of solutions $x(t)$ of the given 
-nonlinear (and often nonautonomous) differential equation using {\sf dfield5}.  
+nonlinear (and often nonautonomous) differential equation using {\sf dfield8}.  
 Where possible, describe the differences between the behavior of solutions of 
 the given differential equation and the linear differential equation.  
 
@@ -415,10 +415,10 @@ forward and backward time.)
 \item[(d)]  Solutions stop (that is, solutions limit in either forward or 
 backward time on a finite value of $x$ in finite time $t$).
 \end{itemize}
-Use {\sf dfield5} to determine which of these properties of solutions are 
+Use {\sf dfield8} to determine which of these properties of solutions are 
 valid for the given differential equations.  Also, when exploring 
 Exercises~\ref{c14.1.11a} -- \ref{c14.1.11f} be prepared to use the {\sf Stop}
-button in the {\sf DFIELD5 Display} window to stop the numerical integration. 
+button in the {\sf DFIELD8 Display} window to stop the numerical integration. 
 
 \begin{exercise} \label{c14.1.11a}
 $\dps\frac{dx}{dt} = \frac{1}{x}$.
@@ -443,7 +443,7 @@ $\dps\frac{dx}{dt} = \frac{t}{x^2}$.
 Recall that the differential equation \eqref{E:ncf} $\dot{x}=x/(x-1)$ cannot be 
 solved in closed form.  
 \begin{itemize}
-\item[(a)]	Use {\sf dfield5}\index{\computer!dfield5} 
+\item[(a)]	Use {\sf dfield8}\index{\computer!dfield8} 
 to solve this differential 
 equation numerically on the interval $0.8\leq t\leq 1.2$ with initial 
 condition $x(1)=2$.  (Set the $x$ interval to be $[0,4]$.)  
@@ -470,7 +470,7 @@ initial value problem $x(0.001) = 2/1999$ of \eqref{eq:exivp}.
 \item[(b)] Show that $\dps\lim_{t\to 2^-}x(t)=\infty$ for the solution of 
 \eqref{eq:exivp} obtained in (a).
 \item[(c)] For the initial condition specified in (a) compare the analytic 
-solution of \eqref{eq:exivp} to the numerical solution computed by {\sf dfield5} 
+solution of \eqref{eq:exivp} to the numerical solution computed by {\sf dfield8} 
 in the region where the maximum value of $t$ is $2.5$ and the maximum value of 
 $x$ is $100$.  How does the behavior of the numerically computed solution 
 to \eqref{eq:exivp} differ from that of the analytically computed solution?

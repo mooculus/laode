@@ -10,7 +10,7 @@ for line in File.open("../linearAlgebra.aux").readlines
         mfile = matches.first
         number = number.gsub( '.', '_' ).gsub( /\*$/, '' )
         extension = mfile.split('.').last        
-        `ln labeled/#{mfile} linearAlgebra/#{number}.#{extension}`
+        `ln labeled/#{mfile} linearAlgebra/e#{number}.#{extension}`
       end
     end
   end

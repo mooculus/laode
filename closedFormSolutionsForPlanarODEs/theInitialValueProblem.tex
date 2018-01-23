@@ -22,7 +22,7 @@ ordinary differential equations has the form
 \end{array}
 \end{equation}
 \arrayfinish
-Computer experiments using {\sf pplane5} always appear to find a unique
+Computer experiments using {\sf pplane8} always appear to find a unique
 solution to initial value problems.  More precisely, we are led to
 believe that there is just one solution to \eqref{2dsystem} satisfying
 the initial conditions\index{initial condition}
@@ -112,24 +112,24 @@ f(x)=3x^{2/3} \AND f'(x) = \frac{2}{x^{1/3}}.
 Hence, $f$ is not differentiable at $x=0$ and the hypotheses of
 Theorem~\ref{exist&unique} fail.
 
-At this point it is worth looking to see what {\sf dfield5}
-computes numerically.  Start {\sf dfield5} \index{\computer!dfield5} and
+At this point it is worth looking to see what {\sf dfield8}
+computes numerically.  Start {\sf dfield8} \index{\computer!dfield8} and
 change the differential equation to:
 \begin{verbatim}
 x' = (x^2)^(1/3)
 \end{verbatim}
 Writing the differential equation in this way guarantees that
 the computer will not compute square roots of negative numbers.
-Click on the {\sf Proceed} button.  In the {\sf DFIELD5 Display}
+Click on the {\sf Proceed} button.  In the {\sf DFIELD8 Display}
 window attempt to click on the origin --- that is, attempt to
 enter the initial condition $x(0)=0$ using the mouse.  You will surely get
 a solution that has a similar shape to the graph of the cubic function
-$x=t^3$.  In the {\sf DFIELD5 Options} menu click on {\sf Keyboard input},
-and in the {\sf DFIELD5 Keyboard input} window enter the
+$x=t^3$.  In the {\sf DFIELD8 Options} menu click on {\sf Keyboard input},
+and in the {\sf DFIELD8 Keyboard input} window enter the
 values $t=0$ and $x=0$.  After clicking on the {\sf Compute}
 button you will see the solution $x=0$.  Now click on the {\sf
-Erase all solutions} button in the {\sf DFIELD5 Options} menu.
-Change the initial value of $x$ to $0.00001$ in the {\sf DFIELD5
+Erase all solutions} button in the {\sf DFIELD8 Options} menu.
+Change the initial value of $x$ to $0.00001$ in the {\sf DFIELD8
 Keyboard input} window and click on {\sf Compute}.  You will see
 a solution that looks like $x=t^3$.  See Figure~\ref{nonuniquefig}.
 
@@ -144,7 +144,7 @@ a solution that looks like $x=t^3$.  See Figure~\ref{nonuniquefig}.
 \end{figure*}
 
 At this stage, we do not have the background to discuss the numerical
-method employed by {\sf dfield5}.
+method employed by {\sf dfield8}.
 
 \subsection*{The Initial Value Problem for Linear Systems}
 \index{initial value problem}
@@ -397,7 +397,7 @@ equation.
 \CEXER
 
 \begin{exercise} \label{c6.1.4}
-Use {\sf pplane5}\index{\computer!pplane5} to investigate the system
+Use {\sf pplane8}\index{\computer!pplane8} to investigate the system
 of differential equations
 \begin{equation}  \label{Ex.1.4}
 \begin{array}{rcr}
@@ -406,7 +406,7 @@ of differential equations
 \end{array}
 \end{equation}
 \begin{itemize}
-\item[(a)] Use {\sf pplane5} to find two independent eigendirections (and
+\item[(a)] Use {\sf pplane8} to find two independent eigendirections (and
 hence eigenvectors) for \eqref{Ex.1.4}.
 \item[(b)] Using (a), find the eigenvalues of the coefficient matrix of
 \eqref{Ex.1.4}.
@@ -417,7 +417,7 @@ X(0) = \vectwo{4}{-1}.
 \]
 \item[(d)] Study the time series of $y$ versus $t$ for the solution in (c)
 by comparing the graph of the closed form solution obtained in (c) with the
-time series graph using {\sf pplane5}.
+time series graph using {\sf pplane8}.
 \end{itemize}
 \end{exercise}
 

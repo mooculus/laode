@@ -141,8 +141,8 @@ follows directly from \eqref{e:explicitsoln}.  It turns out that
 many linear systems of differential equations have invariant
 lines; this is a topic to which we return later in this chapter.
 
-\subsection*{Generating Phase Space Pictures with {\sf pplane5}}
-\index{\computer!pplane5}
+\subsection*{Generating Phase Space Pictures with {\sf pplane8}}
+\index{\computer!pplane8}
 
 How can we visualize a solution $(x(t),y(t))$ to a system of
 differential equations \eqref{e:aut2}?  The time series approach
@@ -179,7 +179,7 @@ it is useful to use the computer.
 
 The method used to integrate planar systems of autonomous
 differential equations is similar to that used to integrate
-nonautonomous single equations in {\sf dfield5}.  The solution
+nonautonomous single equations in {\sf dfield8}.  The solution
 curve $(x(t),y(t))$ to \eqref{e:aut2} at a point $(x_0,y_0)$ is
 tangent to the direction $(f(x_0,y_0),g(x_0,y_0))$.  So
 the differential equation solver plots the direction field
@@ -187,13 +187,13 @@ the differential equation solver plots the direction field
 $(f,g)$ and then finds curves that are tangent to these
 vectors at each point in time.
 
-The program {\sf pplane5}\index{\computer!pplane5}, written by John
+The program {\sf pplane8}\index{\computer!pplane8}, written by John
 Polking,\index{Polking, John} is the two-dimensional analog of {\sf pline}.  
 In \Matlab type
 \begin{verbatim}
-pplane5
+pplane8
 \end{verbatim}
-and the window with the {\sf PPLANE5 Setup} appears. {\sf pplane5}
+and the window with the {\sf PPLANE8 Setup} appears. {\sf pplane8}
 has a number of preprogrammed differential equations listed in a
 menu accessed by clicking on {\sf Gallery}.  To explore linear
 systems, choose {\sf linear system} in the {\sf Gallery}.  (Note that the 
@@ -203,11 +203,11 @@ lower case {\sf a,b,c,d}.)
 To integrate the uncoupled linear system, set the parameters $b$
 and $c$ equal to zero. We now have the system \eqref{lin2} with
 $a = 2$ and $d = -3$.  After pushing {\sf Proceed}, a display window
-similar to {\sf dfield5} appears.  The main difference is that
+similar to {\sf dfield8} appears.  The main difference is that
 the plane is filled by vectors $(f,g)$ indicating directions,
 rather than by line segments indicating slopes.
 
-As with {\sf dfield5} we may start the computations by clicking
+As with {\sf dfield8} we may start the computations by clicking
 with a mouse button on an initial value $(x_0,y_0)$.  For example,
 if we click approximately onto $(x(0),y(0))=(x_0,y_0)=(1,1)$, then
 the trajectory in the upper right quadrant of
@@ -216,16 +216,16 @@ Figure~\ref{pp_dsp1} displays.
 \begin{figure*}[htb]
      \centerline{%
      \psfig{file=../figures/pp_dsp1.eps,width=3.5in}}
-     \caption{{\sf PPLANE5 Display} for \protect\eqref{lin2} with
+     \caption{{\sf PPLANE8 Display} for \protect\eqref{lin2} with
              $a=2$, $d=-3$ and $x,y\in [-5,5]$. Solutions
              going through $(\pm 1,\pm 1)$ are shown.}
      \label{pp_dsp1}
 \end{figure*}
 
-First {\sf pplane5} draws the trajectory in forward time for
+First {\sf pplane8} draws the trajectory in forward time for
 $t\ge 0$ and then it draws the trajectory in backwards time for
 $t\le 0$.  More precisely, when we click on a point $(x_0,y_0)$ in
-the $(x,y)$-plane, {\sf pplane5} computes that part of the
+the $(x,y)$-plane, {\sf pplane8} computes that part of the
 solution that lies inside the specified {\sf display window}
 and that goes through this point.  For linear systems there is
 precisely one solution that goes through a specified point in
@@ -274,18 +274,18 @@ In forward time, all trajectories, except the equilibrium at the
 origin, move towards infinity and the origin is called a
 {\em source\/}.
 
-\subsection*{Time Series Using {\sf pplane5}} \index{\computer!pplane5}
+\subsection*{Time Series Using {\sf pplane8}} \index{\computer!pplane8}
 
-We may also use {\sf pplane5} to graph the time series of the
+We may also use {\sf pplane8} to graph the time series of the
 single components $x(t)$ and $y(t)$ of a solution $(x(t),y(t))$.
 For this we choose {\sf x vs.\ t} from the {\sf Graph} menu.
 After using the mouse to select a solution curve, another window
-with the title {\sf PPLANE5 t-plot} appears.  There the time
+with the title {\sf PPLANE8 t-plot} appears.  There the time
 series of $x(t)$ is shown.  For example, when the differential 
 equation is a sink, we observe that this component
 approaches $0$ as time $t$ tends to infinity.  We may also
 display the time series of both components $x(t)$ and $y(t)$
-simultaneously by clicking on {\sf Both} in the {\sf PPLANE5 t-plot} 
+simultaneously by clicking on {\sf Both} in the {\sf PPLANE8 t-plot} 
 window.  Again we see that both $x(t)$ and $y(t)$ tend
 to $0$ for increasing $t$.
 
@@ -308,7 +308,7 @@ the {\sf Composite} button.  See Figure~\ref{plotall}.
      \centerline{%
      \psfig{file=../figures/plot3d.eps,width=3.0in}
      \psfig{file=../figures/plotall.eps,width=3.0in}}
-     \caption{{\sf PPLANE5 Display} for \protect\eqref{lin2} with
+     \caption{{\sf PPLANE8 Display} for \protect\eqref{lin2} with
              $a=2$, $d=-3$ and $x\in [0,25], y\in [0,20]$. The solution
              going through $(1,1)$ is shown. UL: $(t,x(t))$;
 	UR: $(t,y(t))$; LL: $(x(t),y(t),t)$; LR: all plots.}
@@ -368,7 +368,7 @@ on a parabola tangent to the $x$-axis.
 Use the phase plane picture given in Figure~\ref{pp_dsp1} to
 draw the time series $x(t)$ when $(x(0),y(0)) =
 (\frac{1}{2},\frac{1}{2})$.  Check your answer using {\sf
-pplane5}.
+pplane8}.
 \end{exercise}
 
 \CEXER
@@ -377,7 +377,7 @@ pplane5}.
 \begin{exercise} \label{c3.4.4}
 For the three choices of $a$ and $d$ in the uncoupled system of
 linear differential equations in Exercises~\ref{E:uncoupleda} -- 
-\ref{E:uncoupledc}, use {\sf pplane5}
+\ref{E:uncoupledc}, use {\sf pplane8}
 to compute phase portraits.  Use {\sf Keyboard input} to look at
 solutions with initial conditions on the $x$ and $y$ axes.  As time
 $t$ increases, do solutions with these initial conditions tend towards 
@@ -393,15 +393,15 @@ that your experimental guess is always correct?
 \end{exercise}
 
 \begin{exercise} \label{c3.4.6}
-Suppose that $a=d<0$.  Verify experimentally using {\sf pplane5}
+Suppose that $a=d<0$.  Verify experimentally using {\sf pplane8}
 that all trajectories approach the origin along straight lines.
 Try to prove this conjecture?
 \end{exercise}
 
 \begin{exercise} \label{c3.4.7}
-Use {\sf pplane5} to compute several solutions of the linear system by
+Use {\sf pplane8} to compute several solutions of the linear system by
 setting $a=2$ and $d=-3$ in the region $x,y\in[-5,5]$.  Then use
-{\sf dfield5} to compute several solutions of the single differential
+{\sf dfield8} to compute several solutions of the single differential
 equation
 \[
 \frac{dx}{dt} = -\frac{2x}{3t}

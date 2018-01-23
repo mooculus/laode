@@ -23,7 +23,7 @@ different saddle points.
 Typically, planar systems have a periodic solution that is not a limit cycle 
 when two limit cycles collide and disappear --- very much like the collision 
 and destruction of two equilibria in a saddle-node bifurcation.  We illustrate 
-this kind of collision using phase--amplitude equations and {\sf pplane5}.
+this kind of collision using phase--amplitude equations and {\sf pplane8}.
 Indeed, the collision of periodic solutions corresponds to a saddle-node 
 bifurcation of equilibria in the amplitude equation.
 \index{bifurcation!saddle-node}
@@ -61,7 +61,7 @@ When $\rho<0$ there are no zeros of the amplitude equation.
 It follows that the amplitude equations undergo a saddle-node 
 bifurcation at $(r,\rho)=(1,0)$ and that two periodic solutions of 
 \eqref{e:papp} collide and disappear.  This assertion can be 
-checked using {\sf pplane5}\index{\computer!pplane5}.  
+checked using {\sf pplane8}\index{\computer!pplane8}.  
 See Figure~\ref{F:papp}. Note that when $\rho=0$
 the circle $r=1$ is the trajectory of a periodic solution but that periodic 
 solution is {\em not\/} a limit cycle.  You can see this point by noting that 
@@ -149,8 +149,8 @@ $1$ in negative time to $0$ in positive time.)
 When $\rho\neq 0$ the $x$-axis is no longer invariant for the differential 
 equation.  The two saddles remain --- but there is no longer a 
 trajectory connecting them.  In Figure~\ref{F:hetero} we use 
-{\sf pplane5}\index{stable!orbit!in {\sf pplane5}} 
-\index{unstable!orbit!in {\sf pplane5}}
+{\sf pplane8}\index{stable!orbit!in {\sf pplane8}} 
+\index{unstable!orbit!in {\sf pplane8}}
 to plot the stable and unstable orbits when $\rho=\pm 0.1$.
 
 From this figure we can see how the stable orbit of the origin swings 
@@ -186,7 +186,7 @@ trajectory\index{trajectory!homoclinic}.
 \CEXER
 
 \begin{exercise} \label{c9.5.1}
-Use {\sf pplane5} to analyze the phase portraits for the system
+Use {\sf pplane8} to analyze the phase portraits for the system
 \begin{matlabEquation}\label{MATLAB:21}
 \begin{array}{rcl}
 \dot{x} & = & (-\rho+3(0.5x^2+y^2)-(x^2+y^2)^2)x-2y \\
@@ -232,7 +232,7 @@ of differential equations \eqref{E:infinity}.
 \begin{exercise} \label{c9.6.3a}
 How many periodic solutions does \eqref{E:infinity} appear to have 
 when $\rho=0$?  Be careful when answering this question.  First use 
-{\sf pplane5} to determine the number of limit cycles on the square 
+{\sf pplane8} to determine the number of limit cycles on the square 
 $-\ell \leq x,y \leq\ell$ when $\ell=2$.  Then compute with $\ell=10$ and 
 $\ell=40$.
 \end{exercise}
@@ -255,7 +255,7 @@ in the square $-5 \leq x,y \leq 5$.
 \begin{exercise} \label{c9.6.4a}
 How many equilibria does \eqref{E:twoeq} have in this square when 
 $\rho=1.7$ and of what type are they?  This question can be answered either 
-numerically using {\sf pplane5} (easy) or analytically (more difficult, but 
+numerically using {\sf pplane8} (easy) or analytically (more difficult, but 
 possible).
 \end{exercise}
 \begin{exercise} \label{c9.6.4b}

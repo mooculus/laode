@@ -42,7 +42,7 @@ trajectories.
 \end{definition}\index{stylized phase portrait}\index{phase!portrait!stylized}
 
 Generally, it is not an easy task to draw the stylized phase
-portrait of a differential equation.  However, using {\sf pplane5\/} 
+portrait of a differential equation.  However, using {\sf pplane8\/} 
 we can attempt to draw the phase portrait of a
 Morse-Smale system on a given rectangle in the following way.
 \begin{enumerate}
@@ -56,10 +56,10 @@ the differential equation.
 Putting this information together allows us to draw planar phase
 portraits.
 
-\subsection*{The {\sf pplane5} Default Equation}
+\subsection*{The {\sf pplane8} Default Equation}
 
 As an example, we discuss the stylized phase portrait of the 
-{\sf pplane5}\index{\computer!pplane5} default equation:
+{\sf pplane8}\index{\computer!pplane8} default equation:
 \begin{equation}  \label{e:default}
 \begin{array}{rcl}
 \dot{x} & = & 2x-y+3(x^2-y^2)+2xy \\
@@ -75,7 +75,7 @@ is an equilibrium.  By clicking on the {\sf Find an equilibrium point}
 button, we see that the origin is a saddle.  By clicking on the
 {\sf plot stable and unstable orbits} button and then clicking
 on the mouse when the cross hairs are near the origin, {\sf
-pplane5} plots the stable and unstable orbits of this saddle.
+pplane8} plots the stable and unstable orbits of this saddle.
 See Figure~\ref{F:default0}.
 
 \begin{figure}[htb]
@@ -133,7 +133,7 @@ the default system \eqref{e:default}.  Clicking inside the limit
 cycle, shows a trajectory that spirals to a limit cycle in
 forward time, as expected. In backward time, however, the
 trajectory spirals towards the spiral source --- but never makes
-it --- and {\sf pplane5} indicates the possible existence of a
+it --- and {\sf pplane8} indicates the possible existence of a
 second periodic solution.  In fact, no such periodic solution
 exists. This point can be clarified using the zoom feature near
 the spiral source.  These numerical calculations verify that the 
@@ -144,7 +144,7 @@ default system \eqref{e:default} is Morse-Smale.
 \CEXER
 
 \begin{exercise} \label{c8.4.1}
-Use {\sf pplane5} to determine the stylized phase portrait for 
+Use {\sf pplane8} to determine the stylized phase portrait for 
 the system
 \begin{matlabEquation}\label{phaseportrait1}
 \begin{array}{rcl}
@@ -157,7 +157,7 @@ on the square $-10 \leq x,y \leq 10$.  Indicate all equilibria
 \end{exercise}  
 
 \begin{exercise} \label{c8.4.2}
-Use {\sf pplane5} to determine the number of equilibria and their
+Use {\sf pplane8} to determine the number of equilibria and their
 types for the system
 \begin{matlabEquation}\label{MATLAB:2}
 \begin{array}{rcl}
@@ -169,7 +169,7 @@ in the rectangle $-2 \leq x \leq 4$, $-3 \leq y \leq 6$.
 \end{exercise}  
 
 \begin{exercise} \label{c8.4.3}
-Use {\sf pplane5} to determine the number of equilibria and their types, the
+Use {\sf pplane8} to determine the number of equilibria and their types, the
 number of limit cycles, and the connecting trajectories for the system
 \begin{matlabEquation}\label{MATLAB:3}
 \begin{array}{rcl}
@@ -196,10 +196,10 @@ Draw the stylized phase portrait of \eqref{8.3.3eq}.
 four questions for the given system of differential equations:
 \begin{itemize}
 \item[(a)]  How many equilibria does the system of differential equations 
-have?  Any equilibrium that you find using {\sf pplane5} may be considered an 
+have?  Any equilibrium that you find using {\sf pplane8} may be considered an 
 actual equilibrium.  But use analysis to prove that you have found them all.
 \item[(b)]  How many limit cycles does the system of differential equations 
-have?  Base your answer on numerical exploration using {\sf pplane5}.
+have?  Base your answer on numerical exploration using {\sf pplane8}.
 \item[(c)]  By hand (and not necessarily to scale) sketch the phase portrait.
 \item[(d)]  Indicate which initial conditions have solutions that stay
 bounded in forward time.

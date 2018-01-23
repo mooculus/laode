@@ -28,19 +28,19 @@ by formula \eqref{e:explicitsoln} when the system is uncoupled.  We have also
 discussed how to visualize the phase plane for different choices of the 
 diagonal entries $a$ and $d$.  At present, we cannot
 solve \eqref{lin3} by formula when the coefficient matrix is not diagonal.
-But we may use {\sf pplane5} to solve the initial value problems numerically 
+But we may use {\sf pplane8} to solve the initial value problems numerically 
 for these coupled systems.  We illustrate this point by solving
 \begin{eqnarray*}
 \frac{dx_1}{dt}(t) & = &  -x_1(t) + 3x_2(t) \\
 \frac{dx_2}{dt}(t) & = &  3x_1(t) - x_2(t).
 \end{eqnarray*}
-After starting {\sf pplane5}, select {\sf linear system} from the
+After starting {\sf pplane8}, select {\sf linear system} from the
 {\sf Gallery} and set the constants to:
 \[
 	a = -1,\quad b = 3,\quad c = 3, \quad d = -1.
 \]
 Click on {\sf Proceed}.  In order to have equally spaced coordinates on
-the $x$ and $y$ axes, do the following.   In the {\sf PPLANE5 Display} 
+the $x$ and $y$ axes, do the following.   In the {\sf PPLANE8 Display} 
 window click on the {\sf edit} button and then on the {\sf zoom in square} 
 command.  Then, using the mouse, click on the origin.
 
@@ -56,13 +56,13 @@ Figure~\ref{F:invariantlines}.  Moreover, the computations
 indicate that these lines are invariant in the sense that
 solutions starting on these lines remain on them for all time.
 This statement can be verified numerically by using the {\sf
-Keyboard input} in the {\sf PPLANE5 Options} to choose initial
+Keyboard input} in the {\sf PPLANE8 Options} to choose initial
 conditions $(x_0,y_0)=(1,1)$ and $(x_0,y_0)=(1,-1)$.
 
 \begin{figure}[htb]
      \centerline{%
      \psfig{file=../figures/invline.eps,width=3.5in}}
-     \caption{{\sf PPLANE5 Display} for \protect\eqref{lin3} with
+     \caption{{\sf PPLANE8 Display} for \protect\eqref{lin3} with
              $a=-1=d$; $b=3=c$; and $x,y\in [-5,5]$.
 	Solutions going through $(\pm 0.5,0)$ and $(0,\pm 0.5)$ are shown.}
      \label{F:invariantlines}
@@ -96,7 +96,7 @@ infinity.  The phase portrait is shown in Figure~\ref{pp_dsp2}.
 \begin{figure}[htb]
       \centerline{%
       \psfig{file=../figures/pp_dsp2.eps,width=3.5in}}
-      \caption{{\sf PPLANE5 Display} for the {\sf linear system}
+      \caption{{\sf PPLANE8 Display} for the {\sf linear system}
 		with $a=-1$, $b=-2$, $c=3$, $d=-1$.}
       \label{pp_dsp2}
 \end{figure}
@@ -155,7 +155,7 @@ trajectories for \eqref{E:2nd->1st} are just circles centered at the origin.
 \CEXER
 
 \begin{exercise} \label{c3.5.a01}
-Choose the {\sf linear system} in {\sf pplane5} and set $a=0$, $b=1$, and 
+Choose the {\sf linear system} in {\sf pplane8} and set $a=0$, $b=1$, and 
 $c=-1$.  Then find values $d$ such that except for the origin itself all 
 solutions appear to
 \begin{itemize}
@@ -166,7 +166,7 @@ solutions appear to
 \end{exercise}
 
 \begin{exercise} \label{c3.5.2}
-Choose the {\sf linear system} in {\sf pplane5} and set
+Choose the {\sf linear system} in {\sf pplane8} and set
 $a=-1$, $c=3$, and $d=-1$.
 Then find a value for $b$ such that the behavior of the
 solutions of the system is ``qualitatively'' the same as for a
@@ -177,7 +177,7 @@ distinguished line.
 \end{exercise}
 
 \begin{exercise} \label{c3.5.3}
-Choose the {\sf linear system} in {\sf pplane5} and set
+Choose the {\sf linear system} in {\sf pplane8} and set
 $a=d$ and $b=c$.  Verify that for these systems of differential
 equations:
 \begin{itemize}
@@ -196,7 +196,7 @@ Sketch the time series $y(t)$ for the solution to the
 differential equation whose phase plane is pictured in
 Figure~\ref{pp_dsp2} with initial condition
 $(x(0),y(0))=(\frac{1}{2},\frac{1}{2})$ .  Check your answer
-using {\sf pplane5}.
+using {\sf pplane8}.
 \end{exercise}
 
 \noindent In Exercises~\ref{c3.5.5a} -- \ref{c3.5.5d}, determine which of

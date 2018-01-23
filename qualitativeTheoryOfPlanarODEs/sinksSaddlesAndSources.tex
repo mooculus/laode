@@ -217,7 +217,7 @@ the same --- but the arrows point in the opposite direction.
 \index{phase!portrait!for a saddle}
 
 Next we discuss the phase portraits of linear saddles.  Using
-{\sf pplane5}\index{\computer!pplane5}, draw the phase portrait
+{\sf pplane8}\index{\computer!pplane8}, draw the phase portrait
 of the saddle
 \begin{equation}  \label{e:saddlet}
 \begin{array}{rcl}
@@ -252,20 +252,20 @@ associated eigenvectors $v_1$ and $v_2$.  The stable orbits are given by the
 solutions $X(t) = \pm e^{\lambda_1 t}v_1$ and the unstable orbits are given
 by the solutions $X(t) = \pm e^{\lambda_2 t}v_2$.
 
-\subsubsection*{Stable and Unstable Orbits using {\sf pplane5}}
+\subsubsection*{Stable and Unstable Orbits using {\sf pplane8}}
 
-The program {\sf pplane5} is programmed to draw the stable and unstable
+The program {\sf pplane8} is programmed to draw the stable and unstable
 orbits of a saddle on command. Although the principal use of this
 feature is seen when analyzing nonlinear systems, it is useful to
 introduce this feature here.  As an example, load the linear system
-\eqref{e:saddlet} into {\sf pplane5} and click on {\sf Proceed}.  Now
-pull down the {\sf PPLANE5 Options} menu and click on {\sf Find an
-equilibrium}.  Click the cross hairs in the {\sf PPLANE5 Display}
-window on a point near the origin; {\sf pplane5} responds by
-opening a new window --- the {\sf PPLANE5 Equilibrium point data}
+\eqref{e:saddlet} into {\sf pplane8} and click on {\sf Proceed}.  Now
+pull down the {\sf PPLANE8 Options} menu and click on {\sf Find an
+equilibrium}.  Click the cross hairs in the {\sf PPLANE8 Display}
+window on a point near the origin; {\sf pplane8} responds by
+opening a new window --- the {\sf PPLANE8 Equilibrium point data}
 window --- and by putting a small yellow circle about the
 origin.  The circle indicates that the numerical algorithm
-programmed into {\sf pplane5} has detected an equilibrium near
+programmed into {\sf pplane8} has detected an equilibrium near
 the chosen point. A new window opens and displays the message
 {\sf There is a saddle point at} $(0,0)$.  This window also displays the
 coefficient matrix (called the Jacobian for reasons that will be discussed
@@ -274,10 +274,10 @@ and eigenvectors.  This process numerically verifies that the origin
 is a saddle (a fact that could have been verified in a more
 straightforward way).
 
-Now pull down the {\sf PPLANE5 Options} menu again and click on
+Now pull down the {\sf PPLANE8 Options} menu again and click on
 {\sf Plot stable and unstable orbits}.  Next click on the mouse
 when the cross hairs are within the yellow circle and {\sf
-pplane5} responds by drawing the stable and unstable orbits.
+pplane8} responds by drawing the stable and unstable orbits.
 The result is shown in Figure~\ref{F:linsaddle}(left).
 On this figure we have also plotted one trajectory
 from each quadrant; thus obtaining the phase portrait of a saddle.
@@ -333,7 +333,7 @@ $C=\mattwo{1}{-8}{2}{1}$.
 
 \CEXER
 
-\noindent In Exercises~\ref{E:sssa} -- \ref{E:sssd} use {\sf pplane5} to
+\noindent In Exercises~\ref{E:sssa} -- \ref{E:sssd} use {\sf pplane8} to
 determine whether the origin is a saddle, sink, or source in $\dot{X}=CX$
 for the given matrix $C$.
 \begin{exercise} \label{E:sssa}
@@ -357,7 +357,7 @@ $\dot{X}=BX$ and $\dot{X}=CX$ are qualitatively the same in two steps.
 \item[(a)]  Use \Matlab to find the $2\times 2$ matrix $P$ such that
 $B=P\inv CP$.  Use {\tt map} to understand how the matrix $P$ moves points 
 in the plane.
-\item[(b)]  Use {\sf pplane5} to observe that $P$ moves solutions of
+\item[(b)]  Use {\sf pplane8} to observe that $P$ moves solutions of
 $\dot{X}=BX$ to the solution of $\dot{X}=CX$.  Write a sentence or two describing your results.
 \end{itemize}
 \begin{exercise} \label{E:sima}
