@@ -22,7 +22,10 @@ function output = dfield8(action,input1,input2,input3)
 
 %  Copywright (c) 1995, 1997, 1998, 1999, 2000, 2001, 2002, 2003 
 %                 John C. Polking Rice University
-%  Last modified: April 2, 2003
+
+% Modified 1/31/2018 by M. Tychonievich to remove use of EraseMode 
+
+%  Last modified: January 31, 2018
 
 
   startstr = 'dfield8';
@@ -1815,7 +1818,8 @@ function output = dfield8(action,input1,input2,input3)
 	[tp,xp] = feval(solvhandle,dfcn,intplus,initpt(2),disph);
 	aud = get(dfdispa,'user');
 	hnew1 = aud.line;
-	set(aud.pline,'erase','normal','color', pcol);  
+	set(aud.pline,'color', pcol);  
+%     set(aud.pline,'erase','normal','color', pcol);  
 	dud.plhand=[dud.plhand;aud.pline];   
       end		
       
@@ -1832,7 +1836,8 @@ function output = dfield8(action,input1,input2,input3)
 	[tm,xm] = feval(solvhandle,dfcn,intminus,initpt(2),disph);
 	aud = get(dfdispa,'user');
 	hnew2 = aud.line;
-	set(aud.pline,'erase','normal','color', pcol);     
+	set(aud.pline,'color', pcol);     
+    %set(aud.pline,'erase','normal','color', pcol);  
 	dud.plhand=[dud.plhand;aud.pline];   
 	set(stopbutt,'vis','off');
       end	  % if intminus(2) < intminus(1)	
@@ -1859,7 +1864,7 @@ function output = dfield8(action,input1,input2,input3)
 	t=[t;tp];
 	delete(hnew1);
 	set(hnew2,'xdata',t(:),'ydata',x(:),'color',pcol);
-	set(hnew2,'erase','normal');
+	%set(hnew2,'erase','normal');
 	dud.solhand = [dud.solhand;hnew2];
       end	 % switch cflag
       set(disph,'user',dud);
@@ -3964,8 +3969,10 @@ ud.stop = 0;
 
 % Set the the line handle.
 
+% ph = plot([tspan(1),tspan(1)],[y0,y0],'color',col,...
+%     'erase','none',...
+%     'parent',dispha);  %erase no longer supported
 ph = plot([tspan(1),tspan(1)],[y0,y0],'color',col,...
-    'erase','none',...
     'parent',dispha);
 ud.line = ph;
 
@@ -3976,7 +3983,9 @@ figure(disph);
 v = axis;
 aa = v(1)+0.01*(v(2)-v(1));
 plh = plot(aa,y0,'.','markersize',20,'color',col,...
-    'erase','xor','parent',dispha,'visible',vi);    
+    'parent',dispha,'visible',vi);    
+% plh = plot(aa,y0,'.','markersize',20,'color',col,...
+%     'erase','xor','parent',dispha,'visible',vi);  
 ud.pline = plh;
 set(dispha,'UserData',ud);
 
