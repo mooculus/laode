@@ -31,8 +31,8 @@ problem\index{initial value problem}
 X(0) & = & X_0.
 \end{array}
 \end{equation}
-We assume that $C$ is a $2\times 2$ matrix with eigenvalues $\lambda_1$ and
-$\lambda_2$.  When needed, we denote the associated eigenvectors by $v_1$ and
+Assume that $C$ is a $2\times 2$ matrix with eigenvalues $\lambda_1$ and
+$\lambda_2$, and denote the associated eigenvectors by $v_1$ and
 $v_2$.
 
 \subsection*{Real Distinct Eigenvalues}
@@ -138,10 +138,9 @@ and only if the real and imaginary parts are real vector-valued solutions
 to $\dot{X}=CX$.
 \end{lemma}
 
-\begin{proof} Equating the real and imaginary parts of \eqref{E:X1X2} implies that
-\[
-\dot{X}_1 = CX_1 \AND \dot{X}_2 = CX_2.
-\]
+\begin{proof} 
+Equating the real and imaginary parts of \eqref{E:X1X2} implies that
+$\dot{X}_1 = CX_1$ and $\dot{X}_2 = CX_2$.
 \end{proof}
 
 It follows from Lemma~\ref{L:RIsoln} that finding one complex-valued solution
@@ -455,9 +454,9 @@ X(t) & = & e^{-2t}\left(-v_1 + 3(w_1+tv_1)\right)\\
 & = & e^{-2t}\vectwo{2+3t}{3+9t}.
 \end{eqnarray*}
 
-There is a simpler method for finding this solution --- a method that
-does not require solving for either the eigenvector $v_1$ or the generalized
-eigenvector $w_1$ that we will discuss later.  See Section~\ref{S:6.6}.
+The Cayley Hamilton theorem leads to a third method for finding this solution 
+--- one that does not require solving for either the eigenvector $v_1$ or the 
+generalized eigenvector $w_1$.  See Section~\ref{S:6.6}.
 
 \EXER
 

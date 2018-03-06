@@ -57,7 +57,7 @@ $e^L$ is an $n\times n$ matrix and is the infinite sum of $n\times n$
 matrices.
 
 \noindent {\bf Remark:}   The infinite series for matrix exponentials
-\eqref{e:expL} does converge for all $n\times n$ matrices $L$, and this fact
+\eqref{e:expL} converges for all $n\times n$ matrices $L$.  This fact
 is proved in Exercises~\ref{c6.2.7} and \ref{c6.2.8}.
 
 Using \eqref{e:expL}, we can write the matrix exponential of $tC$
@@ -118,9 +118,16 @@ X(t)=e^{tC}X_0.
 \]
 \end{theorem}
 
-\begin{proof}  Existence follows from the previous discussion;
-uniqueness follows from the $n$ dimensional analog of
-Theorem~\ref{exist&unique}.  \end{proof}
+\begin{proof}  Existence follows from the previous discussion.
+For uniqueness, suppose that $Y(t)$ is a solution to $\dot{Y}=CY$
+with $Y(0)=X_0$.  We claim that $Y(t)=X(t)$.  Let $Z(t) = e^{-tC}Y(t)$ 
+and use the product rule to compute 
+\[
+\dps\frac{dZ}{dt} = -C e^{-tC}Y(t) + e^{-tC}\frac{dY}{dt}(t) = e^{-tC}(-CY(t) + C Y(t)) = 0
+\]  
+It follows that $Z$ is constant in $t$ and $Z(t) = Z(0) = Y(0) = X_0$ or 
+$Y(t) = e^{tC}X_0 = X(t)$, as claimed.
+\end{proof}
 
 
 \subsection*{Explicit Computation of Matrix Exponentials}
@@ -302,7 +309,7 @@ properties of the scalar exponential function to show that
 \end{exercise}
 
 \noindent In Exercises~\ref{c6.2.5A} -- \ref{c6.2.5C} we use
-Theorem~\ref{exist&unique}, the uniqueness of solutions to initial value
+Theorem~\ref{T:linODEsoln}, the uniqueness of solutions to initial value
 problems, in perhaps a surprising way.
 \begin{exercise}  \label{c6.2.5A}
 Prove that
@@ -321,7 +328,7 @@ x(0) & = & e^s
 \end{equation}
 \item[(b)] Fix $s$ and verify that $z(t) = e^te^s$ is also a solution to
 \eqref{E:init1}.
-\item[(c)]  Use Theorem~\ref{exist&unique} to conclude that $y(t)=z(t)$ for
+\item[(c)]  Use Theorem~\ref{T:linODEsoln} to conclude that $y(t)=z(t)$ for
 every $s$.
 \end{itemize}
 \end{exercise}
@@ -342,7 +349,7 @@ X(0) & = & e^{sA}X_0
 \end{equation}
 \item[(b)] Fix $s$ and verify that $Z(t) = e^{tA}\left(e^{sA}X_0\right)$ is
 also a solution to \eqref{E:init2}.
-\item[(c)]  Use the $n$ dimensional version of Theorem~\ref{exist&unique} to
+\item[(c)]  Use the $n$ dimensional version of Theorem~\ref{T:linODEsoln} to
 conclude that $Y(t)=Z(t)$ for every $s$ and every $X_0$.
 \end{itemize}
 {\bf Remark:}  Compare the result in this exercise with the calculation in
@@ -365,8 +372,7 @@ X(0) & = & e_j
 \end{array}
 \end{equation}
 for $j=1,2$.
-\item[(b)] Since $X_j(0)=e_j$, use Theorems~\ref{exist&unique} and
-\ref{T:linODEsoln} to verify that
+\item[(b)] Since $X_j(0)=e_j$, use Theorem~\ref{T:linODEsoln} to verify that
 \begin{equation}   \label{E:0-110}
 X_j(t) = \exp\left(t\mattwo{0}{-1}{1}{0}\right)e_j.
 \end{equation}
@@ -426,6 +432,21 @@ where $A^0=I_n$.
 \item[(b)]  $||A^N||_m \leq ||A||_m^N$.
 \item[(c)]  $|a_0| + |a_1| + \cdots + \frac{1}{N!}|a_N| \leq e^{||A||_m}$.
 \end{itemize}
+\end{exercise}
+
+\AEXER
+\begin{exercise} \label{c6.3.14}
+When the eigenvalues $\lambda_1$ and $\lambda_2$ of the $2\times 2$ 
+matrix $C$ are real and distinct, $e^{tC}$ can be computed without determining 
+the associated eigenvectors.  To see this, prove that
+\begin{equation}  \label{E:exdist}
+e^{tC} = \frac{1}{\lambda_2-\lambda_1}\left(e^{\lambda_1 t}(C-\lambda_2I_2) -
+e^{\lambda_2 t}(C-\lambda_1I_2)\right).
+\end{equation}
+Hint:  The left and right hand sides of \eqref{E:exdist} are linear maps.  Two 
+linear maps are identical if they have the same values on a basis of vectors 
+$v_1$ and $v_2$.  Verify that the maps in \eqref{E:exdist} are equal when 
+applied to the linearly independent eigenvectors of $C$.
 \end{exercise}
 
 

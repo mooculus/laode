@@ -2,7 +2,7 @@
 
 \input{../preamble.tex}
 
-\title{Linear Normal Form Planar Systems}
+\title{Linear Jordan Normal Form Planar Systems}
 
 \begin{document}
 \begin{abstract}
@@ -22,7 +22,7 @@ The three systems are listed in Table~\ref{T:3sys}.
 \begin{center}
 \begin{tabular}{|c|c|c|}
 \hline
-name  & equations & closed form solution \\
+name  & normal form equations & closed form solution \\
 \hline
 (a) & $\dot{X} = \mattwo{\lambda_1}{0}{0}{\lambda_2} X$ &
 $X(t) = \mattwo{e^{\lambda_1 t}}{0}{0}{e^{\lambda_2 t}}X_0$ \\
@@ -34,7 +34,7 @@ $X(t) = \mattwo{e^{\lambda_1 t}}{0}{0}{e^{\lambda_2 t}}X_0$ \\
 $X(t) = e^{\lambda_1 t}\mattwo{1}{t}{0}{1}X_0$ \\
 \hline
 \end{tabular}
-\caption{Solutions to normal form ODEs with $X(0)=X_0$.}
+\caption{Solutions to Jordan normal form ODEs with $X(0)=X_0$.}
 \label{T:3sys}
 \end{center}
 \end{table*}
@@ -69,7 +69,7 @@ The argument for general $k$ is identical.  Identity
 \eqref{e:etAB=BetA} follows directly from \eqref{e:AkB=BAk} and
 the power series definition of matrix exponentials \eqref{e:expL}.
 
-We use Theorem~\ref{exist&unique}  to complete the proof of this
+We use Theorem~\ref{T:linODEsoln}  to complete the proof of this
 proposition.  Recall that
 \[
 X(t) = e^{t(A+B)}X_0
