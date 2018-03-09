@@ -9,8 +9,19 @@
 \end{abstract}
 \maketitle
 
+\makeatletter
+\newcommand\iflabelexists[2]{%
+  \@ifundefined{r@#1}{%
+  }{%
+    #2
+  }%
+}
+\makeatother
+
 {$\dagger$ indicates an {\tt laode} toolbox command not found in \Matlab.}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\iflabelexists{chap:prelim}{
 \subsection*{Chapter~\ref{chap:prelim}: Preliminaries}
 
 \centerline{
@@ -79,8 +90,9 @@ $n\times n$ diagonal matrix whose diagonal entries
   The inverse cosine of the number $a$  
 \end{tabbing}
 
-
-
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\iflabelexists{lineq}{
 \subsection*{Chapter~\ref{lineq}: Solving Linear Equations}
 
 
@@ -213,7 +225,9 @@ matrix $A$ \\
  The number $\sqrt{-1}$ 
 \end{tabbing}
 
-
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\iflabelexists{chap:matrices}{
 \subsection*{Chapter~\ref{chap:matrices}: Matrices and Linearity}
 
 
@@ -253,7 +267,9 @@ matrix $A$ \\
 
 \end{tabbing}
 
-
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\iflabelexists{chap:SolveOdes}{
 \subsection*{Chapter~\ref{chap:SolveOdes}: Solving Ordinary Differential Equations}
 
 \centerline{
@@ -307,7 +323,9 @@ matrix $A$ \\
 			autonomous differential equations 
 \end{tabbing}
 
-
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\iflabelexists{chap:Planar}{
 \subsection*{Chapter~\ref{Chap:Planar}: Closed Form Solutions for Planar ODEs}
 
 
@@ -335,7 +353,9 @@ matrix $A$ \\
 Computes the product of the integers $1,\ldots,n$
 \end{tabbing}
 
-
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\iflabelexists{C:D&E}{
 \subsection*{Chapter~\ref{C:D&E}: Determinants and Eigenvalues}
 
 \centerline{
@@ -362,7 +382,9 @@ Computes the product of the integers $1,\ldots,n$
 \end{tabbing}
 
 
-
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\iflabelexists{C:LMCC}{
 \subsection*{Chapter~\ref{C:LMCC}: Linear Maps and Changes of Coordinates}
 
 
@@ -382,7 +404,9 @@ Computes the product of the integers $1,\ldots,n$
 
 \end{tabbing}
 
-
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\iflabelexists{Chap:LinTrans}{
 \subsection*{Chapter~\ref{Chap:LinTrans}: Orthogonality}
 
 
@@ -419,6 +443,9 @@ Computes the product of the integers $1,\ldots,n$
 	sequence
 \end{tabbing} 
 
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\iflabelexists{Chap:NPS}{
 \subsection*{Chapter~\ref{C:NPS}: Autonomous Planar Nonlinear Systems}
 
 \centerline{
@@ -432,6 +459,9 @@ Computes the product of the integers $1,\ldots,n$
 			matrix $A$ 
 \end{tabbing}
 
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\iflabelexists{Chap:HDeigenvalues}{
 \subsection*{Chapter~\ref{C:HDeigenvalues}: Matrix Normal Forms}
 
 
@@ -453,7 +483,9 @@ Computes the product of the integers $1,\ldots,n$
 
 \end{tabbing}
 
-
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\iflabelexists{C:HDS}{
 \subsection*{Chapter~\ref{C:HDS}: Higher Dimensional Systems}
 
 
@@ -516,7 +548,9 @@ Computes the product of the integers $1,\ldots,n$
 
 \end{tabbing}
 
-
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\iflabelexists{C:LDE}{
 \subsection*{Chapter~\ref{C:LDE}: Linear Differential Equations}
 
 
@@ -535,7 +569,9 @@ Computes the product of the integers $1,\ldots,n$
 \end{tabbing}
 
 
-
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\iflabelexists{C:LT}{
 \subsection*{Chapter~\ref{C:LT}: Laplace Transforms}
 
 
@@ -553,7 +589,9 @@ Computes the product of the integers $1,\ldots,n$
 \end{tabbing}
 
 
-
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\iflabelexists{chap:SingleOdes}{
 \subsection*{Chapter~\ref{chap:SingleOdes}: Additional Techniques for Solving ODEs}
 
 
@@ -580,6 +618,9 @@ Computes the product of the integers $1,\ldots,n$
 
 \end{tabbing}
 
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\iflabelexists{ch:NumSolODE}{
 \subsection*{Chapter~\ref{ch:NumSolODE}: Numerical Solutions of ODEs}
  
 \centerline{
@@ -643,6 +684,6 @@ The length of the vector {\tt v}
 are done $K$ times where $k$ varies from $1,2,\ldots,K$.
 
 \end{tabbing}
-
+}
 
 \end{document}
