@@ -153,13 +153,14 @@ limits of this course.  Indeed, the difficulty in proving the {\em
 fundamental theorem of algebra\/} is in proving that a
 polynomial $p(\lambda)$ of degree $n>0$ has one (complex) root.
 Suppose that $\lambda_0$ is a root of $p(\lambda)$; that is,
-suppose that $p(\lambda_0)=0$. Then it is easy to show that
+suppose that $p(\lambda_0)=0$. Then it follows that
 \begin{equation}  \label{e:factoring}
 p(\lambda) = (\lambda-\lambda_0)q(\lambda)
 \end{equation}
 for some polynomial $q$ of degree $n-1$.  So once we know that
 $p$ has a root, then we can argue by induction to prove that $p$
-has $n$ roots.  
+has $n$ roots.  A linear algebra proof of \eqref{e:factoring} is 
+sketched in Exercise~\ref{c8.2.a1}.
 
 Recall that a polynomial need not have any real roots. For
 example, the polynomial $p(\lambda)=\lambda^2+1$ has no real
@@ -493,6 +494,19 @@ examples of other square matrices $A$ and determine whether or not
 your observation was an accident.
 \end{exercise}
 
+\AEXER
+
+\begin{exercise} \label{c8.2.a1}
+Verify \eqref{e:factoring} by proving the following.  Let $\mathcal{P}_n$ be the vector space 
+of polynomials in $\lambda$ of degree less than or equal to $n$.
+\begin{enumerate}
+\item Prove that $\dim\mathcal{P}_n$ is $n+1$ by showing that $\{1,\lambda,\ldots,\lambda^n\}$ 
+is a basis.
+\item For every $\lambda_0$ prove that $\{1, \lambda-\lambda_0, \ldots,(\lambda-\lambda_0)^n\}$ 
+is a basis of $\mathcal{P}_n$.
+\item Use {\rm (b)} to verify \eqref{e:factoring}.
+\end{enumerate}
+\end{exercise}
 
 
 
