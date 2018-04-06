@@ -9,6 +9,9 @@
 \end{abstract}
 \maketitle
 
+\newcommand{\ignore}[1]{}
+
+
 {$\dagger$ indicates an {\tt laode} toolbox command not found in \Matlab.}
 
 \subsection*{Chapter~\ref{chap:prelim}: Preliminaries}
@@ -310,8 +313,6 @@ matrix $A$ \\
 
 \subsection*{Chapter~\ref{Chap:Planar}: Closed Form Solutions for Planar ODEs}
 
-
-
 \centerline{
 {\bf Matrix Commands}
 } \vspace*{-0.1in}
@@ -355,11 +356,12 @@ Computes the product of the integers $1,\ldots,n$
  Computes the sum of the components of the vector $v$   \\
 
      {\tt trace(A)}  \index{\computer!trace} \>
- Computes the trace of the matrix $A$  
+ Computes the trace of the matrix $A$  \\
 
-
-
+     {\tt [V,D] = eig(A)}  \index{\computer!eig} \>
+ Computes eigenvectors and eigenvalues of the matrix $A$ 
 \end{tabbing}
+
 
 
 
@@ -419,18 +421,24 @@ Computes the product of the integers $1,\ldots,n$
 	sequence
 \end{tabbing} 
 
+
+\ignore{
+
+
 \subsection*{Chapter~\ref{C:NPS}: Autonomous Planar Nonlinear Systems}
 
 \centerline{
 {\bf Matrix Commands}
 } \vspace*{-0.1in}
  
+
 \begin{tabbing}
  \hspace{1.2in} \= \\
      {\tt [V,D] = eig(A)}  \index{\computer!eig} \>
  Computes eigenvectors and eigenvalues of the 
 			matrix $A$ 
 \end{tabbing}
+
 
 \subsection*{Chapter~\ref{C:HDeigenvalues}: Matrix Normal Forms}
 
@@ -643,6 +651,6 @@ The length of the vector {\tt v}
 are done $K$ times where $k$ varies from $1,2,\ldots,K$.
 
 \end{tabbing}
-
+}
 
 \end{document}
