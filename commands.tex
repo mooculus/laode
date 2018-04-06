@@ -18,6 +18,8 @@
 }
 \makeatother
 
+\newcommand{\ignore}[1]{}
+
 {$\dagger$ indicates an {\tt laode} toolbox command not found in \Matlab.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -328,8 +330,6 @@ matrix $A$ \\
 \iflabelexists{chap:Planar}{
 \subsection*{Chapter~\ref{Chap:Planar}: Closed Form Solutions for Planar ODEs}
 
-
-
 \centerline{
 {\bf Matrix Commands}
 } \vspace*{-0.1in}
@@ -375,16 +375,21 @@ Computes the product of the integers $1,\ldots,n$
  Computes the sum of the components of the vector $v$   \\
 
      {\tt trace(A)}  \index{\computer!trace} \>
- Computes the trace of the matrix $A$  
+ Computes the trace of the matrix $A$  \\
 
-
-
+     {\tt [V,D] = eig(A)}  \index{\computer!eig} \>
+ Computes eigenvectors and eigenvalues of the matrix $A$ 
 \end{tabbing}
 
 
+<<<<<<< HEAD
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \iflabelexists{C:LMCC}{
+=======
+
+
+>>>>>>> 4968a3fd0544d5deed1e3645f254ab697c850f90
 \subsection*{Chapter~\ref{C:LMCC}: Linear Maps and Changes of Coordinates}
 
 
@@ -443,15 +448,18 @@ Computes the product of the integers $1,\ldots,n$
 	sequence
 \end{tabbing} 
 
-}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \iflabelexists{Chap:NPS}{
+
+\ignore{
+
 \subsection*{Chapter~\ref{C:NPS}: Autonomous Planar Nonlinear Systems}
 
 \centerline{
 {\bf Matrix Commands}
 } \vspace*{-0.1in}
  
+
 \begin{tabbing}
  \hspace{1.2in} \= \\
      {\tt [V,D] = eig(A)}  \index{\computer!eig} \>
@@ -462,6 +470,7 @@ Computes the product of the integers $1,\ldots,n$
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \iflabelexists{Chap:HDeigenvalues}{
+
 \subsection*{Chapter~\ref{C:HDeigenvalues}: Matrix Normal Forms}
 
 
