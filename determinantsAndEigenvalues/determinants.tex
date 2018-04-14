@@ -20,27 +20,27 @@ justifies the approach. Later on, we will give an inductive formula
 \eqref{e:inductdet} for computing the determinant. 
  
 \begin{definition}  \label{D:determinants}
-A {\em determinant\/} of a square $n\times n$ matrix $A$ is a real
-number that satisfies the following three properties:
+A {\em determinant function} of a square $n\times n$ matrix $A$ is a real
+number $D(A)$ that satisfies three properties:
 \begin{itemize} 
 \item[(a)]  If $A=(a_{ij})$ is lower 
 triangular\index{matrix!lower triangular}, then
-the determinant of $A$ is the product of the diagonal entries;
+ $D(A)$ is the product of the diagonal entries;
 that is,
 \[
-\det(A) = a_{11}\cdot\cdots\cdot a_{nn}.
+D(A) = a_{11}\cdot\cdots\cdot a_{nn}.
 \]
-\item[(b)]  $\det(A^t)=\det(A)$\index{matrix!transpose}.
+\item[(b)]  $D(A^t)=D(A)$\index{matrix!transpose}.
 \item[(c)]  Let $B$ be an $n\times n$ matrix.  
 Then
 \begin{equation} \label{e:detproduct}
-\det(AB) = \det(A)\det(B).
+D(AB) = D(A) D(B).
 \end{equation}
 \end{itemize}
 \end{definition} \index{determinant}
 
 \begin{theorem}  \label{T:determinants}
-There exists a unique determinant function satisfying the three
+There exists a unique determinant function $\det$ satisfying the three
 properties of Definition~\ref{D:determinants}.
 \end{theorem}\index{determinant!uniqueness}
 
@@ -51,16 +51,16 @@ Here we present a few examples:
 \begin{lemma}
 Let $A$ be an $n\times n$ matrix.
 \begin{itemize}
-\item[(a)]   Let $c\in\R$ be a scalar.  Then $\det(cA) = c^n\det(A)$.
+\item[(a)]   Let $c\in\R$ be a scalar.  Then $D(cA) = c^n D(A)$.
 \item[(b)] If all of the entries in either a row or a column of $A$ are 
-zero, then $\det(A)=0$.
+zero, then $D(A)=0$.
 \end{itemize}
 \end{lemma}
 
 \begin{proof}  (a) Note that Definition~\ref{D:determinants}(a) implies that 
-$\det(cI_n)=c^n$.  It follows from \eqref{e:detproduct} that
+$D(cI_n)=c^n$.  It follows from \eqref{e:detproduct} that
 \[
-\det(cA) = \det(cI_n A) = \det(cI_n)\det(A) = c^n\det(A).
+D(cA) = D(cI_n A) = D(cI_n)D(A) = c^n D(A).
 \]
 
 (b)  Definition~\ref{D:determinants}(b) implies that it suffices to prove 
@@ -68,8 +68,9 @@ this assertion when one row of $A$ is zero.  Suppose that the $i^{th}$ row
 of $A$ is zero.  Let $J$ be an $n\times n$ 
 diagonal matrix with a $1$ in every diagonal entry except the $i^{th}$ 
 diagonal entry which is $0$.  A matrix calculation shows that $JA=A$. 
-It follows from Definition~\ref{D:determinants}(a) that $\det(J)=0$ and 
-from \eqref{e:detproduct} that $\det(A)=0$.  \end{proof} 
+It follows from Definition~\ref{D:determinants}(a) that $D(J)=0$ and 
+from \eqref{e:detproduct} that $D(A)=0$.  
+\end{proof} 
 
 
 
@@ -93,14 +94,14 @@ satisfied.  It is straightforward to verify (b).  We already
 verified (c) in Chapter~\ref{chap:matrices}, Proposition~\ref{propdet}.
 
 It is less obvious perhaps --- but true nonetheless --- that the
-three properties of $\det(A)$ actually force the determinant of
+three properties of $D(A)$ actually force the determinant of
 $2\times 2$ matrices to be given by formula
 \eqref{e:determinantn=2}. We begin by showing that
 Definition~\ref{D:determinants} implies that 
 \begin{equation}  \label{e:detswap}
-\det \left(\begin{array}{cc} 0 & 1\\1 & 0 \end{array}\right)=-1.
+D\left(\begin{array}{cc} 0 & 1\\1 & 0 \end{array}\right)=-1.
 \end{equation}
-We verify this by observing that 
+We verify \eqref{e:detswap} by observing that 
 \begin{equation*}
   \left(\begin{array}{cc} 0 & 1\\1 & 0 \end{array}\right)
 \end{equation*}
@@ -113,7 +114,7 @@ equals
 \end{equation}
 Hence property (c), (a) and (b) imply that
 \[
-\det \left(\begin{array}{cc} 0 & 1\\1 & 0 \end{array}\right) =
+D \left(\begin{array}{cc} 0 & 1\\1 & 0 \end{array}\right) =
 1\cdot 1\cdot (-1) \cdot 1 = -1.
 \]
 It is helpful to interpret the matrices in \eqref{e:swapdecomp} as
@@ -137,7 +138,7 @@ A=\left(\begin{array}{cc} a & b\\c & d \end{array}\right) =
 \]
 It follows from properties (c), (b) and (a) that
 \[
-\det(A) = \frac{ad-bc}{d}d = ad-bc,
+D(A) = \frac{ad-bc}{d}d = ad-bc = \det(A),
 \]
 as claimed.
  
@@ -149,8 +150,8 @@ A=\left(\begin{array}{cc} a & b\\c & 0 \end{array}\right) =
 \]
 Using \eqref{e:detswap} we see that 
 \[
-\det(A) = -\det \left(\begin{array}{cc} c & 0\\a & b
-\end{array}\right) = -bc,
+D(A) = -D \left(\begin{array}{cc} c & 0\\a & b
+\end{array}\right) = -bc = \det(A),
 \]
 as desired. 
  
@@ -282,7 +283,7 @@ compute the determinant of $A$ once we know the determinants of
 reduced echelon form matrices and the determinants of elementary
 row matrices.  In particular
 \begin{equation}  \label{e:detformula}
-\det(A) = \det(E)/(\det(R_1)\cdots\det(R_s)).
+D(A) = \frac{D(E)}{D(R_1)\cdots D(R_s)}.
 \end{equation}
 
 It is easy to compute the determinant of any matrix in reduced echelon 
@@ -292,6 +293,7 @@ tells us how to compute the determinants of elementary row matrices.  This
 discussion proves: 
 \begin{proposition}
 If a determinant function exists for $n\times n$ matrices, then it is unique. 
+We call the unique determinant function $\det$. 
 \index{determinant!uniqueness}
 \end{proposition}
 
