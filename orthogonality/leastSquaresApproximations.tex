@@ -250,11 +250,11 @@ plane\index{plane} spanned by $w_1$ and $w_2$.
 Let $w_1,\ldots,w_k$ be a basis for the subspace $W\subset\R^n$.  Define
 $v_1$ as in \eqref{E:ortho1} and then define inductively
 \begin{align}
-  v'_{j+1} & =  w_{j+1} -(w_{j+1}\cdot v_1)v_1- \cdots \nonumber\\
-  &\quad -(w_{j+1}\cdot v_j)v_j \label{E:inductiveGS} \\
+  v'_{j+1} & =  w_{j+1} -[(w_{j+1}\cdot v_1)v_1+ \cdots  +(w_{j+1}\cdot v_j)v_j] \label{E:inductiveGS} \\
 v_{j+1} & =  \frac{1}{||v'_{j+1}||}v'_{j+1}. \label{eq:gsnormal}
 \end{align}
-Then $v_1,\ldots,v_k$ is an orthonormal basis of $W$. 
+Then $\mathrm{span}\{v_1,\ldots,v_j\}=\mathrm{span}\{w_1,\ldots,w_j\}$ 
+and $v_1,\ldots,v_k$ is an orthonormal basis of $W$. 
 \end{theorem}\index{Gram-Schmidt orthonormalization}
 \index{basis!orthonormal}
 
