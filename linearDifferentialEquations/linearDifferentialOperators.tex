@@ -1,0 +1,341 @@
+\documentclass{ximera}
+
+\input{../preamble.tex}
+
+\title{Linear Differential Operators}
+
+\begin{document}
+\begin{abstract}
+\end{abstract}
+\maketitle
+
+  
+\label{S:LDO}
+
+In Section~\ref{sec:2norderinhom} we describe a powerful method for 
+solving certain second order linear differential equations.  To describe 
+this method, it is convenient to introduce the notion of {\em linear 
+differential operators}\index{linear!differential operator}.
+
+We denote by $D$ the simplest differential 
+operator\index{differential operator}, that is,
+\[
+D=\frac{d}{dt}.
+\]
+From differential calculus we know that $D$ acts linearly on 
+(differentiable) functions, that is,
+\begin{eqnarray*}
+D(x(t)+y(t)) & = & Dx(t) + Dy(t) \\
+D(cx(t)) & = & cDx(t),
+\end{eqnarray*}
+where $c\in\R$.  Thus we say that $D$ is a linear differential operator.
+
+Higher order derivatives can be written in terms of $D$, that is,
+\[
+\frac{d^2x}{dt^2} = \frac{d}{dt}\left(\frac{dx}{dt}\right) = D(Dx) = D^2x,
+\]
+where $D^2$ is just the composition of $D$ with itself.  Similarly, 
+\[
+\frac{d^nx}{dt^n} = D^nx.
+\]
+It follows that $D^2,\ldots,D^n$ are all compositions of linear operators
+and therefore each is linear.  We can even form a polynomial in $D$ by taking
+linear combinations of the $D^k$.  For example,
+\begin{equation}  \label{E:pdo}
+D^4 - 3D^3 + D^2 -5D + 10 
+\end{equation}
+is a differential operator\index{differential operator}.  
+We use the following polynomial notation to 
+denote these operators.  Let $q(\lambda)$ be the polynomial
+\[
+q(\lambda) = \lambda^4 -3\lambda^3 + \lambda^2 - 5\lambda +10.
+\]
+Then we denote the linear operator in \eqref{E:pdo} by $q(D)$.  For example,
+\begin{eqnarray*}
+q(D)(\sin(2t)) & = & 16\sin(2t) + 24\cos(2t) - 4\sin(2t) - 10\cos(2t) + 
+10\sin(2t) \\ & = & 22\sin(2t) + 14\cos(2t).
+\end{eqnarray*}
+
+
+With this notation in mind, we can reformulate much of the discussion of 
+higher order equations in terms of linear differential operators.  Begin by 
+rewriting the homogeneous equation \eqref{eq:nconsthom} 
+\[
+\frac{d^nx}{dt^n}+a_{n-1}\frac{d^{n-1}x}{dt^{n-1}}+\cdots+
+a_1\frac{dx}{dt}+a_0x = (D^n+a_{n-1}D^{n-1}+\cdots+a_1D+a_0)x = 0.
+\]
+as
+\begin{equation}  \label{E:opern2}
+p(D)x = 0,
+\end{equation}
+where $p(\lambda)$ is the characteristic 
+polynomial\index{characteristic polynomial!of higher order ODE} 
+of \eqref{eq:nconsthom}.
+
+We think of the {\em differential 
+operator\/}\index{differential operator} $p(D)$ as operating on 
+functions (that are sufficiently differentiable). 
+\begin{lemma}  \label{L:p(D)linear}
+The differential operator $p(D)$ is linear, that is,
+\begin{eqnarray*}
+p(D)(x+y) & = & p(D)x + p(D)y \\
+p(D)(cx) & = & cp(D)x,
+\end{eqnarray*}
+for all sufficiently differentiable functions $x$ and $y$ and all scalars $c$.
+\end{lemma}
+The proof is left as an exercise.  See Exercise~\ref{c12.3.lem}.
+
+Using the linearity of these differential operators allows us to reformulate
+certain aspects of Section~\ref{sec:HighOrder} in this new language.
+
+\begin{enumerate}
+\item[(a)]  Solutions to the homogeneous equation \eqref{E:opern2} are just 
+functions in the null space\index{null space!of differential operator} 
+of $p(D)$.  
+\item[(b)]  Using operator notation we can simplify \eqref{e:elam} as
+\begin{equation}  \label{e:elam2}
+p(D)\left(e^{\lambda t}\right) = p(\lambda)e^{\lambda t}.
+\end{equation}
+It follows from \eqref{e:elam2} that the functions $e^{\lambda t}$ are 
+eigenvectors\index{eigenvector!of differential operator} 
+of the operator $p(D)$ with eigenvalue $p(\lambda)$.  
+Usually the functions $e^{\lambda t}$ are called 
+{\em eigenfunctions}\index{eigenfunction}.
+Perversely, we follow convention and reserve the term eigenvalue just 
+for those $\lambda$ that are roots of the characteristic polynomial, that 
+is, those values of $\lambda$ for which $p(\lambda)=0$.
+\item[(c)]  We can rewrite the 
+inhomogeneous\index{inhomogeneous} equation as:
+\[
+p(D)x = g.
+\]
+Showing that the inhomogeneous equation is solvable is
+equivalent to showing that the 
+function $g(t)$ is in the range\index{range!of differential operator} 
+of the operator $p(D)$.
+\end{enumerate}
+
+\subsection*{Superposition and the Inhomogeneous Equation}
+\index{principle of superposition}
+
+\begin{lemma}  \label{L:inhsup}
+Let $p(\lambda)$ be a polynomial, let $g_1(t),g_2(t)$ be continuous 
+functions, and let $\alpha_1,\alpha_2$ be scalars.  We can find a particular 
+solution $x_p(t)$ to the inhomogeneous differential equation
+\[
+p(D)x = \alpha_1g_1(t) + \alpha_2g_2(t)
+\]
+by first finding solutions $x_j(t)$ to $p(D)x_j = g_j$ and then setting 
+\[
+x_p(t) = \alpha_1x_1(t) + \alpha_2x_2(t).
+\]
+\end{lemma}
+
+\begin{proof}  The proof follows directly from the linearity of $p(D)$.  Just 
+compute
+\[
+p(D)(\alpha_1x_1 + \alpha_2x_2) = \alpha_1p(D)x_1 + 
+\alpha_2p(D)x_2 = \alpha_1g_1 + \alpha_2g_2.
+\]
+Thus, the particular solution is a superposition of the solutions $x_1$ and
+$x_2$.  \end{proof}
+
+\subsection*{The Method of Elimination}
+
+In Section~\ref{sec:HighOrder} we showed how to solve an $n^{th}$ order 
+constant coefficient linear differential equation by converting that equation 
+to a constant coefficient first order system of differential equations.  We 
+now show that the process is reversible --- we can solve a first order 
+system of $n$ equations by finding solutions to an associated $n^{th}$ order 
+equation.  This procedure is called the {\em method of elimination\/}.
+\index{method of elimination}  We first discuss this method abstractly using 
+the language of differential operators and then discuss the pragmatic 
+implementation of the method.
+
+\begin{theorem}  \label{T:Elimination}
+Let $A$ be an $n\times n$ matrix and let $p_A(\lambda)$ be the characteristic 
+polynomial of $A$.  Let $X(t)=(x_1(t),\ldots,x_n(t))^t$ be a solution to the 
+system of ODEs 
+\[
+\frac{dX}{dt} = AX.
+\]
+Then each coordinate function $x_j(t)$ satisfies the $n^{th}$ order 
+differential equation
+\begin{equation}  \label{E:Elimination}
+p_A(D)x_j = 0.
+\end{equation}
+\end{theorem}
+
+\begin{proof}  The proof of this theorem follows from the Cayley-Hamilton 
+theorem, as follows.   Rewrite the differential equation using operator 
+notation as  
+\[
+DX = AX,
+\]
+where $DX$ indicates differentiation of the vector $X(t)$ by $\frac{d}{dt}$ 
+and $AX$ indicates multiplication of the vector $X(t)$ by the matrix $A$.
+Since the coefficients of the matrix $A$ are constants (independent of $t$), 
+it follows that $DAX=ADX$.  Hence
+\[
+D^2X = D(AX) = A(DX) = A^2X.
+\]
+Hence $D^kX = A^kX$ by induction, and $p(D)X = p(A)X$ for any polynomial $p(\lambda)$ by linearity.  The Cayley-Hamilton theorem (Theorem~\ref{T:CH} 
+of Chapter~\ref{C:HDeigenvalues}) states that $p_A(A)=0$.  Hence $p_A(D)X=0$.  
+So, in coordinates, $p_A(D)x_j=0$. \end{proof}
+
+\subsubsection*{Implementation of the Method of Elimination}
+
+Consider the first order system of differential equations
+\begin{equation}  \label{E:Elim1}
+\begin{array}{rcl}
+\dot{x} & = & 2x-3y\\
+\dot{y} & = & -5x+4y. 
+\end{array}
+\end{equation}
+We can eliminate $y$ from the second equation in \eqref{E:Elim1} by solving for 
+$y$ in the first equation, differentiating, and substituting, as follows:
+\begin{equation} \label{E:Elim1a}
+\begin{array}{rcl}
+y & = & \frac{1}{3}(2x-\dot{x})\\
+\dot{y} & = & \frac{1}{3}(2\dot{x}-\ddot{x})
+\end{array}
+\end{equation}
+On substituting \eqref{E:Elim1a} into the second equation in \eqref{E:Elim1}, we
+find
+\[
+\frac{1}{3}(2\dot{x}-\ddot{x}) = -5x + \frac{4}{3}(2x-\dot{x}).
+\]
+Simplification leads to the differential equation
+\[
+\ddot{x} - 6\dot{x} - 7x = 0.
+\]
+Since the characteristic polynomial of the coefficient matrix of \eqref{E:Elim1}
+is $\lambda^2-6\lambda-7=(\lambda-7)(\lambda+1)$, this equation is the one 
+predicted by Theorem~\ref{T:Elimination}.
+
+Since the roots of the characteristic polynomial are $7$ and $-1$, it follows 
+that $x(t)$ has the form
+\[
+x(t)  =  \alpha e^{7t} + \beta e^{-t}.
+\]
+We can solve for $y(t)$ using \eqref{E:Elim1a} and obtain
+\[
+y(t) = \frac{1}{3}(2x-\dot{x}) = -\frac{5}{3} \alpha e^{7t} + \beta e^{-t}.
+\]
+Thus the general solution to the first order system is:
+\[
+\vectwo{x(t)}{y(t)} = \frac{1}{3}\alpha e^{7t}\vectwo{3}{-5} + 
+\beta e^{-t}\vectwo{1}{1}.
+\]
+Note that the vectors $(3,5)^t$ and $(1,1)^t$ are eigenvectors of the coefficient matrix of the system \eqref{E:Elim1}.
+
+Note that the second half of the method of elimination --- in the previous 
+example where we back substituted for the function $y(t)$ --- does not always 
+work.  For example, if the system of differential equations decouples, then 
+the second half of the method will fail.   See Exercise~\ref{c12.3.2} for an 
+example. 
+
+Thus the method of elimination provides another alternative to computing 
+solutions to first order systems of differential equations; however, this 
+procedure is not carried out easily for systems of more than two or three 
+equations.
+
+
+\EXER
+
+\TEXER
+
+\noindent In Exercises~\ref{c12.3.3a} -- \ref{c12.3.3d} apply the given
+linear differential operator $p(D)$ to the functions: \\
+(a) $\sin(3t)$ and  (b) $t^2 e^{-t}$.
+\begin{exercise} \label{c12.3.3a}
+$p(D) = D+1$.
+\end{exercise}
+\begin{exercise} \label{c12.3.3b}
+$p(D) = D^2-D$.
+\end{exercise}
+\begin{exercise} \label{c12.3.3c}
+$p(D) = D^4-2D^2+5$.
+\end{exercise}
+\begin{exercise} \label{c12.3.3d}
+$p(D) = 2D^3-D^2+10D-1$.
+\end{exercise}
+
+
+\noindent In Exercises~\ref{c12.3.1a} -- \ref{c12.3.1f} write the 
+homogeneous differential equation $p(D)x=0$ using $d/dt$ notation,
+factor the characteristic polynomial, and then find the general solution.
+\begin{exercise}  \label{c12.3.1a}
+$p(D) = D + 1$.
+\end{exercise}
+\begin{exercise}  \label{c12.3.1b}
+$p(D) = -D^2 - 5$.
+\end{exercise}
+
+\begin{exercise}  \label{c12.3.1f}
+$p(D) = -4D^5 +4D^4 -8D^2$.
+\end{exercise}
+
+\begin{exercise}  \label{c12.3.2}
+Attempt to use the method of elimination to solve the following system
+\[
+\begin{array}{rcl}
+\dot{x} & = & 2x + z\\
+\dot{y} & = & 3y + z\\
+\dot{z} & = & z.
+\end{array}
+\]
+Use the characteristic equation \eqref{E:Elimination} to solve for $x(t)$ and 
+then attempt to use the system of differential equations to solve for $y(t)$ 
+and $z(t)$.  What goes wrong?
+\end{exercise} 
+
+\begin{exercise}  \label{c12.3.lem}
+Prove Lemma~\ref{L:p(D)linear}.
+\end{exercise}
+
+\noindent In Exercises~\ref{c12.3.4a} -- \ref{c12.3.4d} apply the
+method of elimination to find the general solution of the given
+system of differential equations.
+\begin{exercise} \label{c12.3.4a}
+$\begin{array}{rcl}
+\dot{x} & = & y\\
+\dot{y} & = & 2x+y
+\end{array}$
+\end{exercise}
+\begin{exercise} \label{c12.3.4b}
+$\begin{array}{rcl}
+\dot{x} & = & x-y\\
+\dot{y} & = & x+y
+\end{array}$
+\end{exercise}
+\begin{exercise} \label{c12.3.4c}
+$\begin{array}{rcl}
+\dot{x} & = & x+y\\
+\dot{y} & = & 4x-2y
+\end{array}$
+\end{exercise}
+\begin{exercise} \label{c12.3.4d}
+$\begin{array}{rcl}
+\dot{x} & = & 2x-y\\
+\dot{y} & = & y
+\end{array}$
+\end{exercise}
+
+\CEXER
+
+\noindent In Exercises~\ref{c12.3.1c} -- \ref{c12.3.1e} write the 
+homogeneous differential equation $p(D)x=0$ using $d/dt$ notation,
+use \Matlab to find the roots of the characteristic polynomial, and 
+then find the general solution.
+\begin{exercise}  \label{c12.3.1c}
+$p(D) = 8D^2 - 4D +8$.
+\end{exercise}
+\begin{exercise}  \label{c12.3.1d}
+$p(D) = D^4 + 4D^2 - 6D$.
+\end{exercise}
+\begin{exercise}  \label{c12.3.1e}
+$p(D) = D^3 -6$.
+\end{exercise}
+
+\end{document}

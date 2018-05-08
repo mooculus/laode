@@ -1,0 +1,211 @@
+\documentclass{ximera}
+
+\input{../preamble.tex}
+
+\title{Linear Jordan Normal Form Planar Systems}
+
+\begin{document}
+\begin{abstract}
+\end{abstract}
+\maketitle
+
+ \index{normal form}
+\label{S:LNFPS}
+
+There are three linear systems of ordinary differential equations
+that we now solve explicitly using matrix exponentials.  Remarkably,
+in a sense to be made precise, these are the only linear planar systems.
+The three systems are listed in Table~\ref{T:3sys}.
+
+
+
+The verification of Table~\ref{T:3sys}(a) follows from \eqref{e:expdiag}, but
+it just reproduces earlier work in Section~\ref{sec:UncoupledLS} where we
+considered uncoupled systems of two ordinary differential equations.
+To verify the solutions to (b) and (c), we need to prove:
+
+\begin{proposition}  \label{P:expAB}
+Let $A$ and $B$ be two $n\times n$ matrices such that
+\begin{equation} \label{e:AB=BA}
+AB = BA.
+\end{equation}
+Then
+\[
+e^{A+B} = e^A e^B.
+\]
+\end{proposition} \index{matrix!exponential}
+
+\begin{proof}  Note that \eqref{e:AB=BA} implies that
+\begin{eqnarray}
+A^kB    & = & BA^k  \label{e:AkB=BAk}\\
+e^{tA}B & = & Be^{tA}. \label{e:etAB=BetA}
+\end{eqnarray}
+Identity \eqref{e:AkB=BAk} is verified when $k=2$ using
+associativity of matrix multiplication, as follows
+\[
+A^2B = AAB = ABA = BAA = BA^2.
+\]
+The argument for general $k$ is identical.  Identity
+\eqref{e:etAB=BetA} follows directly from \eqref{e:AkB=BAk} and
+the power series definition of matrix exponentials \eqref{e:expL}.
+
+We use Theorem~\ref{T:linODEsoln}  to complete the proof of this
+proposition.  Recall that
+\[
+X(t) = e^{t(A+B)}X_0
+\]
+is the unique solution to the initial value problem
+\begin{eqnarray*}
+\frac{dX}{dt} & = & (A+B)X \\ \\
+X(0) & = & X_0.
+\end{eqnarray*}
+We claim that
+\[
+Y(t) = e^{tA}e^{tB}X_0
+\]
+is another solution to this equation.  Certainly $Y(0)=X_0$.  It
+follows from \eqref{e:diffmatexp} that
+\[
+\frac{d}{dt}e^{tA} = Ae^{tA} \AND \frac{d}{dt}e^{tB} = Be^{tB}.
+\]
+Thus the product rule together with \eqref{e:etAB=BetA} imply that
+\begin{eqnarray*}
+\frac{dY}{dt} & = & \left(Ae^{tA}\right)e^{tB}X_0 +
+e^{tA}\left(Be^{tB}\right)X_0 \\
+& = & (A+B) e^{tA} e^{tB} X_0\\
+& = & (A+B)Y(t).
+\end{eqnarray*}
+Thus
+\[
+\frac{dY}{dt} = (A+B)Y,
+\]
+and $Y(t)=X(t)$.  Since $X_0$ is arbitrary it follows that
+\[
+e^{t(A+B)} = e^{tA}e^{tB}.
+\]
+Evaluating at $t=1$ yields the desired result.  \end{proof}
+
+\subsubsection{Verification of Table~\protect{\ref{T:3sys}}(b)}
+
+We begin by noting that the $2\times 2$ matrix $C$ in (b) is
+\[
+C = \mattwo{\sigma}{-\tau}{\tau}{\sigma} = \sigma I_2 + \tau J,
+\]
+where
+\[
+J= \mattwo{0}{-1}{1}{0}.
+\]
+Since $I_2J=JI_2$, it follows from Proposition~\ref{P:expAB} that
+\[
+e^{tC} = e^{(\sigma t)I_2} e^{(\tau t)J}.
+\]
+Thus \eqref{ex:expm} and \eqref{e:exprotate} imply
+\begin{equation}  \label{e:exprotation}
+e^{tC} = e^{\sigma t}
+\mattwo{\cos(\tau t)}{-\sin(\tau t)}{\sin(\tau t)}{\cos(\tau t)},
+\end{equation}
+and (b) is verified.
+
+\subsubsection{Verification of Table~\protect{\ref{T:3sys}}(c)}
+
+To determine the solutions to Table~\ref{T:3sys}(c), observe that
+\[
+C = \mattwoc{\lambda_1}{1}{0}{\lambda_1} = \lambda_1 I_2 + N,
+\]
+where
+\[
+N = \mattwo{0}{1}{0}{0}.
+\]
+Since $I_2N=NI_2$, Proposition~\ref{P:expAB} implies
+\begin{equation}  \label{e:expshear}
+e^{tC} = e^{(t\lambda_1)I_2}e^{tN} =
+e^{t\lambda}\mattwo{1}{t}{0}{1}
+\end{equation}
+by \eqref{ex:expm} and \eqref{e:nilpotent}.
+
+\subsubsection{Summary}
+
+The normal form matrices in Table~\ref{T:3sys} are characterized by the number
+of linearly independent real eigenvectors.  We summarize this information in
+Table~\ref{T:3sysa}.  We show, in Section~\ref{S:6.5}, that any planar
+linear system of ODEs can be solved just by noting how many independent
+eigenvectors the corresponding matrix has; general solutions are found by
+transforming the equations into one of the three types of equations
+listed in Table~\ref{T:3sys}.
+
+\begin{table*}[htb]
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+Matrix  & Number of Real Eigenvectors & Reference \\
+\hline
+ $\mattwoc{\lambda_1}{0}{0}{\lambda_2}$ & two linearly independent  &
+Section~\ref{S:IVPR} \\
+\hline
+$\mattwo{\sigma}{-\tau}{\tau}{\sigma}$ & none
+& Chapter~\ref{chap:SolveOdes}, \eqref{E:cmplxnf} \\
+\hline
+$\mattwoc{\lambda_1}{1}{0}{\lambda_1}$ &  one linearly independent
+& Lemma~\ref{L:1indeig} \\
+\hline
+\end{tabular}
+\caption{Number of linearly independent real eigenvectors.}
+\label{T:3sysa}
+\end{center}
+\end{table*}
+
+
+\EXER
+
+\TEXER
+
+\begin{exercise} \label{c6.3.1}
+Solve the initial value problem
+\[
+\begin{array}{rcr}
+\dot{x} & = & 2x + 3y \\
+\dot{y} & = & -3x + 2y
+\end{array}
+\]
+where $x(0) = 1  \AND  y(0) = -2$.
+\end{exercise}
+
+\begin{exercise} \label{c6.3.2}
+Solve the initial value problem
+\[
+\begin{array}{rcr}
+\dot{x} & = & -2x + y \\
+\dot{y} & = & -2y
+\end{array}
+\]
+where $x(0) = 4  \AND y(0) = -1$.
+\end{exercise}
+
+\begin{exercise} \label{c6.3.25}
+Let $A$ be an $n\times n$ matrix such that $A^3=0$.  Compute $e^{tC}$
+where $C=2I_n+A$.
+\end{exercise}
+
+\CEXER
+
+\begin{exercise} \label{c6.3.3}
+Use {\sf pplane8} to plot phase plane portraits for each of the
+three types of linear systems (a), (b) and (c) in Table~\ref{T:3sys}.
+Based on this computer exploration answer the following questions:
+\begin{itemize}
+\item[(i)]  If a solution to that system spirals about the origin,
+is the system of differential equations of type (a), (b) or (c)?
+\item[(ii)]  How many eigendirections are there for equations of type (c)?
+\item[(iii)]  Let $(x(t),y(t))$ be a solution to one of these three types of
+systems and suppose that $y(t)$ oscillates up and down infinitely often.
+Then $(x(t),y(t))$ is a solution for which type of system?
+\end{itemize}
+\end{exercise}
+
+\AEXER
+
+\begin{exercise} \label{c6.4.a1}
+Let $A$ be an $n\times n$ matrix.  Prove that $e^A$ is invertible.
+\end{exercise}
+
+\end{document}

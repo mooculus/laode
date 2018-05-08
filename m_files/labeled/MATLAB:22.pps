@@ -1,0 +1,19 @@
+e12_1_10
+x
+y
+  x*(mu + rho*x - y)
+  y*(1+x+eta*y)
+mu
+eta
+rho
+
+0.1
+-1
+-1.5
+
+arrows
+20
+0
+2
+0
+2

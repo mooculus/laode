@@ -1,0 +1,494 @@
+\documentclass{ximera}
+
+\input{../preamble.tex}
+
+\title{Linearity}
+
+\begin{document}
+\begin{abstract}
+\end{abstract}
+\maketitle
+
+  \label{S:linearity}
+
+We begin by recalling the vector operations of addition and
+scalar multiplication.  Given two $n$ vectors, vector addition
+\index{vector!addition} is defined by
+\[
+\vect{x}{n}+\vect{y}{n}=\left(\begin{array}{c} x_1+y_1 \\ \vdots \\
+x_n+y_n\end{array}\right).
+\]
+Multiplication of a scalar \index{scalar multiplication} times a vector
+is defined by
+\[
+c\vect{x}{n} = \vect{cx}{n}.
+\]
+Using \eqref{Atimesx} we can check that matrix multiplication
+satisfies
+\begin{eqnarray}
+A(x+y) & = & Ax + Ay \label{sum} \\
+A(cx) & = & c(Ax). \label{product}
+\end{eqnarray}
+Using \Matlab we can also verify that the identities \eqref{sum}
+and \eqref{product} are valid for some particular choices of $x$,
+$y$, $c$ and $A$.  For example, let $c=5$ and
+\begin{matlabEquation}\label{MATLAB:29}
+A = \left(\begin{array}{cccc} 2 & 3 & 4 & 1\\ 1 & 1 & 2 & 3
+\end{array}\right), \quad x = \left(\begin{array}{r} 1 \\ 5 \\ 4 \\
+3 \end{array}\right), \quad y = \left(\begin{array}{r} 1 \\ -1 \\ -1 \\
+4 \end{array}\right).
+\end{matlabEquation}
+Typing {\tt e3\_3\_3} enters this information into \Matlabp.  Now
+type
+\begin{verbatim}
+z1 = A*(x+y)
+z2 = A*x + A*y
+\end{verbatim}
+and compare {\tt z1} and {\tt z2}.  The fact that they are both
+equal to
+\[
+\vectwo{35}{33}
+\]
+verifies \eqref{sum} in this case.  Similarly, type
+\begin{verbatim}
+w1 = A*(c*x)
+w2 = c*(A*x)
+\end{verbatim}
+and compare {\tt w1} and {\tt w2} to verify \eqref{product}.
+
+
+The central idea in linear algebra is the notion of
+{\em linearity\/}. \index{linear}
+\begin{definition} \label{linearity}
+A mapping $L:\R^n\to\R^m$ is {\em linear}\index{linear!mapping}
+if
+\begin{itemize}
+\item[(a)]  $L(x+y) = L(x) + L(y)$ for all $x,y\in\R^n$.
+\item[(b)]  $L(cx) = cL(x)$ for all $x\in\R^n$ and all scalars
+$c\in\R$.
+\end{itemize}
+\end{definition}
+
+To better understand the meaning of Definition~\ref{linearity}(a,b),
+we verify these conditions for the mapping $L:\R^2\to\R^2$ defined by
+\begin{equation}  \label{E:mme}
+L(x) = (x_1+3x_2,2x_1-x_2),
+\end{equation}
+where $x=(x_1,x_2)\in\R^2$.  To verify Definition~\ref{linearity}(a), let
+$y=(y_1,y_2)\in\R^2$.  Then
+\begin{eqnarray*}
+L(x+y) & = & L(x_1+y_1,x_2+y_2)\\
+& = & ((x_1+y_1)+3(x_2+y_2), 2(x_1+y_1)-(x_2+y_2)) \\
+ & = & (x_1+y_1+3x_2+3y_2, 2x_1+2y_1-x_2-y_2).
+\end{eqnarray*}
+On the other hand,
+\begin{eqnarray*}
+L(x)+L(y) & = & (x_1+3x_2,2x_1-x_2) + (y_1+3y_2,2y_1-y_2) \\
+ & = & (x_1+3x_2+y_1+3y_2, 2x_1-x_2+2y_1-y_2).
+\end{eqnarray*}
+Hence
+\[
+L(x+y) = L(x) + L(y)
+\]
+for every pair of vectors $x$ and $y $ in $\R^2$.
+
+Similarly, to verify Definition~\ref{linearity}(b), let $c\in\R$ be a scalar
+and compute
+\[
+L(cx) = L(cx_1,cx_2)=((cx_1)+3(cx_2),2(cx_1)-(cx_2)).
+\]
+Then compute
+\[
+cL(x) = c(x_1+3x_2,2x_1-x_2)= (c(x_1+3x_2), c(2x_1-x_2)),
+\]
+from which it follows that
+\[
+L(cx) = cL(x)
+\]
+for every vector $x\in\R^2$ and every scalar $c\in\R$.  Thus $L$ is a linear 
+mapping.
+
+In fact, the mapping \eqref{E:mme} is a matrix mapping and could
+have been written in the form
+\[
+L(x) = \mattwo{1}{3}{2}{-1}x.
+\]
+Hence the linearity of $L$ could have been checked using identities
+\eqref{sum} and \eqref{product}.  Indeed, matrix mappings are always linear
+mappings, as we now discuss.
+
+\subsubsection*{Matrix Mappings are Linear Mappings}
+
+Let $A$ be an $m\times n$ matrix and recall that the matrix mapping
+$L_A:\R^n\to\R^m$ is defined by $L_A(x)=Ax$.  We may rewrite \eqref{sum} and
+\eqref{product} using this notation as
+\begin{eqnarray*}
+L_A(x+y) & = & L_A(x) + L_A(y) \\
+L_A(cx) & = & cL_A(x).
+\end{eqnarray*}
+Thus all matrix mappings\index{matrix!mappings} are linear
+mappings\index{linear!mapping}.  We will show that all linear
+mappings are matrix mappings (see Theorem~\ref{lin-matrices}).  But first
+we discuss linearity in the simplest context of mappings from $\R\to\R$.
+
+\subsection*{Linear and Nonlinear Mappings of $\R\to\R$}
+
+Note that $1\times 1$ matrices are just scalars $A=(a)$.  It follows from
+\eqref{sum} and \eqref{product} that we have shown that the matrix mappings
+$L_A(x)=ax$ are all linear, though this point could have been verified
+directly.  Before showing that these are all the linear mappings of
+$\R\to\R$, we focus on examples of functions of $\R\to\R$ that are
+{\em not\/} linear.
+
+\subsubsection*{Examples of Mappings that are Not Linear}
+
+\begin{itemize}
+\item   $f(x)=x^2$.  Calculate
+\[
+f(x+y) = (x+y)^2 = x^2+2xy+y^2
+\]
+while
+\[
+f(x)+f(y) = x^2 + y^2.
+\]
+The two expressions are not equal and $f(x)=x^2$ is not linear.
+\item   $f(x)=e^x$.  Calculate
+\[
+f(x+y) = e^{x+y} = e^x e^y
+\]
+while
+\[
+f(x)+f(y) = e^x + e^y.
+\]
+The two expressions are not equal and $f(x)=e^x$ is not linear.
+\item   $f(x) = \sin x$.  Recall that
+\[
+f(x+y) =\sin(x+y) = \sin x \cos y +\cos x \sin y
+\]
+while
+\[
+f(x)+f(y) = \sin x + \sin y.
+\]
+The two expressions are not equal and $f(x)=\sin x $ is not
+linear.
+\end{itemize}
+
+\subsubsection*{Linear Functions of One Variable}
+
+Suppose we take the opposite approach and ask what functions of
+$\R\to\R$ are linear.  Observe that if $L:\R\to\R$ is linear,
+then
+\[
+L(x) = L(x\cdot 1).
+\]
+Since we are looking at the special case of linear mappings on
+$\R$, we note that $x$ is a real number as well as a vector.
+Thus we can use Definition~\ref{linearity}(b) to observe that
+\[
+L(x\cdot 1)=xL(1).
+\]
+So if we let $a=L(1)$, then we see that
+\[
+L(x)=ax.
+\]
+Thus linear mappings of $\R$ into $\R$ are very special mappings
+indeed; they are all scalar multiples of the identity mapping.
+
+\subsection*{All Linear Mappings are Matrix Mappings}
+
+We end this section by proving that every linear mapping is
+given by matrix multiplication. But first we state and prove two
+lemmas.  There is a standard set of vectors that is used over
+and over again in linear algebra, which we now define.
+
+\begin{definition}  \label{D:canonicalbasis}
+Let $j$ be an integer between $1$ and $n$.  The $n$-vector $e_j$ is
+the vector that has a $1$ in the $j^{th}$ entry and zeros in all
+other entries.
+\end{definition} \index{$e_j$}
+
+\begin{lemma}  \label{linequal}
+Let $L_1:\R^n\to\R^m$ and $L_2:\R^n\to\R^m$ be linear mappings.
+Suppose that $L_1(e_j)=L_2(e_j)$ for every $j=1,\ldots,n$.  Then
+$L_1=L_2$.
+\end{lemma}
+
+\begin{proof}  Let $x=(x_1,\ldots,x_n)$ be a vector in $\R^n$.  Then
+\[
+x = x_1e_1 + \cdots + x_ne_n.
+\]
+Linearity of $L_1$ and $L_2$ implies that
+\begin{eqnarray*}
+L_1(x) & = & x_1L_1(e_1) + \cdots + x_nL_1(e_n) \\
+  & = & x_1L_2(e_1) + \cdots + x_nL_2(e_n) \\
+  & = & L_2(x).
+\end{eqnarray*}
+Since $L_1(x)=L_2(x)$ for all $x\in\R^n$, it follows that
+$L_1=L_2$.  \end{proof}
+
+\begin{lemma}  \label{columnsA}
+Let $A$ be an $m\times n$ matrix.  Then $Ae_j$ is the $j^{th}$
+column of $A$.
+\end{lemma}
+
+\begin{proof}  Recall the definition of matrix multiplication given in \eqref{Atimesx}.
+In that formula, just set $x_i$ equal to zero for all $i\neq j$ and set
+$x_j=1$. \end{proof}
+
+\begin{theorem}  \label{lin-matrices}
+Let $L:\R^n\to\R^m$ be a linear mapping\index{linear!mapping}.
+Then there exists an $m\times n$ matrix $A$ such that $L=L_A$.
+\end{theorem}
+
+\begin{proof}
+There are two steps to the proof: determine the matrix $A$ and
+verify that $L_A=L$.
+
+Let $A$ be the matrix whose $j^{th}$ column is $L(e_j)$.  By
+Lemma~\ref{columnsA} $L(e_j) = Ae_j$; that is, $L(e_j) = L_A(e_j)$.
+Lemma~\ref{linequal} implies that $L=L_A$.  \end{proof}
+
+Theorem~\ref{lin-matrices} provides a simple way of showing that
+\[
+L(0) = 0
+\]
+for any linear map $L$.  Indeed, $L(0)=L_A(0)=A0=0$ for some matrix $A$.  
+(This fact can also be proved directly from the definition of linear mapping.)
+
+\subsubsection*{Using Theorem~\protect\ref{lin-matrices} to Find Matrices
+Associated to Linear Maps}
+
+The proof of Theorem~\ref{lin-matrices} shows that the $j^{th}$ column of the
+matrix $A$ associated to a linear mapping $L$ is $L(e_j)$ viewed as a column
+vector.  As an example, let $L:\R^2\to\R^2$ be rotation clockwise through
+$90^\circ$.  Geometrically, it is easy to see that
+\[
+  L(e_1) = L\left(\vectwo{1}{0}\right) = \vectwo{0}{-1}
+\]
+and
+\[
+L(e_2) = L\left(\vectwo{0}{1}\right) = \vectwo{1}{0}.
+\]
+Since we know that rotations are linear maps, it follows that the matrix
+$A$ associated to the linear map $L$ is:
+\[
+A = \mattwo{0}{1}{-1}{0}.
+\]
+Additional examples of linear mappings whose associated matrices can be found
+using Theorem~\ref{lin-matrices} are given in Exercises \ref{c4.3.7} --
+\ref{c4.3.10}.
+
+
+
+\EXER
+
+\TEXER
+
+\begin{exercise} \label{c4.3.1}
+Compute $ax+by$ for each of the following:
+\begin{itemize}
+\item[(a)] $a=2$, $b=-3$, $x=(2,4)$ and $y=(3,-1)$.
+\item[(b)] $a=10$, $b=-2$, $x=(1,0,-1)$ and $y=(2,-4,3)$.
+\item[(c)] $a=5$, $b=-1$, $x=(4,2,-1,1)$ and $y=(-1,3,5,7)$.
+\end{itemize}
+\end{exercise}
+
+\begin{exercise} \label{c4.3.2}
+Let $x=(4,7)$ and $y=(2,-1)$.  Write the vector $\alpha x+\beta
+y$ as a vector in coordinates.
+\end{exercise}
+
+\begin{exercise} \label{c4.3.3}
+Let $x=(1,2)$, $y=(1,-3)$, and $z=(-2,-1)$.  Show that you can
+write
+\[
+z=\alpha x+ \beta y
+\]
+for some $\alpha,\beta\in\R$.
+
+\noindent {\bf Hint:} Set up a system of two linear equations in
+the unknowns $\alpha$ and $\beta$, and then solve this linear
+system.
+\end{exercise}
+
+\begin{exercise} \label{c4.3.4}
+Can the vector $z=(2,3,-1)$ be written as
+\[
+z=\alpha x+ \beta y
+\]
+where $x=(2,3,0)$ and $y=(1,-1,1)$?
+\end{exercise}
+
+\begin{exercise} \label{c4.3.5}
+Let $x=(3,-2)$, $y=(2,3)$, and $z=(1,4)$.  For which real
+numbers $\alpha,\beta,\gamma$ does
+\[
+\alpha x + \beta y + \gamma z = (1,-2)?
+\]
+\end{exercise}
+
+\noindent In Exercises~\ref{c4.3.6a} -- \ref{c4.3.6d} determine
+whether the given transformation is linear.
+\begin{exercise} \label{c4.3.6a}
+  $T:\R^3\to\R^2$ defined by $T(x_1,x_2,x_3)=(x_1+2x_2-x_3,x_1-4x_3)$.
+\end{exercise}
+\begin{exercise} \label{c4.3.6b}
+  $T:\R^2\to\R^2$ defined by $T(x_1,x_2)=(x_1+x_1x_2,2x_2)$.
+\end{exercise}
+\begin{exercise} \label{c4.3.6c}
+  $T:\R^2\to\R^2$ defined by $T(x_1,x_2)=(x_1+x_2,x_1-x_2-1)$.
+\end{exercise}
+\begin{exercise} \label{c4.3.6d}
+  $T:\R^2\to\R^3$ defined by $T(x_1,x_2)=(1,x_1+x_2,2x_2)$
+\end{exercise}
+
+\begin{exercise} \label{c4.3.7}
+Find the $2\times 3$ matrix $A$ that satisfies
+\[
+Ae_1  =  \vectwo{2}{3},\qquad
+Ae_2  =  \vectwo{1}{-1}, \AND
+Ae_3  = \vectwo{0}{1}.
+\]
+\end{exercise}
+
+\begin{exercise} \label{c4.3.8}
+The {\em cross product\/} of two $3$-vectors $x=(x_1,x_2,x_3)$
+and $y=(y_1,y_2,y_3)$ is the $3$-vector
+\[
+x\times y = (x_2y_3-x_3y_2,-(x_1y_3-x_3y_1),x_1y_2-x_2y_1).
+\]
+Let $K=(2,1,-1)$.  Show that the mapping $L:\R^3\to\R^3$ defined by
+\[
+L(x) = x\times K
+\]
+is a linear mapping.  Find the $3\times 3$ matrix $A$ such that
+\[
+L(x) = Ax,
+\]
+that is, $L=L_A$.
+\end{exercise}
+
+\begin{exercise} \label{c4.3.9}
+Argue geometrically that rotation of the plane counterclockwise
+through an angle of $45^\circ$ is a linear mapping.  Find a
+$2\times 2$ matrix $A$ such that $L_A$ rotates the plane
+counterclockwise by $45^\circ$.
+\end{exercise}
+
+\begin{exercise} \label{c4.3.10}
+Let $\sigma$ permute coordinates cyclically in $\R^3$; that is,
+\[
+\sigma(x_1,x_2,x_3) = (x_2,x_3,x_1).
+\]
+Find a $3\times 3$ matrix $A$ such that $\sigma = L_A$.
+\end{exercise}
+
+\begin{exercise} \label{c4.3.11}
+Let $L$ be a linear map.  Using the definition of linearity,
+prove that $L(0)=0$.
+\end{exercise}
+
+\begin{exercise}  \label{c4.3.12}
+Let $P:\R^n\to\R^m$ and $Q:\R^n\to\R^m$ be linear mappings. Prove
+that $S:\R^n\to\R^m$ defined by
+\[
+S(x) = P(x) + Q(x)
+\]
+is also a linear mapping.  Theorem~\ref{lin-matrices} states that there
+are matrices $A$, $B$ and $C$ such that
+\[
+P = L_A \AND Q = L_B \AND S = L_C .
+\]
+What is the relationship between the matrices $A$, $B$, and $C$?
+\end{exercise}
+
+\CEXER
+
+\begin{exercise} \label{c4.3.13}
+Let
+\[
+A = \mattwo{0.5}{0}{0}{2}.
+\]
+Use {\sf map} to verify that the linear mapping $L_A$ halves
+the $x$-component of a point while it doubles the $y$-component.
+\end{exercise}
+
+\begin{exercise} \label{c4.3.14}
+Let
+\[
+A = \mattwo{0}{0.5}{-0.5}{0}.
+\]
+Use {\sf map} to determine how the mapping $L_A$ acts on $2$-vectors.
+Describe this action in words.
+\end{exercise}
+
+\noindent In Exercises~\ref{c4.3.15A} -- \ref{c4.3.15B} use \Matlab to
+verify \eqref{sum} and \eqref{product}.
+\begin{exercise} \label{c4.3.15A}
+\begin{matlabEquation} \label{eq4.3.15a}
+A = \left(
+\begin{array}{rrr}
+ 1 & 2 & 3  \\
+ 0 & 1 & -2  \\
+ 4 & 0 & 1
+\end{array}
+\right),\quad
+x=\left(
+\begin{array}{r}
+ 3   \\
+ 2   \\
+ -1
+\end{array}
+\right),\quad
+y=\left(
+\begin{array}{r}
+ 0   \\
+ -5   \\
+ 10
+\end{array}
+\right),\quad c=21;
+\end{matlabEquation}
+\end{exercise}
+\begin{exercise} \label{c4.3.15B}
+\begin{matlabEquation} \label{eq4.3.15b}
+A = \left(
+\begin{array}{rrrrr}
+ 4 & 0 & -3 & 2 & 4 \\
+ 2 & 8 & -4 & -1 & 3 \\
+ -1 & 2 & 1 & 10 & -2 \\
+ 4 & 4 & -2 & 1 & 2 \\
+ -2 & 3 & 1 & 1 & -1
+\end{array}
+\right),\quad
+x=\left(
+\begin{array}{r}
+ 1   \\
+ 3   \\
+ -2   \\
+ 3   \\
+ -1
+\end{array}
+\right)
+\end{matlabEquation}
+\begin{equation*}
+y=\left(
+\begin{array}{r}
+ 2   \\
+ 0   \\
+ 13   \\
+ -2   \\
+ 1
+\end{array}
+\right),\quad c=-13.
+\end{equation*}
+\end{exercise}
+
+
+
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../linearAlgebra"
+%%% End:

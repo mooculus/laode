@@ -1,0 +1,1095 @@
+\documentclass{ximera}
+
+\input{../preamble.tex}
+
+\title{Gaussian Elimination}
+
+\begin{document}
+\begin{abstract}
+\end{abstract}
+\maketitle
+
+  \label{S:Gauss}
+
+A general system of $m$ {\em linear\/} equations \index{linear}
+in $n$ unknowns has the form
+\begin{equation}    \label{general}
+\arraycolsep 2pt
+\begin{array}{rcrcrcrcrl}
+ a_{11}x_1 & + & a_{12}x_2 & + & \cdots & + & a_{1n}x_n & = &   b_1
+& \\
+ a_{21}x_1 & + & a_{22}x_2 & + & \cdots & + & a_{2n}x_n & = &   b_2
+& \\
+        & \vdots &      & \vdots &    & \vdots &     & \vdots &
+  & \\
+ a_{m1}x_1 & + & a_{m2}x_2 & + & \cdots & + & a_{mn}x_n & = &   b_m
+& .
+\end{array}
+\end{equation}
+The entries $a_{ij}$ and $b_i$ are constants.  Our task is to find
+a method for solving \eqref{general} for the variables
+$x_1,\ldots,x_n$.
+
+\subsection*{Easily Solved Equations}
+
+Some systems are easily solved.  The system of three
+equations ($m=3$) in three unknowns ($n=3$)
+\begin{equation}
+\begin{array}{rcrcrcrl} \label{examp3}
+  x_1 & + & 2x_2 & + & 3x_3 & = &  10  & \\
+      &   &  x_2 & - & \frac{1}{5}x_3 & = & \frac{7}{5}  & \\
+      &   &      &   &  x_3 & = &   3  & \\
+\end{array}
+\end{equation}
+is one example.  The $3^{rd}$ equation states that $x_3=3$.
+Substituting this value into the $2^{nd}$ equation allows us to
+solve the $2^{nd}$ equation for $x_2=2$.  Finally, substituting
+$x_2=2$ and $x_3=3$ into the $1^{st}$ equation allows us to
+solve for $x_1=-3$.  The process that we have just described is
+called {\em back substitution\/}.\index{back substitution}
+
+Next, consider the system of two equations ($m=2$) in three
+unknowns ($n=3$):
+\begin{equation}  \label{e23}
+\begin{array}{rcrcrcrl}
+  x_1 & + & 2x_2 & + & 3x_3 & = &  10  & \\
+      &   &      &   &  x_3 & = &   3  & \! . \\
+\end{array}
+\end{equation}
+The $2^{nd}$ equation in \eqref{e23} states that $x_3=3$.
+Substituting
+this value into the $1^{st}$ equation leads to the equation
+\[
+x_1 = 1-2x_2.
+\]
+We have shown that every solution to \eqref{e23} has the form
+$(x_1,x_2,x_3)=(1-2x_2,x_2,3)$ and that every vector
+$(1-2x_2,x_2,3)$ is a solution of \eqref{e23}.  Thus, there is an
+infinite number of solutions to \eqref{e23}, and these solutions
+can be parameterized by one number $x_2$.
+
+\subsection*{Equations Having No Solutions}
+
+Note that the system of equations
+\begin{eqnarray*}
+x_1 - x_2 = 1\\
+x_1 - x_2 = 2
+\end{eqnarray*}
+has no solutions.
+
+\begin{definition}
+A linear system of equations is {\em inconsistent\/} if the
+system has no solutions and {\em consistent\/} if the system
+does have solutions.
+\end{definition} \index{consistent} \index{inconsistent}
+
+As discussed in the previous section, \eqref{incon} is an example
+of a linear system that \Matlab cannot solve.  In fact, that
+system is inconsistent --- inspect the $2^{nd}$ and $4^{th}$
+equations in \eqref{incon}.
+
+Gaussian elimination is an algorithm for finding all solutions
+to a system of linear equations by reducing the given system to
+ones like \eqref{examp3} and \eqref{e23}, that are easily solved by
+back substitution.  Consequently, Gaussian elimination can also be
+used to determine whether a system is consistent or inconsistent.
+
+\subsection*{Elementary Equation Operations}
+
+There are three ways to change a system of equations without
+changing the set of solutions; Gaussian elimination
+\index{Gaussian elimination} is based on this observation.  The
+three elementary operations are:
+\begin{enumerate}
+\item   Swap two equations.
+\item   Multiply a single equation by a nonzero number.
+\item   Add a scalar multiple of one equation to another.
+\end{enumerate}
+
+We begin with an example:
+\begin{equation}
+\begin{array}{rcrcrcrl}
+  x_1 & + & 2x_2 & + & 3x_3 & = &  10  & \\
+  x_1 & + & 2x_2 & + &  x_3 & = &   4  & \\
+ 2x_1 & + & 9x_2 & + & 5x_3 & = &  27  & .\\
+\end{array}
+\end{equation}
+Gaussian elimination works by eliminating variables from the
+equations in a fashion similar to the substitution method in the
+previous section.  To begin, eliminate the variable $x_1$ from
+all but the $1^{st}$ equation, as follows.  Subtract the
+$1^{st}$ equation from the $2^{nd}$, and subtract twice the
+$1^{st}$ equation from the $3^{rd}$, obtaining:
+\begin{equation}
+\begin{array}{rcrcrcrl}
+  x_1 & + & 2x_2 & + & 3x_3 & = &  10  & \\
+      &   &      &   &-2x_3 & = &  -6  & \\
+      &   & 5x_2 & - &  x_3 & = &   7  & .\\
+\end{array}
+\end{equation}
+Next, swap the $2^{nd}$ and $3^{rd}$ equations, so that
+the coefficient of $x_2$ in the new $2^{nd}$ equation is nonzero.
+This yields
+\begin{equation}
+\begin{array}{rcrcrcrl}
+  x_1 & + & 2x_2 & + & 3x_3 & = &  10  & \\
+      &   & 5x_2 & - &  x_3 & = &   7  & \\
+      &   &      &   &-2x_3 & = &  -6  & .\\
+\end{array}
+\end{equation}
+Now, divide the $2^{nd}$ equation by $5$ and the $3^{rd}$
+equation by $-2$ to obtain a system of equations identical to
+our first example \eqref{examp3}, which we solved by back
+substitution.
+
+
+\subsection*{Augmented Matrices}
+
+The process of performing Gaussian elimination when the number
+of equations is greater than two or three is painful.  The
+computer, however, can help with the manipulations.  We begin by
+introducing the {\em augmented matrix\/}. \index{matrix!augmented}
+The augmented matrix associated with \eqref{general} has
+$m$ rows and $n+1$ columns and is written as:
+\begin{equation}  \label{augmented}
+\left(
+\begin{array}{rrrr|r}
+ a_{11} & a_{12} & \cdots & a_{1n} &  b_1 \\
+ a_{21} & a_{22} & \cdots & a_{2n} &  b_2 \\
+ \vdots & \vdots &        & \vdots & \vdots \\
+ a_{m1} & a_{m2} & \cdots & a_{mn} &  b_m
+\end{array}
+\right)
+\end{equation}
+The augmented matrix contains all of the information that is
+needed to solve system \eqref{general}.
+
+\subsection*{Elementary Row Operations} \index{elementary row
+operations}
+
+The elementary operations used in Gaussian elimination
+can be interpreted as {\em row operations\/} on
+the augmented matrix, as follows:
+\begin{enumerate}
+\item   Swap two rows.
+\item   Multiply a single row by a nonzero number.
+\item   Add a scalar multiple of one row to another.
+\end{enumerate}
+We claim that by using these elementary row operations
+intelligently, we can always solve a consistent linear system
+--- indeed, we can determine when a linear system is consistent
+or inconsistent.  The idea is to perform elementary row
+operations in such a way that the new augmented matrix has zero
+entries below the diagonal.
+
+We describe this process inductively.  Begin with the $1^{st}$
+column.  We assume for now that some entry in this column is
+nonzero.  If $a_{11}=0$, then swap two rows so that the
+number $a_{11}$ is nonzero.  Then divide the $1^{st}$ row by
+$a_{11}$ so that the leading entry in that row is $1$.  Now
+subtract $a_{i1}$ times the $1^{st}$ row from the $i^{th}$ row
+for each row $i$ from $2$ to $m$.  The end result is that the
+$1^{st}$ column has a $1$ in the $1^{st}$ row and a $0$ in every
+row below the $1^{st}$.  The result is
+\[
+\left(\begin{array}{cccc}  1 & * & \cdots & * \\
+0 & * & \cdots & * \\ \vdots & \vdots & \vdots & \vdots \\
+0 & * & \cdots & * \end{array} \right).
+\]
+
+
+Next we consider the $2^{nd}$ column.  We assume that some entry
+in that column below the $1^{st}$ row is nonzero.  So, if
+necessary, we can swap two rows below the $1^{st}$ row so
+that the entry $a_{22}$ is nonzero.  Then we divide the $2^{nd}$
+row by $a_{22}$ so that its leading nonzero entry is $1$.  Then
+we subtract appropriate multiples of the $2^{nd}$ row from each
+row below the $2^{nd}$ so that all the entries in the $2^{nd}$
+column below the $2^{nd}$ row are $0$.  The result is
+\[
+\left(\begin{array}{cccc}  1 & * & \cdots & * \\
+0 & 1 & \cdots & * \\ \vdots & \vdots & \vdots & \vdots \\
+0 & 0 & \cdots & * \end{array} \right).
+\]
+
+Then we continue with the $3^{rd}$ column.  That's the idea.  However,
+does this process always work and what happens if all of the entries
+in a column are zero?  Before answering these questions we do
+experimentation with \Matlabp.
+
+\subsection*{Row Operations in \Matlab}\index{elementary row
+operations!in \protect\Matlab}
+
+In \Matlab the $i^{th}$ row of a matrix {\tt A} is specified by
+{\tt A(i,:)}.  Thus to replace the $5^{th}$ row of a matrix {\tt
+A} by twice itself, we need only type:
+\begin{verbatim}
+A(5,:) = 2*A(5,:)
+\end{verbatim}
+In general, we can replace the $i^{th}$ row of the matrix
+{\tt A} by $c$ times itself by typing
+\begin{verbatim}
+A(i,:) = c*A(i,:)
+\end{verbatim}
+Similarly, we can divide the $i^{th}$ row of the matrix {\tt A}
+by the nonzero number $c$ by typing
+\begin{verbatim}
+A(i,:) = A(i,:)/c
+\end{verbatim}
+
+The third elementary row operation is performed similarly.
+Suppose we want to add $c$ times the $i^{th}$ row to the
+$j^{th}$ row, then we type
+\begin{verbatim}
+A(j,:) = A(j,:) + c*A(i,:)
+\end{verbatim}
+For example, subtracting $3$ times the $7^{th}$ row from the
+$4^{th}$ row of the matrix {\tt A} is accomplished by typing:
+\begin{verbatim}
+A(4,:) = A(4,:) - 3*A(7,:)
+\end{verbatim}
+
+The first elementary row operation, swapping two rows, requires
+a different kind of \Matlab command.  In \Matlabp, the $i^{th}$
+and $j^{th}$ rows of the matrix {\tt A} are permuted by the
+command
+\begin{verbatim}
+A([i j],:) = A([j i],:)
+\end{verbatim}
+So, to swap the $1^{st}$ and $3^{rd}$ rows of the matrix
+{\tt A}, we type
+\begin{verbatim}
+A([1 3],:) = A([3 1],:)
+\end{verbatim}  \index{\computer!A([1 3],:)}
+
+\subsection*{Examples of Row Reduction in \Matlab}
+
+Let us see how the row operations can be used in \Matlabp.  As
+an example, we consider the augmented matrix
+\begin{matlabEquation}  \label{examp4}
+\left(
+\begin{array}{rrrr|r}
+ 1  &  3  &  0  & -1  &  -8\\
+ 2  &  6  & -4  &  4  &   4\\
+ 1  &  0  & -1  & -9  & -35\\
+ 0  &  1  &  0  &  3  &  10
+\end{array}
+\right)
+\end{matlabEquation}
+
+We enter this information into \Matlab by typing
+\begin{verbatim}
+e2_3_8
+\end{verbatim}
+which produces the result
+\begin{verbatim}
+A =
+     1     3     0    -1    -8
+     2     6    -4     4     4
+     1     0    -1    -9   -35
+     0     1     0     3    10
+\end{verbatim}
+
+We now perform Gaussian elimination on {\tt A}, and then solve the 
+resulting system by back substitution.  Gaussian elimination uses 
+elementary row operations to set the entries that are in the lower 
+left part of {\tt A} to zero. These entries are indicated by
+numbers in the following matrix:
+\begin{verbatim}
+    *     *     *     *     *
+    2     *     *     *     *
+    1     0     *     *     *
+    0     1     0     *     *
+\end{verbatim}
+
+Gaussian elimination \index{Gaussian elimination} works
+inductively.  Since the first entry in the matrix $A$ is equal
+to $1$, the first step in Gaussian elimination is to set to zero
+all entries in the $1^{st}$ column below the $1^{st}$ row.  We
+begin by eliminating the {\tt 2} that is the first entry in the
+$2^{nd}$ row of {\tt A}.  We replace the $2^{nd}$ row by the
+$2^{nd}$ row minus twice the $1^{st}$ row.  To accomplish this
+elementary row operation, we type
+\begin{verbatim}
+A(2,:) = A(2,:) - 2*A(1,:)
+\end{verbatim}
+and the result is
+\begin{verbatim}
+A =
+     1     3     0    -1    -8
+     0     0    -4     6    20
+     1     0    -1    -9   -35
+     0     1     0     3    10
+\end{verbatim}
+In the next step, we eliminate the {\tt 1} from the entry in the
+$3^{rd}$ row, $1^{st}$ column of {\tt A}.  We do this by
+typing
+\begin{verbatim}
+A(3,:) = A(3,:) - A(1,:)
+\end{verbatim}
+which yields
+\begin{verbatim}
+A =
+     1     3     0    -1    -8
+     0     0    -4     6    20
+     0    -3    -1    -8   -27
+     0     1     0     3    10
+\end{verbatim}
+
+Using elementary row operations, we have now set the entries
+in the $1^{st}$ column below the $1^{st}$ row to $0$.  Next,
+we alter the $2^{nd}$ column.  We begin by swapping
+the $2^{nd}$ and $4^{th}$ rows so that the leading nonzero entry
+in the $2^{nd}$ row is $1$.   To accomplish this swap, we type
+\begin{verbatim}
+A([2 4],:) = A([4 2],:)
+\end{verbatim}
+and obtain
+\begin{verbatim}
+A =
+     1     3     0    -1    -8
+     0     1     0     3    10
+     0    -3    -1    -8   -27
+     0     0    -4     6    20
+\end{verbatim}
+The next elementary row operation is the command
+\begin{verbatim}
+A(3,:) = A(3,:) + 3*A(2,:)
+\end{verbatim}
+which leads to
+\begin{verbatim}
+A =
+     1     3     0    -1    -8
+     0     1     0     3    10
+     0     0    -1     1     3
+     0     0    -4     6    20
+\end{verbatim}
+Now we have set all entries in the $2^{nd}$ column below
+the $2^{nd}$ row to $0$.
+
+Next, we set the first nonzero entry in the $3^{rd}$ row to {\tt 1}
+by multiplying the $3^{rd}$ row by $-1$, obtaining
+\begin{verbatim}
+A =
+     1     3     0    -1    -8
+     0     1     0     3    10
+     0     0     1    -1    -3
+     0     0    -4     6    20
+\end{verbatim}
+
+Since the leading nonzero entry in the $3^{rd}$ row is $1$,  we
+next eliminate the nonzero entry in the $3^{rd}$ column,
+$4^{th}$ row. This is accomplished by the following \Matlab
+command:
+\begin{verbatim}
+A(4,:) = A(4,:) + 4*A(3,:)
+\end{verbatim}
+Finally, divide the $4^{th}$ row by $2$ to obtain:
+\begin{verbatim}
+A =
+     1     3     0    -1    -8
+     0     1     0     3    10
+     0     0     1    -1    -3
+     0     0     0     1     4
+\end{verbatim}
+
+By using elementary row operations, we have arrived at the system
+\begin{equation}
+\arraycolsep 2pt
+\begin{array}{rcrcrcrcrl}
+  x_1 & + & 3x_2 &   &     & - &  x_4 & = &  -8 & \\
+      &   &  x_2 &   &     & + & 3x_4 & = &  10 & \\
+      &   &      &   & x_3 & - &  x_4 & = &  -3 & \\
+      &   &      &   &     &   &  x_4 & = &   4 &\! ,
+\end{array}
+\end{equation}
+that can now be solved by back substitution.  We obtain
+\begin{equation} \label{ans1}
+        x_4 = 4,\quad x_3 = 1,\quad x_2 = -2,\quad x_1 = 2.
+\end{equation}
+We return to the original set of equations corresponding to
+\eqref{examp4}
+\begin{matlabEquation}    \label{examp4_con}
+\arraycolsep 2pt
+\begin{array}{rcrcrcrcrl}
+  x_1 & + & 3x_2 &   &      & - &  x_4 & = &  -8  & \\
+ 2x_1 & + & 6x_2 & - & 4x_3 & + & 4x_4 & = &   4  & \\
+  x_1 &   &      & - &  x_3 & - & 9x_4 & = & -35  & \\
+      &   &  x_2 &   &      & + & 3x_4 & = &  10  & \! .
+\end{array}
+\end{matlabEquation}
+Load the corresponding linear system into \Matlab by typing
+\begin{verbatim}
+e2_3_11
+\end{verbatim}
+The information in \eqref{examp4_con} is contained in the
+coefficient matrix {\tt C} and the right hand side {\tt b}.
+A direct solution is found by typing
+\begin{verbatim}
+x = C\b
+\end{verbatim}
+which yields the same answer as in \eqref{ans1}, namely,
+\begin{verbatim}
+x =
+    2.0000
+   -2.0000
+    1.0000
+    4.0000
+\end{verbatim}
+
+\subsection*{Introduction to Echelon Form} \index{echelon form}
+
+Next, we discuss how Gaussian elimination works in an example
+in which the number of rows and the number of columns in the
+coefficient matrix are unequal.  We consider the augmented
+matrix\index{matrix!augmented}
+\begin{matlabEquation}  \label{examp5}
+\left(
+\begin{array}{rrrrrr|r}
+ 1  &  0  & -2  &  3  &  4  &  0  &  1\\
+ 0  &  1  &  2  &  4  &  0  & -2  &  0\\
+ 2  & -1  & -4  &  0  & -2  &  8  & -4\\
+-3  &  0  &  6  & -8  &-12  &  2  & -2
+\end{array}
+\right)
+\end{matlabEquation}
+This information is entered into \Matlab by typing
+\begin{verbatim}
+e2_3_12
+\end{verbatim}
+Again, the augmented matrix is denoted by {\tt A}.
+
+We begin by eliminating the {\tt 2} in the entry in the $3^{rd}$
+row, $1^{st}$ column.  To accomplish the corresponding
+elementary row operation, we type
+\begin{verbatim}
+A(3,:) = A(3,:) - 2*A(1,:)
+\end{verbatim}
+resulting in
+\begin{verbatim}
+A =
+     1     0    -2     3     4     0     1
+     0     1     2     4     0    -2     0
+     0    -1     0    -6   -10     8    -6
+    -3     0     6    -8   -12     2    -2
+\end{verbatim}
+We proceed with
+\begin{verbatim}
+A(4,:) = A(4,:) + 3*A(1,:)
+\end{verbatim}
+to create two more zeros in the $4^{th}$ row.  Finally, we
+eliminate the {\tt -1} in the $3^{rd}$ row, $2^{nd}$
+column by
+\begin{verbatim}
+A(3,:) = A(3,:) + A(2,:)
+\end{verbatim}
+to arrive at
+\begin{verbatim}
+A =
+     1     0    -2     3     4     0     1
+     0     1     2     4     0    -2     0
+     0     0     2    -2   -10     6    -6
+     0     0     0     1     0     2     1
+\end{verbatim}
+Next we set the leading nonzero entry in the $3^{rd}$ row to $1$
+by dividing the $3^{rd}$ row by $2$.   That is, we type
+\begin{verbatim}
+A(3,:) = A(3,:)/2
+\end{verbatim}
+to obtain
+\begin{verbatim}
+A =
+     1     0    -2     3     4     0     1
+     0     1     2     4     0    -2     0
+     0     0     1    -1    -5     3    -3
+     0     0     0     1     0     2     1
+\end{verbatim}
+We say that the matrix {\tt A} is in (row) {\em echelon form\/}
+\index{echelon form} since the first nonzero entry in each row
+is a {\tt 1}, each entry in a column below a leading {\tt 1} is
+{\tt 0}, and the leading {\tt 1} moves to the right as you go
+down the matrix.  In row echelon form, the entries where leading
+$1$'s occur are called {\em pivots\/}.\index{pivot}
+
+If we compare the structure of this matrix to the ones we have
+obtained previously, then we see that here we have two columns
+too many.  Indeed, we may solve these equations by back
+substitution for any choice of the variables $x_5$ and $x_6$.
+
+The idea behind back substitution \index{back substitution} is
+to solve the last equation for the variable corresponding to the
+first nonzero coefficient.  In this case, we use the $4^{th}$
+equation to solve for $x_4$ in terms of $x_5$ and $x_6$, and
+then we substitute for $x_4$ in the first three equations.  This
+process can also be accomplished by elementary row operations.
+Indeed, eliminating the variable $x_4$ from the first three
+equations is the same as using row operations to set the first
+three entries in the $4^{th}$ column to {\tt 0}.  We can do this
+by typing
+\begin{verbatim}
+A(3,:) = A(3,:) + A(4,:);
+A(2,:) = A(2,:) - 4*A(4,:);
+A(1,:) = A(1,:) - 3*A(4,:)
+\end{verbatim}
+{\bf Remember:} By typing semicolons after the first two rows, we
+have told \Matlab not to print the intermediate results.  Since
+we have not typed a semicolon after the $3^{rd}$ row, \Matlab
+outputs
+\begin{verbatim}
+A =
+     1     0    -2     0     4    -6    -2
+     0     1     2     0     0   -10    -4
+     0     0     1     0    -5     5    -2
+     0     0     0     1     0     2     1
+\end{verbatim}
+We proceed with back substitution by eliminating the nonzero
+entries in the first two rows of the $3^{rd}$ column.  To do
+this, type
+\begin{verbatim}
+A(2,:) = A(2,:) - 2*A(3,:);
+A(1,:) = A(1,:) + 2*A(3,:)
+\end{verbatim}
+which yields
+\begin{verbatim}
+A =
+     1     0     0     0    -6     4    -6
+     0     1     0     0    10   -20     0
+     0     0     1     0    -5     5    -2
+     0     0     0     1     0     2     1
+\end{verbatim}
+The augmented matrix is now in {\em reduced echelon form}
+\index{echelon form!reduced} and the corresponding system of
+equations has the form
+\begin{equation}   \label{e:refexamp5}
+\arraycolsep 2pt
+\begin{array}{rcrcrcrcrcrcrl}
+  x_1 &   &     &   &     &  &     & - &  6x_5 & + &  4x_6 & = &
+-6 & \\
+      &   & x_2 &   &     &  &     & + & 10x_5 & - & 20x_6 & = &
+0 & \\
+      &   &     &   & x_3 &  &     & - &  5x_5 & + &  5x_6 & = &
+-2 & \\
+      &   &     &   &     &  & x_4 &   &       & + &  2x_6 & = &
+1 &\! ,
+\end{array}
+\end{equation}
+A matrix is in reduced echelon form \index{echelon form!reduced}
+if it is in echelon form and if {\em every\/} entry in a column
+containing a pivot, other than the pivot itself, is {\tt 0}.
+
+Reduced echelon form allows us to solve directly this system of
+equations in terms of the variables $x_5$ and $x_6$,
+\begin{equation}  \label{e:refexamp6}
+\left(\begin{array}{c} x_1\\x_2\\x_3\\x_4\\x_5\\x_6\end{array}\right) =
+\left(\begin{array}{c} -6+6x_5-4x_6\\-10x_5+20x_6\\
+-2+5x_5-5x_6\\1-2x_6\\x_5\\x_6\end{array}\right).
+\end{equation}
+It is important to note that every consistent system of linear equations
+corresponding to an augmented matrix in reduced echelon form can be
+solved as in \eqref{e:refexamp6} --- and this is one reason for emphasizing
+reduced echelon form.  We will discuss the reduction to reduced echelon
+form in more detail in the next section.
+
+\EXER
+
+
+\TEXER
+
+\noindent In Exercises~\ref{c2.3.6a} -- \ref{c2.3.6c} determine
+whether the given matrix is in reduced echelon form.
+\begin{exercise} \label{c2.3.6a}
+$\left(\begin{array}{rrrr}
+1 & -1 &  0 &   1   \\
+0 &  1 &  0 &  -6    \\
+         0 &  0 &  1 &   0   \end{array}\right)$.
+     \begin{multipleChoice}
+       \choice{The matrix is in reduced echelon form.}         
+       \choice[correct]{The matrix is not in reduced echelon form.}         
+     \end{multipleChoice}
+\end{exercise}
+\begin{exercise} \label{c2.3.6b}
+$\left(\begin{array}{rrrr}
+1 &  0 & -2 &   0   \\
+0 &  1 &  4 &   0    \\
+         0 &  0 &  0 &   1  \end{array}\right)$.
+     \begin{multipleChoice}
+       \choice[correct]{The matrix is in reduced echelon form.}         
+       \choice{The matrix is not in reduced echelon form.}         
+     \end{multipleChoice}     
+\end{exercise}
+\begin{exercise} \label{c2.3.6c}
+$\left(\begin{array}{rrrr}
+0 &  1 &  0 &   3   \\
+0 &  0 &  2 &   1    \\
+         0 &  0 &  0 &   0   \end{array}\right)$.
+     \begin{multipleChoice}
+       \choice{The matrix is in reduced echelon form.}         
+       \choice[correct]{The matrix is not in reduced echelon form.}         
+     \end{multipleChoice}     
+\end{exercise}
+
+\noindent In Exercises~\ref{c2.3.7a} -- \ref{c2.3.7c} we list
+the reduced echelon form of an augmented matrix of a system of
+linear equations.  Which columns in these augmented matrices
+contain pivots?  Describe all solutions to these systems of
+equations in the form of \eqref{e:refexamp6}.
+\begin{exercise} \label{c2.3.7a}
+$\left(\begin{array}{rrr|r}
+ 1  &  4 & 0 & 0\\
+ 0  &  0 & 1 & 5\\
+ 0  &  0 & 0 & 0
+       \end{array}\right)$.
+     \begin{selectAll}
+       \choice[correct]{The $1^{st}$ column contains a pivot.}
+       \choice{The $2^{nd}$ column contains a pivot.}
+       \choice[correct]{The $3^{rd}$ column contains a pivot.}
+       \choice{The $4^{th}$ column contains a pivot.}
+       \choice{The $5^{th}$ column contains a pivot.}
+     \end{selectAll}
+     
+     \begin{exercise}
+       The solutions of the system are:
+\[
+\left(\begin{array}{r} x_1 \\ x_2 \\ x_3\end{array} \right)
+= \left(\begin{array}{c} \answer{-4}x_2 \\ x_2 \\ \answer{5}\end{array} \right)
+\]
+     \end{exercise}
+\end{exercise}
+\begin{exercise} \label{c2.3.7b}
+$\left(\begin{array}{rrrr|r}
+ 1  &  2 & 0 & 0 & 0\\
+ 0  &  0 & 1 & 1 & 0\\
+ 0  &  0 & 0 & 0 & 1
+       \end{array}\right)$.
+     \begin{selectAll}
+       \choice[correct]{The $1^{st}$ column contains a pivot.}
+       \choice{The $2^{nd}$ column contains a pivot.}
+       \choice[correct]{The $3^{rd}$ column contains a pivot.}
+       \choice{The $4^{th}$ column contains a pivot.}
+       \choice[correct]{The $5^{th}$ column contains a pivot.}
+     \end{selectAll}
+     \begin{exercise}
+       The system of linear equations corresponding to this matrix has\ldots
+       \begin{multipleChoice}
+         \choice[correct]{No solutions.}
+         \choice{Exactly one solution.}
+         \choice{Infinitely many solutions.}
+       \end{multipleChoice}
+     \end{exercise}
+\end{exercise}
+\begin{exercise} \label{c2.3.7c}
+$\left(\begin{array}{rrrr|r}
+ 1  & -6 & 0 & 0 & 1\\
+ 0  &  0 & 1 & 0 & 9 \\
+ 0  &  0 & 0 & 0 & 0
+       \end{array}\right)$.
+     \begin{selectAll}
+       \choice[correct]{The $1^{st}$ column contains a pivot.}
+       \choice{The $2^{nd}$ column contains a pivot.}
+       \choice[correct]{The $3^{rd}$ column contains a pivot.}
+       \choice{The $4^{th}$ column contains a pivot.}
+       \choice{The $5^{th}$ column contains a pivot.}
+     \end{selectAll}
+     \begin{exercise}
+       The solutions of the system are:
+\[
+\left(\begin{array}{r} x_1 \\ x_2 \\ x_3\\ x_4\end{array} \right)
+= \left(\begin{array}{c} 1 + \answer{6}x_2 \\ x_2 \\ \answer{9} \\ x_4\end{array} \right)
+\]
+     \end{exercise}
+\end{exercise}
+
+
+\begin{exercise} \label{c2.3.8}
+(a) Consider the $2\times 2$ matrix
+\begin{equation}  \label{e:2x2}
+\mattwo{a}{b}{c}{1}
+\end{equation}
+where $a,b,c\in\R$ and $a\neq 0$.  Show that \eqref{e:2x2}
+is row equivalent to the matrix
+\[
+\left(\begin{array}{cc} 1 & \frac{b}{a} \\ 0 & \frac{\answer[given]{a-bc}}{a}
+\end{array} \right).
+\]
+(b)  Show that \eqref{e:2x2} is row equivalent to the
+identity matrix if and only if $a\neq \answer[given]{bc}$.
+
+\begin{hint}
+Two matrices are row equivalent if there is a sequence of row operations
+that leads from one to the other.  In this case: Divide the $1^{st}$ row of \eqref{e:2x2} by $a$.
+\end{hint}
+\begin{hint}
+Then subtract $c$ times the $1^{st}$ row from the $2^{nd}$ row.
+\end{hint}
+\begin{hint}
+The result is
+\[
+\left(\begin{array}{cc} 1 & \frac{b}{a} \\ 0 & \frac{a - bc}{a}\end{array}
+\right).
+\]
+\end{hint}
+\begin{hint}
+For (b), if $a \neq bc$, then we can row reduce \eqref{e:2x2} to $I_2$.  First
+perform the two row operations in part (a).
+\end{hint}
+\begin{hint}
+  Then multiply the $2^{nd}$ row by $\frac{a}{a - bc}$.
+\end{hint}
+\begin{hint}
+  Finally subtract $\frac{b}{a}$ times the second row from the first row.
+\end{hint}
+\begin{hint}
+This will give us the identity matrix $I_2$.
+\end{hint}
+\begin{hint}
+  If $a = bc$, then $\frac{a - bc}{a} = 0$, and the matrix is
+\[
+\left(\begin{array}{cc} 1 & \frac{b}{a} \\ 0 & 0\end{array} \right).
+\]
+which has only one pivot and cannot be row reduced to $I_2$.
+\end{hint}
+\end{exercise}
+
+\begin{exercise} \label{c2.3.9}
+Use row reduction and back substitution to solve the following
+system of two equations in three unknowns:
+\[
+\begin{array}{rcrcrcrc}
+ x_1 & - & x_2 & + & x_3 & = & 1 \\
+2x_1 & + & x_2 & - & x_3 & = & -1
+\end{array}
+\]
+\begin{hint}
+   Row reduce the augmented matrix of the system:
+\[
+\left(\begin{array}{rrr|r} 1 & -1 & 1 & 1 \\ 2 & 1 & -1 & -1\end{array}\right)
+\longrightarrow
+\left(\begin{array}{rrr|r} 1 & 0 & 0 & 0 \\ 0 & 1 & -1 & -1\end{array}\right).
+\]
+\end{hint}
+\begin{prompt}
+  The solution to this system is
+\[
+\left(\begin{array}{c} x_1 \\ x_2 \\ x_3\end{array}\right) =
+\left(\begin{array}{c} \answer{0} \\ x_3 - \answer{1} \\ x_3\end{array}\right),
+\]
+where $x_3$ is any real number.
+\end{prompt}
+Is $(1,2,2)$ a solution to this system?
+\begin{multipleChoice}
+  \choice{Yes, $(1,2,2)$ is a solution.}
+  \choice[correct]{No, $(1,2,2)$ is not a solution.}
+\end{multipleChoice}
+If not, is there a solution for which $x_3=2$?
+\begin{multipleChoice}
+  \choice[correct]{Yes, there is a solution for which $x_3 = 2$.}
+  \choice{No, there is no solution for which $x_3 = 2$.}  
+\end{multipleChoice}
+\begin{hint}
+  There is a solution for which $x_3 = 2$, namely $(0,1,2)$.
+\end{hint}
+\end{exercise}
+
+\noindent In Exercises~\ref{c2.3.10a} -- \ref{c2.3.10b} determine the
+augmented matrix and all solutions for each system of linear equations
+\begin{exercise} \label{c2.3.10a}
+$\begin{array}{rcl}
+x-y+z & = & 1 \\
+4x+y+z & = & 5 \\
+   2x+3y-z & = & 2 \end{array}$.
+ %BADBAD
+\end{exercise}
+\begin{exercise} \label{c2.3.10b}
+$\begin{array}{rcl}
+2x-y+z+w & = & 1\\
+   x+2y-z+w & = & 7 \end{array}$.
+  %BADBAD
+\end{exercise}
+
+\noindent In Exercises~\ref{c2.3.11a} -- \ref{c2.3.11d} consider the
+augmented matrices representing systems of linear equations, and decide
+\begin{itemize}
+\item[(a)] if there are zero, one or infinitely many solutions, and
+\item[(b)] if solutions are not unique, how many variables can be
+assigned arbitrary values.
+\end{itemize}
+\begin{exercise} \label{c2.3.11a}
+$\left(\begin{array}{ccc|c} 1 & 0 & 0 &3 \\0 & 2 & 1 & 1\\ 0 & 0 & 0 & 0
+       \end{array}\right)$.
+     \begin{multipleChoice}
+       \choice{There are no solutions.}
+       \choice{There is exactly one solution.}
+       \choice[correct]{There are infinitely many solutions.}
+     \end{multipleChoice}
+     \begin{hint}
+       The row-reduced form of the matrix is:
+\[
+\left(\begin{array}{rrr|r} 1 & 0 & 0 & 3 \\ 0 & 1 &
+\frac{1}{2} & \frac{1}{2} \\ 0 & 0 & 0 & 0\end{array}\right).
+\]
+     \end{hint}
+     \begin{exercise}
+       There is/are $\answer{1}$ variable(s) that may be assigned arbitrary values.
+     \end{exercise}
+\end{exercise}
+\begin{exercise} \label{c2.3.11b}
+$\left(\begin{array}{cccc|c} 1 & 2 & 0 & 0 & 3\\ 0 & 1 & 1 & 0 & 1\\
+         0 & 0 & 0 & 0 & 2 \end{array}\right)$.
+     \begin{multipleChoice}
+       \choice[correct]{There are no solutions.}
+       \choice{There is exactly one solution.}
+       \choice{There are infinitely many solutions.}
+     \end{multipleChoice}
+     \begin{hint}
+       The row-reduced form of the matrix is:
+\[
+\left(\begin{array}{rrrr|r} 1 & 2 & 0 & 0 & 3 \\
+0 & 1 & 1 & 0 & 1 \\ 0 & 0 & 0 & 0 & 1\end{array}\right).
+\]
+     \end{hint}
+\end{exercise}
+\begin{exercise} \label{c2.3.11c}
+$\left(\begin{array}{ccc|c}  1 & 0 & 2 & 1\\ 0 & 5 & 0 & 2 \\ 0 & 0 & 4 & 3
+       \end{array}\right)$.
+     \begin{multipleChoice}
+       \choice{There are no solutions.}
+       \choice[correct]{There is exactly one solution.}
+       \choice{There are infinitely many solutions.}
+     \end{multipleChoice}
+     \begin{hint}
+       The row-reduced form of the matrix is:
+\[
+\left(\begin{array}{rrr|r} 1 & 0 & 2 & 1 \\ 0 & 1 & 0 & \frac{2}{5}
+\\ 0 & 0 & 1 & \frac{3}{4}\end{array}\right).
+\]
+     \end{hint}
+\end{exercise}
+\begin{exercise} \label{c2.3.11d}
+$\left(\begin{array}{cccc|c} 1 & 0 & 2 & 0 & 3 \\ 2 & 3 & 6 & 1 & 16\\
+         0 & 3 & 2 & 1 & 10 \\ 0 & 0 & 0 & 0 & 0  \end{array}\right)$.
+     \begin{hint}
+       The row-reduced form of the matrix is:
+\[
+\left(\begin{array}{rrrr|r} 1 & 0 & 2 & 0 & 3 \\ 0 & 1 & \frac{2}{3}
+& \frac{1}{3} & \frac{10}{3} \\ 0 & 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 & 0
+\end{array}\right).
+\]
+     \end{hint}
+          \begin{multipleChoice}
+       \choice{There are no solutions.}
+       \choice{There is exactly one solution.}
+       \choice[correct]{There are infinitely many solutions.}
+     \end{multipleChoice}
+     \begin{exercise}
+       There is/are $\answer{2}$ variable(s) that may be assigned arbitrary values.
+     \end{exercise}
+\end{exercise}
+
+\noindent A system of $m$ equations in $n$ unknowns is linear if it has
+the form \eqref{general}; any other system of equations is called 
+{\em nonlinear\/}. \index{nonlinear}  In Exercises~\ref{c2.3.12a} -- 
+\ref{c2.3.12e} decide whether each of the given systems of equations 
+is linear or nonlinear.
+\begin{exercise} \label{c2.3.12a}
+\[
+\begin{array}{rcl}
+3x_1 - 2x_2 +14x_3-7x_4 & = & 35\\
+2x_1 + 5x_2 - 3x_3 + 12x_4 & = & -1
+\end{array}
+\]
+\begin{multipleChoice}
+  \choice[correct]{The system is linear.}
+  \choice{The system is not linear.}  
+\end{multipleChoice}
+\end{exercise}
+\begin{exercise} \label{c2.3.12b}
+\[
+\begin{array}{rcl}
+3x_1 + \pi x_2  & = & 0\\
+2x_1 - e x_2    & = & 1
+\end{array}
+\]
+\begin{multipleChoice}
+  \choice[correct]{The system is linear.}
+  \choice{The system is not linear.}  
+\end{multipleChoice}
+\end{exercise}
+\begin{exercise} \label{c2.3.12c}
+\[
+\begin{array}{rcl}
+3x_1x_2 -x_2  & = & 10\\
+2x_1 -   x_2^2    & = & -5
+\end{array}
+\]
+\begin{multipleChoice}
+  \choice{The system is linear.}
+  \choice[correct]{The system is not linear.}  
+\end{multipleChoice}
+\begin{hint}
+  The term $3x_1x_2$ contains two variables, and the term $x_2^2$
+contains a variable squared.  Thus, these terms are not linear.
+\end{hint}
+\end{exercise}
+\begin{exercise} \label{c2.3.12d}
+\[
+\begin{array}{rcl}
+3x_1  -x_2  & = & \cos(12)\\
+2x_1 -   x_2    & = & -5
+\end{array}
+\]
+\begin{multipleChoice}
+  \choice[correct]{The system is linear.}
+  \choice{The system is not linear.}  
+\end{multipleChoice}
+\begin{hint}
+  You may be distracted by $\cos(12)$ but note that $\cos(12)$ is constant.
+\end{hint}
+\end{exercise}
+\begin{exercise} \label{c2.3.12e}
+\[
+\begin{array}{rcl}
+3x_1  - \sin(x_2)  & = & 12\\
+2x_1 -   x_3    & = & -5
+\end{array}
+\]
+\begin{multipleChoice}
+  \choice{The system is linear.}
+  \choice[correct]{The system is not linear.}  
+\end{multipleChoice}
+\begin{hint}
+  The term $\sin(x_2)$ is not linear.
+\end{hint}
+\end{exercise}
+
+\CEXER
+
+
+
+\noindent In Exercises~\ref{c2.3.1a} -- \ref{c2.3.1c} use elementary row
+operations and \Matlab to put each of the given matrices into row echelon
+form.  Suppose that the matrix is the augmented matrix for a system of
+linear equations.  Is the system consistent or inconsistent?
+
+\begin{exercise} \label{c2.3.1a}
+\[
+\left(\begin{array}{rrr}
+ 2 &  1  &  1   \\
+ 4 &  2  &  3
+\end{array}\right).
+\]
+\end{exercise}
+\begin{exercise} \label{c2.3.1b}
+\[
+\left(\begin{array}{rrrr}
+ 3  & -4 & 0 & 2\\
+ 0  &  2 & 3 & 1\\
+ 3  &  1 & 4 & 5
+\end{array}\right).
+\]
+\end{exercise}
+\begin{exercise} \label{c2.3.1c}
+\[
+\left(\begin{array}{rrrr}
+ -2 & 1 &  9 & 1\\
+  3 & 3 & -4 & 2\\
+  1 & 4 &  5 & 5
+\end{array}\right).
+\]
+\end{exercise}
+
+\noindent {\bf Observation:} {\rm In standard format \Matlab displays
+all nonzero real numbers with four decimal places while it displays
+zero as $0$.  An unfortunate consequence of this display is that
+when a matrix has both zero and noninteger entries, the columns
+will not align --- which is a nuisance.  You can work with
+rational numbers rather than decimal numbers by typing {\tt
+format rational}.  Then the columns will align.}
+
+\begin{exercise} \label{c2.3.2}
+Load the following $6\times 8$ matrix $A$ into \Matlab by typing
+{\tt e2\_3\_16}.
+\begin{matlabEquation}\label{MATLAB:13}
+A=\left(\begin{array}{rrrrrrrr}
+0 & 0 &  0 &   1 &   3 &   5 & 0 &  9 \\
+0 & 3 &  6 &  -6 &  -6 & -12 & 0 &  1 \\
+0 & 2 &  4 &  -5 &  -7 &  14 & 0 &  1 \\
+0 & 1 &  2 &   1 &  14 &  21 & 0 & -1 \\
+0 & 0 &  0 &   2 &   4 &   9 & 0 &  7 \\
+0 & 5 & 10 & -11 & -13 &   2 & 0 &  2
+\end{array}\right)
+\end{matlabEquation}
+Use \Matlab to transform this matrix to row echelon form.
+\end{exercise}
+
+\begin{exercise} \label{c2.3.3}
+Use row reduction and back substitution to solve the following
+system of linear equations:
+\[
+\begin{array}{rcrcrcrcr}
+2x_1 & + &  3x_2 &  - &  4x_3 & + &  x_4 &  = & 2 \\
+3x_1 & - &   x_2 &  - &   x_3 & + & 2x_4 &  = & 4 \\
+ x_1 & - &  7x_2 &  + &  5x_3 & - &  x_4 &  = & 6
+\end{array}
+\]
+\end{exercise}
+
+
+\begin{exercise} \label{c2.3.4}
+{\bf Comment:} {\rm To understand the point of this exercise you
+must begin by typing the \Matlab command {\tt format short e}.
+This command will set a format in which you can see the
+difficulties that sometimes arise in numerical computations.}
+
+Consider the following two $3\times 3$-matrices:
+\begin{matlabEquation}\label{MATLAB:14}
+A=\left( \begin{array}{rrr}
+     1  &  3  &  4\\
+     2  &  1  &  1\\
+    -4  &  3  &  5
+\end{array}\right) \AND
+B=\left( \begin{array}{rrr}
+     3  &  1  &  4\\
+     1  &  2  &  1\\
+     3  & -4  &  5
+\end{array}\right).
+\end{matlabEquation}
+Note that matrix $B$ is obtained from matrix $A$ by interchanging the
+first two columns.
+\begin{itemize}
+\item[(a)] Use \Matlab to put $A$ into row echelon form using the
+transformations
+\begin{enumerate}
+\item Subtract $2$ times the $1^{st}$ row from the $2^{nd}$.
+\item Add $4$ times the $1^{st}$ row to the $3^{rd}$.
+\item Divide the $2^{nd}$ row by $-5$.
+\item Subtract $15$ times the $2^{nd}$ row from the $3^{rd}$.
+\end{enumerate}
+\item[(b)] Put $B$ by hand into row echelon form using the
+transformations
+\begin{enumerate}
+\item Divide the $1^{st}$ row by $3$.
+\item Subtract the $1^{st}$ row from the $2^{nd}$.
+\item Subtract $3$ times the $1^{st}$ row from the $3^{rd}$.
+\item Multiply the $2^{nd}$ row by $3/5$.
+\item Add $5$ times the $2^{nd}$ row to the $3^{rd}$.
+\end{enumerate}
+\item[(c)] Use \Matlab to put $B$ into row echelon form using the
+same transformations as in part (b).
+\item[(d)] Discuss the outcome of the three transformations.  Is
+there a difference in the results?  Would you expect to see a
+difference?  Could the difference be crucial when solving a system
+of linear equations?
+\end{itemize}
+\end{exercise}
+
+\begin{exercise} \label{c2.3.5}
+Find a cubic polynomial
+\[
+p(x) = ax^3 + bx^2 + cx + d
+\]
+so that $p(1)=2$, $p(2)=3$, $p'(-1)=-1$, and $p'(3)=1$.
+\end{exercise}
+
+
+
+\end{document}

@@ -1,0 +1,493 @@
+\documentclass{ximera}
+
+\input{../preamble.tex}
+
+\title{Higher Order Equations}
+
+\begin{document}
+\begin{abstract}
+\end{abstract}
+\maketitle
+
+
+\label{sec:HighOrder}
+
+The {\em order\/} of an ordinary differential equation is the highest 
+order of differentiation that appears in the equation.  For instance, 
+the differential equation  \index{order}
+\[
+\frac{d^3x}{dt^3} + 2\frac{dx}{dt}+ 5tx = \sin t
+\]
+has order three. 
+
+In this section we begin the study of solutions to differential equations 
+of the form
+\begin{equation}  \label{eq:nconst}
+a_n\frac{d^nx}{dt^n} + \cdots + a_1\frac{dx}{dt}+a_0x = g(t),
+\end{equation}
+where $a_j\in\R$ are constants with $a_n\neq 0$ and $g(t)$ is a 
+continuous function. These equations are $n^{th}$ order and linear. 
+The constants $a_j$ are called the 
+{\em coefficients\/}\index{coefficients of a differential equation} of the 
+differential equation \eqref{eq:nconst}.  After dividing \eqref{eq:nconst} by 
+$a_n$, we may assume that $a_n=1$.  
+
+In analogy to systems of linear equations, we call \eqref{eq:nconst} 
+{\em homogeneous\/} if $g(t)=0$ for all $t$.  Otherwise the equation is 
+{\em inhomogeneous}.   In particular, the principle of superposition is 
+valid for the homogeneous equations.  \index{homogeneous}  
+\index{inhomogeneous}
+
+\subsection*{Reduction of Equations to First Order Systems}
+
+In principle, we can find solutions to \eqref{eq:nconst} by finding 
+solutions of a corresponding 
+linear system of first order 
+ODEs\index{system of differential equations!linear} with 
+constant coefficients.  We have previously discussed this reduction in
+the special case of second order equations to planar systems in 
+Section~\ref{S:SOE}.  Let
+\begin{equation}   \label{eq:trick}
+y_1(t)=x(t),\quad y_2(t)=\frac{dx}{dt}(t),\quad
+\ldots, \quad  y_n(t)=\frac{d^{n-1}x}{dt^{n-1}}(t).
+\end{equation}
+With these functions, \eqref{eq:nconst} (with $a_n=1$) can be rewritten as
+\[
+\frac{dy_n}{dt} + a_{n-1} y_n + \cdots + a_1 y_2 + a_0 y_1 = g(t).
+\]
+Hence, \eqref{eq:nconst} is equivalent to
+\arraystart
+\[
+\begin{array}{rcl}
+\dps \frac{dy_j}{dt}&=&y_{j+1} \hspace{1.6in} (j=1,\ldots,n-1)\\
+\dps \frac{dy_n}{dt}&=& g(t) - a_0y_1 - \cdots - a_{n-1} y_n,
+\end{array}
+\]
+\arrayfinish
+which is a linear constant coefficient system of ODEs.  More explicitly,
+define the $n\times n$ coefficient matrix $Q$ by 
+\begin{equation}   \label{eq:coefma}
+Q = \left(\begin{array}{ccccc}
+0 & 1 & 0 & \cdots & 0\\
+0 & 0 & 1 & \cdots & 0\\
+\vdots & \vdots & \vdots & & \vdots\\
+0 & 0 & 0 & \cdots & 1\\
+-a_0 & -a_1 &  -a_2 & \cdots & -a_{n-1}
+\end{array}\right),
+\end{equation}
+and introduce the vectors 
+\[
+Y(t) = (y_1(t),\ldots,y_n(t))^t  \AND
+G(t) = (0,\ldots,0,g(t))^t.  
+\]
+Then we arrive at the system of ODEs
+\begin{equation}  \label{eq:highrw}
+\frac{dY}{dt} = QY+G(t).
+\end{equation}
+Let us summarize.
+\begin{proposition}   \label{prop:ho1}
+The function $x(t)$ is a solution to the order $n$ ODE \eqref{eq:nconst}  
+if and only if the vector of functions $Y(t)=(y_1(t),\ldots,y_n(t))^t$ is 
+a solution of the first order system \eqref{eq:highrw}, where 
+\[
+y_1(t) = x(t) \AND y_{j+1}(t)=\dps \frac{d^jx}{dt^j}(t) 
+\]
+for $j=1,2,\ldots,n-1$.
+\end{proposition}\index{order}
+
+\subsection*{The Homogeneous Equation}
+\index{homogeneous}
+
+Now consider specifically the case when \eqref{eq:nconst} is homogeneous.  
+As before, we assume that $a_n=1$, and solve
+\begin{equation}  \label{eq:nconsthom}
+\frac{d^nx}{dt^n} + a_{n-1}\frac{d^{n-1}x}{dt^{n-1}} +
+\cdots + a_1\frac{dx}{dt}+a_0x = 0.
+\end{equation}
+Proposition~\ref{prop:ho1} implies that each solution
+of \eqref{eq:nconsthom} is the first component in a solution
+to the $n\times n$ system 
+\begin{equation}  \label{eq:highrwh}
+\frac{dY}{dt} = QY,
+\end{equation}
+where $Q$ is the matrix defined in \eqref{eq:coefma}.  From the discussion 
+in Section~\ref{sec:LinHomSys}, it follows that we can find all solutions 
+to \eqref{eq:nconsthom} if we know the eigenvalues and the 
+Jordan block\index{Jordan block} 
+structure of $Q$.  In particular, the first component of solutions to 
+\eqref{eq:highrwh} is always just a linear combination of the 
+functions\index{linear!combination!of functions} 
+$t^je^{\lambda t}$ where $\lambda$ is an eigenvalue of $Q$.  In the 
+abstract, the only question that remains is which powers $t^j$ can 
+actually occur.  Certainly, $j$ must be less than the multiplicity of the 
+eigenvalue $\lambda$.  It also follows from Proposition~\ref{prop:ho1}
+that there are precisely $n$ linearly independent functions that are 
+solutions to \eqref{eq:nconsthom}.
+
+We can use this abstract information to find a shortcut for solving 
+\eqref{eq:nconsthom}.  Suppose that $x(t)=e^{\lambda t}$.  Then we can 
+compute the left hand side of \eqref{eq:nconsthom} with this $x(t)$ 
+obtaining:
+\begin{equation}  \label{e:elam}
+e^{\lambda t}\left(\lambda^n + a_{n-1}\lambda^{n-1}+\cdots+a_1\lambda
++a_0\right).
+\end{equation}
+Thus, $x(t)$ is a solution to \eqref{eq:nconsthom} precisely when $\lambda$
+is a root of 
+\begin{equation} \label{E:charpoly}
+p(\lambda) = \lambda^n + a_{n-1}\lambda^{n-1}+\cdots+a_1\lambda +a_0.
+\end{equation}
+We call $p(\lambda)$ the {\em characteristic polynomial\/}
+\index{characteristic polynomial!of higher order ODE} of the $n^{th}$ 
+order equation \eqref{eq:nconsthom}.  The roots of the characteristic polynomial
+are called {\em eigenvalues\/}.  \index{eigenvalue!of higher order ODE} 
+This terminology is explained in Section~\ref{S:LDO}.
+ 
+It follows immediately that there is one solution associated to 
+each eigenvalue of the characteristic polynomial $p(\lambda)$ in 
+\eqref{E:charpoly}.  If the eigenvalues $\lambda=\sigma\pm i\tau$ are complex, 
+then there are two solutions to \eqref{eq:nconsthom}, namely,
+$e^{\sigma t}\cos(\tau t)$ and $e^{\sigma t}\sin(\tau t)$.
+\begin{theorem} \label{T:hoe}
+Let $\lambda_1,\ldots,\lambda_k$ be the distinct eigenvalues of the 
+characteristic 
+polynomial\index{characteristic polynomial!of higher order ODE} 
+$p(\lambda)$ of \eqref{E:charpoly} with multiplicities 
+$m_1,\ldots,m_k$.  Then 
+\[
+\{t^je^{\lambda_\ell}: 1\leq\ell\leq k, 0\leq j<m_\ell\}
+\]
+is a basis of solutions\index{basis!of solutions} to \eqref{eq:nconsthom}.
+\end{theorem} 
+
+\begin{proof}  The previous calculations show that if $\lambda$ is an eigenvalue 
+of $p(\lambda)$, then $e^{\lambda t}$ is a solution to \eqref{eq:nconsthom}.  
+The difficulty in proving this theorem is in showing that $t^je^{\lambda t}$ 
+is also a solution to \eqref{eq:nconsthom} for any $j<m$, where $m$ is the 
+multiplicity of the eigenvalue $\lambda$.  We prove this theorem in two steps.
+First, we show in Lemma~\ref{lem:ho1} that the eigenvalues of $p$ are just the 
+eigenvalues of the characteristic polynomial of the coefficient matrix $Q$ in 
+\eqref{eq:coefma}.  Second, we show in Lemma~\ref{lem:ho2} that every eigenvalue 
+of $Q$ is associated to precisely one Jordan block and that
+every eigenvector of $Q$ has a nonvanishing first component. 
+Then the result follows from Theorem~\ref{T:JBsoln}.  \end{proof}
+
+\begin{lemma}  \label{lem:ho1}
+The characteristic polynomial\index{characteristic polynomial} of 
+the matrix $Q$ in \eqref{eq:coefma} is 
+\[
+p_Q(\lambda) = (-1)^np(\lambda).
+\]
+\end{lemma}
+
+\begin{proof} We prove the lemma by induction.
+For $n=1$ the matrix $Q$ is just $(-a_0)$.  Hence
+\[
+p_Q(\lambda)=\det(Q-\lambda I_1) = -a_0-\lambda = -(\lambda+a_0)
+\]
+as desired.
+
+Now suppose that the result is valid for all matrices of order $n-1$.  
+Then we may expand the determinant\index{determinant} by cofactors
+\index{cofactor} along the $1^{st}$ column (see \eqref{e:inductdetc} in 
+Chapter~\ref{C:D&E}) and obtain 
+{\small 
+\[
+p_Q(\lambda)  =  -\lambda \det\left(\begin{array}{cccc}
+-\lambda & 1 &  \cdots & 0\\
+0 & -\lambda &  \cdots & 0\\
+\vdots & \vdots & & \vdots\\
+0 & 0 & \cdots & 1\\
+-a_1 & -a_2 & \cdots & -\lambda-a_{n-1}
+\end{array}\right)
++(-1)^na_0\det\left(\begin{array}{ccccc}
+1 & 0  & \cdots & 0 & 0\\
+-\lambda &   1  & \cdots & 0 & 0\\
+\vdots & \vdots & & \vdots & \vdots \\
+0 & 0 & \cdots &  1  & 0\\
+0 & 0 & \cdots & -\lambda & 1\\
+\end{array}\right).
+\]
+}
+By induction, the first determinant is 
+\[
+(-1)^{n-1}(\lambda^{n-1}+a_{n-1}\lambda^{n-2}+
+\cdots+a_2\lambda+a_1),
+\]
+and by direct calculation the second determinant is $1$.  Therefore,
+\begin{eqnarray*}
+p_Q(\lambda) & = &
+-\lambda (-1)^{n-1}(\lambda^{n-1}+a_{n-1}\lambda^{n-2}+
+\cdots+a_2\lambda+a_1) +(-1)^n a_0 \\
+& = & (-1)^n(\lambda^n+a_{n-1}\lambda^{n-1}+\cdots+a_1\lambda+a_0).
+\end{eqnarray*}
+This proves the lemma.   \end{proof}
+
+\begin{lemma}   \label{lem:ho2}
+Let $\lambda$ be an eigenvalue of $Q$.  Then, up to scaling, there is a 
+unique eigenvector $v$ corresponding to the eigenvalue $\lambda$ given by
+\[
+v = \left(\begin{array}{c}
+1\\
+\lambda\\
+\lambda^2\\
+\vdots\\
+\lambda^{n-1}
+\end{array}\right).
+\]
+In particular, the geometric 
+multiplicity\index{multiplicity!geometric} of each eigenvalue of $Q$ is 
+one, and there is exactly one Jordan block\index{Jordan block} 
+of $Q$ associated to the eigenvalue $\lambda$.
+\end{lemma}
+
+\begin{proof} Let $\lambda$ be an eigenvalue of $Q$ and let 
+$v=(v_1,\ldots,v_n)^t$ be a
+corresponding eigenvector.  Writing $Qv = \lambda v$
+in coordinates we obtain
+\[
+\left(\begin{array}{c}
+v_2\\
+v_3\\
+\vdots\\
+v_n\\
+-\sum_{j=0}^{n-1} a_j v_{j+1}
+\end{array}\right)=
+\left(\begin{array}{c}
+\lambda v_1\\
+\lambda v_2\\
+\vdots\\
+\lambda v_{n-1}\\
+\lambda v_n
+\end{array}\right).
+\]
+Note that if $v_1=0$ then $v_2=v_3=\cdots =v_n=0$, which 
+contradicts the fact that $v$ is an eigenvector.  Hence $v_1\neq 0$ 
+and we may rescale $v$ so that $v_1=1$.  It follows that 
+\[
+\begin{array}{rclrl}
+v_2 & = & \lambda v_1 & = & \lambda \\
+v_3 & = & \lambda v_2 & = & \lambda^2 \\
+& & \vdots & & \\ 
+v_n & = & \lambda v_{n-1} & = & \lambda^{n-1}.
+\end{array}
+\]
+as desired.  \end{proof}
+
+We restate the results in Theorem~\ref{T:hoe} in real form.
+\begin{theorem}   \label{thm:HOgen}
+Let $\lambda$ be an eigenvalue of \eqref{E:charpoly} with multiplicity $m$.
+\begin{itemize}
+\item[(a)] If $\lambda$ is real\index{eigenvalue!real}, then 
+$t^je^{\lambda t}$ is a solution 
+of \eqref{eq:nconsthom} for $0\leq j < m$.  
+\item[(b)] If $\lambda=\sigma+i\tau$ is complex\index{eigenvalue!complex}, 
+then $t^je^{\sigma t}\cos(\tau t)$ and $t^je^{\sigma t}\sin(\tau t)$ are 
+solutions of \eqref{eq:nconsthom} for $0\leq j < m$.
+\item[(c)] Every solution of \eqref{eq:nconsthom} is a linear combination of
+the functions\index{linear!combination!of functions} constructed 
+in (a) and (b).
+\end{itemize}
+\end{theorem}
+
+\subsubsection*{Examples of Fourth Order}
+
+Consider the linear homogeneous ordinary differential equation
+\begin{equation}  \label{eq:soex3}
+\frac{d^4x}{dt^4} + 2\frac{d^2x}{dt^2} + x= 0.
+\end{equation}
+This type of equation arises if one considers small deformations of
+an elastic beam under pressure where the pressure is acting at both
+ends of the beam in the direction of the beam.  In this case $x(t)$
+represents the resulting deformation of the beam at the spatial point $t$.
+
+First, we find all eigenvalues of the characteristic polynomial by solving
+\[
+\lambda^4 + 2\lambda^2 + 1 = (\lambda^2+1)^2 = 0.
+\]
+This fourth order polynomial has two roots namely $\pm i$, each of
+algebraic multiplicity two.  By Theorem~\ref{thm:HOgen}, the general solution 
+of \eqref{eq:soex3} has the form
+\[
+x(t) = c_1 \cos(t)+ c_2 \sin(t) +c_3 t\cos(t)+ c_4 t\sin(t).
+\]
+For instance, if we consider a beam which is hinged at both of its ends ---
+say at $t=0$ and $t=\pi$ --- then the corresponding solution has to satisfy
+\[
+x(0)=x(\pi)=0 \AND \frac{d^2x}{dt^2}(0)=\frac{d^2x}{dt^2}(\pi)=0.
+\]
+These conditions on the solution $x(t)$ lead to a homogeneous system of four
+linear equations in the four unknowns $c_1,c_2,c_3,c_4$.  This system can
+easily be solved by hand, and it follows that $c_1$, $c_3$ and $c_4$ have
+to vanish, whereas $c_2$ is arbitrary.  Thus, under these conditions a
+small deformation of the beam is given by $x(t)=c_2 \sin(t)$.
+
+In general, however, we can not expect to find the roots of a fourth order
+characteristic polynomial by inspection.  For example, suppose we add a first
+order term to \eqref{eq:soex3} obtaining the differential equation
+\begin{equation}  \label{eq:soex3a}
+\frac{d^4x}{dt^4} + 2\frac{d^2x}{dt^2} - \frac{dx}{dt} + x= 0.
+\end{equation}
+The characteristic polynomial of \eqref{eq:soex3a} is
+\[
+p(\lambda) = \lambda^4 + 2\lambda^2 - \lambda + 1 .
+\]
+We can use \Matlab to find the roots of $p(\lambda)$, as follows. 
+Polynomials are entered into \Matlab by entering the coefficients in an array
+from highest order to lowest.  So we enter $p(\lambda)$ into \Matlab by
+typing
+\begin{verbatim}
+p = [1 0 2 -1 1];
+\end{verbatim}
+To find the roots of $p(\lambda)$ just type the command {\tt roots(p)}.
+\Matlab responds with 
+\begin{verbatim}
+ans =
+  -0.3438 + 1.3584i
+  -0.3438 - 1.3584i
+   0.3438 + 0.6254i
+   0.3438 - 0.6254i
+\end{verbatim}
+By Theorem~\ref{thm:HOgen}, the general solution of \eqref{eq:soex3a} has the 
+form
+\[
+\begin{array}{rcl}
+x(t) & = & (c_1 \cos(1.3584t)+ c_2 \sin(1.3584t))e^{-0.3438t} \\
+ & & + (c_3 \cos(0.6254t)+ c_4 \sin(0.6254t))e^{0.3438t}.\end{array}
+\]
+Note that the typical solution to the fourth order differential equation 
+\eqref{eq:soex3a} contains sine and cosine terms with two different 
+frequencies.  This is not surprising since the characteristic polynomial 
+has two distinct complex conjugate pairs of roots.  See Section~\ref{S:NLD}.
+
+
+\subsubsection*{The Initial Value Problem for Higher Order Equations}
+\index{initial value problem!for higher order ODEs}
+
+For motivation, recall the introductory mechanical examples.  The motion 
+of mass points are described by second order ODEs.  To determine a 
+{\em specific\/} motion we need to specify the position of the point 
+together with its velocity at a certain time $t_0$.  In other words, to 
+obtain existence and uniqueness of solutions to second order equations, 
+\index{existence of solutions}\index{uniqueness of solutions}
+both
+\[
+x(t_0)\AND \frac{dx}{dt}(t_0)
+\]
+have to be specified.  
+
+\arraystart
+\begin{theorem}
+The initial value problem
+\begin{equation}
+\begin{array}{c}
+\dps \frac{d^nx}{dt^n} + a_{n-1}\frac{d^{n-1}x}{dt^{n-1}} +
+\cdots + a_1\frac{dx}{dt}+a_0x = 0\\
+\dps \frac{d^{n-1}x}{dt^{n-1}}(t_0)=x_{n-1},\ldots,\frac{dx}{dt}(t_0)=x_1,\quad
+x(t_0)=x_0.
+\end{array}
+\end{equation}
+has a unique solution $x(t)$.
+\end{theorem}
+\arrayfinish
+
+\begin{proof} The result is an immediate consequence of Proposition~\ref{prop:ho1},
+since the corresponding solution of the system of linear differential
+equations exists and is unique (see Theorem~\ref{T:linODEsoln} in 
+Chapter~\ref{Chap:Planar}).
+\end{proof}
+
+\subsection*{Inhomogeneous Higher Order Equations}
+\index{inhomogeneous}
+
+Linearity implies that to find the 
+general solution\index{general solution} the inhomogeneous
+equation \eqref{eq:nconst} we need to find one solution to that equation 
+and all solutions to the corresponding homogeneous equation 
+\eqref{eq:nconsthom}.  Sections~\ref{sec:2norderinhom} and \ref{S:resonance} 
+are devoted to finding specific solutions to inhomogeneous equations of 
+various types using the method of undetermined coefficients.  Our study of
+inhomogeneous equations will continue in Chapter~\ref{C:LT} where we use 
+Laplace transforms to study discontinuous forcing and in Section~\ref{S:RO}  
+where we discuss the method of reduction of order.
+
+
+
+\EXER
+
+\TEXER
+
+
+\noindent In Exercises~\ref{c12.2.a} -- \ref{c12.2.d} rewrite the given
+higher order equation as a first order system.
+\begin{exercise} \label{c12.2.a}
+$\ddot{x}+5\dot{x}+x = 0$
+\end{exercise}
+\begin{exercise} \label{c12.2.b}
+$\ddot{x}-10x = 0$
+\end{exercise}
+\begin{exercise} \label{c12.2.c}
+$\frac{d^3x}{dt^3}-4\frac{d^2x}{dt^2}-10x = 0$
+\end{exercise}
+\begin{exercise} \label{c12.2.d}
+$\frac{d^4x}{dt^4}+2\frac{d^2x}{dt^2}-3\frac{dx}{dt}-2x = 0$
+\end{exercise}
+
+\noindent In Exercises~\ref{c12.2.1} -- \ref{c12.2.5} find the general 
+solution to the given homogeneous linear differential equation.
+\begin{exercise} \label{c12.2.1}
+$\ddot{x}-3\dot{x}-4x = 0$
+\end{exercise}
+\begin{exercise} \label{c12.2.2}
+$\ddot{x}+2\dot{x}+2x = 0$
+\end{exercise}
+\begin{exercise} \label{c12.2.3}
+$\ddot{x}-6\dot{x}+9x = 0$
+\end{exercise}
+\begin{exercise} \label{c12.2.4}
+$\frac{d^3x}{dt^3} -3\frac{d^2x}{dt^2}+3\frac{dx}{dt}-x=0$
+\end{exercise}
+\begin{exercise} \label{c12.2.5}
+$\frac{d^3x}{dt^3}+4\frac{dx}{dt} = 0$
+\end{exercise}
+
+\begin{exercise} \label{c12.2.a6}
+Find a solution to the differential equation 
+\[
+\ddot{x} -3\dot{x} + 2x = 0
+\]
+satisfying $x(0)=0$ and $x(\ln 2) = 4$.
+\end{exercise}
+
+
+
+
+\CEXER
+
+\noindent In Exercises~\ref{c12.2.6} -- \ref{c12.2.11}, use \Matlab to find 
+the roots of the characteristic polynomial for the given homogeneous linear 
+differential equation, and then find the general solution to that equation.
+\begin{exercise} \label{c12.2.6}
+$\frac{d^3x}{dt^3} -6\frac{d^2x}{dt^2}+11\frac{dx}{dt}-6x=0$
+\end{exercise}
+\begin{exercise} \label{c12.2.7}
+$\frac{d^3x}{dt^3} + \frac{d^2x}{dt^2}+ 10x=0$
+\end{exercise}
+\begin{exercise} \label{c12.2.8}
+$\frac{d^3x}{dt^3} +\frac{d^2x}{dt^2}-4\frac{dx}{dt}-4x=0$
+\end{exercise}
+\begin{exercise} \label{c12.2.9}
+$\frac{d^4x}{dt^4}-2\frac{d^3x}{dt^3}+\frac{d^2x}{dt^2}+8\frac{dx}{dt}-20x=0$
+\end{exercise}
+\begin{exercise} \label{c12.2.10}
+$\frac{d^4x}{dt^4}-3\frac{d^2x}{dt^2}-4x=0$
+\end{exercise}
+\begin{exercise} \label{c12.2.11}
+$\frac{d^4x}{dt^4}-4\frac{d^3x}{dt^3}+14\frac{d^2x}{dt^2}-4\frac{dx}{dt}+13x=0$
+\end{exercise}
+
+
+
+
+
+\end{document}

@@ -1,0 +1,486 @@
+\documentclass{ximera}
+
+\input{../preamble.tex}
+
+\title{Solutions Using Matrix Exponentials}
+
+\begin{document}
+\begin{abstract}
+\end{abstract}
+\maketitle
+
+
+\label{S:Matrixexp} \index{matrix!exponential}
+
+In Section~\ref{S:growthmodels} we showed that the solution of the single
+ordinary differential equation $\dot x(t) = \lambda x(t)$ with initial
+condition $x(0)=x_0$ is $x(t) = e^{t\lambda}x_0$ (see \eqref{lin1} in
+Chapter~\ref{chap:SolveOdes}).  In this section we show that we
+may write solutions of systems of equations in a similar form.
+In particular, we show that the solution to the linear system of ODEs
+\begin{equation}   \label{eq:x=Mx}
+\frac{dX}{dt} = CX
+\end{equation}
+with initial condition
+\[
+X(0) = X_0,
+\]
+where $C$ is an $n\times n$ matrix and $X_0\in\R^n$, is
+\begin{equation}  \label{matrixsoln}
+X(t) = e^{tC}X_0.
+\end{equation}
+
+In order to make sense of the solution \eqref{matrixsoln} we need
+to understand matrix exponentials. More precisely, since $tC$ is
+an $n\times n$ matrix for each $t\in\R$, we need to make sense
+of the expression $e^L$ where $L$ is an $n\times n$ matrix.  For
+this we recall the form of the exponential function as a power
+series:
+\[
+     e^t = 1 + t + \frac{1}{2!} t^2 + \frac{1}{3!} t^3
+     + \frac{1}{4!} t^4 + \cdots .
+\]
+In more compact notation we have
+\[
+     e^t = \sum\limits_{k=0}^\infty \frac{1}{k!} t^k.
+\]
+By analogy, define the {\em matrix exponential\/}\index{matrix!exponential}
+$e^L$ by
+\begin{eqnarray}
+e^{L} & = & I_n + L + \frac{1}{2!} L^2 + \frac{1}{3!} L^3 +\cdots
+\label{e:expL}\\
+      & = & \sum\limits_{k=0}^\infty\frac{1}{k!} L^k. \nonumber
+\end{eqnarray}
+In this formula $L^2 = LL$ is the matrix product of $L$ with itself, and the
+power $L^k$ is defined inductively by $L^k = LL^{k-1}$ for $k>1$.  Hence
+$e^L$ is an $n\times n$ matrix and is the infinite sum of $n\times n$
+matrices.
+
+\noindent {\bf Remark:}   The infinite series for matrix exponentials
+\eqref{e:expL} converges for all $n\times n$ matrices $L$.  This fact
+is proved in Exercises~\ref{c6.2.7} and \ref{c6.2.8}.
+
+Using \eqref{e:expL}, we can write the matrix exponential of $tC$
+for each real number $t$.  Since $(tC)^k = t^k C^k$ we obtain
+\arraystart
+\begin{equation}  \label{eq:MatrixExp}
+\begin{array}{rcl}
+\dps e^{tC} & = & \dps I_n + tC + \frac{1}{2!} (tC)^2 + \frac{1}{3!} (tC)^3
++\cdots\\
+\dps & = & \dps I_n + tC + \frac{t^2}{2!} C^2 + \frac{t^3}{3!} C^3 +\cdots.
+\end{array}
+\end{equation}
+\arrayfinish
+Next we claim that
+\begin{equation}  \label {e:diffmatexp}
+  \frac{d}{dt} e^{tC} = Ce^{tC}.
+\end{equation}
+We verify the claim by supposing that we can differentiate
+\eqref{eq:MatrixExp} term by term with respect to $t$. Then
+\begin{align*}
+  \dps\frac{d}{dt} e^{tC} & = \frac{d}{dt}(I_n) + \frac{d}{dt}(tC)
+  + \frac{d}{dt}\left(\frac{t^2}{2!} C^2\right) + 
+                            \frac{d}{dt}\left(\frac{t^3}{3!} C^3\right) + \\
+                          &\quad
+  \frac{d}{dt}\left(\frac{t^4}{4!}C^4\right) + \cdots\\
+     & = 0 + C + t C^2 + \frac{t^2}{2!} C^3 +
+\frac{t^3}{3!} C^4 + \cdots\\
+     & = C\left(I_n + tC + \frac{t^2}{2!} C^2 + \frac{t^3}{3!} C^3
++\cdots\right)\\
+     & = Ce^{tC}.
+\end{align*}
+It follows that the function $X(t) = e^{tC}X_0$ is a solution of
+\eqref{eq:x=Mx} for each $X_0\in\R^n$; that is,
+\[
+     \frac{d}{dt} X(t) =  \frac{d}{dt}  e^{tC}X_0
+     = C e^{tC}X_0 = C X(t).
+\]
+Since \eqref{e:expL} implies that $e^{0C} = e^0 = I_n$, it follows
+that $X(t) = e^{tC}X_0$ is a solution of \eqref{eq:x=Mx} with
+initial condition $X(0)=X_0$.  This discussion shows that solving
+\eqref{eq:x=Mx} in closed form is equivalent to finding a closed
+form expression for the matrix exponential $e^{tC}$.
+
+\begin{theorem}  \label{T:linODEsoln}
+The unique solution\index{uniqueness of solutions} to the
+initial value problem\index{initial value problem}
+\arraystart
+\[
+\begin{array}{rcl}
+\dps\frac{dX}{dt} & = & CX \\
+X(0) & = & X_0
+\end{array}
+\]
+\arrayfinish
+is
+\[
+X(t)=e^{tC}X_0.
+\]
+\end{theorem}
+
+\begin{proof}  Existence follows from the previous discussion.
+For uniqueness, suppose that $Y(t)$ is a solution to $\dot{Y}=CY$
+with $Y(0)=X_0$.  We claim that $Y(t)=X(t)$.  Let $Z(t) = e^{-tC}Y(t)$ 
+and use the product rule to compute 
+\[
+\dps\frac{dZ}{dt} = -C e^{-tC}Y(t) + e^{-tC}\frac{dY}{dt}(t) = e^{-tC}(-CY(t) + C Y(t)) = 0
+\]  
+It follows that $Z$ is constant in $t$ and $Z(t) = Z(0) = Y(0) = X_0$ or 
+$Y(t) = e^{tC}X_0 = X(t)$, as claimed.
+\end{proof}
+
+\subsubsection*{Similarity and Matrix Exponentials}
+
+We introduce similarity at this juncture for the following reason:
+if $C$ is a matrix that is similar to $B$, then $e^C$ can be computed
+from $e^B$.  More precisely:
+
+\begin{lemma} \label{L:similarexp}
+Let $C$ and $B$ be $n\times n$ similar matrices, and let $P$ be
+an invertible $n\times n$ matrix such that
+\[
+C=P\inv BP.
+\]
+Then
+\begin{equation}  \label{e:similarexp}
+e^C = P\inv e^BP.
+\end{equation}
+\end{lemma} \index{similar} \index{invertible}
+
+\begin{proof} Note that for all powers of $k$ we have
+\[
+(P\inv BP)^k = P\inv B^kP.
+\]
+Next verify \eqref{e:similarexp} by computing
+\begin{align*}
+e^C &=\sum^{\infty}_{k=0} \frac{1}{k!}C^k
+ =  \sum^{\infty}_{k=0} \frac{1}{k!}(P\inv BP)^k \\
+&=  \sum^{\infty}_{k=0} \frac{1}{k!}P\inv B^kP
+= P\inv\left(\sum^{\infty}_{k=0} \frac{1}{k!}B^k\right)P
+= P\inv e^B P.
+\end{align*}
+\end{proof}
+
+
+
+\subsection*{Explicit Computation of Matrix Exponentials}
+\index{matrix!exponential!computation}
+
+We begin with the simplest computation of a matrix exponential.
+
+\noindent (a) \quad Let $L$ be a multiple of the identity; that
+is, let $L = \alpha I_n$ where $\alpha$ is a real number.  Then
+\begin{equation} \label{ex:expm}
+e^{\alpha I_n} = e^{\alpha} I_n.
+\end{equation}
+That is, $e^{\alpha I_n}$ is a scalar multiple of the
+identity.  To verify \eqref{ex:expm}, compute
+\begin{align*}
+e^{\alpha I_n} &= I_n + \alpha I_n + \frac{\alpha^2}{2!} I_n^2 +
+                 \frac{\alpha^3}{3!} I_n^3 +\cdots \\
+  &= (1+\alpha+\frac{\alpha^2}{2!}
++\frac{\alpha^3}{3!}+\cdots)I_n = e^{\alpha} I_n.
+\end{align*}
+
+\noindent (b) \quad Let $C$ be a $2\times 2$ diagonal matrix,
+     \[
+          C = \mattwo{\lambda_1}{0}{0}{\lambda_2},
+     \]
+where $\lambda_1$ and $\lambda_2$ are real constants.  Then
+\begin{equation}  \label{e:expdiag}
+e^{tC} = \mattwo{e^{\lambda_1 t}}{0}{0}{e^{\lambda_2 t}}.
+\end{equation}
+To verify \eqref{e:expdiag} compute
+\begin{eqnarray*}
+   e^{tC} & = & I_2 + tC + \frac{t^2}{2!} C^2 +  \frac{t^3}{3!} C^3 +\cdots\\
+        & = & \mattwo{1}{0}{0}{1} + \mattwo{\lambda_1 t}{0}{0}{\lambda_2 t} +
+\mattwo{\frac{t^2}{2!}\lambda_1^2}{0}{0}{\frac{t^2}{2!}\lambda_2^2} +\cdots\\
+        & = & \mattwo{e^{\lambda_1 t}}{0}{0}{e^{\lambda_2 t}}.
+\end{eqnarray*}
+
+\noindent (c) \quad Suppose that
+     \[
+                C = \mattwo{0}{-1}{1}{0}.
+      \]
+Then
+\begin{equation} \label{e:exprotate}
+e^{tC} = \mattwo{\cos t}{-\sin t}{\sin t}{\cos t}.
+\end{equation}
+We begin this computation by observing that
+\[
+C^2 = -I_2, \quad C^3 = -C, \AND C^4 = I_n.
+\]
+Therefore, by collecting terms of odd and even power in the series
+expansion for the matrix exponential we obtain
+\begin{align*}
+e^{tC} & =  I_2 + tC + \frac{t^2}{2!} C^2 +  \frac{t^3}{3!}C^3 +\cdots\\
+     & =  I_2 + tC - \frac{t^2}{2!}I_2 - \frac{t^3}{3!}C +\cdots\\
+     & =  \left(1 - \frac{t^2}{2!} + \frac{t^4}{4!} - \frac{t^6}{6!} +
+		\cdots \right)I_2 + \\
+	 &\quad \left(t - \frac{t^3}{3!} + \frac{t^5}{5!} - \frac{t^7}{7!} +
+	\cdots \right)C \\
+     & =  (\cos t)I_2 + (\sin t)C \\
+     & =  \mattwo{\cos t}{-\sin t}{\sin t}{\cos t}.
+     \end{align*}
+In this computation we have used the fact that the trigonometric
+functions $\cos t$ and $\sin t$ have the power series expansions:
+\begin{eqnarray*}
+\cos t & = & 1-\frac{1}{2!}t^2+\frac{1}{4!} t^4 + \cdots =
+\sum\limits_{k=0}^\infty\frac{(-1)^k}{(2k)!} t^{2k},\\
+\sin t & = & t-\frac{1}{3!} t^3 + \frac{1}{5!} t^5 + \cdots
+   = \sum\limits_{k=0}^\infty \frac{(-1)^k}{(2k+1)!} t^{2k+1}.
+\end{eqnarray*}
+See Exercise~\ref{c6.2.5C} for an alternative proof of \eqref{e:exprotate}.
+
+To compute the matrix exponential
+\Matlab\index{matrix!exponential!in \protect\Matlab} provides the command
+{\tt expm}\index{\computer!expm}.  We use this command to compute
+the matrix exponential $e^{tC}$ for
+\[
+C=\mattwo{0}{-1}{1}{0} \AND t=\frac{\pi}{4}.
+\]
+Type
+\begin{verbatim}
+C = [0, -1; 1, 0];
+t = pi/4;
+expm(t*C)
+\end{verbatim}
+that gives the answer
+\begin{verbatim}
+ans =
+    0.7071   -0.7071
+    0.7071    0.7071
+\end{verbatim}
+Indeed, this is precisely what we expect by \eqref{e:exprotate},
+since
+\[
+\cos\left(\frac{\pi}{4}\right)=\sin\left(\frac{\pi}{4}\right)=
+\frac{1}{\sqrt{2}}\approx 0.70710678.
+\]
+
+\noindent (d) \quad Let
+\[
+C = \mattwo{0}{1}{0}{0}.
+\]
+Then
+\begin{equation}  \label{e:nilpotent}
+e^{tC} = I_2 + tC = \mattwo{1}{t}{0}{1},
+\end{equation}
+since $C^2=0$.
+
+\EXER
+
+\CEXER
+
+\begin{exercise} \label{c6.2.1}
+Let $L$ be the $3\times 3$ matrix
+\[
+     L = \left(\begin{array}{rrr}
+    2 & 0 & -1\\
+    0 & -1 & 3\\
+    1 & 0 & 1
+               \end{array}\right).
+\]
+Find the smallest integer $m$ such that
+\[
+  I_3+L+\frac{1}{2!} L^2 + \frac{1}{3!} L^3 + \cdots
+  + \frac{1}{m!} L^m
+\]
+is equal to $e^L$ up to a precision of two decimal places.  More
+exactly, use the \Matlab command {\tt expm} to compute $e^L$ and
+use \Matlab commands to compute the series expansion to order $m$.  Note
+that the command for computing $n!$ in \Matlab is
+{\tt prod(1:n)}\index{\computer!prod}.
+\end{exercise}
+
+\begin{exercise} \label{c6.2.2}
+Use \Matlab to compute the matrix exponential $e^{tC}$ for
+\[
+     C =\mattwo{1}{1}{2}{-1}
+\]
+by choosing for $t$ the values $1.0,1.5$ and $2.5$.  Does $e^{C}
+e^{1.5C}=e^{2.5C}$?
+\end{exercise}
+
+\begin{exercise} \label{c6.2.3}
+For the scalar exponential function $e^{t}$ it is well known
+that for any pair of real numbers $t_1,t_2$ the following
+equality holds:
+\[
+     e^{t_1+t_2} = e^{t_1}e^{t_2}.
+\]
+Use \Matlab to find two $2\times 2$ matrices $C_1$ and $C_2$ such that
+\[
+     e^{C_1+C_2} \not= e^{C_1}e^{C_2}.
+\]
+\end{exercise}
+
+\TEXER
+
+\noindent In Exercises~\ref{c6.2.4a} -- \ref{c6.2.4c} compute the matrix
+exponential $e^{tC}$ for the matrix.
+\begin{exercise} \label{c6.2.4a}
+                $\mattwo{0}{1}{0}{0}$.
+\end{exercise}
+\begin{exercise} \label{c6.2.4b}
+                $\left(\begin{array}{ccc}
+                0 & 1 & 0\\
+                0 & 0 & 1\\
+                0 & 0 & 0 \end{array}\right)$.
+\end{exercise}
+\begin{exercise} \label{c6.2.4c}
+                $\mattwo{0}{-2}{2}{0}$.
+\end{exercise}
+
+\begin{exercise} \label{c6.2.5}
+Let $\alpha,\beta$ be real numbers and let $\alpha I$ and $\beta
+I$ be corresponding $n\times n$ diagonal matrices.  Use
+properties of the scalar exponential function to show that
+\[
+     e^{(\alpha + \beta)I} = e^{\alpha I}e^{\beta I}.
+\]
+\end{exercise}
+
+\noindent In Exercises~\ref{c6.2.5A} -- \ref{c6.2.5C} we use
+Theorem~\ref{T:linODEsoln}, the uniqueness of solutions to initial value
+problems, in perhaps a surprising way.
+\begin{exercise}  \label{c6.2.5A}
+Prove that
+\[
+e^{t+s} = e^te^s
+\]
+for all real numbers $s$ and $t$.  {\bf Hint:}
+\begin{itemize}
+\item[(a)]  Fix $s$ and verify that $y(t) = e^{t+s}$ is a solution to the
+initial value problem
+\begin{equation}  \label{E:init1}
+\begin{array}{rcl}
+\frac{dx}{dt} & = & x \\
+x(0) & = & e^s
+\end{array}
+\end{equation}
+\item[(b)] Fix $s$ and verify that $z(t) = e^te^s$ is also a solution to
+\eqref{E:init1}.
+\item[(c)]  Use Theorem~\ref{T:linODEsoln} to conclude that $y(t)=z(t)$ for
+every $s$.
+\end{itemize}
+\end{exercise}
+\begin{exercise}  \label{c6.2.5B}
+Let $A$ be an $n\times n$ matrix.  Prove that
+\[
+e^{(t+s)A} = e^{tA}e^{sA}
+\]
+for all real numbers $s$ and $t$.  {\bf Hint:}
+\begin{itemize}
+\item[(a)]  Fix $s\in\R$ and $X_0\in\R^n$ and verify that
+$Y(t) = e^{(t+s)A}X_0$ is a solution to the initial value problem
+\begin{equation}  \label{E:init2}
+\begin{array}{rcl}
+\frac{dX}{dt} & = & AX \\
+X(0) & = & e^{sA}X_0
+\end{array}
+\end{equation}
+\item[(b)] Fix $s$ and verify that $Z(t) = e^{tA}\left(e^{sA}X_0\right)$ is
+also a solution to \eqref{E:init2}.
+\item[(c)]  Use the $n$ dimensional version of Theorem~\ref{T:linODEsoln} to
+conclude that $Y(t)=Z(t)$ for every $s$ and every $X_0$.
+\end{itemize}
+{\bf Remark:}  Compare the result in this exercise with the calculation in
+Exercise~\ref{c6.2.5}.
+\end{exercise}
+\begin{exercise}  \label{c6.2.5C}
+Prove that
+\begin{equation}  \label{E:0-110E}
+\exp\left(t\mattwo{0}{-1}{1}{0}\right) =
+\mattwo{\cos t}{-\sin t}{\sin t}{\cos t}.
+\end{equation}
+{\bf Hint:}
+\begin{itemize}
+\item[(a)] Verify that $X_1(t) = \vectwo{\cos t}{\sin t}$ and
+$X_2(t) = \vectwo{-\sin t}{\cos t}$ are solutions to the initial value problems
+\begin{equation}  \label{E:init3}
+\begin{array}{rcl}
+\dps\frac{dX}{dt} & = & \mattwo{0}{-1}{1}{0}X \\
+X(0) & = & e_j
+\end{array}
+\end{equation}
+for $j=1,2$.
+\item[(b)] Since $X_j(0)=e_j$, use Theorem~\ref{T:linODEsoln} to verify that
+\begin{equation}   \label{E:0-110}
+X_j(t) = \exp\left(t\mattwo{0}{-1}{1}{0}\right)e_j.
+\end{equation}
+\item[(c)]  Show that \eqref{E:0-110} proves \eqref{E:0-110E}
+\end{itemize}
+\end{exercise}
+
+\begin{exercise}  \label{c6.2.6A}
+Let $C$ be an $n\times n$ matrix.  Use Theorem~\ref{T:linODEsoln} to show
+that the $n$ columns of the $n\times n$ matrix $e^{tC}$ give a basis of
+solutions for the system of differential equations $\dot{X}=CX$.
+\end{exercise}
+
+\noindent {\bf Remark:}  The completion of Exercises~\ref{c6.2.7} and
+\ref{c6.2.8} constitutes a proof that the infinite series definition of
+the matrix exponential is a convergent series for all $n\times n$ matrices.
+
+\begin{exercise}  \label{c6.2.7}
+Let $A=(a_{ij})$ be an $n\times n$ matrix.  Define
+\[
+||A||_m = \max_{1\leq i\leq n} (|a_{i1}|+\cdots+|a_{in}|)
+= \max_{1\leq i\leq n} \left(\sum_{j=1}^n|a_{ij}|\right).
+\]
+That is, to compute $||A||_m$, first sum the absolute values of the entries
+in each row of $A$, and then take the maximum of these sums.  Prove that:
+\[
+||AB||_m \leq ||A||_m ||B||_m.
+\]
+{\bf Hint:} Begin by noting that
+\begin{align*}
+||AB||_m &=
+\max_{1\leq i\leq n}\left(\sum_{j=1}^n\left|\sum_{k=1}^na_{ik}b_{kj}\right|
+\right)\leq \max_{1\leq i\leq n}\left(\sum_{j=1}^n\sum_{k=1}^n\left|a_{ik}b_{kj}
+           \right|\right) \\
+  &= \max_{1\leq i\leq n}\left(\sum_{k=1}^n\sum_{j=1}^n
+\left|a_{ik}b_{kj}\right|\right).
+\end{align*}
+\end{exercise}
+
+\begin{exercise} \label{c6.2.8}
+Recall that an infinite series of real numbers
+\[
+c_1+c_2 +\cdots+c_N + \cdots
+\]
+converges absolutely if there is a constant $K$ such that for every $N$
+the partial sum satisfies:
+\[
+|c_1| + |c_2| + \cdots + |c_N| \leq K.
+\]
+
+Let $A$ be an $n\times n$ matrix.  To prove that the matrix exponential $e^A$
+is an absolutely convergent infinite series use Exercise~\ref{c6.2.7} and the
+following steps.  Let $a_N$ be the $(i,j)^{th}$ entry in the matrix $A^N$
+where $A^0=I_n$.
+\begin{itemize}
+\item[(a)]  $|a_N| \leq ||A^N||_m$.
+\item[(b)]  $||A^N||_m \leq ||A||_m^N$.
+\item[(c)]  $|a_0| + |a_1| + \cdots + \frac{1}{N!}|a_N| \leq e^{||A||_m}$.
+\end{itemize}
+\end{exercise}
+
+\AEXER
+\begin{exercise} \label{c6.3.14}
+When the eigenvalues $\lambda_1$ and $\lambda_2$ of the $2\times 2$ 
+matrix $C$ are real and distinct, $e^{tC}$ can be computed without determining 
+the associated eigenvectors.  To see this, prove that
+\begin{equation}  \label{E:exdist}
+e^{tC} = \frac{1}{\lambda_2-\lambda_1}\left(e^{\lambda_1 t}(C-\lambda_2I_2) -
+e^{\lambda_2 t}(C-\lambda_1I_2)\right).
+\end{equation}
+Hint:  The left and right hand sides of \eqref{E:exdist} are linear maps.  Two 
+linear maps are identical if they have the same values on a basis of vectors 
+$v_1$ and $v_2$.  Verify that the maps in \eqref{E:exdist} are equal when 
+applied to the linearly independent eigenvectors of $C$.
+\end{exercise}
+
+
+\end{document}

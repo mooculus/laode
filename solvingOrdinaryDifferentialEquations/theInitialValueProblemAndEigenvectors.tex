@@ -1,0 +1,508 @@
+\documentclass{ximera}
+
+\input{../preamble.tex}
+
+\title{The Initial Value Problem and Eigenvectors}
+
+\begin{document}
+\begin{abstract}
+\end{abstract}
+\maketitle
+
+
+\label{S:IVP&E} \index{initial value problem}
+
+The general {\em constant coefficient\/}
+\index{system of differential equations!constant coefficient}
+system of differential equations has the form
+\renewcommand{\arraystretch}{1.8}
+\begin{equation}\label{lingen}
+\begin{array}{ccc}
+\dps \frac{dx_1}{dt}(t) & = & c_{11}x_1(t) + \cdots + c_{1n}x_n(t) \\
+\vdots  & \vdots & \vdots \\
+\dps \frac{dx_n}{dt}(t) & = & c_{n1}x_1(t) + \cdots + c_{nn}x_n(t)
+\end{array}
+\end{equation}
+\renewcommand{\arraystretch}{1.0}%
+where the coefficients $c_{ij}\in \R$ are constants.  Suppose that 
+\eqref{lingen} satisfies the initial conditions $x_1(0) = K_1$, \ldots,  
+$x_n(0) = K_n$.
+
+Using matrix multiplication of a vector and matrix, we can rewrite these 
+differential equations in a compact form.   Consider the $n\times n$ 
+coefficient matrix
+\[
+C = \left(
+\begin{array}{rrrr}
+ c_{11} & c_{12} & \cdots & c_{1n} \\
+ c_{21} & c_{22} & \cdots & c_{2n}  \\
+ \vdots & \vdots &        & \vdots  \\
+ c_{n1} & c_{n2} & \cdots & c_{nn}
+\end{array}
+\right)
+\]
+and the $n$ vectors of initial conditions and unknowns
+\[
+X_0=\left(
+\begin{array}{ccc}
+K_1 \\ \vdots  \\ K_n
+\end{array}
+\right) \AND
+X=\left(
+\begin{array}{ccc}
+x_1 \\ \vdots  \\ x_n
+\end{array}
+\right).
+\]
+Then \eqref{lingen} has the compact form
+\begin{equation}  \label{E:geneqn}
+\begin{array}{rcl}
+\dps\frac{dX}{dt} & = & CX\\
+X(0) & = & X_0.  
+\end{array}
+\end{equation}
+
+
+In Section~\ref{s:3.5}, we plotted the phase space picture 
+of the planar system of differential equations
+\begin{equation} \label{-13}
+\vectwo{\dot{x}}{\dot{y}}
+= C \vectwo{x(t)}{y(t)}
+\end{equation}
+where
+\[
+C = \mattwo{-1}{3}{3}{-1}.
+\]
+In those calculations we observed that there is a solution to
+\eqref{-13} that stayed on the main diagonal for each moment in
+time.  Note that a vector is on the main diagonal if it is a
+scalar multiple of $\vectwo{1}{1}$.  Thus a solution that stays
+on the main diagonal for all time $t$ must have the form
+\begin{equation} \label{e:diagform}
+\vectwo{x(t)}{y(t)} = u(t) \vectwo{1}{1}
+\end{equation}
+for some real-valued function $u(t)$.  When a function of form
+\eqref{e:diagform} is a solution to \eqref{-13}, it satisfies:
+\begin{align*}
+  \dot{u}(t)\vectwo{1}{1} &= \vectwo{\dot{x}(t)}{\dot{y}(t)} 
+                            = C \vectwo{x(t)}{y(t)} \\
+                          &= C u(t)\vectwo{1}{1} = u(t) C \vectwo{1}{1}.
+\end{align*}
+A calculation shows that
+\[
+C \vectwo{1}{1} = 2 \vectwo{1}{1}.
+\]
+Hence
+\[
+\dot{u}(t) \vectwo{1}{1} =  2 u(t) \vectwo{1}{1}.
+\]
+It follows that the function $u(t)$ must satisfy the
+differential equation
+\[
+\frac{du}{dt} = 2u.
+\]
+whose solutions are
+\[
+u(t) = \alpha e^{2t},
+\]
+for some scalar $\alpha$.
+
+Similarly, we also saw in our \Matlab experiments that there was
+a solution that for all time stayed on the anti-diagonal, the
+line $y=-x$.  Such a solution must have the form
+\[
+\vectwo{x(t)}{y(t)} = v(t) \vectwo{1}{-1}.
+\]
+A similar calculation shows that $v(t)$ must satisfy the
+differential equation
+\[
+\frac{dv}{dt} = -4v.
+\]
+Solutions to this equation all have the form
+\[
+v(t) = \beta e^{-4t},
+\]
+for some real constant $\beta$.
+
+Thus, using matrix multiplication, we are able to prove
+analytically that there are solutions to \eqref{-13} of exactly
+the type suggested by our \Matlab experiments.  However, even
+more is true and this extension is based on the principle of 
+superposition that was introduced for algebraic equations in 
+Section~\ref{S:Superposition}.  
+
+\subsection*{Superposition in Linear Differential Equations}
+\index{superposition}\index{differential equation!superposition}
+
+Consider a general linear differential equation of the form
+\begin{equation} \label{gen1}
+\frac{dX}{dt} = CX,
+\end{equation}
+where $C$ is an $n\times n$ matrix.  Suppose that $Y(t)$ and
+$Z(t)$ are solutions to \eqref{gen1} and $\alpha,\beta\in\R$ are
+scalars.  Then $X(t)=\alpha Y(t)+\beta Z(t)$ is also a solution.
+We verify this fact using the `linearity' of $d/dt$.  Calculate
+\begin{eqnarray*}
+\frac{d}{dt} X(t) & = &
+\alpha \frac{dY}{dt}(t) + \beta \frac{dZ}{dt}(t) \\
+ & = &\alpha CY(t) + \beta CZ(t)\\
+ & = & C(\alpha Y(t) + \beta Z(t))\\
+ & = & CX(t).
+\end{eqnarray*}
+So superposition is valid for solutions of linear differential equations.
+
+
+\subsection*{Initial Value Problems}
+\index{initial value problem}
+
+Suppose that we wish to find a solution to
+\eqref{-13} satisfying the initial conditions\index{initial condition}
+\[
+\left(\begin{array}{c} x(0) \\ y(0) \end{array}\right) =
+\left(\begin{array}{c}1\\3\end{array}\right).
+\]
+Then we can use the principle of superposition to find this solution in 
+closed form.  Superposition implies that for each pair of scalars 
+$\alpha,\beta\in\R$, the functions
+\begin{equation}  \label{e:solnODE}
+\left(\begin{array}{c} x(t) \\ y(t) \end{array}\right) =
+\alpha e^{2t}\left(\begin{array}{c}1\\1\end{array}\right) +
+\beta e^{-4t}\left(\begin{array}{r} 1\\-1\end{array}\right),
+\end{equation}
+are solutions to \eqref{-13}.  Moreover, for a solution of this form 
+\[
+\left(\begin{array}{c} x(0) \\ y(0) \end{array}\right) =
+\left(\begin{array}{c} \alpha+\beta \\ \alpha-\beta
+\end{array}\right).
+\]
+
+Thus we can solve our prescribed initial value problem, if we can
+solve the system of linear equations
+\begin{eqnarray*}
+\alpha + \beta = 1\ \\
+\alpha - \beta = 3.
+\end{eqnarray*}
+This system is solved for $\alpha=2$ and $\beta=-1$. Thus
+\[
+\vectwo{x(t)}{y(t)} = 2e^{2t}\vectwo{1}{1} - e^{-4t}\vectwo{1}{-1}
+\]
+is the desired closed form solution.
+
+\subsection*{Eigenvectors and Eigenvalues}
+
+We emphasize that just knowing that there are two lines in the
+plane that are invariant under the dynamics of the system of
+linear differential equations is sufficient information to solve
+these equations.  So it seems appropriate to ask the question:
+When is there a line that is invariant under the dynamics of a
+system of linear differential equations?  This question is
+equivalent to asking:  When is there a nonzero vector $v$ and a
+nonzero real-valued function $u(t)$ such that
+\[
+X(t) = u(t) v
+\]
+is a solution to \eqref{gen1}?
+
+Suppose that $X(t)$ is a solution to the system of differential
+equations $\dot{X}=CX$.  Then $u(t)$ and $v$ must satisfy
+\begin{equation}  \label{E:diffdir}
+\dot{u}(t)v = \frac{dX}{dt} = CX(t) = u(t) Cv.
+\end{equation}
+Since $u$ is nonzero, it follows that $v$ and $Cv$ must lie on the
+same line through the origin.  Hence
+\begin{equation}  \label{e:eigendef}
+Cv = \lambda v,
+\end{equation}
+for some real number $\lambda$.
+
+\begin{definition}  \label{D:eigenvalue1}
+A nonzero vector $v$ satisfying \eqref{e:eigendef} is called an
+{\em eigenvector\/} \index{eigenvector} of the matrix $C$, and
+the number $\lambda$ is an {\em eigenvalue\/} \index{eigenvalue}
+of the matrix $C$.
+\end{definition}
+Geometrically, the matrix $C$ maps an eigenvector onto a multiple
+of itself --- that multiple is the eigenvalue.
+
+Note that scalar multiples of eigenvectors are also eigenvectors.  More 
+precisely:
+\begin{lemma}  \label{L:e'vector}
+Let $v$ be an eigenvector of the matrix $C$ with eigenvalue $\lambda$.   
+Then $\alpha v$ is also an eigenvector of $C$ with eigenvalue $\lambda$ 
+as long as $\alpha\neq 0$.
+\end{lemma}
+
+\begin{proof} By assumption, $Cv=\lambda v$ and $v$ is nonzero. Now calculate
+\[
+C(\alpha v) = \alpha Cv = \alpha\lambda v = \lambda(\alpha v).
+\]
+The lemma follows from the definition of eigenvector.  \end{proof}
+
+It follows from \eqref{E:diffdir} and \eqref{e:eigendef} that if $v$ is
+an eigenvector of $C$ with eigenvalue $\lambda$, then
+\[
+\frac{du}{dt} = \lambda u.
+\]
+Thus we have returned to our original linear differential
+equation that has solutions
+\[
+u(t) = Ke^{\lambda t},
+\]
+for all constants $K$.
+
+We have proved the following theorem.
+\begin{theorem}  \label{T:eigensoln}
+Let $v$ be an eigenvector of the $n\times n$ matrix $C$ with
+eigenvalue $\lambda$.  Then
+\[
+X(t) = e^{\lambda t}v
+\]
+is a solution to the system of differential equations $\dot{X}=CX$.
+\end{theorem}
+
+
+
+Finding eigenvalues and eigenvectors from first principles --- even for 
+$2\times 2$ matrices --- is not a simple task.  We end this section with 
+a calculation illustrating that real eigenvalues need not exist.  In 
+Section~\ref{S:evchp}, we present a natural method for computing  
+eigenvalues (and eigenvectors) of $2\times2$ matrices.  We defer the 
+discuss of how to find eigenvalues and eigenvectors of $n\times n$ matrices 
+until Chapter~\ref{C:D&E}.
+
+
+\subsubsection*{An Example of a Matrix with No Real Eigenvalues}
+
+Not every matrix has {\em real\/} eigenvalues\index{eigenvalue!real} and
+eigenvectors\index{eigenvector!real}.  Recall the linear system of differential 
+equations $\dot{x}=Cx$ whose phase plane is pictured in Figure~\ref{pp_dsp2}.  
+That phase plane showed no evidence of an invariant line and indeed there is 
+none.  The matrix $C$ in that example was
+\[
+C=\mattwo{-1}{-2}{3}{-1}.
+\]
+We ask: Is there a value of $\lambda$ and a nonzero vector
+$(x,y)$ such that
+\begin{equation}  \label{E:eigexamp}
+C\left(\begin{array}{c} x\\y\end{array}\right) =
+\lambda  \left(\begin{array}{c} x\\y\end{array}\right)?
+\end{equation}
+Equation \eqref{E:eigexamp} implies that
+\[
+\left(\begin{array}{cc} -1-\lambda & -2 \\ 3 & -1-\lambda
+\end{array}\right) \left(\begin{array}{c}
+x\\y\end{array}\right) =0.
+\]
+If this matrix is row equivalent to the identity matrix, then
+the only solution of the linear system is $x=y=0$.  To have a
+nonzero solution, the matrix
+\[
+\left(\begin{array}{cc} -1-\lambda & -2 \\ 3 & -1-\lambda
+\end{array}\right)
+\]
+must not be row equivalent to $I_2$.  Dividing the $1^{st}$ row by
+$-(1+\lambda)$ leads to
+\[
+\left(\begin{array}{cc} 1 & \frac{2}{1+\lambda} \\ 3 & -1-\lambda
+\end{array}\right).
+\]
+Subtracting $3$ times the $1^{st}$ row from the second produces
+the matrix
+\[
+\left(\begin{array}{cc} 1 & \frac{2}{1+\lambda} \\ 0 &
+-(1+\lambda) - \frac{6}{1+\lambda}
+\end{array}\right).
+\]
+This matrix is not row equivalent to $I_2$ when the lower
+right hand entry is zero; that is, when
+\[
+(1+\lambda) +\frac{6}{1+\lambda} = 0.
+\]
+That is, when
+\[
+(1+\lambda)^2 = -6,
+\]
+which is not possible for any real number $\lambda$.  This
+example shows that the question of whether a given matrix has a
+real eigenvalue and a real eigenvector --- and hence when the
+associated system of differential equations has a line that is
+invariant under the dynamics --- is a subtle question.
+
+Questions concerning eigenvectors and eigenvalues are central to
+much of the theory of linear algebra.  We discuss this
+topic for $2\times 2$ matrices in Section~\ref{S:evchp} and
+Chapter~\ref{Chap:Planar} and for general square matrices in
+Chapters~\ref{C:D&E} and \ref{C:HDeigenvalues}.
+
+\EXER
+
+\TEXER
+
+\begin{exercise} \label{c4.1.5}
+Write the system of linear ordinary differential equations
+\begin{eqnarray*}
+\frac{dx_1}{dt}(t) & = & 4x_1(t) + 5x_2(t) \\
+\frac{dx_2}{dt}(t) & = & 2x_1(t) - 3x_2(t)
+\end{eqnarray*}
+in matrix form.
+\end{exercise}
+
+\begin{exercise} \label{c4.4.4}
+Show that all solutions to the system of linear differential equations
+\begin{eqnarray*}
+\frac{dx}{dt} & = & 3x \\
+\frac{dy}{dt} & = & -2y
+\end{eqnarray*}
+are linear combinations of the two solutions
+\[
+U(t) = e^{3t}\vectwo{1}{0} \AND V(t) = e^{-2t}\vectwo{0}{1}.
+\]
+\end{exercise}
+
+\begin{exercise} \label{c4.5.1}
+Consider
+\begin{equation}  \label{e:Ceqn}
+\frac{dX}{dt}(t) = CX(t)
+\end{equation}
+where
+\[
+C=\left(\begin{array}{cr} 2 & 3\\0& -1 \end{array}\right).
+\]
+Let
+\[
+v_1=\left(\begin{array}{c} 1\\0\end{array}\right)\AND
+v_2=\left(\begin{array}{r} 1\\-1\end{array}\right),
+\]
+and let
+\[
+Y(t)=e^{2t} v_1 \AND Z(t)=e^{-t}v_2.
+\]
+\begin{itemize}
+\item[(a)] Show that $Y(t)$ and $Z(t)$ are solutions to \eqref{e:Ceqn}.
+\item[(b)] Show that $X(t)=2Y(t)-14Z(t)$ is a solution to \eqref{e:Ceqn}.
+\item[(c)] Use the principle of superposition to verify that
+$X(t)=\alpha Y(t) + \beta Z(t)$ is a solution to \eqref{e:Ceqn}.
+\item[(d)] Using the general solution found in part (c), find a solution
+$X(t)$ to \eqref{e:Ceqn} such that
+\[
+X(0) = \left(\begin{array}{r} 3\\-1\end{array}\right).
+\]
+\end{itemize}
+\end{exercise}
+
+\begin{exercise} \label{c4.5.2}
+Find a solution to
+\[
+\dot{X}(t)=CX(t)
+\]
+where
+\[
+C=\mattwo{1}{-1}{-1}{1}
+\]
+and
+\[
+X(0)=\vectwo{2}{1}.
+\]
+{\bf Hint:} Observe that
+\[
+\vectwo{1}{1} \AND \vectwo{1}{-1}
+\]
+are eigenvectors of $C$.
+\end{exercise}
+
+\begin{exercise} \label{c4.5.3}
+Let
+\[
+C=\mattwo{a}{b}{b}{a}.
+\]
+Show that
+\[
+\vectwo{1}{1} \AND \vectwo{1}{-1}
+\]
+are eigenvectors of $C$.  What are the corresponding eigenvalues?
+\end{exercise}
+
+\begin{exercise} \label{c4.5.4}
+Let
+\[
+C=\mattwo{1}{2}{-3}{-1}.
+\]
+Show that $C$ has no real eigenvectors.
+\end{exercise}
+
+\begin{exercise}  \label{c4.9.6A}
+Suppose that $A$ is an $n\times n$ matrix with zero as an eigenvalue.
+Show that $A$ is not invertible.  {\bf Hint:}  Assume that $A$ is invertible 
+and compute $A\inv Av$ where $v$ is an eigenvector of $A$ corresponding to 
+the zero eigenvalue.
+\end{exercise}
+\noindent {\bf Remark:}  In fact, $A$ is invertible\index{invertible} if 
+all of the eigenvalues of $A$ are nonzero.  See Corollary~\ref{C:eig=0} of 
+Chapter~\ref{C:D&E}.
+
+
+\CEXER
+
+\begin{exercise} \label{c4.5.6}
+Consider the matrix $A$ and vector $X_0$ given by
+\[
+A=\mattwo{2}{1}{0}{1}\AND X_0=\vectwo{1}{1}.
+\]
+Use {\sf map} to compute $X_1 = AX_0$, $X_2 = AX_1$, $X_3=AX_2$ etc.\ by a
+repeated use of the {\sf Map} button in the {\sf MAP Display} window.  What
+do you observe?  What happens if you start the iteration process with a
+different choice for $X_0$, and, in particular, for an $X_0$ that is close
+to $\vectwo{-1}{1}$?
+\end{exercise}
+
+\noindent In Exercises~\ref{c4.5.5a} -- \ref{c4.5.5b} use {\sf map} to find
+an (approximate) eigenvector for the given matrix.  {\bf Hint:} Choose a
+vector in {\sf map} and repeatedly click on the button {\sf Map} until the
+vector maps to a multiple of itself.  You may wish to use the {\sf Rescale} 
+feature in the {\sf MAP Options}.  Then the length of the vector is rescaled 
+to one after each use of the command {\sf Map}. In this way, you can avoid
+overflows in the computations while still being able to see the
+directions where the vectors are moved by the matrix mapping.  The coordinates 
+of the new vector obtained by applying {\sf map} can be viewed in the 
+{\sf Vector input} window.
+
+\begin{exercise} \label{c4.5.5a}
+$B=\mattwo{2}{-2}{2}{7}$.
+\end{exercise}
+\begin{exercise} \label{c4.5.5b}
+$C=\mattwo{1}{1.5}{0}{-2}$.
+\end{exercise}
+
+\begin{exercise} \label{c4.4.5}
+Use \Matlab to verify that solutions to the system of linear differential
+equations
+\begin{eqnarray*}
+\frac{dx}{dt} & = & 2x + y\\
+\frac{dy}{dt} & = & y
+\end{eqnarray*}
+are linear combinations of the two solutions
+\[
+U(t) = e^{2t}\vectwo{1}{0} \AND V(t) = e^{t}\vectwo{-1}{1}.
+\]
+More concretely, proceed as follows:
+\begin{itemize}
+\item[(a)]  By superposition, the general solution to the differential
+equation has the form $X(t)=\alpha U(t) + \beta V(t)$.  Find constants
+$\alpha$ and $\beta$ such that $\alpha U(0) + \beta V(0) = \vectwo{0}{1}$.
+\item[(b)] Graph the second component $y(t)$ of this solution using the
+\Matlab {\tt plot} command.
+\item[(c)] Use {\sf pplane8} to compute a solution via the {\sf Keyboard
+input} starting at $(x(0),y(0)) = (0,1)$ and then use the
+{\tt y} {\tt vs} {\tt t} command in {\sf pplane8} to graph this solution.
+\item[(d)] Compare the results of the two plots.
+\item[(e)]  Repeat steps (a)--(d) using the initial vector $\vectwo{1}{1}$.
+\end{itemize}
+\end{exercise}
+
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../linearAlgebra"
+%%% End:

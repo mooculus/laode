@@ -1,0 +1,57 @@
+\documentclass{ximera}
+
+\input{../preamble.tex}
+
+\title{Linear Differential Equations}
+
+\begin{document}
+\begin{abstract}
+\end{abstract}
+\maketitle
+
+
+\label{C:LDE}
+
+\normalsize
+
+Primarily our discussions of differential equations have focused on 
+two issues: generalizations of solutions of the differential equation 
+$\dot{x}=\lambda x$ to systems of equations and the qualitative 
+interpretation of numerically obtained phase portraits for autonomous
+nonlinear systems.   Except for finding closed form solutions of 
+systems of equations $\dot{X}=AX$ (in the plane, Chapter~\ref{Chap:Planar}, 
+or in Jordan normal form, Section~\ref{sec:LinHomSys}), we have solved in 
+closed form virtually no other differential equation.  In this chapter and 
+the next two we focus on finding closed form solutions to a variety of 
+differential equations.  This chapter and the next discuss constant 
+coefficient linear equations, both homogeneous and inhomogeneous, 
+while Chapter~\ref{chap:SingleOdes} discusses nonconstant coefficient
+and nonlinear equations.  
+
+The system of differential equations $\dot{X}=AX$ is a constant coefficient, 
+first order, homogeneous, linear system of ordinary differential equations. 
+We begin this chapter (Section~\ref{S:SEOC}) by discussing how to solve 
+the systems $\dot{X}=AX$ in the given coordinates (rather than by first 
+transforming $A$ to Jordan normal form, as we did in 
+Section~\ref{sec:LinHomSys}).  For example, we present a formula for 
+computing $e^{tA}$ for any matrix $A$.  Later we solve some linear 
+equations that are neither homogeneous nor first order.   
+
+In Section~\ref{sec:HighOrder} we discuss how to solve higher order 
+linear differential equations by reducing them to first order systems.  
+This section generalizes the reduction of second order equations to planar
+systems described in Section~\ref{S:SOE}.  We will see that generally it is 
+easier to solve higher order equations in closed form than to solve first 
+order systems.  Section~\ref{sec:2norderinhom} discusses the solution of an 
+inhomogeneous higher order equation by undetermined coefficients.  The method 
+of undetermined coefficients is most easily understood in the language of 
+linear differential operators, and this language is introduced in 
+Section~\ref{S:LDO}.
+
+The chapter ends with a discussion of resonance in Section~\ref{S:resonance}. 
+Here we use explicit closed form solutions found by the method of 
+undetermined coefficients to understand a physically motivated phenomenon 
+that occurs in solutions to forced second order equations.  
+
+
+\end{document}

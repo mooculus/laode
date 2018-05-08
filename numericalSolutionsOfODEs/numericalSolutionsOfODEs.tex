@@ -1,0 +1,52 @@
+\documentclass{ximera}
+
+\input{../preamble.tex}
+
+\title{Numerical Solutions of ODEs}
+
+\begin{document}
+\begin{abstract}
+\end{abstract}
+\maketitle
+
+
+\label{ch:NumSolODE}
+
+\normalsize
+
+In general it is difficult, if not impossible, to find solutions to 
+differential equations analytically.   When this happens we rely on the
+numerical approximation of solutions, and in this chapter we discuss 
+how numerical solutions to initial value 
+problems\index{initial value problem!numerical solution} of the form
+\arraystart
+\[
+\begin{array}{rcl}
+\dps\frac{dx}{dt}(t) & = & f(t,x(t)) \\
+x(t_0) & = & x_0
+\end{array}
+\]
+\arrayfinish
+are found.  This will provide insight into the numerical
+techniques used in the \Matlab programs {\sf dfield8},
+{\sf pline} and {\sf pplane8}.
+
+The numerical schemes that we consider approximate 
+solutions up to a specified accuracy, and
+in Section~\ref{sec:DNM} we describe the basic ideas
+underlying the construction of such schemes.  In this
+section we will see that in general there is an error between 
+the numerical approximation and the analytic solution
+of the underlying initial value problem.  One of the main
+tasks in the numerical analysis of ODEs is to derive bounds
+on this error, and in Section~\ref{sec:EEEM} we derive these bounds
+for the simplest numerical scheme, {\em Euler's method}.  Finally, 
+in Section~\ref{sec:LGEE}
+we generalize this treatment and indicate how to derive error 
+bounds for arbitrary numerical schemes.  In particular it
+turns out that in general the {\em fourth order Runge-Kutta method\/}
+leads to much more accurate numerical approximations than 
+does Euler's method.
+
+
+\end{document}

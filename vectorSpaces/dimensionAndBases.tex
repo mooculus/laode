@@ -1,0 +1,359 @@
+\documentclass{ximera}
+
+\input{../preamble.tex}
+
+\title{Dimension and Bases}
+
+\begin{document}
+\begin{abstract}
+\end{abstract}
+\maketitle
+
+ \label{S:5.5}
+
+The minimum number of vectors that span a vector space has special
+significance.
+
+\begin{definition}
+The vector space $V$ has {\em finite dimension\/} if $V$ is the
+span of a finite number of vectors.  If $V$ has finite dimension, then the
+smallest number of vectors that span $V$ is called the {\em dimension\/} of
+$V$ and is denoted by $\dim V$.
+\end{definition} \index{dimension}\index{dimension!finite} \index{span}
+
+For example, recall that $e_j$ is the vector in $\R^n$ whose $j^{th}$
+component is $1$ and all of whose other components are $0$.
+Let $x=(x_1,\ldots,x_n)$ be in $\R^n$. Then
+\begin{equation}  \label{e:spanrn}
+x =  x_1e_1 + \cdots + x_ne_n.
+\end{equation}
+Since every vector in $\R^n$ is a linear combination of the
+vectors $e_1,\ldots,e_n$, it follows that
+$\R^n=\Span\{e_1,\ldots,e_n\}$.  Thus, $\R^n$ is finite
+dimensional.  Moreover, the dimension of $\R^n$ is at most $n$,
+since $\R^n$ is spanned by $n$ vectors. It seems unlikely that
+$\R^n$ could be spanned by fewer than $n$ vectors--- but this
+point needs to be proved.
+
+\subsubsection*{An Example of a Vector Space that is Not Finite Dimensional}
+\index{dimension!infinite}
+
+Next we discuss an example of a vector space that does not have finite 
+dimension.  Consider the subspace ${\cal P}\subset\CCone$ consisting of 
+polynomials \index{subspace!of polynomials} of all degrees.  We show that 
+${\cal P}$ is not the span of a finite number of vectors and hence that 
+${\cal P}$ does not have finite dimension.  Let $p_1(t),p_2(t),\ldots,p_k(t)$ 
+be a set of $k$ polynomials and let $d$ be the maximum degree of these $k$ 
+polynomials.  Then every polynomial in the span of $p_1(t),\ldots,p_k(t)$ has 
+degree less than or equal to $d$.  In particular, $p(t)=t^{d+1}$ is a 
+polynomial that is not in the span of $p_1(t),\ldots,p_k(t)$ and ${\cal P}$ 
+is not spanned by finitely many vectors.
+
+
+\subsection*{Bases and The Main Theorem}
+
+\begin{definition} \label{basis}
+Let ${\cal B} = \{w_1,\ldots,w_k\}$ be a set of vectors in a
+vector space $W$.  The subset ${\cal B}$ is a {\em basis\/} for $W$
+if ${\cal B}$ is a spanning set for $W$ with the smallest number
+of elements in a spanning set for $W$.
+\end{definition} \index{basis} \index{spanning set}
+
+It follows that if $\{w_1,\ldots,w_k\}$ is a basis for $W$, then
+$k=\dim W$. The main theorem about bases is:
+
+\begin{theorem}  \label{basis=span+indep}
+A set of vectors ${\cal B} =\{w_1,\ldots,w_k\}$ in a vector space $W$
+is a basis for $W$ if and only if the set ${\cal B}$ is linearly
+independent and spans $W$.
+\end{theorem} \index{linearly!independent} \index{basis} \index{span}
+
+\noindent {\bf Remark:}  The importance of Theorem~\ref{basis=span+indep} is
+that we can show that a set of vectors is a basis by verifying spanning
+and linear independence.   We never have to check directly that the spanning
+set has the minimum number of vectors for a spanning set.
+
+
+For example, we have shown previously that the set of vectors
+$\{e_1,\ldots,e_n\}$ in $\R^n$ is linearly independent and spans $\R^n$.  It
+follows from Theorem~\ref{basis=span+indep} that this set is a basis,
+and that the dimension of $\R^n$ is $n$\index{dimension!of $\R^n$}.
+In particular, $\R^n$ cannot be spanned by fewer than $n$ vectors.
+
+The proof of Theorem~\ref{basis=span+indep} is given in Section~\ref{S:5.6}.
+
+
+\subsection*{Consequences of Theorem~\protect\ref{basis=span+indep}}
+
+We discuss two applications of Theorem~\ref{basis=span+indep}.  First,
+we use this theorem to derive a way of determining the dimension of the
+subspace spanned by a finite number of vectors.  Second, we show that the
+dimension of the subspace of solutions to a homogeneous system of linear
+equation $Ax=0$ is $n-\rank(A)$ where $A$ is an $m\times n$ matrix.
+
+\subsubsection*{Computing the Dimension of a Span} \index{dimension}
+
+We show that the dimension of a span of vectors can be found using
+elementary row operations on $M$. \index{elementary row operations}
+
+\begin{lemma}  \label{L:computerank}
+Let $w_1,\ldots,w_k$ be $k$ row vectors in $\R^n$ and let
+$W=\Span\{w_1,\ldots,w_k\}\subset\R^n$.  Define
+\[
+M =\left(\begin{array}{c} w_1\\ \vdots \\w_k \end{array}\right)
+\]
+to be the matrix whose rows are the $w_j$s.  Then
+\begin{equation}  \label{e:dimW=rankM}
+\dim(W) = \rank(M).
+\end{equation}
+\end{lemma}\index{dimension}\index{rank}
+
+\begin{proof} To verify \eqref{e:dimW=rankM}, observe that the span of
+$w_1,\ldots,w_k$ is unchanged by
+\begin{itemize}
+\item[(a)] swapping $w_i$ and $w_j$,
+\item[(b)] multiplying $w_i$ by a nonzero scalar, and
+\item[(c)] adding a multiple of $w_i$ to $w_j$.
+\end{itemize}
+That is, if we perform elementary row operations on $M$, the
+vector space spanned by the rows of $M$ does not change. So we
+may perform elementary row operations on $M$ until we arrive at
+the matrix $E$ in reduced echelon form.  \index{echelon form!reduced} 
+Suppose that $\ell=\rank(M)$; that is, suppose that $\ell$
+is the number of nonzero rows in $E$.  Then
+\[
+E =\left(\begin{array}{c} v_1\\ \vdots \\v_\ell\\ 0 \\ \vdots
+\\ 0 \end{array}\right),
+\]
+where the $v_j$ are the nonzero rows in the reduced echelon form
+matrix.
+
+We claim that the vectors $v_1,\ldots,v_\ell$ are linearly
+independent.  It then follows from Theorem~\ref{basis=span+indep} that
+$\{v_1,\ldots,v_\ell\}$ is a basis for $W$ and that the dimension of
+$W$ is $\ell$.  To verify the claim, suppose
+\begin{equation} \label{e:rowsums}
+a_1v_1 + \cdots + a_\ell v_\ell = 0.
+\end{equation}
+We show that $a_i$ must equal $0$ as follows.  In the $i^{th}$
+row, the pivot\index{pivot} must occur in some column --- say in the $j^{th}$
+column.  It follows that the $j^{th}$ entry in the vector of the
+left hand side of \eqref{e:rowsums} is
+\[
+0a_1 + \cdots + 0a_{i-1} +1a_i + 0a_{i+1} + \cdots + 0a_\ell =
+a_i,
+\]
+since all entries in the $j^{th}$ column of $E$ other than the
+pivot must be zero, as $E$ is in reduced echelon form.  \end{proof}
+
+For instance, let $W=\Span\{w_1,w_2,w_3\}$ in $\R^4$ where
+\begin{matlabEquation} \label{eq:vectors}
+  \begin{array}{ccl}
+    w_1 &=& (3, -2, 1,-1), \\
+    w_2 &=& (1,5,10,12), \\
+    w_3 &=& (1,-12,-19,-25).
+  \end{array}
+\end{matlabEquation}%
+To compute $\dim W$ in \Matlab, type \verb+e5_5_4+ to load the
+vectors and type
+\begin{verbatim}
+M = [w1; w2; w3]
+\end{verbatim}
+Row reduction\index{row!reduction} of the matrix {\tt M} in \Matlab
+leads to the reduced echelon form matrix
+\begin{verbatim}
+ans =
+     1.0000         0    1.4706    1.1176
+         0     1.0000    1.7059    2.1765
+         0          0         0         0
+\end{verbatim}
+indicating that the dimension of the subspace $W$ is two, and
+therefore $\{w_1,w_2,w_3\}$ is not a basis of $W$. Alternatively,
+we can use the \Matlab command {\tt rank(M)}\index{\computer!rank}
+to compute the rank of $M$ and the dimension of the span $W$.
+
+However, if we change one of the entries in $w_3$, for instance
+{\tt w3(3)=-18} then indeed the command {\tt rank([w1;w2;w3])}
+gives the answer three indicating that for this choice of vectors
+$\{w1,w2,w3\}$ is a basis for $\Span\{w1,w2,w3\}$.
+
+\subsubsection*{Solutions to Homogeneous Systems Revisited}
+\index{homogeneous}
+
+We return to our discussions in Chapter~\ref{lineq} on solving
+linear equations.  Recall that we can write all solutions to
+the system of homogeneous equations $Ax=0$ in terms of a few
+parameters, and that the null space of $A$ is the subspace of
+solutions (See Definition~\ref{D:nullspace}).
+More precisely, Proposition~\ref{P:n-rank} states that the number of
+parameters needed is $n-\rank(A)$ where $n$ is the number of
+variables in the homogeneous system.  We claim that the dimension
+of the null space\index{dimension!of null space} is exactly
+$n - \rank(A)$.
+
+For example, consider the reduced echelon form $3\times 7$ matrix
+\begin{equation}  \label{E:nullityexamp}
+A=\left(\begin{array}{rrrrrrr}
+1 & -4 & 0 &  2 & -3 & 0 & 8 \\
+0 &  0 & 1 &  3 &  2 & 0 & 4 \\
+0 &  0 & 0 &  0 &  0 & 1 & 2  \end{array}\right)
+\end{equation}
+that has rank three. Suppose that the unknowns for this system of
+equations are
+$x_1,\ldots,x_7$.  We can solve the equations associated with
+$A$ by solving the first equation for $x_1$, the second equation
+for $x_3$, and the third equation for $x_6$, as follows:
+\begin{eqnarray*}
+x_1 & = & 4x_2 - 2x_4 + 3x_5 - 8x_7 \\
+x_3 & = &      - 3x_4 - 2x_5 - 4x_7 \\
+x_6 & = &                    - 2x_7
+\end{eqnarray*}
+Thus, all solutions to this system of equations have the form
+\begin{equation}   \label{e:expandsoln}
+\left(\begin{array}{c} 4x_2 - 2x_4 + 3x_5 - 8x_7 \\ x_2 \\
+        -3x_4 - 2x_5 - 4x_7 \\ x_4 \\ x_5 \\  - 2x_7 \\ x_7 \end{array} \right)\end{equation}
+  which equals
+\begin{equation*}
+x_2 \left(\begin{array}{r}  4 \\ 1 \\  0 \\ 0 \\ 0 \\  0 \\ 0
+\end{array} \right) +
+x_4 \left(\begin{array}{r} -2 \\ 0 \\ -3 \\ 1 \\ 0 \\  0 \\ 0
+\end{array} \right) +
+x_5 \left(\begin{array}{r}  3 \\ 0 \\ -2 \\ 0 \\ 1 \\  0 \\ 0
+\end{array} \right) +
+x_7 \left(\begin{array}{r} -8 \\ 0 \\ -4 \\ 0 \\ 0 \\ -2 \\ 1
+\end{array} \right).
+\end{equation*}
+\noindent We can rewrite the right hand side of \eqref{e:expandsoln}
+as a linear combination\index{linear!combination} of four
+vectors $w_2,w_4,w_5,w_7$
+\begin{equation}   \label{e:w'scomb}
+x_2w_2 + x_4w_4 + x_5w_5 + x_7w_7.
+\end{equation}
+
+This calculation shows that the null space of $A$, which is
+$W=\{x\in\R^7:Ax=0\}$, is spanned by the four vectors
+$w_2,w_4,w_5,w_7$.  Moreover, this same calculation shows that
+the four vectors  are linearly independent.
+From the left hand side of \eqref{e:expandsoln} we see that if this
+linear combination sums to zero, then $x_2=x_4=x_5=x_7=0$.  It
+follows from Theorem~\ref{basis=span+indep} that $\dim W = 4$.
+
+\begin{definition}  \label{D:nullity}
+The {\em nullity\/} of $A$ is the dimension of the null space of $A$.
+\end{definition} \index{nullity}\index{null space!dimension}
+
+\begin{theorem}  \label{T:dimsoln}
+Let $A$ be an $m\times n$ matrix. Then
+\[
+{\rm nullity}(A) + \rank(A) = n.
+\]
+\end{theorem} \index{rank}
+
+\begin{proof}	Neither the rank nor the null space of $A$ are changed by
+elementary row operations.  So we can assume that $A$ is in reduced
+echelon form.  The rank of $A$ is the number of nonzero rows in
+the reduced echelon form matrix.  Proposition~\ref{P:n-rank} states that
+the null space is spanned by $p$ vectors where $p=n-\rank(A)$.  We
+must show that these vectors are linearly independent.
+
+Let $j_1,\ldots,j_p$ be the columns of $A$ that do not contain pivots.
+In example \eqref{E:nullityexamp} $p=4$ and
+\[
+j_1 = 2, \qquad j_2 = 4, \qquad j_3 = 5, \qquad j_4 = 7.
+\]
+After solving for the variables corresponding to pivots, we find that
+the spanning set of the null space consists of $p$ vectors in $\R^n$,
+which we label as $\{w_{j_1},\ldots,w_{j_p}\}$.  See \eqref{e:expandsoln}.
+Note that the $j_m$$^{th}$  entry of $w_{j_m}$ is $1$ while the
+$j_m$$^{th}$ entry in all of the other $p-1$ vectors is $0$.  Again,
+see \eqref{e:expandsoln} as an example that supports this statement.  It
+follows that the set of spanning vectors is a linearly independent set.
+That is, suppose that
+\[
+r_1w_{j_1} + \cdots + r_pw_{j_p} = 0.
+\]
+From the $j_m$$^{th}$ entry in this equation, it follows that $r_m=0$;
+and the vectors are linearly independent.  \end{proof}
+
+Theorem~\ref{T:dimsoln} has an interesting and useful interpretation.
+We have seen in the previous subsection that the rank of a matrix $A$
+is just the number of linearly independent rows in $A$.
+In linear systems each row of the coefficient matrix corresponds
+to a linear equation.  Thus, the rank of $A$ may be thought of as the
+number of independent equations in a system of linear equations.
+This theorem just states that the space of solutions loses a dimension
+for each independent equation.
+
+
+\EXER
+
+\TEXER
+
+\begin{exercise} \label{c5.5.1}
+Show that ${\cal U}=\{u_1,u_2,u_3\}$ where
+\[
+u_1=(1,1,0) \quad u_2=(0,1,0) \quad u_3=(-1,0,1)
+\]
+is a basis for $\R^3$.
+\end{exercise}
+
+
+\begin{exercise} \label{c5.5.2}
+Let $S=\Span\{v_1,v_2,v_3\}$ where
+\[
+v_1=(1,0,-1,0) \quad v_2=(0,1,1,1) \quad v_3=(5,4,-1,4).
+\]
+Find the dimension of $S$ and find a basis for $S$.
+\end{exercise}
+
+\begin{exercise} \label{c5.5.3}
+Find a basis for the null space of
+\[
+A =\left(\begin{array}{rrrr} 1 & 0 & -1 & 2\\ 1 & -1 & 0 & 0\\
+4 & -5 & 1 & -2 \end{array} \right).
+\]
+What is the dimension of the null space of $A$?
+\end{exercise}
+
+\begin{exercise} \label{c5.5.4}
+Show that the set $V$ of all $2\times 2$ matrices is a vector space.
+Show that the dimension of $V$ is four by finding a basis of $V$
+with four elements.  Show that the space $M(m,n)$ of all $m\times n$
+matrices is also a vector space.  What is $\dim M(m,n)$?
+\end{exercise}
+
+\begin{exercise} \label{c5.5.5}
+Show that the set ${\cal P}_n$ of all polynomials of degree less than
+or equal to $n$ is a subspace of $\CCone$.  What is $\dim {\cal P}_2$?
+What is $\dim {\cal P}_n$?
+\end{exercise}
+
+\begin{exercise} \label{c5.5.6}
+Let ${\cal P}_3$ be the vector space of polynomials of degree at
+most three in one variable $t$.  Let $p(t)=t^3+a_2t^2+a_1t+a_0$ where
+$a_0,a_1,a_2\in\R$ are fixed constants.  Show that
+\[
+\left\{ p, \frac{dp}{dt}, \frac{d^2p}{dt^2}, \frac{d^3p}{dt^3}\right\}
+\]
+is a basis for ${\cal P}_3$.
+\end{exercise}
+
+\begin{exercise} \label{c5.5.7}
+Let $u\in\R^n$ be a nonzero row vector.
+\begin{itemize}
+\item[(a)] Show that the $n\times n$ matrix $A=u^tu$ is symmetric and
+  that $\rank(A)=1$.  {\bf Hint:} Begin by showing that $Av^t=0$ for
+  every row vector $v\in\R^n$ that is perpendicular to $u$ and that
+  $Au^t$ is a nonzero multiple of $u^t$.
+\item[(b)]  Show that the matrix $P=I_n+u^tu$ is invertible.  {\bf Hint:}
+Show that $\rank(P)=n$.
+\end{itemize}
+\end{exercise}
+
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../linearAlgebra"
+%%% End:

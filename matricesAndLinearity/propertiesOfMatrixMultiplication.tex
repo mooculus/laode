@@ -1,0 +1,309 @@
+\documentclass{ximera}
+
+\input{../preamble.tex}
+
+\title{Properties of Matrix Multiplication}
+
+\begin{document}
+\begin{abstract}
+\end{abstract}
+\maketitle
+
+ \label{S:4.7}
+\index{matrix!multiplication}
+
+In this section we discuss the facts that matrix multiplication is
+associative (but not commutative) and that certain distributive
+properties hold.  We also discuss how matrix multiplication is
+performed in \Matlab.
+
+\subsubsection*{Matrix Multiplication is Associative}
+\index{associative}
+
+\begin{theorem} \label{assoc}
+Matrix multiplication is associative.  That is, let $A$ be an
+$m\times n$ matrix, let $B$ be a $n\times p$ matrix, and let $C$
+be a $p\times q$ matrix.  Then
+\[
+(AB)C = A(BC).
+\]
+\end{theorem}
+
+\begin{proof} Begin by observing that composition of mappings is always
+associative.  In symbols, let $f:\R^n\to\R^m$, $g:\R^p\to\R^n$,
+and $h:\R^q\to\R^p$.  Then
+\begin{eqnarray*}
+f\compose (g\compose h)(x) & = & f[(g\compose h)(x)] \\
+  & = & f[g(h(x))] \\
+  & = & (f\compose g)(h(x)) \\
+  & = & [(f\compose g)\compose h](x).
+\end{eqnarray*}
+It follows that
+\[
+f\compose (g\compose h) = (f\compose g)\compose h.
+\]
+
+We can apply this result to linear mappings.  Thus
+\[
+L_A\compose (L_B\compose L_C) = (L_A\compose L_B)\compose L_C.
+\]
+Since
+\[
+L_{A(BC)} = L_A\compose L_{BC} = L_A\compose (L_B\compose L_C)
+\]
+and
+\[
+L_{(AB)C} = L_{AB}\compose L_C = (L_A\compose L_B)\compose L_C,
+\]
+it follows that
+\[
+L_{A(BC)} = L_{(AB)C},
+\]
+and
+\[
+A(BC) = (AB)C.
+\]
+\end{proof}
+
+It is worth convincing yourself that Theorem~\ref{assoc} has
+content by verifying by hand that matrix multiplication of
+$2\times 2$ matrices is associative.
+
+\subsubsection*{Matrix Multiplication is Not Commutative}
+\index{commutative}
+
+Although matrix multiplication is associative, it is {\em not\/}
+commutative. This statement is trivially true when the matrix
+$AB$ is defined while that matrix $BA$ is not.  Suppose, for
+example, that $A$ is a $2\times 3$ matrix and that $B$ is a
+$3\times 4$ matrix.  Then $AB$ is a $2\times 4$ matrix, while
+the multiplication $BA$ makes no sense whatsoever.
+
+More importantly, suppose that $A$ and $B$ are both $n\times n$
+square matrices.  Then $AB=BA$ is generally not valid.  For
+example, let
+\[
+A=\left(\begin{array}{cc} 1 & 0 \\ 0 & 0 \end{array}\right) \AND
+B =\left(\begin{array}{cc} 0 & 1 \\ 0 & 0 \end{array}\right).
+\]
+Then
+\[
+AB =\left(\begin{array}{cc} 0 & 1 \\ 0 & 0 \end{array}\right)
+\AND BA=\left(\begin{array}{cc} 0 & 0 \\ 0 & 0 \end{array}\right).
+\]
+So $AB\neq BA$.  In certain cases it does happen that $AB=BA$.
+For example, when $B=I_n$,
+\[
+AI_n = A = I_nA.
+\]
+But these cases are rare.
+
+\subsubsection*{Additional Properties of Matrix Multiplication}
+\index{distributive}
+
+Recall that if $A=(a_{ij})$ and $B=(b_{ij})$ are both $m\times n$ 
+matrices, then $A+B$ is the $m\times n$ matrix $(a_{ij}+b_{ij})$. 
+We now enumerate several properties of matrix multiplication.
+
+\begin{itemize}
+
+\item	Let $A$ and $B$ be $m\times n$ matrices and let $C$ be an $n\times p$
+matrix.  Then
+\[
+(A+B)C = AC + BC.
+\]
+Similarly, if $D$ is a $q\times m$ matrix, then
+\[
+D(A+B) = DA + DB.
+\]
+So matrix multiplication distributes across matrix addition.
+
+\item	If $\alpha$ and $\beta$ are scalars, then
+\[
+(\alpha+\beta)A = \alpha A + \beta A.
+\]
+So addition distributes with scalar multiplication.
+
+\item	Scalar multiplication and matrix multiplication satisfy:
+\[
+(\alpha A)C = \alpha (AC).
+\]
+\end{itemize}
+
+\subsubsection*{Matrix Multiplication and Transposes}
+\index{matrix!transpose}
+
+Let $A$ be an $m\times n$ matrix and let $B$ be an $n\times p$
+matrix, so that the matrix product $AB$ is defined and $AB$ is an
+$m\times p$ matrix.  Note that $A^t$
+is an $n\times m$ matrix and that $B^t$ is a $p\times n$ matrix, so
+that in general the product $A^tB^t$ is {\em not\/} defined.  However,
+the product $B^tA^t$ is defined and is an $p\times m$ matrix, as is
+the matrix $(AB)^t$.  We claim that
+\begin{equation}  \label{e:transposeprod}
+(AB)^t = B^tA^t.
+\end{equation}
+We verify this claim by direct computation.  The $(i,k)^{th}$ entry
+in $(AB)^t$ is the $(k,i)^{th}$ entry in $AB$.   That entry is:
+\[
+\sum_{j=1}^{n} a_{kj}b_{ji}.
+\]
+The $(i,k)^{th}$ entry in $B^tA^t$ is:
+\[
+\sum_{j=1}^n b^t_{ij}a^t_{jk},
+\]
+where $a^t_{jk}$ is the $(j,k)^{th}$ entry in $A^t$ and $b^t_{ij}$
+is the $(i,j)^{th}$ entry in $B^t$.  It follows from the definition
+of transpose that the $(i,k)^{th}$ entry in $B^tA^t$ is:
+\[
+\sum_{j=1}^n b_{ji}a_{kj} = \sum_{j=1}^n a_{kj}b_{ji},
+\]
+which verifies the claim.
+
+
+\subsubsection*{Matrix Multiplication in \Matlab}
+\index{matrix!multiplication!in \protect\Matlab}
+
+Let us now explain how matrix multiplication works in \Matlabp.
+We load the matrices
+\begin{matlabEquation}  \label{examp_AB}
+A=\left(\begin{array}{rrr} -5  &  2  &  0\\
+               -1  &  1  & -4\\
+               -4  &  4  &  2\\
+               -1  &  3  & -1 \end{array}\right) \AND
+B =\left(\begin{array}{rrrrr}      2  & -2  & -2  &  5  &  5\\
+                    4  & -5  &  1  & -1  &  2\\
+                    3  &  2  &  3  & -3  &  3
+ \end{array}\right)
+\end{matlabEquation}%
+by typing
+\begin{verbatim}
+e3_6_2
+\end{verbatim}
+Now the command {\tt C = A*B} \index{\computer!*} asks \Matlab to compute
+the matrix $C$ as the product of $A$ and $B$.  We obtain
+\begin{verbatim}
+C =
+    -2     0    12   -27   -21
+   -10   -11    -9     6   -15
+    14    -8    18   -30    -6
+     7   -15     2    -5    -2
+\end{verbatim}
+Let us confirm this result by another computation.  As we have
+seen above the $4^{th}$ column of $C$ should be given by the
+product of $A$ with the $4^{th}$ column of $B$.  Indeed, if we
+perform this computation and type
+\begin{verbatim}
+A*B(:,4)
+\end{verbatim}
+the result is
+\begin{verbatim}
+ans =
+   -27
+     6
+   -30
+    -5
+\end{verbatim}
+which is precisely the $4^{th}$ column of $C$.
+
+\Matlab also recognizes when a matrix multiplication of two
+matrices is not defined.  For example, the product of
+the $3\times 5$ matrix $B$ with the $4\times 3$ matrix $A$
+is not defined, and if we type {\tt B*A} then we obtain the
+error message
+\begin{verbatim}
+??? Error using ==> *
+Inner matrix dimensions must agree.
+\end{verbatim}
+We remark that the size of a matrix $A$ can be seen using
+the \Matlab command {\tt size}\index{\computer!size}.
+For example, the command {\tt size(A)} leads to
+\begin{verbatim}
+ans =
+     4     3
+\end{verbatim}
+reflecting the fact that $A$ is a matrix with four
+rows and three columns.
+
+
+
+\EXER
+
+
+\TEXER
+
+
+\begin{exercise} \label{c4.7.2.2}
+Let $A$ be an $m\times n$ matrix.  Show that the matrices $A A^t$ and
+$A^t A$ are symmetric.
+\end{exercise}
+
+
+\begin{exercise} \label{c4.7.3}
+Let
+\[
+A=\mattwo{1}{2}{-1}{-1} \AND B =\mattwo{2}{3}{1}{4}.
+\]
+Compute $AB$ and $B^tA^t$.  Verify that $(AB)^t=B^tA^t$ for these
+matrices $A$ and $B$.
+\end{exercise}
+
+\begin{exercise} \label{c4.7.4}
+Let
+\[
+A = \left(\begin{array}{ccc} 0 & 1 & 0\\ 0 & 0 & 1 \\ 0 & 0 & 0 \end{array}
+\right).
+\]
+Compute $B=I+A+\frac{1}{2}A^2$ and $C=I+tA+\frac{1}{2}(tA)^2$.
+\end{exercise}
+
+\begin{exercise} \label{c4.7.5}
+Let
+\[
+I = \mattwo{1}{0}{0}{1} \AND J =\mattwo{0}{-1}{1}{0}.
+\]
+\begin{itemize}
+\item[(a)] Show that $J^2=-I$.
+\item[(b)] Evaluate $(aI+bJ)(cI+dJ)$ in terms of $I$ and $J$.
+\end{itemize}
+\end{exercise}
+
+\begin{exercise} \label{c4.7.8}
+Recall that a square matrix $C$ is {\em upper triangular\/} if $c_{ij}=0$
+when $i>j$.  Show that the matrix product of two upper triangular $n\times n$
+matrices is also upper triangular.
+\end{exercise}
+
+
+\CEXER
+
+\noindent In Exercises~\ref{c4.7.0a} -- \ref{c4.7.0c} use \Matlab to
+verify that $(A+B)C = AC+BC$ for the given matrices.
+\begin{exercise}  \label{c4.7.0a}
+$A=\mattwo{0}{2}{2}{1}$, $B=\mattwo{-2}{1}{3}{0}$ and $C=\mattwo{2}{-1}{1}{5}$
+\end{exercise}
+\begin{exercise}  \label{c4.7.0b}
+$A=\mattwo{12}{-2}{3}{1}$,
+$B=\mattwo{8}{-20}{3}{10}$ and
+$C=\left(\begin{array}{rrr} 10 & 2 & 4\\ 2 & 13 & -4 \end{array}\right)$
+\end{exercise}
+\begin{exercise}  \label{c4.7.0c}
+$A=\left(\begin{array}{rr} 6 & 1 \\ 3 & 20 \\ -5 & 3\end{array}\right)$,
+$B=\left(\begin{array}{rr} 2 & -10 \\ 5 & 0 \\ 3 & 1\end{array}\right)$ and
+$C=\mattwo{-2}{10}{12}{10}$
+\end{exercise}
+
+\begin{exercise} \label{c4.7.2}
+Use the {\tt rand(3,3)} command in \Matlab to choose five pairs of
+$3\times 3$ matrices $A$ and $B$ at random.  Compute $AB$ and $BA$
+using \Matlab to see that in general these matrix products are unequal.
+\end{exercise}
+
+\begin{exercise} \label{c4.7.2.1}
+Experimentally, find two symmetric $2\times 2$ matrices $A$ and $B$ for
+which the matrix product $AB$ is {\em not\/} symmetric.
+\end{exercise}
+
+
+
+\end{document}

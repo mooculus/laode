@@ -1,0 +1,442 @@
+\documentclass{ximera}
+
+\input{../preamble.tex}
+
+\title{Initial Value Problems Revisited}
+
+\begin{document}
+\begin{abstract}
+\end{abstract}
+\maketitle
+
+
+\label{S:IVPR}
+
+To summarize the ideas developed in this chapter, we review the method
+that we have developed to solve the system of differential equations
+\index{initial value problem}
+\begin{equation} \label{E:2dode}
+\begin{array}{rcl}
+\dot{x} & = & ax+by \\
+\dot{y} & = & cx+dy
+\end{array}
+\end{equation}
+satisfying the initial conditions
+\begin{equation} \label{E:2dic}
+\begin{array}{rcl}
+   x(0) & = & x_0 \\
+   y(0) & = & y_0.
+\end{array}
+\end{equation}
+
+Begin by rewriting \eqref{E:2dode} in matrix form
+\begin{equation}  \label{E:2dodeM}
+\dot{X} = CX
+\end{equation}
+where
+\[
+C = \mattwo{a}{b}{c}{d} \AND X(t)=\vectwo{x(t)}{y(t)}.
+\]
+Rewrite the initial conditions \eqref{E:2dic} in vector form
+\begin{equation}  \label{E:2dicV}
+X(0) = X_0
+\end{equation}
+where
+\[
+X_0=\vectwo{x_0}{y_0}.
+\]
+
+When the eigenvalues of $C$ are {\em real\/} and {\em distinct\/} we now
+know how to solve the initial value problem \eqref{E:2dodeM} and \eqref{E:2dicV}.
+This solution is found in four steps.
+
+\paragraph{Step 1:}  Find the eigenvalues $\lambda_1$ and $\lambda_2$ of $C$.
+
+These eigenvalues are the roots of the characteristic
+polynomial as given by \eqref{e:invcharpoly}:
+\[
+p_C(\lambda)=\lambda^2-\trace(C)\lambda+\det(C).
+\]
+These roots may be found either by factoring $p_C$ or by using the quadratic
+formula.  The roots are real and distinct when the discriminant
+\[
+D=\trace(C)^2-4\det(C)>0.
+\]
+Recall \eqref{e:discriminant} and Theorem~\ref{eigendist}.
+
+\paragraph{Step 2:}  Find eigenvectors $v_1$ and $v_2$ of $C$ associated
+with the eigenvalues $\lambda_1$ and $\lambda_2$.
+
+For $j=1$ and $j=2$, the eigenvector $v_j$ is found by solving the
+homogeneous system of linear equations
+\begin{equation}  \label{E:eeqn}
+(C-\lambda_j I_2)v = 0
+\end{equation}
+for one nonzero solution.  Lemma~\ref{L:eigenexists} tells us that there is
+always a nonzero solution to \eqref{E:eeqn} since $\lambda_j$ is an eigenvalue
+of $C$.
+
+\paragraph{Step 3:}  Using superposition, write the {\em general solution\/}
+\index{general solution} to the system of ODEs \eqref{E:2dodeM} as
+\begin{equation}  \label{E:gensoln}
+X(t) = \alpha_1e^{\lambda_1 t}v_1 + \alpha_2 e^{\lambda_2 t}v_2,
+\end{equation}
+where $\alpha_1,\alpha_2\in\R$.
+
+Theorem~\ref{T:eigensoln} tells us that for $j=1,2$
+\[
+X_j(t) = e^{\lambda_j t}v_j
+\]
+is a solution to \eqref{E:2dodeM}.  The principle of superposition (see
+Section~\ref{S:IVP&E}) allows us to conclude that
+\[
+X(t) = \alpha_1X_1(t) + \alpha_2X_2(t)
+\]
+is also a solution to \eqref{E:2dodeM} for any scalars $\alpha_1,\alpha_2\in\R$.
+Thus, \eqref{E:gensoln} is valid.
+
+Note that the initial condition corresponding to the general solution
+\eqref{E:gensoln} is
+\begin{equation} \label{E:geninit}
+X(0) = \alpha_1v_1 + \alpha_2v_2,
+\end{equation}
+since $e^0=1$.
+
+\paragraph{Step 4:}  Solve the initial value problem by solving the system
+of linear equations
+\begin{equation} \label{E:geninit2}
+X_0 = \alpha_1v_1 + \alpha_2v_2
+\end{equation}
+for $\alpha_1 $ and $\alpha_2$ (see \eqref{E:geninit}).
+
+Let $A$ be the $2\times 2$ matrix whose columns are $v_1$ and $v_2$.  That
+is,
+\begin{equation} \label{E:Av1v2}
+A = (v_1|v_2).
+\end{equation}
+Then we may rewrite \eqref{E:geninit2} in the form
+\begin{equation} \label{E:solveinit}
+A\vectwo{\alpha_1}{\alpha_2} = X_0.
+\end{equation}
+
+We claim that the matrix $A=(v_1|v_2)$ (defined in \eqref{E:Av1v2}) is always
+invertible.  Recall Lemma~\ref{L:e'vector} which states that if $w$ is a 
+nonzero multiple of $v_2$, then $w$ is also an eigenvector of $A$ associated to the eigenvalue $\lambda_2$.  Since the eigenvalues $\lambda_1$
+and $\lambda_2$ are distinct, it follows that the eigenvector $v_1$ is not a
+scalar multiple of the eigenvector $v_2$ (see Lemma~\ref{L:e'vector}).  
+Therefore, the area of the
+parallelogram spanned by $v_1$ and $v_2$ is nonzero and the determinant of
+$A$ is nonzero by Theorem~\ref{T:det&area} of Chapter~\ref{chap:matrices}.   
+Corollary~\ref{C:2x2invert} of Chapter~\ref{chap:matrices} now implies that 
+$A$ is invertible.  Thus, the unique solution to \eqref{E:solveinit} is
+\[
+\vectwo{\alpha_1}{\alpha_2} = A\inv X_0.
+\]
+This equation is easily solved since we have an explicit formula for
+$A\inv$ when $A$ is a $2\times 2$ matrix (see \eqref{e:formAinv} in
+Section~\ref{S:det2x2}).  Indeed,
+\[
+A\inv = \frac{1}{\det(A)}\mattwo{d}{-b}{-c}{a}.
+\]
+
+\subsubsection*{An Initial Value Problem Solved by Hand}
+\index{initial value problem}
+
+Solve the linear system of differential equations
+\begin{equation}  \label{E:ivpbh}
+\begin{array}{rcl}
+\dot{x} & = & 3x-y \\
+\dot{y} & = & 4x-2y \end{array}
+\end{equation}
+with initial conditions
+\begin{equation}  \label{E:ivpbhic}
+\begin{array}{rcc}
+ x(0) & = & 2 \\
+ y(0) & = & -3.
+\end{array}
+\end{equation}
+
+Rewrite the system \eqref{E:ivpbh} in matrix form as
+\[
+\dot{X} = CX
+\]
+where
+\[
+C = \mattwo{3}{-1}{4}{-2}.
+\]
+Rewrite the initial conditions \eqref{E:ivpbhic} in vector form
+\[
+X(0) = X_0 = \vectwo{2}{-3}.
+\]
+
+Now proceed through the four steps outlined previously.
+
+\paragraph{Step 1:}  Find the eigenvalues of $C$.
+
+The characteristic polynomial of $C$ is
+\[
+p_C(\lambda) = \lambda^2 -\trace(C)\lambda+\det(C) = \lambda^2-\lambda-2
+= (\lambda-2)(\lambda+1).
+\]
+Therefore, the eigenvalues of $C$ are
+\[
+\lambda_1 = 2 \AND \lambda_2=-1.
+\]
+
+\paragraph{Step 2:}  Find the eigenvectors of $C$.
+
+Find an eigenvector associated with the eigenvalue $\lambda_1 = 2$
+by solving the system of equations
+\begin{align*}
+(C-\lambda_1I_2)v &= \left(\mattwo{3}{-1}{4}{-2}-\mattwo{2}{0}{0}{2}\right)v \\
+&= \mattwo{1}{-1}{4}{-4}v = 0.
+\end{align*}
+One particular solution to this system is
+\[
+v_1 = \vectwo{1}{1}.
+\]
+
+Similarly, find an eigenvector associated with the eigenvalue
+$\lambda_2 = -1$ by solving the system of equations
+\begin{align*}
+(C-\lambda_2I_2)v &= \left(\mattwo{3}{-1}{4}{-2}-\mattwo{-1}{0}{0}{-1}\right)v \\
+&= \mattwo{4}{-1}{4}{-1}v = 0.
+\end{align*}
+One particular solution to this system is
+\[
+v_2 = \vectwo{1}{4}.
+\]
+
+\paragraph{Step 3:}  Write the general solution to the 
+system of differential equations.
+
+Using superposition the general solution to the system \eqref{E:ivpbh} is:
+\[
+X(t) = \alpha_1e^{2t}v_1 + \alpha_2e^{-t}v_2 = \alpha_1e^{2t}\vectwo{1}{1}
++ \alpha_2e^{-t}\vectwo{1}{4},
+\]
+where $\alpha_1,\alpha_2\in\R$.  Note that the initial state of this solution
+is:
+\[
+X(0) =  \alpha_1\vectwo{1}{1}+\alpha_2\vectwo{1}{4}
+= \vectwoc{\alpha_1 + \alpha_2}{\alpha_1+4\alpha_2}.
+\]
+
+\paragraph{Step 4:}  Solve the initial value problem.
+
+Let
+\[
+A=(v_1|v_2) = \mattwo{1}{1}{1}{4}.
+\]
+The equation for the initial condition is
+\[
+A\vectwo{\alpha_1}{\alpha_2} = X_0.
+\]
+See \eqref{E:Av1v2}.
+
+We can write the inverse of $A$ by formula as
+\[
+A\inv = \frac{1}{3}\mattwo{4}{-1}{-1}{1}.
+\]
+It follows that we solve for the coefficients $\alpha_j$ as
+\[
+\vectwo{\alpha_1}{\alpha_2} = A\inv X_0 =
+\frac{1}{3}\mattwo{4}{-1}{-1}{1} \vectwo{2}{-3} =
+\frac{1}{3} \vectwo{11}{-5}.
+\]
+In coordinates
+\[
+\alpha_1 = \frac{11}{3} \AND \alpha_2=-\frac{5}{3}.
+\]
+
+The solution to the initial value problem \eqref{E:ivpbh} and \eqref{E:ivpbhic} is:
+\begin{align*}
+X(t) &=  \frac{1}{3} \left(11e^{2t}v_1 - 5e^{-t}v_2\right) \\
+&= \frac{1}{3} \left(11e^{2t}\vectwo{1}{1} - 5e^{-t}\vectwo{1}{4} \right).
+\end{align*}
+Expressing the solution in coordinates, we obtain:
+\begin{eqnarray*}
+x(t) & = & \frac{1}{3} \left(11e^{2t} - 5e^{-t} \right)\\
+y(t) & = & \frac{1}{3} \left(11e^{2t} -20e^{-t}\right).
+\end{eqnarray*}
+
+
+
+\subsubsection*{An Initial Value Problem Solved using \Matlab}
+
+Next, solve the system of ODEs
+\begin{eqnarray*}
+\dot{x} & = & 1.7x+3.5y \\
+\dot{y} & = & 1.3x-4.6y
+\end{eqnarray*}
+with initial conditions
+\begin{eqnarray*}
+ x(0) & = & 2.7 \\
+ y(0) & = & 1.1\;.
+\end{eqnarray*}
+
+Rewrite this system in matrix form as
+\[
+\dot{X} = CX
+\]
+where
+\[
+C = \mattwo{1.7}{3.5}{1.3}{-4.6}.
+\]
+Rewrite the initial conditions in vector form
+\[
+X_0 = \vectwo{2.7}{1.1}.
+\]
+
+Now proceed through the four steps outlined previously.  In \Matlab begin by
+typing
+\begin{verbatim}
+C  = [1.7 3.5; 1.3 -4.6]
+X0 = [2.7; 1.1]
+\end{verbatim}
+
+\paragraph{Step 1:}  Find the eigenvalues of $C$ by typing
+\begin{verbatim}
+lambda = eig(C)
+\end{verbatim}\index{\computer!eig}
+and obtaining
+\begin{verbatim}
+lambda =
+    2.3543
+   -5.2543
+\end{verbatim}
+So the eigenvalues of $C$ are real and distinct.
+
+\paragraph{Step 2:}  To find the eigenvectors of $C$ we need to solve
+two homogeneous systems of linear equations.
+The matrix associated with the first system is obtained by typing
+\begin{verbatim}
+C1 = C - lambda(1)*eye(2)
+\end{verbatim}
+which yields
+\begin{verbatim}
+C1 =
+   -0.6543    3.5000
+    1.3000   -6.9543
+\end{verbatim}
+We can solve the homogeneous system $({\tt C1})x=0$ by row reduction --- but 
+\Matlab has this process preprogrammed in the command {\tt null}. 
+\index{\computer!null}  So type
+\begin{verbatim}
+v1 = null(C1)
+\end{verbatim}
+and obtain
+\begin{verbatim}
+v1 =
+   -0.9830
+   -0.1838
+\end{verbatim}
+Similarly, to find an eigenvector associated to the eigenvalue $\lambda_2$
+type
+\begin{verbatim}
+C2 = C - lambda(2)*eye(2);
+v2 = null(C2)
+\end{verbatim}
+and obtain
+\begin{verbatim}
+v2 =
+   -0.4496
+    0.8932
+\end{verbatim}
+
+
+\paragraph{Step 3:}  The general solution to this system of differential
+equations is:
+\[
+X(t) = \alpha_1 e^{2.3543t}\vectwo{-0.9830}{-0.1838} +
+\alpha_2e^{-5.2543t}\vectwo{-0.4496}{0.8932}.
+\]
+
+
+\paragraph{Step 4:}  Solve the initial value problem by finding the scalars
+$\alpha_1$ and $\alpha_2$.   Form the matrix $A$ by typing
+\begin{verbatim}
+A = [v1 v2]
+\end{verbatim}
+Then solve for the $\alpha$'s by typing
+\begin{verbatim}
+alpha = inv(A)*X0
+\end{verbatim}
+obtaining
+\begin{verbatim}
+alpha =
+   -3.0253
+    0.6091
+\end{verbatim}
+
+Therefore, the closed form solution to the initial value problem is:
+\begin{align*}
+  X(t) = & 3.0253 e^{2.3543t}\vectwo{0.9830}{0.1838} \\
+  + 0.6091 e^{-5.2543t}\vectwo{-0.4496}{0.8932}.
+\end{align*}
+
+\EXER
+
+\TEXER
+
+\noindent In Exercises~\ref{c4.10A.1a} -- \ref{c4.10A.1d} find the solution
+to the system of differential equations $\dot{X} = CX$ satisfying $X(0)=X_0$.
+\begin{exercise}  \label{c4.10A.1a}
+$C = \mattwo{1}{1}{0}{2}$ \AND $X_0 = \vectwo{1}{4}$.
+\end{exercise}
+\begin{exercise}  \label{c4.10A.1b}
+$C = \mattwo{2}{-3}{0}{-1}$ \AND $X_0 = \vectwo{1}{-2}$.
+\end{exercise}
+\begin{exercise}  \label{c4.10A.1c}
+$C = \mattwo{-3}{2}{-2}{2}$ \AND $X_0 = \vectwo{-1}{3}$.
+\end{exercise}
+\begin{exercise}  \label{c4.10A.1d}
+$C = \mattwo{2}{1}{1}{2}$ \AND $X_0 = \vectwo{1}{2}$.
+\end{exercise}
+
+\begin{exercise}  \label{c4.10A.2}
+Solve the initial value problem $\dot{X}=CX$ where $X_0=e_1$ given that
+\begin{itemize}
+\item[(a)]	$X(t) = e^{-t}\vectwo{1}{2}$ is a solution,
+\item[(b)]	$\trace(C)=3$, and
+\item[(c)]	$C$ is a symmetric matrix.
+\end{itemize}
+\end{exercise}
+
+\CEXER
+
+\noindent In Exercises~\ref{c4.10A.3a} -- \ref{c4.10A.3b}, with \Matlab
+assistance, find the solution to the system of differential equations
+$\dot{X} = CX$ satisfying $X(0)=X_0$.
+\begin{exercise}  \label{c4.10A.3a}
+$C = \mattwo{1.76}{4.65}{0.23}{1.11}$ \AND $X_0 = \vectwo{0.34}{-0.50}$.
+\end{exercise}
+\begin{exercise}  \label{c4.10A.3b}
+$C = \mattwo{1.23}{2\pi}{\pi/2}{1.45}$ \AND $X_0 = \vectwo{1.2}{1.6}$.
+\end{exercise}
+
+\noindent In Exercises~\ref{c4.10A.4a} -- \ref{c4.10A.4b}, find the solution 
+to $\dot{X} = CX$ satisfying $X(0)=X_0$ in two different ways, as follows.  
+\begin{itemize}
+\item[(a)]  Use {\sf pplane8} to find $X(0.5)$.  {\bf Hint}: Use the 
+{\sf Specify a computation interval} option in the {\sf PPLANE8 Keyboard input} 
+window to compute the solution to $t=0.5$. Then use the {\sf zoom in square} 
+feature to determine an answer to three decimal places.  
+\item[(b)]  Next use \Matlab to find the eigenvalues and eigenvectors of $C$ 
+and to find a closed form solution $X(t)$.  Use this formula to evaluate 
+$X(0.5)$ to three decimal places.    
+\item[(c)]  Do the two answers agree?
+\end{itemize}
+\begin{exercise}  \label{c4.10A.4a}  
+$C = \mattwo{2.65}{-2.34}{-1.5}{-1.2} \AND X_0=\vectwo{0.5}{0.1}$.
+\end{exercise}
+\begin{exercise}  \label{c4.10A.4b}  
+$C = \mattwo{1.2}{2.4}{0.6}{-3.5} \AND X_0=\vectwo{0.5}{0.7}$.
+\end{exercise}
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

@@ -1,0 +1,506 @@
+\documentclass{ximera}
+
+\input{../preamble.tex}
+
+\title{Matrix Multiplication of Vectors}
+
+\begin{document}
+\begin{abstract}
+\end{abstract}
+\maketitle
+
+ \label{S:4.1}
+\index{matrix!multiplication}
+
+In Chapter~\ref{lineq} we discussed how matrices appear when solving systems 
+of $m$ linear equations in $n$ unknowns.  Given the system
+\begin{equation}   \label{general2}
+\arraycolsep 2pt
+\begin{array}{rcrcrcrcrl}
+a_{11}x_1 & + & a_{12}x_2 & + & \cdots & + & a_{1n}x_n & = & b_1 & \\
+a_{21}x_1 & + & a_{22}x_2 & + & \cdots & + & a_{2n}x_n & = & b_2 & \\
+    & \vdots &      & \vdots &    & \vdots &     & \vdots &   & \\
+a_{m1}x_1 & + & a_{m2}x_2 & + & \cdots & + & a_{mn}x_n & = & b_m & ,
+\end{array}
+\end{equation}
+we saw that all relevant information is contained in the $m\times n$ matrix 
+of coefficients
+\[
+A=\left(
+\begin{array}{rrrr}
+ a_{11} & a_{12} & \cdots & a_{1n} \\
+ a_{21} & a_{22} & \cdots & a_{2n}  \\
+ \vdots & \vdots &        & \vdots  \\
+ a_{m1} & a_{m2} & \cdots & a_{mn}
+\end{array}
+\right)
+\]
+and the $n$ vector
+\[
+b=\left(
+\begin{array}{c}
+b_1 \\ \vdots \\ b_n
+\end{array}
+\right).
+\]
+
+
+
+\subsection*{Matrices Times Vectors}
+
+We motivate multiplication of a matrix times a vector just as a notational 
+advance that simplifies the
+presentation of the linear systems.  It is, however, much more
+than that.  This concept of multiplication allows us to think of
+matrices as mappings and these mappings tell us much about the
+structure of solutions to linear systems.  But first we discuss
+the notational advantage.
+
+Multiplying an $m\times n$ matrix $A$ times an $n$ vector $x$
+\index{matrix vector product}
+produces an $m$ vector, as follows:
+\begin{equation}  \label{Atimesx}
+Ax=\left(
+\begin{array}{ccc}
+ a_{11}  & \cdots & a_{1n} \\
+ \vdots  &        & \vdots  \\
+ a_{m1}  & \cdots & a_{mn}
+\end{array}
+\right)
+\left(
+\begin{array}{c}
+x_1 \\ \vdots \\ x_n
+\end{array}
+\right)
+=
+\left(
+\begin{array}{c}
+a_{11}x_1 + \cdots + a_{1n}x_n \\ \vdots \\
+a_{m1}x_1 + \cdots + a_{mn}x_n
+\end{array}
+\right).
+\end{equation}
+For example, when $m=2$ and $n=3$, then the product is a $2$-vector
+\begin{equation} \label{Atimesx231}
+\left(
+\begin{array}{ccc}
+ a_{11}  & a_{12} & a_{13} \\
+ a_{21}  & a_{22} & a_{23}
+\end{array}
+\right)
+\left(
+\begin{array}{c}
+x_1 \\ x_2 \\ x_3
+\end{array}
+\right)
+=
+\left(
+\begin{array}{c}
+a_{11}x_1 + a_{12}x_2 + a_{13}x_3 \\
+a_{21}x_1 + a_{22}x_2 + a_{23}x_3
+\end{array}
+\right).
+\end{equation}
+As a specific example, compute
+\begin{align*}
+\left(
+\begin{matrix}
+ 2  & 3 & -1 \\
+ 4  & 1 &  5
+\end{matrix}
+\right)
+\left(
+\begin{matrix}
+2 \\ -3 \\ 4
+\end{matrix}
+\right)
+&=
+\left(
+\begin{matrix}
+2\cdot 2 & + & 3\cdot(-3) & + & (-1)\cdot 4 \\
+4\cdot 2 & + & 1\cdot(-3) & + & 5\cdot 4
+\end{matrix}
+\right) \\
+&=
+\left(
+\begin{matrix}
+-9 \\ 25
+\end{matrix}
+\right).
+\end{align*}
+
+
+Using \eqref{Atimesx} we have a compact notation for writing
+systems of linear equations.  For example, using a special
+instance of \eqref{Atimesx231},
+\[
+\left(
+\begin{array}{rrr}
+ 2  & 3 & -1 \\
+ 4  & 1 &  5
+\end{array}
+\right)
+\left(
+\begin{array}{r}
+x_1 \\ x_2 \\ x_3
+\end{array}
+\right)
+=
+\left(
+\begin{array}{c}
+2x_1 + 3x_2 - x_3 \\
+4x_1 + x_2 + 5x_3
+\end{array}
+\right).
+\]
+In this notation we can write the system of two linear equations
+in three unknowns
+\[
+\begin{array}{ccccccr}
+2x_1 & + & 3x_2 & - &  x_3 & = &   2 \\
+4x_1 & + &  x_2 & + & 5x_3 & = &  -1
+\end{array}
+\]
+as the matrix equation
+\[
+\left(
+\begin{array}{rrr}
+ 2  & 3 & -1 \\
+ 4  & 1 &  5
+\end{array}
+\right)
+\left(
+\begin{array}{r}
+x_1 \\ x_2 \\ x_3
+\end{array}
+\right)
+=
+\left(
+\begin{array}{r}
+2 \\ -1
+\end{array}
+\right).
+\]
+
+Indeed, the general system of linear equations \eqref{general2}
+can be written in matrix form using matrix multiplication as
+\[
+Ax=b
+\]
+where $A$ is the $m\times n$ matrix of coefficients, $x$ is the
+$n$ vector of unknowns, and $b$ is the $m$ vector of constants
+on the right hand side of \eqref{general2}.
+
+
+\subsection*{Matrices Times Vectors in \Matlab}
+
+We have already seen how to define matrices and vectors in
+\Matlabp.  Now we show how to multiply a matrix times a vector
+using \Matlabp\index{matrix vector product!in \protect\Matlab}.
+
+Load the matrix $A$
+\begin{matlabEquation}  \label{eq:5matrix}
+A=\left(
+\begin{array}{rrrrr}
+ 5 & -4 &  3 & -6 &  2 \\
+ 2 & -4 & -2 & -1 &  1 \\
+ 1 &  2 &  1 & -5 &  3 \\
+-2 & -1 & -2 &  1 & -1 \\
+ 1 & -6 &  1 &  1 &  4
+\end{array}
+\right)
+\end{matlabEquation}
+and the vector $x$
+\begin{matlabEquation} \label{eq:5rhs}
+x=\left(
+\begin{array}{r}
+ -1 \\
+  2 \\
+  1 \\
+ -1 \\
+  3
+\end{array}
+\right)
+\end{matlabEquation}
+into \Matlab by typing
+\begin{verbatim}
+e3_1_4
+e3_1_5
+\end{verbatim}
+The multiplication $Ax$ can be performed by typing
+\begin{verbatim}
+b = A*x
+\end{verbatim}  \index{\computer!*}
+and the result should be
+\begin{verbatim}
+b =
+     2
+    -8
+    18
+    -6
+    -1
+\end{verbatim}
+We may verify this result by solving the system of linear
+equations $Ax=b$.  Indeed if we type
+\begin{verbatim}
+A\b
+\end{verbatim}  \index{\computer!$\backslash$}
+then we get the vector $x$ back as the answer.
+
+\EXER
+
+\TEXER
+
+
+\begin{exercise} \label{c4.1.1}
+Let
+\[
+A = \mattwo{2}{1}{-1}{4} \AND x = \vectwo{3}{-2}.
+\]
+Compute $Ax\begin{prompt}=\left(\begin{array}{r} \answer{4} \\ \answer{-11}\end{array}\right)\end{prompt}$.
+\begin{hint}
+  \[
+Ax =
+\left(\begin{array}{rr} 2 & 1 \\ -1 & 4\end{array}\right)
+\left(\begin{array}{r} 3 \\ -2\end{array}\right) =
+\left(\begin{array}{r} 6 - 2 \\ -3 - 8\end{array}\right) =
+\left(\begin{array}{r} 4 \\ -11\end{array}\right)
+\]
+\end{hint}
+\end{exercise}
+
+\begin{exercise} \label{c4.1.2}
+Let
+\[
+B=\left(\begin{array}{ccc} 3 & 4 & 1\\ 1& 2 & 3 \end{array}\right)
+\AND y=\left(\begin{array}{r} 2 \\ 5 \\ -2 \end{array}\right).
+\]
+Compute $By\begin{prompt}=\left(\begin{array}{r} \answer{24} \\ \answer{6}\end{array}\right)\end{prompt}$.
+\begin{hint}
+  \[
+By =
+\left(\begin{array}{rrr} 3 & 4 & 1 \\ 1 & 2 & 3\end{array}\right)
+\left(\begin{array}{r} 2 \\ 5 \\ -2\end{array}\right) = 
+\left(\begin{array}{r} 6 + 20 - 2 \\ 2 + 10 - 6\end{array}\right) =
+\left(\begin{array}{r} 24 \\ 6\end{array}\right)
+\]
+\end{hint}
+\end{exercise}
+
+\noindent In Exercises~\ref{c4.1.a3a} -- \ref{c4.1.a3d} decide whether or
+not the matrix vector product $Ax$ can be computed; if it can, compute the
+product.
+\begin{exercise} \label{c4.1.a3a}
+  $A=\mattwo{1}{2}{0}{-5} \AND x = \vectwo{2}{2}$.
+  \begin{multipleChoice}
+    \choice[correct]{The matrix vector product can be computed.}
+    \choice{The matrix vector product can not be computed.}    
+  \end{multipleChoice}
+  \begin{exercise}
+    $Ax = \vectwo{\answer{6}}{\answer{-10}}$.
+  \end{exercise}
+\end{exercise}
+
+\begin{exercise} \label{c4.1.a3b}
+$A=\mattwo{1}{2}{0}{-5} \AND
+x = \left(\begin{array}{r} 2\\ 2 \\4\end{array}\right)$.
+  \begin{multipleChoice}
+    \choice{The matrix vector product can be computed.}
+    \choice[correct]{The matrix vector product can not be computed.}    
+  \end{multipleChoice}
+\end{exercise}
+
+\begin{exercise} \label{c4.1.a3c}
+$A=\left(\begin{array}{rrr} 1 & 2 & 4 \end{array}\right) \AND
+x = \left(\begin{array}{r} -1\\ 1 \\3\end{array}\right)$.
+  \begin{multipleChoice}
+    \choice[correct]{The matrix vector product can be computed.}
+    \choice{The matrix vector product can not be computed.}    
+  \end{multipleChoice}
+  \begin{exercise}
+    $Ax = \left(\answer{13}\right)$.
+  \end{exercise}
+\end{exercise}
+
+\begin{exercise} \label{c4.1.a3d}
+  $A=\left(5\right) \AND x = \vectwo{1}{0}$.
+  \begin{multipleChoice}
+    \choice{The matrix vector product can be computed.}
+    \choice[correct]{The matrix vector product can not be computed.}    
+  \end{multipleChoice}  
+\end{exercise}
+
+\begin{exercise} \label{c4.1.b3}
+Let
+\[
+A=\left(
+\begin{array}{rrrr}
+ a_{11} & a_{12} & \cdots & a_{1n} \\
+ a_{21} & a_{22} & \cdots & a_{2n}  \\
+ \vdots & \vdots &        & \vdots  \\
+ a_{m1} & a_{m2} & \cdots & a_{mn}
+\end{array}
+\right)\quad\mbox{and}\quad
+x =
+\left( \begin{array}{r} x_1\\ x_2\\ \vdots\\ x_n\end{array}\right).
+\]
+Denote the columns of the matrix $A$ by
+\[
+A_1 =
+\left(\begin{array}{c} a_{11}\\ a_{21}\\ \vdots\\
+a_{m1}\end{array}\right),\quad
+A_2 =
+\left(\begin{array}{c} a_{12}\\ a_{22}\\ \vdots\\
+a_{m2}\end{array}\right),\quad
+\cdots\quad
+A_n =
+\left(\begin{array}{c} a_{1n}\\ a_{2n}\\ \vdots\\ a_{mn}\end{array}\right).
+\]
+Show that the matrix vector product $Ax$ can be written as
+\[
+Ax = x_1 A_1 + x_2 A_2 + \cdots + x_n A_n,
+\]
+where $x_j A_j$ denotes scalar multiplication (see Chapter~\ref{chap:prelim}).
+\end{exercise}
+
+
+\begin{exercise} \label{c4.1.3}
+Let
+\[
+C = \mattwo{1}{1}{2}{-1} \AND b = \vectwo{1}{1}.
+\]
+Find a $2$-vector $z$ such that $Cz=b$.
+\end{exercise}
+
+\begin{exercise} \label{c4.1.4}
+Write the system of linear equations
+\begin{eqnarray*}
+2x_1 + 3x_2 - 2x_3 & = & 4\\
+6x_1 -5x_3 & = & 1
+\end{eqnarray*}
+in the matrix form $Ax=b$.
+\end{exercise}
+
+
+\begin{exercise} \label{c4.1.6}
+Find all solutions to
+\[
+\left(\begin{array}{rrrr} 1 & 3 & -1 & 4 \\ 2 & 1 & 5 & 7 \\
+3 & 4 & 4 & 11 \end{array} \right)
+\left(\begin{array}{c} x_1 \\ x_2 \\ x_3 \\ x_4\end{array}\right) =
+\left(\begin{array}{c} 14 \\ 17 \\31 \end{array}\right).
+\]
+\end{exercise}
+
+\begin{exercise} \label{c4.1.7}
+Let $A$ be a $2\times 2$ matrix.  Find $A$ so that
+\begin{eqnarray*}
+A\left(\begin{array}{c} 1 \\ 0 \end{array}\right) =
+\left(\begin{array}{r} 3 \\ -5 \end{array}\right) \\
+A\left(\begin{array}{c} 0 \\ 1 \end{array}\right) =
+\left(\begin{array}{r} 1 \\ 4 \end{array}\right).
+\end{eqnarray*}
+\end{exercise}
+
+\begin{exercise} \label{c4.1.8}
+Let $A$ be a $2\times 2$ matrix.  Find $A$ so that
+\begin{eqnarray*}
+A\left(\begin{array}{r} 1 \\ 1 \end{array}\right) =
+\left(\begin{array}{r} 2 \\ -1 \end{array}\right) \\
+A\left(\begin{array}{r} 1 \\ -1 \end{array}\right) =
+\left(\begin{array}{r} 4 \\ 3 \end{array}\right).
+\end{eqnarray*}
+\end{exercise}
+
+\begin{exercise} \label{c4.1.9}
+Is there an upper triangular $2\times 2$ matrix $A$ such that
+\begin{equation}  \label{eq:avect}
+A\vectwo{1}{0} = \vectwo{1}{2}?
+\end{equation}
+Is there a symmetric $2\times 2$ matrix $A$ satisfying \eqref{eq:avect}?
+\end{exercise}
+
+\CEXER
+
+\noindent In Exercises~\ref{c4.1.a10a} -- \ref{c4.1.a10b} use \Matlab to
+compute $b=Ax$ for the given $A$ and $x$.
+\begin{exercise} \label{c4.1.a10a}
+\begin{matlabEquation}\label{multiplication-exercise}
+A=\left(
+\begin{array}{rrrrr}
+   -0.2 &   -1.8 &    3.9 &    -6 &   -1.6\\
+    6.3 &    8   &    3   &    2.5 &    5.1\\
+   -0.8 &   -9.9 &    9.7 &    4.7 &    5.9\\
+   -0.9 &   -4.1 &    1.1 &   -2.5 &    8.4\\
+   -1 &   -9 &   -2 &  -9.8 &    6.9
+\end{array}\right)
+\AND
+x = \left( \begin{array}{r} -2.6\\  2.4\\  4.6\\   -6.1\\    8.1
+\end{array}\right).
+\end{matlabEquation}
+\end{exercise}
+\begin{exercise} \label{c4.1.a10b}
+\begin{matlabEquation}\label{multiplication-exercise-2}
+A=\left(
+\begin{array}{rrrrrrr}
+    14 & -22  &-26 &  -2 & -77 & 100 & -90\\
+    26 &  25  &-15 & -63 &  33 &  92 &  14\\
+   -53 &  40  & 19 &  40 & -27 & -88 &  40\\
+    10 & -21  & 13 &  97 & -72 & -28 &  92\\
+    86 & -17  & 43 &  61 &  13 &  10 &  50\\
+   -33 &  31  &  2 &  41 &  65 & -48 &  48\\
+    31 &  68  & 55 &  -3 &  35 &  19 & -14
+\end{array}
+\right)\end{matlabEquation}
+and
+\begin{equation*}
+x = \left( \begin{array}{r} 2.7\\   6.1\\   -8.3\\    8.9\\    8.3\\    2\\
+  -4.9
+\end{array}\right).
+\end{equation*}
+\end{exercise}
+
+
+
+\begin{exercise} \label{c4.1.10}
+Let
+\begin{matlabEquation}\label{inverse-exercise}
+A = \left(\begin{array}{rrr} 2 & 4 & -1 \\ 1 & 3 & 2\\
+-1 & -2 & 5 \end{array}\right) \AND
+b = \left(\begin{array}{c} 2 \\ 1 \\ 4 \end{array}\right).
+\end{matlabEquation}
+Find a $3$-vector $x$ such that $Ax=b$.
+\end{exercise}
+
+\begin{exercise} \label{c4.1.11}
+Let
+\begin{matlabEquation}\label{MATLAB:24}
+A = \left(\begin{array}{rrr} 1.3 & -4.15 & -1.2 \\ 1.6 & -1.2 & 2.4\\
+-2.5 & 2.35 & 5.09 \end{array}\right) \AND
+b = \left(\begin{array}{c} 1.12 \\ -2.1 \\ 4.36 \end{array}\right).
+\end{matlabEquation}
+Find a $3$-vector $x$ such that $Ax=b$.
+\end{exercise}
+
+\begin{exercise} \label{c4.1.12}
+Let $A$ be a $3\times 3$ matrix.  Find $A$ so that
+\begin{eqnarray*}
+A\left(\begin{array}{r} 2 \\ -1 \\ 1 \end{array}\right) =
+\left(\begin{array}{r} 1 \\ 1  \\ -1 \end{array}\right) \\
+A\left(\begin{array}{r} 1 \\ -1 \\ 0 \end{array}\right) =
+\left(\begin{array}{r} -1 \\ -2 \\ 1 \end{array}\right)\\
+A\left(\begin{array}{r} 0 \\ 2 \\ 4 \end{array}\right) =
+\left(\begin{array}{r} 5 \\ 1 \\ 1 \end{array}\right).
+\end{eqnarray*}
+{\bf Hint:} Rewrite these three conditions as a system of linear
+equations in the nine entries of $A$.  Then solve this system
+using \Matlabp.  (Then pray that there is an easier way.)
+\end{exercise}
+
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

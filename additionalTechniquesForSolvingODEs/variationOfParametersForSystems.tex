@@ -1,0 +1,380 @@
+\documentclass{ximera}
+
+\input{../preamble.tex}
+
+\title{Variation of Parameters for Systems}
+
+\begin{document}
+\begin{abstract}
+\end{abstract}
+\maketitle
+
+
+\label{sec:LinInhomSys}
+\index{variation of parameters}
+
+In this section we consider solving inhomogeneous systems of linear
+differential equations  of the form
+\arraystart
+\begin{equation}  \label{eq:linihsys}
+\frac{dX}{dt}  =  A(t)X + G(t) 
+\end{equation}
+\arrayfinish
+where $A(t)=(a_{ij}(t))$ is an $n\times n$ matrix and
+$G(t)=(g_1(t),\ldots,g_n(t))^t$ is a vector of continuous functions.  
+The system is {\em homogeneous\/} when $G(t)=0$.
+
+We divide this discussion into two parts: finding the 
+general solution\index{variation of parameters!general solution} 
+of the homogeneous\index{homogeneous} equation and finding 
+a particular 
+solution\index{variation of parameters!particular solution} to the 
+inhomogeneous equation using variation of parameters.
+
+\subsection*{Homogeneous Nonconstant Coefficient Systems}
+
+From the theory of constant coefficient systems of linear differential 
+equations, we know abstractly how to write  a  basis of solutions to
+the homogeneous system  $\dot{X}=AX$ where $A$ is an $n\times n$
+constant matrix.  That basis is 
+\[
+X_j(t) = e^{tA}v_j,
+\]
+where $\{v_1,\ldots,v_n\}$ is a basis of $\R^n$.  For the 
+homogeneous\index{homogeneous} 
+system of $n$ nonconstant coefficient linear differential equations
+\begin{equation}  \label{E:NCCH}
+\dot{X} = A(t) X
+\end{equation}
+a similar statement is true.   It should be noted, however, that only in 
+special cases can \eqref{E:NCCH} be solved in closed form.
+
+\begin{proposition}  \label{P:NCCH}
+Let $v_1,\ldots,v_n$ be a basis\index{basis} 
+for $\R^n$.  Then there exist solutions 
+\[
+X_1(t),\ldots,X_n(t)
+\]
+of \eqref{E:NCCH} satisfying $X_j(0)=v_j$ and these
+solutions form a basis of solutions\index{basis!of solutions} 
+to \eqref{E:NCCH}.
+\end{proposition}
+
+\begin{proof} The theory of differential equations implies that there exists a 
+unique solution to \eqref{E:NCCH}  satisfying the initial condition $X(0)=X_0$ 
+for any $X_0\in\R^n$.   Therefore, there exist solutions $X_j(t)$ such that 
+$X_1(0)=v_j$.  We claim that these solutions form a basis for the vector 
+space of all solutions to \eqref{E:NCCH}.   
+
+Let $X(t)$ be any solution to \eqref{E:NCCH} with initial condition $X(0)=X_0$. 
+Since $\{X_1(0),\ldots,X_n(0)\}$ is a basis for $\R^n$, we can find scalars 
+$\alpha_j$ such that 
+\[
+X_0 = \alpha_1X_1(0) + \cdots + \alpha_nX_n(0).
+\]
+Linearity of \eqref{E:NCCH} implies that 
+\[
+\alpha_1X_1(t) + \cdots + \alpha_nX_n(t)
+\]
+is a solution.  Therefore, uniqueness of solutions to \eqref{E:NCCH} implies 
+that 
+\[
+X(t) = \alpha_1X_1(t) + \cdots + \alpha_nX_n(t)
+\]
+for all time $t$, which proves the proposition. \end{proof}
+
+Existence of solutions to the initial value problem $X(t_0)=X_0$ also
+guarantees that the vectors $X_1(t_0),\ldots,X_n(t_0)$ must be linearly 
+independent\index{linearly!independent}.  
+Indeed, since $X_1(t),\ldots,X_n(t)$ is a 
+basis of solutions\index{basis!of solutions} to
+\eqref{E:NCCH}, we must be able to write 
+\[
+X_0 = \alpha_1X_1(t_0) + \cdots + \alpha_nX_n(t_0)
+\]
+for scalars $\alpha_1,\ldots,\alpha_n$ in order for a solution to this 
+initial value problem to exist.  That is, the vectors 
+$X_1(t_0),\ldots,X_n(t_0)$  must span $\R^n$.   Hence they are linearly 
+independent.  We have proved the following:
+
+\begin{lemma}  \label{L:DEspan}
+Let $X_1,\ldots,X_n$ be a linearly independent\index{linearly!independent} 
+set of solutions to \eqref{E:NCCH}.
+Then, for every $t$, the matrix 
+\begin{equation}   \label{E:Y(t)}
+Y(t) = \left(X_1(t)|\cdots |X_n(t)\right) 
+\end{equation}
+is invertible\index{invertible}.
+\end{lemma}
+
+\begin{proof}  Proposition~\ref{P:NCCH} implies that the columns of $Y(t)$ are 
+linearly independent.  Hence $Y(t)$ is invertible.  \end{proof}
+
+Rather than relying on the general existence and uniqueness theory for
+systems of differential equations, there is a computationally direct way of 
+proving Lemma~\ref{L:DEspan}.   It is possible to show that the determinant 
+of the matrix $Y(t)$ in \eqref{E:Y(t)} is nonzero and hence $Y(t)$ is invertible.
+This approach is carried out in Section~\ref{S:wronskian}
+
+
+\subsection*{The Theory of Variation of Parameters}
+\index{variation of parameters!theory}
+
+Let $X_1(t),\ldots,X_n(t)$ be a 
+basis of solutions\index{basis!of solutions} to the homogeneous 
+system $\dot{X}=A(t)X$.   In the method of variation of parameters we look 
+for solutions to  the inhomogeneous system \eqref{eq:linihsys} of the form
+\[
+X(t) = c_1(t)X_1(t) + \cdots + c_n(t)X_n(t),
+\]
+where $c_1(t),\ldots,c_n(t)$ are differentiable functions.  In order to 
+find a method for determining the functions $c_j$, we assume that $X$ is 
+a solution to \eqref{eq:linihsys}.  
+
+Use the product rule\index{product rule} to compute
+\begin{eqnarray*}
+\dps\frac{dX}{dt} & = &\sum_{j=1}^n\left(c_j\frac{dX_j}{dt}
++\frac{dc_j}{dt} X_j\right)\\
+& = & \sum_{j=1}^n\left( c_jAX_j+\frac{dc_j}{dt}X_j\right)\\
+& = & AX+\sum_{j=1}^n \frac{dc_j}{dt}X_j.
+\end{eqnarray*}
+It follows that $X$ is a solution of \eqref{eq:linihsys} if and only if
+\begin{equation}  \label{eq:dcjXj}
+G(t) = \frac{dc_1}{dt}(t) X_1(t) + \cdots + \frac{dc_n}{dt}(t) X_n(t).
+\end{equation}
+So variation of parameters works if we can find functions $c_j$ that 
+satisfy \eqref{eq:dcjXj}.
+
+We claim that it is always possible to find functions $d_j(t)$ so that 
+\begin{equation}  \label{E:djXj}
+G(t) = d_1(t)X_1(t) + \cdots + d_n(t)X_n(t).
+\end{equation} 
+To verify \eqref{E:djXj}, note that  \eqref{E:djXj} can be rewritten in matrix 
+form as
+\[
+Y(t) D(t) = G(t)
+\]
+where $Y(t)$ is defined in \eqref{E:Y(t)} and
+\[
+D(t)=(d_1(t),\ldots,d_n(t))^t.
+\]
+Using the invertibility\index{invertible} of 
+$Y(t)$, as proved in Lemma~\ref{L:DEspan}, we find that
+\[
+D(t) = Y(t)\inv G(t).
+\] 
+It now follows that \eqref{eq:dcjXj} is satisfied by integrating the 
+differential equations $\dot{c}_j=d_j$, where the functions $d_j(t)$ 
+are defined in \eqref{E:djXj}, to find the functions $c_j$.  
+
+We summarize this discussion as follows. 
+\begin{theorem}[Variation of Parameters: Systems] \label{thm:varparsys}
+\index{variation of parameters!for systems}
+Consider 
+\begin{equation}  \label{eq:VPS}
+\begin{array}{rcl}
+\dps \frac{dX}{dt} & = & A(t)X+G(t)\\
+X(t_0) & = & X_0.
+\end{array}
+\end{equation}
+\begin{itemize}
+\item[(a)]  Let $X_1(t),\ldots,X_n(t)$ be a 
+basis of solutions\index{basis!of solutions} to 
+the homogeneous differential equation $\dot{X}=A(t)X$.  
+\item[(b)]  Let $Y(t)$ be defined as in \eqref{E:Y(t)} and define 
+$D(t)=(d_1(t),\ldots,d_n(t))^t$ by 
+\begin{equation}  \label{e:D(t)}
+D(t) = Y(t)\inv G(t).
+\end{equation}
+\item[(c)]  Let the functions $c_1(t),\ldots,c_n(t)$ satisfy the initial 
+value problem\index{variation of parameters!initial value problem} 
+\begin{equation}  \label{eq:cj0}
+\frac{dc_j}{dt}=d_j \AND  c_1(t_0)X_1(t_0) + \cdots +c_n(t_0)X_n(t_0) = X_0.
+\end{equation}
+\end{itemize}
+Then
+\[
+X(t) =  c_1(t)X_1(t) + \cdots + c_n(t)X_n(t)
+\]
+is the unique solution\index{uniqueness of solutions} of \eqref{eq:VPS}.
+\end{theorem}
+
+Note that when $n\ge 3$, the hand computation of $Y(t)\inv$ can be  
+painful.
+
+\subsection*{Examples with Constant Coefficient Matrix $A$ when $n=2$}
+
+We consider two examples of variation of parameters applied to 
+forced systems of differential equations of the form 
+\[
+\dot{X} = AX + G(t).
+\]
+
+\subsubsection*{An Example with Two Real Simple Eigenvalues}
+
+Consider the initial value problem \eqref{eq:VPS} where
+\begin{equation}  \label{eq:exinhom2}
+A=\mattwo{-1}{-8}{-16}{7}, \quad G(t)= \vectwo{1-t}{-2-t}, \quad 
+X_0 =  \vectwo{-1}{-1}.
+\end{equation}
+Variation of parameters proceeds in four steps:
+
+\paragraph{Step 1: Solutions to the homogeneous equation.} The 
+eigenvalues\index{eigenvalue!real!distinct} and 
+eigenvectors\index{eigenvector} of $A$ can be 
+found either by using \Matlab or by hand.  The eigenvalues are $\lambda_1=-9$ 
+and $\lambda_2=15$, and the associated eigenvectors are $v_1=(1,1)^t$ 
+and $v_2=(1,-2)^t$.  Therefore, solutions of the homogeneous equation are:
+\[
+X_1(t) = e^{-9t}\vectwo{1}{1} \AND X_2(t) = e^{15t}\vectwo{1}{-2}.
+\]
+
+\paragraph{Step 2: Computation of the vector $D(t)$.}   We compute the inverse 
+\[
+Y(t)\inv = \mattwo{e^{-9t}}{e^{15t}}{e^{-9t}}{-2e^{15t}}\inv = 
+-\frac{1}{3e^{6t}}\mattwo{-2e^{15t}}{-e^{15t}}{-e^{-9t}}{e^{-9t}} =
+\frac{1}{3}\mattwo{2e^{9t}}{e^{9t}}{e^{-15t}}{-e^{-15t}}.
+\]
+The vector $D(t)$ is:
+\[
+D(t) = Y(t)\inv G(t) = 
+\frac{1}{3}\mattwo{2e^{9t}}{e^{9t}}{e^{-15t}}{-e^{-15t}}\vectwo{1-t}{-2-t}
+= \vectwo{-te^{9t}}{e^{-15t}}
+\]
+
+\paragraph{Step 3: Computation of the functions $c_j(t)$.}   By assumption 
+\[
+X_0=c_1(0)X_1(0)+c_2(0)X_2(0).
+\]
+Therefore
+\[
+\vectwo{-1}{-1} = c_1(0)\vectwo{1}{1} + c_2(0)\vectwo{1}{-2},
+\]
+from which it follows that $c_1(0)=-1$ and $c_2(0)=0$.  Since
+\[
+\dot{c}_1 = d_1 = -te^{9t}  \AND \dot{c}_2 = d_2 = e^{-15t},
+\]
+it follows that 
+\[
+\begin{array}{rclcl}
+c_1(t) & = & \int_0^t (-\tau) e^{9\tau}d\tau - 1
+& = &  -\frac{1}{9}\left(t-\frac{1}{9}\right)e^{9t}-\frac{82}{81} \\
+c_2(t) & = & \int_0^t e^{-15t}d\tau & = & \frac{1}{15}\left(1-e^{-15t}\right).
+\end{array}
+\]
+
+\paragraph{Step 4: Write out the solution.}  The solution $X(t)$ of the 
+initial value problem \eqref{eq:exinhom2} is now given by
+\begin{eqnarray*}
+X(t) & = & c_1(t)e^{-9t}\vectwo{1}{1} + c_2(t)e^{15t}\vectwo{1}{-2} \\
+& = &  \left(\begin{array}{c}
+-\frac{1}{9}\left(t-\frac{1}{9}\right)-
+\frac{82}{81}e^{-9t}+\frac{1}{15}\left( e^{15t}-1\right)\\
+-\frac{1}{9}\left(t-\frac{1}{9}\right)-
+\frac{82}{81}e^{-9t}-\frac{2}{15}\left( e^{15t}-1\right)
+\end{array}\right).
+\end{eqnarray*}
+
+\subsubsection*{An Example with a Nontrivial Jordan Block}
+\index{Jordan block}
+
+Solve the system
+\begin{equation}  \label{e:2djb}
+\begin{array}{rcl}
+\dot{X} & = & A X + (t,1)^t \\
+X(0) & = & (1,-1)^t,
+\end{array}
+\end{equation}
+where 
+\[
+A = \mattwo{2}{1}{0}{2}.
+\]
+
+\paragraph{Step 1:}  A basis for solutions to the homogeneous equation 
+$\dot{X}=AX$ is
+\[
+X_1(t) = e^{2t}\vectwo{1}{0} \AND X_2(t) = e^{2t}\vectwo{t}{1}.
+\]
+
+\paragraph{Step 2:}  We compute
+\[
+D(t) =  e^{-2t}\mattwo{1}{t}{0}{1}\inv G(t) = 
+e^{-2t}\mattwo{1}{-t}{0}{1}\vectwo{t}{1} = e^{-2t}\vectwo{0}{1}.
+\]
+
+\paragraph{Step 3:}  Note that 
+\[
+X(0) = \vectwo{1}{-1} = c_1(0)\vectwo{1}{0} + c_2(0)\vectwo{0}{1}.
+\]
+So $c_1(0)=1$ and $c_2(0)=-1$.  Now solve the differential equations
+\[
+\begin{array}{rclcl}
+\dot{c}_1 & = & d_1(t) & = & 0 \\
+\dot{c}_2 & = & d_2(t) & = & e^{-2t},
+\end{array}
+\]
+obtaining
+\begin{eqnarray*}
+c_1(t) & = & 1 \\
+c_2(t) & = & -\frac{1}{2}(e^{-2t}+1).
+\end{eqnarray*}
+
+\paragraph{Step 4:}  It follows from Theorem~\ref{thm:varparsys} that the 
+solution to \eqref{e:2djb} is
+\[
+X(t) = c_1(t)X_1(t) + c_2(t)X_2(t) = -\frac{1}{2}\left(\begin{array}{c}
+t(1+e^{2t})-2e^{2t} \\ e^{2t}+1 \end{array}\right).
+\]
+ 
+
+
+\EXER
+
+\TEXER
+
+\noindent In Exercises~\ref{c14.3.1a} -- \ref{c14.3.1b} solve the given 
+initial value problems by variation of parameters.
+
+\begin{exercise}  \label{c14.3.1a}
+\[
+\frac{dX}{dt}=\frac{1}{2}\mattwo{1}{1}{1}{1} X + \vectwo{e^t}{0},\quad
+X(0) = \vectwo{1}{-1}.
+\]
+\end{exercise}
+\begin{exercise}  \label{c14.3.1b}
+\[
+\frac{dX}{dt}=\mattwo{1}{3}{3}{1} X + \vectwo{2t}{t},\quad
+X(0) = \vectwo{0}{1}.
+\]
+\end{exercise}
+
+\begin{exercise}  \label{c17.3.3}
+Find the general solution to the system of differential equations
+\[
+\frac{dX}{dt}= \mattwo{-\frac{1}{t}}{\frac{1}{t^2}}{1}{0}X+\vectwo{1}{3t}.
+\]
+{\bf Hint:} Verify that 
+\[
+X_1(t) = \vectwoc{1}{t} \AND X_2(t) = \vectwo{\frac{1}{t^2}}{-\frac{1}{t}}
+\]
+are solutions to the homogeneous equation and then use variation of parameters.
+\end{exercise}
+
+\begin{exercise}  \label{c17.3.4}
+Find the general solution to the system of differential equations
+\[
+\frac{dX}{dt}= \mattwoc{0}{1}{\frac{3}{t^2}}{\frac{1}{t}}X+\vectwoc{t}{2t}.
+\]
+{\bf Hint:} Verify that 
+\[
+X_1(t) = \vectwoc{t^3}{3t^2}\AND X_2(t) = \vectwoc{\frac{1}{t}}{-\frac{1}{t^2}}
+\]
+are solutions to the homogeneous equation and then use variation of parameters.
+\end{exercise}
+
+
+
+
+
+
+\end{document}

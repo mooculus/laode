@@ -1,0 +1,399 @@
+\documentclass{ximera}
+
+\input{../preamble.tex}
+
+\title{Multiplicity and Generalized Eigenvectors}
+
+\begin{document}
+\begin{abstract}
+\end{abstract}
+\maketitle
+
+  \label{S:MGE}
+
+The difficulty in generalizing the results in the previous two sections to
+matrices with multiple eigenvalues stems from the fact that these matrices 
+may not have enough (linearly independent) eigenvectors.  In this section we 
+present the basic examples of matrices with a deficiency of eigenvectors, as
+well as the definitions of algebraic and geometric multiplicity.  These 
+matrices will be the building blocks of the Jordan normal form theorem --- 
+the theorem that classifies all matrices up to similarity.
+
+\subsubsection*{Deficiency in Eigenvectors for Real Eigenvalues}
+
+An example of deficiency in eigenvectors is given by the following 
+$n\times n$ matrix
+\begin{equation}  \label{E:JnR}
+J_n(\lambda_0)=\left(\begin{array}{cccccc} \lambda_0 & 1 & 0 & \cdots & 0 & 0\\
+	0 & \lambda_0 & 1 & \cdots & 0 & 0 \\
+	0 & 0 & \lambda_0  & \cdots & 0 & 0\\
+	\vdots & \vdots & \vdots & \ddots & \vdots & \vdots\\
+	0 & 0 & 0 & \cdots & \lambda_0 & 1 \\
+	0 & 0 & 0 & \cdots & 0 & \lambda_0 \end{array}\right)
+\end{equation}
+where $\lambda_0\in\R$.  Note that $J_n(\lambda_0)$ has all diagonal 
+entries equal to $\lambda_0$,
+all superdiagonal entries equal to $1$, and all other entries equal 
+to $0$. Since $J_n(\lambda_0)$ is upper triangular, all $n$ 
+eigenvalues of $J_n(\lambda_0)$ are equal to $\lambda_0$.  However,
+$J_n(\lambda_0)$ has only one linearly independent eigenvector.  To 
+verify this assertion let 
+\[
+N = J_n(\lambda_0) - \lambda_0I_n.
+\]
+Then $v$ is an eigenvector of $J_n(\lambda_0)$ if and only if $Nv=0$.
+Therefore, $J_n(\lambda_0)$ has a unique linearly independent 
+eigenvector  if 
+\begin{lemma}
+{\rm nullity}$(N)=1$.
+\end{lemma}\index{nullity}
+
+\begin{proof}  In coordinates the equation $Nv=0$ is:
+\[
+\left(\begin{array}{cccccc} 0 & 1 & 0 & \cdots & 0 & 0\\
+	0 & 0 & 1 & \cdots & 0 & 0 \\
+	0 & 0 & 0  & \cdots & 0 & 0\\
+	\vdots & \vdots & \vdots & \ddots & \vdots & \vdots\\
+	0 & 0 & 0 & \cdots & 0 & 1 \\
+	0 & 0 & 0 & \cdots & 0 & 0 \end{array}\right)
+\left(\begin{array}{l} v_1 \\ v_2 \\ v_3 \\ \vdots \\ v_{n-1} \\v_n
+	\end{array}\right) 
+= \left(\begin{array}{l} v_2 \\ v_3 \\ v_4 \\ \vdots \\ v_n \\ 0
+	\end{array}\right) = 0.
+\]
+Thus $v_2 = v_3 = \cdots v_n = 0$, and the solutions are all multiples 
+of $e_1$.  Therefore, the nullity of $N$ is $1$.  \end{proof}
+
+Note that we can express matrix multiplication by $N$ as
+\begin{equation}  \label{e:Ndef}
+\begin{array}{rcll} 
+Ne_1 & = & 0 & \\
+Ne_j & = & e_{j-1} & \quad j=2,\ldots,n .
+\end{array}
+\end{equation}
+Note that \eqref{e:Ndef} implies that $N^n=0$.
+
+The $n\times n$ matrix $N$ motivates the following definitions.  
+\begin{definition} \label{D:multiplicities}
+Let $\lambda_0$ be an eigenvalue of $A$.  The {\em algebraic multiplicity\/} 
+\index{multiplicity!algebraic} of $\lambda_0$ is the number of times 
+that $\lambda_0$ appears as a root of the characteristic polynomial 
+$p_A(\lambda)$.  The {\em geometric multiplicity\/} 
+\index{multiplicity!geometric} of $\lambda_0$ is the number of linearly 
+independent eigenvectors of $A$ having eigenvalue equal to $\lambda_0$.
+\end{definition}  
+Abstractly, the geometric multiplicity is:
+\[
+{\rm nullity}(A-\lambda_0I_n).
+\]
+
+Our previous calculations show that the matrix $J_n(\lambda_0)$
+has an eigenvalue $\lambda_0$ with algebraic multiplicity equal
+to $n$ and geometric multiplicity equal to $1$.
+
+\begin{lemma} 
+The algebraic multiplicity of an eigenvalue is greater than 
+or equal to its geometric multiplicity.
+\end{lemma}
+
+\begin{proof} For ease of notation we prove this lemma only for real 
+eigenvalues, though the proof for complex eigenvalues is similar.  Let 
+$A$ be an $n\times n$ matrix and let $\lambda_0$ be a real eigenvalue 
+of $A$. Let $k$ be the geometric multiplicity of $\lambda_0$ and let 
+$v_1,\ldots,v_k$ be $k$ linearly independent eigenvectors of $A$ with 
+eigenvalue $\lambda_0$.   We can extend $\{v_1,\ldots,v_k\}$ to be a basis
+${\cal V} = \{v_1,\ldots,v_n\}$ of $\R^n$.  In this basis, the matrix
+of $A$ is 
+\[
+[A]_{\cal V} = \mattwo{\lambda_0 I_k}{(*)}{0}{B}.
+\]
+The matrices $A$ and $[A]_{\cal V}$ are similar matrices. Therefore,
+they have the same 
+characteristic polynomials\index{characteristic polynomial}
+and the same eigenvalues 
+with the same algebraic multiplicities.  It follows from 
+Lemma~\ref{L:detblockdiag} that the characteristic polynomial of $A$ is:
+\[
+p_A(\lambda) = p_{[A]_{\cal V}}(\lambda) = (\lambda-\lambda_0)^kp_B(\lambda).
+\]
+Hence $\lambda_0$ appears as a root of $p_A(\lambda)$ at least 
+$k$ times and the algebraic multiplicity of $\lambda_0$ 
+is greater than or equal to $k$.   The same proof works when $\lambda_0$ 
+is a complex eigenvalue --- but all vectors chosen must be complex rather
+than real.   \end{proof}
+
+\subsubsection*{Deficiency in Eigenvectors with Complex Eigenvalues}
+
+An example of a real matrix with complex conjugate eigenvalues having 
+geometric multiplicity less than algebraic multiplicity is the 
+$2n \times 2n$ block matrix
+\begin{equation} \label{E:JnC}
+\widehat{J}_n(\lambda_0)=
+\left(\begin{array}{cccccc} B & I_2 & 0 & \cdots & 0 & 0\\
+	0 & B & I_2 & \cdots & 0 & 0 \\
+	0 & 0 & B  & \cdots & 0 & 0\\
+	\vdots & \vdots & \vdots & \ddots & \vdots & \vdots\\
+	0 & 0 & 0 & \cdots & B & I_2 \\
+	0 & 0 & 0 & \cdots & 0 & B \end{array}\right)
+\end{equation}
+where $\lambda_0=\sigma+i\tau$ and $B$ is the $2\times 2$ matrix
+\[
+B = \mattwo{\sigma}{-\tau}{\tau}{\sigma}.
+\]
+
+\begin{lemma}
+Let $\lambda_0$ be a complex number.  Then the algebraic multiplicity
+of the eigenvalue $\lambda_0$ in the $2n\times 2n$ matrix
+$\widehat{J}_n(\lambda_0)$ is $n$ and the geometric multiplicity is $1$.
+\end{lemma}
+
+\begin{proof} We begin by showing that the eigenvalues of
+$J=\widehat{J}_n(\lambda_0)$ are $\lambda_0$ and $\overline{\lambda_0}$, each 
+with algebraic multiplicity $n$.  The characteristic polynomial of $J$ is 
+$p_J(\lambda)=\det(J-\lambda I_{2n})$.  From Lemma~\ref{L:detblockdiag} of 
+Chapter~\ref{C:D&E} and induction, we see that $p_J(\lambda)=p_B(\lambda)^n$. 
+Since the eigenvalues of $B$ are $\lambda_0$ and $\overline{\lambda_0}$, we
+have proved that the algebraic multiplicity of each of these eigenvalues in 
+$J$ is $n$.
+   
+Next, we compute the eigenvectors of $J$.  Let $Jv=\lambda_0v$ 
+and let $v=(v_1,\ldots,v_n)$ where each $v_j\in\C^2$.  Observe that 
+$(J-\lambda_0I_{2n})v=0$ if and only if
+\begin{eqnarray*}
+Qv_1 + v_2 & = & 0 \\
+& \vdots & \\
+Qv_{n-1} + v_n & = & 0 \\
+Qv_n & = & 0,
+\end{eqnarray*}
+where $Q=B-\lambda_0I_2$.
+Using the fact that $\lambda_0=\sigma+i\tau$, it follows that 
+\[
+Q=B-\lambda_0I_2 = -\tau\mattwo{i}{1}{-1}{i}.
+\]
+Hence
+\[
+Q^2 = 2\tau^2i\mattwo{i}{1}{-1}{i}=-2\tau iQ.
+\]
+Thus
+\[
+0 = Q^2v_{n-1} + Qv_n
+= -2\tau iQv_{n-1},
+\]
+from which it follows that $Qv_{n-1}+v_n = v_n = 0$.  Similarly, 
+$v_2=\cdots=v_{n-1}=0$.  Since there is only one nonzero complex vector 
+$v_1$ (up to a complex scalar multiple) satisfying
+\[
+Qv_1 = 0,
+\]
+it follows that the geometric multiplicity of $\lambda_0$ in the matrix
+$\widehat{J}_n(\lambda_0)$ equals $1$.  \end{proof}
+
+\begin{definition}  \label{D:jordanblock}
+The real matrices $J_n(\lambda_0)$ when $\lambda_0\in\R$ and 
+$\widehat{J}_n(\lambda_0)$ when $\lambda_0\in\C$ are {\em real Jordan
+blocks\/}.  The matrices $J_n(\lambda_0)$ when $\lambda_0\in\C$ are (complex)
+{\em Jordan blocks\/}.
+\end{definition} \index{Jordan block}
+
+\subsection*{Generalized Eigenvectors and Generalized Eigenspaces}
+
+What happens when $n\times n$ matrices have fewer that $n$ linearly 
+independent eigenvectors?  Answer: The matrices gain generalized 
+eigenvectors.
+
+\begin{definition}
+A vector $v\in\C^n$ is a {\em generalized eigenvector\/} for the 
+$n\times n$ matrix $A$ with eigenvalue $\lambda$ if
+\begin{equation}  \label{e:geneig}
+(A-\lambda I_n)^kv = 0
+\end{equation}
+for some positive integer $k$. The smallest integer $k$ for which
+\eqref{e:geneig} is satisfied is called the {\em index\/}
+\index{index} of the generalized eigenvector $v$.
+\end{definition}  \index{eigenvector!generalized}
+Note: Eigenvectors\index{eigenvector} are generalized eigenvectors with
+index equal to $1$.
+
+Let $\lambda_0$ be a real number and let $N=J_n(\lambda_0)-\lambda_0 I_n$.  
+Recall that \eqref{e:Ndef} implies that $N^n=0$.  Hence every vector in $\R^n$ 
+is a generalized eigenvector for the matrix $J_n(\lambda_0)$.  So 
+$J_n(\lambda_0)$ provides a good example of a matrix whose lack of 
+eigenvectors (there is only one independent eigenvector) is made up for by 
+generalized eigenvectors (there are $n$ independent generalized eigenvectors).
+
+Let $\lambda_0$ be an eigenvalue of the $n\times n$ matrix $A$ and let 
+$A_0 = A-\lambda_0 I_n$.  For simplicity, assume that $\lambda_0$ is real.
+Note that 
+\begin{align*}
+  \nulls(A_0) &\subset \nulls(A_0^2)\subset\cdots \\
+  &\subset\nulls(A_0^k)\subset\cdots \\
+  &\subset\R^n.
+\end{align*}
+Therefore, the dimensions of the null spaces are bounded above by $n$ and
+there must be a smallest $k$ such that 
+\[
+\dim\nulls(A_0^k)=\dim\nulls(A_0^{k+1}).
+\]
+It follows that 
+\begin{equation}  \label{E:nullsequal}
+\nulls(A_0^k)=\nulls(A_0^{k+1}).
+\end{equation}
+\begin{lemma}  \label{L:Jordan}
+Let $\lambda_0$ be a real eigenvalue of the $n\times n$ matrix $A$ and let 
+$A_0 = A-\lambda_0 I_n$.  Let $k$ be the smallest integer for which 
+\eqref{E:nullsequal} is valid.  Then 
+\[
+\nulls(A_0^k)=\nulls(A_0^{k+j})
+\]
+for every interger $j>0$.
+\end{lemma}
+
+\begin{proof} We can prove the lemma by induction on $j$ if we can show that 
+\[
+\nulls(A_0^{k+1})=\nulls(A_0^{k+2}).
+\]
+Since $\nulls(A_0^{k+1})\subset\nulls(A_0^{k+2})$, we need to show that
+\[
+\nulls(A_0^{k+2})\subset\nulls(A_0^{k+1}).
+\]
+Let $w\in\nulls(A_0^{k+2})$.  It follows that 
+\[
+A^{k+1}Aw = A^{k+2}w = 0;
+\]
+so $Aw\in\nulls(A_0^{k+1})=\nulls(A_0^k)$, by \eqref{E:nullsequal}.  Therefore,
+\[
+A^{k+1}w = A^k(Aw) = 0,
+\]
+which verifies that $w\in\nulls(A_0^{k+1})$.  \end{proof}
+
+Let $V_{\lambda_0}$ be the set of all generalized eigenvectors of $A$ with 
+eigenvalue $\lambda_0$.  Let $k$ be the smallest integer satisfying
+\eqref{E:nullsequal}, then Lemma~\ref{L:Jordan} implies that 
+\[
+V_{\lambda_0}=\nulls(A_0^k)\subset \R^n
+\]
+is a subspace called the {\em generalized eigenspace\/}
+\index{generalized eigenspace} of $A$ associated to the eigenvalue
+$\lambda_0$.  It will follow from the Jordan normal form theorem (see
+Theorem~\ref{T:Jordan}) that the dimension of $V_{\lambda_0}$ is the 
+algebraic multiplicity of $\lambda_0$.
+
+
+\subsubsection*{An Example of Generalized Eigenvectors}
+\index{eigenvector!generalized}
+
+Find the generalized eigenvectors of the $4\times 4$ matrix
+\begin{matlabEquation}\label{MATLAB:1}
+A=\left(\begin{array}{rrrr}
+  -24 & -58 &  -2 &  -8\\
+   15 &  35 &   1 &   4\\
+    3 &   5 &   7 &   4\\
+    3 &   6 &   0 &   6
+\end{array}\right).
+\end{matlabEquation}
+and their indices.  When finding generalized eigenvectors of a matrix $A$, 
+the first two steps are:
+\begin{enumerate}
+\item[(i)]  Find the eigenvalues of $A$.
+\item[(ii)]  Find the eigenvectors of $A$.
+\end{enumerate}
+After entering $A$ into \Matlab by typing {\tt e13\_3\_6}, we type 
+{\tt eig(A)} and find that all of the eigenvalues of $A$ equal $6$.  Without 
+additional information, there could be 1,2,3 or 4 linearly independent 
+eigenvectors of $A$ corresponding to the eigenvalue $6$.  In \Matlab we 
+determine the number of linearly independent eigenvectors by typing 
+{\tt null(A-6*eye(4))} and obtaining
+\begin{verbatim}
+ans =
+    0.8892         0
+   -0.4446    0.0000
+   -0.0262    0.9701
+   -0.1046   -0.2425
+\end{verbatim}
+ 
+We now know that (numerically) there are two linearly independent
+eigenvectors.  The next step is find the number of independent generalized 
+eigenvectors of index 2.\index{index}  To complete this calculation, we find 
+a basis for the null space of $(A-6I_4)^2$ by typing 
+{\tt null((A-6*eye(4))\^{ }2)} obtaining
+\begin{verbatim}
+ans =
+     1     0     0     0
+     0     1     0     0
+     0     0     1     0
+     0     0     0     1
+\end{verbatim}
+Thus, for this example, all generalized eigenvectors that are not
+eigenvectors have index $2$.
+
+\EXER
+
+\TEXER
+
+\noindent In Exercises~\ref{c10.5.1a} -- \ref{c10.5.1d} determine the 
+eigenvalues and their geometric and algebraic multiplicities for the 
+given matrix.
+\begin{exercise} \label{c10.5.1a}
+$A = \left(\begin{array}{cccc} 2 & 0 &  0 & 0\\ 0 & 3 & 1 & 0 \\
+0 & 0 & 3 & 0 \\ 0 & 0 & 0 & 4 \end{array}\right)$.
+\end{exercise}
+\begin{exercise} \label{c10.5.1b}
+$B = \left(\begin{array}{cccc} 2 & 0 &  0 & 0\\ 0 & 2 & 0 & 0 \\
+0 & 0 & 3 & 1 \\ 0 & 0 & 0 & 3 \end{array}\right)$.
+\end{exercise}
+\begin{exercise} \label{c10.5.1c}
+$C = \left(\begin{array}{rrrr} -1 & 1 &  0 & 0\\ 0 & -1 & 0 & 0 \\
+0 & 0 & -1 & 0 \\ 0 & 0 & 0 & 1 \end{array}\right)$.
+\end{exercise}
+\begin{exercise} \label{c10.5.1d}
+$D = \left(\begin{array}{rrrr} 2 & -1 &  0 & 0\\ 1 & 2 & 0 & 0 \\
+0 & 0 & 2 & 1 \\ 0 & 0 & 0 & 2 \end{array}\right)$.
+\end{exercise}
+
+\noindent In Exercises~\ref{c10.5.2a} -- \ref{c10.5.2d} find a basis 
+consisting of the eigenvectors for the given matrix supplemented by 
+generalized eigenvectors.  Choose the generalized eigenvectors with 
+lowest index possible.
+\begin{exercise}  \label{c10.5.2a}
+$A=\mattwo{1}{-1}{1}{3}$.
+\end{exercise}
+\begin{exercise} \label{c10.5.2b}
+$B=\left(\begin{array}{rrr} -2 & 0 & -2 \\-1 & 1 & -2 \\ 0 & 1 & -1 \end{array}
+\right)$.
+\end{exercise}
+\begin{exercise} \label{c10.5.2c}
+$C=\left(\begin{array}{rrr} -6 & 31 & -14 \\-1 & 6 & -2 \\ 0 & 2 & 1\end{array}
+\right)$.
+\end{exercise}
+\begin{exercise} \label{c10.5.2d}
+$D=\left(\begin{array}{rrr} 5 & 1 & 0 \\-3 & 1 & 1 \\ -12 & -4 & 0\end{array}
+\right)$.
+\end{exercise}
+
+
+\CEXER
+\noindent In Exercises~\ref{c10.5.3A} -- \ref{c10.5.3B}, use \Matlab to find 
+the eigenvalues and their algebraic and geometric multiplicities for the given 
+matrix.
+\begin{exercise} \label{c10.5.3A}
+\begin{matlabEquation}\label{eigenvalue-exercise}
+A=\left(\begin{array}{rrrr} 2 & 3 & -21 & -3 \\2 & 7 & -41 & -5 \\ 
+0 & 1 & -5 & -1 \\ 0 & 0 & 4 & 4 \end{array}
+\right).
+\end{matlabEquation}
+\end{exercise}
+\begin{exercise} \label{c10.5.3B}
+\begin{matlabEquation}\label{eigenvalue-exercise-2}
+B=\left(\begin{array}{rrrrr} 179 & -230 & 0 & 10 & -30 \\
+144 & -185 & 0 & 8 & -24 \\ 30 & -39 & -1 & 3 & -9 \\ 192 & -245 & 0 & 9 & -30 
+\\ 40 & -51 & 0 & 2 & -7\end{array}\right).
+\end{matlabEquation}
+\end{exercise}
+
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../linearAlgebra"
+%%% End:

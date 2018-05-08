@@ -1,0 +1,231 @@
+\documentclass{ximera}
+
+\input{../preamble.tex}
+
+\title{Spanning Sets and MATLAB}
+
+\begin{document}
+\begin{abstract}
+\end{abstract}
+\maketitle
+
+ \label{S:5.3}
+
+In this section we discuss:
+\begin{itemize}
+\item	how to find a spanning set for the subspace of solutions to a
+homogeneous system of linear equations using the \Matlab command {\tt null},
+and
+\item	how to determine when a vector is in the subspace spanned by a
+set of vectors using the \Matlab command {\tt rref}.
+\end{itemize}
+
+\subsection*{Spanning Sets for Homogeneous Linear Equations}
+
+In Chapter~\ref{lineq} we saw how to use Gaussian elimination,
+back substitution, and \Matlab to compute solutions to a system
+of linear equations.  For systems of
+homogeneous equations\index{homogeneous}, \Matlab
+provides a command to find a spanning set for the subspace of solutions.
+That command is {\tt null}.  For example, if we type
+\begin{verbatim}
+A = [2 1 4 0; -1 0 2 1]
+B = null(A)
+\end{verbatim} \index{\computer!null}
+then we obtain
+\begin{verbatim}
+B =
+    0.4830         0
+   -0.4140    0.8729
+   -0.1380   -0.2182
+    0.7591    0.4364
+\end{verbatim}
+The two columns of the matrix $B$ span the set of solutions of
+the equation $Ax=0$.  In particular, the vector $(2,-8,1,0)$ is a
+solution to $Ax=0$ and is therefore a
+linear combination \index{linear!combination} of the
+column vectors of {\tt B}.  Indeed, type
+\begin{verbatim}
+4.1404*B(:,1)-7.2012*B(:,2)
+\end{verbatim}
+and observe that this linear combination is the desired one.
+
+Next we describe how to find the coefficients {\tt 4.1404} and
+{\tt -7.2012} by showing that these coefficients themselves are
+solutions to another system of linear equations.
+
+\subsection*{When is a Vector in a Span?} \index{span}
+
+Let $w_1,\ldots,w_k$ and $v$ be vectors in $\R^n$.  We now
+describe a method that allows us to decide whether $v$ is in
+$\Span\{w_1,\ldots,w_k\}$.  To answer this question one has
+to solve a system of $n$ linear equations in $k$ unknowns.
+The unknowns correspond to the coefficients in the linear
+combination of the vectors $w_1,\ldots,w_k$ that gives $v$.
+
+Let us be more precise.  The vector\index{vector} $v$ is in
+$\Span\{w_1,\ldots,w_k\}$ if and only if there are constants
+$r_1,\ldots,r_k$ such that the equation
+\begin{equation}  \label{e:lindepeqn}
+     r_1 w_1 + \cdots + r_k w_k = v
+\end{equation}
+is valid.  Define the $n\times k$ matrix $A$ as the one having
+$w_1,\ldots,w_k$ as its columns; that is,
+\begin{equation}  \label{E:Abycol}
+A = (w_1| \cdots |w_k).
+\end{equation}
+Let  $r$ be the $k$-vector
+\[
+r= \left(\begin{array}{c} r_1 \\ \vdots \\ r_k\end{array}\right).
+\]
+Then we may rewrite equation \eqref{e:lindepeqn} as
+\begin{equation}  \label{E:Ar=v}
+   Ar=v.
+\end{equation}
+To summarize:
+\begin{lemma}
+Let $w_1,\ldots,w_k$ and $v$ be vectors in $\R^n$.  Then $v$
+is in $\Span\{w_1,\ldots,w_k\}$ if and only if the system of linear
+equations \eqref{E:Ar=v} has a solution where $A$ is the $n\times k$
+defined in \eqref{E:Abycol}.
+\end{lemma}
+
+To solve \eqref{E:Ar=v} we row reduce the
+augmented matrix\index{matrix!augmented} $(A|v)$.
+For example, is $v=(2,1)$ in the span of $w_1=(1,1)$ and $w_2=(1,-1)$?
+That is, do there exist scalars $r_1,r_2$ such that
+\[
+r_1\vectwo{1}{1} + r_2\vectwo{1}{-1} = \vectwo{2}{1}?
+\]
+As noted, we can rewrite this equation as
+\[
+\mattwo{1}{1}{1}{-1}\vectwo{r_1}{r_2} = \vectwo{2}{1}.
+\]
+We can solve this equation by row reducing the augmented
+matrix
+\[
+\left(\begin{array}{rr|r}
+1 & 1 & 2 \\ 1 & -1 & 1 \end{array}\right)
+\]
+to obtain
+\[
+\left(\begin{array}{rr|r}
+1 & 0 & \frac{3}{2} \\ 0 & 1 & \frac{1}{2}
+\end{array}\right).
+\]
+So $v = \frac{3}{2}w_1 + \frac{1}{2}w_2$.
+
+Row reduction to reduced echelon form\index{echelon form!reduced}
+has been preprogrammed in the
+\Matlab command {\tt rref}. \index{\computer!rref}  Consider the
+following example.  Let
+\begin{equation}  \label{e:w1w2}
+     w_1=(2,0,-1,4) \AND w_2=(2,-1,0,2)
+\end{equation}
+and ask the question whether $v=(-2,4,-3,4)$ is in $\Span\{w_1,w_2\}$.
+
+In \Matlab load the matrix $A$ having $w_1$ and
+$w_2$ as its columns and the vector $v$ by typing {\tt e5\_3\_5}
+\begin{matlabEquation}  \label{e:Aandv}
+A=\left(\begin{array}{rr} 2 & 2 \\ 0 & -1 \\ -1 & 0 \\ 4 & 2
+\end{array}\right) \AND
+v=\left(\begin{array}{r} -2 \\ 4 \\ -3 \\ 4 \end{array}\right).
+\end{matlabEquation}%
+We can solve the system of equations using \Matlabp.
+First, form the augmented matrix by typing
+\begin{verbatim}
+aug = [A v]
+\end{verbatim}
+Then solve the system by typing {\tt rref(aug)} to obtain
+\begin{verbatim}
+ans =
+     1   0   3
+     0   1  -4
+     0   0   0
+     0   0   0
+\end{verbatim}
+It follows that $(r_1,r_2)=(3,-4)$ is a solution and $v=3w_1-4w_2$.
+
+Now we change the $4^{th}$ entry in $v$ slightly by typing
+{\tt v(4) = 4.01}.  There is no solution to the system of equations
+\[
+Ar = \left(\begin{array}{r} -2 \\ 4 \\ -3 \\ 4.01
+\end{array}\right)
+\]
+as we now show.  Type
+\begin{verbatim}
+aug = [A v]
+rref(aug)
+\end{verbatim}
+which yields
+\begin{verbatim}
+ans =
+     1    0    0
+     0    1    0
+     0    0    1
+     0    0    0
+\end{verbatim}
+This matrix corresponds to an inconsistent\index{inconsistent} system;
+thus $v$ is no longer in the span\index{span} of $w_1$ and $w_2$.
+
+\EXER
+
+\CEXER
+
+\noindent In Exercises~\ref{c5.3.1a} -- \ref{c5.3.1c} use the {\tt null}
+command in \Matlab to find all the solutions of the linear system of
+equations $Ax=0$.  \index{\computer!null}
+\begin{exercise} \label{c5.3.1a}
+\begin{matlabEquation} \label{e:BCDa}
+          A=    \left(\begin{array}{cccc}
+                -4 & 0 & -4 & 3\\
+                -4 & 1 & -1 & 1
+                \end{array}\right) \quad
+\end{matlabEquation}
+\end{exercise}
+\begin{exercise} \label{c5.3.1b}
+\begin{matlabEquation} \label{e:BCDb}
+           A=    \left(\begin{array}{rr}
+                1 & 2 \\
+                1 & 0 \\
+                3 & -2
+                \end{array}\right) \quad
+\end{matlabEquation}
+\end{exercise}
+\begin{exercise} \label{c5.3.1c}
+\begin{matlabEquation} \label{e:BCDc}
+          A=      \left(\begin{array}{rrr}
+               1  &  1  &  2\\
+              -1  &  2  & -1
+                \end{array}\right).
+\end{matlabEquation}
+\end{exercise}
+
+\begin{exercise} \label{c5.3.2}
+Use the {\tt null} command in \Matlab to verify your answers to
+Exercises~\ref{c5.2.2a} and \ref{c5.2.2b}.
+\end{exercise}
+
+\begin{exercise} \label{c5.3.3}
+Use row reduction to find the solutions to $Ax=0$ where $A$ is
+given in \eqref{e:BCDa}.  Does your answer agree with the \Matlab
+answer using {\tt null}?  If not, explain why.
+\end{exercise}
+
+\noindent In Exercises~\ref{c5.3.4a} -- \ref{c5.3.4c} let $W\subset\R^5$
+be the subspace spanned by the vectors
+\begin{matlabEquation}\label{MATLAB:65}
+     w_1=(2,0,-1,3,4),\quad w_2=(1,0,0,-1,2),\quad w_3=(0,1,0,0,-1).
+\end{matlabEquation}
+Use \Matlab to decide whether the given vectors are elements of $W$.
+\begin{exercise} \label{c5.3.4a}
+$v_1=(2,1,-2,8,3)$.
+\end{exercise}
+\begin{exercise} \label{c5.3.4b}
+$v_2=(-1,12,3,-14,-1)$.
+\end{exercise}
+\begin{exercise} \label{c5.3.4c}
+$v_3=(-1,12,3,-14,-14)$.
+\end{exercise}
+
+\end{document}

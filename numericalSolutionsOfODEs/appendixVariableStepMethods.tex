@@ -1,0 +1,93 @@
+\documentclass{ximera}
+
+\input{../preamble.tex}
+
+\title{Appendix: Variable Step Methods}
+
+\begin{document}
+\begin{abstract}
+\end{abstract}
+\maketitle
+
+
+\label{sec:appslc}
+
+The idea underlying variable step methods is to perform {\em step 
+length controls\/}\index{step length control} rather than using steps of 
+fixed length.   The strategy is to vary the step size in each step of the 
+integration so that a fixed error bound is always maintained.   
+
+More concretely, suppose that we can estimate in step $k$ the error that is
+made in the numerical solution.  Then we can use this estimate to find
+an appropriate step size $h_{k+1}$ for the next step.  This principle has
+the advantage that large step sizes are used when the error bound
+is small and small step sizes are used when the error bound is large.
+The \Matlab command {\tt ode45}\index{\computer!ode45}
+is based on explicit Runge-Kutta methods and it uses step length 
+control to solve initial value problems 
+numerically\index{initial value problem!numerical solution}.
+
+Rather than explaining step length control mechanisms in detail
+we give an example illustrating such a mechanism used in
+{\tt ode45}.  Consider the initial value problem
+\arraystart
+\begin{matlabEquation}  \label{eq:odestepivp}
+\begin{array}{rcl}
+\dps \frac{dx}{dt}(t) & = & -e^{10t}x^2 \\
+ x(0) & = & 3.
+\end{array}
+\end{matlabEquation}
+\arrayfinish
+Store the right hand side in the m-file {\tt f18\_4\_1.m}
+\begin{verbatim}
+function f = f18_4_1(t,x)
+f = -exp(10*t)*x*x;
+\end{verbatim}
+and compute an approximation of the solution on the interval
+$t\in[0,1.2]$:
+\begin{verbatim}
+[t,x] = ode45('f18_4_1',[0 1.2],3);
+plot(t,x)
+xlabel('t')
+ylabel('x')
+\end{verbatim}\index{\computer!ode45}
+The result is shown in Figure~\ref{fig:ode45step}(a).
+In particular, note that the solution is almost linear
+for $t\in[0,0.2]$ and indistinguishable from zero for $t>0.8$.
+Since the behavior of linear functions is easy to predict, we expect
+that the step length control\index{step length control}
+mechanism in {\tt ode45} will lead
+to larger step sizes in those intervals.  To look at the step
+lengths we will have to compute the differences of the consecutive
+entries in {\tt t}.  In \Matlab this can be done with the
+command {\tt diff}\index{\computer!diff}.  Typing
+\begin{verbatim}
+dt  = diff(t);
+tdt = t(2:length(t));
+plot(tdt,dt,'o')
+xlabel('t')
+ylabel('step lengths')
+\end{verbatim}\index{\computer!length}
+we obtain the result shown in Figure~\ref{fig:ode45step}(b).
+At the beginning of the numerical solution -- within the region
+where the solution shows almost linear behavior -- the step sizes
+are quite large. Then the step sizes decrease until the almost constant
+part is detected by the step length control mechanism and the step
+sizes\index{step size} increase again.
+At the end the step size becomes smaller, since  the
+numerical approximation ends at $t_e = 1.2$ and
+the step sizes have to be adjusted to this value.
+Altogether {\tt ode45}\index{\computer!ode45}
+qualitatively behaves as expected.
+
+\begin{figure}[htb]
+   \centerline{%
+   \psfig{file=../figures/ode45step1.eps,width=3in}
+   \psfig{file=../figures/ode45step2.eps,width=3in}}
+   \caption{(a) Numerical solution of the initial value problem
+   \protect\eqref{eq:odestepivp} using {\tt ode45};
+   (b) the different step sizes used by {\tt ode45} in
+   the numerical approximation.}
+   \label{fig:ode45step}
+\end{figure}
+\end{document}
