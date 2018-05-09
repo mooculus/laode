@@ -2,7 +2,7 @@
 
 \input{../preamble.tex}
 
-\title{Symmetric Matrices}
+\title{Symmetric and Orthogonal Matrices}
 
 \begin{document}
 \begin{abstract}
@@ -25,25 +25,6 @@ of $\R^n$ consisting of
 	eigenvectors of $A$.
 \end{enumerate}
 \end{theorem}
-
-As a consequence of Theorem~\ref{T:symmetricmat}, let
-${\cal V}=\{v_1,\ldots,v_n\}$ be an orthonormal basis for $\R^n$
-consisting of eigenvectors of $A$.  Indeed, suppose
-\[
-Av_j = \lambda_jv_j
-\]
-where $\lambda_j\in\R$.  Note that
-\[
-Av_j\cdot v_i =  \left\{\begin{array}{rl} \lambda_j & \qquad i=j\\
-			0 & \qquad i\neq j \end{array}\right.
-\]
-It follows from \eqref{e:coordorthomat} that
-\[
-[A]_{\cal V}= \left(\begin{array}{ccc} \lambda_1 & & 0 \\  & \ddots & \\
-	0 &  & \lambda_n \end{array}\right)
-\]
-is a diagonal matrix.  So every symmetric matrix is similar to a diagonal
-matrix.
 
 \subsubsection*{Hermitian Inner Products}
 
@@ -165,6 +146,64 @@ since $PP^t= I_n$.  Thus the vectors $v_j$ form an orthonormal basis since
 the vectors $z_j$ form an orthonormal basis.  \end{proof}
 
 
+\subsection*{Orthogonal Matrices}
+
+\begin{definition} \label{def:orthmat}
+\index{matrix!orthogonal}
+An $n\times n$ matrix $Q$ is {\em orthogonal\/} if its columns form an
+orthonormal basis\index{basis!orthonormal}
+of $\R^n$.
+\end{definition}
+
+
+
+The following lemma states elementary properties of orthogonal matrices:
+\begin{lemma} \label{lem:orthprop}
+Let $Q$ be an $n\times n$ matrix.  Then
+\begin{itemize}
+\item[(a)] $Q$ is orthogonal if and only if $Q^tQ=I_n$;
+\item[(b)] $Q$ is orthogonal if and only if $Q^{-1} = Q^t$;
+\item[(c)] If $Q_1,Q_2$ are orthogonal matrices, then $Q_1Q_2$ is
+an orthogonal matrix.
+\end{itemize}
+\end{lemma}
+\begin{proof}  (a) Let $Q=(v_1|\cdots|v_n)$.  Since $Q$ is orthogonal, the $v_j$
+form an orthonormal basis.  By direct computation note that
+$Q^tQ=\{(v_i\cdot v_j)\}=I_n$, since the $v_j$ are orthonormal. Note that
+(b) is simply a restatement of (a).
+
+\noindent (c) Now let $Q_1,Q_2$ be orthogonal. Then (a) implies
+\[
+(Q_1Q_2)^t(Q_1Q_2) = Q_2^tQ_1^tQ_1Q_2 = Q_2^tQ_2 = I_n,
+\]
+thus proving (c).  \end{proof}
+
+As a consequence of Theorem~\ref{T:symmetricmat}, let
+${\cal V}=\{v_1,\ldots,v_n\}$ be an orthonormal basis for $\R^n$
+consisting of eigenvectors of $A$.  Indeed, suppose
+\[
+Av_j = \lambda_jv_j
+\]
+where $\lambda_j\in\R$.  Note that
+\[
+Av_j\cdot v_i =  \left\{\begin{array}{rl} \lambda_j & \qquad i=j\\
+			0 & \qquad i\neq j \end{array}\right.
+\]
+It follows from \eqref{e:coordorthomat} that
+\[
+[A]_{\cal V}= \left(\begin{array}{ccc} \lambda_1 & & 0 \\  & \ddots & \\
+	0 &  & \lambda_n \end{array}\right)
+\]
+is a diagonal matrix.  So every symmetric matrix is similar to a diagonal
+matrix.  We have in fact proved:
+
+
+%The previous lemma together with \eqref{e:orthosym} in the proof of Theorem~\ref{T:symmetricmat}(b) lead to the following result:
+
+\begin{proposition}  For each symmetric $n\times n$ matrix $A$, there exists an
+orthogonal matrix $P$ such that $P^tAP$ is a diagonal matrix.
+\end{proposition}
+
 
 
 \EXER
@@ -193,6 +232,42 @@ A=\mattwo{1}{2}{2}{-2}.
 Find the eigenvalues and eigenvectors of $A$ and verify that the eigenvectors
 are orthogonal.
 \end{exercise}
+
+\noindent In Exercises~\ref{c7.9.1a} -- \ref{c7.9.1e} decide whether or not
+the given matrix is orthogonal.
+\begin{exercise} \label{c7.9.1a}
+$\left(\begin{array}{rr} 2 & 0\\ 0 & 1\end{array}\right)$.
+\end{exercise}
+\begin{exercise} \label{c7.9.1b}
+$\left(\begin{array}{rrr} 0 & 1 & 0\\ 0 & 0 & 1\\
+1 & 0 & 0\end{array}\right)$.
+\end{exercise}
+\begin{exercise} \label{c7.9.1c}
+$\left(\begin{array}{rrr} 0 & -1 & 0\\ 0 & 0 & 1\\
+-1 & 0 & 0\end{array}\right)$.
+\end{exercise}
+\begin{exercise} \label{c7.9.1d}
+$\left(\begin{array}{rr} \cos(1) & -\sin(1)\\ \sin(1) & \cos(1)
+\end{array}\right)$.
+\end{exercise}
+\begin{exercise} \label{c7.9.1e}
+$\left(\begin{array}{rrr} 1 & 0 & 4\\ 0 & 1 & 0
+\end{array}\right)$.
+\end{exercise}
+
+\begin{exercise} \label{c7.9.2}
+Let $Q$ be an orthogonal $n\times n$ matrix.
+Show that $Q$ preserves the length of vectors, that is
+\[
+\|Qv\| = \|v\|\quad \mbox{for all $v\in\R^n$.}
+\]
+\end{exercise}
+
+\begin{exercise}  \label{c7.9.45}
+Prove that the rows of an $n\times n$ orthogonal matrix form an orthonormal
+basis for $\R^n$.
+\end{exercise}
+
 
 \CEXER
 
