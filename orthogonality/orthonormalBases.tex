@@ -23,7 +23,7 @@ dot products\index{dot product}
 \[
 v_i\cdot v_j  =  0
 \]
-when $i\neq j$.  These vectors are
+when $i\neq j$.  The vectors are
 {\em orthonormal\/}\index{orthonormal} if they are
 orthogonal and of unit length, that is,
 \[
@@ -93,7 +93,7 @@ Let
   v_2 &= \frac{1}{\sqrt{6}}(1,-2,1), \\
   v_3 &= \frac{1}{\sqrt{2}}(1,0,-1).
 \end{align*}
-It is a straightforward calculation to verify that these vectors have
+A short calculation verifies that these vectors have
 unit length and are pairwise orthogonal.  Let $v=(1,2,3)$ be a vector
 and determine the coordinates of $v$ in the basis ${\cal V}=\{v_1,v_2,v_3\}$.
 Theorem~\ref{T:orthocoord} states that these coordinates are:
@@ -108,7 +108,7 @@ Theorem~\ref{T:orthocoord} states that these coordinates are:
 Next we discuss how to find the matrix associated with a linear map in an
 orthonormal basis.  Let $L:\R^n\to\R^n$ be a linear map and let
 ${\cal V} = \{v_1,\ldots,v_n\}$ be an orthonormal basis for $\R^n$.  Then
-the matrix associated to $L$ in the basis ${\cal V}$ is easy to calculate
+the matrix associated to $L$ in the basis ${\cal V}$ can be calculated 
 in terms of dot product.  That matrix is:
 \begin{equation}  \label{e:coordorthomat}
 [L]_{\cal V} = L(v_j)\cdot v_i.
@@ -130,7 +130,7 @@ The set ${\cal V}$ is an orthonormal basis of $\R^2$.  Using
 \[
 L_A(x) = \mattwo{2}{1}{-1}{3}x
 \]
-in the basis ${\cal V}$ by straightforward calculation.  That is, compute
+in the basis ${\cal V}$.  That is, compute
 \[
 [L]_{\cal V} =
 \mattwo{Av_1\cdot v_1}{Av_2\cdot v_1}{Av_1\cdot v_2}{Av_2\cdot v_2}
