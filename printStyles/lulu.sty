@@ -3,13 +3,12 @@
 \ProvidesPackage{lulu}[2015/12/17 v0.75]
 \ProcessOptions\relax
 
-\usetikzlibrary{patterns}
-\usepackage{stix}
-%%%\usepackage[T1]{fontenc} Clobbers \d!!!
-\usepackage{gillius}
-%\usepackage{arev}
-
 \usepackage{ccicons}
+
+\usetikzlibrary{patterns}
+\usepackage[T1]{fontenc}
+\usepackage{stix}
+\usepackage{gillius}
 
 \usepackage{microtype}
 
@@ -28,95 +27,11 @@
 
 %% Size of the page
 \usepackage[margin=.5in, includehead, includefoot, hmargin={.8in,.5in}, paperwidth=8.5in, paperheight=8.5in]{geometry}
-%\usepackage[margin=.5in, includehead, includefoot, hmargin={.8in,.5in}, paperwidth=11in, paperheight=8.5in]{geometry}
-
-% Store usual maketitle as othermaketitle
-
-
-%% \makeatletter
-%% % % Redefine maketitle to give course packet title page and toc.
-%% \renewcommand{\maketitle}{ %
-%% \pagestyle{empty}
-%% \onecolumn
-%% \begin{flushright}
-%%   \begin{tikzpicture}[opacity=1]
-%%   \node at (1,0) {\scalebox{4}{\Huge\textsf{\textbf{\textcolor{black}{linear algebra}}}}};
-%%   \node at (8,1.19) {\scalebox{10}{\Huge\textsf{\textbf{\textcolor{gray}{1}}}}};  %% Aligned with subtitle
-%%   %\node at (8,1.85) {\scalebox{10}{\Huge\textsf{\textbf{\textcolor{gray}{1}}}}}; %% Aligned with title
-%%   \node at (1.1,-1.6) {\resizebox{4.8in}{.2in}{\Huge\textsf{\textcolor{gray}
-%%           {with free online interactive materials}
-%%     }}};
- 
-%% \vspace{-.4in}
-%% \begin{flushleft}\hspace*{-.12in}
-%% \begin{tikzpicture}
-%%   \node[anchor=west] at (0,0) {\scalebox{1}{\Huge\textsf{\ccbyncsa}}};
-%%   \node[anchor=west] at (4,-.25) {\large\textsf{developed in \textbf{XIMERA}}};
-%%   \node[anchor=east] at (7in,-.25) {\small\textsf{This document was typeset on \today.}};
-%% \end{tikzpicture}
-%% \end{flushleft}
-%% \thispagestyle{empty}
-
-%% ~\vfill
-
-%% \noindent
-%% Copyright \copyright\ 1998 Martin Golubitsky and Michael Dellnitz 
-
-%% \noindent
-%% This work is licensed under the Creative Commons
-%% Attribution-NonCommercial-ShareAlike License. To view a copy of this
-%% license, visit \url{http://creativecommons.org/licenses/by-nc-sa/4.0/}
-
-%% If you distribute this work or a derivative, include the history of
-%% the document.  The source code is available at:
-
-%% \url{http://github.com/mooculus/calculus/}
-
-%% \noindent
-%% This text contains source material from several other open-source
-%% texts:
-%% \begin{itemize}
-%% \item \textsl{Single and Multivariable Calculus: Early
-%%   Transcendentals}. Guichard. Copyright \copyright\ 2015 Guichard,
-%%   Creative Commons Attribution-NonCommercial-ShareAlike License 3.0.
-%%   \url{http://communitycalculus.org}
-%% \item \textsl{APEX Calculus}. Hartman, Heinold, Siemers, Chalishajar,
-%%   Bowen (Ed.). Copyright \copyright\ 2014 Hartman, Creative Commons Attribution-Noncommercial 3.0. \url{http://www.apexcalculus.com/}
-%% \item \textsl{Elementary Calculus: An Infinitesimal
-%%   Approach}. Keisler. Copyright \copyright\ 2015 Keisler, Creative
-%%   Commons Attribution-NonCommercial-ShareAlike License 3.0.
-%%   \url{http://www.math.wisc.edu/~keisler/calc.html}
-%% \end{itemize}
-
-%% \noindent This book is typeset in the STIX and Gillius fonts.
-
-
-
-%% \noindent We will be glad to receive corrections and suggestions for
-%% improvement at: \texttt{ximera@math.osu.edu}
-
-%% \twocolumn
-%% \clearpage
-%% \ifnotoc\else % When notoc option is used, we do not include a table of contents.  Otherwise:
-%% 	\tableofcontents\clearpage % we include a table of contents in every course packet.  
-%% 	\clearpage
-%%         \fi
-%% \pagestyle{main} %switch to main pagestyle, just like ximera documents.
-%% \let\maketitle\othermaketitle % renew maketitle to usual definition.
-%% }
-%% \makeatother
-
-
-
-
-
-
 
 %% Two column sep
 \setlength{\columnsep}{1cm}
 %\setlength{\columnseprule}{.8cm}
 %\renewcommand{\columnseprulecolor}{white!20!black}
-
 
 %% image environment
 %%\renewenvironment{image}[1][]{\begin{center}}{\end{center}}
@@ -128,21 +43,19 @@
 
 %% This is the code that will allow us to redefine the title with
 \makeatletter
-%\newcounter{sectiontitlenumber}
-%\setcounter{secnumdepth}{0}
 
 % no numbering on the initial preface pieces
-\renewcommand\maketitle{%
-  \addtocounter{titlenumber}{1}\phantomsection 
-  \addcontentsline{toc}{section}{\@title}
+\renewcommand{\maketitle}{%
+  \addtocounter{titlenumber}{1}
   {\flushleft\large\bfseries \@pretitle\par\vspace{-1em}}
   {\flushleft\LARGE\bfseries {}{\hspace{0em}}\@title \par }
+  \phantomsection %
+  \addcontentsline{toc}{section}{\@title}%
   \vskip .6em\noindent\textit\theabstract\setcounter{problem}{0}\setcounter{section}{0}\setcounter{subsection}{0}\par\vspace{2em}
   \aftergroup\@afterindentfalse
   \aftergroup\@afterheading}
 
 \let\othermaketitle\maketitle
-
 
 \newcounter{chapter}
 \setcounter{chapter}{0}
@@ -151,20 +64,22 @@
   \def\maketitle{%
     \addtocounter{titlenumber}{1}%
     \addtocounter{chapter}{1}%
-    \stepcounter{section}
-    \addcontentsline{toc}{section}{\textbf{\thetitlenumber\quad\@title}}%
+    \stepcounter{section}%
                     {\flushleft\small\sffamily\bfseries\@pretitle\par\vspace{-1.5em}}%
                     {\flushleft\LARGE\sffamily\bfseries\thetitlenumber\quad\@title \par }%
+                    \phantomsection
+                    \addcontentsline{toc}{section}{\textbf{\thetitlenumber\quad\@title}}%
                     {\setcounter{exercise}{0}\setcounter{sectiontitlenumber}{0}}%
                     \par}}
 
 \renewcommand\sectionstyle{%
   \def\maketitle{%
     \addtocounter{sectiontitlenumber}{1}
-    \stepcounter{subsection}    
-    \addcontentsline{toc}{subsection}{\thetitlenumber.\thesectiontitlenumber\quad\@title}%
+    \stepcounter{subsection}
     {\flushleft\small\sffamily\bfseries\@pretitle\par\vspace{-1.5em}}%
     {\flushleft\Large\sffamily\bfseries\thetitlenumber.\thesectiontitlenumber\quad\@title \par}%
+    \phantomsection%
+    \addcontentsline{toc}{subsection}{\thetitlenumber.\thesectiontitlenumber\quad\@title}%    
     \def\@currentlabel{\thetitlenumber.\thesectiontitlenumber}
     \par}}
 
@@ -174,59 +89,6 @@
   \def\@currentlabel{\thetitlenumber}{\label{#1}}%
   \@esphack
 }
-%% redefine Part
-\renewcommand\part{%
-  \if@openright
-    \cleardoublepage
-  \else
-    \clearpage
-  \fi
-  \thispagestyle{plain}%
-  \if@twocolumn
-    \onecolumn
-    \@tempswatrue
-  \else
-    \@tempswafalse
-  \fi
-  \null\vfil
-  \secdef\@part\@spart}
-
-\def\@part[#1]#2{%
-    \ifnum \c@secnumdepth >-2\relax
-      \refstepcounter{part}%
-      \addcontentsline{toc}{part}{\thepart\hspace{1em}#1}%
-    \else
-      \addcontentsline{toc}{part}{#1}%
-    \fi
-    \markboth{}{}%
-    {\centering
-     \interlinepenalty \@M
-     \normalfont
-     \ifnum \c@secnumdepth >-2\relax
-       \huge\sffamily\bfseries \partname\nobreakspace\thepart
-       \par
-       \vskip 20\p@
-     \fi
-     \Huge \bfseries #2\par}%
-    \@endpart}
-\def\@spart#1{%
-    {\centering
-     \interlinepenalty \@M
-     \normalfont
-     \Huge \bfseries #1\par}%
-    \@endpart}
-\def\@endpart{\vfil\newpage
-              \if@twoside
-               \if@openright
-                \null
-                \thispagestyle{empty}%
-                \newpage
-               \fi
-              \fi
-              \if@tempswa
-                \twocolumn
-                \fi}
-
 
 \renewcommand\section{\@startsection{paragraph}{10}{\z@}%
                                      {-3.25ex\@plus -1ex \@minus -.2ex}%
@@ -248,24 +110,6 @@
                                     {-1em}%
                                     {\normalfont\normalsize\sffamily}}
 
-\newpagestyle{numbered}{
-  \sethead[\textsl{\ifnumbers\ifnum\value{titlenumber}>0\textsection\thetitlenumber\ifnum\value{sectiontitlenumber}>0.\thesectiontitlenumber\else\fi\quad\fi\fi\@title}][][] % even
-{}{}{\textsl{\ifnumbers \fi\@title\ifnum\value{titlenumber}>0\quad\textsection\thetitlenumber\ifnum\value{sectiontitlenumber}>0.\thesectiontitlenumber\else\fi\fi}} % odd
-\setfoot[\thepage][][] % even
-{}{}{\thepage} % odd
-}
-\pagestyle{numbered}
-
-% kills multipleChoice
-\let\multipleChoice\relax
-\let\endmultipleChoice\relax
-\NewEnviron{multipleChoice}{}
-
-
-% kills selectAll
-\let\selectAll\relax
-\let\endselectAll\relax
-\NewEnviron{selectAll}{}
 
 \renewcommand{\thesection}{\arabic{section}} 
 
@@ -370,9 +214,8 @@
    \end{description}\normalsize%
 }
 
-\makeatletter
 % % Redefine maketitle to give course packet title page and toc.
-\renewcommand{\maketitle}{ %
+\renewcommand{\maketitle}{%
 \pagestyle{empty}
 \onecolumn
 \begin{center}
@@ -434,7 +277,6 @@ improvement at \texttt{ximera@math.osu.edu}
 \tableofcontents\clearpage % we include a table of contents in every course packet.
 	\clearpage
         \fi
-\pagestyle{numbered} %switch to main pagestyle, just like ximera documents.
 \let\maketitle\othermaketitle % renew maketitle to usual definition.
 }
 
