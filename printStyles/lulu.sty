@@ -166,11 +166,13 @@
 \newcounter{exercise}
 \newtheorem{actualexercise}[exercise]{}
 
+\renewcommand{\theHexercise}{exercise.\thetitlenumber.\thesectiontitlenumber.\theexercise}  
 \newcounter{exercisedepth}
 \newenvironment{exercise}{
   \stepcounter{exercisedepth}
   \ifnum\value{exercisedepth}=1
   \actualexercise
+  \def\@currentlabel{exercise.\thetitlenumber.\thesectiontitlenumber.\theexercise}  
   \else
   \color{white}\tiny
   \fi
@@ -186,7 +188,6 @@
 \let\warning\relax
 \let\endwarning\relax
 \newtheorem*{warning}{Warning}
-\makeatother
 
 %% Redefines "explanation"
 \renewmdenv[
