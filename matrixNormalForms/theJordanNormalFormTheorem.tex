@@ -378,6 +378,25 @@ computers.
 Write two different $4\times 4$ Jordan normal form matrices all
 of whose eigenvalues equal $2$ for which the geometric
 multiplicity is two.
+
+\begin{solution}
+
+\ans Two such matrices are:
+\[
+\left(\begin{array}{rrrr}
+2 & 1 & 0 & 0 \\
+0 & 2 & 0 & 0 \\
+0 & 0 & 2 & 1 \\
+0 & 0 & 0 & 2 \end{array}\right)
+\AND
+\left(\begin{array}{rrrr}
+2 & 1 & 0 & 0 \\
+0 & 2 & 1 & 0 \\
+0 & 0 & 2 & 0 \\
+0 & 0 & 0 & 2 \end{array}\right)
+\]
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c10.5.2A}
@@ -385,6 +404,20 @@ How many different $6\times 6$ Jordan form matrices have all eigenvalues
 equal to $3$? (We say that two Jordan form matrices are the same 
 if they have the same number and type of Jordan block, though not
 necessarily in the same order along the diagonal.)
+
+\begin{solution}
+\ans There are $10$ different Jordan normal form matrices.
+
+\soln  There is $1$ matrix with six Jordan blocks.  There is $1$ matrix with five
+Jordan blocks.  There are $2$ matrices with four Jordan blocks; one matrix has a
+Jordan block of size three and three blocks of size one and the other matrix has two
+Jordan blocks of size two and two of size one.  There are $2$ matrices with three
+Jordan blocks; one has a block of size four and one has three blocks of size two.
+There are $3$ matrices with two Jordan blocks; one matrix each with a block of
+size $n$, where $n=1,2,3$.  There is $1$ Jordan matrix with one Jordan block. 
+Altogether, there are $10$ different matrices.
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise}  \label{c10.5.2B}
@@ -393,6 +426,16 @@ to $4$ and two eigenvalues equal to $-3$.  List the possible Jordan normal
 forms for $A$ (up to similarity).  Suppose that you can ask your computer to
 compute the nullity of precisely two matrices.  Can you devise a strategy for
 determining the Jordan normal form of $A$?  Explain your answer.
+
+\begin{solution}
+\ans There are six different Jordan normal form matrices.
+
+\soln  There are $3$ different Jordan matrices associated with the eigenvalue $4$ and
+$2$ different Jordan matrices associated with the eigenvalue $-3$.  Altogether, there
+are $3\cdot 2=6$ different Jordan matrices.
+
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise}  \label{c10.5.2C}
@@ -402,42 +445,179 @@ Jordan normal forms for $A$ (up to similarity).  Suppose that you can ask
 your computer to compute the nullity of precisely two matrices.  Can you 
 devise a strategy for determining the Jordan normal form of $A$?  Explain 
 your answer.
+
+\begin{solution}
+\ans There are $6$ possible Jordan normal form matrices which are
+determined by computing nullity$(A-2I_8)$ and nullity$(A-(1+i)I_8)$.
+
+\soln  Since $A$ is real, the eigenvalues of $A$ are $2$ with multiplicity three; 
+$1+i$ with multiplicity two; $1-i$ with multiplicity two; and $0$ with multiplicity 
+$1$.  There are three possible Jordan blocks associated with the eigenvalues $2$
+determined by the geometric multiplicity of the eigenvalue $2$ and two possible Jordan
+blocks associated with the eigenvalues $1\pm i$ determined by the geometric
+multiplicity of the eigenvalue $1+i$.  The geometric multiplicity of the
+eigenvalue $\lambda$ is the dimension of the null space of $A-\lambda I_8$.  Thus 
+there are six possible Jordan normal forms and they are determined by computing the
+dimensions of $\nulls(A-2I_8)$ and $\nulls(A-(1+i)I_8)$.
+
+
+\end{solution}
 \end{exercise}
 
 \noindent In Exercises~\ref{c10.5.3a} -- \ref{c10.5.4c} find the 
 Jordan normal forms for the given matrix.
 \begin{exercise} \label{c10.5.3a}
 $A = \mattwo{2}{4}{1}{1}$. 
+
+\begin{solution}
+
+\ans The Jordan normal form of matrix $A$ is
+\[
+\cmattwo{\frac{3 + \sqrt{17}}{2}}{0}{0}{\frac{3 - \sqrt{17}}{2}}.
+\]
+
+\soln Matrix $A$ has two distinct real eigenvalues at
+$\lambda = \frac{3 + \sqrt{17}}{2}$ and 
+$\lambda = \frac{3 - \sqrt{17}}{2}$.
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c10.5.3b}
 $B = \mattwo{9}{25}{-4}{-11}$.
+
+\begin{solution}
+
+\ans The Jordan normal form of matrix $B$ is
+\[
+\mattwo{-1}{1}{0}{-1}.
+\]
+
+\soln Matrix $B$ has one real eigenvalue at $\lambda = -1$ with one
+linearly independent eigenvector.
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c10.5.4}
 $C = \left(\begin{array}{rrr} -5 & -8 & -9 \\  5 & 9 & 9 \\
  -1 & -2 & -1 \end{array}\right)$.
+
+\begin{solution}
+
+\ans The Jordan normal form of matrix $C$ is
+\[
+\matthree{-1}{0}{0}{0}{2}{1}{0}{0}{2}.
+\]
+
+\soln Matrix $C$ has two real eigenvalues.  The eigenvalue at $-1$ has
+algebraic multiplicity of $1$, and the eigenvalue at $2$ has algebraic
+multiplicity of $2$, and only $1$ linearly independent eigenvector.
+
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c10.5.4a}
 $D = \left(\begin{array}{rrr} 0 & 1 & 0 \\  0 & 0 & 1 \\
 1 & 1 & -1 \end{array}\right)$.
+
+\begin{solution}
+\ans The Jordan normal form of matrix $D$ is
+\[
+\matthree{-1}{1}{0}{0}{-1}{0}{0}{0}{1}.
+\]
+
+\soln Matrix $D$ has two real eigenvalues.  The eigenvalue at $-1$ has
+algebraic multiplicity of $2$ and geometric multiplicity $1$, and the eigenvalue at 
+$1$ has multiplicity of $1$.
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c10.5.4b}
 $E = \left(\begin{array}{rrr} 2 & 0 & -1 \\  2 & 1 & -1 \\
 1 & 0 & 0 \end{array}\right)$.
+
+\begin{solution}
+\ans The Jordan normal form of matrix $E$ is
+\[
+\matthree{1}{1}{0}{0}{1}{1}{0}{0}{1}.
+\]
+
+\soln Matrix $E$ has one eigenvalue at $1$ of algebraic multiplicity of $3$ and 
+geometric multiplicity $1$.
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c10.5.4c}
 $F = \left(\begin{array}{rrr} 3 & -1 & 2 \\  -1 & 2 & -1 \\
 -1 & 1 & 0 \end{array}\right)$.
+
+\begin{solution}
+\ans The Jordan normal form of matrix $F$ is
+\[
+\matthree{2}{1}{0}{0}{2}{0}{0}{0}{1}.
+\]
+
+\soln Matrix $F$ has two real eigenvalues.  The eigenvalue at $2$ has
+algebraic multiplicity of $2$ and geometric multiplicity $1$, and the eigenvalue at 
+$1$ has multiplicity of $1$.
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise}  \label{c10.5.5A}
 Compute $e^{tJ}$ where $J=\left(\begin{array}{rrr} 2 & 0 & 0 \\  0 & -1 & 1 \\
 0 & 0 & -1 \end{array}\right)$.
+
+\begin{solution}
+\ans $e^{tJ} =
+\cmatthree{e^t}{0}{0}{0}{e^{-t}}{te^{-t}}{0}{0}{e^{-t}}$.
+
+\soln The matrix $J$ is in block diagonal form so we can compute the matrix exponential 
+by computing the matrix exponential of each block.  In particular, let 
+\[
+M = \mattwo{-1}{1}{0}{-1}.
+\]
+Then 
+\[
+e^{tM} = e^{-t}(I_2+tM) = e^{-t}\mattwo{1}{t}{0}{1}.
+\]
+Therefore,
+\[
+e^{tJ} = \mattwo{e^t}{0}{0}{e^{tM}} = 
+\cmatthree{e^t}{0}{0}{0}{e^{-t}}{te^{-t}}{0}{0}{e^{-t}}.
+\]
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise}  \label{c10.5.5B}
 Compute $e^{tJ}$ where $J=\left(\begin{array}{rrrrr} 2 & 1 & 0 & 0 & 0\\  
 0 & 2 & 0 & 0 & 0 \\ 0 & 0 & 3 & 1 & 0\\ 0 & 0 & 0 & 3 & 1\\
 0 & 0 & 0 & 0 & 3 \end{array}\right)$.
+
+\begin{solution}
+\ans $e^J = 
+\cmattwo{e^{2t}\mattwo{1}{t}{0}{1}}{0}{0}{e^{3t}\cmatthree{1}{t}{\frac{1}{2}t^2}{0}{1}{t}{0}{0}{1}}$.
+
+\soln  The matrix $J$ has block diagonal form 
+\[
+J = \mattwo{L}{0}{0}{M}
+\]
+where
+\[
+L = \mattwo{2}{1}{0}{2} \AND M = \matthree{3}{1}{0}{0}{3}{1}{0}{0}{3}.
+\]
+Therefore,
+\[
+e^{tJ} = \cmattwo{e^L}{0}{0}{e^M}
+\]
+where
+\[
+e^L = e^{2t}\mattwo{1}{t}{0}{1} \AND 
+e^M = e^{3t}\cmatthree{1}{t}{\frac{1}{2}t^2}{0}{1}{t}{0}{0}{1}.
+\]
+
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c10.5.5}
@@ -452,6 +632,39 @@ if $N^k=0$ for some positive integer $k$.
 \item[(d)]  Let $N$ be a matrix all of whose eigenvalues are zero.  Use 
 	the Jordan normal form theorem to show that $N$ is nilpotent.
 \end{itemize}
+
+\begin{solution}
+
+(a) The linear map $N^2$ satisfies
+\[
+N^2e_1 = N^2e_2 = 0, \AND N^2e_j = e_{j - 2}
+\mbox{ for } j = 3,\ldots,n.
+\]
+The linear map $N^3$ satisfies
+\[
+N^3e_1 = N^3e_2 = N^3e_3 = 0, \AND N^3e_j = e_{j - 3} \mbox{ for }
+j = 4,\ldots,n.
+\]
+By induction, $N^ne_j = 0$ for $j = 1,\dots,n$.  So $N^n = 0$, and $N$
+is nilpotent.
+
+(b) Let $\lambda$ be an eigenvalue of matrix $N$.  Then, there
+exists a nonzero vector $v$ such that $Nv = \lambda v$.  Therefore,
+$N^nv = \lambda^nv$.  If $N$ is nilpotent, then $\lambda^nv = 0$.  Since
+$v$ is nonzero, $\lambda^n = 0$, which implies $\lambda = 0$.
+
+(c) Let $M = P^{-1}NP$ be a matrix similar to nilpotent $n \times n$
+matrix $N$.  Then $M^n = (P^{-1}NP)^n = P^{-1}N^nP$.  Since $N$ is
+nilpotent, $N^n = 0$.  So $M^n = 0$, and $M$ is also nilpotent.
+
+(d) By the Jordan normal form theorem, $N$ is similar to some matrix $W$ which
+is block diagonal and has the matrices $N_j$ along the diagonal, where each
+$N_j$ is a Jordan block.  By (a) of this problem, $N_j^n = 0$ for each
+$j$.  $W^n$ is block diagonal with blocks $N_j^n$.  Since $N_j^n = 0$ for all
+$j$, $W^n = 0$.  Thus, $W$ is nilpotent, and, by (c) of this problem, $N$
+is also nilpotent.
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c10.5.5C}
@@ -461,6 +674,31 @@ scalars $a,b,c$ such that
 \[
 A\inv = aI_3 + bA + cA^2.
 \]
+
+\begin{solution}
+
+The characteristic polynomial of a $3\times 3$ matrix $A$ has the form 
+\[
+p_A(\lambda) = -\lambda^3 + b_2\lambda^2 + b_1\lambda + b_0.
+\]
+The Cayley-Hamilton theorem states that 
+\[
+p_A(A) = -A^3 + b_2A^2 + b_1A + b_0I_3 = 0.
+\]
+Therefore
+\[
+A(-A^2 +b_2A +b_1I_3) = -b_0I_3.
+\]
+Since $p_A(\lambda) =\det(A-\lambda I_3)$, it follows that $b_0=p_A(0)=\det(A)$.
+Since $A$ is invertible, $\det(A)\neq 0$; that is, $b_0\neq 0$.  Finally, 
+\[
+A\inv = -\frac{1}{b_0}(-A^2+b_2A+b_1I_3) = aI_3 + bA + cA^2,
+\]
+where $a = -b_1/b_0$, $b = -b_2/b_0$, and $c=1/b_0$.
+
+
+
+\end{solution}
 \end{exercise}
 
 \CEXER
@@ -474,6 +712,37 @@ A = \left(\begin{array}{rrrr} -3 & -4 & -2 & 0\\
 -9 & -39 & -16 & -7\\ 18 & 64 & 27 & 10 \\ 15 & 86 & 34 & 18
 \end{array}\right). 
 \end{matlabEquation}
+
+\begin{solution}
+
+(a) \ans The Jordan normal form of $A$ is
+\[
+J = \left(\begin{array}{rrrr}
+3 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & -1 \end{array}\right).
+\]
+
+\soln
+To find the Jordan normal form of matrix $A$, type {\tt eig(A)} to find
+the eigenvalues.  Matrix $A$ has four distinct eigenvalues, so the
+Jordan normal form is the diagonal matrix with these eigenvalues along
+its diagonal.  
+
+(b)\ans   The diagonalizing matrix is
+\begin{verbatim}
+S =
+   -0.1387   -0.1543   -0.0000   -0.5774
+    0.1387   -0.3086   -0.4082    0.0000
+    0.1387    0.9258    0.8165    0.5774
+   -0.9707   -0.1543    0.4082   -0.5774
+\end{verbatim}
+
+\soln The columns of matrix $S$ consist of the eigenvectors of $A$.
+
+
+\end{solution}
 \end{exercise}
 \begin{exercise}  \label{E:jnfmb}
 \begin{matlabEquation}\label{jordan-form-exercise-2}
@@ -481,6 +750,42 @@ A =\left(\begin{array}{rrrr} 9 & 45 & 18 & 8\\
 0 & -4 & -1 & -1\\ -16 & -69 & -29 & -12 \\ 25 & 123 & 49 & 23
 \end{array}\right). 
 \end{matlabEquation}
+
+\begin{solution}
+
+(a) \ans The Jordan normal form of $A$ is
+\[
+J = \left(\begin{array}{rrrr}
+2 & 0 & 0 & 0 \\
+0 & -1 & 1 & 0 \\
+0 & 0 & -1 & 1 \\
+0 & 0 & 0 & -1 \end{array}\right).
+\]
+
+\soln Type {\tt eig(A)} to find the eigenvalues of matrix $A$.  Not all
+eigenvalues are simple, so type {\tt null(A - lambda*eye(4))} for each
+eigenvalue $\lambda$ to find the number of linearly independent eigenvectors
+associated to it.  Matrix $A$ has a simple eigenvalue at $2$, and
+an eigenvalue at $-1$ with algebraic multiplicity 3 and one linearly
+independent eigenvector.
+
+(b) \ans   The diagonalizing matrix is
+\begin{verbatim}
+S =
+   -0.1387   -0.5902   -1.0165   -0.9837
+    0.1387    0.0000   -0.5902    0.1640
+    0.1387    0.5902    2.1970    0.0656
+   -0.9707   -0.5902   -0.4263    0.0328
+\end{verbatim}
+
+\soln The first column of $S$ is $v_1$, the eigenvector associated with
+eigenvalue $2$.  To find the other columns, note that the nullity of
+$(A + I_4)$ is 1, the nullity of $(A + I_4)^2$ is 2, and the nullity of
+$(A + I_4)^3$ is 3.  Then, select one vector from $\null((A + I_4)^3)$
+and label it $v_{23}$.  Set $v_{22} = (A + I_4)v_{23}$ and
+$v_{21} = (A + I_4)^2v_{23}$.  Then, $S = (v_1|v_{21}|v_{22}|v_{23})$.
+
+\end{solution}
 \end{exercise}
 \begin{exercise}  \label{E:jnfmc}
 \begin{matlabEquation}\label{jordan-form-exercise-3}
@@ -488,6 +793,34 @@ A = \left(\begin{array}{rrrr} -5 & -13 & 17 & 42\\
 -10 & -57 & 66 & 187\\ -4 & -23 & 26 & 77 \\ -1 & -9 & 9 & 32
 \end{array}\right).  
 \end{matlabEquation}
+
+\begin{solution}
+
+(a) \ans The Jordan normal form of $A$ is
+\[
+J = \left(\begin{array}{rrrr}
+ 0 & 2 &  0 &  0 \\
+-2 & 0 &  0 &  0 \\
+ 0 & 0 & -2 &  1 \\
+ 0 & 0 & -1 & -2 \end{array}\right).
+\]
+
+\soln Type {\tt eig(A)} to find that matrix $A$ has distinct eigenvalues
+at $\pm 2i$ and $2 \pm i$.
+
+(b) \ans   The diagonalizing matrix is
+\begin{verbatim}
+T =
+   -0.2118   -0.0456    0.2211    0.0060
+   -0.8548   -0.2507    0.8762    0.1803
+   -0.3555   -0.0988    0.3529    0.0669
+   -0.1437   -0.0531    0.1440    0.0344
+\end{verbatim}
+
+\soln The columns of matrix $S$ consist of the eigenvectors of $A$.
+
+
+\end{solution}
 \end{exercise}
 \begin{exercise}  \label{E:jnfmd}
 \begin{matlabEquation}\label{jordan-form-exercise-4}
@@ -495,6 +828,44 @@ A = \left(\begin{array}{rrrr} 1 & 0 & -9 & 18 \\
 12 & -7 & -26 & 77\\ 5 & -2 & -13 & 32 \\ 2 & -1 & -4 & 11
 \end{array}\right). 
 \end{matlabEquation}
+
+\begin{solution}
+
+(a) \ans The Jordan normal form of $A$ is
+\[
+J = \left(\begin{array}{rrrr}
+-2 & 1 & 0 & 0 \\
+0 & -2 & 0 & 0 \\
+0 & 0 & -2 & 1 \\
+0 & 0 & 0 & -2 \end{array}\right).
+\]
+
+\soln
+Type {\tt eig(A)} to find that $-2$ is the only eigenvalues of $A$.  Then 
+type {\tt null(A + 2*eye(4))} to find the number of linearly
+independent eigenvectors associated to eigenvalue $\lambda = -2$.  
+The eigenvalue has algebraic multiplicity $4$ and geometric multiplicity
+$2$.  We then find that the nullity of $(A + 2I_4)^2$ is $4$. 
+Therefore, all generalized eigenvectors $v$ of $D$ are in the null space
+of $A + 2I_4$.
+
+(b) \ans   The diagonalizing matrix is
+\begin{verbatim}
+S =
+     3     1     0     0
+    12     0    -5     1
+     5     0    -2     0
+     2     0    -1     0
+\end{verbatim}
+
+\soln To find $S$, find that $A$ has two linearly independent
+eigenvectors associated to $-2$, and that the null space
+of $(A + 2I_4)$ is $\R^4$.  Then, select two vectors in $\R^4$, in this
+case $v_{12} = (1,0,0,0)^t$ and $v_{22} = (0,1,0,0)^t$, and set
+$v_{11} = (A + 2I_4)v_{12}$ and $v_{21} = (A + 2I_4)v_{22}$.  Then,
+$S = (v_{11}|v_{12}|v_{21}|v_{22})$.
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{E:jnfme}
 \begin{matlabEquation}\label{jordan-form-exercise-5}
@@ -505,6 +876,37 @@ A = \left(\begin{array}{rrrr}
     -3  &   2  &   0   &  0
  \end{array}\right). 
 \end{matlabEquation}
+
+\begin{solution}
+
+(a) \ans The Jordan normal form of $A$ is
+\[
+J = \left(\begin{array}{rrrr}
+-1 &  1 &  0 & 0 \\
+0  & -1 &  1 & 0 \\
+0  &  0 & -1 & 0 \\
+0  &  0 &  0 & 1 \end{array}\right).
+\]
+
+(b) \ans  The diagonalizing matrix is
+\begin{verbatim}
+S =
+    -1     1     0     0
+    -1     1     0     1
+    -1     0     1     1
+    -1     0     0     1
+\end{verbatim}
+
+\soln To find $S$, use \Matlab to see that $A$ has two eigenvalues: $-1$ of
+algebraic multiplicity three and $2$ of multiplicity one.  The geometric 
+multiplicity of $-1$ is one.  Just type {\tt null(A+eye(4))} to see that 
+$(1,1,1,1)$ is the only eigenvector corresponding to this eigenvalue.  Choose 
+{\tt v3} in the null space of $(A+I_4)^3$ but not in the null space of 
+$(A+I_4)^2$.  For example let {\tt v3 = [0 0 1 0]'}.  Then set 
+{\tt v2 = (A+eye(4))*v3} and {\tt v1 = (A+eye(4))*v2}.  Finally, set 
+{\tt v4 = null(A-2*eye(4))} and {\tt S = [v1 v2 v3 v4]}.
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{E:jnfmf}
 \begin{matlabEquation}\label{jordan-form-exercise-6}
@@ -516,6 +918,38 @@ A = \left(\begin{array}{rrrrr}
      0   &  0  &   0   & -1   &  3
  \end{array}\right). 
 \end{matlabEquation}
+
+\begin{solution}
+(a) \ans The Jordan normal form of $A$ is
+\[
+J = \left(\begin{array}{rrrrr}
+-1 &  1 &  0 & 0 &  0 \\
+ 0 & -1 &  1 & 0 &  0 \\
+ 0 &  0 & -1 & 0 &  0 \\
+ 0 &  0 &  0 & 2 & -1 \\
+ 0 &  0 &  0 & 1 &  2 \end{array}\right).
+\]
+(b) \ans
+\begin{verbatim}
+S =
+    7.5    6.5      0    2   0
+    7.5   -1.0    1.0    2   0
+    7.5   -1.0   -6.5    2   0
+    0.0    0.0    0.0    2   0
+    0.0    0.0    0.0    1   1
+\end{verbatim}
+
+\soln  A \Matlab calculation shows that the eigenvalues of $A$ are $-1$ of 
+algebraic multiplicity three and geometric multiplicity one and simple 
+eigenvalues $2\pm i$.  Choose {\tt v3} in the null space of $(A+I_5)^3$ but not in the null space of 
+$(A+I_5)^2$.  One choice is {\tt v3 = [0 1 -6.5 0 0]'}.  Let {\tt v2 = (A+eye(5))*v3}
+and {\tt v1 = (A+eye(5))*v2}.  Next, set {\tt v4} equal to the real part of the
+eigenvector associated to the eigenvalue $2+i$ and let {\tt v5} be the complex part of
+that eigenvector.  Finally, set {\tt S = [v1 v2 v3 v4 v5]}.
+
+
+
+\end{solution}
 \end{exercise}
 
 

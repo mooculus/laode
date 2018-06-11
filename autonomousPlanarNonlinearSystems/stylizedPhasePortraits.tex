@@ -154,6 +154,24 @@ the system
 \end{matlabEquation}
 on the square $-10 \leq x,y \leq 10$.  Indicate all equilibria
 (and their types) and all periodic solutions.
+
+\begin{solution}
+
+Graph the system using {\tt pplane5}.  Then, find a saddle point at
+$(-0.7426,-0.4902)$.  Plot the unstable and stable orbits.  The unstable
+orbits and one stable orbit leave the graph window.  The other stable
+orbit limits on a periodic solution around another equilibrium, the
+spiral sink at $(-1.298,-3.209)$.  These are the only equilibria of
+the system in this region.  The phase portrait is shown in
+Figure~\ref{c8.4.1}.
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/8-4-1.eps,width=3.0in}}
+                \exercap{c8.4.1}
+\end{figure}
+
+\end{solution}
 \end{exercise}  
 
 \begin{exercise} \label{c8.4.2}
@@ -166,6 +184,32 @@ types for the system
 \end{array}
 \end{matlabEquation}
 in the rectangle $-2 \leq x \leq 4$, $-3 \leq y \leq 6$.  
+
+\begin{solution}
+
+Use {\tt pplane5} to graph the system and find equilibria.  The
+command {\tt List computed equilibrium points} yields:
+\begin{verbatim}
+(-0.6724, -0.6724)      Nodal source.
+(1.4782, 3.3737)        Saddle point.
+(1.9929, 1.9929)        Nodal source.
+(-0.6778, 1.2177)       Spiral sink.
+(-1.0464, 0.8491)       Saddle point.
+(-0.1485, -2.0440)      Saddle point.
+(4.1299, 6.0254)        Saddle point.
+(3.2051, 5.1006)        Spiral sink.
+(-2.8222, -4.7177)      Saddle point.
+(-1.3103, -3.2058)      Spiral sink.
+\end{verbatim}
+Figure~\ref{c8.4.2} shows a {\tt pplane5} graph of the system.
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/8-4-2.eps,width=3.0in}}
+                \exercap{c8.4.2}
+\end{figure}
+
+\end{solution}
 \end{exercise}  
 
 \begin{exercise} \label{c8.4.3}
@@ -186,10 +230,49 @@ $t$.
 \item[(c)] Draw the time series in $x$ versus $t$ for the trajectory whose
 initial condition is $(0,0)$.
 \end{itemize}
+
+\begin{solution}
+
+The equilibria and their types are:
+\begin{verbatim}
+(1.4650, 1.3590)        Spiral source.           
+(-1.3651, -1.4635)      Spiral sink.             
+(1.4650, -1.3590)       Saddle point.            
+(-1.3651, 1.4635)       Saddle point. 
+\end{verbatim}
+There are two limit cycles: one surrounding the spiral source at
+$(1.4650, 1.3590)$ and one surrounding the spiral sink at $(-1.3651, -1.4635)$.
+
+(a) A graph of the system is shown in Figure~\ref{c8.4.3}a.
+
+(b) The four equilibria surround a roughly rectangular region.  As shown
+by the connecting trajectories in the graph, all trajectories with
+initial points inside this region remain in this region.  Note that this
+includes trajectories with initial conditions inside the limit cycles.
+All trajectories outside this region leave the window
+$-3 \leq x,y \leq 3$ in forward or backward time.
+
+(c) The {\tt pplane5} time series for the solution starting at $(0,0)$ is
+shown in Figure~\ref{c8.4.3}b.
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/8-4-3a.eps,width=2.75in}
+                       \psfig{file=exfigure/8-4-3b.eps,width=2.75in}}
+                \exercaptwo{c8.4.3}
+\end{figure}
+
+\end{solution}
 \end{exercise}  
 
 \begin{exercise} \label{c8.4.4}
 Draw the stylized phase portrait of \eqref{8.3.3eq}.
+
+\begin{solution}
+See the figure for Exercise~\ref{c8.3.3} in
+Section~\ref{S:periodic}.
+
+\end{solution}
 \end{exercise}
 
 \noindent In Exercises~\ref{c8.4.5a} -- \ref{c8.4.5b} answer the following 
@@ -211,6 +294,61 @@ bounded in forward time.
 \dot{y} & = & x - 3x^2 + 2x^2y.
 \end{array}
 \end{matlabEquation}
+
+\begin{solution}
+
+\ans There are five equilibria and two limit cycles.  The phase portrait is
+given in Figure~\ref{c8.4.5a}a.  The orbits that stay bounded in
+forward time are indicated in Figure~\ref{c8.4.5a}b.
+
+\soln (a)  Using {\sf pplane5} we can find five equilibria
+\begin{verbatim}
+(0.0000, 0.0000)        Spiral source.           
+(1.8519, 1.2300)        Nodal source.            
+(0.3445, 0.0485)        Saddle point.            
+(0.3102, -0.1118)       Spiral sink.             
+(0.0000, -0.3333)       Saddle point.            
+\end{verbatim}
+We can show that there are at most five equilibria by solving:
+\begin{eqnarray*}
+0.04x - y - 3y^2 + 2.5xy & = & 0\\
+x - 3x^2 + 2x^2y & = & 0.
+\end{eqnarray*}  
+Factoring the second equation leads to 
+\[
+x=0 \quad \mbox{ or } \quad x = \frac{1}{3-2y}.
+\]
+Substituting $x=0$ into the first equation leads to the equilibria
+$(0,0)$ and $(0,-\frac{1}{3})$. Substituting $x = \frac{1}{3-2y}$ into the
+first equation yields
+\[
+\frac{0.04+2.5y}{3-2y} -(y+3y^2)=0.
+\]
+Multiplying this equation by $3-2y$ leads to a cubic equation that has at most
+three roots.  Thus there are at most five equilibria in this system of
+differential equations.
+
+\noindent (b) There is numerical evidence for two limit cycles
+one surrounding the spiral source at the origin and one surrounding the
+spiral sink at $(0.3102, -0.1118)$.
+
+\noindent (c)  The five equilibria, two limit cycles, and the stable and
+unstable orbits of saddles are shown in Figure~\ref{c8.4.5a}a.
+
+\noindent (d)  The solutions that stay bounded in forward time include the
+equilibria, limit cycle and those indicated in Figure~\ref{c8.4.5a}b.
+
+\begin{figure}[htb]
+                       \centerline{%
+                        \psfig{file=exfigure/8-4-5a.eps,width=2.75in}
+			\psfig{file=exfigure/8-4-5a2.eps,width=2.75in}}
+                \exercaptwo{c8.4.5a}
+\end{figure}
+
+
+
+
+\end{solution}
 \end{exercise}
 \begin{exercise}  \label{c8.4.5b}
 \begin{matlabEquation}\label{MATLAB:5}
@@ -219,6 +357,59 @@ bounded in forward time.
 \dot{y} & = & x - 3x^2 + x^2y.
 \end{array}
 \end{matlabEquation}
+
+\begin{solution}
+
+\ans There are five equilibria and one limit cycle.  The phase portrait is
+given in Figure~\ref{c8.4.5b}a.  The orbits that stay bounded in forward time
+are indicated in Figure~\ref{c8.4.5b}b.
+
+\soln  (a)  Using {\sf pplane5} we can find five equilibria
+\begin{verbatim}
+(0.0000, 0.0000)        Spiral source.           
+(4.6347, 2.7842)        Nodal source.            
+(0.3377, 0.0384)        Saddle point.            
+(0.3169, -0.1560)       Spiral sink.             
+(0.0000, -0.3333)       Saddle point.            
+\end{verbatim}
+We can show that there are at most five equilibria by solving:
+\begin{eqnarray*}
+0.05x - y - 3y^2 + 2xy & = & 0\\
+x - 3x^2 + x^2y & = & 0.
+\end{eqnarray*}  
+Factoring the second equation leads to 
+\[
+x=0 \quad \mbox{ or } \quad x = \frac{1}{3-y}.
+\]
+Substituting $x=0$ into the first equation leads to the equilibria
+$(0,0)$ and $(0,-\frac{1}{3})$. Substituting $x = \frac{1}{3-y}$ into the
+first equation yields
+\[
+\frac{0.05+2y}{3-y} -(y+3y^2)=0.
+\]
+Multiplying this equation by $3-y$ leads to a cubic equation that has at most
+three roots.  Thus there are at most five equilibria in this system of
+differential equations.
+
+\noindent (b) There is numerical evidence for just one limit cycle
+surrounding the equilibrium at the origin.
+
+\noindent (c)  The five equilibria, one limit cycle, and the stable and
+unstable orbits of saddles are shown in Figure~\ref{c8.4.5b}a.
+
+\noindent (d)  The solutions that stay bounded in forward time include the
+equilibria, limit cycle and those indicated in Figure~\ref{c8.4.5b}b.
+
+\begin{figure}[htb]
+                       \centerline{%
+                        \psfig{file=exfigure/8-4-5b.eps,width=2.75in}
+			\psfig{file=exfigure/8-4-5b2.eps,width=2.75in}}
+                \exercaptwo{c8.4.5b}
+\end{figure}
+
+
+
+\end{solution}
 \end{exercise}
 
 \end{document}

@@ -227,39 +227,98 @@ not the matrix products $AB$ or $BA$ can be computed for each given pair of
 matrices $A$ and $B$.  If the product is possible, perform the computation.
 \begin{exercise}  \label{c4.6.-1a}
 $A=\mattwo{1}{0}{-2}{1}$ and $B=\mattwo{-2}{0}{3}{-1}$.
+
+\begin{solution}
+$AB=\mattwo{-2}{0}{7}{-1}$ and $BA= \mattwo{-2}{0}{5}{-1}$.
+
+\end{solution}
 \end{exercise}
 \begin{exercise}  \label{c4.6.-1b}
 $A=\left(\begin{array}{rrr} 0 & -2 & 1\\ 4 & 10 & 0 \end{array}\right)$
 and $B=\left(\begin{array}{rr} 0 & 2 \\ 3 & -1 \end{array}\right)$.
+
+\begin{solution}
+$AB$ is not defined. $BA=\left(\begin{array}{rrr} 8 &  20 &  0\\
+ -4 & -16  &  3\end{array}\right)$
+
+
+\end{solution}
 \end{exercise}
 \begin{exercise}  \label{c4.6.-1c}
 $A=\left(\begin{array}{rrrr} 8 & 0 & 2 & 3\\ -3 & 0 & -10 &
 3\end{array}\right)$
 and $B=\left(\begin{array}{rrr} 0 & 2 & 5\\ -1 & 3 & -1 \\ 0 & 1 &
 -5\end{array}\right)$.
+
+\begin{solution}
+$AB$ is not defined. $BA$  is not defined.  
+
+\end{solution}
 \end{exercise}
 \begin{exercise}  \label{c4.6.-1d}
 $A=\left(\begin{array}{rr} 8 & -1 \\ -3 & 12 \\ 5 & -4\end{array}\right)$
 and $B=\left(\begin{array}{rrrr} 2 & 8 & 0 & -3\\ 1 & 4 & 0 & 1\\
 -5 & 6 & 7 & -20\end{array}\right)$
+
+\begin{solution}
+$AB$ is not defined. $BA$  is not defined.
+
+
+\end{solution}
 \end{exercise}
 
 \noindent In Exercises~\ref{c4.6.0a} -- \ref{c4.6.0d} compute
 the given matrix product.
 \begin{exercise}  \label{c4.6.0a}
 $\mattwo{2}{3}{0}{1}\mattwo{-1}{1}{-3}{2}$.
+
+\begin{solution}
+
+$\mattwo{2}{3}{0}{1}\mattwo{-1}{1}{-3}{2} =
+\cmattwo{-2 - 9}{2+6}{-3}{2} = \mattwo{-11}{8}{-3}{2}$.
+
+\end{solution}
 \end{exercise}
 \begin{exercise}  \label{c4.6.0b}
 $\left(\begin{array}{rrr} 1 & 2 & 3\\ -2 & 3 & -1 \end{array}\right)
 \left(\begin{array}{rr} 2 & 3\\ -2 & 5 \\1 & -1 \end{array}\right)$.
+
+\begin{solution}
+
+$\left(\begin{array}{rrr} 1 & 2 & 3\\ -2 & 3 & -1 \end{array}\right)
+\left(\begin{array}{rr} 2 & 3\\ -2 & 5 \\1 & -1 \end{array}\right)
+= \mattwo{2 - 4 + 3}{3 + 10 - 3}{-4 - 6 - 1}{-6 + 15 + 1}
+= \mattwo{1}{10}{-11}{10}$.
+
+\end{solution}
 \end{exercise}
 \begin{exercise}  \label{c4.6.0c}
 $\left(\begin{array}{rr} 2 & 3\\ -2 & 5 \\1 & -1 \end{array}\right)
 \left(\begin{array}{rrr} 1 & 2 & 3\\ -2 & 3 & -1 \end{array}\right)$.
+
+\begin{solution}
+$\left(\begin{array}{rr} 2 & 3\\ -2 & 5 \\1 & -1 \end{array}
+\right) \left(\begin{array}{rrr} 1 & 2 & 3\\ -2 & 3 & -1 \end{array}\right)
+= \matthree{-4}{13}{3}{-12}{11}{-11}{3}{-1}{4}$.
+
+\end{solution}
 \end{exercise}
 \begin{exercise}  \label{c4.6.0d}
 $\left(\begin{array}{rrr} 2 & -1 &3\\ 1 & 0 & 5\\1 & 5 & -1\end{array}\right)
 \left(\begin{array}{rrr} 1 & 7 \\ -2 & -1 \\ -5 & 3\end{array}\right)$.
+
+\begin{solution}
+
+$\left(\begin{array}{rrr} 2 &  -1 &3\\ 1 & 0 & 5 \\1 & 5 & -1
+\end{array}\right)
+\left(\begin{array}{rrr} 1 & 7 \\ -2 & -1 \\ -5 & 3\end{array}\right)
+= \left(\begin{array}{cc} 2+2-15 & 14+1+9 \\ 1-25 & 7+15 \\
+1-10+5 & 7-5-3 \end{array}\right)
+= \left(\begin{array}{rr} -11 & 24 \\ -24 & 22 \\ -4 & -1
+\end{array}\right)$.
+
+
+\end{solution}
 \end{exercise}
 
 
@@ -269,6 +328,38 @@ where $A$ is the matrix
 \[
 A=\left(\begin{array}{rr} 2 & 0 \\ 0 & -1 \end{array}\right).
 \]
+
+\begin{solution}
+
+\ans For any matrix $B$ of the form
+\[
+\mattwo{b_{11}}{0}{0}{b_{22}}
+\]
+the equation $AB = BA$ is valid.
+
+\soln Let
+\[
+B = \mattwo{b_{11}}{b_{12}}{b_{21}}{b_{22}}.
+\]
+Then compute the matrix $B$ for which
+\[
+\begin{array}{rcl}
+AB & = & BA \\
+\mattwo{2}{0}{0}{-1}\mattwo{b_{11}}{b_{12}}{b_{21}}{b_{22}} &
+= & \mattwo{b_{11}}{b_{12}}{b_{21}}{b_{22}}\mattwo{2}{0}{0}{-1} \\
+\mattwo{2b_{11}}{2b_{12}}{-b_{21}}{-b_{22}} & = &
+\mattwo{2b_{11}}{-b_{12}}{2b_{21}}{-b_{22}} \end{array}
+\]
+which is equivalent to the linear system
+\[
+\begin{array}{l}
+2b_{11} = 2b_{11} \\
+2b_{12} = -b_{12} \\
+-b_{21} = 2b_{21} \\
+-b_{22} = -b_{22}. \end{array}
+\]
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c4.6.2}
@@ -277,6 +368,34 @@ Let
 A=\mattwo{2}{5}{1}{4} \AND B=\mattwo{a}{3}{b}{2}.
 \]
 For which values of $a$ and $b$ does $AB=BA$?
+
+\begin{solution}
+
+\ans 
+\[
+B = \mattwo{\frac{4}{5}}{3}{\frac{3}{5}}{2}.
+\]
+
+\soln Compute
+\[
+\begin{array}{rcl}
+AB & = & BA \\
+\mattwo{2}{5}{1}{4}\mattwo{a}{3}{b}{2} & = &
+\mattwo{a}{3}{b}{2}\mattwo{2}{5}{1}{4} \\
+\mattwo{2a+5b}{16}{a+4b}{11} & = & \mattwo{2a+3}{5a+12}{2b+2}{5b+8}.
+\end{array}
+\]
+This equation can be rewritten as the system
+\[
+\begin{array}{rcl}
+2a + 5b & = & 2a + 3 \\
+16 & = & 5a + 12 \\
+a + 4b & = & 2b + 2 \\
+11 & = & 5b + 8 \end{array}
+\]
+which yields the solution $a = 4/5$ and $b = 3/5$.
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c4.6.3}
@@ -287,6 +406,16 @@ A = \left(\begin{array}{rrr} 1 & 0 & -3\\ -2 & 1 & 1 \\ 0 & 1 & -5 \end{array}
 \]
 Let $A^t$ is the transpose of the matrix $A$, as defined in
 Section~\ref{S:1.3}. Compute $AA^t$.
+
+\begin{solution}
+
+\[ AA^t = \matthree{1}{0}{-3}{-2}{1}{1}{0}{1}{-5}
+\matthree{1}{-2}{0}{0}{1}{1}{-3}{1}{-5} =
+\matthree{10}{-5}{15}{-5}{6}{-4}{15}{-4}{26}. \]
+
+
+
+\end{solution}
 \end{exercise}
 
 \CEXER
@@ -302,6 +431,20 @@ B=\left(\begin{array}{rrr} 3 &  -2  &  0\\ 0 &  -1 &   4\\ -2 &  -3
 &   5
 \end{array}\right)
 \end{matlabEquation}
+
+\begin{solution}
+
+Load the system into \Matlabp.  The matrix $AB$ is defined,
+and typing {\tt A*B} yields:
+\begin{verbatim}
+ans =
+    10     0    -2
+   -12     4    16
+\end{verbatim}
+The matrix $BA$ is not defined, since $B$ has 3 columns while $A$
+has 2 rows.  Typing {\tt B*A} generates an error message.
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c4.7.1b}
 \begin{matlabEquation}\label{MATLAB:27}
@@ -313,6 +456,13 @@ B=\left(\begin{array}{rrrrrr} 1  &  3  & -4  &  3  & -2  &  1\\
 -4  & -3  &  2  &  4  &  1  &  4
 \end{array}\right)
 \end{matlabEquation}
+
+\begin{solution}
+The matrix $AB$ is not defined because $A$ has 5 columns
+while $B$ has four rows.  The matrix $BA$ is also not defined
+because $B$ has 6 columns and $A$ has 3 rows.
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c4.7.1c}
 \begin{matlabEquation}\label{MATLAB:28}
@@ -323,6 +473,21 @@ B=\left(\begin{array}{rrrr} 2  &  3  & -4  &  5\\
 4  & -3  &  0  & -2\\ -3 &  -4  & -4 &  -3\\ -2  & -2  &  3  & -1
 \end{array}\right)
 \end{matlabEquation}
+
+\begin{solution}
+Both $AB$ and $BA$ are defined and can be computed using
+\Matlabp :
+\begin{verbatim}
+A*B                                     B*A
+ans =                                   ans =   
+   -34   -26     7   -23                    -8     4    -8    35
+    -6    19    25    15                    -8    -1    28     3
+   -15     6    -5     7                     2    27     0   -43
+    -4   -11    12    -6                     7     0     3   -17
+\end{verbatim}
+
+
+\end{solution}
 \end{exercise}
 
 

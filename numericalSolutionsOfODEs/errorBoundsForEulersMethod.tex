@@ -301,12 +301,296 @@ the treatment of the initial value problem \eqref{eq:simplest} in
 the text.
 \begin{exercise} \label{c15.2.1a}
 $\frac{\dps dx}{\dps dt} = 3x,\quad x(0)=1$.
+
+\begin{solution}
+\ans Local discretization error:
+\[
+\delta(k+1) \le
+e^{3T}\frac{(3h)^2}{2} \quad \mbox{for all $h\ge 0$.}
+\]
+Global discretization error:
+\[
+|\epsilon(k)| \le e^{3T}(e^{3T}-1)\frac{3h}{2}.
+\]
+
+\soln Euler's method applied to the initial value problem takes the form
+\[
+\begin{array}{rclcl}
+t_{k+1} & = & t_k+h & & \\
+x_{k+1} & = & x_k + h 3 x_k & = & (1+3h)x_k
+\end{array}
+\]
+where $k=0,1,\ldots,K-1$.
+
+{\em Local error:} we assume that the
+numerical solution is exact up to step $k$, that is,
+we start in $x(t_k)=e^{3t_k}$.  Then the local discretization error
+$\delta(k+1)$ is given by
+\[
+\delta(k+1) = x(t_{k+1}) - (x(t_k) + h 3x(t_k))=
+e^{3t_{k+1}} - (1+3h)e^{t_k}.
+\]
+Since $t_k = kh$ we obtain
+\[
+\delta(k+1) = e^{3t_{k+1}} - (1+3h)e^{t_k} =
+e^{3(k+1)h} - (1+3h)e^{3kh} = e^{3kh}(e^{3h}-(1+3h)).
+\]
+By definition of the exponential function
+\[
+e^{3h}-(1+3h) = \frac{(3h)^2}{2}+\frac{(3h)^3}{6}+\cdots =
+\frac{(3h)^2}{2}\left[ 1+\frac{(3h)}{3}+\frac{(3h)^2}{12}+\cdots\right]
+\le \frac{(3h)^2}{2}e^{3h}.
+\]
+Since $(k+1)h=(k+1)/K\le T$ for $k=0,1,\ldots,K-1$ we finally have the
+desired bound on the local discretization error:
+\[
+\delta(k+1) = e^{3kh}(e^{3h}-(1+3h)) \le
+e^{3(k+1)h}\left(\frac{(3h)^2}{2}\right)\le
+e^{3T}\frac{(3h)^2}{2} \quad \mbox{for all $h\ge 0$.}
+\]
+
+{\em Global error:} we have for $k=1,2,\ldots,K$
+\[
+x(t_k)=(1+3h)x(t_{k-1})+\delta(k),
+\]
+and subtracting
+\[
+x_k = (1+3h)x_{k-1}
+\]
+leads to
+\[
+x(t_k) - x_k = (1+3h)(x(t_{k-1})-x_{k-1})+\delta(k).
+\]
+Therefore
+\begin{eqnarray*}
+|\epsilon(k)| & = & |x(t_k) - x_k| =
+|(1+3h)(x(t_{k-1})-x_{k-1})+\delta(k)|\\
+& \le & (1+3h)|\epsilon(k-1)|+\delta_h
+\end{eqnarray*}
+since
+\[
+\delta(k)\le \delta_h = e^{3T}\frac{(3h)^2}{2}.
+\]
+Apply this formula repeatedly until $k$ is zero,
+\[
+\begin{array}{rcl}
+|\epsilon(k)|&\le&(1+3h)|\epsilon(k-1)|+\delta_h\\
+&\le& (1+3h)[(1+3h)|\epsilon(k-2)|+\delta_h]+\delta_h\\
+&=& (1+3h)^2|\epsilon(k-2)| + ((1+3h) + 1)\delta_h\\
+&\le& (1+3h)^2[(1+3h)|\epsilon(k-3)|+\delta_h] + ((1+3h) + 1)\delta_h\\
+&=& (1+3h)^3|\epsilon(k-3)| + ((1+3h)^2 + (1+3h) + 1)\delta_h\\
+&\vdots& \\
+&\le & (1+3h)^k|\epsilon(0)| + ((1+3h)^{k-1} +\cdots + (1+3h) + 1)\delta_h.
+\end{array}
+\]
+Since $\epsilon(0)=x(t_0) - x_0=0$
+\[
+|\epsilon(k)| \le \frac{(1+3h)^k -1}{3h}\delta_h.
+\]
+With $1+3h\le e^{3h}$ we have the bound on the global discretization error:
+\[
+|\epsilon(k)| \le \frac{1}{3h} (e^{3kh}-1)\delta_h=
+\frac{1}{3h}(e^{3kh}-1)e^{3T}\frac{(3h)^2}{2} =
+e^{3T}(e^{3kh}-1)\frac{3h}{2}
+\le e^{3T}(e^{3T}-1)\frac{3h}{2}.
+\]
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c15.2.1b}
 $\frac{\dps dx}{\dps dt} = x,\quad x(0)=2$.
+
+\begin{solution}
+\ans Local discretization error:
+\[
+\delta(k+1) \le
+2e^{T}\frac{h^2}{2} \quad \mbox{for all $h\ge 0$.}
+\]
+Global discretization error:
+\[
+|\epsilon(k)| \le 2e^{T}(e^{T}-1)\frac{h}{2}.
+\]
+
+\soln Euler's method applied to the initial value problem takes the form
+\[
+\begin{array}{rclcl}
+t_{k+1} & = & t_k+h & & \\
+x_{k+1} & = & x_k + h x_k & = & (1+h)x_k
+\end{array}
+\]
+where $k=0,1,\ldots,K-1$.
+
+{\em Local error:} we assume that the
+numerical solution is exact up to step $k$, that is,
+we start in $x(t_k)=2e^{t_k}$.  Then the local discretization error
+$\delta(k+1)$ is given by
+\[
+\delta(k+1) = x(t_{k+1}) - (x(t_k) + h x(t_k))=
+2e^{t_{k+1}} - (1+h)2e^{t_k}.
+\]
+Since $t_k = kh$ we obtain
+\[
+\delta(k+1) = 2e^{t_{k+1}} - (1+h)2e^{t_k} =
+2e^{(k+1)h} - (1+h)2e^{kh} = 2e^{kh}(e^{h}-(1+h)).
+\]
+By definition of the exponential function
+\[
+e^{h}-(1+h) \le \frac{h^2}{2}e^{h}.
+\]
+Since $(k+1)h=(k+1)/K\le T$ for $k=0,1,\ldots,K-1$ we finally have the
+desired bound on the local discretization error:
+\[
+\delta(k+1) = 2e^{kh}(e^{h}-(1+h)) \le
+2e^{(k+1)h}\left(\frac{h^2}{2}\right)\le
+2e^{T}\frac{h^2}{2} \quad \mbox{for all $h\ge 0$.}
+\]
+
+{\em Global error:} we have for $k=1,2,\ldots,K$
+\[
+x(t_k)=(1+h)x(t_{k-1})+\delta(k),
+\]
+and subtracting
+\[
+x_k = (1+h)x_{k-1}
+\]
+leads to
+\[
+x(t_k) - x_k = (1+h)(x(t_{k-1})-x_{k-1})+\delta(k).
+\]
+Therefore
+\begin{eqnarray*}
+|\epsilon(k)| & = & |x(t_k) - x_k| =
+|(1+h)(x(t_{k-1})-x_{k-1})+\delta(k)|\\
+& \le & (1+h)|\epsilon(k-1)|+\delta_h
+\end{eqnarray*}
+since
+\[
+\delta(k)\le \delta_h = 2e^{T}\frac{h^2}{2}.
+\]
+Apply this formula repeatedly until $k$ is zero,
+\[
+\begin{array}{rcl}
+|\epsilon(k)|&\le&(1+h)|\epsilon(k-1)|+\delta_h\\
+&\le& (1+h)[(1+h)|\epsilon(k-2)|+\delta_h]+\delta_h\\
+&=& (1+h)^2|\epsilon(k-2)| + ((1+h) + 1)\delta_h\\
+&\le& (1+h)^2[(1+h)|\epsilon(k-3)|+\delta_h] + ((1+h) + 1)\delta_h\\
+&=& (1+h)^3|\epsilon(k-3)| + ((1+h)^2 + (1+h) + 1)\delta_h\\
+&\vdots& \\
+&\le & (1+h)^k|\epsilon(0)| + ((1+h)^{k-1} +\cdots + (1+h) + 1)\delta_h.
+\end{array}
+\]
+Since $\epsilon(0)=x(t_0) - x_0=0$
+\[
+|\epsilon(k)| \le \frac{(1+h)^k -1}{h}\delta_h.
+\]
+With $1+h\le e^{h}$ we have the bound on the global discretization error:
+\[
+|\epsilon(k)| \le \frac{1}{h} (e^{kh}-1)\delta_h=
+\frac{1}{h}(e^{kh}-1)2e^{T}\frac{h^2}{2} =
+2e^{T}(e^{kh}-1)\frac{h}{2}
+\le 2e^{T}(e^{T}-1)\frac{h}{2}.
+\]
+
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c15.2.1c}
 $\frac{\dps dx}{\dps dt} = 3x,\quad x(0)=2$.
+
+\begin{solution}
+\ans Local discretization error:
+\[
+\delta(k+1) \le
+2e^{3T}\frac{(3h)^2}{2} \quad \mbox{for all $h\ge 0$.}
+\]
+Global discretization error:
+\[
+|\epsilon(k)| \le 2e^{3T}(e^{3T}-1)\frac{3h}{2}.
+\]
+
+\soln Euler's method applied to the initial value problem takes the form
+\[
+\begin{array}{rclcl}
+t_{k+1} & = & t_k+h & & \\
+x_{k+1} & = & x_k + h 3x_k & = & (1+3h)x_k
+\end{array}
+\]
+where $k=0,1,\ldots,K-1$.
+
+{\em Local error:} we assume that the
+numerical solution is exact up to step $k$, that is,
+we start in $x(t_k)=2e^{3t_k}$.  Then the local discretization error
+$\delta(k+1)$ is given by
+\[
+\delta(k+1) = x(t_{k+1}) - (x(t_k) + h 3 x(t_k))=
+2e^{3t_{k+1}} - (1+3h)2e^{3t_k}.
+\]
+Since $t_k = kh$ we obtain
+\[
+\delta(k+1) = 2e^{3t_{k+1}} - (1+3h)2e^{3t_k} =
+2e^{3(k+1)h} - (1+3h)2e^{3kh} = 2e^{3kh}(e^{3h}-(1+3h)).
+\]
+By definition of the exponential function
+\[
+e^{3h}-(1+3h) = \frac{(3h)^2}{2}+\frac{(3h)^3}{6}+\cdots =
+\frac{(3h)^2}{2}\left[ 1+\frac{(3h)}{3}+\frac{(3h)^2}{12}+\cdots\right]
+\le \frac{(3h)^2}{2}e^{3h}.
+\]
+Since $(k+1)h=(k+1)/K\le T$ for $k=0,1,\ldots,K-1$ we finally have the
+desired bound on the local discretization error:
+\[
+\delta(k+1) = 2e^{3kh}(e^{3h}-(1+3h)) \le
+2e^{3(k+1)h}\left(\frac{(3h)^2}{2}\right)\le
+2e^{3T}\frac{(3h)^2}{2} \quad \mbox{for all $h\ge 0$.}
+\]
+
+{\em Global error:} we have for $k=1,2,\ldots,K$
+\[
+x(t_k)=(1+3h)x(t_{k-1})+\delta(k),
+\]
+and subtracting
+\[
+x_k = (1+3h)x_{k-1}
+\]
+leads to
+\[
+x(t_k) - x_k = (1+3h)(x(t_{k-1})-x_{k-1})+\delta(k).
+\]
+Therefore
+\begin{eqnarray*}
+|\epsilon(k)| & = & |x(t_k) - x_k| =
+|(1+3h)(x(t_{k-1})-x_{k-1})+\delta(k)|\\
+& \le & (1+3h)|\epsilon(k-1)|+\delta_h
+\end{eqnarray*}
+since
+\[
+\delta(k)\le \delta_h = 2e^{3T}\frac{(3h)^2}{2}.
+\]
+Apply this formula repeatedly until $k$ is zero,
+\[
+\begin{array}{rcl}
+|\epsilon(k)|&\le&(1+3h)|\epsilon(k-1)|+\delta_h\\
+&\le& (1+3h)[(1+3h)|\epsilon(k-2)|+\delta_h]+\delta_h\\
+&=& (1+3h)^2|\epsilon(k-2)| + ((1+3h) + 1)\delta_h\\
+&\le& (1+3h)^2[(1+3h)|\epsilon(k-3)|+\delta_h] + ((1+3h) + 1)\delta_h\\
+&=& (1+3h)^3|\epsilon(k-3)| + ((1+3h)^2 + (1+3h) + 1)\delta_h\\
+&\vdots& \\
+&\le & (1+3h)^k|\epsilon(0)| + ((1+3h)^{k-1} +\cdots + (1+3h) + 1)\delta_h.
+\end{array}
+\]
+Since $\epsilon(0)=x(t_0) - x_0=0$
+\[
+|\epsilon(k)| \le \frac{(1+3h)^k -1}{3h}\delta_h.
+\]
+With $1+3h\le e^{3h}$ we have the bound on the global discretization error:
+\[
+|\epsilon(k)| \le \frac{1}{3h} (e^{3kh}-1)\delta_h=
+\frac{1}{3h}(e^{3kh}-1)2e^{3T}\frac{(3h)^2}{2} =
+2e^{3T}(e^{3kh}-1)\frac{3h}{2}
+\le 2e^{3T}(e^{3T}-1)\frac{3h}{2}.
+\]
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c15.2.2}
@@ -315,6 +599,34 @@ Apply the implicit Euler method to the initial value problem
 discretization error that is analogous to \eqref{eq:locerrdef}.
 {\bf Hint:} Before proceeding as for Euler's method solve
 for $x_{k+1}$ in \eqref{eq:impleulit} in this specific case.
+
+\begin{solution}
+\ans Local discretization error:
+\[
+\delta(k+1) = e^{t_{k+1}} - \frac{1}{1-h} e^{t_k}.
+\]
+
+\soln The implicit Euler method applied to the initial value problem
+\eqref{eq:simplest} takes the form
+\[
+\begin{array}{rclc}
+t_{k+1} & = & t_k+h & \\
+x_{k+1} & = & x_k + h x_{k+1} &
+\end{array}
+\]
+where $k=0,1,\ldots,K-1$.  Solving for $x_{k+1}$ yields
+\[
+x_{k+1} = \frac{1}{1-h}x_k.
+\]
+We assume that the numerical solution is exact up to step $k$, that is,
+we start in $x(t_k)=e^{t_k}$.  Then the local discretization error
+$\delta(k+1)$ is given by
+\[
+\delta(k+1) = x(t_{k+1}) - \frac{1}{1-h}x(t_k)=
+e^{t_{k+1}} - \frac{1}{1-h}e^{t_k}.
+\]
+
+\end{solution}
 \end{exercise}
 
 \CEXER
@@ -327,9 +639,81 @@ your results by a computation of the global discretization error
 using \Matlabp.
 \begin{exercise} \label{c15.2.3a}
 Interval $[0,4]$ and absolute tolerance $2$.
+
+\begin{solution}
+\ans $h=0.0014$.
+
+\soln Using the bound on the global discretization error
+given in Proposition~\ref{prop:globerr1} we can choose a
+step length $h$ satisfying
+\[
+e^4(e^4-1)\frac{h}{2} = 2,
+\]
+or, equivalently,
+\[
+h = \frac{4}{e^4(e^4-1)} \approx 0.0014.
+\]
+Now $4/h \approx 2927$, and we can verify our result using the
+following \Matlab commands:
+\begin{verbatim}
+h      = 0.0014;
+t(1)   = 0;
+x(1)   = 1;
+err(1) = 0;
+est(1) = 0;
+K      = 2927;
+for k = 1:K
+    t(k+1) = t(k)+h;
+    x(k+1) = (1+h)*x(k);
+  err(k+1) = exp(t(k+1))-x(k+1);
+end
+plot(t,err)
+xlabel('t')
+ylabel('global error')
+\end{verbatim}
+Indeed, by this choice of $h$ the error is always smaller than $0.18$.
+
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c15.2.3b}
 Interval $[0,5]$ and absolute tolerance $10$.
+
+\begin{solution}
+\ans $h=0.000914$.
+
+\soln Using the bound on the global discretization error
+given in Proposition~\ref{prop:globerr1} we can choose a
+step length $h$ satisfying
+\[
+e^{5}(e^{5}-1)\frac{h}{2} = 10,
+\]
+or, equivalently,
+\[
+h = \frac{20}{e^{5}(e^{5}-1)} \approx 0.000914.
+\]
+Now $5/h \approx 5470$, and we can verify our result using the
+following \Matlab commands:
+\begin{verbatim}
+h      = 0.000914;
+t(1)   = 0;
+x(1)   = 1;
+err(1) = 0;
+est(1) = 0;
+K      = 5470;
+for k = 1:K
+    t(k+1) = t(k)+h;
+    x(k+1) = (1+h)*x(k);
+  err(k+1) = exp(t(k+1))-x(k+1);
+end
+plot(t,err)
+xlabel('t')
+ylabel('global error')
+\end{verbatim}
+Indeed, by this choice of $h$ the error is always smaller than $0.35$.
+
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c15.2.4}
@@ -337,6 +721,49 @@ Suppose that you want to solve \eqref{eq:simplest} by Euler's
 method with a fixed step size $h=0.005$ on the interval $[0,T]$.  
 How large can you choose $T$ so that the global discretization
 error does not exceed $0.05$?  Confirm your result using \Matlabp.
+
+\begin{solution}
+\ans $T=1.609$.
+
+\soln Using the bound on the global discretization error
+given in Proposition~\ref{prop:globerr1} we can choose
+$T$ satisfying
+\[
+e^{T}(e^{T}-1)\frac{0.005}{2} = 0.05,
+\]
+or, equivalently,
+\[
+e^{2T} - e^T - 20 = 0.
+\]
+Solving this quadratic equation in $e^T$ leads to the positive
+solution
+\[
+e^T = 5 \Rightarrow T \approx 1.609.
+\]
+Now $T/h \approx 321$, and we can verify our result using the
+following \Matlab commands:
+\begin{verbatim}
+h      = 0.005;
+t(1)   = 0;
+x(1)   = 1;
+err(1) = 0;
+est(1) = 0;
+K      = 321;
+for k = 1:K
+    t(k+1) = t(k)+h;
+    x(k+1) = (1+h)*x(k);
+  err(k+1) = exp(t(k+1))-x(k+1);
+end
+plot(t,err)
+xlabel('t')
+ylabel('global error')
+\end{verbatim}
+Indeed, by this choice of $T$ the error is smaller than $0.02$.
+
+
+
+
+\end{solution}
 \end{exercise}
 
 \end{document}

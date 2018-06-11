@@ -345,6 +345,37 @@ $x(0)=-1$.  Determine $\dps\lim_{t\to\infty} x(t)$.
 \item[(c)] Let $y(t)$ be a solution to \eqref{E:quad} satisfying
 $y(0)=0.5$. Sketch the time series of this solution.
 \end{enumerate}
+
+\begin{solution}
+
+(a) \ans Figure~\ref{c8.2.1}a shows a phase line picture
+of this system.
+
+\soln There is a stable equilibrium at $x = 2$, and an unstable
+equilibrium at $x = 1$, since $f(x) = -x^2 + 3x - 2 = (x - 1)(2 - x)$,
+and since $f'(1) = 1 > 0$ and $f'(2) = -1 < 0$.
+
+(b) \ans $\dps\lim_{t \to \infty} x(t) = -\infty$.
+
+\soln The closest equilibrium to $x(0) = -1$ is $x = 1$, which is
+unstable. 
+
+(c) \ans Figure~\ref{c8.2.1}b shows the {\tt dfield5} graph of $y$.
+
+\soln The trajectory of $y(t)$ with initial condition $y(0) = 0.5$ goes
+to negative infinity in forward time, and limits on $y = 1$ in
+backward time.
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/8-2-1a.eps,width=2.75in}
+                       \psfig{file=exfigure/8-2-1b.eps,width=2.75in}}
+                \exercaptwo{c8.2.1}
+\end{figure}
+
+
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{E:popex}
@@ -363,6 +394,27 @@ where $\lambda_0>0$ and $a>0$ are constants.  Suppose that
 $p(t)$ is a solution and $p(0)>0$.  What is the asymptotic
 limit of the population in forward time, that is, what is
 $\dps\lim_{t\to\infty} p(t)$?
+
+\begin{solution}
+
+\ans The asymptotic limit of the population in forward time is
+$\frac{\lambda_0}{a}$.
+
+\soln Substitute $\lambda(p)$ into the population model, obtaining
+\[
+\frac{dp}{dt} = (\lambda_0 - ap)p\equiv f(p).
+\]
+Solve for $f(p)= 0$ to find that the system has equilibria
+at $p = 0$ and $p = \frac{\lambda_0}{a}$.  Then, find that
+\[
+\frac{df}{dp}(0) = \lambda_0 > 0 \AND
+\frac{df}{dp}(\lambda_0/a) = -\lambda_0 < 0;
+\]
+so the equilibrium at $p = 0$ is unstable and the equilibrium at
+$p = \frac{\lambda_0}{a} > 0$ is stable.  Therefore, a solution with 
+initial population $p(0) > 0$ limits on $\frac{\lambda_0}{a}$.
+
+\end{solution}
 \end{exercise}  \index{population model}
 
 \begin{exercise} \label{c8.2.3}
@@ -390,6 +442,36 @@ Exercise~\ref{E:popex}.
 {\bf Hint:} There are two possible answers to (b) depending on
 whether \eqref{E:pop} has one positive equilibrium or no positive 
 equilibria.
+
+\begin{solution}
+
+(a) We are given $\frac{d\lambda}{dp} < 0$ for all $p$.  Thus $\lambda(p)$ is a 
+monotonic decreasing function of $p$ when $p>0$ and the graph of 
+$\lambda(p)$ can intersect $\lambda=0$ in at most one point.
+Therefore, \eqref{E:pop} has at most one positive equilibrium.
+
+(b) \ans If there exists a positive equilibrium $p_e$, then
+$\dps\lim_{p \to \infty} p(t) = p_e$.  If no positive equilibrium
+exists, then $\dps\lim_{p \to \infty} p(t) = \infty$.
+
+\soln If there is a positive equilibrium, then it is asymptotically stable.
+To verify this point differentiate the right hand side of \eqref{E:pop} with respect to 
+$p$ and evaluate at $p=p_e$ obtaining
+\[
+\left.\frac{d}{dp}(\lambda(p)p)\right|_{p=p_e} = 
+\lambda(p_e) + \lambda'(p_e)p_e = \lambda'(p_e)p_e <0
+\]
+since $\lambda(p_e) = 0$, $\lambda'(p_e) < 0$, and $p_e > 0$.  
+So $p = p_e$ is a stable equilibrium, and the population limits on
+$p_e$.
+
+\para If no positive equilibrium exists, then $p = 0$, which is unstable,
+is the only equilibrium, and the population grows without bound.
+
+(c) Exercise~\ref{E:popex} is a specific example of \eqref{E:pop} in
+which a positive equilibrium exists at $p = \frac{\lambda_0}{a}$.
+
+\end{solution}
 \end{exercise}
 
 \noindent In Exercises~\ref{c8.2.4a} -- \ref{c8.2.4e} we review some
@@ -400,18 +482,61 @@ for the differential equation $\dot{X}=CX$.  When the origin is
 hyperbolic, what kind of system is it?
 \begin{exercise} \label{c8.2.4a}
 $C=\mattwo{0.1}{2}{-1}{-3}$. 
+
+\begin{solution}
+\ans The origin is a nodal sink.
+
+\soln A matrix $C$ with nonzero trace and determinant is a hyperbolic
+equilibrium.  In this case, $\trace(C) = -2.9$ and $\det(C) = 1.7$.
+Since the determinant is positive and the trace is negative, the origin
+is a sink. Since the discriminant is $1.61>0$ the origin is a node.
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c8.2.4b}
 $C=\mattwo{4}{-2}{1}{5}$. 
+
+\begin{solution}
+\ans The origin is a spiral source.
+
+\soln In this case, $\trace(C) = 9$ and $\det(C) = 22$, so the origin
+is a hyperbolic equilibrium and a source.  Since the discriminant is 
+$-1<0$, the origin is a spiral.
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c8.2.4c}
 $C=\mattwo{2}{-1}{4}{-2}$. 
+
+\begin{solution}
+\ans The origin is not hyperbolic.
+
+\soln Since $\trace(C) = 0$ and $\det(C) = 0$, the origin is not 
+hyperbolic. 
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c8.2.4d}
 $C=\mattwo{1}{3}{-2}{-6}$.
+
+\begin{solution}
+\ans The origin is not hyperbolic.
+
+\soln Since $\det(C) = 0$ the origin is not hyperbolic.
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c8.2.4e}
 $C=\mattwo{11}{-8}{18}{-13}$.
+
+\begin{solution}
+\ans The origin is an improper nodal sink.
+
+\soln Since $\trace(C) = -2$ and $\det(C) = 1$, the equilibrium
+is hyperbolic. Since the trace is negative, the origin is a sink.
+Since the discriminant is $0$, the origin is an improper node. 
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c8.2.5}
@@ -428,6 +553,46 @@ neighborhood of each equilibrium.
 for invariant axes.
 \item[(d)] Use {\sf pplane8} to verify your sketch.
 \end{itemize}
+
+\begin{solution}
+
+(a) \ans The equilibria occur at $(x,y) = (1,0)$ and $(x,y) = (0,1)$.
+
+\soln Solve $\frac{dx}{dt} = \frac{dy}{dt} = 0$.
+
+(b) \ans The point $(x,y) = (1,0)$ is a saddle.  The point $(x,y) = (0,1)$
+is a spiral sink.
+
+\soln Let $f(x,y) = 1 - x - y$, $g(x,y) = 2xy$,
+and $F = (f,g)$.  Then the Jacobian matrix is
+\[
+(dF)_{(x,y)} = \mattwo{f_x(x,y)}{f_y(x,y)}{g_x(x,y)}{g_y(x,y)}
+= \mattwo{-1}{-1}{2y}{2x}.
+\]
+Specifically, at the equilibrium points:
+\[
+(dF)_{(1,0)} = \mattwo{-1}{-1}{0}{2} \qquad
+(dF)_{(0,1)} = \mattwo{-1}{-1}{2}{0}.
+\]
+The eigenvalues of $(dF)_{(1,0)}$ are $\lambda_1 = 2$ and $\lambda_2 = -1$;
+so the point is like a saddle in a small neighborhood.  The trace of
+$(dF)_{(0,1)}$ is $-1 < 0$ and the determinant is $2 > 0$, so the
+discriminant is negative and, within a small neighborhood, the point
+is like a spiral sink.
+
+(c) Compute the eigenvectors of the Jacobian of the saddle point $(1,0)$.
+The invariant axes of $(1,0)$ are the eigendirections $(1,-3)$ and
+$(1,0)$.  Use these vectors to graph the system.  Your sketch should
+resemble the {\tt pplane5} graph in Figure~\ref{c8.2.5}.
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/8-2-5.eps,width=3.0in}}
+                \exercap{c8.2.5}
+\end{figure}
+
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c8.2.6}
@@ -441,6 +606,40 @@ Consider the planar nonlinear system of ODEs
 \item[(b)] Are the equilibria asymptotically stable or not?
 \item[(c)] Determine the type of each equilibrium.
 \end{itemize}
+
+\begin{solution}
+
+(a) \ans Equilibria occur at the points $(1,0)$, $(1,1)$, and $(2,1)$.
+
+\soln Solve $0 = y - y^2$ to obtain $y = 1$ and $y = 0$, then substitute
+these values for $y$ into $0 = 1 - 2x + y + x^2 - xy$ to find the points
+at which $\frac{dx}{dt} = \frac{dy}{dt} = 0$.
+
+(b) \ans The equilibria at $(1,0)$ and $(2,1)$ are not asymptotically
+stable.  The equilibrium at $(1,1)$ is stable.
+
+\soln Compute the Jacobian matrix of the system:
+\[
+(dJ)_{(x,y)} = \cmattwo{-2 + 2x - y}{1 - x}{0}{1 - 2y}
+\]
+Specifically, at the equilibrium points, the Jacobian matrices are
+\[
+(dJ)_{(1,0)} = \mattwo{0}{0}{0}{1} \qquad (dJ)_{(1,1)} =
+\mattwo{-1}{0}{0}{-1} \qquad (dJ)_{(2,1)} = \mattwo{1}{-1}{0}{-1}.
+\]
+An equilibrium is asymptotically stable if both eigenvalues are
+negative.  The eigenvalues of $(1,0)$ are $0$ and $1 > 0$.
+The point $(1,1)$ has a double eigenvalue at $-1 < 0$.
+The eigenvalues of $(1,1)$ are $-1 < 0$ and $1 > 0$.
+
+(c) The equilibrium at $(1,0)$ is a saddle node, since the Jacobian
+has one zero eigenvalue and one nonzero eigenvalue.  The equilibrium
+at $(1,1)$ is a focus sink, since the Jacobian is a multiple of $I_2$
+with negative real eigenvalue.  The equilibrium at $(2,1)$ is a
+saddle point, since the Jacobian has one negative and one positive
+eigenvalue.
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c8.2.7}
@@ -457,6 +656,60 @@ that depends on the constant $a$.
 \item[(e)]	For each nonhyperbolic equilibrium, write the linearized 
 		system and draw its phase plane.
 \end{itemize}
+
+\begin{solution}
+
+(a) Solving system \eqref{e:global2exam} for $\dot{x} = \dot{y} = 0$
+yields equilibria at $(0,0)$, $(\sqrt{2.2},0)$, and $(-\sqrt{2.2},0)$.
+
+(b) The general Jacobian matrix for \eqref{e:global2exam} is
+\[
+(dJ)_{(x,y)} = \cmattwo{0}{1}{2.2 - 3x^2 + ay}{2.1 + ax}.
+\]
+The Jacobian matrices at the equilibria are:
+\[ \begin{array}{rcl}
+(dJ)_{(0,0)} & = & \cmattwo{0}{1}{2.2}{2.1} \\
+(dJ)_{(\sqrt{2.2},0)} & = & \cmattwo{0}{1}{-4.4}{2.1 + \sqrt{2.2}a} \\
+(dJ)_{(-\sqrt{2.2},0)} & = & \cmattwo{0}{1}{-4.4}{2.1 - \sqrt{2.2}a}. \\
+\end{array}
+\]
+
+(c) \ans The Jacobian of the equilibrium at $(\sqrt{2.2},0)$ is not
+hyperbolic at $a = -2.1\left/\sqrt{2.2}\right.$, and the Jacobian of the
+equilibrium at $(-\sqrt{2.2},0)$ is not hyperbolic at
+$a = 2.1\left/\sqrt{2.2}\right.$.
+
+\soln Note that a matrix is nonhyperbolic if the determinant is positive
+and the trace is zero.
+
+(d) \ans The equilibrium at $(\sqrt{2.2},0)$ is asymptotically stable for
+$a < -2.1\left/\sqrt{2.2}\right.$ and the equilibrium at
+$(-\sqrt{2.2},0)$ is asymptotically stable for
+$a > 2.1\left/\sqrt{2.2}\right.$.  Thus, there is no value of $a$ for which
+both equilibria are stable.  The equilibrium at $(0,0)$ is not stable,
+since the eigenvalues of the Jacobian have opposite sign.
+
+\soln Note that the determinant of the Jacobian is always positive, so
+the equilibria are stable for values of $a$ at which the trace is negative.
+
+(e) For $a = -2.1/\sqrt{2.2}$, the equilibrium at $(\sqrt{2.2},0)$
+is non-hyperbolic, with Jacobian matrix
+\[
+(dJ)_{(\sqrt{2.2},0)} = \mattwo{0}{1}{-4.4}{0}.
+\]
+The linear system $\dot{X} = (dJ)_{(\sqrt{2.2},0)}X$ is pictured in
+Figure~\ref{c8.2.7}.  Note that the system is a center.  For
+$a = 2.1/\sqrt{2.2}$, the equilibrium at $(-\sqrt{2.2},0)$ is
+nonhyperbolic.  Its Jacobian at this point is identical to
+$(dJ)_{(\sqrt{2.2},0)}$.
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/8-2-7.eps,width=3.0in}}
+                \exercap{c8.2.7}
+\end{figure}
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c8.2.8}
@@ -466,6 +719,25 @@ Find all equilibria of the system of ODEs
 \dot{y} & = & 11x + x^2 - 3y^2.
 \end{eqnarray*}
 Also determine the types of each of these equilibria.
+
+\begin{solution}
+
+\ans There are two equilibria: a spiral source at $(0,0)$, and a saddle
+at $(1,2)$.
+
+\soln Solve the system for $\dot{x} = \dot{y} = 0$.  Then, compute the
+Jacobian matrices at the equilibria, in this case
+\[
+(dJ)_{(0,0)} = \mattwo{2}{-1}{11}{0} \qquad
+(dJ)_{(1,2)} = \mattwo{2}{-1}{13}{-12}
+\]
+and compute the eigenvalues of these matrices.  The eigenvalues of the
+Jacobian of $(0,0)$ are $1 \pm \sqrt{10}i$.  Since the eigenvalues
+are complex with positive real part, the equilibrium is
+a spiral source.  The determinant of the Jacobian of $(1,2)$ is
+$-11 < 0$.  Thus the equilibrium is a saddle.
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise}  \label{E:nonhyp}
@@ -489,6 +761,40 @@ Use this fact to show that the origin is an asymptotically stable equilibrium
 of \eqref{e:nonhypcenter}.  (Hence the phase portraits of the linearized and 
 nonlinear systems are different on all neighborhoods of the origin and  
 the hyperbolicity assumption in Theorem~\ref{T:linearization} is needed.)
+
+\begin{solution}
+
+(a) Find all equilibria by computing $x$ and $y$ for $\dot{x} =
+\dot{y} = 0$.  Then, from the second equation, $x = -y^3$, so
+substituting into the first equation yields
+\[
+0 = y^9 + 2y^5 + y = y(y^4 + 1)^2.
+\]
+The only solution to this equation over the complex number system is
+$y = 0$.  Therefore, the origin is the only equilibrium of
+\eqref{e:nonhypcenter}.  The Jacobian matrix of \eqref{e:nonhypcenter} at
+the origin is 
+\[
+(dJ)_{(0,0)} = \mattwo{0}{1}{-1}{0}.
+\]
+The eigenvalues of this Jacobian are $\pm i$.  Therefore, the equilibrium
+is a center.
+
+(b) First, compute $\dot{r}$:
+\[
+\frac{d}{dt}(r) = \frac{d}{dt}(\sqrt{x^2 + y^2}) =
+\frac{1}{2\sqrt{x^2 + y^2}}\left(\frac{d}{dt}(x^2 + y^2)\right)
+= \frac{1}{r}(x\dot{x} + y\dot{y}).
+\]
+Then, substitute \eqref{e:nonhypcenter} to obtain
+\[
+\dot{r} = \frac{1}{r}(x(y - x^3 - 2xy^2) + y(-x - y^3))
+= -\frac{1}{r}(x^2 + y^2)^2 = -r^3.
+\]
+Note that $r''(t) = -3r(t)^2 < 0$.  Thus, $r = 0$ is a stable equilibrium
+of \eqref{e:nonhypcenter}.
+
+\end{solution}
 \end{exercise}
 
 \CEXER
@@ -500,6 +806,23 @@ periodic solutions on sufficiently small neighborhoods of the origin.  This
 experiment, coupled with the results from Exercise~\ref{E:nonhyp}, suggests 
 that the numerical methods employed by {\sf pplane8} fail sufficiently close 
 to nonhyperbolic equilibria.
+
+\begin{solution}
+
+System \eqref{e:nonhypcenter} is shown in Figure~\ref{c8.2.10}a with four
+trajectories.  Figure~\ref{c8.2.10}b shows the system in a small
+neighborhood of the origin.  In this graph, trajectories appear to be
+closed orbits.  Using the {\tt find an equilibrium} command, we find
+that \Matlab considers the origin to be a spiral.
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/8-2-10a.eps,width=2.75in}
+                       \psfig{file=exfigure/8-2-10b.eps,width=2.75in}}
+                \exercaptwo{c8.2.10}
+\end{figure}
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c8.2.11}
@@ -519,6 +842,17 @@ verify that trajectories starting near the origin approach the
 origin on curves tangent to the eigendirection\index{eigendirection} 
 corresponding to the eigenvalue $\lambda_2$.
 \end{itemize}
+
+\begin{solution}
+
+(a) The {\tt pplane5} command {\tt find an equilibrium} verifies this.
+
+(b) {\tt pplane5} computes the eigenvectors as $v_1 = (0.4723,0.8814)$
+(the eigenvector associated to $\lambda_1$) and $v_2 =
+(0.9911,0.1328)$ (the eigenvector associated to $\lambda_2$).
+Indeed, trajectories approach the origin in the direction of $v_2$.
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c8.2.12}
@@ -531,6 +865,23 @@ Using {\sf pplane8}, find all equilibria of
 \end{matlabEquation}
 on the square $-2\leq x,y \leq 2$.  Determine the type of 
 equilibria and draw a phase portrait for this system of equations. 
+
+\begin{solution}
+
+By evaluation using {\tt pplane5}, the equilibria on the square
+$-2 \leq x,y \leq 2$ are: a nodal source at $(0,0)$, a saddle point
+at $(0.1041, 0.1513)$, a spiral source at $(0.2768,1.632)$, and a
+spiral sink at $(1.286,-0.45)$.  Figure~\ref{c8.2.12} shows
+equilibria and sample trajectories of the system.
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/8-2-12.eps,width=3.0in}}
+                \exercap{c8.2.12}
+\end{figure}
+
+
+\end{solution}
 \end{exercise}
 
 \end{document}

@@ -367,10 +367,60 @@ characteristic polynomial and the eigenvalues of the given matrices.
 \begin{exercise} \label{c10.2.1a}
 $A = \left(\begin{array}{rrr} -9 & -2 & -10 \\ 3 & 2 & 3 \\
 8 & 2 & 9 \end{array}\right)$. 
+
+\begin{solution}
+
+\ans The characteristic polynomial of $A$ is $p_A(\lambda) =
+-\lambda^3 + 2\lambda^2 + \lambda - 2$, and the eigenvalues are
+$\lambda_1 = 1$, $\lambda_2 = -1$, and $\lambda_3 = 2$.
+
+\soln Compute:
+\[
+\begin{array}{rcl}
+p_A(\lambda) & = & \det(A - \lambda I_3) \\
+& = & \cmatthree{-9 - \lambda}{-2}{-10}{3}{2 - \lambda}{3}
+{8}{2}{9 - \lambda} \\
+& = & (-9 - \lambda)\det\cmattwo{2 - \lambda}{3}{2}{9 - \lambda}
+- 3\det\cmattwo{-2}{-10}{2}{9 - \lambda} + \\
+& & 8\det\cmattwo{-2}{-10}{2 - \lambda}{3} \\
+& = & (-9 - \lambda)(\lambda^2 - 11\lambda + 12)
+- 3(2 + 2\lambda) + 8(14 - 10\lambda) \\
+& = & -\lambda^3 + 2\lambda^2 + \lambda - 2 \\
+& = & (\lambda - 1)(\lambda + 1)(\lambda - 2). \end{array}
+\]
+The eigenvalues of $A$ are the roots of the characteristic polynomial.
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c10.2.1b}
 $B = \left(\begin{array}{rrrr} 2 & 1 & -5 & 2 \\ 1 & 2 & 13 & 2 \\
 0 & 0 & 3 & -1 \\ 0 & 0 & 1 & 1 \end{array}\right)$.
+
+\begin{solution}
+
+\ans The characteristic polynomial of $B$ is $p_B(\lambda) = \lambda^4
+- 8\lambda^3 + 23\lambda^2 - 28\lambda + 12$.  The matrix $B$ has single
+eigenvalues at $\lambda = 1$ and $\lambda = 3$ and a double eigenvalue at
+$\lambda = 2$.
+
+\soln Using Lemma~\ref{L:detblockdiag},
+compute:
+\[
+\begin{array}{rcl}
+p_B(\lambda) & = & \det(B - \lambda I_3) \\
+& = & \det\left(\begin{array}{cccc}
+2 - \lambda & 1 & -5 & 2 \\
+1 & 2 - \lambda & 13 & 2 \\
+0 & 0 & 3 - \lambda & -1 \\
+0 & 0 & 1 & 1 - \lambda \end{array}\right) \\
+& = & \det\cmattwo{2 - \lambda}{1}{1}{2 - \lambda}
+\det\cmattwo{3 - \lambda}{-1}{1}{1 - \lambda} \\
+& = & ((2 - \lambda)^2 - 1)((3 - \lambda)(1 - \lambda) + 1) \\
+& = & (\lambda - 3)(\lambda - 1)(\lambda - 2)^2.
+\end{array}
+\]
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c10.2.2}
@@ -380,6 +430,31 @@ A = \left(\begin{array}{rrr} 3 & 1 & -1 \\ -1 & 1 & 1 \\ 2 & 2 & 0
 \end{array}\right)
 \]
 corresponding to the eigenvalue $\lambda=2$.
+
+\begin{solution}
+
+\ans A basis for the eigenspace of $A$ corresponding to the eigenvalue
+$\lambda = 2$ is:
+\[
+\left\{\vecthree{-1}{1}{0}, \vecthree{1}{0}{1}\right\}.
+\]
+
+\soln First, find all eigenvectors of $A$ with eigenvalue
+$\lambda = 2$, that is, all vectors $v = (v_1,v_2,v_3)$ such
+that $(A - 2I_3)v = 0$.  Solve the system
+\[
+\matthree{1}{1}{-1}{-1}{-1}{1}{2}{2}{-2}\vecthree{v_1}{v_2}{v_3} =
+\vecthree{0}{0}{0}.
+\]
+All solutions $v$ to this system satisfy $v_1 = v_3 - v_2$.  Thus:
+\[
+v = \cvecthree{v_3 - v_2}{v_2}{v_3} = v_2\vecthree{-1}{1}{0} +
+v_3\vecthree{1}{0}{1}.
+\]
+Therefore, the vectors $(-1,1,0)^t$ and $(1,0,1)^t$ form a basis
+for this eigenspace.
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c10.2.3}
@@ -396,6 +471,50 @@ $\lambda=1$.
 \item[(c)] Show that $(1,1,1)$ is orthogonal to every eigenvector 
 of $A$ corresponding to the eigenvalue $\lambda=-2$.
 \end{itemize}
+
+\begin{solution}
+
+(a) Find the characteristic polynomial by solving
+\[
+\begin{array}{rcl}
+p_A(\lambda) & = & \det(A - \lambda I_3) \\
+& = & \cmatthree{-1 - \lambda}{1}{1}{1}{-1 - \lambda}{1}
+{1}{1}{-1 - \lambda} \\
+& = & (-1 - \lambda)\det\cmattwo{-1 - \lambda}{1}{1}{-1 - \lambda}
+- \det\cmattwo{1}{1}{1}{-1 - \lambda} + \\
+& & \det\cmattwo{1}{1}{-1 - \lambda}{1} \\
+& = & -(\lambda^3 + 3\lambda - 4) \\
+& = & -(\lambda - 1)(\lambda + 2)^2. \end{array}
+\]
+
+(b) Verify by computation:
+\[
+\matthree{-1}{1}{1}{1}{-1}{1}{1}{1}{-1}\vecthree{1}{1}{1} =
+\vecthree{1}{1}{1}.
+\]
+
+(c) Find the space of eigenvectors $v = (v_1,v_2,v_3)$ corresponding
+to $\lambda = -2$ by solving $(A - \lambda I_3)v = 0$ for $\lambda = -2$.
+That is, solve
+\[
+\matthree{1}{1}{1}{1}{1}{1}{1}{1}{1}\vecthree{v_1}{v_2}{v_3} = 0
+\]
+to obtain
+\[
+v = v_2\vecthree{-1}{1}{0} + v_3\vecthree{-1}{0}{1}.
+\]
+Then compute
+\[
+\vecthree{1}{1}{1} \cdot \vecthree{-1}{1}{0} = 0 \AND
+\vecthree{1}{1}{1} \cdot \vecthree{-1}{0}{1} = 0.
+\]
+Since $(-1,1,0)^t$ and $(-1,0,1)^t$ form a basis for the space of
+eigenvectors of $A$ corresponding to $\lambda = -2$ and since
+$(1,1,1)^t$ is orthogonal to these vectors, $(1,1,1)^t$ is
+orthogonal to every eigenvector of $A$ corresponding to
+$\lambda = -2$.
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c10.2.4}
@@ -406,6 +525,32 @@ Consider the matrix $A=\mattwo{8}{5}{-10}{-7}$.
 \item[(c)] Find the coordinates of the vector $(x_1,x_2)$ relative to the 
 basis in part (b).
 \end{itemize}
+
+\begin{solution}
+
+(a) \ans The eigenvalues of $A$ are $\lambda_1 = 3$ and $\lambda_2 = -2$,
+with corresponding eigenvectors $v_1 = (1,-1)^t$ and
+$v_2 = (1,-2)^t$, respectively.
+
+\soln The characteristic polynomial is $p_A(\lambda) =
+\lambda^2 - \lambda - 6 = (\lambda - 3)(\lambda + 2)$.  Then, solve
+$Av = \lambda v$ for each eigenvalue to find the corresponding eigenvectors.
+
+(b) Two linearly independent vectors in $\R^2$ form a basis for $\R^2$.
+Note that $v_1 \neq \alpha v_2$ for any scalar $\alpha$.  Therefore,
+$v_1$ and $v_2$ form a basis for $\R^2$.
+
+(c) \ans The coordinates of $(x_1,x_2)$ in the basis $\{v_1,v_2\}$ are
+$(2x_1 + x_2, -x_1 - x_2)$. 
+
+\soln Find $\alpha_1$ and $\alpha_2$ such that $\alpha_1v_1 +
+\alpha_2v_2 = (x_1,x_2)^t$.  That is, solve:
+\[
+\mattwo{1}{1}{-1}{-2}\vectwo{\alpha_1}{\alpha_2} = \vectwo{x_1}{x_2}
+\]
+to obtain $\alpha_1 = 2x_1 + x_2$ and $\alpha_2 = -x_1 - x_2$.
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c10.2.5}
@@ -415,6 +560,21 @@ A = \left(\begin{array}{rrr} -1 & 2 & 2 \\ 2 & 2 & 2 \\ -3 & -6 & -6
 \end{array}\right).
 \]
 Find eigenvectors corresponding to each of the three eigenvalues.
+
+\begin{solution}
+
+\ans The characteristic polynomial of $A$ is $p_A(\lambda) = -(\lambda^3
++ 5\lambda^2 + 6\lambda) = -\lambda(\lambda + 2)(\lambda + 3)$. 
+The eigenvalues are $\lambda_1 = 0$, $\lambda_2 = -2$, and $\lambda_3 = -3$,
+with eigenvectors $v_1 = (0,1,-1)^t$, $v_2 = (2,-1,0)^t$, and 
+$v_3 = (1,0,-1)^t$, respectively.
+
+\soln The eigenvalues are the roots of the characteristic polynomial
+$p_A(\lambda) = \det(A - \lambda I_3)$.  The eigenvectors are vectors
+$v$ such that $Av = \lambda v$, where $\lambda$ is an eigenvalue of
+$A$.  Find them by solving the system $(A - \lambda I_3)v = 0$.
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c10.2.6}
@@ -423,6 +583,13 @@ Let $A$ be an $n\times n$ matrix.  Suppose that
 A^2 + A + I_n = 0.
 \]
 Prove that $A$ is invertible.
+
+\begin{solution}
+
+We are given $A^2 + A + I_n = 0$.  Therefore, $I_n = -A^2 - A =
+A(-A - I_n)$.  Thus, $A^{-1} = -A - I_n$ exists.
+
+\end{solution}
 \end{exercise}
 
 \noindent In Exercises~\ref{c10.2.7a} -- \ref{c10.2.7b} decide whether 
@@ -432,15 +599,45 @@ give a proof.
 \begin{exercise} \label{c10.2.7a}
 If the eigenvalues of a $2\times 2$ matrix are equal to $1$,
 then the four entries of that matrix are each less than $500$.
+
+\begin{solution}
+
+\ans The statement is false. 
+
+\soln  A counterexample is the matrix $A = \mattwo{1}{500}{0}{1}$.
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c10.2.7b}
 The trace of the product of two $n\times n$ matrices is the
 product of the traces.
+
+\begin{solution}
+\ans The statement is false.
+
+\soln For example, let
+\[
+A = \mattwo{1}{-1}{0}{1} \AND B = \mattwo{1}{-1}{2}{0}.
+\]
+Then $\trace(A)\trace(B) = 2(1) = 2$, and $\trace(AB) = -1$.
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c10.2.8}
 When $n$ is odd show that every real $n\times n$ matrix has a real
 eigenvalue. 
+
+\begin{solution}
+
+By Theorem~\ref{T:eigens}, every
+$n \times n$ matrix has exactly $n$ eigenvalues, which are either
+real or complex conjugate pairs.  Since complex eigenvalues are
+paired, the number of complex eigenvalues must be even.  Since $n$ is
+odd, there can be no more than $n - 1$ complex eigenvalues; so the
+matrix has at least one real eigenvalue.
+
+\end{solution}
 \end{exercise}
 
 \CEXER
@@ -459,6 +656,40 @@ A=\left( \begin{array}{rrrrr}
       -12 &  -1 &   7 &  13 & -12
 \end{array} \right).
 \end{matlabEquation}
+
+\begin{solution}
+
+(a) By calculation in \Matlab using the {\tt eig}, {\tt trace}, and
+{\tt poly} commands, the eigenvalues of $A$ are 
+\[
+\lambda = -0.5861 \pm 20.2517, \quad
+\lambda = -12.9416, \quad
+\lambda = -9.1033, \AND
+\lambda = 5.2171.
+\]
+The trace of $A$ is $-18$.  The characteristic polynomial of $A$ is
+\[
+p_A = \lambda^5 + 18\lambda^4 + 433\lambda^3 + 6296\lambda^2 +
+429\lambda - 252292.
+\]
+Note that in order to obtain an accurate value for the characteristic
+polynomial, it may be necessary to use the {\tt format} command.
+
+(b) Theorem~\ref{T:inveig} states that the eigenvalues of $A^{-1}$ are
+the inverses of the eigenvalues of $A$.  In \Matlab, compute
+\begin{verbatim}
+eig(inv(A)) =
+  -0.1098    
+  -0.0773    
+  -0.0014 + 0.0493i
+  -0.0014 - 0.0493i
+   0.1917
+\end{verbatim}
+Then, compute the inverse of each eigenvalue of $A$ to find that if
+$\lambda$ is an eigenvalue of $A$, then $\lambda^{-1}$ is indeed an
+eigenvalue of $A^{-1}$. 
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c10.2.9b}
 \begin{matlabEquation}\label{compute-more-eigenvalues}
@@ -471,6 +702,39 @@ B=\left( \begin{array}{rrrrrr}
         8 &  16 &  -8 &   3 &  5 &  19
 \end{array} \right).
 \end{matlabEquation}
+
+\begin{solution}
+
+(a) The eigenvalues of $B$ are
+\[
+\lambda = 32.6273, \quad
+\lambda = -12.1564 \pm 5.8787i, \quad
+\lambda = 18.0009, \quad
+\lambda = -3.4878, \AND 
+\lambda = 11.1723.
+\]
+The trace of $B$ is $34$.  The characteristic polynomial of $B$ is
+\[
+p_B = \lambda^6 - 24\lambda^5 - 298\lambda^4 + 9618\lambda^3
++ 86273\lambda^2 - 1019656\lambda - 4172976.
+\]
+
+(b) Theorem~\ref{T:inveig} states that the eigenvalues of $A^{-1}$ are
+the inverses of the eigenvalues of $A$.  In \Matlab, compute
+\begin{verbatim}
+eig(inv(B)) =
+  -0.2867
+  -0.0667 + 0.0322i
+  -0.0667 - 0.0322i
+   0.0895
+   0.0556
+   0.0306
+\end{verbatim}
+Then, compute the inverse of each eigenvalue of $B$ to find that if
+$\lambda$ is an eigenvalue of $B$, then $\lambda^{-1}$
+is indeed an eigenvalue of $B^{-1}$.
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c10.2.10}
@@ -492,6 +756,20 @@ B = -(A^3 + p_2 A^2 + p_1 A + p_0 I).
 What do you observe?  In symbols $B=p_A(A)$.  Compute the matrix $B$ for
 examples of other square matrices $A$ and determine whether or not 
 your observation was an accident.
+
+\begin{solution}
+
+\ans The matrix $B$ is the zero matrix.
+
+\soln First use \Matlab to compute
+$p_A(\lambda) = \lambda^3 - 9\lambda^2 + 9\lambda - 348$.  Then
+$B = p_A(A) = A^3 - 9A^2 + 9A - 348I_3$ is the zero matrix.  To
+see why this is true, see the Cayley-Hamilton Theorem
+(Theorem~\ref{T:CH}).
+
+
+
+\end{solution}
 \end{exercise}
 
 \AEXER

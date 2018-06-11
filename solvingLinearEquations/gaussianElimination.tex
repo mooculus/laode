@@ -606,6 +606,12 @@ $\left(\begin{array}{rrrr}
        \choice{The matrix is in reduced echelon form.}         
        \choice[correct]{The matrix is not in reduced echelon form.}         
      \end{multipleChoice}
+
+\begin{solution}
+The matrix is not in reduced echelon form.
+
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c2.3.6b}
 $\left(\begin{array}{rrrr}
@@ -616,6 +622,11 @@ $\left(\begin{array}{rrrr}
        \choice[correct]{The matrix is in reduced echelon form.}         
        \choice{The matrix is not in reduced echelon form.}         
      \end{multipleChoice}     
+
+\begin{solution}
+The matrix is in reduced echelon form.
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c2.3.6c}
 $\left(\begin{array}{rrrr}
@@ -626,6 +637,11 @@ $\left(\begin{array}{rrrr}
        \choice{The matrix is in reduced echelon form.}         
        \choice[correct]{The matrix is not in reduced echelon form.}         
      \end{multipleChoice}     
+
+\begin{solution}
+The matrix is not in reduced echelon form.
+
+\end{solution}
 \end{exercise}
 
 \noindent In Exercises~\ref{c2.3.7a} -- \ref{c2.3.7c} we list
@@ -653,7 +669,23 @@ $\left(\begin{array}{rrr|r}
 \left(\begin{array}{r} x_1 \\ x_2 \\ x_3\end{array} \right)
 = \left(\begin{array}{c} \answer{-4}x_2 \\ x_2 \\ \answer{5}\end{array} \right)
 \]
+
+\begin{solution}
+The $1^{st}$ and $3^{rd}$ columns of the matrix contain
+pivots.  The solutions of the system are:
+
+\[
+\left(\begin{array}{r} x_1 \\ x_2 \\ x_3\end{array} \right)
+= \left(\begin{array}{c} -4x_2 \\ x_2 \\ 5\end{array} \right)
+\]
+
+\end{solution}
      \end{exercise}
+
+\begin{solution}
+
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c2.3.7b}
 $\left(\begin{array}{rrrr|r}
@@ -675,7 +707,19 @@ $\left(\begin{array}{rrrr|r}
          \choice{Exactly one solution.}
          \choice{Infinitely many solutions.}
        \end{multipleChoice}
+
+\begin{solution}
+The $1^{st}$, $3^{rd}$, and $5^{th}$ columns of the matrix
+contain pivots.  Since the last row of the matrix translates to the linear
+equation $0 = 1$, the system is inconsistent, and there are no solutions.
+
+\end{solution}
      \end{exercise}
+
+\begin{solution}
+
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c2.3.7c}
 $\left(\begin{array}{rrrr|r}
@@ -696,7 +740,23 @@ $\left(\begin{array}{rrrr|r}
 \left(\begin{array}{r} x_1 \\ x_2 \\ x_3\\ x_4\end{array} \right)
 = \left(\begin{array}{c} 1 + \answer{6}x_2 \\ x_2 \\ \answer{9} \\ x_4\end{array} \right)
 \]
+
+\begin{solution}
+The $1^{st}$ and $3^{rd}$ columns of the matrix contain
+pivots.  The solutions of the system are:
+
+\[
+\left(\begin{array}{r} x_1 \\ x_2 \\ x_3\\ x_4\end{array} \right)
+= \left(\begin{array}{c} 1 + 6x_2 \\ x_2 \\ 9 \\ x_4\end{array} \right)
+\]
+
+\end{solution}
      \end{exercise}
+
+\begin{solution}
+
+
+\end{solution}
 \end{exercise}
 
 
@@ -748,6 +808,39 @@ This will give us the identity matrix $I_2$.
 \]
 which has only one pivot and cannot be row reduced to $I_2$.
 \end{hint}
+
+\begin{solution}
+
+(a)
+Two matrices are row equivalent if there is a sequence of row operations
+that leads from one to the other.  In this case:
+
+1. Divide the $1^{st}$ row of \eqref{e:2x2} by $a$.
+
+2. Subtract $c$ times the $1^{st}$ row from the $2^{nd}$ row.
+
+The result is
+\[
+\left(\begin{array}{cc} 1 & \frac{b}{a} \\ 0 & \frac{a - bc}{a}\end{array}
+\right).
+\]
+
+(b) If $a \neq bc$, then we can row reduce \eqref{e:2x2} to $I_2$ by
+performing the two row operations in part (a), followed by:
+
+3. Multiply the $2^{nd}$ row by $\frac{a}{a - bc}$.
+
+4. Subtract $\frac{b}{a}$ times the second row from the first row.
+
+This will give us the identity matrix $I_2$.
+
+\para If $a = bc$, then $\frac{a - bc}{a} = 0$, and the matrix is
+\[
+\left(\begin{array}{cc} 1 & \frac{b}{a} \\ 0 & 0\end{array} \right).
+\]
+which has only one pivot and cannot be row reduced to $I_2$.
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c2.3.9}
@@ -788,6 +881,26 @@ If not, is there a solution for which $x_3=2$?
 \begin{hint}
   There is a solution for which $x_3 = 2$, namely $(0,1,2)$.
 \end{hint}
+
+\begin{solution}
+
+\ans The solution to this system is
+\[
+\left(\begin{array}{c} x_1 \\ x_2 \\ x_3\end{array}\right) =
+\left(\begin{array}{c} 0 \\ x_3 - 1 \\ x_3\end{array}\right),
+\]
+where $x_3$ is any real number.
+
+\soln Row reduce the augmented matrix of the system:
+\[
+\left(\begin{array}{rrr|r} 1 & -1 & 1 & 1 \\ 2 & 1 & -1 & -1\end{array}\right)
+\longrightarrow
+\left(\begin{array}{rrr|r} 1 & 0 & 0 & 0 \\ 0 & 1 & -1 & -1\end{array}\right).
+\]
+Although $(1,2,2)$ is not a solution to this system, there is a solution
+for which $x_3 = 2$, namely $(0,1,2)$.
+
+\end{solution}
 \end{exercise}
 
 \noindent In Exercises~\ref{c2.3.10a} -- \ref{c2.3.10b} determine the
@@ -798,12 +911,50 @@ x-y+z & = & 1 \\
 4x+y+z & = & 5 \\
    2x+3y-z & = & 2 \end{array}$.
  %BADBAD
+
+\begin{solution}
+The augmented matrix for this system is
+\[
+\left(\begin{array}{rrr|r} 1 & -1 & 1 & 1 \\ 4 & 1 & 1 & 5 \\
+2 & 3 & -1 & 2\end{array}\right)
+\]
+We can row reduce this matrix to reduced echelon form, obtaining
+\[
+\left(\begin{array}{rrr|r} 1 & 0 & \frac{2}{5} & \frac{6}{5} \\
+0 & 1 & -\frac{3}{5} & \frac{1}{5} \\ 0 & 0 & 0 & 1\end{array}\right)
+\]
+The last row of the reduced system implies that $0 = 1$, so the system
+is inconsistent and has no solutions.
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c2.3.10b}
 $\begin{array}{rcl}
 2x-y+z+w & = & 1\\
    x+2y-z+w & = & 7 \end{array}$.
   %BADBAD
+
+\begin{solution}
+The augmented matrix for this system is
+\[
+\left(\begin{array}{rrrr|r} 2 & -1 & 1 & 1 & 1 \\ 1 & 2 & -1 & 1 & 7
+\end{array}\right)
+\]
+which can be row reduced to
+\[
+\left(\begin{array}{rrrr|r} 1 & 0 & \frac{1}{5} & \frac{3}{5} &
+\frac{9}{5} \\ 0 & 1 & -\frac{3}{5} & \frac{1}{5} & \frac{13}{5}
+\end{array}\right).
+\]
+The solution set is therefore
+\[
+\left(\begin{array}{c} x_1 \\ x_2 \\ x_3 \\ x_4\end{array}\right) =
+\left(\begin{array}{c} \frac{9}{5} - \frac{1}{5}x_3 - \frac{3}{5}x_4
+\\ \frac{13}{5} + \frac{3}{5}x_3 - \frac{1}{5}x_4 \\ x_3 \\ x_4
+\end{array}\right).
+\]
+
+\end{solution}
 \end{exercise}
 
 \noindent In Exercises~\ref{c2.3.11a} -- \ref{c2.3.11d} consider the
@@ -830,7 +981,27 @@ $\left(\begin{array}{ccc|c} 1 & 0 & 0 &3 \\0 & 2 & 1 & 1\\ 0 & 0 & 0 & 0
      \end{hint}
      \begin{exercise}
        There is/are $\answer{1}$ variable(s) that may be assigned arbitrary values.
+
+\begin{solution}
+
+\ans (a) The system has infinitely many solutions.
+
+(b) One variable can be assigned arbitrary values.
+
+\soln The row-reduced form of the matrix is:
+
+\[
+\left(\begin{array}{rrr|r} 1 & 0 & 0 & 3 \\ 0 & 1 &
+\frac{1}{2} & \frac{1}{2} \\ 0 & 0 & 0 & 0\end{array}\right).
+\]
+
+\end{solution}
      \end{exercise}
+
+\begin{solution}
+
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c2.3.11b}
 $\left(\begin{array}{cccc|c} 1 & 2 & 0 & 0 & 3\\ 0 & 1 & 1 & 0 & 1\\
@@ -847,6 +1018,18 @@ $\left(\begin{array}{cccc|c} 1 & 2 & 0 & 0 & 3\\ 0 & 1 & 1 & 0 & 1\\
 0 & 1 & 1 & 0 & 1 \\ 0 & 0 & 0 & 0 & 1\end{array}\right).
 \]
      \end{hint}
+
+\begin{solution}
+
+\ans The system has no solutions.
+
+\soln The row-reduced form of the matrix is:
+\[
+\left(\begin{array}{rrrr|r} 1 & 2 & 0 & 0 & 3 \\
+0 & 1 & 1 & 0 & 1 \\ 0 & 0 & 0 & 0 & 1\end{array}\right).
+\]
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c2.3.11c}
 $\left(\begin{array}{ccc|c}  1 & 0 & 2 & 1\\ 0 & 5 & 0 & 2 \\ 0 & 0 & 4 & 3
@@ -863,6 +1046,18 @@ $\left(\begin{array}{ccc|c}  1 & 0 & 2 & 1\\ 0 & 5 & 0 & 2 \\ 0 & 0 & 4 & 3
 \\ 0 & 0 & 1 & \frac{3}{4}\end{array}\right).
 \]
      \end{hint}
+
+\begin{solution}
+
+\ans The system has a unique solution.
+
+\soln The row-reduced form of the matrix is:
+\[
+\left(\begin{array}{rrr|r} 1 & 0 & 2 & 1 \\ 0 & 1 & 0 & \frac{2}{5}
+\\ 0 & 0 & 1 & \frac{3}{4}\end{array}\right).
+\]
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c2.3.11d}
 $\left(\begin{array}{cccc|c} 1 & 0 & 2 & 0 & 3 \\ 2 & 3 & 6 & 1 & 16\\
@@ -882,7 +1077,28 @@ $\left(\begin{array}{cccc|c} 1 & 0 & 2 & 0 & 3 \\ 2 & 3 & 6 & 1 & 16\\
      \end{multipleChoice}
      \begin{exercise}
        There is/are $\answer{2}$ variable(s) that may be assigned arbitrary values.
+
+\begin{solution}
+
+\ans (a) The system has infinitely many solutions.
+
+(b) Two variables can be assigned arbitrary values.
+
+\soln The row-reduced form of the matrix is:
+\[
+\left(\begin{array}{rrrr|r} 1 & 0 & 2 & 0 & 3 \\ 0 & 1 & \frac{2}{3}
+& \frac{1}{3} & \frac{10}{3} \\ 0 & 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 & 0
+\end{array}\right).
+\]
+
+
+\end{solution}
      \end{exercise}
+
+\begin{solution}
+
+
+\end{solution}
 \end{exercise}
 
 \noindent A system of $m$ equations in $n$ unknowns is linear if it has
@@ -901,6 +1117,11 @@ is linear or nonlinear.
   \choice[correct]{The system is linear.}
   \choice{The system is not linear.}  
 \end{multipleChoice}
+
+\begin{solution}
+\ans The system is linear.
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c2.3.12b}
 \[
@@ -913,6 +1134,11 @@ is linear or nonlinear.
   \choice[correct]{The system is linear.}
   \choice{The system is not linear.}  
 \end{multipleChoice}
+
+\begin{solution}
+\ans The system is linear.
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c2.3.12c}
 \[
@@ -929,6 +1155,14 @@ is linear or nonlinear.
   The term $3x_1x_2$ contains two variables, and the term $x_2^2$
 contains a variable squared.  Thus, these terms are not linear.
 \end{hint}
+
+\begin{solution}
+\ans The system is not linear.
+
+\soln The term $3x_1x_2$ contains two variables, and the term $x_2^2$
+contains a variable squared.  Thus, these terms are not linear.
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c2.3.12d}
 \[
@@ -944,6 +1178,11 @@ contains a variable squared.  Thus, these terms are not linear.
 \begin{hint}
   You may be distracted by $\cos(12)$ but note that $\cos(12)$ is constant.
 \end{hint}
+
+\begin{solution}
+\ans The system is linear.
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c2.3.12e}
 \[
@@ -959,6 +1198,14 @@ contains a variable squared.  Thus, these terms are not linear.
 \begin{hint}
   The term $\sin(x_2)$ is not linear.
 \end{hint}
+
+\begin{solution}
+\ans The system is not linear.
+
+\soln The term $\sin(x_2)$ is not linear.
+
+
+\end{solution}
 \end{exercise}
 
 \CEXER
@@ -977,6 +1224,24 @@ linear equations.  Is the system consistent or inconsistent?
  4 &  2  &  3
 \end{array}\right).
 \]
+
+\begin{solution}
+\ans The row echelon form matrix is
+\begin{verbatim}
+A = 
+    1.0000    0.5000    0.5000
+         0         0    1.0000
+\end{verbatim}
+\soln Enter the augmented matrix into \Matlab as $A$, then reduce to
+row echelon form by typing:
+\begin{verbatim}
+A(1,:) = A(1,:)/2
+A(2,:) = A(2,:) - 4*A(1,:)
+\end{verbatim}
+The linear system that this matrix represents is inconsistent, since
+the $2^{nd}$ row of the reduced matrix represents the equation $0 = 1$.
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c2.3.1b}
 \[
@@ -986,6 +1251,18 @@ linear equations.  Is the system consistent or inconsistent?
  3  &  1 & 4 & 5
 \end{array}\right).
 \]
+
+\begin{solution}
+The row-reduced matrix is:
+\begin{verbatim}
+A =
+    1.0000   -1.3333         0    0.6667
+         0    1.0000    1.5000    0.5000
+         0         0    1.0000   -0.1429
+\end{verbatim}
+This matrix represents a consistent linear system.
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c2.3.1c}
 \[
@@ -995,6 +1272,19 @@ linear equations.  Is the system consistent or inconsistent?
   1 & 4 &  5 & 5
 \end{array}\right).
 \]
+
+\begin{solution}
+The row-reduced matrix is:
+\begin{verbatim}
+A =
+    1.0000   -0.5000   -4.5000   -0.5000
+         0    1.0000    2.1111    0.7778
+         0         0         0    2.0000
+\end{verbatim}
+This matrix represents an inconsistent linear system.
+
+
+\end{solution}
 \end{exercise}
 
 \noindent {\bf Observation:} {\rm In standard format \Matlab displays
@@ -1019,6 +1309,21 @@ A=\left(\begin{array}{rrrrrrrr}
 \end{array}\right)
 \end{matlabEquation}
 Use \Matlab to transform this matrix to row echelon form.
+
+\begin{solution}
+The row echelon form is:
+\begin{verbatim}
+A = 
+       0   1.0000   2.0000   1.0000  14.0000  21.0000        0  -1.0000
+       0        0        0   1.0000   3.0000   5.0000        0   9.0000
+       0        0        0        0   1.0000  -0.5000        0  -4.7143
+       0        0        0        0        0   1.0000        0   0.3457
+       0        0        0        0        0        0        0   1.0000
+       0        0        0        0        0        0        0        0
+\end{verbatim}
+
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c2.3.3}
@@ -1031,6 +1336,35 @@ system of linear equations:
  x_1 & - &  7x_2 &  + &  5x_3 & - &  x_4 &  = & 6
 \end{array}
 \]
+
+\begin{solution}
+
+\ans The system's solution is
+\[
+\left(\begin{array}{c} x_1 \\ x_2 \\ x_3 \\ x_4\end{array}\right) =
+\left(\begin{array}{c} -\frac{7}{4} - \frac{21}{8}x_4 \\ -\frac{9}{2} -
+\frac{11}{4}x_4 \\ -\frac{19}{4} - \frac{25}{8}x_4 \\ x_4\end{array}\right)
+\]
+where $x_4$ is any real number.
+
+\soln Note that the system of linear equations is related to the
+augmented matrix
+\begin{verbatim}
+A = 
+    2        3       -4        1        2
+    3       -1       -1        2        4
+    1       -7        5       -1        6
+\end{verbatim}
+which row reduces to
+\begin{verbatim}
+A =
+    1       3/2      -2       1/2       1
+    0        1     -10/11    -1/11    -2/11
+    0        0        1      25/8    -19/4
+\end{verbatim}
+The system can then be solved by back substitution.
+
+\end{solution}
 \end{exercise}
 
 
@@ -1080,6 +1414,47 @@ there a difference in the results?  Would you expect to see a
 difference?  Could the difference be crucial when solving a system
 of linear equations?
 \end{itemize}
+
+\begin{solution}
+
+(a)
+\begin{verbatim}
+A =
+   1.0000e+00   3.0000e+00   4.0000e+00
+            0   1.0000e+00   1.4000e+00
+            0            0            0
+\end{verbatim}
+
+(b)
+$B = \left(\begin{array}{rrr}
+1 & \frac{1}{3} & \frac{4}{3} \\
+0 & 1 & -\frac{1}{5} \\
+0 & 0 & 0\end{array} \right)$
+
+(c)
+\begin{verbatim}
+B =
+   1.0000e+00   3.3333e-01   1.3333e+00
+            0   1.0000e+00  -2.0000e-01
+            0            0   2.2204e-16
+\end{verbatim}
+
+
+(d) Note that switching the first two columns of matrix {\tt A} produces
+matrix {\tt B}.  Suppose that {\tt A} and {\tt B} represent the left-hand
+sides of linear systems with the same vector representing the right-hand
+sides.  If the solution of system {\tt A} is $(x,y,z) = (a,b,c)$, then the
+solution of system {\tt B} should be $(x,y,z) = (b,a,c)$.  However,
+according to the row reduced matrices produced by \Matlab, the system
+corresponding to {\tt B} has a unique solution, and the system
+corresponding to {\tt A} does not.  Row reducing {\tt B} by hand shows
+that there is not a unique solution.  \Matlab calculations provide one because of 
+roundoff error.  The division by 3 in the first step of the row reduction
+for {\tt B} causes a rounding inaccuracy.  Because of this, \Matlab
+eventually computes a very small nonzero value for {\tt B}$(3,3)$
+rather than the correct answer of 0.
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c2.3.5}
@@ -1088,6 +1463,38 @@ Find a cubic polynomial
 p(x) = ax^3 + bx^2 + cx + d
 \]
 so that $p(1)=2$, $p(2)=3$, $p'(-1)=-1$, and $p'(3)=1$.
+
+\begin{solution}
+
+\ans The polynomial $p(x) = -\frac{3}{44}x^3 + \frac{5}{11}x^2 +
+\frac{5}{44}x + \frac{3}{2}$ satisfies the given conditions.
+
+\soln Let $p(x) = ax^3 + bx^2 + cx + d$ be the general cubic polynomial. 
+Then $p'(x) = 3ax^2 + 2bx + c$.  We can write the conditions on $p$ as a
+system of linear equations:
+\[
+\begin{array}{rrrrrrrrr}
+a & + & b & + & c & + & d & = & 2 \\
+8a & + & 4b & + & 2c & + & d & = & 3 \\
+3a & - & 2b & + & c & & & = & -1 \\
+27a & + & 6b & + & c & & & = & 1\end{array}
+\]
+Using \Matlab, we solve for $a$, $b$, $c$, and $d$, obtaining the
+vector of coefficients:
+\begin{verbatim}
+ans =
+    -3/44
+     5/11
+     5/44
+     3/2
+\end{verbatim}
+
+
+
+
+
+
+\end{solution}
 \end{exercise}
 
 

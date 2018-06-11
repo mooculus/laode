@@ -298,6 +298,21 @@ $\left\{\begin{array}{rcl}
 \dot{y} & = & x + y + 2xz \\
 \dot{z} & = & -27 + z + 10xy - x^2  \end{array}\right.$ 
 \AND $(x_0,y_0,z_0) = (2,-1,4)$.
+
+\begin{solution}
+\ans $\left(\begin{array}{rrr}
+-10 & -2 & -1\\ 9 & 1 & 4 \\ -14 & 20 & 1\end{array}\right)$.
+
+\vspace{0.08in}
+
+\soln  The Jacobian matrix is
+\[
+J(x,y,z) = \left(\begin{array}{ccc}
+2 - 6x & 2y & -1\\ 1+2z & 1 & 2x\\ 10y-2x & 10x & 1\end{array}\right).
+\]
+Evaluating at $(x,y,z)=(2,-1,4)$ yields the answer.
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c14.2.1B}
 $\left\{\begin{array}{rcl} 
@@ -305,16 +320,61 @@ $\left\{\begin{array}{rcl}
 \dot{y} & = & x + xyz \\
 \dot{z} & = & -10 + y + 10xy + x^3  \end{array}\right.$ 
 \AND $(x_0,y_0,z_0) = (1,2,-2)$.
+
+\begin{solution}
+\ans $\left(\begin{array}{rrr}
+2 & 0 & -10\\ -3 & -2 & 2 \\ 23 & 1 & 0 \end{array}\right)$.
+
+\vspace{0.08in}
+
+\soln  The Jacobian matrix is
+\[
+J(x,y,z) = \left(\begin{array}{ccc}
+2x & 0 & 2-3z^2\\ 1+yz & xz & xy\\ 10y+3x^2 & 1 & 0 \end{array}\right).
+\]
+Evaluating at $(x,y,z)=(1,2,-2)$ yields the answer.
+
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c14.2.1C}
 Verify that $(1,3,-2)$ is an equilibrium for the differential equation in 
 Exercise~\ref{c14.2.1A}.  Is this equilibrium asymptotically stable or not?
+
+\begin{solution}
+\ans The origin is not stable.
+
+\soln The eigenvalues of $J(1,3,-2)$ are
+\begin{verbatim}
+  -4.2656 + 7.5182i
+  -4.2656 - 7.5182i
+   6.5312          
+\end{verbatim}
+Since there is a positive eigenvalue, the equilibrium is not 
+asymptotically stable.
+
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c14.2.1D}
 Verify that $(1,1,-1)$ is an equilibrium for the differential equation in 
 Exercise~\ref{c14.2.1B}.  Is this equilibrium asymptotically stable or not?
+
+\begin{solution}
+\ans The origin is not stable.
+
+\soln The eigenvalues of $J(1,2,-2)$ are
+\begin{verbatim}
+   0.9533 +15.0574i
+   0.9533 -15.0574i
+  -1.9066    
+\end{verbatim}
+Since there is an eigenvalue with positive real part, the origin is not 
+asymptotically stable.
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c14.2.1E}
@@ -324,6 +384,53 @@ F(x,y,z) = (x^2 - z, y^2 - z, 2x + y - 3).
 \]
 Find all equilibria of this system and determine the number of stable and 
 unstable directions for each of these equilibria.
+
+\begin{solution}
+\ans There are two equilibria $(1,1,1)$ and $(3,-3,9)$.
+The equilibium $(1,1,1)$ has three unstable directions while the
+equilibrium $(3,-3,9)$ has two unstable directions and one stable directions.
+
+\soln  Finding the equilibria is done by solving the equations
+\begin{eqnarray*}
+x^2-z & = & 0 \\
+y^2-z & = & 0 \\
+2x+y-3 & = & 0.
+\end{eqnarray*}
+The first two equations imply that $x^2=y^2$.  Hence $x=y$ or $x=-y$. 
+Substituting into the third equation allows us to find the two equilibria
+$(1,1,1)$ and $(3,-3,9)$.  Next, compute the Jacobian matrix
+\[
+J(x,y,z) = \left(\begin{array}{ccc}
+2x & 0 & -1\\ 0 & 2y & -1\\ 2 & 1 & 0 \end{array}\right).
+\]
+Evaluating at the equilibria yields the matrices
+\[
+J(1,1,1) = \left(\begin{array}{ccc}
+2 & 0 & -1\\ 0 & 2 & -1\\ 2 & 1 & 0 \end{array}\right)
+\AND 
+J(3,-3,9) = \left(\begin{array}{ccc}
+6 & 0 & -1\\ 0 & 6 & -1\\ 2 & 1 & 0 \end{array}\right).
+\]
+The eigenvalues of $J(1,1,1)$ are
+\begin{verbatim}
+   1.0000 + 1.4142i
+   1.0000 - 1.4142i
+   2.0000     
+\end{verbatim}
+and the eigenvalues of $J(3,-3,9)$ are
+\begin{verbatim}
+    5.6514
+    0.1820
+   -5.8334
+\end{verbatim}
+The equilibium $(1,1,1)$ has three unstable directions while the
+equilibrium $(3,-3,9)$ has two unstable directions and one stable 
+directions.
+
+
+
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c14.2.1F}
@@ -333,6 +440,53 @@ F(x,y,z) = (x - 2y - x^2, y + z^2, -z - x^2).
 \]
 Find all equilibria of this system and determine the number of stable and 
 unstable directions for each of these equilibria.
+
+\begin{solution}
+\ans There are two equilibria $(0,0,0)$ and $(-1,-1,1)$.
+Both equilibria have two unstable directions and one stable direction.
+
+\soln  Finding the equilibria is done by solving the equations
+\begin{eqnarray*}
+x - x^2 - 2y & = & 0 \\
+y + z^2 & = & 0 \\
+-z - x^2 & = & 0.
+\end{eqnarray*}
+From the $1^{st}$ and $3^{rd}$ equations we find that
+\begin{eqnarray*}
+ y & = & \frac{1}{2}(x-x^2)\\
+ z & = & x^2.
+\end{eqnarray*}
+Substituting into the $2^{nd}$ equation yields
+\[
+ 0 = x^4 - \frac{1}{2}x^2 + \frac{1}{2}x = x(x+1)(x^2-x+\frac{1}{2})
+\]
+Since the last factor has complex conjugate roots, there are two equilibria
+$(0,0,0)$ and $(-1,-1,1)$.  Next, compute the Jacobian matrix
+\[
+J(x,y,z) = \left(\begin{array}{ccc}
+1-2x & -2 & 0\\ 0 & 1 & 2z\\ -2x & 0 & -1 \end{array}\right).
+\]
+Evaluating at the equilibria yields the matrices
+\[
+J(0,0,0) = \left(\begin{array}{ccc}
+1 & -2 & 0\\ 0 & 1 & 0\\ 0 & 0 & -1 \end{array}\right)
+\AND 
+J(-1,-1,1) = \left(\begin{array}{ccc}
+3 & -2 & 0\\ 0 & 1 & 2\\ 2 & 0 & -1 \end{array}\right).
+\]
+The eigenvalues of $J(0,0,0)$ are $1$, $1$, $-1$, as can be seen by
+inspection, while the eigenvalues of $J(-1,-1,1)$ are
+\begin{verbatim}
+   2.3247 + 1.1246i
+   2.3247 - 1.1246i
+  -1.6494     
+\end{verbatim}
+Both equilibria have two unstable directions and one stable direction.
+
+
+
+
+\end{solution}
 \end{exercise}
 
 \CEXER
@@ -344,6 +498,16 @@ differential equations $\dot{x}=Cx$.
 \[
 C=\mattwo{1}{-3}{2}{-5}.
 \]
+
+\begin{solution}
+
+\ans The origin is an asymptotically stable equilibrium.
+
+\soln Using \Matlabp, find that the eigenvalues of $C$ are $\lambda_1
+\approx -0.2679$ and $\lambda_2 \approx -3.7321$.  Both eigenvalues
+have negative real part, so the origin is asymptotically stable.
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c11.2.1b}
 \begin{matlabEquation}\label{MATLAB:49}
@@ -352,6 +516,16 @@ C=\left(\begin{array}{rrr}
 -37 & -68 & -53 \\
 -16 & -29 & -24 \end{array}\right).
 \end{matlabEquation}
+
+\begin{solution}
+
+\ans The origin is not an asymptotically stable equilibrium.
+
+\soln The eigenvalues of $C$ are $-2$ and $2 \pm i$.  The complex
+eigenvalues have positive real part, so the origin is not stable.
+
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c11.2.1c}
 \begin{matlabEquation}\label{MATLAB:50}
@@ -361,6 +535,16 @@ C=\left(\begin{array}{rrrr}
 0.06 & -0.12 & -0.06 & 0.14 \\ 
 0.04 & -0.28 & 0.06 & -0.34 \end{array}\right).
 \end{matlabEquation}
+
+\begin{solution}
+
+\ans The origin is an asymptotically stable equilibrium.
+
+\soln The eigenvalues of $C$ are $-0.5 \pm 0.2i$, $-0.2$, and $-0.1$, all
+of which have negative real part.
+
+
+\end{solution}
 \end{exercise}
 
 \noindent In Exercises~\ref{c11.2.2a} -- \ref{c11.2.2c} determine the number
@@ -375,6 +559,22 @@ C=\left(\begin{array}{rrrr}
      1  &   2    & 6   &  7
 \end{array}\right).
 \end{matlabEquation}
+
+\begin{solution}
+\ans There are two unstable and two center directions.
+
+\soln In \Matlabp, load the matrix $C$.  Find the eigenvalues of $C$ by
+typing {\tt eig(C)} obtaining
+\begin{verbatim}
+ans =
+   18.0000
+    1.0000
+    0.0000
+   -0.0000
+\end{verbatim}
+Therefore, there are two unstable and two center directions.
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c11.2.2b}
 \begin{matlabEquation}\label{MATLAB:52}
@@ -386,6 +586,25 @@ C=\left(\begin{array}{rrrrr}
      1   &  4  &  -2   &  4   & 10
 \end{array}\right).
 \end{matlabEquation}
+
+\begin{solution}
+\ans There are four unstable directions and one stable 
+direction.
+
+\soln In \Matlabp, load the matrix $C$.  Find the eigenvalues of $C$ by
+typing {\tt eig(C)} obtaining
+\begin{verbatim}
+ans =
+  -0.4516          
+   2.2585 + 4.3244i
+   2.2585 - 4.3244i
+  13.7788          
+  10.1559   
+\end{verbatim}
+Therefore, there are four unstable directions and one stable direction.
+
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c11.2.2c}
 \begin{matlabEquation}\label{MATLAB:53}
@@ -398,6 +617,30 @@ C=\left(\begin{array}{rrrrrr}
   -30  &  -8 &  -2 &  28 &-110  & -27
 \end{array}\right).
 \end{matlabEquation}
+
+\begin{solution}
+\ans There are two unstable, one stable, and three center 
+directions.
+
+
+\soln In \Matlabp, load the matrix $C$.  Find the eigenvalues of $C$ by
+typing {\tt eig(C)} obtaining
+\begin{verbatim}
+ans =
+   0.0000 + 1.0000i
+   0.0000 - 1.0000i
+   0.0000          
+   1.0000          
+  -1.0000          
+  -1.0000  
+\end{verbatim}
+Therefore, there are two unstable, one stable, and three center directions.
+
+
+
+
+
+\end{solution}
 \end{exercise}
 
 

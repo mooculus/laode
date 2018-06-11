@@ -390,6 +390,69 @@ Find the solution to the system
 \dot{x}_4 & = & x_3+x_4
 \end{eqnarray*}
 satisfying $X_0=(-1,1,2,-3)^t$.
+
+\begin{solution}
+\ans 
+\[
+X(t) =
+\left(\begin{array}{c}
+e^{2t}(t - 1) \\
+e^{2t} \\
+e^t(2\cos{t} + 3\sin{t}) \\
+e^t(2\sin{t} - 3\cos{t})
+\end{array}\right).
+\]
+
+\soln Write the system as the equation $\dot{X} = AX$, where
+\[
+A =
+\left(\begin{array}{rrrr}
+2 & 1 & 0 & 0 \\
+0 & 2 & 0 & 0 \\
+0 & 0 & 1 & -1 \\
+0 & 0 & 1 & 1
+\end{array}\right).
+\]
+Note that the matrix $A$ is in Jordan normal form, and has a double
+eigenvalue at $\lambda = 2$ and a pair of complex conjugate eigenvalues
+at $\lambda = 1 \pm i$.  Thus, we can compute the closed form solution
+$X(t) = e^{At}X_0$ by computing the exponential of each Jordan block.  Let
+\[
+B = \mattwo{2}{1}{0}{2} \AND C = \mattwo{1}{-1}{1}{1}.
+\]
+Then, $B = 2I_2 + N$, where $N$ is the $2 \times 2$ matrix with an entry $1$
+on the superdiagonal.  Since $I_2$ and $N$ commute,
+\[
+e^{Bt} = e^{2t}e^{tN} = e^{2t}(I_2 + tN) =
+e^{2t}\mattwo{1}{t}{0}{1}.
+\]
+Since $C$ is a $2 \times 2$ block with complex eigenvalues, we can
+compute its exponential as we have done in previous chapters, using
+$\sigma = 1$ and $\tau = 1$:
+\[
+e^{Ct} = e^{\sigma t}\mattwo{\cos{(\tau t)}}{-\sin{(\tau t)}}
+{\sin{(\tau t)}}{\cos{(\tau t)}}
+= e^{t}\mattwo{\cos{t}}{-\sin{t}}{\sin{t}}{\cos{t}}.
+\]
+Thus,
+\[
+X(t) = e^{At}X_0 =
+\left(\begin{array}{cccc}
+e^{2t} & te^{2t} & 0 & 0 \\
+0 & e^{2t} & 0 & 0 \\
+0 & 0 & e^t\cos{t} & -e^t\sin{t} \\
+0 & 0 & e^t\sin{t} & e^t\cos{t}
+\end{array}\right)
+\left(\begin{array}{r} -1 \\ 1 \\ 2 \\ -3 \end{array}\right)
+= \left(\begin{array}{c}
+e^{2t}(t - 1) \\
+e^{2t} \\
+e^t(2\cos{t} + 3\sin{t}) \\
+e^t(2\sin{t} - 3\cos{t})
+\end{array}\right).
+\]
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c11.1.2}
@@ -401,6 +464,82 @@ Find the solution to the system
 \dot{x}_4 & = & -x_3-2x_4
 \end{eqnarray*}
 satisfying $X_0=(1,2,-1,-3)^t$.
+
+\begin{solution}
+\ans
+\[
+X(t) = e^{-2t}
+\left(\begin{array}{c}
+\cos t + 2\sin t - t(\cos t + 3\sin t) \\
+2\cos t - \sin t + t(\sin t - 3\cos t) \\
+-\cos t - 3\sin t \\
+-\sin t - 3\cos t
+\end{array}\right).
+\]
+
+\soln Write the system as $\dot{X} = AX$, where
+\[
+A =
+\left(\begin{array}{rrrr}
+-2 & 1 & 1 & 0 \\
+-1 & -2 & 0 & 1 \\
+0 & 0 & -2 & 1 \\
+0 & 0 & -1 & -2
+\end{array}\right).
+\]
+Note that $A$ is in Jordan normal form and has a double complex conjugate
+eigenvalue at $\lambda = -2 \pm i$.  We can write $A = J + M$, where
+\[
+J = 
+\left(\begin{array}{rr|rr}
+-2 & 1 & 0 & 0 \\
+-1 & -2 & 0 & 0 \\
+\hline
+0 & 0 & -2 & 1 \\
+0 & 0 & -1 & -2
+\end{array}\right) \AND
+M =
+\left(\begin{array}{rr|rr}
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1 \\
+\hline
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0
+\end{array}\right).
+\]
+Since $J$ and $M$ commute, we can compute the closed form solution to the
+system, using $\sigma = -2$ and $\tau = -1$:
+\[
+\begin{array}{rcl}
+X(t) & = & e^{tA}X_0 \\
+& = & e^{tJ}e^{tM}X_0 \\
+& = & e^{-2t}\left(\begin{array}{rr|rr}
+\cos t & \sin t & 0 & 0 \\
+-\sin t & \cos t & 0 & 0 \\
+\hline
+0 & 0 & \cos t & \sin t \\
+0 & 0 & -\sin t & \cos t
+\end{array}\right)
+\left(\begin{array}{rr|rr}
+1 & 0 & t & 0 \\
+0 & 1 & 0 & t \\
+\hline
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1
+\end{array}\right)X_0 \\
+& = & e^{-2t}
+\left(\begin{array}{rr|rr}
+\cos t & \sin t & t\cos t & t\sin t \\
+-\sin t & \cos t & -t\sin t & t\cos t \\
+\hline
+0 & 0 & \cos t & \sin t \\
+0 & 0 & -\sin t & \cos t
+\end{array}\right)
+\left(\begin{array}{r} 1 \\ 2 \\ -1 \\ -3 \end{array}\right).
+\end{array}
+\]
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c11.1.3}
@@ -412,12 +551,55 @@ Let $X(t)$ be the solution to
 \]
 satisfying $X_0=(0,1,1)^t$. Show that $X(2)$ is further from the 
 origin than $X(0)$.
+
+\begin{solution}
+\ans $X(t) = \cvecthree{t + \frac{1}{2}t^2}{1 + t}{1}$. The distance from $X(0)$ to the 
+origin is $\sqrt{2} \approx 1.4142$ and the distance from $X(2)$ to the origin is
+$e^{-1}\sqrt{26} \approx 1.8758$.
+
+\soln Let $B$ be the matrix of this system.  Note that $B$ is a single Jordan block
+with a triple eigenvalue at $\lambda = -\frac{1}{2}$, and that we can write
+$B = -\frac{1}{2}I_3 + N$, where $N$ is the matrix with entries $1$ on the
+superdiagonal.  Then, since $I_3$ and $N$ commute, we can write:
+\[
+\begin{array}{rcl}
+X(t) & = & e^{tB}X_0 \\
+& = & e^{\lambda tI_3}e^{tN}X_0 \\
+& = & e^{\lambda t}(I_3 + tN + \frac{1}{2}t^2N^2)X_0 \\
+& = & e^{-\frac{1}{2} t}\cmatthree{1}{t}{\frac{1}{2}t^2}{0}{1}{t}{0}{0}{1}
+\vecthree{0}{1}{1} \\
+& = & \cvecthree{t + \frac{1}{2}t^2}{1 + t}{1}.
+\end{array}
+\]
+Next, compute $X(2) = e^{-1}(4,3,1)^t$.
+The distance from $X(0)$ to the origin is $\sqrt{0 + 1 + 1} = \sqrt{2}
+\approx 1.4142$.  The distance from $X(2)$ to the origin is
+$e^{-1}\sqrt{4^2 + 3^2 + 1} = e^{-1}\sqrt{26} \approx 1.8758$.
+Thus, $X(2)$ is indeed further from the origin than $X(0)$.
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c11.1.3A}
 Consider the differential equation $\dot{X}=JX$ where $J$ is the single Jordan 
 block $2\times 2$ matrix with double eigenvalue $0$.  Show that most 
 solutions are unbounded in both forward and backward time.
+
+\begin{solution}
+The differential equation $\dot{X}=JX$, where $J$ is the 
+single Jordan block $2\times 2$ matrix with double eigenvalue $0$, is
+\[
+\dot{X} = \mattwo{0}{1}{0}{0}X.
+\]
+Solutions to this differential equation are:
+\[
+X(t) = e^{tJ}X_0 = \mattwo{1}{t}{0}{1}\vectwo{x_0}{y_0} =
+\cvectwo{x_0+y_0t}{y_0}.
+\]
+As long as $y_0\neq 0$, the solution is unbounded in both forward and 
+backward time.  Most solutions start with initial condition $y_o\neq 0$.
+
+\end{solution}
 \end{exercise}
 
 
@@ -425,6 +607,46 @@ solutions are unbounded in both forward and backward time.
 Consider the differential equation $\dot{X}=JX$ where $J$ is the single Jordan 
 block $4\times 4$ matrix with double eigenvalues $i$ and $-i$.  Show that most 
 solutions spiral away from the origin in both forward and backward time.
+
+\begin{solution}
+The differential equation $\dot{X}=JX$, where $J$ is the 
+single Jordan block $4\times 4$ matrix with double eigenvalues $i$ and $-i$,
+is:
+\[
+\dot{X} = \left(\begin{array}{rr|rr}
+ 0 & -1 & 1 &  0 \\
+ 1 &  0 & 0 &  1 \\
+\hline
+ 0 &  0 & 0 & -1\\
+ 0 &  0 & 1 &  0
+\end{array}\right)X.  
+\]
+Solutions to this differential equation are:
+\[
+X(t) = e^{tJ}X_0 = \left(\begin{array}{rrrr}
+  \cos t & -\sin t & t\cos t & -t\sin t\\
+  \sin t &  \cos t & t\sin t &  t\cos t\\
+     0   &    0    &  \cos t &  -\sin t\\
+     0   &    0    &  \sin t &   \cos t  
+\end{array}\right)
+\left(\begin{array}{r} x_1^0 \\  x_2^0 \\ x_3^0 \\ x_4^0 \end{array}\right)
+\]
+The first two coordinates of this solution are:
+\begin{eqnarray*}
+x_1(t) & = & x_1^0\cos t - x_2^0\sin t + x_3^0t\cos t - x_4^0t\sin t\\
+x_2(t) & = & x_1^0\sin t + x_2^0\cos t + x_3^0t\sin t + x_4^0t\cos t
+\end{eqnarray*}
+We can rewrite these coordinates in vector form as:
+\[
+\vectwo{x_1(t)}{x_2(t)} =
+(x_1^0 + tx_3^0t)\vectwo{\cos t}{\sin t} + 
+(x_2^0 + tx_4^0t)\vectwo{-\sin t}{\cos t}.
+\] 
+As long as either $x_3^0\neq 0$ or $x_4^0\neq 0$, the solution will spiral 
+away from the origin (as seen by its projection in the $x_1x_2$ plane) in 
+both forward and backward time.
+
+\end{solution}
 \end{exercise} 
 
 \begin{exercise} \label{c11.1.3C}
@@ -437,6 +659,35 @@ J = \left(\begin{array}{rrrr}
 0 &  0 & 2 &  1
 \end{array}\right).
 \]
+
+\begin{solution}
+\ans $e^J = e\left(\begin{array}{rrrr}
+  \cos 2 & -\sin 2 & \cos 2 & -\sin 2\\
+  \sin 2 &  \cos 2 & \sin 2 &  \cos 2\\
+     0   &    0    &  \cos 2 &  -\sin 2\\
+     0   &    0    &  \sin 2 &   \cos 2  
+\end{array}\right)$
+
+\soln Write the matrix $J$ in block form as:
+\[
+J = \mattwo{B}{0}{0}{B} + \mattwo{0}{I_2}{0}{0}
+\]
+where 
+\[
+B = \mattwo{1}{-2}{2}{1}.
+\]
+Since the two summands in $J$ commute, 
+\[
+e^J = \mattwo{e^B}{0}{0}{e^B}\left(I_4 + \mattwo{0}{I_2}{0}{0}\right)
+= \mattwo{e^B}{e^B}{0}{e^B}.
+\]
+The answer is obtained by noting that 
+\[
+e^B = e\mattwo{\cos 2}{-\sin 2}{\sin 2}{\cos 2}.
+\]
+
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c11.1.7}
@@ -450,6 +701,27 @@ J = \left(\begin{array}{rrrrr}
  0 &  0 &  0 &  0 & 2
 \end{array}\right).
 \]
+
+\begin{solution}
+
+\ans $e^{tJ}= \cmattwo{e^{-t}\left(\begin{array}{rrr} 
+ 1 & t & \frac{1}{2}t^2\\ 0 & 1 & t\\ 0 & 0 & 1\end{array}\right)}{0}{0}
+{e^{2t}\mattwo{1}{t}{0}{1}}$.
+
+\soln Since $J$ is a block form
+\[
+J = \left(\begin{array}{rrr|rr} 
+-1 &  1 &  0 &  0 & 0 \\ 
+ 0 & -1 &  1 &  0 & 0 \\
+ 0 &  0 & -1 &  0 & 0 \\
+\hline
+ 0 &  0 &  0 &  2 & 1 \\
+ 0 &  0 &  0 &  0 & 2
+\end{array}\right)
+\]
+Jordan form matrix, we can exponentiate the diagonal blocks separately.
+
+\end{solution}
 \end{exercise}
 
 \CEXER
@@ -457,6 +729,26 @@ J = \left(\begin{array}{rrrrr}
 \begin{exercise} \label{c11.1.4}
 Use calculus to compute the maximum value of the function $x_1(t)$ 
 defined in \eqref{E:x1examp} and graphed in Figure~\ref{F:Jordan}.
+
+\begin{solution}
+\ans The maximum value of $x_1$ is $3.1383$.
+
+\soln The function whose maximum we want is 
+\[
+x_1(t)  =  e^{-0.5t}(0.5 + 1.5t + t^2)
+\]
+for $t>0$.  Differentiation with respect to $t$ yields 
+\[
+\dot{x}_1(t) = e^{-0.5t}(1.25 + 1.25t - 0.5t^2).
+\]
+Setting $\dot{x}_1(t) = 0$ is equivalent to solving 
+\[
+t^2 - 2.5t - 2.5 = 0.
+\]
+The only positive root is $t=3.2656$.  The corresponding value of $x_1$ is
+$x_1(3.2656) = 3.1383$, which is the maximum value of $x_1$.
+
+\end{solution}
 \end{exercise}
 
 \noindent In Exercises~\ref{c11.1.5A} -- \ref{c11.1.5B} solve the initial 
@@ -470,6 +762,88 @@ A=\left(\begin{array}{rrr}
     11  &  19  &   5\\
    -32  & -51 &  -13 \end{array} \right) \AND X_0=(1,0,-1)^t.
 \end{matlabEquation}
+
+\begin{solution}
+
+\ans $X(t) = e^t\left(\begin{array}{rrr}
+     3  &  -4   &   1\\
+    -6   &  11   &   0\\
+    15   & -32   &   0 \end{array}\right)
+\left(\begin{array}{rrr}
+     1  &  t   &   \frac{1}{2}t^2\\
+    0   &  1   &   t\\
+    0   &  0   &   1 \end{array}\right)
+\left(\begin{array}{r} 0.4074\\ 0.2222\\ 0.6667\end{array}\right)$.
+
+\vspace{0.08in}
+
+\soln  In \Matlabp, load the matrix $A$ and the
+initial vector $X_0$.  Begin by finding the eigenvalues of $A$ by typing {\tt
+eig(A)} and obtaining
+\begin{verbatim}
+ans =
+   1.0000          
+   1.0000 + 0.0000i
+   1.0000 - 0.0000i
+\end{verbatim}
+So $1$ is an eigenvalue of $A$ of multiplicity three.  To find the Jordan
+block structure of $A$ type {\tt null(A-eye(3))} obtaining
+\begin{verbatim}
+ans =
+    0.1826
+   -0.3651
+    0.9129
+\end{verbatim}
+Thus, the Jordan normal form of $A$ is 
+\[
+J = \left(\begin{array}{rrr} 1 & 1 & 0\\ 0 & 1 & 1\\ 0 & 0 & 1 
+\end{array}\right).
+\]
+The solution to the differential equation is:
+\[
+X(t) = e^{tA}X_0 = e^{tSJS\inv}X_0= Se^{tJ}S\inv X_0.
+\]
+where $J=S\inv AS$.  To compute the matrix $S$ we need to choose a vector 
+$v_3$ that is in $\R^3\setmin\nulls(A-I_3)^2$.  The vector $v_3=e_3$ will
+work. Then type the commands
+\begin{verbatim}
+v3 = [1 0 0]';
+v2 = (A-eye(3))*v2;
+v1 = (A-eye(3))*v2;
+S  = [v1 v2 v3]
+\end{verbatim}
+obtaining
+\begin{verbatim}
+S =
+     3    -4     1
+    -6    11     0
+    15   -32     0
+\end{verbatim}
+To check that we have derived the correct matrix type {\tt inv(S)*A*S}
+and obtain
+\begin{verbatim}
+ans =
+    1.0000    1.0000    0.0000
+   -0.0000    1.0000    1.0000
+   -0.0000    0.0000    1.0000
+\end{verbatim}
+It follows that the solution is:
+\[
+X(t) = Se^{tJ}S\inv X_0 = e^t\left(\begin{array}{rrr}
+     3  &  -4   &   1\\
+    -6   &  11   &   0\\
+    15   & -32   &   0 \end{array}\right)
+\left(\begin{array}{rrr}
+     1  &  t   &   \frac{1}{2}t^2\\
+    0   &  1   &   t\\
+    0   &  0   &   1 \end{array}\right)
+\left(\begin{array}{r} 0.4074\\ 0.2222\\ 0.6667\end{array}\right)
+\] 
+where $S\inv X_0$ is calculated by typing {\tt inv(S)*X0}.
+
+
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c11.1.5B}
 \begin{matlabEquation}\label{MATLAB:46}
@@ -479,6 +853,102 @@ A=\left(\begin{array}{rrrr}
    22 &   27 &   20 &   -47 \\
    19 &   27 &   27 &   -39 \end{array} \right) \AND X_0=(1,2,0,3)^t.
 \end{matlabEquation}
+
+\begin{solution}
+
+\ans $X(t) = S
+\cmattwo{e^{-t}\left(\begin{array}{rrr}
+     1  &  t   &   \frac{1}{2}t^2\\
+    0   &  1   &   t\\
+    0   &  0   &   1 \end{array}\right)}{0}{0}{e^{2t}}
+\left(\begin{array}{r} 2.0203\\ -1.4811 \\ 3.8936\\ 66.0000
+\end{array}\right)$ where
+\[
+S = \left(\begin{array}{rrrr}
+   12.3281 & -20.9940 &        0 &  -0.8333\\
+    3.0820 &  24.8011 &  -0.1271 &   0.5000\\
+   -3.0820 &  -9.3911 &   0.8522 &  -0.1667\\
+    6.1640 &   0.2900 &   0.5075 &  -0.1667 \end{array}\right).
+\]
+
+\vspace{0.08in}
+
+\soln  In \Matlabp, load the matrix $A$ and the
+initial vector $X_0$.  Begin by finding the eigenvalues of $A$ by typing 
+{\tt eig(A)} and obtaining
+\begin{verbatim}
+ans =
+   2.0000          
+  -1.0000 + 0.0001i
+  -1.0000 - 0.0001i
+  -1.0001   
+\end{verbatim}
+To verify that $-1$ is an eigenvalue of $A$ of multiplicity three, type
+{\tt null((A+eye(4))\^3)} obtaining the three-dimensional subspace spanned by
+\begin{verbatim}
+ans =
+         0   -0.9423         0
+    0.8581    0.1666   -0.1271
+   -0.1621    0.1666    0.8522
+    0.4872   -0.2379    0.5075
+\end{verbatim}
+To find the Jordan block structure of $A$ type {\tt null(A+eye(4))} obtaining
+\begin{verbatim}
+ans =
+   -0.8528
+   -0.2132
+    0.2132
+   -0.4264
+\end{verbatim}
+Thus, the Jordan normal form of $A$ is 
+\[
+J = \left(\begin{array}{rrrr} 1 & 1 & 0 & 0\\ 0 & 1 & 1 & 0\\ 0 & 0 & 1 & 0\\
+0 & 0 & 0 & 2 \end{array}\right).
+\]
+The solution to the differential equation is:
+\[
+X(t) = e^{tA}X_0 = e^{tSJS\inv}X_0= Se^{tJ}S\inv X_0.
+\]
+where $J=S\inv AS$.  To compute the matrix $S$ we need to choose a vector 
+$v_3$ that is in $\nulls(A+I_4)^3\setmin\nulls(A+I_4)^2$.  The vector 
+$v_3 = (0, -0.1271, 0.8522, 0.5075)^t$ will work. Then type the commands
+\begin{verbatim}
+v2 = (A+eye(4))*v3;
+v1 = (A+eye(4))*v2;
+v4 = null(A-2*eye(4));
+S  = [v1 v2 v3 v4]
+\end{verbatim}
+obtaining
+\begin{verbatim}
+S =
+   12.3281  -20.9940         0   -0.8333
+    3.0820   24.8011   -0.1271    0.5000
+   -3.0820   -9.3911    0.8522   -0.1667
+    6.1640    0.2900    0.5075   -0.1667
+\end{verbatim}
+To check that we have derived the correct matrix type {\tt inv(S)*A*S}
+and obtain
+\begin{verbatim}
+ans =
+   -1.0000    1.0000    0.0000   -0.0000
+    0.0000   -1.0000    1.0000    0.0000
+   -0.0000   -0.0000   -1.0000    0.0000
+   -0.0000   -0.0000    0.0000    2.0000
+\end{verbatim}
+It follows that the solution is:
+\begin{eqnarray*}
+X(t) & = & Se^{tJ}S\inv X_0 \\ & = & 
+S\cmattwo{e^{-t}\left(\begin{array}{rrr}
+     1  &  t   &   \frac{1}{2}t^2\\
+    0   &  1   &   t\\
+    0   &  0   &   1 \end{array}\right)}{0}{0}{e^{2t}}
+\left(\begin{array}{r} 2.0203\\ -1.4811 \\ 3.8936\\ 66.0000 \end{array}\right)
+\end{eqnarray*}
+where $S$ has been defined previously and $S\inv X_0$ is calculated by typing 
+{\tt inv(S)*X0}.
+
+
+\end{solution}
 \end{exercise}
 
 In Exercises~\ref{c11.1.6A} -- \ref{c11.1.6B}, components of solutions to 
@@ -497,6 +967,37 @@ A=\left(\begin{array}{rrrr}
   -26 & -47 & -112 & -148 \\
    18 &  24 &   89 &  124 \end{array} \right).
 \end{matlabEquation}
+
+\begin{solution}
+\ans Solutions are linear combinations of the functions 
+$e^{5t}$ and $t^je^t$ for $j=0,1,2$.
+
+\soln In \Matlabp, load the matrix $A$.  Begin by 
+finding the eigenvalues of $A$ by typing {\tt eig(A)} and obtaining
+\begin{verbatim}
+ans =
+   5.0000          
+   0.9999          
+   1.0000 + 0.0001i
+   1.0000 - 0.0001i
+\end{verbatim}
+Because of numerical errors there may be some confusion.  The eigenvalues of
+$A$ are $1$ with multiplicity three and $5$ with multiplicity one.  Next,
+find the Jordan block structure corresponding to the eigenvalue $1$ by typing
+{\tt null(A-eye(4))} and obtaining
+\begin{verbatim}
+ans =
+   -0.9733
+    0.2141
+    0.0584
+    0.0584
+\end{verbatim}
+Therefore, there is one Jordan block associated to the eigenvalue $1$.  The
+solutions to the associated linear differential equation are linear
+combinations of the functions $e^{5t}$, $e^t$, $te^t$, and $t^2e^t$.
+
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c11.1.6B}
 \begin{matlabEquation}\label{MATLAB:48}
@@ -508,6 +1009,56 @@ A=\left(\begin{array}{rrrrrr}
    -8 & -10 &   4 &  -3 &   1 &  16 \\
    -4 &  -8 &   2 &  -9 &  -2 &  10  \end{array} \right).
 \end{matlabEquation}
+
+\begin{solution}
+\ans Solutions are linear combinations of the functions 
+$t^je^{2t}$, $t^je^{2t}\cos t$, and $t^je^{2t}\sin t$ where $j=0,1$.
+
+\soln In \Matlabp, load the matrix $A$.  Begin by 
+finding the eigenvalues of $A$ by typing {\tt eig(A)} and obtaining
+\begin{verbatim}
+ans =
+   2.0000 + 1.0000i
+   2.0000 - 1.0000i
+   2.0000 + 1.0000i
+   2.0000 - 1.0000i
+   2.0000 + 0.0000i
+   2.0000 - 0.0000i
+\end{verbatim}
+The eigenvalues of $A$ are $2$, $2+i$, and $2-i$, each with multiplicity two.
+Find the Jordan block structure corresponding to the eigenvalue $2$ by typing
+{\tt null(A-2*eye(6))} and obtaining
+\begin{verbatim}
+ans =
+   -0.5657
+    0.5657
+   -0.4243
+   -0.2828
+    0.2828
+    0.1414
+\end{verbatim}
+So there is one Jordan block associated to the eigenvalue $2$.  Next, 
+find the Jordan block structure corresponding to the eigenvalues $2\pm i$ by 
+typing {\tt null(A-(2+i)*eye(6))} and obtaining
+\begin{verbatim}
+ans =
+  -0.6415          
+   0.6169 - 0.0228i
+  -0.2847 + 0.0105i
+  -0.2847 + 0.0105i
+   0.1898 - 0.0070i
+   0.0949 - 0.0035i
+\end{verbatim}
+Again there is one Jordan block associated to the mutiple eigenvalues 
+$2\pm i$.  It follows that solutions to the associated linear differential 
+equation are linear combinations of the functions $e^{2t}$, $te^{2t}$, 
+$e^{2t}\cos t$, $e^{2t}\sin t$, $te^{2t}\cos t$, and $te^{2t}\sin t$.
+
+
+
+
+
+\end{solution}
 \end{exercise}
 
 

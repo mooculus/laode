@@ -243,6 +243,18 @@ and
 z_1 = (2,3) \AND z_2 = (3,4)
 \]
 be two bases of $\R^2$.  Find $C_{WZ}$.
+
+\begin{solution}
+
+\ans
+\[ C_{\cal WZ} = \mattwo{2}{3}{-1}{-2}. \]
+
+\soln Substitute into Equation~\eqref{e:coordformn} as follows:
+\[ C_{\cal WZ} = (w_1^t|w_2^t)^{-1}(z_1^t|z_2^t) =
+\mattwo{1}{0}{2}{1}^{-1}\mattwo{2}{3}{3}{4} =
+\mattwo{2}{3}{-1}{-2}. \]
+
+\end{solution}
 \end{exercise}
 
 
@@ -252,11 +264,38 @@ Let $f_1(t)=\cos t$ and $f_2(t)=\sin t$ be functions in $\CCone$.
 Let $V$ be the two dimensional subspace spanned by $f_1,f_2$; so
 ${\cal F}=\{f_1,f_2\}$ is a basis for $V$.  Let $L:V\to V$ be the
 linear mapping defined by $L(f)=\frac{df}{dt}$.  Find $[L]_{\cal F}$.
+
+\begin{solution}
+
+\ans \[ [L]_{\cal F} = \mattwo{0}{1}{-1}{0}. \]
+
+\soln By Definition~\ref{D:matrixincoord}, the $j^{th}$
+column of $[L]_{\cal F}$ is $[L(f_j)]_{\cal F}$.  In this case,
+\[
+L(f_1) = \frac{d}{dt}(\cos t) = -\sin t \AND
+L(f_2) = \frac{d}{dt}(\sin t) = \cos t.
+\]
+The basis $\{f_1,f_2\}$ is $\{\cos t,\sin t\}$.  In this basis,
+$-\sin t$ has coordinates $(0,-1)$, and $\cos t$ has coordinates
+$(1,0)$.  Therefore, the $1^{st}$ column of $[L]_{\cal F}$ is
+$(0,-1)$ and the $2^{nd}$ column is $(1,0)$.
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c7.3.3}
 Let $L:V\to W$ and $M:W\to V$ be linear mappings, and assume $\dim V > \dim W$.
 Show that $M\compose L:V\to V$ is not invertible.
+
+\begin{solution}
+
+If there exists a nonzero vector $v$ such that $M\circ L(v) = 0$,
+then the nullity of $M \circ L$ is nonzero, so $M \circ L$ is not
+invertible.  If $L(v) = 0$, then $M \circ L(v) = 0$.  We know that
+$\rm{nullity}(L) = \dim V - \dim W > 0$.  Therefore, $M\circ L(v)$
+is not invertible
+
+\end{solution}
 \end{exercise}
 
 \CEXER
@@ -272,6 +311,23 @@ z_1 = (-1.4,0.3) \AND z_2 = (0.1,-0.2)
 \]
 be two bases of $\R^2$ and let $v=(0.6,0.1)$.  Find $[v]_{\cal
 W}$, $[v]_{\cal Z}$, and $C_{\cal WZ}$.
+
+\begin{solution}
+
+\ans \Matlab gives the values for $[v]_{\cal W}$, $[v]_{\cal Z}$, and
+$C_{\cal WZ}$ as:
+\begin{verbatim}
+vW =               vZ =                   CWZ =
+    1.7137            -0.5200                -3.6480   0.1431
+    1.2108            -1.2800                -3.2998   0.3946
+\end{verbatim}
+
+\soln In \Matlabp, find $[v]_{\cal W}$ by row reducing
+the matrix $(w_1^t|w_2^t | v^t)$.  Row reduce 
+$(z_1^t|z_2^t | v^t)$ to solve for $[v]_{\cal Z}$.  To find
+$C_{\cal WZ}$, compute $(w_1^t|w_2^t)^{-1}(z_1^t|z_2^t)$.
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise}  \label{c7.5.A}
@@ -302,6 +358,35 @@ in (a).  Compute $[L_A]_{\cal W}$.
 vectors in $\R^3$.  For example, consider how this matrix moves the standard 
 basis vectors $e_1,e_2,e_3$.  Compare this answer with that in part (a).
 \end{itemize}
+
+\begin{solution}
+
+(a) \ans The matrix $A$ fixes $w_1$, moves $w_2$ to $w_3$, and moves
+$w_3$ to $-w_2$.
+
+\soln Load the matrix and vectors into \Matlabp.  Then compute $Aw_j$ for
+each vector $w_j$, obtaining $Aw_1 = w_1$, $Aw_2 = w_3$, and $Aw_3 = -w_2$.
+
+(b) \ans $[L_A]_{\cal W} = \matthree{1}{0}{0}{0}{0}{-1}{0}{1}{0}$.
+
+\soln From Section~\ref{S:coordinates}, we know that
+\[
+[L_A]_{\cal W} = P^{-1}AP,
+\]
+where $P = (w_1|w_2|w_3)$.  Enter {\tt P} into \Matlab and compute this
+matrix.
+
+(c) \ans The matrix $[L_A]_{\cal W}$ fixes $e_1$, moves $e_2$ to
+$e_3$, and moves $e_3$ to $-e_2$.
+
+\soln Compute $[L_A]_{\cal W}e_1 = e_1$, $[L_A]_{\cal W}e_2 = e_3$, and
+$[L_A]_{\cal W}e_3 = -e_2$.  This result is consistent with part (a),
+since $[L_A]_{\cal W}$ maps the standard basis vectors to one another
+in the same way that $A$ maps the basis vectors of ${\cal W}$ to one
+another.
+
+
+\end{solution}
 \end{exercise}
 
 \end{document}

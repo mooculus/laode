@@ -337,6 +337,11 @@ to the given system of linear equations.
 \begin{prompt}
   Then $(x,y) = (\answer{2},\answer{4})$.
 \end{prompt}
+
+\begin{solution}
+$(x,y) = (2,4)$.
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c2.1.8b}
 \[
@@ -348,6 +353,11 @@ to the given system of linear equations.
 \begin{prompt}
   Then  $(x,y,z) = (\answer{-\frac{2}{3}}, \answer{-1}, \answer{3})$.
 \end{prompt}
+
+\begin{solution}
+$(x,y,z) = (-\frac{2}{3}, -1, 3)$.
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c2.1.8c}
 \[
@@ -358,6 +368,11 @@ to the given system of linear equations.
 \begin{prompt}
   Then $(x,y) = (\answer{-4},\answer{1})$.
 \end{prompt}
+
+\begin{solution}
+$(x,y) = (-4,1)$.
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c2.1.8A}
@@ -378,6 +393,16 @@ given in Exercises~\ref{c2.1.8a} -- \ref{c2.1.8c}.
   \]
 \end{prompt}
 
+
+\begin{solution}
+The matrices for the three systems are,
+\[
+\mattwo{2}{-1}{3}{0}, \quad
+\matthree{3}{-4}{0}{0}{2}{1}{0}{0}{3}, \AND
+\mattwo{-2}{1}{3}{3}.
+\]
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c2.1.9}
@@ -441,6 +466,35 @@ second and third equations become
 These two expressions contradict each other, so there is no solution
 for this system.  
 \end{hint}
+
+\begin{solution}
+
+\ans The system in part (a) has an infinite number of solutions, whereas
+the system in part (b) has no solution.
+
+\soln (a) Replace $x$ in the second and third equations with
+$4 + y$ to obtain $4y - 2z = -10$ and $6y - 3z = -15$.  Since these
+equations have identical solutions, the system can be restated as
+\[
+\begin{array}{rrrrrrr}
+x & = & y & + & 4 \\ 
+z & = & -2y & + & 5\end{array}
+\]
+So, for each choice of $y$, there exists a single solution.  For
+example, if $y = 1$, then $x = 5$ and $z = 3$; or if $y = 0$, then
+$x = 4$ and $z = 5$.
+
+(b) If we again substitute for $x$ using the first equation, the
+second and third equations become
+\[
+2y - 3z = -2 \AND 2y - 3z = -4
+\]
+
+These two expressions contradict each other, so there is no solution
+for this system.
+
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c2.1.10}
@@ -455,6 +509,13 @@ old are Dick and Jane?
   as linear equations in $D$ --- Dick's age now --- and $J$ ---
   Jane's age now.  Then solve the system of linear equations.
 \end{hint}
+
+\begin{solution}
+
+Dick is 17 and Jane is 9.
+
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c2.1.11}
@@ -511,6 +572,50 @@ solving this system of linear equations for $a$, $b$, and $c$ in
 terms of $A_1$, $A_2$, and $A_3$.
 \end{hint}
 \end{itemize}
+
+\begin{solution}
+
+(a) \ans The quadratic $p(x) = -x^2 + 5x + 1$ satisfies these conditions.
+
+\soln Since $p(x) = ax^2 + bx + c$ for any quadratic equation, we find
+this solution by evaluating $p(0) = 1$, $p(1) = 5$, and $p(-1) = -5$,
+which yields the system of equations
+\[
+\begin{array}{lrrrrrrrr}
+p(0) & = & & & & & c & = & 1 \\
+p(1) & = & a & + & b & + & c & = & 5 \\
+p(-1) & = & a & - & b & + & c & = & -5\end{array}
+\]
+We solve this system to obtain $(a,b,c) = (-1,5,1)$, then substitute
+these coefficients into the general quadratic.
+
+(b) Let $p(x) = ax^2 + bx + c$ be a quadratic equation.  Then, the
+assumptions $p(0) = L$, $p(1) = M$, and $p(-1) = N$ imply:
+\[
+\begin{array}{lrrrrrrrr}
+p(0) & = & & & & & c & = & L \\
+p(1) & = & a & + & b & + & c & = & M \\
+p(-1) & = & a & - & b & + & c & = & N\end{array}
+\]
+The unique solution to this system is $(a,b,c) =
+(\frac{M + N - 2L}{2},\frac{M - N}{2},L)$.
+
+(c) Substituting $q(x_i) = A_i$, for $i = 1,2,3$, into the standard
+quadratic equation $q(x) = ax^2 + bx + c$ yields
+\[
+\begin{array}{ccccccc}
+ax_1^2 & + & bx_1 & + & c & = & A_1 \\
+ax_2^2 & + & bx_2 & + & c & = & A_2 \\
+ax_3^2 & + & bx_3 & + & c & = & A_3\end{array}
+\]
+Finding the appropriate quadratic polynomial would be equivalent to
+solving this system of linear equations for $a$, $b$, and $c$ in
+terms of $A_1$, $A_2$, and $A_3$.
+
+
+
+
+\end{solution}
 \end{exercise}
 
 \CEXER
@@ -544,6 +649,21 @@ b = \left(
 \right)
 \end{matlabEquation}
 Solve the corresponding system of linear equations.
+
+\begin{solution}
+
+Type {\tt A}$\backslash${\tt b}, to get
+\begin{verbatim}
+ans =
+    0.7060
+    2.4963
+   -2.9778
+   -1.7627
+   -0.1163
+    0.2654
+\end{verbatim}
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c2.1.2}
@@ -557,12 +677,34 @@ A =
 \end{verbatim}
 Now change the entry in the $2^{nd}$ row, $1^{st}$ column to
 $-5$.
+
+\begin{solution}
+Type {\tt A(2,1) = -5}.  \Matlab responds with
+\begin{verbatim}
+A =
+    -1     1     2
+    -5     1     2
+\end{verbatim}
+
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c2.1.3}
 Column vectors with $n$ entries are viewed by \Matlab as
 $n\times 1$ matrices.  Enter the vector {\tt b = [1; 2; -4]}.
 Then change the $3^{rd}$ entry in {\tt b} to $13$.
+
+\begin{solution}
+Type {\tt b(3) = 13} to obtain
+\begin{verbatim}
+b =
+     1
+     2
+    13
+\end{verbatim}
+
+\end{solution}
 \end{exercise}
 
 
@@ -586,6 +728,25 @@ type {\tt format long} \index{\computer!format!long} and redisplay the
 answer.  Similarly, to print your result as fractions type {\tt
 format rational} \index{\computer!format!rational} and redisplay your
 answer.
+
+\begin{solution}
+\ans According to \Matlabp,
+\begin{verbatim}
+ans =
+  -12.0495
+   -0.8889
+    7.8384
+\end{verbatim}
+\soln Write the system as $Ax = b$, where:
+\begin{verbatim}
+A =                                             b = 
+    2.0000   -4.5000    3.1000                     4.2000
+    1.0000    1.0000    1.0000                    -5.1000
+    1.0000   -6.2000    1.0000                     1.3000
+\end{verbatim}
+then type {\tt A}$\backslash${\tt b} to solve.
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c2.1.5}
@@ -612,6 +773,12 @@ x = A\b
 \end{verbatim}
 is not defined.  {\bf Hint:} The answer is an integer between
 $-4$ and $4$.
+
+\begin{solution}
+
+{\tt A}$\backslash${\tt b} is not defined when $A(2,2) = -1$.
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c2.1.6}
@@ -622,6 +789,11 @@ rand(5,5)} generates a random $5\times 5$ matrix, whereas the
 command {\tt b = rand(5,1)} generates a column vector with $5$
 random entries.  Use these commands to construct several systems
 of linear equations and then solve them.
+
+\begin{solution}
+Computer experiment.
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c2.1.7}
@@ -648,6 +820,52 @@ contained in the mixture?
 
 Discuss what happens if we require that the resulting mixture contains
 $2.00$ grams of vitamin B instead of $2.30$ grams.
+
+\begin{solution}
+\ans The vector of solutions is:
+\begin{verbatim}
+ans =
+    7.3828
+    4.1016
+    4.5313
+   10.6250
+\end{verbatim}
+\soln First, translate the data in the table to a system of linear
+equations, relating the quantities of $S_1$, $S_2$, $S_3$, and $S_4$
+in the mixture to the quantities of vitamins $A$, $B$, $C$, and $F$. 
+The first equation is $.25S_1 + .19S_2 + .20S_3 + .03S_4 = A$, and
+the other three equations correspond to the other vitamins.  From
+this data, find the coefficient matrix $A$ for the system.  The desired
+quantities of each vitamin form the solution vector $b$.
+\begin{verbatim}
+A =                                             b =
+    0.2500    0.1900    0.2000    0.0300           3.8500
+    0.0200    0.1400    0.0200    0.1400           2.3000
+    0.0800    0.0400    0.0100         0           0.8000
+    0.2500    0.3100    0.2500    0.1600           5.9500
+\end{verbatim}
+As in the previous problems, the system can be solved by
+typing {\tt A}$\backslash${\tt b}.
+
+\para If $b(2) = 2.00$ instead of $2.30$, then
+{\tt A}$\backslash${\tt b} yields
+
+\begin{verbatim}
+ans =
+   22.4023
+  -27.8320
+   12.1094
+   37.1875
+\end{verbatim}
+Note that the components of the answer vector refer to weights of
+substances, which cannot be negative.  This answer contains a negative
+component; so although a mathematically valid solution exists, we
+cannot mix the substances in such a way that
+
+$b = \left(\begin{array}{r} 3.85 \\ 2.00 \\ 0.80 \\ 5.95\end{array} \right)$.
+
+
+\end{solution}
 \end{exercise}
 
 

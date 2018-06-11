@@ -359,30 +359,84 @@ works in a similar fashion.
 Suppose that the matrices $A$ and $B$ are similar and the matrices
 $B$ and $C$ are similar.  Show that $A$ and $C$ are also similar
 matrices.
+
+\begin{solution}
+
+Since $A$ and $B$ are similar and $B$ and $C$ are similar,
+$A = P^{-1}BP$ for some matrix $P$, and $B = Q^{-1}BQ$
+for some matrix $Q$.  Therefore,
+\[ A = P^{-1}BP = P^{-1}Q^{-1}CQP. \]
+By Proposition~\ref{P:invprod}, $(QP)^{-1} = P^{-1}Q^{-1}$, so
+\[ A = (QP)^{-1}C(QP) \]
+thus, $A$ and $C$ are similar.
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c6.5.2}
 Use \eqref{e:trAB=trBA} in Chapter~\ref{chap:matrices} to verify that the
 traces of similar matrices are equal.
+
+\begin{solution}
+
+Let $A$ and $B$ be similar matrices such that $A = P^{-1}BP$ for some
+matrix $P$.  Then, using \eqref{e:trAB=trBA},
+\[ \trace(A) = \trace(P^{-1}BP) = \trace(BP^{-1}P) = \trace(B). \]
+
+\end{solution}
 \end{exercise}
 
 \noindent In Exercises~\ref{c6.5.3a} -- \ref{c6.5.3b} determine whether
 or not the given matrices are similar, and why.
 \begin{exercise} \label{c6.5.3a}
 $A = \mattwo{1}{2}{3}{4} \AND B = \mattwo{2}{-2}{-3}{8}$.
+
+\begin{solution}
+
+\ans Matrices $A$ and $B$ are not similar.
+
+\soln When two matrices are similar, the traces are equal.  In this case,
+$\trace(A) = 5$ and $\trace(B) = 10$, so the matrices are not similar.
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c6.5.3b}
 $C = \mattwo{2}{2}{2}{2} \AND D = \mattwo{4}{-2}{-2}{4}$.
+
+\begin{solution}
+
+\ans Matrices $C$ and $D$ are not similar.
+
+\soln The traces of the matrices are unequal; $\trace(C) = 4$ and
+$\trace(D) = 8$.
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c6.5.4}
 Let $B=P\inv AP$ so that $A$ and $B$ are similar matrices.  Suppose
 that $v$ is an eigenvector of $B$ with eigenvalue $\lambda$.  Show
 that $Pv$ is an eigenvector of $A$ with eigenvalue $\lambda$.
+
+\begin{solution}
+
+Since, $A$ and $B$ are similar matrices, if $Bv = \lambda v$, then
+\[ A(Pv) = PP^{-1}APv = PBv = \lambda (Pv). \]
+Thus, $Pv$ is an eigenvector of $A$ with eigenvalue $\lambda$.
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c6.5.5}
 Which $n\times n$ matrices are similar to $I_n$?
+
+\begin{solution}
+
+\ans $I_n$ is similar only to itself.
+
+\soln If $A$ is similar to $I_n$, then $A = P^{-1}I_nP = P^{-1}P = I_n$.
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c6.5.6}
@@ -391,6 +445,45 @@ Compute $e^A$ where
 A = \mattwo{3}{-1}{1}{1}.
 \]
 Check your answer using \Matlabp.
+
+\begin{solution}
+
+\ans $\dps e^A = e^2\mattwo{2}{-1}{1}{0}$.
+
+\soln We cannot compute $e^A$ directly by hand.  By Lemma~\ref{L:similarexp},
+if $B = P^{-1}AP$, then $e^B = P^{-1}e^AP$.  Therefore, we solve by
+finding a matrix similar to $A$ whose exponential can be computed.  
+We first find the eigenvalues of $A$ and associated eigenvectors.
+If $\lambda$ is an eigenvalue of $A$, then $\det(A - \lambda I_2) =
+0$, or, since $A$ is a $2 \times 2$ matrix,
+\[ 0 = \lambda^2 - \trace(A)\lambda + det(A) = \lambda^2 - 4\lambda +
+4 = (\lambda - 2)^2. \]
+Thus, $A$ has one eigenvalue, $\lambda = 2$.  To find the associated
+eigenvector, solve $(A - \lambda I_2)v = 0$ by row reduction:
+\[ A - 2I_2 = \mattwo{1}{-1}{1}{-1} \longrightarrow
+\mattwo{1}{-1}{0}{0}. \]
+So, $v = (1,1)$ is an eigenvector of $A$ associated to $\lambda$.
+By Theorem~\ref{T:putinform}, since $A$
+has one real eigenvector, 
+\[ B = \mattwo{\lambda}{1}{0}{\lambda} = \mattwo{2}{1}{0}{2} \]
+is a matrix similar to $A$.  We can then compute $P = (v|w)$, where
+$Aw = v + \lambda w$, that is, $(A - \lambda I_2)w = v$.  We can solve
+by row reducing the augmented matrix $(A - \lambda I_2|v)$:
+\[ \left(\begin{array}{rr|r} 1 & -1 & 1 \\ 1 & -1 & 1 \end{array}
+\right) \longrightarrow \left(\begin{array}{rr|r} 1 & -1 & 1 \\
+0 & 0 & 0 \end{array}\right). \]
+Thus, $w = (2,1)$, so
+\[ P = \mattwo{1}{2}{1}{1} \]
+and $A$ and $B$ are similar.
+We now compute $e^A = Pe^BP^{-1}$.  Using \eqref{e:expshear},
+\[ e^B = e^2\mattwo{1}{1}{0}{1}. \]
+So we calculate 
+\[ e^A = Pe^BP^{-1} = \mattwo{1}{2}{1}{1}e^2\mattwo{1}{1}{0}{1}
+\mattwo{-1}{2}{1}{-1} = e^2\mattwo{2}{-1}{1}{0}. \]
+
+
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c6.3.1}
@@ -402,6 +495,31 @@ Solve the initial value problem
 \end{array}
 \]
 where $x(0) = 1  \AND  y(0) = -2$.
+
+\begin{solution}
+
+\ans The solution to the initial value problem $(x(0),y(0) = (1,-2)$ for
+this system is:
+\[
+\vectwo{x(t)}{y(t)} = \vectwo{e^{2t}(\cos(3t) - 2\sin(3t))}
+{-e^{2t}(\sin(3t) + 2\cos(2t))}.
+\]
+
+\soln Let $\sigma = 2$ and $\tau = -3$.  Then,
+\[
+\begin{array}{rrr}
+\dot{x} & = & \sigma x - \tau y \\
+\dot{y} & = & \tau x + \sigma y \end{array}
+\]
+so, according to Table~\ref{T:3sys}
+\[
+\vectwo{x(t)}{y(t)} = \vectwo{e^{\sigma t}(x_0\cos(\tau t) -
+y_0\sin(\tau t))}{e^{\sigma t}(x_0\sin(\tau t) +
+y_0\cos(\tau t))} = \vectwo{e^{2t}(x_0\cos(-3t) - y_0\sin(-3t))}
+{e^{2t}(x_0\sin(-3t) + y_0\cos(2t))}.
+\]
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c6.3.2}
@@ -413,6 +531,28 @@ Solve the initial value problem
 \end{array}
 \]
 where $x(0) = 4  \AND y(0) = -1$.
+
+\begin{solution}
+
+\ans The solution for the initial value problem $x(0) = 4$ and
+$y(0) = -1$ for this system is:
+\[
+\vectwo{x(t)}{y(t)} = \cvectwo{e^{-2t}(4 - t)}{-e^{-2t}}.
+\]
+
+\soln Let $\lambda = -2$.  Then, by Table~\ref{T:3sys}
+\[
+\begin{array}{rrr}
+\dot{x} & = & \lambda x + y \\
+\dot{y} & = & \lambda y \end{array}
+\]
+so, 
+\[
+\vectwo{x(t)}{y(t)} = \cvectwo{e^{\lambda t}(x_0 + y_0t)}{e^{\lambda t}y_0}
+= \cvectwo{e^{-2t}(x_0 + y_0t)}{e^{-2t}y_0}.
+\]
+
+\end{solution}
 \end{exercise}
 
 \CEXER
@@ -429,6 +569,46 @@ is the system of differential equations of type (a), (b) or (c)?
 systems and suppose that $y(t)$ oscillates up and down infinitely often.
 Then $(x(t),y(t))$ is a solution for which type of system?
 \end{itemize}
+
+\begin{solution}
+
+Figure~\ref{c6.3.3}a shows the graph of the system
+\[ \begin{array}{rrr}
+\dot{x} & = & \lambda x \\ 
+\dot{y} & = & \mu y \end{array} \]
+where $\lambda = 2$ and $\mu = -3$.
+
+\para Figure~\ref{c6.3.3}b shows the graph of the system
+\[ \begin{array}{rrr}
+\dot{x} & = & \sigma x - \tau y \\
+\dot{y} & = & \tau x + \sigma y \end{array} \]
+where $\sigma = 2$ and $\tau = 3$.
+
+\para Figure~\ref{c6.3.3}c shows the graph of the system
+\[ \begin{array}{rrr}
+\dot{x} & = & \lambda x + y \\
+\dot{y} & = & \lambda y \end{array} \]
+where $\lambda = 2$.
+
+(a) The system is of type (b) if a solution spirals about the origin.
+
+(b) Equations of type (c) have one eigendirection.
+
+(c) If $y(t)$ oscillates up and down infinitely often, then
+$(x(t),y(t))$ is a solution to a system of type (b).
+
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/6-3-3a.eps,width=1.8in}
+                       \psfig{file=exfigure/6-3-3b.eps,width=1.8in}
+                       \psfig{file=exfigure/6-3-3c.eps,width=1.8in}}
+                \exercapthree{c6.3.3}
+\end{figure}
+
+
+
+\end{solution}
 \end{exercise}
 
 

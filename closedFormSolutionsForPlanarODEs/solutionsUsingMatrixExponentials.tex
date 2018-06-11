@@ -291,6 +291,24 @@ exactly, use the \Matlab command {\tt expm} to compute $e^L$ and
 use \Matlab commands to compute the series expansion to order $m$.  Note
 that the command for computing $n!$ in \Matlab is
 {\tt prod(1:n)}\index{\computer!prod}.
+
+\begin{solution}
+
+\ans When $m = 7$, the power series is accurate up to two decimal places.
+
+\soln Enter {\tt L} into \Matlab, then use the command {\tt expm(L)} to
+find the value of $e^L$.
+\begin{verbatim}
+ans = 
+    4.8746         0   -3.9421
+    3.1370    0.3679    2.4154
+    3.9421         0    0.9324
+\end{verbatim}
+Then, add elements of the power series to $I_3$ until this answer is
+is equal to the \Matlab generated answer up to a precision of two
+digits.
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c6.2.2}
@@ -300,6 +318,19 @@ Use \Matlab to compute the matrix exponential $e^{tC}$ for
 \]
 by choosing for $t$ the values $1.0,1.5$ and $2.5$.  Does $e^{C}
 e^{1.5C}=e^{2.5C}$?
+
+\begin{solution}
+
+Enter {\tt C} into \Matlab, then use {\tt expm} to obtain
+\begin{verbatim}
+expm(C) =                 expm(1.5*C) =              expm(2.5*C) =
+    4.4952    1.5806          10.6138    3.8577          59.9058   21.9222
+    3.1612    1.3340           7.7154    2.8984          43.8444   16.0613
+\end{verbatim}
+Typing {\tt expm(C)*expm(1.5*C)} confirms that $e^Ce^{1.5C} =
+e^{2.5C}$ is indeed valid.
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c6.2.3}
@@ -313,6 +344,19 @@ Use \Matlab to find two $2\times 2$ matrices $C_1$ and $C_2$ such that
 \[
      e^{C_1+C_2} \not= e^{C_1}e^{C_2}.
 \]
+
+\begin{solution}
+
+One example of matrices for which $e^{C_1 + C_2} \neq e^{C_1}e^{C_2}$ is
+\[ C_1 = \mattwo{1}{-2}{3}{1} \AND C_2 = \mattwo{-2}{3}{-1}{-2}. \]
+For this case, using \Matlabp,
+\begin{verbatim}
+expm(C1+C2) =                        expm(C1)*expm(C2) =
+    0.8013    0.5034                     0.1547   -0.4534
+    1.0067    0.8013                     0.1152    0.5370
+\end{verbatim}
+
+\end{solution}
 \end{exercise}
 
 \TEXER
@@ -321,15 +365,59 @@ Use \Matlab to find two $2\times 2$ matrices $C_1$ and $C_2$ such that
 exponential $e^{tC}$ for the matrix.
 \begin{exercise} \label{c6.2.4a}
                 $\mattwo{0}{1}{0}{0}$.
+
+\begin{solution}
+\ans $e^{tC} = \mattwo{1}{t}{0}{1}$.
+
+\soln In general,
+\[
+e^{tC} = I + tC + \frac{t^2}{2!}C^2 + \frac{t^3}{3!}C^3 + \cdots
+\]
+Note that $C^2 = 0$, so $C^k = 0$, for $k \geq 2$, so we need only
+calculate the first two terms:
+\[
+e^{tC} = I_2 + tC = \mattwo{1}{0}{0}{1} + t\mattwo{0}{1}{0}{0} =
+\mattwo{1}{t}{0}{1}.
+\]
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c6.2.4b}
                 $\left(\begin{array}{ccc}
                 0 & 1 & 0\\
                 0 & 0 & 1\\
                 0 & 0 & 0 \end{array}\right)$.
+
+\begin{solution}
+\ans $e^{tC} =
+\cmatthree{1}{t}{\frac{t^2}{2}}{0}{1}{t}{0}{0}{1}$.
+
+\soln Since $D^3 = 0$,
+\[
+e^{tD} = I_3 + tD + \frac{t^2}{2}D^2 =
+\matthree{1}{0}{0}{0}{1}{0}{0}{0}{1} +
+\matthree{0}{t}{0}{0}{0}{t}{0}{0}{0} +
+\cmatthree{0}{0}{\frac{t^2}{2}}{0}{0}{0}{0}{0}{0} =
+\cmatthree{1}{t}{\frac{t^2}{2}}{0}{1}{t}{0}{0}{1}.
+\]
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c6.2.4c}
                 $\mattwo{0}{-2}{2}{0}$.
+
+\begin{solution}
+\ans $e^{tC} =
+\mattwo{\cos 2t}{-\sin 2t}{\sin 2t}{\cos 2t}$.
+
+\soln 
+First, write $C$ as
+\[
+\mattwo{0}{-2}{2}{0} = 2E, \hbox{ where } E = \mattwo{0}{-1}{1}{0}.
+\]
+Then find $e^{2tE}$ by equation~\eqref{e:exprotate}.
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c6.2.5}
@@ -339,6 +427,14 @@ properties of the scalar exponential function to show that
 \[
      e^{(\alpha + \beta)I} = e^{\alpha I}e^{\beta I}.
 \]
+
+\begin{solution}
+
+By equation~\eqref{ex:expm}, $e^{\alpha I} = e^\alpha I$.  Therefore,
+\[ e^{(\alpha + \beta)I} = e^{\alpha + \beta}I = e^\alpha e^\beta I
+= e^\alpha I e^\beta I = e^{\alpha I}e^{\beta I}. \]
+
+\end{solution}
 \end{exercise}
 
 \noindent In Exercises~\ref{c6.2.5A} -- \ref{c6.2.5C} we use
@@ -364,6 +460,51 @@ x(0) & = & e^s
 \item[(c)]  Use Theorem~\ref{T:linODEsoln} to conclude that $y(t)=z(t)$ for
 every $s$.
 \end{itemize}
+
+\begin{solution}
+
+(a) To verify that $y(t) = e^{t + s}$ is a solution to the initial value
+problem, first substitute $y(t)$ into the left hand side of the equation.
+Using the chain rule, obtain
+\[
+\frac{dy}{dt}(t) = \frac{d}{dt}(e^{t + s}) = \frac{d}{dt}(t + s)e^{t + s}
+= e^{t + s}.
+\]
+Then substitute $y(t)$ into the right hand side of the equation, obtaining
+\[
+y(t) = e^{t + s}.
+\]
+Thus, the left hand and right hand sides are equal, so $y(t)$ is a
+solution to the differential equation.  Finally, check to see that
+$y(t)$ satisfies the initial value:
+\[
+y(0) = e^{0 + s} = e^s
+\]
+as desired.
+
+(b) Similarly, verify that $z(t) = e^te^s$ is a solution to the initial
+value problem by substituting $z(t)$ into each side of the differential
+equation:
+\[
+\frac{dz}{dt}(t) = \frac{d}{dt}(e^te^s) = e^te^s \AND
+z(t) = e^te^s.
+\]
+Note that the results are equal, so that $z(t)$ is a solution to the
+differential equation.  Since
+\[
+z(0) = e^0e^s = e^s,
+\]
+it follows that $z(t)$ is also a solution to the initial value problem.
+
+(c) By Theorem~\ref{exist&unique}, if
+$f(x)$ is differentiable near $x_0$, and if $\frac{df}{dx}$ is continuous,
+then there is a unique solution to the differential equation $\dot{x} = f(x)$
+with initial condition $x(0) = x_0$.  Let $f(x) = x$ and let $x(0) = e^s$.
+Then, as shown in (a) and (b) of this problem, $e^{t + s}$ and $e^te^s$ are
+both solutions.  However, by Theorem~\ref{exist&unique}, there is only one
+solution, so $e^{t + s} = e^te^s$.
+
+\end{solution}
 \end{exercise}
 \begin{exercise}  \label{c6.2.5B}
 Let $A$ be an $n\times n$ matrix.  Prove that
@@ -387,6 +528,56 @@ conclude that $Y(t)=Z(t)$ for every $s$ and every $X_0$.
 \end{itemize}
 {\bf Remark:}  Compare the result in this exercise with the calculation in
 Exercise~\ref{c6.2.5}.
+
+\begin{solution}
+
+(a) To verify that $Y(t)$ is a solution to the initial value problem
+\eqref{E:init2}, first substitute $Y(t)$ into the left hand side of the
+equation.  Using the chain rule, obtain
+\[
+\frac{dY}{dt}(t) = \frac{d}{dt}(e^{(t + s)A}X_0) =
+\frac{d}{dt}((t + s)A)e^{(t + s)A}X_0 = Ae^{(t + s)A}X_0.
+\]
+Then substitute $Y(t)$ into the right hand side of the equation, obtaining
+\[
+AY(t) = Ae^{(t + s)A}X_0.
+\]
+Thus, the left hand and right hand sides of the equation are equal, so
+$Y(t)$ is a solution to the differential equation.  Finally, check to see
+that $Y(t)$ satisfies the initial value:
+\[
+Y(0) = e^{(0 + s)A}X_0 = e^{sA}X_0,
+\]
+as desired.
+
+(b) Similarly, verify that $Z(t) = e^{tA}(e^{sA}X_0)$ is a solution to the
+initial value problem by substituting $Z(t)$ into each side of the
+differential equation:
+\[
+\frac{dZ}{dt}(t) = \frac{d}{dt}(e^{tA}(e^{sA}X_0))
+= Ae^{tA}(e^{sA}X_0) \AND
+AZ(t) = Ae^{tA}(e^{sA}X_0).
+\]
+Since the results are equal, $Z(t)$ is a solution to the differential
+equation.  Evaluating at $t = 0$, we find
+\[
+Z(0) = e^{0}(e^{sA}X_0) = e^{sA}X_0,
+\]
+from which it follows that $Z(t)$ is also a solution to the initial
+value problem.
+
+(c) Since $Y(t)$ and $Z(t)$ are both solutions to the initial value problem
+\[
+\begin{array}{rcl}
+\frac{dX}{dt} & = & AX \\
+X(0) & = & e^{sA}X_0,
+\end{array}
+\]
+it follows from the uniqueness part of Theorem~\ref{exist&unique} that
+$Y(t) = Z(t)$.  Thus, $e^{(t + s)A} = e^{tA}e^{sA}$, as desired.
+
+
+\end{solution}
 \end{exercise}
 \begin{exercise}  \label{c6.2.5C}
 Prove that
@@ -411,12 +602,92 @@ X_j(t) = \exp\left(t\mattwo{0}{-1}{1}{0}\right)e_j.
 \end{equation}
 \item[(c)]  Show that \eqref{E:0-110} proves \eqref{E:0-110E}
 \end{itemize}
+
+\begin{solution}
+
+(a) To verify that $X_1(t) = (\cos t,\sin t)^t$ is a solution to the
+initial value problem \eqref{E:init3}, substitute $X_1(t)$ into the left
+hand side of the differential equation, obtaining
+\[
+\frac{dX_1}{dt} = \frac{d}{dt}\vectwo{\cos t}{\sin t} =
+\vectwo{-\sin t}{\cos t}.
+\]
+Then substitute $X_1(t)$ into the right hand side of the differential
+equation, obtaining
+\[
+\mattwo{0}{-1}{1}{0}X_1 = \mattwo{0}{-1}{1}{0}\vectwo{\cos t}{\sin t}
+= \vectwo{-\sin t}{\cos t}.
+\]
+Since the two sides are equal, $X_1(t)$ is a solution to
+\eqref{E:init3}.  Further, since
+\[
+X_1(0) = \vectwo{\cos 0}{\sin 0} = \vectwo{1}{0} = e_1,
+\]
+$X_1(t)$ is a solution to the given initial value problem.
+
+\para Similarly, to verify that $X_2(t) = (-\sin t,\cos t)^t$ is a
+solution to the initial value problem, substitute $X_2(t)$ into the
+left hand side of the differential equation, obtaining
+\[
+\frac{dX_2}{dt} = \frac{d}{dt}\vectwo{-\sin t}{\cos t} =
+\vectwo{-\cos t}{-\sin t}.
+\]
+Then substitute $X_2(t)$ into the right hand side of the differential
+equation, obtaining
+\[
+\mattwo{0}{-1}{1}{0}X_2 = \mattwo{0}{-1}{1}{0}\vectwo{-\sin t}{\cos t}
+= \vectwo{-\cos t}{-\sin t}.
+\]
+Since the two sides of the differential equation are equal, and since
+\[
+X_2(0) = \vectwo{-\sin 0}{\cos 0} = \vectwo{0}{1} = e_2,
+\]
+$X_2(t)$ is a solution to the initial value problem \eqref{E:init3}.
+
+(b) By Theorem~\ref{T:linODEsoln}, the unique
+solution to \eqref{E:init3} with initial condition $X(0) = e_j$ is
+\[
+Y_j(t) \equiv \exp\left(t\mattwo{0}{-1}{1}{0}\right)e_j.
+\]
+We showed in part (a) that $X_j(t)$ satisfies this initial value
+problem.  Thus, by the uniqueness part of Theorem~\ref{exist&unique},
+$X_j(t) = Y_j(t)$, as desired.
+
+(c) By part (b), $X_j(t)$ is equal to $Y_j(t)$, which is defined as
+the $j^{th}$ column of the matrix
+\[
+\exp\left(t\mattwo{0}{-1}{1}{0}\right).
+\]
+By definition, $X_j(t)$ is equal to the $j^{th}$ column of the matrix
+\[
+\mattwo{\cos t}{-\sin t}{\sin t}{\cos t}.
+\]
+Thus,
+\[
+\exp\left(t\mattwo{0}{-1}{1}{0}\right) =
+\mattwo{\cos t}{-\sin t}{\sin t}{\cos t}.
+\]
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise}  \label{c6.2.6A}
 Let $C$ be an $n\times n$ matrix.  Use Theorem~\ref{T:linODEsoln} to show
 that the $n$ columns of the $n\times n$ matrix $e^{tC}$ give a basis of
 solutions for the system of differential equations $\dot{X}=CX$.
+
+\begin{solution}
+By Theorem~\ref{T:linODEsoln},
+the unique solution to the differential equation $\dot{X} = CX$ with
+initial condition $X(0) = X_0$ is $X(t) = e^{tC}X_0$.  Let $X(0) =
+e_j$.  Then the vector $X_j(t) = e^{tC}e_j$ is a solution to the
+differential equation, and is the $j^{th}$ column of the matrix
+$e^{tC}$.  Thus, each column of $e^{tC}$ is a solution to the
+differential equation, and the set of columns forms a basis of
+solutions.
+
+
+\end{solution}
 \end{exercise}
 
 \noindent {\bf Remark:}  The completion of Exercises~\ref{c6.2.7} and
@@ -443,6 +714,26 @@ in each row of $A$, and then take the maximum of these sums.  Prove that:
   &= \max_{1\leq i\leq n}\left(\sum_{k=1}^n\sum_{j=1}^n
 \left|a_{ik}b_{kj}\right|\right).
 \end{align*}
+
+\begin{solution}
+Using the hint from the text:
+\[
+||AB||_m \leq \max_{1\leq i\leq n}
+\left(\sum_k\sum_j\left|a_{ik}b_{kj}\right|\right) \leq
+\max_{1\leq i\leq n} \left(\sum_k|a_{ik}|\sum_j|b_{kj}|\right).
+\]
+Then, because $\sum_j|b_{kj}|$ is the sum of the entries in the $k^{th}$
+row of $B$:
+\[
+\max_{1\leq i\leq n}
+\left(\sum_k|a_{ik}|\sum_j|b_{kj}|\right) \leq
+\max_{1 \leq i \leq n}
+\left(||B||_m \sum_k|a_{ik}|\right) =
+||A||_m ||B||_m.
+\]
+Thus $||AB||_m \leq ||A||_m ||B||_m$.
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c6.2.8}
@@ -465,6 +756,41 @@ where $A^0=I_n$.
 \item[(b)]  $||A^N||_m \leq ||A||_m^N$.
 \item[(c)]  $|a_0| + |a_1| + \cdots + \frac{1}{N!}|a_N| \leq e^{||A||_m}$.
 \end{itemize}
+
+\begin{solution}
+
+(a) Let $a_{ij}$ be the $(i,j)^{th}$ entry in $n \times n$ matrix $A$. 
+Then, since $|a_{ij}| \geq 0$ for all $(i,j)$,
+\[ |a_{ij}| \leq |a_{i1}| + \cdots + |a_{in}| \leq
+\max_i(|a_{i1}| + \cdots + |a_{in}|) = ||A||_m. \]
+This statement is valid for the matrix $A^N$, so $|a_N| \leq ||A^N||_m$.
+
+(b) To show this, we use the fact that $||A^N||_m = ||A^{N - 1}A||_m$.
+According to Exercise~\ref{c6.2.7},
+\[
+||A^{N - 1}A||_m \leq ||A^{N - 1}||_m ||A||_m.
+\]
+Expanding $||A^N||_m$ in this way, we find that
+\[
+||A^N||_m \leq ||A||_m \cdots ||A||_m = ||A||^N_m.
+\]
+
+(c) According to our result in (a)
+\[ |a_0| + |a_1| + \cdots + \frac{1}{N!}|a_N| = \sum_N
+\frac{1}{N!}|a_N| \leq \sum_N \frac{1}{N!}||A^N||_m. \]
+According to the result in (b)
+\[ \sum_N \frac{1}{N!}||A^N||_m \leq \sum_N \frac{1}{N!}||A||^N_m. \]
+We know that
+\[ \sum_{N = 0}^{\infty} \frac{1}{N!}||A||^N_m = e^{||A||_m}.  \]
+Therefore,
+\[ \sum_N \frac{1}{N!}|a_N| \leq e^{||A||_m}, \]
+so $e^A$ is absolutely convergent.
+
+
+
+
+
+\end{solution}
 \end{exercise}
 
 \AEXER

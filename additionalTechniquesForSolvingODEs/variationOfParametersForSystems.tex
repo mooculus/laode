@@ -340,12 +340,136 @@ initial value problems by variation of parameters.
 \frac{dX}{dt}=\frac{1}{2}\mattwo{1}{1}{1}{1} X + \vectwo{e^t}{0},\quad
 X(0) = \vectwo{1}{-1}.
 \]
+
+\begin{solution}
+\ans The solution to the initial value problem is
+\[
+X(t) = \frac{1}{2}\cvectwo{te^t + e^t + 1}{te^t - e^t - 1}.
+\]
+
+\soln This system can be written as $\dot{X} = AX + G(t)$, where
+\[
+A = \frac{1}{2}\mattwo{1}{1}{1}{1} \AND G(t) = \vectwo{e^t}{0}.
+\]
+We can then solve the system by variation of parameters, as described in
+Theorem~\ref{thm:varparsys}:
+
+\paragraph{Step 1.} The eigenvalues of $A$ are $\lambda_1 = 0$ and
+$\lambda_2 = 1$, with associated eigenvectors $v_1 = (1,-1)^t$ and
+$v_2 = (1,1)^t$.  Thus, a basis of solutions to the homogeneous system
+$\dot{X} = AX$ is
+\[
+X_1(t) = \vectwo{1}{-1} \AND X_2(t) = e^t\vectwo{1}{1}.
+\]
+\paragraph{Step 2.} To compute the vector $D(t)$, first compute
+\[
+Y(t)^{-1} = (X_1(t)|X_2(t))^{-1} = \cmattwo{1}{e^t}{-1}{e^t}^{-1} =
+\frac{1}{2e^t}\cmattwo{e^t}{-e^t}{1}{1} =
+\frac{1}{2}\cmattwo{1}{-1}{e^{-t}}{e^{-t}}.
+\]
+Then,
+\[
+D(t) = Y(t)^{-1}G(t) =
+\frac{1}{2}\cmattwo{1}{-1}{e^{-t}}{e^{-t}}\vectwo{e^t}{0} =
+\frac{1}{2}\vectwo{e^{t}}{1}.
+\]
+\paragraph{Step 3.} We find $c_1(0)$ and $c_2(0)$ using the initial
+condition
+\[
+X_0 = c_1(0)X_1(0) + c_2(0)X_2(0).
+\]
+Therefore,
+\[
+\vectwo{1}{-1} = c_1(0)\vectwo{1}{-1} + c_2(0)\vectwo{1}{1}.
+\]
+Solve this system to obtain $c_1(0) = 1$ and $c_2(0) = 0$.  By definition,
+$\dot{c_j} = d_j$.  Thus,
+\[
+c_1(t) = \int_{t_0}^td_1(\tau)d\tau + c_1(0)
+= \frac{1}{2}\int_0^te^\tau d\tau + 1 = \frac{1}{2}(e^t + 1).
+\]
+\[
+c_2(t) = \int_{t_0}^td_2(\tau)d\tau + c_2(0)
+= \frac{1}{2}\int_0^td\tau = \frac{t}{2}.
+\]
+\paragraph{Step 4.} So, the solution to the initial value problem is
+\[
+X(t) = c_1(t)X_1(t) + c_2(t)X_2(t)
+= \frac{1}{2}\left((e^t + 1)\vectwo{1}{-1} + \frac{t}{2}e^t\vectwo{1}{1}
+\right).
+\]
+
+\end{solution}
 \end{exercise}
 \begin{exercise}  \label{c14.3.1b}
 \[
 \frac{dX}{dt}=\mattwo{1}{3}{3}{1} X + \vectwo{2t}{t},\quad
 X(0) = \vectwo{0}{1}.
 \]
+
+\begin{solution}
+\ans The solution to the given initial value problem is
+\[
+X(t) = \frac{1}{32}\cvectwo{19e^{4t} - 12e^{-2t} - 4t - 7}
+{19e^{4t} + 12e^{-2t} - 20t + 1}.
+\]
+\soln This system can be written as $\dot{X} = AX + G(t)$, where
+\[
+A = \mattwo{1}{3}{3}{1} \AND G(t) = \vectwo{2t}{t}.
+\]
+We can then solve the system by variation of parameters, as described in
+Theorem~\ref{thm:varparsys}:
+
+\paragraph{Step 1.} The eigenvalues of $A$ are $\lambda_1 = -2$ and
+$\lambda_2 = 4$, with associated eigenvectors $v_1 = (1,-1)^t$ and
+$v_2 = (1,1)^t$.  Thus, a basis of solutions to the homogeneous system
+$\dot{X} = AX$ is
+\[
+X_1(t) = e^{-2t}\vectwo{1}{-1} \AND X_2(t) = e^{4t}\vectwo{1}{1}.
+\]
+\paragraph{Step 2.} To compute the vector $D(t)$, first compute
+\[
+Y(t)^{-1} = \cmattwo{e^{-2t}}{e^{4t}}{-e^{-2t}}{e^{4t}}^{-1}
+= \frac{1}{2e^{2t}}\cmattwo{e^{4t}}{-e^{4t}}{e^{-2t}}{e^{-2t}}
+= \frac{1}{2}\cmattwo{e^{2t}}{-e^{2t}}{e^{-4t}}{e^{-4t}}.
+\]
+Then,
+\[
+D(t) = Y(t)^{-1}G(t) =
+\frac{1}{2}\cmattwo{e^{2t}}{-e^{2t}}{e^{-4t}}{e^{-4t}}\vectwo{2t}{t} =
+\frac{1}{2}\vectwo{te^{2t}}{3te^{-4t}}.
+\]
+\paragraph{Step 3.} We find $c_1(0)$ and $c_2(0)$ using the initial
+condition
+\[
+X_0 = c_1(0)X_1(0) + c_2(0)X_2(0).
+\]
+Therefore,
+\[
+\vectwo{0}{1} = c_1(0)\vectwo{1}{-1} + c_2(0)\vectwo{1}{1}.
+\]
+Solve this system to obtain $c_1(0) = -\frac{1}{2}$ and $c_2(0) =
+\frac{1}{2}$.  By definition, $\dot{c_j} = d_j$.  Thus,
+\[
+c_1(t) = \int_{t_0}^td_1(\tau)d\tau + c_1(0)
+= \frac{1}{2}\int_0^t \tau e^{2\tau}d\tau - \frac{1}{2}
+= \frac{1}{8}(2te^{2t} - e^{2t} - 3).
+\]
+\[
+c_2(t) = \int_{t_0}^td_2(\tau)d\tau + c_2(0)
+= \frac{3}{2}\int_0^t \tau e^{-4\tau}d\tau + \frac{1}{2}
+= \frac{1}{32}(-4te^{-4t} - e^{-4t} + 19).
+\]
+
+\paragraph{Step 4.} So, the solution to the initial value problem is
+\[
+X(t) = c_1(t)X_1(t) + c_2(t)X_2(t)
+= \frac{1}{8}(2t - 1 - 3e^{-2t})\vectwo{1}{-1} +
+\frac{1}{32}(-4t - 1 + 19e^{4t})\vectwo{1}{1}.
+\]
+
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise}  \label{c17.3.3}
@@ -358,6 +482,59 @@ Find the general solution to the system of differential equations
 X_1(t) = \vectwoc{1}{t} \AND X_2(t) = \vectwo{\frac{1}{t^2}}{-\frac{1}{t}}
 \]
 are solutions to the homogeneous equation and then use variation of parameters.
+
+\begin{solution}
+\ans $X(t) = (\alpha_1+2t)X_1(t) + 
+\left(\alpha_2-\frac{1}{3}t^3 \right)X_2(t)$.
+
+\soln  Begin by verifying that $X_1=(1,t)^t$ and 
+$X_2=(\frac{1}{t^2},-\frac{1}{t})^t$ solve the homogeneous
+equation
+\[
+\frac{dX}{dt}= \mattwo{-\frac{1}{t}}{\frac{1}{t^2}}{1}{0}X.
+\]
+That is,
+\[
+\dot{X}_1 = \cvectwo{0}{1} \AND 
+\mattwo{-\frac{1}{t}}{\frac{1}{t^2}}{1}{0}\cvectwo{1}{t} = 
+\cvectwo{-\frac{1}{t}+\frac{1}{t}}{1} = \cvectwo{0}{1}
+\]
+and 
+\[
+\dot{X}_2 = \vectwo{-\frac{2}{t^3}}{\frac{1}{t^2}} \AND 
+\mattwo{-\frac{1}{t}}{\frac{1}{t^2}}{1}{0}
+\vectwo{\frac{1}{t^2}}{-\frac{1}{t}} = 
+\cvectwo{-\frac{1}{t^3}-\frac{1}{t^3}}{\frac{1}{t^2}} 
+= \vectwo{-\frac{2}{t^3}}{\frac{1}{t^2}}
+\]
+
+Next we look for a particular solution to the inhomogeneous equation of 
+the form $X(t)=c_1(t)X_1(t)+c_2(t)X_2(t)$.  Equation~\eqref{e:D(t)} in
+Theorem~\ref{thm:varparsys} states that $c_j$ satisfies
+\[
+\vectwo{\dot{c}_1}{\dot{c}_2} = (X_1|X_2)\inv \vectwo{1}{3t}.
+\]
+Now 
+\[
+(X_1|X_2)\inv = \mattwo{1}{\frac{1}{t^2}}{t}{-\frac{1}{t}}\inv = 
+\frac{1}{2}\mattwo{1}{\frac{1}{t}}{t^2}{-t}
+\]
+It follows that 
+\begin{eqnarray*}
+\dot{c}_1 & = & 2 \\
+\dot{c}_2 & = & -t^2.
+\end{eqnarray*}
+Integration yields
+\begin{eqnarray*} 
+c_1 & = & 2t\\
+c_2 & = & -\frac{1}{3}t^3.
+\end{eqnarray*}
+Adding the general solution to the homogeneous equation to the specific
+solution to the inhomogeneous equation yields the general solution to the
+inhomogeneous equation.
+
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise}  \label{c17.3.4}
@@ -370,6 +547,62 @@ Find the general solution to the system of differential equations
 X_1(t) = \vectwoc{t^3}{3t^2}\AND X_2(t) = \vectwoc{\frac{1}{t}}{-\frac{1}{t^2}}
 \]
 are solutions to the homogeneous equation and then use variation of parameters.
+
+\begin{solution}
+
+\ans $X(t) = \left(\alpha_1+\frac{1}{4}\left(2\ln t -
+\frac{1}{t}\right)\right)X_1(t) + \left(\alpha_2 + \frac{1}{8}
+\left(2t^3-t^4\right)\right)X_2(t)$.
+
+\soln  Begin by verifying that $X_1=(t^3,3t^2)^t$ and 
+$X_2=(\frac{1}{t},-\frac{1}{t^2})^t$ solve the homogeneous
+equation
+\[
+\frac{dX}{dt}= \cmattwo{0}{1}{\frac{3}{t^2}}{\frac{1}{t}}X.
+\]
+That is,
+\[
+\dot{X}_1 = \cvectwo{3t^2}{6t} \AND 
+\mattwo{0}{1}{\frac{3}{t^2}}{\frac{1}{t}}\cvectwo{t^3}{3t^2} = 
+\cvectwo{3t^2}{3t+3t} = \cvectwo{3t^2}{6t}
+\]
+and 
+\[
+\dot{X}_2 = \vectwo{-\frac{1}{t^2}}{\frac{2}{t^3}} \AND 
+\mattwo{0}{1}{\frac{3}{t^2}}{\frac{1}{t}}
+\vectwo{\frac{1}{t}}{-\frac{1}{t^2}} = 
+\cvectwo{-\frac{1}{t^2}}{\frac{3}{t^3}-\frac{1}{t^3}} 
+= \vectwo{-\frac{1}{t^2}}{\frac{2}{t^3}}
+\]
+
+Next we look for a particular solution to the inhomogeneous equation of 
+the form $X(t)=c_1(t)X_1(t)+c_2(t)X_2(t)$.  Equation~\eqref{e:D(t)} in
+Theorem~\ref{thm:varparsys} states that $c_j$ satisfies
+\[
+\vectwo{\dot{c}_1}{\dot{c}_2} = (X_1|X_2)\inv \vectwo{t}{2t}.
+\]
+Now 
+\[
+ (X_1|X_2)\inv = \mattwo{t^3}{\frac{1}{t}}{3t^2}{-\frac{1}{t^2}}\inv = 
+\frac{1}{4t}\mattwo{\frac{1}{t^2}}{\frac{1}{t}}{3t^2}{-t^3}
+\]
+It follows that 
+\begin{eqnarray*}
+\dot{c}_1 & = & \frac{1}{4}\left(\frac{1}{t^2}+\frac{2}{t}\right) \\
+\dot{c}_2 & = & \frac{1}{4}\left(3t^2-2t^3\right).
+\end{eqnarray*}
+Integration yields
+\begin{eqnarray*} 
+c_1 & = & \frac{1}{4}\left(2\ln t - \frac{1}{t}\right)\\
+c_2 & = & \frac{1}{8}\left(2t^3-t^4\right).
+\end{eqnarray*}
+Adding the general solution to the homogeneous equation to the specific
+solution to the inhomogeneous equation yields the general solution to the
+inhomogeneous equation.
+
+
+
+\end{solution}
 \end{exercise}
 
 

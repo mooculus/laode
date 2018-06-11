@@ -187,11 +187,36 @@ vectors, any three of the four are linearly independent.
 \begin{exercise} \label{c5.4.1}
 Let $w$ be a vector in the vector space $V$.  Show that the sets of vectors
 $\{w,0\}$ and $\{w,-w\}$ are linearly dependent.
+
+\begin{solution}
+
+To show that the set of vectors $\{w_1,w_2\}$ is linearly dependent,
+show that there exist nonzero $a$ and $b$ such that
+$aw_1 + bw_2 = 0$.  For the set $\{w,0\}$, if $a = 0$ and $b = 1$,
+then $0w + 1(0) = 0$, so the set is linearly dependent.  For the
+set $\{w,-w\}$, if $a = 1$ and $b = 1$, then
+$w - w = 0$, so the set is linearly dependent.
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c5.4.2}
 For which values of $b$ are the vectors $(1,b)$ and $(3,-1)$
 linearly independent?
+
+\begin{solution}
+
+\ans The set is linearly independent if $b \neq -\frac{1}{3}$.
+
+\soln Note that a set of two vectors is linearly dependent if one is
+a multiple of the other.  So this set is dependent for any values of
+$b$ at which
+\[
+(3,-1) = \alpha(1,b).
+\]
+When equality holds $\alpha = 3$.  Therefore, $b = -\frac{1}{3}$.  
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c5.4.3}
@@ -200,24 +225,99 @@ Let
 u_1=(1,-1,1) \quad u_2=(2,1,-2) \quad u_3 = (10,2,-6).
 \]
 Is the set $\{u_1,u_2,u_3\}$ linearly dependent or linearly independent?
+
+\begin{solution}
+
+\ans The set is linearly dependent.
+
+\soln Let $A$ be the matrix whose columns are $u_1$, $u_2$, and $u_3$. 
+The set $\{u_1,u_2,u_3\}$ is linearly dependent if there exists
+a nonzero vector $r = (r_1,r_2,r_3)$ such that $r_1u_1 + r_2u_2 +
+r_3u_3 = 0$, that is, if the homogeneous system $Ar = 0$ has a
+nonzero solution.  Row reduce:
+\[
+\matthree{1}{2}{10}{-1}{1}{2}{1}{-2}{-6} \longrightarrow
+\matthree{1}{0}{2}{0}{1}{4}{0}{0}{0}.
+\]
+So, $Ar = 0$ when $r = r_3(-2,-4,1)$.
+The value of $r$ is nonzero for $r_3 \neq 0$, so the set is indeed
+linearly dependent.
+As an example, let $r_3 = 1$.  Then,
+\[
+-4u_1 - 2u_2 + u_3 = -2(1,-1,1) - 4(2,1,-2) + (10,2,-6) =
+(0,0,0) = 0.
+\]
+
+\end{solution}
 \end{exercise}
 
 
 \begin{exercise} \label{c5.4.4}
 For which values of $b$ are the vectors $(1,b,2b)$ and $(2,1,4)$
 linearly independent?
+
+\begin{solution}
+
+\ans The vectors $(1,b,2b)$ and $(2,1,4)$ are linearly independent
+for any value of $b$.
+
+\soln Two vectors are linearly independent unless one is a multiple
+of the other; in this case, unless
+\[
+(1,b,2b) = \alpha(2,1,4).
+\]
+Equality holds if $2\alpha = 1$, $\alpha = b$, and $4\alpha = 2b$.
+Therefore, $\alpha = \frac{1}{2}$, $b = \frac{1}{2}$ and $b = 1$,
+which is inconsistent, so the vectors are linearly independent.
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c5.4.5}
 Show that the polynomials $p_1(t) = 2+t$, $p_2(t) = 1+t^2$, and
 $p_3(t) = t-t^2$ are linearly independent vectors in the vector
 space $\CCone$.
+
+\begin{solution}
+
+\ans The polynomials $p_1(t) = 2 + t$, $p_2(t) = 1 + t^2$, and $p_3(t) =
+t - t^2$ are linearly independent in $\CCone$.  
+
+\soln We can determine this
+by noting that the polynomials are linearly dependent if there exists
+a nonzero vector $r = (r_1,r_2,r_3)$ such that $r_1p_1 + r_2p_2 +
+r_3p_3 = 0$.  It is convenient to represent each polynomial as a
+vector $(a,b,c) = p(t) = a + bt + ct^2$.  Thus, $p_1(t) = (2,1,0)$, 
+$p_2(t) = (1,0,1)$, and $p_3(t) = (0,1,-1)$.  Solve the homogeneous
+system $Ar = 0$, where $A$ is the matrix whose columns are $p_1$,
+$p_2$, and $p_3$, by row reduction.
+\[ \matthree{2}{1}{0}{1}{0}{1}{0}{1}{-1} \longrightarrow
+\matthree{1}{0}{0}{0}{1}{0}{0}{0}{1}. \]
+Therefore, there are no nonzero values of $r$ for which $r_1p_1 + 
+r_2p_2 + r_3p_3 = 0$, and the polynomials are linearly independent.
+
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c5.4.6}
 Show that the functions $f_1(t) = \sin t$, $f_2(t)=\cos t$, and
 $f_3(t)=\cos\left(t+\frac{\pi}{3}\right)$ are linearly dependent
 vectors in $\CCone$.
+
+\begin{solution}
+
+The three functions are linearly dependent vectors in $\CCone$ since
+there exists a nonzero vector $r = (r_1,r_2,r_3)$ such that
+$r_1f_1(t) + r_2f_2(t) + r_3f_3(t) = 0$.  We can find this vector $r$
+using trigonometric identities:
+\[ f_3(t) = \cos\left(t + \frac{\pi}{3}\right) =
+\cos\left(\frac{\pi}{3}\right)\cos t + \sin\left(\frac{\pi}{3}\right)\sin t
+= \frac{1}{2}\cos t - \frac{\sqrt{3}}{2}\sin t =
+\frac{1}{2}f_1(t) - \frac{\sqrt{3}}{2}f_2(t). \]
+That is, $\frac{1}{2}f_1(t) + \frac{\sqrt{3}}{2}f_2(t) - f_3(t) = 0$.
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c5.4.7}
@@ -227,6 +327,26 @@ independent.  Show that the set
 \{u_1+u_2, u_2+u_3,u_3+u_1\}
 \]
 is also linearly independent.
+
+\begin{solution}
+
+To show that the vectors $u_1 + u_2$, $u_2 + u_3$ and $u_3 + u_1$
+are linearly independent, we assume that there exist scalars $r_1$,
+$r_2$, $r_3$ such that
+\[ r_1(u_1 + u_2) + r_2(u_2 + u_3) + r_3(u_3 + u_1) = 0. \]
+We then prove that $r_1 = r_2 = r_3 = 0$, as follows.
+Use distribution to obtain
+\[ (r_1 + r_3)u_1 + (r_1 + r_2)u_2 + (r_2 + r_3)u_3 = 0. \]
+Since the set $\{u_1,u_2,u_3\}$ is linearly independent,
+\[ \begin{array}{rrrrrcl}
+r_1 & & & + & r_3 & = & 0 \\
+r_1 & + & r_2 & & & = & 0 \\
+& & r_2 & + & r_3 & = & 0. \end{array} \]
+Solving this system yields $r_1 = r_2 = r_3 = 0$,
+so the set $\{u_1 + u_2,u_2 + u_3,u_3 + u_1\}$ is linearly
+independent.
+
+\end{solution}
 \end{exercise}
 
 \CEXER
@@ -237,17 +357,70 @@ the given sets of vectors are linearly independent or linearly dependent.
 \begin{matlabEquation}\label{MATLAB:67}
 v_1 = (2,1,3,4) \quad v_2 = (-4,2,3,1) \quad v_3 = (2,9,21,22)
 \end{matlabEquation}
+
+\begin{solution}
+\ans The set $\{v_1,v_2,v_3\}$ is linearly dependent.
+
+\soln The set is linearly dependent if there exist scalars $r_1$, $r_2$,
+and $r_3$ such that $r_1v_1 + r_2v_2 + r_3v_3 = 0$.  Create a matrix
+{\tt A} whose columns are $v_1$, $v_2$ and $v_3$.  Then row reduce
+{\tt A} to solve the homogeneous system $Ar = 0$.  Specifically, row
+reducing the matrix {\tt A = [v1 v2 v3]} yields
+\begin{verbatim}
+ans =
+     1     0     5
+     0     1     2
+     0     0     0
+     0     0     0
+\end{verbatim}
+So $-5v_1 - 2v_2 + v_3 = 0$.
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c5.4.8b}
 \begin{matlabEquation}\label{MATLAB:68}
 w_1 = (1,2,3)\quad w_2 = (2,1,5) \quad w_3 = (-1,2,-4)
 \quad w_4 = (0,2,-1)
 \end{matlabEquation}
+
+\begin{solution}
+\ans The set $\{w_1,w_2,w_3,w_4\}$ is linearly dependent.
+
+\soln Create the matrix {\tt A} associated to the set
+$\{w_1,w_2,w_3,w_4\}$, and row reduce to solve for
+$r = (r_1,r_2,r_3,r_4)$, obtaining
+\begin{verbatim}
+ans =
+    1.0000         0         0    0.1429
+         0    1.0000         0    0.2857
+         0         0    1.0000    0.7143
+\end{verbatim}
+Therefore, $-0.1429w_1 - 0.2857w_2 - 0.7143w_3 + w_4 = 0$.
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c5.4.8c}
 \begin{matlabEquation}\label{MATLAB:69}
 x_1 = (3,4,1,2,5) \quad x_2 = (-1,0,3,-2,1)\quad x_3 = (2,4,-3,0,2)
 \end{matlabEquation}
+
+\begin{solution}
+\ans The set $\{x_1,x_2,x_3\}$ is linearly independent.
+
+\soln The matrix {\tt A} associated to the set $\{x_1,x_2,x_3\}$ row
+reduces to
+\begin{verbatim}
+ans =
+     1     0     0
+     0     1     0
+     0     0     1
+     0     0     0
+     0     0     0
+\end{verbatim}
+In this case, there are no nonzero solutions to
+$r_1x_1 + r_2x_2 + r_3x_3 = 0$.
+ 
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c5.4.9}
@@ -268,6 +441,28 @@ number of times a linearly dependent set is chosen.
 \item[(c)]  Repeat the experiment in (b) --- but this time randomly
 choose four vectors in $\R^3$ to be in your set.
 \end{itemize}
+
+\begin{solution}
+
+(a) The set of commands to perform this experiment is:
+\begin{verbatim}
+y1 = rand(3,1);
+y2 = rand(3,1);
+y3 = rand(3,1);
+A = [y1 y2 y3];
+rref(A)
+\end{verbatim}
+If the resulting matrix is $I_3$, then the set is linearly
+independent.
+
+(b) The most likely outcome is that all five trials result in
+linearly independent sets.
+
+(c) Every trial yields a linearly dependent set of vectors.
+
+
+
+\end{solution}
 \end{exercise}
 
 \end{document}

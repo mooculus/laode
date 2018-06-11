@@ -305,12 +305,60 @@ origin.  If it is a plane, then compute a vector $N$ that is
 perpendicular to that plane.
 \begin{exercise} \label{c5.7.1a}
 $v_1=(2,1,2) \AND v_2=(0,-1,1)$.
+
+\begin{solution}
+
+\ans The span of $v_1$ and $v_2$ is a plane with normal vector
+$N = n_3(-\frac{3}{2}, 1, 1)$, where $n_3$ is a nonzero scalar.
+
+\soln If $v_1$ and $v_2$ are linearly independent, then they span a plane
+in $\R^3$.  If they are linearly dependent, that is, if $v_1 =
+\alpha v_2$ for some scalar $\alpha$, then they span a line in $\R^3$.
+In this case, there is no scalar $\alpha$ such that $(2,1,2) =
+\alpha(0,-1,1)$, so the span of $v_1$ and $v_2$ has dimension two.
+The vector $N = (n_1,n_2,n_3)$ is found by observing that:
+\[
+\begin{array}{rrrrrcl}
+2n_1 & + & n_2 & + & 2n_3 & = & 0 \\
+& & -n_2 & + & n_3 & = & 0 \end{array}
+\]
+which is a linear system in two equations.  Solve for $N$ by row
+reducing the corresponding matrix:
+\[
+\left(\begin{array}{rrr} 2 & 1 & 2 \\ 0 & -1 & 1 \end{array}\right)
+\longrightarrow \left(\begin{array}{rrr} 1 & 0 & \frac{3}{2} \\ 0 &
+1 & -1 \end{array}\right).
+\]
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c5.7.1b}
 $v_1=(2,1,-1) \AND v_2=(-4,-2,2)$.
+
+\begin{solution}
+\ans The subspace spanned by $v_1$ and $v_2$ is a line,
+since, if $\alpha = -\frac{1}{2}$, then $(2,1,-1) = \alpha(-4,-2,2)$.
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c5.7.1c}
 $v_1=(0,1,0) \AND v_2=(4,1,0)$.
+
+\begin{solution}
+\ans The span of $v_1$ and $v_2$ is a plane with normal
+vector $N = n_3(0,0,1)$, where $n_3$ is a nonzero scalar.
+
+\soln There is no scalar $\alpha$ such that $(0,1,0) = \alpha(4,1,0)$. 
+Let $N = (n_1,n_2,n_3)$ be the vector perpendicular to the plane.  Then:
+\[
+\begin{array}{rrrrrcl}
+& & n_2 & & & = & 0 \\
+4n_1 & + & n_2 & & & = & 0 \end{array}
+\]
+Solve for $N$ by substitution to find that $n_1 = n_2 = 0$, and
+$n_3$ can be any nonzero real scalar.
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c5.7.2}
@@ -325,6 +373,26 @@ span a plane $P$ in $\R^3$.  The pairs of vectors
 span a plane $Q$ in $\R^3$.  Show that $P$ and $Q$
 are different and compute the subspace of $\R^3$ that
 is given by the intersection $P\cap Q$.
+
+\begin{solution}
+
+\ans The intersection of the planes is $P \cap Q = s(1,-1,0)$ for any
+real scalar $s$.
+
+\soln The planes $P$ and $Q$ are not equal if the normal vectors $P_N$
+and $Q_N$ point in different directions.  Solving by row reduction
+yields $P_N = (-1,-1,1)$ and $Q_N = (0,0,1)$, so $P \neq Q$.
+
+\para Since $P$ and $Q$ are not the same plane and also are not
+parallel, they intersect in a line.  The intersection $P \cap Q$ is
+the simultaneous solutions to the equations for planes $P$ and $Q$,
+that is:
+\[ \begin{array}{rrrrrrl}
+-x & - & y & + & z & = & 0 \\
+& & & & z & = & 0. \end{array} \]
+Solve by row reduction or substitution to obtain $x = -y$ and $z = 0$.
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c5.6.1}
@@ -337,6 +405,28 @@ Let $A$ be a $7\times 5$ matrix with $\rank(A)=r$.\index{rank}
 \item[(d)]	If there is a solution to $Ax=b$, then how many
 parameters are needed to describe the set of all solutions?
 \end{itemize}
+
+\begin{solution}
+
+(a) The largest value that $r$ can have is $5$, since the matrix has
+$5$ columns.  Thus, the reduced echelon form matrix can have at most
+$5$ pivot points.
+
+(b) The equation $Ax = b$ has a solution if the rank of the augmented
+matrix $(A|b)$ is $r$.  If $\rank (A|b)$ is greater than $r$, then
+there is a pivot in the $6^{th}$ column and the system is
+inconsistent, so there is no solution.
+
+(c) The null space has dimension $5 - r$.
+
+(d) The number of parameters needed to describe the solution to
+$Ax = b$ is $5 - r$, since $5 - r$ parameters are needed to describe
+the solutions to $Ax = 0$, and the solutions to the inhomogeneous
+system are obtained by adding the solutions of the homogeneous system
+to one solution of the inhomogeneous system.
+
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c5.6.2}
@@ -353,6 +443,36 @@ rows of $A$.
 \item[(c)] What is the relationship between $\dim {\cal C}$ and
 $\dim {\cal R}$?
 \end{itemize}
+
+\begin{solution}
+
+\ans (a) The vectors $(1,2,3)$ and $(3,1,4)$ form a basis for the subspace
+	$\CC$ of $\R^3$ spanned by the columns of $A$.
+
+(b) The vectors $(1,3,-1,4)$ and $(2,1,5,7)$ form a basis for the subspace
+	$\R$ of $\R^4$ spanned by the rowss of $A$.
+
+(c) $\dim \CC = \dim \R$.
+
+\soln (a) Note that 
+\begin{eqnarray*} 
+\vecthree{-1}{5}{4} = \frac{16}{5}\vecthree{1}{2}{3} 
+	- \frac{7}{5}\vecthree{3}{1}{4} \\ 
+\vecthree{4}{7}{11} = \frac{17}{5}\vecthree{1}{2}{3} 
+	+ \frac{1}{5}\vecthree{3}{1}{4}
+\end{eqnarray*}
+So the two vectors $(1, 2, 3)$ and $(3,1,4)$ span $\CC$.  Since they are 
+linearly independent, these vectors are a basis for $\CC$ and $\dim =\CC=2$.
+
+(b) Note that 
+\[
+(3,4,4,11) = (1,3,-1,4) + (2,1,5,7).
+\]
+Therefore, $\{(1,3,-1,4),(2,1,5,7)\}$ is a basis for $\mathcal{R}$ and 
+$\dim \mathcal{R}=2$
+
+
+\end{solution}
 \end{exercise}
 
 
@@ -367,11 +487,53 @@ forms a plane in $\R^3$ by showing that every linear combination
 to determine the normal vector $N$ to this plane.  Verify
 Lemma~\ref{extendindep} by verifying directly that $v_1,v_2,N$
 are linearly independent vectors.
+
+\begin{solution}
+
+There is no scalar $\alpha$ such that $(2,3,1) = \alpha(1,1,3)$, so
+$v_1$ and $v_2$ are linearly independent.
+The set of linear combinations of $v_1$ and $v_2$ is the set of
+solutions to
+\[
+\begin{array}{rrrrrrl}
+2a_1 & + & 3a_1 & + & a_3 & = & 0 \\
+a_1 & + & a_2 & + & 3a_3 & = & 0. \end{array}
+\]
+Row reducing this system yields $a_1 = -8a_3$ and $a_2 = 5a_3$.
+Let $a_3 = 0$.  Then every linear combination of $v_1$ and $v_2$ is
+of the form
+\[
+8x_1 - 5x_2 - x_3 = 0
+\]
+which is the equation of a plane in $\R^3$.  The normal vector to this
+plane is $N = (8,-5,-1)$.  Row reduce the matrix whose columns
+are the vectors $v_1$, $v_2$, and $N$ to verify that these vectors
+are linearly independent.
+\[
+\matthree{2}{1}{8}{3}{1}{-5}{1}{3}{-1} \longrightarrow
+\matthree{1}{0}{0}{0}{1}{0}{0}{0}{1}.
+\]
+So the vectors are indeed linearly independent, verifying
+Lemma~\ref{extendindep}.
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise}  \label{c5.6.3A}
 Let $W$ be an infinite dimensional subspace of the vector space $V$.
 Show that $V$ is infinite dimensional.
+
+\begin{solution}
+Let $W$ be an infinite dimensional subspace of the vector 
+space $V$.  We want to show that $V$ is infinite dimensional.  Suppose that
+$V$ is finite dimensional with $\dim V=n$.  Then Corollary~\ref{basis<n}
+states that any set of linear independent 
+vectors in $V$ has at most $n$ vectors.  Since $W$ is infinite dimensional, 
+there exists a linearly independent set of vectors in $W\subset V$ with more 
+than $n$ vectors.  This is a contradiction and $V$ must be infinite 
+dimensional.
+
+\end{solution}
 \end{exercise}
 
 
@@ -394,6 +556,33 @@ $\R^3$.
 \item[(b)] Find a value for $\lambda$ such that the
 dimension of $\Span\{w_1,w_2,w_3,w_4\}$ is two.
 \end{itemize}
+
+\begin{solution}
+
+(a) \ans The span has dimension $3$ for $\lambda \neq 2$, and 
+the set $\{w_1,w_2,w_3\}$ is a basis for $\R^3$.
+
+\soln Find the dimension of the span by creating a matrix with rows
+$w_1$, $w_2$, $w_3$, and $w_4$, then row reducing:
+\begin{equation} \label{exeq:5.6.4}
+\left(\begin{array}{rrr} 2 & -2 & 1 \\ -1 & 2 & 0 \\ 3 & -2 &
+\lambda \\ -5 & 6 & -2 \end{array}\right) \longrightarrow
+\left(\begin{array}{rrc} 1 & -1 & \frac{1}{2} \\ 0 & 1 & \frac{1}{2}
+\\ 0 & 0 & \lambda - 2 \\ 0 & 0 & 0 \end{array}\right).
+\end{equation}
+If $\lambda = 2$, then the dimension of the span will
+be $2$ and if $\lambda \neq 2$, then the dimension of the span
+will be $3$.  For example, let $\lambda = -1$.
+
+\para Verify by row reduction that the set $\{w_1,w_2,w_3\}$ is a basis
+for $\R^3$ and that the set $\{w_1,w_2,w_4\}$ is not a basis for $R^3$. 
+
+(b) If $\lambda = 2$, then the dimension of span$\{w_1,w_2,w_3,w_4\}$
+is $2$, as shown by equation~\eqref{exeq:5.6.4}.
+
+
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c5.6.5}
@@ -410,6 +599,49 @@ to write the vector
 \left(\begin{array}{r} 2 \\ 1 \\ 3\\ -2 \\ 4 \end{array}\right)
 \]
 as a linear combination of $x_1,\ldots,x_5$.
+
+\begin{solution}
+
+Here is a sample \Matlab output for this problem.  Type:
+\begin{verbatim}
+x1 = rand(5,1);
+x2 = rand(5,1);
+x3 = rand(5,1);
+x4 = rand(5,1);
+x5 = rand(5,1);
+\end{verbatim}
+A summary of the results is:
+\begin{verbatim}
+x1 =          x2 =          x3 =          x4 =          x5 =
+    0.9501        0.7621        0.6154        0.4057        0.0579
+    0.2311        0.4565        0.7919        0.9355        0.3529
+    0.6068        0.0185        0.9218        0.9169        0.8132
+    0.4860        0.8214        0.7382        0.4103        0.0099
+    0.8913        0.4447        0.1763        0.8936        0.1389
+\end{verbatim}
+The command {\tt A = [x1 x2 x3 x4 x5]} creates the matrix with columns
+$x_1,...,x_5$.  Type {\tt rref(A)} to verify that the vectors are
+linearly independent.  The following steps display the vector
+$b = (2,1,3,-2,4)$ as a linear combination of $x_1,...,x_5$.  Type:
+\begin{verbatim}
+b = [2;1;3;-2;4];
+C = [A b];
+rref(C)
+\end{verbatim}
+which yields:
+
+\begin{verbatim}
+ans =
+    1.0000         0         0         0         0   28.7614
+         0    1.0000         0         0         0  -96.6468
+         0         0    1.0000         0         0   70.9112
+         0         0         0    1.0000         0   30.0838
+         0         0         0         0    1.0000 -129.8826
+\end{verbatim}
+So, in this example, $b = 28.7614x_1 - 96.6468x_2 + 70.9112x_3
++ 30.0838x_4 - 129.8826x_5$.
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c5.6.6}
@@ -423,6 +655,42 @@ u_4 & = & (1,4,1,2,1)  \\
 u_5 & = & (0,0,2,1,3).
 \end{array}
 \end{matlabEquation}
+
+\begin{solution}
+
+\ans The vectors $(1,0,0,-\frac{1}{2},\frac{3}{2})$, $(0,1,0,\frac{1}{2},
+-\frac{1}{2})$, and $(0,0,1,\frac{1}{2},\frac{3}{2})$ form a basis
+for the subspace spanned by $u_1, \dots ,u_5$.
+
+\soln Row reduce the matrix {\tt M}, whose
+rows are $u_1$, $u_2$, $u_3$, $u_4$ and $u_5$.  According to 
+Lemma~\ref{extendindep}, the rows of the
+reduced echelon matrix form a basis for $\{u_1,\dots ,u_5\}$.  The
+command {\tt rref(M)} yields:
+\begin{verbatim}
+ans =
+    1.0000         0         0   -0.5000    1.5000
+         0    1.0000         0    0.5000   -0.5000
+         0         0    1.0000    0.5000    1.5000
+         0         0         0         0         0
+         0         0         0         0         0
+\end{verbatim}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{solution}
 \end{exercise}
 
 

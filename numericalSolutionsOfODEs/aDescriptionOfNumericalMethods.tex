@@ -552,24 +552,96 @@ x(t_0) & = & 0.
 Show that in this case an application of Euler's method 
 leads to exact results for all step sizes $h$,
 that is $x_k=x(t_k)$ for all $k$.
+
+\begin{solution}
+The solution to the initial value problem is
+$x(t)=-2(t-t_0)$.  On the other hand, an application of Euler's method
+with step size $h$ leads to
+\[
+\begin{array}{rcl}
+x_0 & = & 0 \\
+x_{k+1} & = & x_k + h (-2) = x_k - 2h\\
+t_k & = & t_0 + kh.
+\end{array}
+\]
+Hence
+\[
+\begin{array}{rcl}
+x_0 & = & 0\\
+x_1 & = & -2h\\
+x_2 & = & -4h\\
+ & \vdots & \\
+x_k & = & -2kh,
+\end{array}
+\]
+and
+\[
+x(t_k) = -2(t_k-t_0) = -2kh = x_k.
+\]
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c15.1.2}
 Write down the implicit trapezoidal rule for the initial
 value problem \eqref{eq:numanalsys}.
+
+\begin{solution}
+An application of the implicit trapezoidal rule to
+the system \eqref{eq:numanalsys} leads to
+\begin{eqnarray*}
+\vectwo{x_{k+1}}{y_{k+1}} & = &  \vectwo{x_k}{y_k} +
+\frac{h}{2} \left(\vectwo{f(t_k,x_k,y_k)}{g(t_k,x_k,y_k)}
++\vectwo{f(t_{k+1},x_{k+1},y_{k+1})}{g(t_{k+1},x_{k+1},y_{k+1})}\right)\\
+t_{k+1} &=& t_k + h.
+\end{eqnarray*}
+
+
+
+\end{solution}
 \end{exercise}
 
 \noindent In Exercises~\ref{c15.1.3a} -- \ref{c15.1.3c}
 decide whether or not the following numerical schemes are Runge-Kutta methods.
 \begin{exercise} \label{c15.1.3a}
 $x_{k+1} = x_k + hf(t_k+\frac{h}{2},x_k+\frac{h}{2}f(t_k,x_k))$.
+
+\begin{solution}
+\ans Yes.
+
+\soln Set
+\[
+s=2,\quad b_1=0,\quad b_2=1,\quad c_1=0,\quad c_2=\frac{1}{2},\quad
+a_{21}=\frac{1}{2}.
+\]
+
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c15.1.3b}
 $x_{k+1} = x_k + hf(t_k,x_k+t_k)$.
+
+\begin{solution}
+\ans No.
+
+\soln $x_k+t_k$ is not allowed in the second argument of $f$.
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c15.1.3c}
 $x_{k+1} = x_k + 
 \frac{h}{4}(f(t_k,x_k)+3f(t_k+\frac{2h}{3},x_k+\frac{2h}{3}f(t_k,x_k))$.
+
+\begin{solution}
+\ans Yes.
+
+\soln Set
+\[
+s=2,\quad b_1=\frac{1}{4},\quad b_2=\frac{3}{4},\quad
+c_1=0,\quad c_2=\frac{2}{3},\quad a_{21}=\frac{2}{3}.
+\]
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c15.1.4}
@@ -589,6 +661,29 @@ derived in part (a) is satisfied
 for Euler's method, for the modified Euler method and for the
 fourth order Runge-Kutta method.
 \end{itemize}
+
+\begin{solution}
+
+(a) \ans $\dps\sum_{i=1}^s b_i = 1$.
+
+\soln For the given initial value problem we have $f(t,x)=1$.
+Therefore the general Runge-Kutta method takes the form
+\[
+t_{k+1} = t_k + h\AND x_{k+1} = x_k + h\sum_{i=1}^s b_i.
+\]
+On the other hand the solution to the initial value problem is
+given by $x(t) = t-t_0$ and $x_1=x(t_1)$ implies
+\[
+h = x(t_1) = x_1 = 0+h\sum_{i=1}^s b_i.
+\]
+Division by $h$ leads to the desired result.
+
+(b) For Euler's method we have $b_1=1$, for the modified Euler
+method we have $b_1=b_2=\frac{1}{2}$, and for the fourth order
+Runge-Kutta method $b_1=b_4 = \frac{1}{6}$,
+$b_2 = b_3 = \frac{2}{6}$.  Hence in each case $\sum_{i=1}^s b_i=1$.
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c15.1.4a}
@@ -596,6 +691,27 @@ Use formula \eqref{eq:tfeul} to show that the first step in
 the numerical approximations shown in Figures~\ref{fig:eulex1}(b)
 and \ref{fig:eulimpr} have to lie below the graph of
 the exact solution $x(t)$.
+
+\begin{solution}
+The first step in Euler's method is given by
+\[
+x_1 = x_0 + hf(t_0,x_0),
+\]
+and hence formula \eqref{eq:tfeul} implies that
+\begin{eqnarray*}
+x(t_1) &=&  x(t_0)+h\frac{dx}{dt}(t_0)+
+\frac{h^2}{2}\frac{d^2x}{dt^2}(t_0+\theta h)\\
+&=& x_0 + hf(t_0,x_0) +\frac{h^2}{2}\frac{d^2x}{dt^2}(t_0+\theta h)\\
+&=& x_1 +\frac{h^2}{2}\frac{d^2x}{dt^2}(t_0+\theta h).
+\end{eqnarray*}
+The exact solution is $x(t)= 4e^{t-1}-t-1$ with the second order
+derivative
+\[
+\frac{d^2x}{dt^2}(t) = 4e^{t-1}>0\quad \mbox{for all $t$.}
+\]
+It follows that $x(t_1) > x_1$.
+
+\end{solution}
 \end{exercise}
 
 
@@ -604,6 +720,28 @@ the exact solution $x(t)$.
 
 \begin{exercise} \label{c15.1.6}
 Use \Matlab to reproduce the result displayed in Figure~\ref{fig:eulimpr}.
+
+\begin{solution}
+The following \Matlab commands reproduce
+Figure~\ref{fig:eulimpr}:
+\begin{verbatim}
+h    = 0.05;
+t(1) = 1;
+x(1) = 2;
+K    = 40;
+for k = 1:K
+   t(k+1) = t(k)+h;
+   x(k+1) = x(k)+h*(x(k)+t(k));
+end
+plot(t,x,'o')
+hold on
+plot(t,x,'--')
+s = 1 : 0.01 : 3;
+y = 4*exp(s-1)-s-1;
+plot(s,y)
+\end{verbatim}
+
+\end{solution}
 \end{exercise}
 
 \noindent In Exercises~\ref{c15.1.5a} -- \ref{c15.1.5c} solve
@@ -612,12 +750,124 @@ modified Euler method.  Approximate the solution on the given interval
 and use the prescribed step size $h$.
 \begin{exercise} \label{c15.1.5a}
 $\dot x = 1$, $x(2)=3$, step size $h=0.1$, interval $[2,4]$.
+
+\begin{solution}
+The following \Matlab commands approximate the
+solution by
+
+(i) Euler's method:
+\begin{verbatim}
+h    = 0.1;
+t(1) = 2;
+x(1) = 3;
+K    = 20;
+for k = 1:K
+   t(k+1) = t(k)+h;
+   x(k+1) = x(k)+h*1;
+end
+plot(t,x,'o')
+hold on
+plot(t,x,'--')
+\end{verbatim}
+
+(ii) The modified Euler method:
+\begin{verbatim}
+h    = 0.1;
+t(1) = 2;
+x(1) = 3;
+K    = 20;
+for k = 1:K
+   t(k+1) = t(k)+h;
+   y(k)   = x(k)+h*1;
+   x(k+1) = x(k)+(h/2)*(1+1);
+end
+plot(t,x,'o')
+hold on
+plot(t,x,'--')
+\end{verbatim}
+
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c15.1.5b}
 $\dot x = x^2$, $x(1)=0.5$, step size $h=0.2$, interval $[1,3]$.
+
+\begin{solution}
+The following \Matlab commands approximate the solution by
+
+(i) Euler's method:
+\begin{verbatim}
+h    = 0.2;
+t(1) = 1;
+x(1) = 0.5;
+K    = 10;
+for k = 1:K
+   t(k+1) = t(k)+h;
+   x(k+1) = x(k)+h*x(k)*x(k);
+end
+plot(t,x,'o')
+hold on
+plot(t,x,'--')
+\end{verbatim}
+
+(ii)  The modified Euler method:
+\begin{verbatim}
+h    = 0.2;
+t(1) = 1;
+x(1) = 0.5;
+K    = 10;
+for k = 1:K
+   t(k+1) = t(k)+h;
+   y(k)   = x(k)+h*x(k)*x(k);
+   x(k+1) = x(k)+(h/2)*(x(k)*x(k)+y(k)*y(k));
+end
+plot(t,x,'o')
+hold on
+plot(t,x,'--')
+\end{verbatim}
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c15.1.5c}
 $\dot x = tx$, $x(1)=-1$, step size $h=0.05$, interval $[1,3]$.
+
+\begin{solution}
+The following \Matlab commands approximate the solution by
+
+(i) Euler's method:
+\begin{verbatim}
+h    = 0.05;
+t(1) = 1;
+x(1) = -1;
+K    = 40;
+for k = 1:K
+   t(k+1) = t(k)+h;
+   x(k+1) = x(k)+h*t(k)*x(k);
+end
+plot(t,x,'o')
+hold on
+plot(t,x,'--')
+\end{verbatim}
+
+(ii) The modified Euler method:
+\begin{verbatim}
+h    = 0.05;
+t(1) = 1;
+x(1) = -1;
+K    = 40;
+for k = 1:K
+   t(k+1) = t(k)+h;
+   y(k)   = x(k)+h*t(k)*x(k);
+   x(k+1) = x(k)+(h/2)*(t(k)*x(k)+t(k+1)*y(k));
+end
+plot(t,x,'o')
+hold on
+plot(t,x,'--')
+\end{verbatim}
+
+
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c15.1.7}
@@ -630,6 +880,58 @@ rule on the interval $[0,2]$.  In each case use the step size $h=0.1$.
 {\bf Hint:} Before working with \Matlabp, use this specific differential
 equation to solve explicitly for $x_{k+1}$ in \eqref{eq:impleulit} and 
 \eqref{eq:imtrap}.
+
+\begin{solution}
+
+(a) The implicit Euler method applied to the given initial
+value problem takes the form
+\[
+t_{k+1} = t_k + h\AND x_{k+1} = x_k + h x_{k+1}.
+\]
+We can solve the second equation  for $x_{k+1}$ and obtain
+\[
+x_{k+1} = \frac{x_k}{1-h}.
+\]
+The approximate solution is now obtained by the \Matlab commands
+\begin{verbatim}
+h    = 0.1;
+t(1) = 0;
+x(1) = 1;
+K    = 20;
+for k = 1:K
+   t(k+1) = t(k)+h;
+   x(k+1) = x(k)/(1-h);
+end
+plot(t,x,'o')
+hold on
+plot(t,x,'--')
+\end{verbatim}
+
+(b) The implicit trapezoidal rule applied to the given initial
+value problem takes the form
+\[
+t_{k+1} = t_k + h\AND x_{k+1} = x_k + \frac{h}{2}(x_k+x_{k+1}).
+\]
+We can solve the second equation for $x_{k+1}$ and obtain
+\[
+x_{k+1} = \frac{1+\frac{h}{2}}{1-\frac{h}{2}}x_k.
+\]
+The approximate solution is now obtained by the \Matlab commands
+\begin{verbatim}
+h    = 0.1;
+t(1) = 0;
+x(1) = 1;
+K    = 20;
+for k = 1:K
+   t(k+1) = t(k)+h;
+   x(k+1) = (1+h/2)/(1-h/2)*x(k);
+end
+plot(t,x,'o')
+hold on
+plot(t,x,'--')
+\end{verbatim}
+
+\end{solution}
 \end{exercise}
 
 
@@ -637,6 +939,56 @@ equation to solve explicitly for $x_{k+1}$ in \eqref{eq:impleulit} and
 Program the fourth order Runge-Kutta method in \Matlab
 to verify the numerical computation in Figure~\ref{fig:rk1}.
 Compare the results to those obtained by {\tt ode45}.
+
+\begin{solution}
+For the initial value problem \eqref{eq:eulexivp} the
+fourth order Runge-Kutta method is given by
+\[
+t_{k+1} = t_k+h,\quad f_1= x_k + t_k,\quad
+f_2 = t_k+\frac{h}{2} + x_k + \frac{h}{2}f_1,
+\]
+\[
+f_3 = t_k+\frac{h}{2} + x_k + \frac{h}{2}f_2,\quad f_4 = t_k+h+x_k+hf_3,
+\]
+and
+\[
+x_{k+1} = x_k + \frac{h}{6}(f_1+2f_2+2f_3+f_4).
+\]
+Hence we can reproduce Figure~\ref{fig:rk1} using the following
+\Matlab commands:
+\begin{verbatim}
+h    = 0.6;
+t(1) = 1;
+x(1) = 2;
+K    = 20;
+for k = 1:K
+   t(k+1) = t(k)+h;
+   f1 = x(k)+t(k);
+   f2 = t(k)+h/2 + x(k)+h/2*f1;
+   f3 = t(k)+h/2 + x(k)+h/2*f2;
+   f4 = t(k)+h + x(k)+h*f3;
+   x(k+1) = x(k)+h/6*(f1+2*f2+2*f3+f4);
+end
+plot(t,x,'o')
+hold on
+plot(t,x,'--')
+s = 1 : 0.1 : 13;
+y = 4*exp(s-1)-s-1;
+plot(s,y)
+\end{verbatim}
+Using the m-file {\tt fexam.m},
+\begin{verbatim}
+function f=fexam(t,x)
+f = x + t;
+\end{verbatim}
+we superimpose the approximate solution using {\tt ode45} by
+\begin{verbatim}
+[t,y] = ode45('fexam',[1 13],2);
+plot(t,y)
+\end{verbatim}
+This result is also very accurate.
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c15.1.9}
@@ -658,6 +1010,80 @@ on the interval $[0,12]$ with a step size $h=0.1$ using
 Write down the explicit solution of the initial
 value problem and compare this with the numerical
 results.  
+
+\begin{solution}
+The exact solution of the initial value problem
+is given by $x(t) = \cos(t)$ and $y(t)=\sin(t)$.  Therefore the
+solution describes a circle in the phase plane.
+
+(a) Euler's method applied to the given initial value problem
+takes the form
+\[
+\begin{array}{rcl}
+\vectwo{x_{k+1}}{y_{k+1}} & = &
+\vectwo{x_k}{y_k} + h \vectwo{-y_k}{x_k}\\
+t_{k+1} & = & t_k + h.
+\end{array}
+\]
+Hence we can use the following \Matlab commands
+\begin{verbatim}
+h    = 0.1;
+t(1) = 0;
+x(1) = 1;
+y(1) = 0;
+K    = 120;
+for k = 1:K
+   t(k+1) = t(k)+h;
+   x(k+1) = x(k)-h*y(k);
+   y(k+1) = y(k)+h*x(k);
+end
+plot(x,y,'o')
+hold on
+plot(x,y,'--')
+\end{verbatim}
+to approximate the solution in the phase plane.  It can be observed
+that the approximation obtained by Euler's method is spiraling out
+rather than reproducing the circle.
+
+(b)  The implicit Euler method applied to the given initial value
+problem takes the form
+\[
+\begin{array}{rcl}
+\vectwo{x_{k+1}}{y_{k+1}} & = &
+\vectwo{x_k}{y_k} + h \vectwo{-y_{k+1}}{x_{k+1}}\\
+t_{k+1} & = & t_k + h.
+\end{array}
+\]
+We can solve these linear equations for $x_{k+1}$ and $y_{k+1}$ to obtain
+\[
+x_{k+1} = \frac{x_k-hy_k}{1+h^2} \AND
+y_{k+1} = \frac{y_k+hx_k}{1+h^2}.
+\]
+Hence we can use the following \Matlab commands
+\begin{verbatim}
+h    = 0.1;
+t(1) = 0;
+x(1) = 1;
+y(1) = 0;
+K    = 120;
+for k = 1:K
+   t(k+1) = t(k)+h;
+   x(k+1) = (x(k)-h*y(k))/(1+h*h);
+   y(k+1) = (y(k)+h*x(k))/(1+h*h);
+end
+plot(x,y,'o')
+hold on
+plot(x,y,'--')
+\end{verbatim}
+to approximate the solution in the phase plane.  It can be observed
+that the approximation obtained by the implicit Euler method is
+spiraling in rather than reproducing the circle.
+
+
+
+
+
+\end{solution}
 \end{exercise}
 
 \end{document}

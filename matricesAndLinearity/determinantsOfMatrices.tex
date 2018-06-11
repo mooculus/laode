@@ -159,10 +159,32 @@ Find the inverse of the matrix
 \[
 \mattwo{2}{1}{3}{2}.
 \]
+
+\begin{solution}
+
+Use \eqref{e:formAinv} to compute the inverse of the matrix,
+as follows:
+\[ \mattwo{2}{1}{3}{2}^{-1} = \frac{1}{4-3}\mattwo{2}{-1}{-3}{2}
+= \mattwo{2}{-1}{-3}{2}. \]
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c7.8.4}
 Find the inverse of the shear matrix $\mattwo{1}{K}{0}{1}$.
+
+\begin{solution}
+
+\ans The inverse of the matrix is
+\[
+\mattwo{1}{-K}{0}{1}.
+\]
+
+\soln Note that the inverse of any $2 \times 2$ matrix is:
+\[ \mattwo{a}{b}{c}{d}^{-1} = \frac{1}{ad - bc}\mattwo{d}{-b}{-c}{a}. \]
+
+
+\end{solution}
 \end{exercise}\index{shear}
 
 \begin{exercise} \label{c4.9.4}
@@ -170,12 +192,49 @@ Show that the $2\times 2$ matrix $A=\mattwo{a}{b}{c}{d}$ is row
 equivalent to $I_2$ if and only if $ad-bc\neq 0$.  {\bf Hint:}
 Prove this result separately in the two cases $a\neq 0$ and
 $a=0$.
+
+\begin{solution}
+
+Case: $a \neq 0$.  $A$ can be row reduced as follows:
+\[ \mattwo{a}{b}{c}{d} \rightarrow
+\mattwo{1}{\frac{b}{a}}{c}{d} \rightarrow
+\cmattwo{1}{\frac{b}{a}}{0}{\frac{ad - bc}{a}}. \]
+If $ad - bc \neq 0$, then the matrix can be row reduced to $I_2$, whereas
+if $ad - bc = 0$, the row reduced matrix is:
+\[ \mattwo{1}{\frac{b}{a}}{0}{0} \]
+which cannot be reduced further and is not row equivalent to $I_2$.
+
+Case: $a = 0$.  If either $c = 0$ or $b = 0$, then the resulting matrices,
+\[ \mattwo{0}{b}{0}{d} \AND \mattwo{0}{0}{c}{d} \]
+respectively, are not row equivalent to $I_2$, and $ad - bc = 0 - 0 = 0$.
+If $c \neq 0$ and $b \neq 0$, then the matrix can be row reduced:
+\[ \mattwo{0}{b}{c}{d} \rightarrow
+\mattwo{c}{d}{0}{b} \rightarrow \mattwo{1}{\frac{d}{c}}{0}{b} \]
+which is row equivalent to $I_2$.  So $A$ is indeed row equivalent
+to $I_2$ if and only if $ad - bc \neq 0$.
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c4.9.5}
 Let $A$ be a $2\times 2$ matrix having integer entries.  Find a
 condition on the entries of $A$ that guarantees that $A\inv$ has
 integer entries.
+
+\begin{solution}
+
+\ans The matrix $A^{-1}$ has integer entries when $|ad - bc| = 1$.
+
+\soln By \eqref{e:formAinv},
+\[
+A^{-1} = \frac{1}{ad-bc}\mattwo{d}{-b}{-c}{a}.
+\]
+So, in order for $A^{-1}$ to have integer entries, $\frac{1}{ad-bc}$
+must be an integer.  Since $a$, $b$, $c$, and $d$ are integers,
+$\frac{1}{ad - bc}$ is an integer only if $|ad - bc| = 1$.
+
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c6.4.4}
@@ -185,6 +244,15 @@ to verify that
 \[
 \det(A\inv) = \frac{1}{\det(A)}.
 \]
+
+\begin{solution}
+
+Verify by computation:
+\[ \det(A^{-1}) = \frac{a}{\det(A)}\frac{d}{\det(A)} -
+\frac{-b}{\det(A)}\frac{-c}{\det(A)} = \frac{ad - bc}{(\det(A))^2} =
+\frac{1}{\det(A)}. \]
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c7.8.3}
@@ -195,6 +263,28 @@ M=\mattwo{-4}{-3}{5}{-2}.
 \]
 Sketch the triangle whose vertices are $0$, $Mp$, and $Mq$; and
 find the area of this triangle.
+
+\begin{solution}
+
+\ans Let $T$ be the triangle whose vertices are $0$, $p$, and $q$, and
+let $U$ be the triangle whose vertices are $0$, $Mp$ and $Mq$.  Then
+$A_T = 3$ is the area of $T$, and $A_U = 69$ is the area of $U$.
+
+\soln Use the formula for the area of a triangle to compute
+$A_T = \frac{1}{2}(3)(2) = 3$.  Then, use Theorem~\ref{T:det&area} to
+compute
+\[
+A_U = |\det{M}|A_T = 23(3) = 69.
+\]
+Figure~\ref{c7.8.3} shows triangles $T$ and $U$.
+
+\begin{figure}[htb]
+		\centerline{%
+		\psfig{file=exfigure/7-8-3.eps,width=3.0in}}
+	\exercap{c7.8.3}
+\end{figure}
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c7.8.4A}
@@ -217,6 +307,27 @@ a_{21}x_1+a_{22}x_2 & = & b_2.
 Subtract $a_{11}$ times the second equation from $a_{21}$ times the first 
 equation to eliminate $x_1$; then solve for $x_2$, and verify \eqref{E:cramer}.  
 Use a similar calculation to solve for $x_1$. 
+
+\begin{solution}
+
+The general system of linear equations in two unknowns is:
+\begin{eqnarray*}
+a_{11}x_1+a_{12}x_2 & = & b_1\\
+a_{21}x_1+a_{22}x_2 & = & b_2.
+\end{eqnarray*}
+Subtract $a_{11}$ times the $2^{nd}$ equation from $a_{21}$ times the $1^{st}$ 
+equation to eliminate $x_1$ and obtain
+\[
+(a_{21}a_{12}-a_{11}a_{22})x_2 = (a_{21}b_1-a_{11}b_2).
+\]
+Therefore
+\[
+x_2 =  \frac{a_{21}b_1-a_{11}b_2}{a_{21}a_{12}-a_{11}a_{22}}
+= \frac{\det(B_2)}{\det(A)}.
+\]
+A similar argument works for $x_1$.
+
+\end{solution}
 \end{exercise}
 
 \noindent In Exercises~\ref{c7.8.4B} -- \ref{c7.8.4C} use Cramer's 
@@ -225,11 +336,32 @@ equations.
 \begin{exercise} \label{c7.8.4B}
 Solve \qquad $\begin{array}{rcl} 2x+3y & = & 2 \\ 3x - 5y & = & 1 \end{array}$ 
 \qquad for $x$.
+
+\begin{solution}
+\ans  $x=\frac{13}{19}$.
+
+\soln By Cramer's rule (see \eqref{E:cramer}),
+\[
+x = \det\mattwo{2}{3}{1}{-5}\left/\det\mattwo{2}{3}{3}{-5}=\frac{-13}{-19}\right..
+\]
+ 
+
+\end{solution}
 \end{exercise} 
 \begin{exercise} \label{c7.8.4C}
 Solve \qquad
 $\begin{array}{rcl} 4x-3y & = & -1 \\ x + 2y & = & 7 \end{array}$ 
 \qquad for $y$.
+
+\begin{solution}
+\ans  $y=\frac{29}{11}$.
+
+\soln By Cramer's rule (see \eqref{E:cramer}),
+\[
+y = \det\mattwo{4}{-1}{1}{7}\left/\det\mattwo{4}{-3}{1}{2}=\frac{29}{11}\right..
+\]
+
+\end{solution}
 \end{exercise}
 
 \CEXER
@@ -239,6 +371,14 @@ Use \Matlab to choose five $2\times 2$ matrices at random and compute
 their inverses.  Do you get the impression that `typically'
 $2\times 2$ matrices are invertible?  Try to find a reason for
 this fact using the determinant of $2\times 2$ matrices.
+
+\begin{solution}
+
+A randomly selected $2 \times 2$ matrix is almost always invertible.
+A matrix will fail to be invertible only if the determinant of the
+matrix is $0$, which is seldom the case.
+
+\end{solution}
 \end{exercise}
 
 \noindent  In Exercises~\ref{c3.8.AA} -- \ref{c3.8.AD} use the {\sf unit 
@@ -249,12 +389,53 @@ that $S$ has unit area.  For each matrix, use this numerical experiment to
 decide whether or not the matrix is invertible.
 \begin{exercise}  \label{c3.8.AA}
 $A=\mattwo{0}{-2}{2}{0}$.
+
+\begin{solution}
+\ans The matrix $A$ is invertible and $\det(A) = 4$.
+
+\soln Figure~\ref{c3.8.AA} shows the {\tt map} output for this matrix.
+The area of the square resulting from the map is $4$, so $|\det(A)| = 4$.
+
+\end{solution}
 \end{exercise}
 \begin{exercise}  \label{c3.8.AB}
 $A=\mattwo{-0.5}{-0.5}{0.7}{0.7}$.
+
+\begin{solution}
+\ans The matrix $A$ is not invertible and $\det(A) = 0$.
+
+\soln Figure~\ref{c3.8.AB} shows the {\tt map} output for this matrix.
+The square is mapped to a line, whose area is $0$, so $|\det(A)| = 0$.
+
+\ans The matrix $A$ is invertible and $\det(A) = 1$.
+
+\soln Figure~\ref{c3.8.AD} shows the {\tt map} output for this matrix.
+The result of the map is another square of area $1$, so $|\det(A)| = 1$.
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/3-8-AA.eps,width=1.35in}
+                       \psfig{file=exfigure/3-8-AB.eps,width=1.35in}
+                       \psfig{file=exfigure/3-8-AC.eps,width=1.35in}
+                       \psfig{file=exfigure/3-8-AD.eps,width=1.35in}}
+        \centerline{Figure~\ref{c3.8.AA}\hspace{0.8in}
+        Figure~\ref{c3.8.AB}\hspace{0.8in}Figure~\ref{c3.8.AC}
+        \hspace{0.8in}Figure~\ref{c3.8.AD}}
+\end{figure}
+
+\end{solution}
 \end{exercise}
 \begin{exercise}  \label{c3.8.AC}
 $A=\mattwo{-1}{-0.5}{-2}{-1}$.
+
+\begin{solution}
+\ans The matrix $A$ is not invertible and $\det(A) = 0$.
+
+\soln Figure~\ref{c3.8.AC} shows the {\tt map} output for this matrix.
+The square is mapped to a line, whose area is $0$, so $|\det(A)| = 0$.
+
+
+\end{solution}
 \end{exercise}
 \begin{exercise}  \label{c3.8.AD}
 $A=\mattwo{0.7071}{0.7071}{-0.7071}{0.7071}$.

@@ -478,6 +478,39 @@ Year & Population (in millions) & Year & Population (in millions)\\
 \end{center}
 \end{table}
 
+
+\begin{solution}
+
+(a) \ans The best linear fit to the data is obtained with $m \approx
+0.4084$ and $b \approx 0.9603$, where $m$ and $b$ are measured in
+billions.
+
+\soln Create the matrix $A$ whose columns are $w_1$ and $w_2$.  Then use
+\eqref{E:nearestvector} to compute the best values for $m$ and $b$.
+
+(b) In 1910, $P \approx 408.4(1) + 960.3 = 1369$ million people.
+
+\para In 2000, $P \approx 408.4(10) + 960.3 = 5044$ million people.
+
+(c) \ans The prediction for 2000 is likely to be low.
+
+\soln As shown in Figure~\ref{c7.6.1}, a linear approximation does not
+fit the data points well.  To understand why, assume that population
+change is governed by the differential equation:
+\[
+\frac{dP}{dT} = rP
+\]
+where $r$ is constant.  Then $\frac{d^2P}{dT^2} = r^2P > 0$.
+Then the population curve is concave up, and a linear approximation
+underestimates the population at the endpoints of the curve.
+
+\begin{figure}[htb]
+		\centerline{%
+		\psfig{file=exfigure/7-6-1.eps,width=3.0in}}
+	\exercap{c7.6.1}
+\end{figure}
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c7.6.2}
@@ -485,6 +518,35 @@ Find the best sinusoidal approximation to the monthly average low temperatures
 in Paris and Rio de Janeiro.  How does the variation of these temperatures
 about the mean compare to the high temperature calculations?  Was this the
 result you expected?
+
+\begin{solution}
+
+\ans A good sinusoidal approximation for the low temperatures in Paris
+is 
+\[ \hbox{temp}(t) = 51.4167 - 9.4908\cos(\frac{2\pi t}{12}) -
+8.4745\sin(\frac{2\pi t}{12}). \]
+An approximation for the low temperatures in Rio is
+\[ \hbox{temp}(t) = 67.8333 + 3.3987\cos(\frac{2\pi t}{12}) +
+3.5654\sin(\frac{2\pi t}{12}). \]
+
+\soln Use a set of \Matlab commands similar to those shown in
+Section~\ref{S:7.6} to graph the low temperatures in Paris
+(Figure~\ref{c7.6.2}a) and Rio (Figure~\ref{c7.6.2}b).  The
+variations about the mean temperature are $d_P = 12.7237$ and
+$d_R = 4.9258$.  (These values can be computed for each set of data
+by typing {\tt d = sqrt(b(2)\^{}2 + b(3)\^{}2)} in \Matlabp.) 
+The low temperatures in Paris vary more depending on the time of
+year than do the temperatures in Rio, which is consistent with
+the graphs and with the values of $d$ for the high temperatures.
+
+\begin{figure}[htb]
+		\centerline{%
+		\psfig{file=exfigure/7-6-2a.eps,width=2.75in}
+		\psfig{file=exfigure/7-6-2b.eps,width=2.75in}}
+	\exercaptwo{c7.6.2}
+\end{figure}
+
+\end{solution}
 \end{exercise}
 
 
@@ -510,6 +572,31 @@ Duluth 		&  136 & 52 & Salt Lake City 	&   99 & 59 \\
 \label{T:sunny}
 \end{center}
 \end{table}
+
+\begin{solution}
+
+\ans Let $R$ be the number of days in the year with precipitation and
+let $s$ be the percentage of sunny hours to daylight hours.  Then the
+best linear estimate of the relationship between the two is:
+\[ R \approx 199.2 - 156.6s. \]
+
+\soln In \Matlabp, enter the data for number of rainy days as the vector
+$R$, and then enter the data for percentage of sunny hours as the vector
+$s_1$.  Then create the $1 \times 10$ vector $s_2 = (1,1,\dots,1)$.  Now,
+find the best vector $b = (b_1,b_2)$ such that $R = b_1s_1 + b_2s_2$. 
+This vector can be found using \eqref{E:nearestvector}.  The solution vector
+is $(b_1,b_2) \approx (-156.6,199.2)$.  Figure~\ref{c7.6.3} shows the
+actual data graphed against the linear estimate.
+
+\begin{figure}[htb]
+		\centerline{%
+		\psfig{file=exfigure/7-6-3.eps,width=3.0in}}
+	\exercap{c7.6.3}
+\end{figure}
+
+
+
+\end{solution}
 \end{exercise}
 
 

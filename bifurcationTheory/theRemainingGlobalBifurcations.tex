@@ -197,6 +197,27 @@ for $\rho=0.7$ and $\rho=1.1$ on the square $-2\leq x,y\leq 2$.  Is there
 a bifurcation between these two values of $\rho$?  If so, what kind of 
 bifurcation is it and what is the bifurcation value of $\rho$ to within 
 $\pm 0.02$?
+
+\begin{solution}
+
+The system has a saddle-node bifurcation of periodic solutions
+at $\rho \approx 0.995$.  Figure~\ref{c9.5.1}a shows the system
+with $\rho = 0.7$, at which point there are two limit cycles. 
+Figure~\ref{c9.5.1}b shows the system with $\rho = 0.995$, near the point
+of collision.  Figure~\ref{c9.5.1}c shows the system with $\rho = 1.1$, where
+there are no periodic solutions.
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/9-5-1a.eps,width=1.8in}
+                       \psfig{file=exfigure/9-5-1b.eps,width=1.8in}
+                       \psfig{file=exfigure/9-5-1c.eps,width=1.8in}}
+		\centerline{$\rho = 0.7$\hspace{1.3in}$\rho = 0.995$
+\hspace{1.3in}$\rho = 1.1$}
+                \exercapthree{c9.5.1}
+\end{figure}
+
+\end{solution}
 \end{exercise}
 
 \noindent In Exercises~\ref{c9.6.2a} -- \ref{c9.6.2c}, consider the system 
@@ -211,14 +232,52 @@ in the square $-1.5\leq x,y\leq 1.5$.
 \begin{exercise} \label{c9.6.2a}
 Verify numerically that \eqref{E:homo2} appears to have a limit cycle for 
 $\rho=-0.02$.
+
+\begin{solution}
+Figure~\ref{c9.6.2a} shows the system with $\rho = -0.02$. 
+At this point, there is a periodic solution around the origin.
+
+\end{solution}
 \end{exercise} 
 \begin{exercise} \label{c9.6.2b}
 Verify numerically that \eqref{E:homo2} does not appear to have a limit cycle 
 when $\rho=-0.03$.
+
+\begin{solution}
+Figure~\ref{c9.6.2b} shows the system with $\rho = -0.03$. 
+At this point, there is no periodic solution.
+
+\end{solution}
 \end{exercise} 
 \begin{exercise} \label{c9.6.2c}
 Determine numerically to two significant figures, the value of $\rho$
 where \eqref{E:homo2} has a homoclinic bifurcation. 
+
+\begin{solution}
+
+\ans By examination of {\tt pplane5} graphs of \eqref{E:homo2}, a homoclinic
+bifurcation occurs near $\rho = -0.027$.
+
+\soln 
+Using {\tt pplane5}, graph the system as $\rho$ decreases from $-0.02$, and
+note that the periodic solution disappears at when stable and unstable
+orbits of the saddle point coincide.  This homoclinic bifurcation occurs
+at $\rho \approx -0.027$.  Figure~\ref{c9.6.2c} shows the system with
+$\rho = -0.027$.  Note that these figures are created by mapping the stable
+and unstable trajectories of the saddle point.
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/9-6-2a.eps,width=1.8in}
+                       \psfig{file=exfigure/9-6-2b.eps,width=1.8in}
+                       \psfig{file=exfigure/9-6-2c.eps,width=1.8in}}
+		\centerline{$\rho = -0.02$\hspace{1.1in}$\rho = -0.03$
+\hspace{1.1in}$\rho = -0.027$}
+		\centerline{Figure~\ref{c9.6.2a}\hspace{1.2in}
+Figure~\ref{c9.6.2b}\hspace{1.2in}Figure~\ref{c9.6.2c}}
+\end{figure}
+
+\end{solution}
 \end{exercise} 
 
 \noindent In Exercises~\ref{c9.6.3a} -- \ref{c9.6.3b}, consider the system 
@@ -235,12 +294,46 @@ when $\rho=0$?  Be careful when answering this question.  First use
 {\sf pplane8} to determine the number of limit cycles on the square 
 $-\ell \leq x,y \leq\ell$ when $\ell=2$.  Then compute with $\ell=10$ and 
 $\ell=40$.
+
+\begin{solution}
+
+\ans The system appears to have an infinite number of limit cycles
+as the size of the computation area increases.
+
+\soln In the region $-2 \leq x,y \leq 2$, the system appears to have no
+limit cycles.  However, in the region $-10 \leq x,y \leq 10$, there are
+four limit cycles, and there are more in the larger region $-40 \leq x,y
+\leq 40$.  Figure~\ref{c9.6.3a} shows the system with $\rho = 0$ on the
+square $-10 \leq x,y \leq 10$.
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c9.6.3b}
 Find the number of limit cycles to \eqref{E:infinity} on the square 
 with $\ell=7$ when $\rho=0.06$ and when $\rho=0.07$.  Has a bifurcation
  occurred between these two values of $\rho$ and, if so, what kind of 
 bifurcation?
+
+\begin{solution}
+
+Figure~\ref{c9.6.3b}a shows the system with $\rho = 0.06$, and 
+Figure~\ref{c9.6.3b}b shows the system with $\rho = 0.07$.  The system
+has two periodic solutions at $\rho = 0.06$, and none at $\rho = 0.07$.
+A saddle node bifurcation for periodic solutions occurs between these
+two values of $\rho$.
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/9-6-3a.eps,width=1.8in}
+                       \psfig{file=exfigure/9-6-3b.eps,width=1.8in}
+                       \psfig{file=exfigure/9-6-3c.eps,width=1.8in}}
+		\centerline{$\rho = 0$\hspace{1.3in}$\rho = 0.06$
+\hspace{1.3in}$\rho = 0.07$}
+		\centerline{Figure~\ref{c9.6.3a}\hspace{1.2in}
+Figure~\ref{c9.6.3b}a\hspace{1.2in}Figure~\ref{c9.6.3b}b}
+\end{figure}
+
+\end{solution}
 \end{exercise}
 
 \noindent In Exercises~\ref{c9.6.4a} -- \ref{c9.6.4c}, consider the system 
@@ -257,14 +350,71 @@ How many equilibria does \eqref{E:twoeq} have in this square when
 $\rho=1.7$ and of what type are they?  This question can be answered either 
 numerically using {\sf pplane8} (easy) or analytically (more difficult, but 
 possible).
+
+\begin{solution}
+
+\ans The system has a saddle at $(x,y) \approx (0.4,-1.2)$, and a 
+spiral source at $(x,y) \approx (2.0,1.9)$.
+
+\soln Either determine the equilibria numerically from the {\tt pplane5}
+graph of the system (Figure~\ref{c9.6.4b}a), or compute analytically.  To
+do this, solve $\dot{y} = 0$ to find that $y = x^3 - 3x$ at all equilibria.
+Then, substitute this value for $y$ into $\dot{x}$ and solve $\dot{x} = 0$
+to obtain $0 = x^3 + x^2 - 7.4x + 2.89$.  Find the roots of this equation
+to confirm that $(x,y) \approx (0.4,-1.2)$ and $(x,y) \approx (2.0,1.9)$
+are equilibria.  There is a third equilibrium at $(x,y) \approx
+(-3.4,-29)$ which is not in the graph range.
+
+\para The general Jacobian for the system is
+\[
+J = \cmattwo{-1 + 2(x - \rho)}{1}{-3x^2 + 3}{1}.
+\]
+Thus, when $\rho = 1.7$, $\trace(J) = 2(x - 1.7)$ and
+$\det(J) = 3x^2 + 2(x - 1.7) - 4$.  At $(x,y) \approx (0.4,-1.2)$,
+$\det(J) \approx -6.1 < 0$, so the equilibrium is a saddle.  At
+$(x,y) \approx (2.0,1.9)$, $\det(J) \approx 8.6 > 0$, $\trace(J) \approx
+0.6 > 0$, and $D = (\trace(J))^2 - t\det(J) \approx -34 < 0$.  Therefore,
+this equilibrium is a spiral source.
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c9.6.4b}
 What type of bifurcation occurs in \eqref{E:twoeq} as $\rho$ is varied
 from $\rho=1.7$ to $\rho=1.85$?
+
+\begin{solution}
+A homoclinic bifurcation occurs between $\rho = 1.7$ and
+$\rho = 1.85$.  As $\rho$ increases from $\rho = 1.7$, an unstable
+orbit of the saddle point crosses a stable orbit of the saddle.  After
+this point, there is a periodic solution around the spiral source.
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c9.6.4c}
 What type of bifurcation occurs in \eqref{E:twoeq} as $\rho$ is varied
 from $\rho=1.85$ to $\rho=2.1$?
+
+\begin{solution}
+A Hopf bifurcation occurs between $\rho = 1.85$ and
+$\rho = 2.1$.  The spiral source passes through a center and becomes a
+spiral sink.  At this point, the periodic solution disappears.
+
+Figure~\ref{c9.6.4b}a shows the system with $\rho = 1.7$.
+Figure~\ref{c9.6.4b}b shows the system with $\rho = 1.85$.
+Figure~\ref{c9.6.4b}c shows the system with $\rho = 2.1$.
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/9-6-4a.eps,width=1.8in}
+                       \psfig{file=exfigure/9-6-4b.eps,width=1.8in}
+                       \psfig{file=exfigure/9-6-4c.eps,width=1.8in}}
+		\centerline{$\rho = 1.7$\hspace{1.3in}$\rho = 1.85$
+\hspace{1.3in}$\rho = 2.1$}
+                \exercapthree{c9.6.4b}
+\end{figure}
+
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c9.6.6}
@@ -278,6 +428,55 @@ differential equations
 \end{equation}
 Find seven bifurcations that occur in \eqref{E:eqn2} as $\rho$ varies from 
 $-0.1$ to $\rho=0.3$. 
+
+\begin{solution}
+
+\soln In the family of systems of differential equations  
+\[
+\begin{array}{rcl}
+\dot{x} & = & \rho x-y-3y^2+2.5xy\\
+\dot{y} & = & x-3x^2+2x^2y.
+\end{array}
+\]
+there are seven bifurcations as $\rho$ varies from $\rho=-0.1$ to $\rho=0.3$:  
+\begin{enumerate}
+\item	a saddle-node bifurcation between $\rho=-0.1$ and $\rho=-0.002$,
+\item	a Hopf bifurcation between $\rho=-0.002$ and $\rho=0.008$,
+\item	a Hopf bifurcation between $\rho=0.008$ and $\rho=0.05$,
+\item	a homoclinic bifurcation between $\rho=0.05$ and $\rho=0.08$,
+\item	a homoclinic bifurcation between $\rho=0.08$ and $\rho=0.1$,
+\item	a heteroclinic bifurcation between $\rho=0.1$ and $\rho=0.2$,
+\item	a heteroclinic bifurcation between $\rho=0.2$ and $\rho=0.3$.
+\end{enumerate}
+The following eight phase portraits bracket the seven bifurcations.
+\begin{figure}[htb]
+     \centerline{%
+     \psfig{file=exfigure/pr3-M1.eps,width=2.75in}     
+     \psfig{file=exfigure/pr3-M002.eps,width=2.75in}}
+     \centerline{Figure~\ref{c9.6.6}a ($\rho = -0.1$)\hspace{1.3in} Figure~\ref{c9.6.6}b ($\rho = -0.002$)}
+\end{figure}
+\begin{figure}[htb]
+     \centerline{%
+     \psfig{file=exfigure/pr3-008.eps,width=2.75in}
+     \psfig{file=exfigure/pr3-05.eps,width=2.75in}}
+     \centerline{Figure~\ref{c9.6.6}c ($\rho = 0.008$)\hspace{1.3in} Figure~\ref{c9.6.6}d ($\rho = 0.05$)}
+\end{figure}
+\begin{figure}[htb]
+     \centerline{%
+     \psfig{file=exfigure/pr3-08.eps,width=2.75in}   
+     \psfig{file=exfigure/pr3-1.eps,width=2.75in}}
+     \centerline{Figure~\ref{c9.6.6}e ($\rho = 0.08$)\hspace{1.3in} Figure~\ref{c9.6.6}f ($\rho = 0.1$)}
+\end{figure}
+\begin{figure}[htb]
+     \centerline{%
+     \psfig{file=exfigure/pr3-2.eps,width=2.75in}     
+     \psfig{file=exfigure/pr3-3.eps,width=2.75in}}
+     \centerline{Figure~\ref{c9.6.6}g ($\rho = 0.2$)\hspace{1.3in} Figure~\ref{c9.6.6}h ($\rho = 0.3$)}
+\end{figure}
+
+\clearpage
+
+\end{solution}
 \end{exercise}
 
 \noindent In Exercises~\ref{c9.6.5a} -- \ref{c9.6.5c}, consider the system 
@@ -291,14 +490,46 @@ of differential equations \eqref{E:saddleconn}.
 \begin{exercise} \label{c9.6.5a}
 How many equilibria does \eqref{E:saddleconn} have for each value of 
 $\rho$ and of what type are they?  
+
+\begin{solution}
+
+\ans For any values of $\rho$, the system has saddle points at
+\[
+(x,y) = (-\rho + \sqrt{\rho^2 + 4},0) \AND
+(x,y) = (-\rho - \sqrt{\rho^2 + 4},0)
+\]
+and a spiral sink at the origin.
+
+\soln Set $\dot{x} = \dot{y} = 0$.  Then $y = 0$, and
+$0 = x^3 + \rho x^2 - x$, so there are equilibria at the origin, and at
+the roots of $x^2 + \rho x - x$.
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c9.6.5b}
 How many bifurcations occur in \eqref{E:saddleconn} as $\rho$ is 
 varied from $\rho=0.1$ to $\rho=0.2$?
+
+\begin{solution}
+
+One bifurcation occurs as $\rho$ is varied from $\rho = 0.1$ to $\rho = 0.2$.
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c9.6.5c}
 What types of bifurcation occur in \eqref{E:saddleconn} as $\rho$ is 
 varied from $\rho=0.1$ to $\rho=0.2$?
+
+\begin{solution}
+
+A heteroclinic bifurcation occurs at $\rho \approx 0.141$.  At this
+point, an unstable orbit of the leftmost saddle point coincides with a
+stable orbit of the rightmost saddle point.
+
+
+
+
+\end{solution}
 \end{exercise}
 
 

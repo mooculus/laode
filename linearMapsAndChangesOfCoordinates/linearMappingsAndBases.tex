@@ -342,12 +342,42 @@ and
 \[
 w_1=(-1,0) \quad w_2=(0,1) \quad w_3=(3,1).
 \]
+
+\begin{solution}
+
+Compute $A$, the matrix of $L$, using Equation~\eqref{e:defA}:
+\[ A = (w_1^t|w_2^t|w_3^t)(v_1^t|v_2^t|v_3^t)^{-1} =
+\left(\begin{array}{rrr} -1 & 0 & 3 \\ 0 & 1 & 1 \end{array}\right)
+\matthree{1}{2}{-2}{0}{-1}{1}{2}{1}{0}^{-1} =
+\left(\begin{array}{rrr} -7 & -11 & 3 \\ -4 & -7 & 2
+\end{array}\right). \]
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise}  \label{c7.2.2}
 Let ${\cal P}_n$ be the vector space of polynomials $p(t)$ of
 degree less than or equal to $n$.  Show that $\{1,t,t^2,\ldots,t^n\}$ is a
 basis for ${\cal P}_n$.
+
+\begin{solution}
+
+To show that the set $\{1,t,t^2,\dots,t^n\}$ is a basis for
+${\cal P}_n$, we must show that the $n + 1$ polynomials are
+linearly independent and span ${\cal P}_n$.  The polynomials are
+independent because the general polynomial of degree $n$:
+\[
+\alpha_1 + \alpha_2t + \alpha_3t^2 + \cdots + \alpha_{n+1}t^n
+\]
+is identically $0$ for all values of $t$ only when $\alpha_1 =
+\alpha_2 = \cdots = \alpha_{n + 1} = 0$.  The polynomials span
+${\cal P}_n$ because every polynomial $p(t)$ of degree $n$ has
+the form
+\[ p(t) = \beta_1 + \beta_2t + \cdots + \beta_{n + 1}t^n \]
+which is a linear combination of the polynomials
+$\{1,t,t^2,\dots,t^n\}$ for any $p(t)$ in ${\cal P}_n$.
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise}  \label{c7.2.2a}
@@ -356,6 +386,21 @@ Show that
 \frac{d}{dt}:{\cal P}_3\to{\cal P}_2
 \]
 is a linear mapping.
+
+\begin{solution}
+
+Let $\frac{d}{dt}$ be a transformation that maps $p(t) \mapsto
+\frac{d}{dt}p(t)$.  For $p(t) =  p_1 + p_2t + p_3t^2 + p_4t^3$, then
+$\frac{d}{dt}p(t) = p_2 + p_3t + p_4t^2$, so $\frac{d}{dt}$ is indeed
+a mapping ${\cal P}_3 \rightarrow {\cal P}_2$.  From calculus, we
+know that, for any functions $f$ and $g$:
+\[ \frac{d}{dt}(f + g)(t) = \frac{d}{dt}f(t) + \frac{d}{dt}g(t), \]
+and that, for any scalar $c$:
+\[ \frac{d}{dt}(cf)(t) = c\frac{d}{dt}f(t). \]
+Let $f$ and $g$ be elements of ${\cal P}_3$.  Then
+$\frac{d}{dt}: {\cal P}_3 \rightarrow {\cal P}_2$ is a linear mapping.
+
+\end{solution}
 \end{exercise}
 \begin{exercise}  \label{c7.2.2b}
 Show that
@@ -363,6 +408,21 @@ Show that
 L(p) = \int_0^tp(s)ds
 \]
 is a linear mapping of ${\cal P}_2\to{\cal P}_3$.
+
+\begin{solution}
+
+Let $p(t) = p_1 + p_2t + p_3t^2$.  Then the transformation $L$
+maps $p(t) \mapsto L(p(t)) = p_1t + \frac{1}{2}p_2t^2 +
+\frac{1}{3}p_3t^3$, so $L$ is indeed a mapping ${\cal P}_2
+\rightarrow {\cal P}_3$.  We know from calculus that, for any
+functions $f$ and $g$:
+\[ \int_0^t(f + g)(t) = \int_0^tf(t) + \int_0^tg(t) \]
+And, for any scalar $c \in \R$,
+\[ \int_0^t(cf)(t) = c\int_0^tf(t). \]
+Let $f$ and $g$ be elements of ${\cal P}_2$.  Then $L$ is a linear
+mapping.
+
+\end{solution}
 \end{exercise}
 \begin{exercise}  \label{c7.2.2c}
 Use Exercises~\ref{c7.2.2a}, \ref{c7.2.2b} and
@@ -371,6 +431,32 @@ Theorem~\ref{L:linmapfrombasis} to show that
 \frac{d}{dt}\compose L:{\cal P}_2\to{\cal P}_2
 \]
 is the identity map.
+
+\begin{solution}
+
+Let $M = \frac{d}{dt} \circ L$ be a mapping ${\cal P}_2
+\rightarrow {\cal P}_2$.  The fundamental
+theorem of calculus states that, for any function $g$,
+\[ \frac{d}{dt}\int_0^t g(\tau)d\tau = g(t). \]
+Thus $M(g) = g$ is valid for all values of $g$, so $M$ is the
+identity map.
+
+\para To prove this fact explicitly for this case, note that $M$ is
+the identity mapping if it maps every polynomial in ${\cal P}_2$ to
+itself.  Lemma~\ref{L:linmapfrombasis} states that this mapping can
+be uniquely determined by a basis of ${\cal P}_2$.  According to
+Exercise~\ref{c7.2.2}, $\{1,t,t^2\}$ is a basis for ${\cal P}_2$. 
+Therefore, $M$ is the identity map if $M(1) = 1$, $M(t) = t$ and
+$M(t^2) = t^2$:
+\[ \frac{d}{dt} \circ L (1) = \frac{d}{dt}\left(\int_0^tds\right) =
+\frac{d}{dt}(t) = 1. \]
+\[ \frac{d}{dt} \circ L (t) = \frac{d}{dt}\left(\int_0^tsds\right) =
+\frac{d}{dt}\left(\frac{t^2}{2}\right) = t. \]
+\[ \frac{d}{dt} \circ L (t^2) = \frac{d}{dt}\left(\int_0^ts^2ds\right) =
+\frac{d}{dt}\left(\frac{t^3}{3}\right) = t^2. \]
+So $\frac{d}{dt} \circ L$ is indeed the identity map for ${\cal P}_2$.
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c7.2.3}
@@ -381,6 +467,23 @@ defined by
 L(z) = \lambda z,
 \]
 where $\lambda=\sigma+i\tau$ is a linear mapping.
+
+\begin{solution}
+
+The space $\C$ is a two dimensional real vector space since every
+element of $\C$ can be written as $c = \sigma + \tau i$, a linear
+combination of the linearly independent two dimensional set $\{1,i\}$.
+
+\para Let $z_1$ and $z_2$ be elements of $\R$.  Then,
+\[ L(z_1 + z_2) = \lambda(z_1 + z_2) =
+\lambda z_1 + \lambda z_2 = L(z_1) + L(z_2). \]
+For any real scalar $c$,
+\[ L(cz_1) = \lambda(cz_1) = 
+c\lambda z_1 = cL(z_1). \]
+Therefore, $L(z) = \lambda z$ is a linear mapping.
+
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c7.2.4}
@@ -391,17 +494,75 @@ $L(X)=AX-XA$ where $X\in{\cal M}(n)$.  Verify that $L$ is
 a linear mapping.  Show that the null space of $L$,
 $\{X\in{\cal M}:L(X)=0\}$, is a subspace consisting of all
 matrices that commute with $A$.
+
+\begin{solution}
+
+Let $X$ and $Y$ be elements of ${\cal M}(n)$.  Then,
+\[ L(X + Y) = A(X + Y) - (X + Y)A = (AX - XA)
++ (AY - YA) = L(X) + L(Y). \]
+For any real scalar $c$,
+\[ L(cX) = A(cX) - (cX)A = c(AX) - c(XA) = c(AX - XA) = cL(X). \]
+Therefore, $L$ is a linear mapping.
+
+\para The null space of $L$ consists of all matrices $X$ such that
+$AX - XA = 0$, or $AX = XA$.  By definition, these are the matrices
+such that $X$ commutes with $A$.  Let $X$ and $Y$ be elements of
+the null space of $L$.  Then show that $X + Y$ is in the null space
+by calculating:
+\[ L(X + Y) = A(X + Y) - (X + Y)A = AX + AY - XA - YA = AX + AY - AX
+- AY = 0. \]
+Show that, for any real scalar $c$, $cX$ is in the null space by
+calculating:
+\[ L(cX) = A(cX) - (cX)A = cAX - cXA = cAX - cAX = 0. \]
+Therefore, the null space of $L$ is a subspace consisting of all
+matrices that commute with $A$.
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c7.2.5}
 Let $L:\CCone\to\R$ be defined by $L(f) = \int_0^{2\pi}f(t)\cos(t)dt$
 for $f\in\CCone$.  Verify that $L$ is a linear mapping.
+
+\begin{solution}
+
+Let $f$ and $g$ be functions in ${\cal C}^1$.  Then,
+\[ \begin{array}{rcl}
+ L(f + g) & = & \int_0^{2\pi}(f(t) + g(t))\cos(t)dt \\
+& = & \int_0^{2\pi}(f(t)\cos(t)dt + g(t)\cos(t)dt) \\
+& = & \int_0^{2\pi}f(t)\cos(t)dt + \int_0^{2\pi}g(t)\cos(t)dt \\
+& = & L(f) + L(g). \end{array} \]
+For any real scalar $c$,
+\[ L(cf) = \int_0^{2\pi}cf(t)\cos(t)dt = c\int_0^{2\pi}f(t)\cos(t)dt
+= cL(f). \]
+So $L$ is a linear mapping.
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c7.2.6}
 Let ${\cal P}$ be the vector space of polynomials in one variable
 $x$.  Define $L:{\cal P}\to {\cal P}$ by $L(p)(x)=\int_0^x(t-1)p(t)dt$.
 Verify that $L$ is a linear mapping.
+
+\begin{solution}
+
+Let $p$ and $q$ be elements of ${\cal P}$.  Then,
+\[ \begin{array}{rcl}
+L(p + q)(x) & = & \int_0^x(t - 1)(p(t) + q(t))dt \\
+& = & \int_0^x((t - 1)p(t)dt + (t - 1)q(t)dt) \\
+& = & \int_0^x(t - 1)p(t)dt + \int_0^x(t - 1)q(t)dt \\
+& = & L(p(x)) + L(q(x)). \end{array} \]
+For any real scalar $c$,
+\[ L(cp(x)) = \int_0^x(t - 1)cp(t)dt = c\int_0^x(t - 1)p(t)dt
+= cL(p(x)). \]
+Therefore, $L$ is a linear mapping.
+
+
+
+
+
+\end{solution}
 \end{exercise}
 
 

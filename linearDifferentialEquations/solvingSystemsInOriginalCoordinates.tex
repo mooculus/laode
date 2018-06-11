@@ -714,32 +714,287 @@ of differential equations $\dot X = AX$ corresponding to the given matrix
 $A$ and construct a complete set of linearly independent solutions.
 \begin{exercise} \label{c12.1.2a}
 $A=\mattwo{2}{1}{0}{2}$.
+
+\begin{solution}
+\ans
+\[
+X_1(t) = e^{2t}\vectwo{1}{0} \AND
+X_2(t) = e^{2t}\vectwo{t}{1}
+\]
+are linearly independent solutions to $\dot{X} = AX$.
+
+\soln First find the eigenvalues of $A$.  Since $A$ is upper triangular,
+the eigenvalues are the diagonal entries.  Therefore $\lambda_1 = 2$
+is a double eigenvalue.  Then solve $(A - \lambda_1 I_2)w_1 = 0$ to
+find that $w_1 = (1,0)^t$ is an eigenvector of $A$.  Find a
+generalized eigenvector $w_2$ such that $(A - \lambda_1 I_2)w_2 =
+w_1$, in this case, $w_2 = (0,1)^t$.  Now, by \eqref{E:Xj},
+there are linearly independent solutions $X_1(t)$ and $X_2(t)$ such that
+\[
+\begin{array}{rcl}
+X_1(t) & = & e^{\lambda_1 t}w_1 = e^{2t}\vectwo{1}{0} \\ X_2(t) & = &
+e^{\lambda_1 t}(tw_1 + w_2) = e^{2t}\left(\vectwo{t}{0} +
+\vectwo{0}{1}\right).
+\end{array}
+\]
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c12.1.2b}
 $A=\left(\begin{array}{rrr} 1 & 0 & 0\\ 0 & -1 & 2 \\ 0 & 0 & -1
 \end{array}\right)$.
+
+\begin{solution}
+\ans
+\[
+X_1(t) = \cvecthree{e^t}{0}{0}, \quad
+X_2(t) = \cvecthree{0}{e^{-t}}{0}, \AND
+X_3(t) = e^{-t}\cvecthree{0}{t + 1}{\frac{1}{2}}
+\]
+are linearly independent solutions to $\dot{X} = AX$.
+
+\soln The eigenvalues of $A$ are the diagonal entries, since $A$ is upper
+triangular.  For each eigenvalue, solve $(A - \lambda_j I_2)w_j = 0$
+to find that $\lambda_1 = 1$ is an eigenvalue with eigenvector $w_1 =
+(1,0,0)^t$, and that $\lambda_2 = -1$ is a double eigenvalue with
+single eigenvector $w_2 = (0,1,0)^t$.  Find $w_3$, the generalized
+eigenvector for $\lambda_2$, by solving $(A - \lambda_2 I_3)w_3 = w_2$
+to obtain $w_3 = (0,1,\frac{1}{2})^t$.  Now, by \eqref{E:Xj},
+there are linearly independent solutions $X_j(t)$ such that
+\[
+\begin{array}{rcl}
+X_1(t) & = & e^{\lambda_1 t}w_1 = e^t\vecthree{1}{0}{0} \\
+X_2(t) & = & e^{\lambda_2 t}w_2 = e^{-t}\vecthree{0}{1}{0} \\
+X_3(t) & = & e^{\lambda_2 t}(tw_2 + w_3) = e^{-t}\left(\vecthree{0}{t}{0}
++ \vecthree{0}{1}{\frac{1}{2}}\right).
+\end{array}
+\]
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c12.1.2c}
 $A=\mattwo{1}{-1}{1}{3}$.
+
+\begin{solution}
+\ans
+\[
+X_1(t) = e^{2t}\vectwo{1}{-1} \AND
+X_2(t) = e^{2t}\cvectwo{t - 1}{-t}
+\]
+are linearly independent solutions to $\dot{X} = AX$.
+
+\soln First find the eigenvalues of $A$.  In this case, $\lambda_1 = 2$
+is a double eigenvalue.  Then solve $(A - \lambda_1 I_2)w_1 = 0$ to
+find that $w_1 = (1,-1)^t$ is an eigenvector of $A$.  Find a
+generalized eigenvector $w_2$ such that $(A - \lambda_1 I_2)w_2 =
+w_1$, in this case, $w_2 = (-1,0)^t$.  Now, by \eqref{E:Xj},
+there are linearly independent solutions $X_1(t)$ and $X_2(t)$ such that
+\[
+\begin{array}{rcl}
+X_1(t) & = & e^{\lambda_1 t}w_1 = e^{2t}\vectwo{1}{-1} \\
+X_2(t) & = & e^{\lambda_1 t}(tw_1 + w_2) = e^{2t}\left(\vectwo{t}{-t} +
+\vectwo{-1}{0}\right).
+\end{array}
+\]
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c12.1.2d}
 $A=\left(\begin{array}{rrr} -4 & -9 & 0\\ 0 & 5 & 0 \\ -9 & -8 & 5
 \end{array}\right)$.
+
+\begin{solution}
+\ans
+\[
+X_1(t) = e^{-4t}\vecthree{1}{0}{1}, \quad
+X_2(t) = e^{5t}\vecthree{0}{0}{1}, \AND
+X_3(t) = e^{5t}\vecthree{-1}{1}{t}
+\]
+are linearly independent solutions to $\dot{X} = AX$.
+
+\soln First find the eigenvalues and eigenvectors of $A$.  In this case,
+$A$ has an eigenvalue at $\lambda_1 = -4$ with eigenvector $w_1 =
+(1,0,1)^t$, and a double eigenvalue at $\lambda_2 = 5$ with single
+eigenvector $w_2 = (0,0,1)^t$.  Find $w_3$, the generalized
+eigenvector for $\lambda_2$, by solving $(A - \lambda_2 I_3)w_3 = w_2$
+to obtain $w_3 = (-1,1,0)^t$.  Now, by \eqref{E:Xj},
+there are linearly independent solutions $X_j(t)$ such that
+\[
+\begin{array}{rcl}
+X_1(t) & = & e^{\lambda_1 t}w_1 = e^{-4t}\vecthree{1}{0}{1} \\
+X_2(t) & = & e^{\lambda_2 t}w_2 = e^{5t}\vecthree{0}{0}{1} \\
+X_3(t) & = & e^{\lambda_2 t}(tw_2 + w_3) = e^{5t}\left(\vecthree{0}{0}{t}
++ \vecthree{-1}{1}{0}\right).
+\end{array}
+\]
+
+\end{solution}
 \end{exercise}
 
 \noindent  In Exercises~\ref{c12.1.6a} -- \ref{c12.1.6d} use Corollary~\ref{T:etA0} to compute $e^{tA}$ for the given matrix.
 \begin{exercise} \label{c12.1.6a}
 $A = \mattwo{0}{1}{1}{0}$.
+
+\begin{solution}
+\ans
+\[
+e^{tA} = -e^t\frac{1}{2}\mattwo{1}{1}{1}{1} +
+e^{-t}\frac{1}{2}\mattwo{-1}{1}{1}{-1}
+= -\frac{1}{2}\cmattwo{e^{t} + e^{-t}}{e^t - e^{-t}}{e^t - e^{-t}}
+{e^t + e^{-t}}.
+\]
+
+\soln First find the eigenvalues of $A$, which are $\lambda_1 = 1$ and
+$\lambda_2 = -1$.  By Corollary~\ref{T:etA0},
+\[
+e^{tA} = \sum_{\ell = 1}^2 e^{\lambda_\ell t}a_\ell(A)P_\ell(A).
+\]
+The characteristic polynomial of $A$ is $p_A(\lambda) = (\lambda -
+1)(\lambda + 1)$, so $P_1(\lambda) = \lambda + 1$ and $P_2(\lambda) =
+\lambda - 1$.  Use partial fractions to find that
+\[
+\frac{1}{p_A(\lambda)} = \frac{-\frac{1}{2}}{1 - \lambda} + \frac{\frac{1}{2}}
+{-1 - \lambda}.
+\]
+Thus, $a_1(\lambda) = -\frac{1}{2}$ and $a_2(\lambda) = \frac{1}{2}$.  So
+\[
+\begin{array}{rcl}
+e^{tA} & = & e^ta_1(A)P_1(A) + e^{-t}a_2(A)P_2(A) \\
+& = & \dps e^t\left(-\frac{1}{2}\right)\left(\mattwo{0}{1}{1}{0} +
+\mattwo{1}{0}{0}{1}\right) + e^{-t}\left(\frac{1}{2}\right)
+\left(\mattwo{0}{1}{1}{0} - \mattwo{1}{0}{0}{1}\right).
+\end{array}
+\]
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c12.1.6b}
 $A = \mattwo{2}{1}{1}{2}$.
+
+\begin{solution}
+\ans
+\[
+e^{tA} = -e^{3t}\frac{1}{2}\mattwo{1}{1}{1}{1} +
+e^t\frac{1}{2}\mattwo{-1}{1}{1}{-1}
+= -\frac{1}{2}\cmattwo{e^{3t} + e^{t}}{e^{3t} - e^{t}}{e^{3t} - e^{t}}
+{e^{3t} + e^{t}}.
+\]
+
+\soln First find the eigenvalues of $A$, which are $\lambda_1 = 3$ and
+$\lambda_2 = 1$.  By Corollary~\ref{T:etA0},
+\[
+e^{tA} = \sum_{\ell = 1}^2 e^{\lambda_\ell t}a_\ell(A)P_\ell(A).
+\]
+The characteristic polynomial of $A$ is $p_A(\lambda) = (\lambda -
+1)(\lambda - 3)$, so $P_1(\lambda) = \lambda - 1$ and $P_2(\lambda) =
+\lambda - 3$.  Use partial fractions to find that
+\[
+\frac{1}{p_A(\lambda)} = \frac{-\frac{1}{2}}{3 - \lambda} + \frac{\frac{1}{2}}
+{1 - \lambda}.
+\]
+Thus, $a_1(\lambda) = -\frac{1}{2}$ and $a_2(\lambda) = \frac{1}{2}$.  So
+\[
+\begin{array}{rcl}
+e^{tA} & = & e^ta_1(A)P_1(A) + e^{-t}a_2(A)P_2(A) \\
+& = & \dps e^{3t}\left(-\frac{1}{2}\right)\left(\mattwo{2}{1}{1}{2} -
+\mattwo{1}{0}{0}{1}\right) + e^{t}\left(\frac{1}{2}\right)
+\left(\mattwo{2}{1}{1}{2} - \mattwo{3}{0}{0}{3}\right).
+\end{array}
+\]
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c12.1.6c}
 $A = \mattwo{3}{2}{0}{1}$.
+
+\begin{solution}
+\ans
+\[
+e^{tA} = -e^{3t}\frac{1}{2}\mattwo{2}{2}{0}{0} +
+e^t\frac{1}{2}\mattwo{0}{2}{0}{-2}
+= -\cmattwo{e^{3t}}{e^{3t} - e^{t}}{0}{e^{t}}.
+\]
+
+\soln First find the eigenvalues of $A$, which are $\lambda_1 = 3$ and
+$\lambda_2 = 1$.  By Corollary~\ref{T:etA0},
+\[
+e^{tA} = \sum_{\ell = 1}^2 e^{\lambda_\ell t}a_\ell(A)P_\ell(A).
+\]
+The characteristic polynomial of $A$ is $p_A(\lambda) = (\lambda -
+1)(\lambda - 3)$, so $P_1(\lambda) = \lambda - 1$ and $P_2(\lambda) =
+\lambda - 3$.  Use partial fractions to find that
+\[
+\frac{1}{p_A(\lambda)} = \frac{-\frac{1}{2}}{3 - \lambda} + \frac{\frac{1}{2}}
+{1 - \lambda}.
+\]
+Thus, $a_1(\lambda) = -\frac{1}{2}$ and $a_2(\lambda) = \frac{1}{2}$.  So
+\[
+\begin{array}{rcl}
+e^{tA} & = & e^ta_1(A)P_1(A) + e^{-t}a_2(A)P_2(A) \\
+& = & \dps e^{3t}\left(-\frac{1}{2}\right)\left(\mattwo{3}{2}{0}{1} -
+\mattwo{1}{0}{0}{1}\right) + e^{t}\left(\frac{1}{2}\right)
+\left(\mattwo{3}{2}{0}{1} - \mattwo{3}{0}{0}{3}\right).
+\end{array}
+\]
+
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c12.1.6d}
 $A = \left(\begin{array}{rrr} 1 & -3 & 1\\ 0 & -2 & -5 \\ 0 & 0 & 3
 \end{array}\right)$.
+
+\begin{solution}
+\ans
+\[
+e^{tA} =
+\cmatthree{e^t}{-e^t + e^{-2t}}{2e^{3t} - e^t + e^{-2t}}
+{0}{e^{-2t}}{-e^{3t} + e^{-2t}}
+{0}{0}{e^{3t}}.
+\]
+
+\soln The characteristic polynomial of $A$ is
+$p_A(\lambda) = (\lambda - 3)(\lambda - 1)(\lambda + 2)$, so the
+eigenvalues are $\lambda_1 = 3$, $\lambda_2 = 1$, and $\lambda_3 = -2$.
+By Corollary~\ref{T:etA0},
+\[
+e^{tA} = \sum_{\ell = 3}^2 e^{\lambda_\ell t}a_\ell(A)P_\ell(A).
+\]
+From the characteristic polynomial $p_A(\lambda)$, compute
+\[
+P_1(\lambda) = \lambda^2 + \lambda - 2, \quad
+P_2(\lambda) = \lambda^2 - \lambda - 6, \AND
+P_3(\lambda) = \lambda^2 - 4\lambda + 3.
+\]
+Use partial fractions to find that
+\[
+\frac{1}{p_A(\lambda)} =
+\frac{\frac{1}{5}\lambda - \frac{1}{2}}{P_1(\lambda)}
++ \frac{-\frac{1}{6}\lambda}{P_2(\lambda)}
++ \frac{-\frac{1}{30}\lambda}{P_3(\lambda)}.
+\]
+Thus
+\[
+a_1(\lambda) = \frac{1}{5}\lambda - \frac{1}{2}, \quad
+a_2(\lambda) = -\frac{1}{6}\lambda, \AND
+a_3(\lambda) = -\frac{1}{30}\lambda.
+\]
+So,
+\[
+\begin{array}{rcl}
+e^{tA} & = & e^{\lambda_1 t}a_1(A)P_1(A) + e^{\lambda_2 t}a_2(A)P_2(A)
++ e^{\lambda_3 t}a_3(A)P_3(A) \\
+& = &
+\begin{array}{l} e^{3t}(\frac{1}{5}A - \frac{1}{2})(A^2 + A - 2I_3)
++ e^t(-\frac{1}{6}A)(A^2 - A - 6I_3) \\
++\; e^{-2t}(-\frac{1}{30}A)(A^2 - 4A + 3I_2) \end{array} \\
+& = & e^{3t}\matthree{0}{0}{2}{0}{0}{-1}{0}{0}{1}
++ e^t\matthree{1}{-1}{-3}{0}{0}{0}{0}{0}{0}
++ e^{-2t}\matthree{0}{1}{1}{0}{1}{1}{0}{0}{0}.
+\end{array}
+\]
+
+\end{solution}
 \end{exercise}
 
 
@@ -755,6 +1010,38 @@ $A=\left(\begin{array}{rrr}
      2   &  2  &  -2
 \end{array}\right) \AND 
 X_0=\left(\begin{array}{r} 1 \\ 2 \\ -1  \end{array}\right)$.
+
+\begin{solution}
+\ans The solution to the given initial value problem is
+\[
+X(t) = -e^{-t}\vecthree{4}{-1}{6} +
+3\vecthree{1}{0}{1} + e^t\vecthree{2}{1}{2}
+= \cvecthree{-4e^{-t} + 3 + 2e^t}{e^{-t} + e^t}{-6e^{-t} + 3 + 2e^t}.
+\]
+
+\soln The eigenvalues of $A$ are $\lambda_1 = -1$, $\lambda_2 = 0$, and
+$\lambda_3 = 1$, with associated eigenvectors $w_1 = (4,-1,6)^t$,
+$w_2 = (1,0,1)^t$, and $w_3 = (2,1,2)^t$.  So,
+\[
+\begin{array}{c}
+X_1(t) = e^{\lambda_1 t}w_1 = e^{-t}\vecthree{4}{-1}{6}, \quad
+X_2(t) = e^{\lambda_2 t}w_2 = \vecthree{1}{0}{1}, \\
+X_3(t) = e^{\lambda_3 t}w_3 = e^t\vecthree{2}{1}{2}
+\end{array}
+\]
+are linearly independent solutions.  The general solution is a linear
+combination of the $X_j(t)$, and the solution to the initial value
+problem $X_0 = X(0)$ satisfies
+\[
+\vecthree{1}{2}{-1} = X(0) = \alpha_1w_1 + \alpha_2w_2 + \alpha_3w_3
+= \alpha_1\vecthree{4}{-1}{6} + \alpha_2\vecthree{1}{0}{1}
++ \alpha_3\vecthree{2}{1}{2}.
+\]
+Solve this linear system to obtain $\alpha_1 = -1$,
+$\alpha_2 = 3$, and $\alpha_3 = 1$.
+
+
+\end{solution}
 \end{exercise}
 \begin{exercise}  \label{c12.1.10b}
 $A=\left(\begin{array}{rrr}
@@ -763,23 +1050,184 @@ $A=\left(\begin{array}{rrr}
     -4   &  0   &  3
 \end{array}\right) \AND 
 X_0=\left(\begin{array}{r} 0 \\ 1 \\ 1  \end{array}\right)$.
+
+\begin{solution}
+\ans The solution to the given initial value problem is
+\[
+X(t) = e^t\vecthree{1}{0}{2} + e^{-t}\vecthree{0}{1}{0} -
+e^{-t}\vecthree{1}{t}{1} =
+\cvecthree{e^t - e^{-t}}{(1 - t)e^{-t}}{2e^t - e^{-t}}.
+\]
+
+\soln The matrix $A$ has an eigenvalue at $\lambda_1 = 1$ with associated
+eigenvector $w_1 = (1,0,2)^t$ and a double eigenvalue at $\lambda_2 = -1$
+with eigenvector $w_2 = (0,1,0)^t$.  Find a generalized eigenvector at
+$\lambda_2$ by solving the equation $(A - \lambda_2I_3)w_3 = w_2$, obtaining
+$w_3 = (1,0,1)^t$.  Thus,
+\[
+\begin{array}{c}
+X_1(t) = e^{\lambda_1 t}w_1 = e^{t}\vecthree{1}{0}{2}, \quad
+X_2(t) = e^{\lambda_2 t}w_2 = e^{-t}\vecthree{0}{1}{0}, \\
+X_3(t) = e^{\lambda_2 t}(w_2t + w_3) = e^{-t}\vecthree{1}{t}{1}
+\end{array}
+\]
+are linearly independent solutions.  The general solution is a linear
+combination of the $X_j(t)$, and the solution to the initial value
+problem $X_0 = X(0)$ satisfies
+\[
+\vecthree{0}{1}{1} = X(0) = \alpha_1w_1 + \alpha_2w_2 + \alpha_3w_3
+= \alpha_1\vecthree{1}{0}{2} + \alpha_2\vecthree{0}{1}{0}
++ \alpha_3\vecthree{1}{0}{1}.
+\]
+Solve this linear system to obtain $\alpha_1 = 1$,
+$\alpha_2 = 1$, and $\alpha_3 = -1$.
+
+\end{solution}
 \end{exercise}
 
 \noindent  In Exercises~\ref{c12.1.8a} -- \ref{c12.1.8d} use
 Theorem~\ref{T:etA} and \Matlab to compute $e^{tA}$ for the given matrix.
 \begin{exercise} \label{c12.1.8a}
 $A = \mattwo{0}{1}{0}{0}$.
+
+\begin{solution}
+\ans $e^{tA} = \mattwo{1}{t}{0}{1}$.
+
+\soln The matrix $A = \mattwo{0}{1}{0}{0}$ has an eigenvalue $0$ with
+multiplicity two.  Theorem~\ref{T:etA} states that 
+\[
+e^{tA} = a_1(A)P_1(A)\sum_{j=0}^1t^jA^j= a_1(A)P_1(A)(I_2+tA).
+\]
+In this case $P_1(\lambda)=1=a_1(\lambda)$.   Therefore,
+\[
+e^{tA} = I_2+tA = \mattwo{1}{t}{0}{1}.
+\]
+
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c12.1.8b}
 $A = \mattwo{-1}{2}{0}{-1}$.
+
+\begin{solution}
+\ans $e^{tA} = e^{-t}\mattwo{1}{2t}{0}{1}$.
+
+\soln The matrix $A = \mattwo{-1}{2}{0}{-1}$ has an eigenvalue $-1$ with
+multiplicity two.  Theorem~\ref{T:etA} states that 
+\[
+e^{tA} = a_1(A)P_1(A)\sum_{j=0}^1e^{-t}t^j(A+I_2)^j=
+a_1(A)P_1(A)e^{-t}(I_2+t(A+I_2)).
+\]
+In this case $P_1(\lambda)=1=a_1(\lambda)$.   Therefore,
+\[
+e^{tA} = e^{-t}(I_2+t(A+I_2)) = e^{-t}\mattwo{1}{2t}{0}{1}.
+\]
+
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c12.1.8c}
 $A = \left(\begin{array}{rrr} 1 & 1 & 2\\ 1 & 1 & 0 \\ 0 & 0 & 0
 \end{array}\right)$.
+
+\begin{solution}
+\ans $e^{tA}= \dps\frac{1}{4}\left(\begin{array}{rrc} 
+1 & -1 & -2+2t\\ -1 & 1 & -2t \\ 0 & 0 & 2\end{array}\right) +e^{2t}\left(\begin{array}{rrr} 2 & 2 & 2\\  2 & 2 & 2 \\ 0 & 0 & 0 
+\end{array}\right)$.
+
+\soln The matrix 
+$A = \left(\begin{array}{rrr} 1 & 1 & 2\\ 1 & 1 & 0 \\ 0 & 0 & 0
+\end{array}\right)$ has eigenvalues $0$ with multiplicity two and $2$ 
+with multiplicity one. Theorem~\ref{T:etA} states that 
+\begin{eqnarray*}
+e^{tA} & = & a_1(A)P_1(A)\sum_{j=0}^1t^jA^j + e^{2t}a_2(A)P_2(A)\\
+ & = & a_1(A)P_1(A)(I_3+tA) + e^{2t}a_2(A)P_2(A).
+\end{eqnarray*}
+The characteristic polynomial of $A$ is $p_A(\lambda) =(2-\lambda)\lambda^2$.
+From \eqref{e:Pj} we see that
+\[
+P_1(\lambda) = 2-\lambda \AND P_2(\lambda) = \lambda^2.
+\]
+We recall from \eqref{e:1/p} that 
+\[
+\frac{1}{p_A(\lambda)} = \frac{a_1(\lambda)}{2-\lambda} + 
+\frac{a_2(\lambda)}{\lambda^2} = \frac{\frac{1}{4}}{2-\lambda}
++ \frac{\frac{1}{2}+\frac{1}{4}\lambda}{\lambda^2}.
+\]
+Therefore
+\[
+a_1(\lambda) = \frac{1}{4} \AND a_2(\lambda) = \frac{1}{2}+\frac{1}{4}\lambda,
+\]
+and
+\begin{eqnarray*}
+e^{tA} & = & \frac{1}{4}(2I_3-A)(I_3+tA) + 
+e^{2t}\left(\frac{1}{2}I_3+\frac{1}{4}A\right)A^2\\
+& = & \frac{1}{4}\left((2I_3-A)+t(2A-A^2)+e^{2t}(2A^2+A^3)\right).
+\end{eqnarray*}
+Hence
+\[
+e^{tA}= \frac{1}{4}\left(\left(\begin{array}{rrr} 1 & -1 & -2\\ -1 & 1 & 0 
+\\ 0 & 0 & 2\end{array}\right)+t\left(\begin{array}{rrr} 0 & 0 & 2\\ 0 & 0 & -2
+\\ 0 & 0 & 0 \end{array}\right)+e^{2t}\left(\begin{array}{rrr} 8 & 8 & 8\\ 
+8 & 8 & 8 \\ 0 & 0 & 0\end{array}\right)\right).
+\]
+
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c12.1.8d}
 $A = \left(\begin{array}{rrr} -1 & 2 & -6\\ 0 & 2 & 0 \\ 0 & -1 & 2
 \end{array}\right)$.
+
+\begin{solution}
+\ans $e^{tA}= \dps\frac{1}{9}e^{2t}\left(\begin{array}{rcr} 
+0 & -2-6t & 6\\ 0 & -3 & 0\\ 0 & 1+3t & -3\end{array}\right) 
++e^{-t}\left(\begin{array}{rrr} -6 & 0 & -12\\  0 & 0 & 0 \\ 0 & 0 & 0 
+\end{array}\right)$.
+
+
+\soln The matrix 
+$A = \left(\begin{array}{rrr} -1 & 2 & -6\\ 0 & 2 & 0 \\ 0 & -1 & 2
+\end{array}\right)$ has eigenvalues $2$ with multiplicity two and $-1$ 
+with multiplicity one. Theorem~\ref{T:etA} states that 
+\begin{eqnarray*}
+e^{tA} & = & a_1(A)P_1(A)e^{2t}\sum_{j=0}^1t^j(A-2I_3)^j+e^{-t}a_2(A)P_2(A)\\
+ & = & a_1(A)P_1(A)e^{2t}(I_3+t(A-2I_3)) + e^{-t}a_2(A)P_2(A).
+\end{eqnarray*}
+The characteristic polynomial of $A$ is 
+$p_A(\lambda) =(2-\lambda)^2(-1-\lambda)$.  From \eqref{e:Pj} we see that
+\[
+P_1(\lambda) = -1-\lambda \AND P_2(\lambda) = (2-\lambda)^2.
+\]
+We recall from \eqref{e:1/p} that 
+\[
+\frac{1}{p_A(\lambda)} = \frac{a_1(\lambda)}{-1-\lambda} + 
+\frac{a_2(\lambda)}{(\lambda-2)^2} = \frac{\frac{1}{9}}{-1-\lambda}
++ \frac{-\frac{5}{9}+\frac{1}{9}\lambda}{(\lambda-2)^2}.
+\]
+Therefore
+\[
+a_1(\lambda) = \frac{1}{9} \AND a_2(\lambda) = -\frac{5}{9}+\frac{1}{9}\lambda,
+\]
+and
+\begin{eqnarray*}
+e^{tA} & = & \frac{1}{9}\left((-I_3-A)e^{2t}(I_3+t(A-2I_3)) + 
+e^{-t}(A-5I_3)(A-2I_3)^2\right)\\
+& = & 
+\frac{1}{9}\left(e^{2t}((-I_3-A)+t(-A^2+A+2I_3)+e^{-t}(A-5I_3)(A-2I_3)^2\right).
+\end{eqnarray*}
+Hence
+\[
+e^{tA}= \frac{1}{9}\left(e^{2t}\left(\left(\begin{array}{rrr} 0 & -2 & 6\\ 
+0 & -3 & 0\\ 0 & 1 & -3\end{array}\right)+t\left(\begin{array}{rrr} 0& -6 & 0\\ 
+0 & 0 & 0\\ 0 & 3 & 0 \end{array}\right)\right)+e^{-t}\left(\begin{array}{rrr} 
+-54 & 0 & -108\\ 0 & 0 & 0 \\ 0 & 0 & 0\end{array}\right)\right).
+\]
+
+
+
+
+\end{solution}
 \end{exercise} 
 
 \end{document}

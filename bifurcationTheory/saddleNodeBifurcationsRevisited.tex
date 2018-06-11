@@ -303,6 +303,50 @@ $f_2(x,\rho)=0$ and explain why the conclusion of
 Theorem~\ref{T:saddlenode} is not satisfied for either $f_1$ 
 or $f_2$.
 \end{itemize}
+
+\begin{solution}
+
+(a) A steady-state bifurcation occurs on a function $f(x,\rho)$ at a
+point $(x,\rho) = (x_0,\rho_0)$ if $f(x_0,\rho_0) = 0$ and
+$f_x(x_0,\rho_0) = 0$.  In this case, let $(x_0,\rho_0) = (0,0)$.
+Then
+\[ \begin{array}{rcccl}
+f_1(x_0,\rho_0) & = & \rho_0 - x_0^3 & = & 0 \\
+f_{1x}(x_0,\rho_0) & = & -3x_0^2 & = & 0 \end{array}
+\qquad
+\begin{array}{rcccl}
+f_2(x_0,\rho_0) & = & \rho_0x_0 - x_0^2 & = & 0 \\
+f_{2x}(x_0,\rho_0) & = & \rho_0 - 2x_0 & = & 0. \end{array}
+\]
+Therefore, $f_1$ and $f_2$ have steady-state bifurcations at $(x,\rho)
+= (0,0)$.
+
+(b) A saddle-node bifurcation occurs on a function $f(x,\rho)$ at a point
+$(x,\rho) = (x_0,\rho_0)$ if $f$ has a steady-state bifurcation at this
+point, and if $f_\rho(x_0,\rho_0) \neq 0$ and $f_{xx}(x_0,\rho_0) \neq 0$.
+Let $(x_0,\rho_0) = (0,0)$.  Then
+\[
+f_{1xx}(x_0,\rho_0) = -6x = 0 \AND
+f_{2p}(x_0,\rho_0) = x = 0,
+\]
+so neither $f_1$ nor $f_2$ has a saddle-node bifurcation at $x = 0$.
+
+(c) The bifurcation diagram for $f_1$ is shown in Figure~\ref{c9.3.1}a, and
+the diagram for $f_2$ is shown in Figure~\ref{c9.3.1}b.  Saddle-node
+bifurcations occur only when equilibria appear or disappear.
+Figure~\ref{c9.3.1}a shows that $f_1$ has one equilibrium for all $\rho$,
+and Figure~\ref{c9.3.1}b shows that $f_2$ has two equilibria for all
+$\rho$.  Thus, neither function has a saddle-node bifurcation at the origin.
+
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/9-3-1a.eps,width=2.75in}
+                       \psfig{file=exfigure/9-3-1b.eps,width=2.75in}}
+                \exercaptwo{c9.3.1}
+\end{figure}
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c9.3.5}
@@ -312,6 +356,43 @@ family of differential equations
 \dot{x} = x^3 -5x^2 + 3x + \rho
 \end{equation}
 analytically.  Draw the bifurcation diagram.
+
+\begin{solution}
+
+\ans Saddle-node bifurcations occur at $(x,\rho)=(3,9)$ and 
+$(x,\rho)=(1/3,-13/27)$.
+
+\soln A saddle-node bifurcation can occur only at points where
+\[ 
+f(x,\rho)=0 \quad \mbox{and}\quad f_x(x,\rho)=0,
+\]
+that is, 
+\[
+x^3 -5x^2 + 3x + \rho = 0 \AND 3x^2 -10x +3 = (3x-1)(x-3)=0.
+\]
+From these equations we see that saddle-nodes can occur only at 
+$(x,\rho)=(3,9)$ and at $(x,\rho)=(1/3,-13/27)$. Such points are saddle-nodes 
+if, in addition, 
+\[
+f_\rho(x,\rho)\neq 0 \AND  f_{xx}(x,\rho)\neq 0.
+\]
+Note that
+\[
+f_\rho(x,\rho) = 1  \AND  f_{xx}(x,\rho) = 6x - 10.
+\]
+So $f_\rho$ is never zero and $f_{xx}$ is nonzero when $x=3$ and $x=1/3$.
+So there are two saddle-node bifurcations.  The 
+bifurcation diagram is shown in Figure~\ref{c9.3.5}.
+\begin{figure}[htb]
+     \centerline{%
+     \psfig{file=exfigure/bifdiagex.eps,width=3.0in}}
+     \exercap{c9.3.5}
+\end{figure}
+
+
+
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c9.3.2}
@@ -321,6 +402,27 @@ f(x,\rho) = x^4 - 6x^3 +8x^2 + 6(x-\rho) - 3.
 \]
 Show that $f$ has a saddle-node bifurcation at $x=3$ when $\rho=1$. 
 Are there two equilibria near $x=3$ when $\rho<1$ or when $\rho>1$?
+
+\begin{solution}
+
+\ans There are two equilibria near $x = 3$ when $\rho > 1$.
+
+\soln Calculate
+\[
+f(3,1) = 0, \quad
+f_x(3,1) = 0, \quad
+f_\rho(3,1) = -6 \neq 0, \AND
+f_{xx}(3,1) = 16 \neq 0.
+\]
+Therefore, $f$ has a saddle-node bifurcation at $x = 3$ when $\rho =
+1$.  Note that Theorem~\ref{T:saddlenode} states
+that if $a < 0$, then there are two equilibria near $x_0$ for $\rho >
+\rho_0$.  In this case,
+\[
+a = \frac{f_{xx}(x_0,\rho_0)}{f_p(x_0,\rho_0)} = -\frac{8}{3} < 0.
+\]
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c9.3.3}
@@ -331,6 +433,46 @@ h(x,y,\rho) & = & 2\rho + 4x - 2y -  xy  + y^2
 \end{eqnarray*}
 Show that $F=(g,h)$ has a saddle-node bifurcation at $(x,y)=0$ and 
 $\rho=0$.
+
+\begin{solution}
+
+The function $F$ has a bifurcation point at the origin when $\rho = 0$
+if $F$ is in equilibrium at $(x,y,\rho) = (0,0,0)$ and $\det(F) = 0$ at
+this point.  Since $g(0,0,0) = 0$ and $h(0,0,0) = 0$, the origin is an
+equilibrium for $F$ when $\rho = 0$.  Then, calculate the Jacobian at
+this point:
+\[
+J = \mattwo{-2}{1}{4}{-2}.
+\]
+The determinant of the Jacobian is zero so the origin is indeed a
+bifurcation point when $\rho = 0$.  In order to demonstrate the
+two-dimensional nondegeneracy conditions, find nonzero vectors $v$ and
+$w$ such that $Jv = 0$ and $J^tw = 0$.  In this case, $v = (1,2)^t$ and
+$w = (2,1)^t$.  Then, compute
+\[
+w \cdot F_\rho(0,0,0) = \vectwo{2}{1} \cdot \vectwo{1}{2} =
+4 \neq 0,
+\]
+so \eqref{e:2deig} is satisfied.  In order to satisfy \eqref{e:2dbifur},
+compute
+\[
+g_{xx} = 4, \quad
+g_{xy} = 0, \quad
+g_{yy} = -6y, \quad
+h_{xx} = 0, \quad
+h_{xy} = -1, \quad
+h_{yy} = 2.
+\]
+and evaluate
+\[
+F_0 = \vectwo{4}{0} + 4\vectwo{0}{-1} + 4\vectwo{0}{2} =
+\vectwo{4}{1}.
+\]
+Then, since $w \cdot F_0 = 9 \neq 0$, the second nondegeneracy condition
+is satisfied, and the origin is indeed a saddle node bifurcation for $F$
+when $\rho = 0$.
+
+\end{solution}
 \end{exercise}
 
 
@@ -346,6 +488,62 @@ q=\vectwo{q_1}{q_2} \AND Q(X) = \vectwo{\alpha x^2+\beta xy+\gamma y^2}
 \]
 Show that $F$ has a saddle-node bifurcation at $X=0$ and $\rho=0$ precisely 
 when $q_2\neq 0$ and $\varphi\neq 0$. 
+
+\begin{solution}
+
+To show that the origin is a bifurcation point of $F$ when $\rho = 0$, we
+must show the following:
+
+(a) $F(0,0) = 0$.
+
+(b) Let $J = dF_{(0,0)}$.  Then $\det(J) = 0$ and $\trace(J) \neq 0$.
+
+(c) There exist nonzero vectors $v$ and $w$ such that $Jv = 0$ and
+$J^tw = 0$.
+
+\soln Let
+\[
+\vectwo{g(X,\rho)}{h(X,\rho)} = F(X,\rho) = 
+\cvectwo{\rho q_1 + x + \alpha x^2 + \beta xy + \gamma y^2}
+{\rho q_2 + \delta x^2 + \epsilon xy + \varphi y^2}.
+\]
+
+(a) Indeed, $g(0,0) = 0 = h(0,0)$, so $F(0,0)$ is an equilibrium point.
+
+(b) Find the Jacobian
+\[
+J = \left.\cmattwo{1 + 2\alpha x + \beta y}{\beta x + 2\gamma y}
+{2\delta x + \epsilon y}{\epsilon x + 2\varphi y}\right|_{(0,0)} =
+\mattwo{1}{0}{0}{0}.
+\]
+Since $\det(J) = 0$ and $\trace(J) = 1 \neq 0$, there
+is a bifurcation point at the origin with $\rho = 0$.
+
+(c)  To verify that the nondegeneracy conditions are satisfied, find $v$
+and $w$.  In this case $v = w = (0,1)^t$.  Then verify
+\[
+w \cdot F_\rho(X_0,\rho_0) = \vectwo{0}{1} \cdot \vectwo{q_1}{q_2}
+= q_2.
+\]
+So, condition \eqref{e:2deig} is satisfied when $q_2 \neq 0$.  To
+verify \eqref{e:2dbifur}, compute the vector
+\[
+F_0 = 0\vectwo{g_{xx}}{h_{xx}} + 0\vectwo{g_{xy}}{h_{xy}} +
+\vectwo{g_{yy}}{h_{yy}} = \vectwo{2\gamma}{2\varphi}
+\]
+and calculate
+\[
+w \cdot F_0 = \vectwo{0}{1} \cdot \vectwo{2\gamma}{2\varphi}
+= 2\varphi.
+\]
+So, the origin is a saddle node of $F$ with $\rho = 0$ when
+$q_2 \neq 0$ and $\varphi \neq 0$.
+
+
+
+
+
+\end{solution}
 \end{exercise}
 
 

@@ -360,6 +360,22 @@ then $(X - X_0) \cdot N = 0$.  Substituting into this formula, we obtain
 2x + 3y + z = -5.
 \]
 \end{hint}
+
+\begin{solution}
+
+\ans The equation of the desired plane is $2x + 3y + z = -5$.
+
+\soln Note that a vector perpendicular to a plane is orthogonal
+to any vector connecting two points in the plane.  So,
+if $X_0 = (-1,-2,3)$ is one point in the plane perpendicular to
+$N = (2,3,1)$ and $X = (x,y,z)$ is any other point in that plane,
+then $(X - X_0) \cdot N = 0$.  Substituting into this formula, we obtain
+\[
+2(x + 1) + 3(y + 1) + 1(z - 3) = 0\quad\mbox{or}\quad
+2x + 3y + z = -5.
+\]
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c2.2.6}
@@ -401,6 +417,27 @@ has\ldots
   \choice{Infinitely many solutions.}    
 \end{multipleChoice}
 \end{prompt}
+
+\begin{solution}
+
+Examples:
+
+$\left. \begin{array}{rrrrr}
+x & + & y & = & 2 \\
+x & - & y & = & 0\end{array} \right\}$
+unique solution
+
+$\left. \begin{array}{rrrrr}
+x & + & y & = & 2 \\
+2x & + & 2y & = & 4\end{array} \right\}$
+infinite number of solutions
+
+$\left. \begin{array}{rrrrr}
+x & + & y & = & 2 \\
+x & + & y & = & 4\end{array} \right\}$
+no solutions
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c2.2.7}
@@ -424,6 +461,26 @@ a & & & + & c & = & d \\
 We can solve the system by substitution to get $b = d = 0$ and $a = -c$,
 which yields the equation of the plane.
 \end{hint}
+
+\begin{solution}
+
+\ans The equation for the plane is $z = x$.
+
+\soln Note that the plane goes through the origin and contains the
+vectors $(1,0,1)$ and $(2,-1,2)$, and therefore contains the points
+$(0,0,0)$, $(1,0,1)$, and $(2,-1,2)$.  The general equation for a plane
+is $ax + by + cz = d$.  We can substitute the coordinates of the three
+points into this equation to get the linear system
+\[
+\begin{array}{rrrrrrr}
+ & & & & 0 & = & d \\
+a & & & + & c & = & d \\
+2a & - & b & + & 2c & = & d\end{array}
+\]
+We can solve the system by substitution to get $b = d = 0$ and $a = -c$,
+which yields the equation of the plane.
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c2.2.8}
@@ -450,6 +507,28 @@ For example, let $(a,b,c) = (1,-1,1)$ in the first equation, and
 $(a,b,c) = (2,1,-4)$ in the second equation to obtain the system
 given here.
 \end{hint}
+
+\begin{solution}
+
+\ans One such system is:
+\[
+\begin{array}{rrrrrrr}
+x & - & y & + & z & = & 0 \\
+2x & + & y & - & 4z & = & 0\end{array}
+\]
+\soln The solution set contains all multiples of the vector $(1,2,1)$,
+so it contains the origin, since $0(1,2,1) = (0,0,0)$.  The equation
+of any plane containing the origin is $ax + by + cz = 0$. 
+Substituting the point $(1,2,1)$ implies that $a + 2b + c = 0$. 
+Any two equations which satisfy that condition and are not multiples
+of one another will have the appropriate line as a solution set. 
+For example, let $(a,b,c) = (1,-1,1)$ in the first equation, and
+$(a,b,c) = (2,1,-4)$ in the second equation to obtain the system
+given here.
+
+
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c2.2.9}
@@ -477,6 +556,19 @@ given here.
     \]
   \end{prompt}
 \end{itemize}
+
+\begin{solution}
+
+(a) $u = (2,2,1)$, since we know that the normal vector to the plane
+$ax + by + cz = d$ is $(a,b,c)$.
+
+(b) $v = (1,1,2)$.
+
+(c) $\cos\theta = \frac{u \cdot v}{||u||\;||v||} = \frac{2}{\sqrt{6}}$.
+In \Matlabp, type {\tt acos(2/sqrt(6))*180/pi} to obtain $\theta =
+35.2644^\circ$.
+
+\end{solution}
 \end{exercise}
 
 \CEXER
@@ -497,6 +589,31 @@ Describe in words why there are no solutions to this system.
 enter the last equation as {\tt z = 2 - 0*x - 0*y} and the first two
 equations with {\tt 0*y} terms.  Try different views --- but include
 {\tt view([0 1 0])} as one view.)
+
+\begin{solution}
+
+The system has no solutions because there is no point at which the three
+planes intersect.  Figure~\ref{c2.2.10}a shows the \Matlab graph of
+the system.  The commands {\tt view([0 -1 0])} and 
+{\tt axis([-7 3 -3 3 -1 3])}
+produce a view of the graph in which the geometry
+can be seen, shown in Figure~\ref{c2.2.10}b.
+Since there is no $y$ term in any of the equations, all three planes
+are perpendicular to this view, and therefore appear as lines in the
+graph.
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/2-2-10a.eps,width=2.75in}
+                       \psfig{file=exfigure/2-2-10b.eps,width=2.75in}}
+		\exercaptwo{c2.2.10}
+\end{figure}
+
+
+
+
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c2.2.1}
@@ -519,6 +636,37 @@ the axes' limits are halved and centered at the designated
 point. Coupling {\tt zoom on} with {\tt grid on} allows you
 to determine approximate numerical values for the intersection
 point.
+
+\begin{solution}
+
+\ans $(x,y) \approx (2.15,-1.54)$.
+
+\soln In \Matlab, graph the system by typing:
+\begin{verbatim}
+x = linspace(-5,5,100);
+y = -1 - x/4;
+plot(x,y)
+xlabel('x')
+ylabel('y')
+hold on
+y = 4/3 - 4*x/3;
+plot(x,y)
+axis('equal')
+grid
+\end{verbatim}
+
+Using the {\tt zoom} command, we can zoom in on the graph of
+Figure~\ref{c2.2.1} until the intersection of the lines is
+visible at an accuracy of two decimal places.  
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/2-2-1a.eps,width=2.75in}
+                       \psfig{file=exfigure/2-2-1b.eps,width=2.75in}}
+		\exercaptwo{c2.2.1}
+\end{figure}
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c2.2.2}
@@ -532,6 +680,13 @@ equations
 \end{array}
 \]
 to an accuracy of two decimal points.
+
+\begin{solution}
+
+$(x,y) \approx (-0.26,-0.73)$.
+
+
+\end{solution}
 \end{exercise}
 
 
@@ -546,6 +701,32 @@ three dimensional system of linear equations
 \end{array}
 \]
 Then use \Matlab to find an exact solution.
+
+\begin{solution}
+
+\ans $(x,y,z) = (1,3,-1)$.
+
+\soln The commands to instruct \Matlab to graph this three dimensional
+system are:
+\begin{verbatim}
+[x,y] = meshgrid(-10:0.5:10);
+z = (-11 - 3*x + 4*y)/2;
+surf(x,y,z)
+hold on 
+z = 7 - 2*x - 2*y;
+surf(x,y,z)
+hold on
+z = (7 + x - y)/(-5);
+surf(x,y,z)
+\end{verbatim}
+It is hard to determine a solution for the system from this graph.
+The command {\tt axis([xmin xmax ymin ymax zmin zmax])} can make the
+graph clearer by zooming in on a specific range of points, but a
+numerically accurate solution is difficult to obtain graphically in
+three dimensions.  Obtain an accurate solution using the command
+{\tt A}$\backslash${\tt b} in \Matlabp.
+
+\end{solution}
 \end{exercise}
 
 
@@ -565,11 +746,56 @@ and discuss the implications of your calculations.
 {\bf Hint:} After setting up the graphics display in \Matlabp,
 you can use the command {\tt view([0,1,0])} \index{\computer!view} to get
 a better view of the solution point.
+
+\begin{solution}
+
+\ans The solution set is a line because the three planes intersect in a line.
+
+\soln If the left-hand side of the system is entered into \Matlab as
+matrix {\tt A}, and the solution vector is entered as {\tt b}, then
+typing {\tt A}$\backslash${\tt b} yields
+\begin{verbatim}
+Warning: Matrix is singular to working precision.
+ans =
+   Inf
+   Inf
+   Inf
+\end{verbatim}
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c2.2.a5}
 Use \Matlab to graph the function $y = 2 - x\sin(x^2-1)$ on the interval
 $[-2,3]$.  How many relative maxima does this function have on this interval?
+
+\begin{solution}
+
+\ans The function has three relative maxima on this interval.
+
+\soln Graph the function in \Matlab using the commands:
+\begin{verbatim}
+x = linspace(-2,3);
+y = 2 - x.*sin(x.^2 - 1);
+plot(x,y)
+\end{verbatim}
+Determine the number of relative maxima numerically from the graph, which
+is shown in Figure~\ref{c2.2.a5}.
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/2-2-a5.eps,width=3.0in}}
+		\exercap{c2.2.a5}
+\end{figure}
+
+
+
+
+
+
+
+
+\end{solution}
 \end{exercise}
 
 

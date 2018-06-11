@@ -368,11 +368,106 @@ equations are vectors in $(\CCone)^n$.
 \begin{exercise} \label{c5.1.1}
 Verify that the set $V_1$ consisting of all scalar multiples of
 $(1,-1,-2)$ is a subspace of $\R^3$.
+
+\begin{solution}
+
+The set $V_1 \subset \R^3$ is a subspace.
+The set $V_1$ contains all vectors $(a,-a,-2a)$,
+where $a \in \R$.  We can show that it is closed under
+vector addition, since
+\[
+a(1,-1,-2) + b(1,-1,-2) = (a + b)(1,-1,-2) \in V_1
+\]
+where $a$ and $b$ are scalars.  The set $V_1$ is closed under scalar
+multiplication since
+\[
+b(a(1,-1,-2) = (ba)(1,-1,-2) \in V_1.
+\]
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c5.1.2}
 Let $V_2$ be the set of all $2\times 3$ matrices.   Verify that
 $V_2$ is a vector space.
+
+\begin{solution}
+
+The set $V_2$ is a vector space.
+Let $A$ and $B$ be matrices in $V_2$:
+\[
+A = \left(\begin{array}{rrr} a_{11} & a_{12} & a_{13} \\
+a_{21} & a_{22} & a_{23} \end{array}\right) \AND
+B = \left(\begin{array}{rrr} b_{11} & b_{12} & b_{13} \\
+b_{21} & b_{22} & b_{23} \end{array}\right).
+\]
+The set $V_2$ is closed under vector addition because
+\[
+A + B
+= \left(\begin{array}{rrr} a_{11} + b_{11} & a_{12} + b_{12} &
+a_{13} + b_{13} \\ a_{21} + b_{21} & a_{22} + b_{22} &
+a_{23} + b_{23} \end{array}\right) \in V_2,
+\]
+and is closed under scalar multiplication because, for $r \in \R$,
+\[
+rA = \left(\begin{array}{rrr} ra_{11} & ra_{12} & ra_{13} \\
+ra_{21} & ra_{22} & ra_{23} \end{array}\right) \in V_2.
+\]
+Next, verify that $V_2$ satisfies the eight properties of vector
+spaces, shown in Table~\ref{vectorspacelist}.
+
+\begin{itemize}
+\item[(A1)] Addition is commutative in $V_2$, since
+\[
+A + B  = \left(\begin{array}{rrr} a_{11} + b_{11} & a_{12} + b_{12} &
+a_{13} + b_{13} \\ a_{21} + b_{21} & a_{22} + b_{22} &
+a_{23} + b_{23} \end{array}\right) = B + A.
+\]
+\item[(A2)] Given a third matrix $C \in V_2$,
+\[
+(A + B) + C = \left(\begin{array}{rrr} a_{11} + b_{11} + c_{11}
+& a_{12} + b_{12} + c_{12} & a_{13} + b_{13} + c_{13} \\ a_{21} + b_{21}
++ c_{21} & a_{22} + b_{22} + c_{22} & a_{23} + b_{23} + c_{23}
+\end{array}\right) = A + (B + C).
+\]
+Thus, addition is associative.
+\item[(A3)] The additive identity is the matrix
+\[
+0 = \left(\begin{array}{rrr} 0 & 0 & 0 \\ 0 & 0 & 0 \end{array}\right).
+\]
+\item[(A4)] For each matrix $A \in V_2$, there exists an element $-A$ such
+that $A + (-A) = 0$, where
+\[
+-A = \left(\begin{array}{rrr} -a_{11} & -a_{12} & -a_{13} \\ -a_{21} &
+-a_{22} & -a_{23} \end{array}\right).
+\]
+\item[(M1)] Scalar multiplication is associative in $V_2$ since, for any
+$r$, $s \in \R$ and $A \in V_2$,
+\[
+(rs)A = \left(\begin{array}{rrr} rsa_{11} & rsa_{12} & rsa_{13} \\
+rsa_{21} & rsa_{22} & rsa_{23} \end{array}\right) = r(sA).
+\]
+\item[(M2)] There exists a multiplicative identity in $V_2$, since $1A = A$
+for any $A \in V_2$.
+\item[(D1)] For any scalars $r$, $s \in \R$, and any matrix $A \in V_2$,
+\[
+(r + s)A = \left(\begin{array}{rrr}
+ra_{11} + sa_{11} & ra_{12} + sa_{12} & ra_{13} + sa_{13} \\
+ra_{21} + sa_{21} & ra_{22} + sa_{22} & ra_{23} + sa_{23} \end{array}\right)
+= rA + sA.
+\]
+\item[(D2)] For any scalar $r \in \R$ and any matrices $A, B \in V_2$,
+\[
+r(A + B) = \left(\begin{array}{rrr} ra_{11} + rb_{11} & ra_{12} + rb_{12} &
+ra_{13} + rb_{13} \\ ra_{21} + rb_{21} & ra_{22} + rb_{22} &
+ra_{23} + rb_{23} \end{array}\right)
+= rA + rB.
+\]
+\end{itemize}
+Thus, $V_2$ is a vector space, since it is closed under addition
+and scalar multiplication and satisfies the eight properties of vector spaces.
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c5.1.3}
@@ -384,6 +479,27 @@ A=\left(\begin{array}{rrr} 1 & 1 & 0\\ 1 & -1 & 1 \end{array}
 Let $V_3$ be the set of vectors $x\in\R^3$ such that $Ax=0$.
 Verify that $V_3$ is a subspace of $\R^3$.  Compare $V_1$ with
 $V_3$.
+
+\begin{solution}
+
+The set $V_3$ is a subspace of $R^3$ since the solution set to
+any equation $Ax = 0$ is a space.  This is demonstrated by the
+principle of superposition introduced in Section~\ref{S:Superposition}.
+Also, $V_3 = V_1$.  
+
+\para We can show that $V_3 = V_1$ by row reducing to find the
+solutions to $Ax = 0$:
+\[
+\left(\begin{array}{rrr} 1 & 1 & 0 \\ 1 & -1 & 1
+\end{array}\right) \longrightarrow \left(\begin{array}{rrr} 1 & 0 &
+\frac{1}{2} \\ 0 & 1 & -\frac{1}{2} \end{array}\right).
+\]
+So all vectors in $V_3$ are of the form $x = s(-\frac{1}{2},
+\frac{1}{2}, 1)$, where $s \in \R$.  The vector $x$ is an element
+of $V_1$ for each $s$.
+
+
+\end{solution}
 \end{exercise}
 
 \noindent In Exercises~\ref{c5.1.4a} -- \ref{c5.1.4f} you are given a
@@ -392,56 +508,177 @@ not $W$ is a subspace of $V$.
 \begin{exercise} \label{c5.1.4a}
 $V=\R^3$ and $W$ consists of vectors in $\R^3$
      that have a $0$ in their first component.
+
+\begin{solution}
+$W$ is a subspace of $V$, since $W$ is closed under
+addition and scalar multiplication.
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c5.1.4b}
 $V=\R^3$ and $W$ consists of vectors in $\R^3$
      that have a $1$ in their first component.
+
+\begin{solution}
+\ans $W$ is not a subspace of $V$.
+
+\soln The subset $W$ is closed neither under addition nor under scalar
+multiplication.  For example, let $w_1 = (1,4,2)$ and $w_2 = (1,-1,3)$
+be elements of $W$.  Then,
+\[
+w_1 + w_2 = (1,4,2) + (1,-1,3) = (2,3,5)
+\]
+which is not an element of $W$.
+
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c5.1.4d}
 $V=\R^2$ and $W$ consists of vectors in $\R^2$
      for which the sum of the components is $1$.
+
+\begin{solution}
+\ans $W$ is not a subspace of $V$.
+
+\soln The subset $W$ is closed neither under addition nor under scalar
+multiplication.  For example, let $w_1 = (3,-2)$ and $w_2 = (0,1)$ be
+elements of $W$.  Then,
+\[
+w_1 + w_2 = (3,-2) + (0,1) = (3,-3).
+\]
+The sum of the elements $3 - 3 = 0 \neq 1$.
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c5.1.4c}
 $V=\R^2$ and $W$ consists of vectors in $\R^2$
      for which the sum of the components is $0$.
+
+\begin{solution}
+$W$ is a subspace of $V$, since $W$ is closed under
+addition and scalar multiplication.
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c5.1.4g}
 $V=\CCone$ and $W$ consists of functions
      $x(t)\in\CCone$ satisfying $\int_{-2}^4x(t)dt =0$.
+
+\begin{solution}
+$W$ is a subspace of $V$, since $W$ is closed under
+addition and scalar multiplication.
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c5.1.4e}
 $V=\CCone$ and $W$ consists of functions
      $x(t)\in\CCone$ satisfying $x(1)=0$.
+
+\begin{solution}
+$W$ is a subspace of $V$, since $W$ is closed under
+addition and scalar multiplication.
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c5.1.4f}
 $V=\CCone$ and $W$ consists of functions
      $x(t)\in\CCone$ satisfying $x(1)=1$.
+
+\begin{solution}
+\ans $W$ is not a subspace of $V$.
+
+\soln The subset $W$ is closed neither under addition nor under scalar
+multiplication.  For example, let $w_1(t) = t$ and let $w_2(t) = t^2$.
+\[
+(w_1 + w_2)(1) = w_1(1) + w_2(1) = 1 + 1 = 2,
+\]
+so $(w_1 + w_2)(t)$ is not an element of $W$.
+
+
+\end{solution}
 \end{exercise}
 
 \noindent In Exercises~\ref{c5.1.5a} -- \ref{c5.1.5e} which of the
 sets $S$ are subspaces?
 \begin{exercise} \label{c5.1.5a}
 $S = \{(a,b,c)\in\R^3 : a\ge 0, \; b\ge 0,\; c\ge 0\}$.
+
+\begin{solution}
+\ans The set $S$ is not a subspace.
+
+\soln The set $S$ is closed under addition but not under scalar
+multiplication.  To demonstrate, let $x = (1,4,2)$ be an element of $S$. 
+Then
+\[
+-2x = -2(1,4,2) = (-2,-8,-4)
+\]
+which is not an element of $S$.
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c5.1.5b}
 $S = \{(x_1,x_2,x_3)\in\R^3 : a_1x_1+a_2x_2+a_3x_3=0
 \mbox{ where } a_1,a_2,a_3\in\R \mbox{ are fixed}\}$.
+
+\begin{solution}
+The set $S$ is a subspace, since it is closed under
+addition and scalar multiplication.
+
+ 
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c5.1.5c}
 $S = \{(x,y)\in\R^2: (x,y) \mbox{ is on the line through }
 (1,1) \mbox{ with slope } 1\}$.
+
+\begin{solution}
+The set $S$ is a subspace, since it is closed under
+addition and scalar multiplication.
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c5.1.5d}
 $S = \{x\in\R^2: Ax=0\}$ where $A$ is a $3\times 2$ matrix.
+
+\begin{solution}
+The set $S$ is a subspace, since it is closed under
+addition and scalar multiplication.
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c5.1.5e}
 $S = \{x\in\R^2: Ax=b\}$ where $A$ is a $3\times 2$ matrix
 	and $b\in\R^3$ is a fixed nonzero vector.
+
+\begin{solution}
+\ans The set $S$ is not a subspace.
+
+\soln The set $S$ is closed under neither addition nor scalar
+multiplication.  For example, let $x_1$ and $x_2$ be solutions to the
+equation $Ax = b$.  Then,
+\[
+A(x_1 + x_2) = Ax_1 + Ax_2 = b + b = 2b,
+\]
+so $(x_1 + x_2)$ is not an element of $S$.
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c5.1.6}
 Let $V$ be a vector space and let $W_1$ and $W_2$ be subspaces.
 Show that the intersection $W_1\cap W_2$ is also a subspace of $V$.
+
+\begin{solution}
+
+The subset $W_1 \cap W_2$ is a subspace of $V$.  To show that this
+subset is closed under addition and scalar multiplication, 
+let $x$ and $y$ be vectors in $W_1 \cap W_2$.  It follows that
+$x,y \in W_1$ and $x,y \in W_2$.  Therefore, by the
+definition of a subspace, $x + y \in W_1$ and $x + y \in W_2$, so
+$x + y \in W_1 \cap W_2$.  Also by definition, $rx \in W_1$ and
+$rx \in W_2$, for some scalar $r$, so $rx \in W_1 \cap W_2$.
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c5.1.7a}
@@ -450,6 +687,27 @@ For which scalars $a,b,c$ do the solutions to the equation
 ax+by = c
 \]
 form a subspace of $\R^2$?
+
+\begin{solution}
+
+\ans Let $V$ be the subset of solutions $(x,y)$ to $ax + by = c$.
+The subset $V$ is a subspace when $c = 0$ and is not a subspace
+when $c \neq 0$. 
+
+\soln Let $(x_1,y_1)$ and $(x_2,y_2)$ be elements of $V$.  Then
+\[
+a(x_1 + x_2) + b(y_1 + y_2) = (ax_1 + by_1) + (ax_2 + by_2) =
+c + c = 2c.
+\]
+Thus $V$ is closed under addition only when $2c = c$, so $c = 0$.
+Similarly, for any scalar $r$,
+\[
+r(ax_1 + by_1) = cr.
+\]
+So $V$ is closed under scalar multiplication only when $rc = c$ for
+any scalar $r$.  Thus, $c = 0$.
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c5.1.7b}
 For which scalars $a,b,c,d$ do the solutions to the equation
@@ -457,11 +715,37 @@ For which scalars $a,b,c,d$ do the solutions to the equation
 ax+by+cz = d
 \]
 form a subspace of $\R^3$?
+
+\begin{solution}
+
+\ans By the same proof as in Exercise~\ref{c5.1.7a}, the solutions to the
+equation $ax + by + cz = d$ form a subspace of $\R^3$ when $d = 0$,
+and do not form a subspace when $d \neq 0$.
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c5.1.8}
 Show that the set of all solutions to the differential equation
 $\dot{x}=2x$ is a subspace of $\CCone$.
+
+\begin{solution}
+
+The set of all solutions to the differential equation $\dot{x} = 2x$ is
+indeed a subspace of $\CCone$.  To demonstrate, let $x_1$ and $x_2$
+be elements of this set.  The set is closed under addition since
+\[
+\frac{d}{dt}(x_1 + x_2) = \frac{d}{dt}(x_1) + \frac{d}{dt}(x_2)
+= 2x_1 + 2x_2 = 2(x_1 + x_2)
+\]
+and closed under scalar multiplication since, for any real scalar $r$,
+\[
+\frac{d}{dt}(rx_1) = r\frac{d}{dt}(x_1) = 2(rx_1).
+\]
+Note that this problem provides another example of the principle of
+superposition.
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c5.1.9}
@@ -477,6 +761,39 @@ X(t) = \alpha e^{2t}\vectwo{1}{1} + \beta e^{-4t}\vectwo{1}{-1}.
 Use this formula for solutions to show that the set of solutions
 to this system of differential equations is a vector subspace of
 $(\CCone)^2$.
+
+\begin{solution}
+
+Let $V \subset (\CCone)^2$ be the set of solutions to \eqref{e:solnODE}.
+The set is closed under both addition and scalar multiplication and
+is a subspace.
+To demonstrate, let
+\[
+x_1(t) = \alpha_1 e^{2t}\vectwo{1}{1} +
+\beta_1 e^{-4t}\vectwo{1}{-1} \AND x_2(t) =
+\alpha_2 e^{2t}\vectwo{1}{1} + \beta_2 e^{-4t}\vectwo{1}{-1}
+\]
+be elements of this set.  Adding $x_1$ and $x_2$ yields
+\[
+\left(\alpha_1 e^{2t}\vectwo{1}{1} +
+\beta_1 e^{-4t}\vectwo{1}{-1}\right) +
+\left(\alpha_2 e^{2t}\vectwo{1}{1}
++ \beta_2 e^{-4t}\vectwo{1}{-1}\right)
+\]
+\[
+= (\alpha_1 + \alpha_2)e^{2t}\vectwo{1}{1} +
+(\beta_1 + \beta_2) e^{-4t}\vectwo{1}{-1} \in V
+\]
+and multiplying $x_1$ by any real scalar $r$ yields
+\[
+rx_1 = r\left(\alpha_1 e^{2t}\vectwo{1}{1} +
+\beta_1 e^{-4t}\vectwo{1}{-1}\right) = r\alpha_1 e^{2t}\vectwo{1}{1} +
+r\beta_1 e^{-4t}\vectwo{1}{-1} \in V.
+\]
+
+
+
+\end{solution}
 \end{exercise}
 
 \end{document}

@@ -284,6 +284,20 @@ Use {\sf pline} to find an initial condition $x(0)$ for the
 ordinary differential equation \eqref{lin1} with $\lambda=-0.2$
 such that the corresponding solution $x(t)$ satisfies
 $x(20)\in[0.001,0.002]$.
+
+\begin{solution}
+
+\ans An approximate range of possible initial conditions is
+$0.055 \leq x(0) \leq 0.109$. 
+
+\soln Use {\tt pline} to find an appropriate initial condition.
+In {\tt pline}, set the value of $\lambda$ to $-0.2$.  Then, set the
+integration time to $20$, since integration time corresponds to the
+final value of $t$ when the initial value is $0$.  Use either
+keyboard input or the mouse to select initial points until you
+find one which has an endpoint in the given range. 
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c3.3.2}
@@ -293,6 +307,24 @@ differential equation
 \dot{x} = (x^2-1)(x+2).
 \]
 Which of the equilibria are stable and which are unstable?
+
+\begin{solution}
+
+\ans The point $x = -1$ is a stable equilibrium, and $x = -2$ and $x = 1$
+are unstable equilibria.
+
+\soln Change the {\tt pline} equation to
+{\tt x$'$ = (x\^{}2 - 1) * (x + 2)}.  Click on the proceed button, and
+use the mouse to select points on the graph and find their endpoints. 
+Since any initial point within the range $-2 < x(0) < 1$ will have an
+endpoint near $-1$, $x = -1$ is a stable equilibrium.  Since any initial
+point near $x = -2$ or $x = 1$ moves away from these points as $t$
+increases, these points are unstable equilibria.  Verify that $x(0)
+= -2$ is indeed an equilibrium by entering the exact value using
+keyboard input and observing that $x(t)$ does not move away from
+$-2$.  Similarly, verify that $x(0) = -1$ is an equilibrium.
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c3.3.3}
@@ -302,6 +334,17 @@ Consider the following ordinary differential equation:
 \]
 Use {\sf pline} to find a value for the parameter $\lambda$ such
 that $x(t)=1$ is a stable equilibrium.
+
+\begin{solution}
+
+\ans The point $x = 1$ is a stable equilibrium when $\lambda > 0$; it is
+an unstable equilibrium when $\lambda < 0$. 
+
+\soln We verify this by choosing several values of $\lambda$ in
+{\tt pline} and observing that when $\lambda$ is positive, initial values
+near $1$ converge to $1$, whereas when $\lambda$ is negative, they do not.
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c3.3.4}
@@ -312,6 +355,13 @@ The differential equation
 has an equilibrium at the origin.  Use {\sf pline} to determine
 those $x_0$ for which solutions to the initial value $x(0)=x_0$ tend
 towards the origin.
+
+\begin{solution}
+
+Solutions to $\frac{dx}{dt} = x^2$ tend towards the origin for $x_0 < 0$
+and tend away from the origin for $x_0 > 0$.
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c3.3.5}
@@ -323,6 +373,28 @@ Use {\sf pline} to verify that the origin is an asymptotically
 stable equilibrium when $a = -1$ and is an unstable
 equilibrium when $a = +1$. Discuss the relationship
 between these examples and Theorem~\ref{T:stability1}.
+
+\begin{solution}
+
+\ans When $\epsilon = -1$, all initial values move towards $x = 0$; whereas
+when $\epsilon = 1$, all initial values move away from the origin. 
+
+\soln If we let $g(x) = \epsilon x^3$, we can verify our result using
+Theorem~\ref{T:stability1}, which states
+that an equilibrium is asymptotically stable if $g'(x) < 0$.  In this case,
+\[
+g'(x) = 3\epsilon x^2
+\]
+The expression $3x^2$ is positive for all nonzero real numbers $x$, so
+when $x \neq 0$
+\[ \begin{array}{ccc}
+g'(x) > 0 & \mbox{when} & \epsilon > 0 \\
+g'(x) < 0 & \mbox{when} & \epsilon < 0 \end{array}
+\]
+Therefore, the origin is a stable equilibrium when $\epsilon = -1$ and
+an unstable equilibrium when $\epsilon = 1$.
+
+\end{solution}
 \end{exercise}
 
 \TEXER
@@ -335,15 +407,94 @@ of this equation like the one in Figure~\ref{pitch3}.  You may use {\sf pline}
 to check your answer.
 \begin{exercise} \label{c3.3.6A}
 $\dot{x} = x^2 + 2x - 3$.
+
+\begin{solution}
+
+\ans The point $x = 1$ is an unstable equilibrium and $x = -3$ is a stable
+equilibrium.
+
+\soln Note that the equilibria for the differential equation
+$x' = x^2 + 2x - 3$ occur at any points where
+$g(x) = x^2 + 2x - 3 = (x - 1)(x + 3) = 0$.
+So, the equilibria occur at $x = 1$ and $x = -3$.  Take the
+derivative of $g(x)$ at these points, obtaining
+\[
+\begin{array}{rcccl}
+g'(x) & = & 2x + 2 \\
+g'(1) & = & 4 & > & 0 \\
+g'(-3) & = & -4 & < & 0.\end{array}
+\]
+
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c3.3.6B}
 $\dot{x} = x^3 - 2x^2 - 8x$.
+
+\begin{solution}
+
+\ans The points $x=4$ and $x = -2$ are unstable equilibria and the point 
+$x = 0$ is a stable equilibrium.
+
+\soln Note that the equilibria for the differential equation
+$x' = x^3 - 2x^2 - 8x$ occur at any points where
+$g(x) = x^3 - 2x^2 - 8x = x(x - 4)(x + 2) = 0$.
+So, the equilibria occur at $x=0$, $x = 4$ and $x = -2$.  Take the
+derivative of $g(x)$ at these points, obtaining
+\[
+\begin{array}{rcccl}
+g'(x) & = & 3x^2-4x-8 \\
+g'(4) & = & 24 & > & 0 \\
+g'(0) & = & -8 & < & 0\\
+g'(-2) & = & 12 & > & 0.\end{array}
+\]
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c3.3.6C}
 $\dot{x} = x^3 + 2x^2 - 3x$.
+
+\begin{solution}
+
+\ans The points $x=1$ and $x = -3$ are unstable equilibrium and the point 
+$x = 0$ is a stable equilibrium.
+
+\soln Note that the equilibria for the differential equation
+$x' = x^3 + 2x^2 - 3x$ occur at any points where
+$g(x) = x^3 + 2x^2 - 3x = x(x - 1)(x + 3) = 0$.
+So, the equilibria occur at $x=0$, $x = 1$ and $x = -3$.  Take the
+derivative of $g(x)$ at these points, obtaining
+\[
+\begin{array}{rcccl}
+g'(x) & = & 3x^2+4x-3 \\
+g'(1) & = & 4 & > & 0 \\
+g'(0) & = & -3 & < & 0\\
+g'(-3) & = & 12 & > & 0.\end{array}
+\]
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c3.3.6D}
 $\dot{x} = x^2 + 6x + 1$.
+
+\begin{solution}
+
+\ans The point $x = -3+2\sqrt{2}$ is an unstable equilibrium and 
+$x = -3-2\sqrt{2}$ is a stable equilibrium.
+
+\soln Note that the equilibria for the differential equation
+$x' = x^2 + 6x + 1$ occur at any points where
+$g(x) = x^2 + 6x + 1 = 0$.  So, the equilibria occur at $x =
+-3-2\sqrt{2}\approx -5.8284$ and $x = -3+2\sqrt{2}\approx -0.1716$.  Take the
+derivative of $g(x)$ at these points, obtaining
+\[
+\begin{array}{rcccl}
+g'(x) & = & 2x + 6 \\
+g'(-5.8284) & = & -5.6569 & < & 0 \\
+g'(-0.1716) & = & 5.6568 & > & 0.\end{array}
+\]
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c3.3.7}
@@ -361,11 +512,50 @@ y(0) & = & x_0.
 (Thus, to integrate the solution $x(t)$ backwards in time is the
 same as solving the differential equation $\dot{y}  =  -g(y)$
 forward in time.)
+
+\begin{solution}
+
+In order to show that $y(t)$ is a solution to the initial value problem
+\[
+\begin{array}{rcl}
+\dot{y} & = & -g(y) \\
+y(0) & = & x_0\end{array}
+\]
+we must show that both of these conditions are valid for $y$.  Recall that
+$y(t) = x(-t)$ where $x(t)$ satisfies the initial value problem
+\[ \begin{array}{rcl}
+\dot{x} & = & g(x) \\
+x(0) & = & x_0.\end{array} \]
+
+The chain rule implies
+\[ \dot{y} = \frac{d}{dt}[y(t)] = \frac{d}{dt}[x(-t)] =
+-\frac{dx}{dt}(-t) = -g(x(-t)) = -g(y(t)). \]
+It follows that $\dot y = -g(y)$.
+In addition,
+\[ y(0) = x(-0) = x(0) = x_0, \]
+so $y(t)$ is indeed a solution to the given initial value problem.
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c3.3.9}
 Use Exercise~\ref{c3.3.7} to devise a shortcut for solving
 Exercise~\ref{c3.3.1}.
+
+\begin{solution}
+
+Define a function $y$ such that $y(t) = x(-t)$.  Then, if $x$ is defined by
+$\dot{x} = -0.2x$, $y$ can be defined by $\dot{y} = 0.2y$.  In closed form,
+$x(t) = Ke^{-0.2t}$ and $y(t) = Ke^{0.2t}$ for some constant $K$.  Let $t_0
+= 20$, that is, let $x(20) = x_0 = y(20)$.  Then, by definition,
+$x(0) = x(20 - 20) = x(t_0 - 20) = y(t_0 + 20) = y(40)$.  So, to find the
+lower bound of the range of possible values of $x_0$, set $x_0 = 0.001$.
+Then, $0.001 = y(20) = Ke^4$, so $K \approx 0.0000183$, and $x(0) = Ke^8
+\approx 0.0546$.  This agrees with the solution found in
+Exercise~\ref{c3.3.1}.
+
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c3.3.8}
@@ -373,6 +563,25 @@ Sketch the time series for the solution to the differential
 equation pictured in Figure~\ref{pitch3}(b) with initial condition
 $x(0)=\frac{1}{2}$.  Use only the phase space plot given in this
 figure.  Use {\sf dfield8} to verify your answer.
+
+\begin{solution}
+
+Figure \ref{pitch3}(b) is a schematic
+phase line diagram of the equation $x' = x(1 - x^2)$.  According
+to that figure, the initial point $x(0) = \frac{1}{2}$ is between
+the stable equilibrium $x = 1$ and the unstable equilibrium
+$x = 0$.  Therefore, as $t$ increases from $t = 0$, $x(t)$
+approaches $1$; and as $t$ decreases from $t = 0$, $x(t)$
+approaches $0$.  Specifically, your time series should resemble
+the {\tt dfield5} diagram in Figure \ref{c3.3.8}.
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/3-3-8.eps,width=3.0in}}
+		\exercap{c3.3.8}
+\end{figure}
+
+\end{solution}
 \end{exercise}
 
 \noindent In Exercises~\ref{c3.3.10a} -- \ref{c3.3.10d} use the line field 
@@ -387,15 +596,61 @@ $x(2)=0$.
 
 \begin{exercise} \label{c3.3.10a}
 Use Figure~\ref{F:exer3ad}(i) to answer parts (a) and (b).
+
+\begin{solution}
+\ans Autonomous.
+
+\soln  The differential equation is autonomous because the line field 
+directions are identical all values of $t$.  Equilibria occur at $x$ values 
+where the line field is horizontal.  The phase line can be drawn from the 
+direction information.  See Figure~\ref{c3.3.10a}.
+
+\begin{figure}[ht]
+     \centerline{%
+     \psfig{file=exfigure/phasea.eps,width=2.0in}}
+      \exercap{c3.3.10a}
+\end{figure} 
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c3.3.10b}
 Use Figure~\ref{F:exer3ad}(ii) to answer parts (a) and (b).
+
+\begin{solution}
+Nonautonomous.
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c3.3.10c}
 Use Figure~\ref{F:exer3ad}(iii) to answer parts (a) and (b).
+
+\begin{solution}
+Nonautonomous.
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c3.3.10d}
 Use Figure~\ref{F:exer3ad}(iv) to answer parts (a) and (b).
+
+\begin{solution}
+\ans Autonomous.
+
+\soln  The differential equation is autonomous because the line field 
+directions are identical at all values of $t$.  Equilibria occur at
+$x$ values where the line field is horizontal.  The phase line can be
+drawn from the direction information.  See Figure~\ref{c3.3.10d}.
+
+\begin{figure}[ht]
+     \centerline{%
+     \psfig{file=exfigure/phaseb.eps,width=2.0in}}
+        \exercap{c3.3.10d}
+\end{figure}
+
+
+
+
+
+\end{solution}
 \end{exercise}
 
 \begin{figure*}[htb]

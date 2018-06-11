@@ -192,6 +192,20 @@ Find an orthonormal basis for the solutions to the linear equation
 \[
 2x_1-x_2+x_3=0.
 \]
+
+\begin{solution}
+
+\ans The vectors $w_1 = \frac{1}{\sqrt{3}}(1,1,-1)$ and
+$w_2 = \frac{1}{\sqrt{2}}(0,1,1)$ form an orthonormal basis
+for the solution set.
+
+\soln Find one vector which is a solution to the equation, for
+example $(1,1,-1)$.  Then, divide the vector by its length, obtaining
+the unit vector $w_1$.  By inspection, find a vector $v_2$ which
+satisfies both the given equation and $w_1 \cdot v_2 = 0$.  Then set
+$w_2 = \frac{1}{||v_2||}v_2$.
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c7.4.2}
@@ -203,6 +217,20 @@ v_1 = \frac{1}{\sqrt{5}}(1,2) \AND v_2 = \frac{1}{\sqrt{5}}(2,-1).
 \]
 \item[(b)]  Let $A=\mattwo{1}{1}{2}{-3}$. Find $[A]_{\cal V}$.
 \end{itemize}
+
+\begin{solution}
+
+(a) By Theorem~\ref{T:orthocoord}:
+\[
+[v]_{\cal V} = (v \cdot v_1, v \cdot v_2) = 
+\frac{1}{\sqrt{5}}(9,-2).
+\]
+
+(b) By \eqref{e:coordorthomat}:
+\[ [A]_{\cal V} = \mattwo{Av_1 \cdot v_1}{Av_2 \cdot v_1}
+{Av_1 \cdot v_2}{Av_2 \cdot v_2} = \mattwo{-1}{3}{2}{-1}. \]
+
+\end{solution}
 \end{exercise}
 
 
@@ -218,6 +246,13 @@ A=\left(\begin{array}{rrr} 1 & 2 & 0\\ 0 & 1 & 0\\
 \]
 into \Matlabp.  Then type the command {\tt orth(A)}\index{\computer!orth}.
 Verify that the result is an orthonormal basis for the column space of $A$.
+
+\begin{solution}
+%No written solution necessary.
+
+
+
+\end{solution}
 \end{exercise}
 
 

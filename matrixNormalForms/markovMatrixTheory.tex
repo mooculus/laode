@@ -250,6 +250,25 @@ Let $A$ be an $n\times n$ matrix.   Suppose that
 \]
 for every vector $v_0\in\R^n$.  Then the eigenvalues $\lambda$ of $A$ all
 satisfy $|\lambda|<1$.
+
+\begin{solution}
+
+Let $\lambda$ be an eigenvalue of $A$, and let $v \neq 0$ be an eigenvector
+associated to $\lambda$.  Then,
+\[
+0 = \lim_{k \to \infty}A^kv = \lim_{k \to \infty}\lambda^kv
+= \left(\lim_{k \to \infty}\lambda^k\right)v.
+\]
+Since $v$ is nonzero,
+$\dps \lim_{k \to \infty}\lambda^k = 0$.  This is true only when
+$|\lambda| < 1$.
+
+
+
+ 
+
+
+\end{solution}
 \end{exercise}
 
 

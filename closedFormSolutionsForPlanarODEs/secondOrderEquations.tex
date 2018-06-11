@@ -309,6 +309,27 @@ for a point particle moving only under the influence of gravity.  Find the
 solution for a particle starting at a height of $10$ feet above ground with
 an upward velocity of $20$ feet/sec.  At what time will the particle hit
 the ground?  (Recall that acceleration due to gravity is $32$ feet/sec$^2$.)
+
+\begin{solution}
+
+\ans The particle will hit the ground at $t \approx 1.63$ seconds.
+
+\soln Let $g(t) = 32$.  Then integrate:
+\[
+\begin{array}{rcl}
+\frac{d^2x}{dt^2} & = & -g \\
+\frac{dx}{dt} & = & \int (-g)dt \\
+\frac{dx}{dt} & = & -32t + v_0 \\
+x & = & \int (-32t + C_1)dt \\
+x & = & -16t^2 + C_1t + C_2.
+\end{array}
+\]
+Then let $C_1 = v_0$, the initial velocity, and let $C_2 = x_0$, the initial
+position of the particle, to obtain $x(t) = -16t^2 + v_0t + x_0$.  In this
+case, $x(t) = -16t^2 + 20t + 10$.  Solve for $x(t) = 0$ to find
+$t = \frac{10 + \sqrt{260}}{16} \approx 1.63$.
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c6.7.2}
@@ -320,26 +341,157 @@ x(t) = -\frac{1}{2}gt^2 + v_0t + x_0
 \]
 where $x_0$ is the initial position of the particle and $v_0$ is the initial
 velocity.
+
+\begin{solution}
+
+By \eqref{e:pointpart}, a point particle moving only under the influence of
+gravity has a position $x(t)$ governed by
+\[
+\frac{d^2x}{dt^2} + g = 0, \quad \mbox{ or } \frac{d^2x}{dt^2} = -g.
+\]
+Integrate this formula to obtain $\frac{dx}{dt} = -gt + C_1$.  In this case
+$\frac{dx}{dt}(t)$ is the velocity of the particle at time $t$, so the
+constant $C_1 = v_0$, the initial velocity of the particle.  Integrate
+$\frac{dx}{dt} = -gt + v_0$ to obtain
+$x = -\frac{1}{2}gt^2 + v_0t + C_2$.  In this case, $C_2 = x_0$ the position
+of the particle at time $t_0$.  Thus,
+\[
+x = -\frac{1}{2}gt^2 + v_0t + x_0.
+\]
+
+\end{solution}
 \end{exercise}
 
 \noindent  In Exercises~\ref{c6.6.hoa} -- \ref{c6.6.hoc} find the general
 solution to the given differential equation.
 \begin{exercise} \label{c6.6.hoa}
 $\ddot{x} + 2\dot{x} - 3x = 0$.
+
+\begin{solution}
+
+\ans The general solution is
+\[
+x(t) = \alpha e^t + \beta e^{-3t}
+\]
+for $\alpha, \beta \in \R$.
+
+\soln Let $y = \dot{x}$, and rewrite the differential equation as
+$\dot{y} + 2y - 3x = 0$.  Write the first order system in two equations:
+\[
+\begin{array}{rrrrr}
+\dot{x} & = & & & y \\
+\dot{y} & = & 3x & - & 2y.
+\end{array}
+\]
+This system can be represented by the matrix $Q$, where
+\[
+Q = \mattwo{0}{1}{3}{-2}.
+\]
+The characteristic polynomial of $Q$ is $p_Q(\lambda) = \lambda^2
++ 2\lambda - 3$, and the eigenvalues are $\lambda_1 = 1$ and
+$\lambda_2 = 2$.  Thus, the general solution is
+\[
+x(t) = \alpha e^{\lambda_1t} + \beta e^{\lambda_2t} =
+\alpha e^t + \beta e^{-3t}.
+\]
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c6.6.hob}
 $\ddot{x} - 6\dot{x} + 9x = 0$.
 In addition, find the solution to this equation satisfying
 initial values $x(1)=1$ and $\dot{x}(1)=0$.
+
+\begin{solution}
+
+\ans The general solution is
+\[
+x(t) = \alpha e^{(3 + 3\sqrt{2})t} + \beta e^{(3 - 3\sqrt{2})t}.
+\]
+When $x(1) = 1$ and $\dot{x}(1) = 0$,
+\[
+x(t) \approx 0.0001e^{(3 + 3\sqrt{2})t} +
+2.9573e^{(3 - 3\sqrt{2})t}.
+\]
+
+\soln Let $y = \dot{x}$, and rewrite the differential equation as
+$\dot{y} - 6y + 9x = 0$.  Then the system can be rewritten as the first
+order system in two equations associated to the matrix
+\[
+Q = \mattwo{0}{1}{9}{6}.
+\]
+The characteristic polynomial of $Q$ is $p_q(\lambda) = \lambda^2 
+- 6\lambda - 9$, and the eigenvalues of $Q$ are $\lambda_1 = 3 +
+3\sqrt{2}$ and $\lambda_2 = 3 - 3\sqrt{2}$.  Thus,
+\[
+x(t) = \alpha e^{(3 + 3\sqrt{2})t} + \beta e^{(3 - 3\sqrt{2})t}.
+\]
+To find the solution with the given initial conditions, substitute $x(1)
+= 1$ into the formula for $x(t)$, then find $\dot{x}(t)$ and substitute
+$\dot{x}(1) = 0$ into its formula to obtain the system:
+\[
+\begin{array}{rcccl}
+x(t) & = & 1 & = & \alpha e^{(3 + 3\sqrt{2})} + \beta e^{(3 - 3\sqrt{2})} \\
+\dot{x}(t) & = & 0 & = & (3 + 3\sqrt{2})\alpha e^{(3 + 3\sqrt{2})}
++ (3 - 3\sqrt{2})\beta e^{(3 - 3\sqrt{2})}.
+\end{array}
+\]
+Using \Matlab or a calculator, solve this system to obtain $\alpha \approx
+0.0001$ and $\beta \approx 2.9573$.
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c6.6.hoc}
 $\ddot{x} + 2\dot{x} + 2x = 0$.
+
+\begin{solution}
+
+\ans The general solution is
+\[
+x(t) = e^{-t}(\alpha \cos{t} + \beta \sin{t}).
+\]
+
+\soln Let $y \dot{x}$ and rewrite the system as $\dot{y} + 2y + 2x = 0$,
+or $\dot{X} = QX$, where
+\[
+X = \vectwo{x}{y} \AND Q = \mattwo{0}{1}{-2}{-2}.
+\]
+The characteristic polynomial of $Q$ is $p_q(\lambda) = \lambda^2 
++ 2\lambda + 2$, and the eigenvalues of $Q$ are $\lambda_1 = -1 + i$ and
+$\lambda_2 = -1 - i$.  Thus, the general solution is
+\[
+x(t) = c_1e^{(-1 + i)t} + c_2e^{(-1 - i)t}
+\]
+for some $c_1, c_2 \in \C$.  Using Euler's formula $e^{i\theta} =
+\cos\theta + i\sin\theta$, we can write
+\[
+\begin{array}{rcl}
+x(t) & = & c_1e^{-t}e^{it} + c_2e^{-t}e^{-it} \\
+& = & e^{-t}(c_1(\cos{t} + i\sin{t}) + c_2(\cos{t} - i\sin{t})) \\
+& = & e^{-t}((c_1 + c_2)\cos{t} + i(c_1 - c_2)\sin{t}).
+\end{array}
+\]
+We know that $x(t) \in \R$ for all $t$.  Thus, $(c_1 + c_2) \in \R$, and
+$(c_1 - c_2)$ is purely imaginary, so $c_2 = \overline{c_1}$.  Let
+$c_1 = \frac{1}{2}(\alpha + i\beta)$ for $\alpha, \beta \in \R$. 
+Then $x(t) = e^{-t}(\alpha\cos{t} + \beta\sin{t})$.
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c6.7.3}
 Prove that a nonzero solution to a second order linear differential equation
 with constant coefficients cannot be identically equal to zero on a nonempty
 interval.
+
+\begin{solution}
+
+Suppose $x(t) = 0$ for all $t \in [a,b]$.  Then there exists a 
+$c \in [a,b]$ such that $x(c) = 0$ and $\dot{x}(c) = 0$, since $x(c) =
+0 = x(c + \epsilon)$ for small $\epsilon$.  According to the differential
+equation for $x$, $\ddot{x}(c) = 0$.  Thus $x$ is identically $0$.
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c6.7.4}
@@ -349,6 +501,40 @@ differential equation
 \ddot{x} + r\dot{x} + wx = 0.
 \]
 Show that $\dps\lim_{t\to\infty} x(t) = 0$.
+
+\begin{solution}
+
+This differential equation can be rewritten as $\dot{X} = QX$, where
+$y = \dot{x}$,
+\[
+X = \vectwo{x}{y}, \AND Q = \mattwo{0}{1}{-w}{-r}.
+\]
+Then we can solve for $x(t)$ in closed form, obtaining
+\[
+x(t) = \alpha e^{\lambda_1 t} + \beta e^{\lambda_2 t}
+\]
+where $\lambda_1$ and $\lambda_2$ are the roots of the characteristic
+polynomial $p_q(\lambda) = \lambda^2 + r\lambda + w$.  By the quadratic
+formula, the eigenvalues are
+\[
+\lambda = \frac{-r \pm \sqrt{r^2 - 4w}}{2}.
+\]
+We know that $-r < 0$.  If $r^2 - 4w < 0$, then $\lambda_1$ and $\lambda_2$
+are complex conjugates with negative real part.  Otherwise, $\lambda_1$
+and $\lambda_2$ are negative real numbers, since $r > \sqrt{r^2 - 4w}$
+for any choice of $r$ and $w$.  For any $\lambda$ with negative real part
+\[
+\lim_{t \rightarrow \infty} e^{\lambda t} = 0.
+\]
+Thus,
+\[
+\lim_{t \rightarrow \infty} x(t) =
+\lim_{t \rightarrow \infty} (\alpha e^{\lambda_1 t} +
+\beta e^{\lambda_2 t}) = 0.
+\]
+
+
+\end{solution}
 \end{exercise}
 
 \noindent In Exercises~\ref{c6.6.tfa} -- \ref{c6.6.tfc}, let $x(t)$ be a
@@ -358,14 +544,38 @@ or {\em false}.
 \begin{exercise} \label{c6.6.tfa}
 If $x(t)$ is nonconstant and time periodic, then the
 roots of the characteristic polynomial are purely imaginary.
+
+\begin{solution}
+True.
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c6.6.tfb}
 If $x(t)$ is constant in $t$, then one of the roots of
 the characteristic polynomial is zero.
+
+\begin{solution}
+\ans False.
+
+\soln As a counterexample, consider the trivial case in which $x(t)$
+is identically $0$.
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c6.6.tfc}
 If $x(t)$ is not bounded, then the roots of the characteristic
 polynomial are equal.
+
+\begin{solution}
+\ans False.
+
+\soln The equation
+\[
+x(t) = \alpha e^{\lambda_1 t} + \beta e^{\lambda_2 t}
+\]
+with positive $\alpha$, $\beta$ and $\lambda_i$ is not bounded.
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c3.5.5}
@@ -380,6 +590,31 @@ as follows:
 \dot{x} & = & y \\
 \dot{y} & = & -b(x) - a(x) y.
 \end{eqnarray*}
+
+\begin{solution}
+
+Let $x(t)$ be a solution to the second order differential equation
+\begin{equation} \label{order2}
+\frac{d^2x}{dt^2} + a(x)\frac{dx}{dt} + b(x) = 0.
+\end{equation}
+Let $y(t) = \dot x(t)$.  Then \eqref{order2} can be rewritten as
+\[ \frac{d}{dt}\left(\frac{dx}{dt}\right) + a(x)\frac{dx}{dt}
++ b(x) = \frac{dy}{dt} + a(x)y + b(x) = 0 \]
+So any solution to \eqref{order2} is also a solution to the system
+\begin{equation} \label{order2sol}
+\begin{array}{rcl}
+\dot{x} & = & y \\
+\dot{y} & = & -b(x) - a(x) y.\end{array}
+\end{equation}
+Conversely, we can solve system \eqref{order2sol} as follows
+\[ \begin{array}{rcl}
+\frac{d}{dx}\left(\dot{x}\right) & = & -b(x) - a(x)\dot{x} \\
+\frac{d^2x}{dt^2} & = & -b(x) - a(x)\frac{dx}{dt}\end{array}
+\]
+to show that any solution to \eqref{order2sol} is also a solution
+to \eqref{order2}.
+
+\end{solution}
 \end{exercise}
 
 
@@ -389,6 +624,43 @@ as follows:
 Use {\sf pplane8} to compute solutions to the system corresponding to the
 spring equations with small sliding friction.  Plot the time series (in $x$)
 of the solution and observe the oscillating and damping of the solution.
+
+\begin{solution}
+
+The {\tt pplane5} graph of the differential equation
+$\ddot{x} - 0.05\dot{x} - 3x$ is shown in Figure~\ref{c6.7.5}a.  The
+{\tt x vs.\ t} graph is shown in Figure~\ref{c6.7.5}b.
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/6-10-5a.eps,width=2.75in}
+                       \psfig{file=exfigure/6-10-5b.eps,width=2.75in}}
+                \exercaptwo{c6.7.5}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{solution}
 \end{exercise}
 
 

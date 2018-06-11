@@ -345,6 +345,19 @@ Write the system of linear ordinary differential equations
 \frac{dx_2}{dt}(t) & = & 2x_1(t) - 3x_2(t)
 \end{eqnarray*}
 in matrix form.
+
+\begin{solution}
+
+\arraystart
+\[
+\left(\begin{array}{r} \dps\frac{dx_1}{dt}(t) \\ 
+\dps\frac{dx_2}{dt}(t)\end{array}\right) =
+\left(\begin{array}{rr} 4 & 5 \\ 2 & -3\end{array}\right)
+\left(\begin{array}{r} x_1(t) \\ x_2(t)\end{array}\right)
+\]
+\arrayfinish
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c4.4.4}
@@ -357,6 +370,24 @@ are linear combinations of the two solutions
 \[
 U(t) = e^{3t}\vectwo{1}{0} \AND V(t) = e^{-2t}\vectwo{0}{1}.
 \]
+
+\begin{solution}
+
+The system is uncoupled, so we can solve each equation
+independently, using the initial value problem to obtain:
+\[ \begin{array}{rcl}
+x(t) & = & x_0e^{3t} \\
+y(t) & = & y_0e^{-2t}. \end{array} \]
+All solutions are of the form
+\[ \vectwo{x(t)}{y(t)} = \vectwo{x_0e^{3t}}{y_0e^{-2t}}
+= x_0\left(e^{3t}\vectwo{1}{0}\right) +
+y_0\left(e^{-2t}\vectwo{0}{1}\right). \]
+So all solutions are linear combinations of
+\[ 
+U(t) = e^{3t}\vectwo{1}{0} \AND V(t) = e^{-2t}\vectwo{0}{1}. 
+\]
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c4.5.1}
@@ -388,6 +419,79 @@ $X(t)$ to \eqref{e:Ceqn} such that
 X(0) = \left(\begin{array}{r} 3\\-1\end{array}\right).
 \]
 \end{itemize}
+
+\begin{solution}
+
+(a) In order to determine that $Y(t)$ is a solution
+to \eqref{e:Ceqn}, substitute $Y(t)$ into both sides of the 
+equation $\frac{dX}{dt} = CX$:
+\[
+\frac{dY}{dt}
+= \frac{d}{dt}\left(e^{2t}\vectwo{1}{0}\right)
+= \frac{d}{dt}\cvectwo{e^{2t}}{0}
+= \cvectwo{2e^{2t}}{0};
+\]
+\[
+CY(t)
+= \mattwo{2}{3}{0}{-1}\cvectwo{e^{2t}}{0}
+= \cvectwo{2e^{2t}}{0}.
+\]
+Similarly, show that $Z(t)$ is a solution:
+\[
+\frac{dZ}{dt}
+= \frac{d}{dt}\left(e^{-t}\vectwo{1}{-1}\right)
+= \frac{d}{dt}\cvectwo{e^{-t}}{-e^{-t}}
+= \cvectwo{-e^{-t}}{e^{-t}};
+\]
+\[
+CZ(t)
+= \mattwo{2}{3}{0}{-1}\cvectwo{e^{-t}}{-e^{-t}}
+= \cvectwo{-e^{-t}}{e^{-t}}.
+\]
+
+(b) Again, verify that $X(t) = 2Y(t) - 14Z(t)$ is a solution to
+\eqref{e:Ceqn} by substituting into both sides of the equation and
+noting that the values are equal:
+\[
+\frac{dX}{dt}
+= \frac{d}{dt}\left(2e^{2t}\vectwo{1}{0} - 14e^{-t}\vectwo{1}{-1}\right)
+= \frac{d}{dt}\cvectwo{2e^{2t} - 14e^{-t}}{14e^{-t}} 
+= \cvectwo{4e^{2t} + 14e^{-t}}{-14e^{-t}};
+\]
+\[
+CX(t) = C\left(2Y(t) - 14Z(t)\right)
+= C\left(\cvectwo{2e^{2t}}{0} - \cvectwo{14e^{-t}}{-14e^{-t}}\right)
+= \cvectwo{4e^{2t} + 14e^{-t}}{-14e^{-t}}.
+\]
+
+(c) As demonstrated in Section~\ref{S:Superposition}, if
+$Y(t)$ and $Z(t)$ are both solutions to
+\eqref{e:Ceqn}, then $X(t) = \alpha Y(t) + \beta Z(t)$ is also
+a solution to \eqref{e:Ceqn}.
+
+(d) \ans 
+\[
+X(t) = 2e^{2t}\vectwo{1}{0} + e^{-t}\vectwo{1}{-1}.
+\]
+
+\soln Note that
+\[ X(t) = \alpha Y(t) + \beta Z(t) = \alpha e^{2t}\vectwo{1}{0}
++ \beta e^{-t}\vectwo{1}{-1} \]
+is a solution to \eqref{e:Ceqn}.  Substitute the value
+$X(0) = (3,-1)^t$  into the equation to find a solution with that
+initial condition:
+\[
+\vectwo{3}{-1} = X(0) = \alpha\vectwo{1}{0} +
+\beta\vectwo{1}{-1}.
+\]
+We now have the linear system:
+\[ \begin{array}{rrrrr}
+3 & = & \alpha & + & \beta \\
+-1 & = & & & -\beta \end{array} \]
+which we can solve to find $\alpha = 2$ and $\beta = 1$.
+
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c4.5.2}
@@ -408,6 +512,46 @@ X(0)=\vectwo{2}{1}.
 \vectwo{1}{1} \AND \vectwo{1}{-1}
 \]
 are eigenvectors of $C$.
+
+\begin{solution}
+
+\ans 
+\[
+X(t) = \frac{3}{2}\vectwo{1}{1} + \frac{1}{2}e^{2t}\vectwo{1}{-1}.
+\]
+
+\soln Note that if $Cv = \lambda v$, then $X(t) = e^{\lambda t}v$ is a
+solution to $\dot{X}(t) = CX(t)$.  Let
+\[
+v_1 = \vectwo{1}{1} \AND v_2 = \vectwo{1}{-1}.
+\]
+The eigenvalues corresponding to $v_1$ and $v_2$ are
+$\lambda_1 = 0$ and $\lambda_2 = 2$.  This can be verified
+by calculating $Cv_1 = 0$ and $Cv_2 = 2v_2$.
+So,
+\[
+X(t) = \vectwo{1}{1} \AND X(t) = e^{2t}\vectwo{1}{-1}
+\]
+are both solutions to $\dot{X}(t) = CX$.  By the principle of
+superposition,
+\[
+X(t) = \alpha\vectwo{1}{1} + \beta e^{2t}\vectwo{1}{-1}
+\]
+is also a solution.
+Substitute the given the initial condition into the equation to obtain
+\[
+\vectwo{2}{1} = X(0) = \alpha\vectwo{1}{1} + \beta\vectwo{1}{-1}.
+\]
+Now, solve the linear system
+\[
+\begin{array}{rrrrr}
+2 & = & \alpha & + & \beta \\
+1 & = & \alpha & - & \beta \end{array}
+\]
+to find that $\alpha = \frac{3}{2}$ and $\beta = \frac{1}{2}$.
+
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c4.5.3}
@@ -420,6 +564,22 @@ Show that
 \vectwo{1}{1} \AND \vectwo{1}{-1}
 \]
 are eigenvectors of $C$.  What are the corresponding eigenvalues?
+
+\begin{solution}
+
+\ans Let
+\[ v_1 = \vectwo{1}{1} \AND v_2 = \vectwo{1}{-1}. \]
+The vector $v_1$ is an eigenvector of $C$ with corresponding
+eigenvalue $a + b$, and $v_2$ is an eigenvector with eigenvalue $a - b$.
+
+\soln Calculate
+\[ Cv_1 = \mattwo{a}{b}{b}{a}\vectwo{1}{1} = \vectwo{a + b}{a + b} =
+(a + b)\vectwo{1}{1}. \]
+\[ Cv_2 = \mattwo{a}{b}{b}{a}\vectwo{1}{-1} = \vectwo{a - b}{b - a} =
+(a - b)\vectwo{1}{-1}. \]
+
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c4.5.4}
@@ -428,6 +588,28 @@ Let
 C=\mattwo{1}{2}{-3}{-1}.
 \]
 Show that $C$ has no real eigenvectors.
+
+\begin{solution}
+
+A vector $(x,y)$ is an eigenvector of $C$ if
+\[ C\vectwo{x}{y} = \lambda\vectwo{x}{y} \]
+that is, if
+\[ (C - \lambda I_2)\vectwo{x}{y} = 0. \]
+In this case,
+\[ \cmattwo{1 - \lambda}{2}{-3}{-1 - \lambda}
+\vectwo{x}{y} = 0. \]
+This equation will have a nonzero solution $(x,y)$ only if
+\[ \cmattwo{1 - \lambda}{2}{-3}{-1 - \lambda}\vectwo{x}{y} \]
+is not row equivalent to the identity matrix.
+Row reducing the matrix yields
+\[ \cmattwo{1}{\frac{2}{1 - \lambda}}{0}
+{-1 - \lambda + \frac{6}{1-\lambda}} \]
+so $C$ has an eigenvector when
+\[ -1 - \lambda + \frac{6}{1-\lambda} = 0, \]
+that is, when $\lambda^2 = -5$.  Therefore, $C$ has no real 
+eigenvectors.
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise}  \label{c4.9.6A}
@@ -435,6 +617,19 @@ Suppose that $A$ is an $n\times n$ matrix with zero as an eigenvalue.
 Show that $A$ is not invertible.  {\bf Hint:}  Assume that $A$ is invertible 
 and compute $A\inv Av$ where $v$ is an eigenvector of $A$ corresponding to 
 the zero eigenvalue.
+
+\begin{solution}
+
+Suppose that $A$ is an $n\times n$ matrix with zero eigenvalue.  We need to
+prove that $A$ is not invertible.  Let $v\in\R^n$ be a nonzero 
+eigenvector corresponding to the zero eigenvalue.  Therefore, $Av=0$. 
+Suppose that $A\inv$ exists.  Then
+\[
+v = I_nv = A\inv Av = A\inv 0 = 0,
+\]
+which is a contradiction.  Therefore, $A$ is not invertible.
+
+\end{solution}
 \end{exercise}
 \noindent {\bf Remark:}  In fact, $A$ is invertible\index{invertible} if 
 all of the eigenvalues of $A$ are nonzero.  See Corollary~\ref{C:eig=0} of 
@@ -453,6 +648,19 @@ repeated use of the {\sf Map} button in the {\sf MAP Display} window.  What
 do you observe?  What happens if you start the iteration process with a
 different choice for $X_0$, and, in particular, for an $X_0$ that is close
 to $\vectwo{-1}{1}$?
+
+\begin{solution}
+
+For each iteration, the $y$-coordinate of the solution is $1$.  After a
+number of iterations, the $x$-coordinate approaches infinity, so the
+direction of the solution vector approaches $(1,0)$, which, as shown
+in Exercise~\ref{c4.5.5a}, is an eigenvector of $A$.  For any $X_0
+\neq (-1,1)$, the solution vector approaches the direction
+$(1,0)$.  If $X_0 = (-1,1)$ or some multiple thereof, then the solution
+vectors remains on the line $y = -x$, since $(-1,1)$ is also an
+eigenvector of $A$.
+
+\end{solution}
 \end{exercise}
 
 \noindent In Exercises~\ref{c4.5.5a} -- \ref{c4.5.5b} use {\sf map} to find
@@ -468,9 +676,25 @@ of the new vector obtained by applying {\sf map} can be viewed in the
 
 \begin{exercise} \label{c4.5.5a}
 $B=\mattwo{2}{-2}{2}{7}$.
+
+\begin{solution}
+The vector $(-1,2)^t$ is an eigenvector of $B$ with
+corresponding eigenvalue $6$, and $(-2,1)^t$ is an eigenvector with
+corresponding eigenvalue $3$.
+
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c4.5.5b}
 $C=\mattwo{1}{1.5}{0}{-2}$.
+
+\begin{solution}
+The vector $(-1,2)^t$ is an eigenvector of $C$ with
+corresponding eigenvalue $-2$, and the vector $(1,0)^t$ is an eigenvector
+with eigenvalue $1$.
+
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c4.4.5}
@@ -497,6 +721,54 @@ input} starting at $(x(0),y(0)) = (0,1)$ and then use the
 \item[(d)] Compare the results of the two plots.
 \item[(e)]  Repeat steps (a)--(d) using the initial vector $\vectwo{1}{1}$.
 \end{itemize}
+
+\begin{solution}
+
+(a) \ans If $\alpha = 1$ and $\beta = 1$, then
+\[
+\alpha U(0) + \beta V(0) = \vectwo{0}{1}. 
+\]
+
+\soln Solve the linear system
+\[
+\begin{array}{rrrrl}
+\alpha & - & \beta & = & 0 \\
+& & \beta & = & 1. \end{array}
+\]
+
+(b) Figure~\ref{c4.4.5}a shows $y$ as a function of $t$.  The figure
+was created by the \Matlab commands:
+\begin{verbatim}
+t = linspace(-8,2);
+y = exp(t);
+plot(t,y)
+\end{verbatim}
+
+(c) Figure~\ref{c4.4.5}b shows the {\tt pplane5} graph of the system,
+and Figure~\ref{c4.4.5}c shows the {\tt y vs.\ t} graph.
+
+(d) The two plots are identical, since the {\tt pplane5} command
+{\tt y vs.\ t} graphs the $y$ component of the solution, which is
+precisely what we did by hand in (b).
+
+(e) In this case, $\alpha = 2$ and $\beta = 1$.  Since the $y$
+component of $U(t)$ is zero, the graphs of $y(t)$ are identical
+to those in (b) and (c).
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/4-4-5a.eps,width=1.8in}
+                       \psfig{file=exfigure/4-4-5b.eps,width=1.8in}
+                       \psfig{file=exfigure/4-4-5c.eps,width=1.8in}}
+                \exercapthree{c4.4.5}
+\end{figure}
+
+
+
+
+
+
+\end{solution}
 \end{exercise}
 
 

@@ -169,18 +169,75 @@ v_1 = \vectwo{2}{-3} \AND v_2 = \vectwo{-7}{11}
 \]
 are eigenvectors of the coefficient matrix of \eqref{Ex.1.03} and find
 the associated eigenvalues.
+
+\begin{solution}
+
+\ans The vector $v_1 = (2,-3)^t$ is an eigenvector with associated
+eigenvalue $\lambda_1 = 2$.  The vector $v_2 = (-7,11)^t$ is an
+eigenvector with associated eigenvalue $\lambda_2 = -1$.
+
+\soln Calculate:
+\[
+\begin{array}{rcl}
+\mattwo{65}{42}{-99}{-64}\vectwo{2}{-3} & = & \vectwo{4}{-6} =
+2\vectwo{2}{-3}. \\
+\mattwo{65}{42}{-99}{-64}\vectwo{-7}{11} & = & \vectwo{7}{-11} =
+-1\vectwo{-7}{11}.
+\end{array}
+\]
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c6.1.03b}
 Find the solution to \eqref{Ex.1.03} satisfying initial conditions $X(0) =
 (-14,22)^t$.
+
+\begin{solution}
+\ans The solution to \eqref{Ex.1.03} with initial
+condition $X(0) = (-14,22)^t$ is
+\[
+X(t) = 2e^{-t}\vectwo{-7}{11}.
+\]
+
+\soln We are given two linearly independent initial conditions: $v_1$
+and $v_2$.  Therefore, by Theorem~\ref{T:solvends}, 
+the general solution to \eqref{Ex.1.03} with initial condition $X(0)$ is
+\[
+X(t) = r_1e^{2t}\vectwo{2}{-3} + r_2e^{-t}\vectwo{-7}{11}.
+\]
+Find $r_1$ and $r_2$ by solving:
+\begin{equation}  \label{c6.1.03eq}
+X(0) = r_1\vectwo{2}{-3} + r_2\vectwo{-7}{11}.
+\end{equation}
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c6.1.03c}
 Find the solution to \eqref{Ex.1.03} satisfying initial conditions $X(0) =
 (-3,5)^t$.
+
+\begin{solution}
+The solution with initial condition $X(0) = (-3,5)^t$ is
+\[
+X(t) = 2e^{2t}\vectwo{2}{-3} + e^{-t}\vectwo{-7}{11}.
+\]
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c6.1.03d}
 Find the solution to \eqref{Ex.1.03} satisfying initial conditions $X(0) =
 (9,-14)^t$.
+
+\begin{solution}
+The solution with initial condition  $X(0) = (9,-14)^t$ is
+\[
+X(t) = e^{2t}\vectwo{2}{-3} - e^{-t}\vectwo{-7}{11}.
+\]
+
+
+
+
+\end{solution}
 \end{exercise}
 
 \noindent In Exercises~\ref{c6.1.06a} -- \ref{c6.1.06d}, consider the system of
@@ -194,18 +251,68 @@ differential equations
 \begin{exercise} \label{c6.1.06a}
 The eigenvalues of the coefficient matrix of \eqref{Ex.1.06} are $0$ and $2$.
 Find the associated eigenvectors.
+
+\begin{solution}
+
+\ans The eigenvector associated to $\lambda_1 = 0$ is $v_1 = (1,1)^t$,
+and the eigenvector associated to $\lambda_2 = 2$ is $v_2 = (1,-1)^t$.
+
+\soln Solve the systems
+\[
+\mattwo{1}{-1}{-1}{1}v_1 = 0 \AND \mattwo{1}{-1}{-1}{0}v_2 = 2v_2.
+\]
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c6.1.06b}
 Find the solution to \eqref{Ex.1.06} satisfying initial conditions
 $X(0)=(2,-2)^t$.
+
+\begin{solution}
+\ans The solution to \eqref{Ex.1.06} with initial condition
+$X(0) = (2,-2)^t$ is 
+\[
+X(t) = 2e^{2t}\vectwo{1}{-1}.
+\]
+
+\soln Note that initial conditions $v_1$ and $v_2$ are linearly
+independent.  Therefore, by Theorem~\ref{T:solvends}, the general solution
+to \eqref{Ex.1.06} with initial condition $X(0)$ is
+\[
+X(t) = r_1\vectwo{1}{1} + r_2e^{2t}\vectwo{1}{-1}.
+\]
+Find values for $r_1$ and $r_2$ by solving:
+\begin{equation} \label{c6.1.06eq}
+X(0) = r_1\vectwo{1}{1} + r_2\vectwo{1}{-1}.
+\end{equation}
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c6.1.06c}
 Find the solution to \eqref{Ex.1.06} satisfying initial conditions
 $X(0)=(2,6)^t$.
+
+\begin{solution}
+The solution with initial condition $X(0) = (2,6)^t$ is 
+\[
+X(t) = 4\vectwo{1}{1} - 2e^{2t}\vectwo{1}{-1}.
+\]
+
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c6.1.06d}
 Find the solution to \eqref{Ex.1.06} satisfying initial conditions
 $X(0)=(1,0)^t$.
+
+\begin{solution}
+The solution with initial condition $X(0) = (1,0)^t$ is
+\[
+X(t) = \frac{1}{2}\vectwo{1}{1} + \frac{1}{2}e^{2t}\vectwo{1}{-1}.
+\]
+
+
+\end{solution}
 \end{exercise}
 
 
@@ -219,17 +326,62 @@ differential equations
 \end{equation}
 \begin{exercise} \label{c6.1.1a}
 Show that $(x_1(t),y_1(t)) = (\cos t,\sin t)$ is a solution to \eqref{E:c6.1.1}.
+
+\begin{solution}
+
+Solve by evaluation:
+$(x_1(t),y_1(t)) = (\cos t, \sin t)$
+is a solution because
+\[ \begin{array}{ccccccc}
+\frac{dx_1}{dt}(t) & = & \frac{d}{dt}(\cos t) & = & -\sin t & = & -y_1(t)
+\\ \frac{dy_1}{dt}(t) & = & \frac{d}{dt}(\sin t) & = & \cos t & = & x_1(t).
+\end{array}. \]
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c6.1.1b}
 Show that $(x_2(t),y_2(t)) = (-\sin t,\cos t)$ is a solution to \eqref{E:c6.1.1}.
+
+\begin{solution}
+To show that $(x_2(t),y_2(t)) = (-\sin t, \cos t)$
+is a solution, calculate $v_1 = (x_1(0),y_1(0))$ and
+$v_2 = (x_2(0),y_2(0))$, obtaining
+\[
+\begin{array}{ccccl}
+v_1 = (x_1(0),y_1(0) & = & (\cos 0,\sin 0) & = & (1,0) \\
+v_2 = (x_2(0),y_2(0) & = & (-\sin 0,\cos 0) & = & (0,1).
+\end{array}
+\]
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c6.1.1c}
 Using Exercises~\ref{c6.1.1a} and \ref{c6.1.1b}, find a solution $(x(t),y(t))$
 to \eqref{E:c6.1.1} that satisfies $(x(0),y(0)) = (0,1)$.
+
+\begin{solution}
+
+If $(x(0),y(0)) = (0,1) = v_2$, then Theorem~\ref{T:solvends} states
+that the solution is
+\[
+(x(t),y(t)) = (x_2(t),y_2(t)) = (-\sin t,\cos t).
+\]
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c6.1.1d}
 Using Exercises~\ref{c6.1.1a} and \ref{c6.1.1b}, find a solution $(x(t),y(t))$
 to \eqref{E:c6.1.1} that satisfies $(x(0),y(0)) = (1,1)$.
+
+\begin{solution}
+
+If $(x(0),y(0)) = (1,1) = v_1 + v_2$, then
+\[
+(x(t),y(t)) = (x_1(t),y_1(t)) + (x_2(t),y_2(t)) =
+(\cos t - \sin t, \cos t + \sin t).
+\]
+
+\end{solution}
 \end{exercise}
 
 \noindent In Exercises~\ref{c6.1.2a} -- \ref{c6.1.2b}, consider the system of
@@ -243,10 +395,49 @@ differential equations
 \begin{exercise} \label{c6.1.2a}
 Find a solution to \eqref{E:c6.1.2}
 satisfying the initial condition $(x(0),y(0)) = (1,0)$.
+
+\begin{solution}
+
+\ans If $(x(0),y(0)) = (1,0) = X_2(0)$, then
+\[
+(x(t),y(t)) = e^{-2t}(1,0).
+\]
+
+\soln The general solution to the system is
+\[
+X(t) = r_1e^{5t}(1,1) + r_2e^{-2t}(1,0).
+\]
+To obtain this solution, first rewrite the system of differential
+equations as
+\[
+\frac{dX}{dt} = CX = \mattwo{-2}{7}{5}{0}\vectwo{x}{y}.
+\]
+By inspection of $C$, $(1,1)^t$ and $(1,0)^t$ are eigenvectors with
+eigenvalues $5$ and $-2$ respectively.  Therefore:
+\[
+X_1(t) = e^{5t}\vectwo{1}{1} \AND X_2(t) = e^{-2t}\vectwo{1}{0}
+\]
+are solutions to the differential equation.
+The initial values $X_1(0) = (1,1)$ and $X_2(0) = (1,0)$ are linearly
+independent, so the general solution is valid.
+To find $r_1$ and $r_2$, evaluate
+\[
+X(0) = (x(0),y(0)) = r_1(1,1) + r_2(1,0) = (r_1 + r_2,r_1).
+\]
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c6.1.2b}
 Find a solution to \eqref{E:c6.1.2}
 satisfying the initial condition $(x(0),y(0)) = (-1,2)$.
+
+\begin{solution}
+If $(x(0),y(0)) = (-1,2) = 2X_1(0) - 3X_2(0)$, then
+\[
+(x(t),y(t)) = 2e^{5t}(1,1) - 3e^{-2t}(1,0).
+\]
+
+\end{solution}
 \end{exercise}
 
 \noindent In Exercises~\ref{c6.1.3a} -- \ref{c6.1.3c}, consider the matrix
@@ -262,14 +453,80 @@ v_2 = \left(\begin{array}{r} 2 \\ -1\\ 2\end{array}\right) \quad \AND \quad
 v_3 = \left(\begin{array}{r} 6 \\ -3\\ 7\end{array}\right)
 \]
 are eigenvectors of $C$ and find the associated eigenvalues.
+
+\begin{solution}
+
+\ans The vector $v_1 = (1,0,0)^t$ is an eigenvector with associated
+eigenvalue $\lambda_1 = -1$.  The vector $v_2 = (2,-1,2)^t$ is an
+eigenvector with associated eigenvalue $\lambda_2 = -2$.  The vector
+$v_3 = (6,-3,7)^t$ is an eigenvector with associated eigenvalue
+$\lambda_3 = -3$.
+
+\soln To verify, compute
+\[
+\begin{array}{l}
+\matthree{-1}{-10}{-6}{0}{4}{3}{0}{-14}{-9}\vecthree{1}{0}{0} =
+\vecthree{-1}{0}{0} = -1\vecthree{1}{0}{0}. \\
+\matthree{-1}{-10}{-6}{0}{4}{3}{0}{-14}{-9}\vecthree{2}{-1}{2} =
+\vecthree{-4}{2}{-4} = -2\vecthree{2}{-1}{2}. \\
+\matthree{-1}{-10}{-6}{0}{4}{3}{0}{-14}{-9}\vecthree{6}{-3}{7} =
+\vecthree{-18}{9}{-21} = -3\vecthree{6}{-3}{7}.
+\end{array}
+\]
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c6.1.3b}
 Find a solution to the system of differential equations
 $\dot{X}=CX$ satisfying the initial condition $X(0)= (10, -4, 9)^t$.
+
+\begin{solution}
+\ans The solution
+\[
+X(t) = 2e^{-t}\vecthree{1}{0}{0} + e^{-2t}\vecthree{2}{-1}{2}
++ e^{-3t}\vecthree{6}{-3}{7}
+\]
+satisfies the initial condition $X(0) = (10,-4,9)^t$.
+
+
+\soln Note that, as a special case of Theorem~\ref{T:solvends}, three
+linearly independent eigenvectors
+uniquely define a solution for $\dot{X} = CX$ with initial condition
+$X(0)$.  First, row reduce the matrix $(v_1|v_2|v_3)$ to verify that
+the eigenvectors are linearly independent.  Then, find scalars $r_1$,
+$r_2$, and $r_3$ such that:
+\[
+X(0) = r_1v_1 + r_2v_2 + r_3v_3.
+\]
+In this case, $r_1 = 2$, $r_2 = 1$, and $r_3 = 1$.  Substitute these
+values into
+\[
+X(t) = r_1e^{\lambda_1t}v_1 + r_2e^{\lambda_2t}v_2 +
+r_3e^{\lambda_3t}v_3
+\]
+to obtain the solution.
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c6.1.3c}
 Find a solution to the system of differential equations
 $\dot{X}=CX$ satisfying the initial condition $X(0)= ( 2, -1, 3)^t$.
+
+\begin{solution}
+\ans The solution
+\[
+X(t) = -2e^{-2t}\vecthree{2}{-1}{2} + e^{-3t}\vecthree{6}{-3}{7}
+\]
+satisfies the initial condition $X(0) = (2,-1,3)^t$.
+
+\soln Solving the system
+\[
+X(0) = \vecthree{2}{-1}{3} = r_1\vecthree{1}{0}{0} +
+r_2\vecthree{2}{-1}{2} + r_3\vecthree{6}{-3}{7}
+\]
+yields $r_1 = 0$, $r_2 = -2$, and $r_3 = 1$.
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise}  \label{c6.1.4A}
@@ -277,6 +534,29 @@ Show that for some nonzero $a$ the function $x(t)=at^5$ is a solution to the
 differential equation $\dot{x}=x^{4/5}$.  Then show that there are at least
 two solutions to the initial value problem $x(0)=0$ for this differential
 equation.
+
+\begin{solution}
+\ans If $a = \frac{1}{3125}$, then $x(t) = at^5$ is a solution
+to the differential equation.  The zero function $x(t) = 0$ is also a
+solution.
+
+\soln To find out whether $x(t) = at^5$ is a solution to
+$\dot{x} = x^{4/5}$, first substitute $x(t)$ into the left hand side of
+the differential equation:
+\[
+\frac{dx}{dt} = \frac{d}{dt}(at^5) = 5at^4.
+\]
+Then substitute $x(t)$ into the right hand side of the equation
+\[
+x^{4/5} = (at^5)^{4/5} = a^{4/5}t^4.
+\]
+Thus, $x(t)$ is a solution when $5at^4 = a^{4/5}t^4$.  Solve the equation
+$5a = a^{4/5}$ for $a$ to find that $x(t)$ is a solution when $a = 5^{-5}
+= \frac{1}{3125}$ or when $a = 0$.  Thus, there are at least two solutions
+to the differential equation: $x(t) = \frac{1}{3125}t^4$ and $x(t) = 0$.
+
+
+\end{solution}
 \end{exercise}
 
 
@@ -305,6 +585,59 @@ X(0) = \vectwo{4}{-1}.
 by comparing the graph of the closed form solution obtained in (c) with the
 time series graph using {\sf pplane8}.
 \end{itemize}
+
+\begin{solution}
+
+(a) The eigenvectors of the coefficient matrix of \eqref{Ex.1.4} are
+$v_1 = (1,-1)^t$ and $v_2 = (2,1)^t$.  Figure~\ref{c6.1.4}a shows
+the {\tt pplane5} graph of \eqref{Ex.1.4} and its eigendirections.
+
+(b) \ans The eigenvalue associated to $v_1$ is $\lambda_1 = 2$, and
+the eigenvalue associated to $v_2$ is $\lambda_2 = -1$. 
+
+\soln Compute
+\[ \mattwo{0}{-2}{-1}{1}\vectwo{1}{-1} = 2\vectwo{1}{-1} \AND
+\mattwo{0}{-2}{-1}{1}\vectwo{2}{1} =  -1\vectwo{2}{1}. \]
+
+(c) \ans The closed form solution
+\[
+X(t) = 2e^{2t}\vectwo{1}{-1} + e^{-t}\vectwo{2}{1}
+\]
+satisfies the initial condition $X(0) = (4,-1)^t$.
+
+\soln The eigenvectors $v_1$ and $v_2$ are linearly independent, so, by 
+Theorem~\ref{T:solvends},
+\[
+X(t) = r_1e^{\lambda_1t}v_1 + r_1e^{\lambda_2t}v_2.
+\]
+Solve
+\[
+X(0) = \vectwo{4}{-1} = r_1\vectwo{1}{-1} + r_2\vectwo{2}{1}
+\]
+to obtain $r_1 = 2$ and $r_2 = 1$.
+
+(d) Figure~\ref{c6.1.4}b shows the {\tt y vs.\ t} graph of \eqref{Ex.1.4}
+with initial condition $(4,-1)$.  Figure~\ref{c6.1.4}c is a graph of 
+the closed form solution to \eqref{Ex.1.4}, generated by the \Matlab
+commands:
+\begin{verbatim}
+t = linspace(-2.5,1.5);
+y = 2*exp(2*t)*(-1) + exp(-1*t)*1;
+plot(t,y)
+\end{verbatim}
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/6-1-4a.eps,width=1.8in}
+                       \psfig{file=exfigure/6-1-4b.eps,width=1.8in}
+                       \psfig{file=exfigure/6-1-4c.eps,width=1.8in}}
+                \exercapthree{c6.1.4}
+\end{figure}
+
+
+
+
+\end{solution}
 \end{exercise}
 
 

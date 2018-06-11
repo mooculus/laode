@@ -182,6 +182,18 @@ equations $Ax=0$.  \index{\computer!null}
                 -4 & 1 & -1 & 1
                 \end{array}\right) \quad
 \end{matlabEquation}
+
+\begin{solution}
+
+Type {\tt null(A)} in \Matlab to find that the set of solutions to
+$Ax = 0$ is spanned by the vectors
+\[
+\left(\begin{array}{r} 0.3225 \\ 0.8931 \\ -0.0992 \\ 0.2977
+\end{array}\right) \AND \left(\begin{array}{r} 0 \\ -0.1961 \\
+0.5883 \\ 0.7845 \end{array}\right).
+\]
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c5.3.1b}
 \begin{matlabEquation} \label{e:BCDb}
@@ -191,6 +203,18 @@ equations $Ax=0$.  \index{\computer!null}
                 3 & -2
                 \end{array}\right) \quad
 \end{matlabEquation}
+
+\begin{solution}
+\ans The solution to $Ax = 0$ is the vector $(0,0).$
+
+\soln This can be demonstrated by typing {\tt null(A)} in \Matlab, which
+yields
+\begin{verbatim}
+ans =
+   Empty matrix: 2-by-0
+\end{verbatim}
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c5.3.1c}
 \begin{matlabEquation} \label{e:BCDc}
@@ -199,17 +223,124 @@ equations $Ax=0$.  \index{\computer!null}
               -1  &  2  & -1
                 \end{array}\right).
 \end{matlabEquation}
+
+\begin{solution}
+The set of solutions to $Ax = 0$ is spanned by the vector
+\[
+\vecthree{-0.8452}{-0.1690}{0.5071}.
+\]
+
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c5.3.2}
 Use the {\tt null} command in \Matlab to verify your answers to
 Exercises~\ref{c5.2.2a} and \ref{c5.2.2b}.
+
+\begin{solution}
+
+Enter matrix {\tt A} into \Matlab and type {\tt null(A)}, obtaining
+\begin{verbatim}
+ans =
+   -0.8957         0
+    0.4414    0.1204
+   -0.0519    0.9631
+    0.0130   -0.2408
+         0         0
+\end{verbatim}
+The \Matlab answer is a valid solution if the vectors found
+by row reduction can be written as linear combinations of the \Matlab
+answers.  In \Matlab, row reduce the augmented matrices {\tt null(A)|x},
+and {\tt null(A)|y} where $x = (-2,1,0,0,0)$ and $y = (-1,0,-4,1,0)$ 
+to find that
+\[
+\left(\begin{array}{r} -2 \\ 1 \\ 0 \\ 0 \\ 0 \end{array}\right) =
+2.2328\left(\begin{array}{r} -0.8957 \\ 0.4414 \\ -0.0519 \\ 0.0130 \\ 0
+\end{array}\right) + 0.1204\left(\begin{array}{r} 0 \\ 0.1204 \\ 0.9631 \\
+-0.2408 \\ 0 \end{array}\right)
+\]
+and
+\[
+\left(\begin{array}{r} -1 \\ 0 \\ -4 \\ 1 \\ 0 \end{array}\right) =
+1.1164\left(\begin{array}{r} -0.8957 \\ 0.4414 \\ -0.0519 \\ 0.0130 \\ 0
+\end{array}\right) - 4.0931\left(\begin{array}{r} 0 \\ 0.1204 \\ 0.9631 \\
+-0.2408 \\ 0 \end{array}\right).
+\]
+
+Enter matrix {\tt B} into \Matlab and type {\tt null(B)}, obtaining
+\begin{verbatim}
+ans =
+   -0.9661         0
+    0.2070   -0.5976
+   -0.1380   -0.7171
+    0.0690    0.3586
+\end{verbatim}
+Again, the \Matlab answer can be checked by verifying by row reduction
+of the augmented matrix that the vectors $(-3,1,0,0)$ and $(-5,0,-2,1)$
+can be written as linear combinations of the \Matlab solution vectors.
+In particular,
+\[
+\left(\begin{array}{r} -3 \\ 1 \\ 0 \\ 0 \end{array}\right) =
+3.1053\left(\begin{array}{r} -0.9661 \\ 0.2070 \\ -0.1380 \\ 0.0690
+\end{array}\right) - 0.5976\left(\begin{array}{r} 0 \\ -0.5976 \\ -0.7171 \\
+0.3586 \end{array}\right)
+\]
+and
+\[
+\left(\begin{array}{r} -5 \\ 0 \\ -2 \\ 1 \end{array}\right) =
+5.1755\left(\begin{array}{r} -0.9661 \\ 0.2070 \\ -0.1380 \\ 0.0690
+\end{array}\right) + 1.7928\left(\begin{array}{r} 0 \\ -0.5976 \\ -0.7171 \\
+0.3586 \end{array}\right).
+\]
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c5.3.3}
 Use row reduction to find the solutions to $Ax=0$ where $A$ is
 given in \eqref{e:BCDa}.  Does your answer agree with the \Matlab
 answer using {\tt null}?  If not, explain why.
+
+\begin{solution}
+
+\ans The solution set of $Bx = 0$ is
+\[
+\left(\begin{array}{r} x_1 \\ x_2 \\ x_3 \\ x_4 \end{array}\right)
+= \left(\begin{array}{c} -x_3 + \frac{3}{4}x_4 \\ -3x_3 + 2x_4 \\
+x_3 \\ x_4 \end{array}\right) = x_3\left(\begin{array}{r} -1 \\ -3 \\
+1 \\ 0 \end{array}\right) + x_4\left(\begin{array}{r} \frac{3}{4} \\
+2 \\ 0 \\ 1 \end{array}\right).
+\]
+
+\soln Row reduce $B$:
+\[
+\left(\begin{array}{rrrr} -4 & 0 & 4 & 3 \\ -4 & 1 & -1 & 1
+\end{array}\right) \longrightarrow \left(\begin{array}{rrrr}
+1 & 0 & 1 & -\frac{3}{4} \\ 0 & 1 & 3 & -2 \end{array}\right).
+\]
+
+The solution obtained by row reduction is not the same as the one
+obtained using {\tt null}, but the solution vectors are linear
+combinations of the \Matlab solution vectors, so the answers are
+equivalent.  By row reducing the matrix {\tt [null(B) x]}, where
+$x = (-1,-3,1,0)$, we find that
+\[
+\left(\begin{array}{r} -1 \\ -3 \\ 1 \\ 0 \end{array}\right) =
+-3.1009\left(\begin{array}{r} 0.3225 \\ 0.8931 \\ -0.0992 \\ 0.2977
+\end{array}\right) + 1.1767\left(\begin{array}{r} 0 \\ -0.1961 \\
+0.5883 \\ 0.7845 \end{array}\right).
+\]
+By row reducing the matrix {\tt [null(B) y]} where $y = (\frac{3}{4},
+2,0,1)$ we find that:
+\[
+\left(\begin{array}{r} \frac{3}{4} \\ 2 \\ 0 \\ 1 \end{array}\right) =
+2.3257\left(\begin{array}{r} 0.3225 \\ 0.8931 \\ -0.0992 \\ 0.2977
+\end{array}\right) + 0.3922\left(\begin{array}{r} 0 \\ -0.1961 \\
+0.5883 \\ 0.7845 \end{array}\right).
+\]
+
+\end{solution}
 \end{exercise}
 
 \noindent In Exercises~\ref{c5.3.4a} -- \ref{c5.3.4c} let $W\subset\R^5$
@@ -220,12 +351,73 @@ be the subspace spanned by the vectors
 Use \Matlab to decide whether the given vectors are elements of $W$.
 \begin{exercise} \label{c5.3.4a}
 $v_1=(2,1,-2,8,3)$.
+
+\begin{solution}
+\ans Vector $v_1$ is an element of $W$.
+
+\soln The vector $v_1$ is an element of $W$ if there exist scalars $a$,
+$b$, and $c$ such that
+\[
+aw_1 + bw_2 + cw_3 = v_1.
+\]
+Using \Matlab, create the matrix {\tt A = [w1' w2' w3']}, which has
+$w_1$, $w_2$, and $w_3$ as its columns.  Then create the augmented
+matrix {\tt aug1 = [A v1']}.  The command {\tt rref(aug1)} yields
+\begin{verbatim}
+ans =
+     1     0     0     2
+     0     1     0    -2
+     0     0     1     1
+     0     0     0     0
+     0     0     0     0
+\end{verbatim}
+Since there is no pivot point in the last column, the linear system
+$aw_1 + bw_2 + cw_3 = v_1$ is consistent, and $v_1 = 2w_1 - 2w_2 + w_3$.
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c5.3.4b}
 $v_2=(-1,12,3,-14,-1)$.
+
+\begin{solution}
+\ans Vector $v_2$ is not an element of $W$.
+
+\soln Create the augmented matrix {\tt aug2 = [A v2']}.  Row reducing
+{\tt aug2} yields
+\begin{verbatim}
+ans =
+     1     0     0     0
+     0     1     0     0
+     0     0     1     0
+     0     0     0     1
+     0     0     0     0
+\end{verbatim}
+There is a pivot point in the last column, so the linear system
+$aw_1 + bw_2 + cw_3 = v_2$ is inconsistent.
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c5.3.4c}
 $v_3=(-1,12,3,-14,-14)$.
+
+\begin{solution}
+\ans Vector $v_3$ is an element of $W$.
+
+\soln Row reduce the augmented matrix {\tt aug3 = [A v3']} to obtain
+\begin{verbatim}
+ans =
+     1     0     0    -3
+     0     1     0     5
+     0     0     1    12
+     0     0     0     0
+     0     0     0     0
+\end{verbatim}
+which is the matrix of a consistent linear system.  Therefore,
+$v_3 = -3w_1 + 5w_2 + 12w_3$.
+
+
+
+\end{solution}
 \end{exercise}
 
 \end{document}

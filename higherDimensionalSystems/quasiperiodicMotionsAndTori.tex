@@ -314,6 +314,33 @@ and eigenvectors of $A$.)  What kind of phase space motion do you see now?
 How does this solution differ from the toroidal motions obtained in (a)? 
 Use Jordan normal forms to explain why your numerical answer is correct.
 \end{itemize}
+
+\begin{solution}
+
+(a) Let {\tt X0} be an initial condition of your choice, written as a
+column vector.  Then the command {\tt [t,x]=ode45('ftor4',0,100,X0)}
+will find solutions to the system $\dot{X} = AX$ with initial condition
+$X_0$.  For most choices of $X_0$, the graphs are similar to those shown
+in Figures~\ref{F:ftor4ts} and \ref{F:ftorphase} in the text.
+
+(b) Load matrix $A$ into \Matlabp.  Then, use the command
+{\tt [S,D] = eig(A)} to find that $\lambda = 4.7958i$ is an eigenvalue of
+$A$ with corresponding eigenvector $v = (-0.3447 + 0.7587i, 0.0139 +
+0.3724i, 0.0800 + 0.1462i, 0.0139 + 0.03724i)$.  Using {\tt ode45}, find
+the solutions to the system with initial condition $X_0 = (-0.3447, 0.0139,
+0.0800, 0.0139)^t$.  The time series of this system are shown in
+Figure~\ref{EX:tor4}a, and three phase portraits are shown in
+Figure~\ref{EX:tor4}b.
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/tor4a.eps,width=2.0in}
+			\hspace{1.0in}
+                       \psfig{file=exfigure/tor4b.eps,width=2.0in}}
+                \exercaptwo{EX:tor4}
+\end{figure}
+
+\end{solution}
 \end{exercise} 
 
 \noindent In Exercises~\ref{c14.5.2a} -- \ref{c14.5.2d} use \Matlab to find
@@ -328,6 +355,24 @@ A=\left(\begin{array}{rrrr}
    -8.9443  & -4.4721  &       0  & -4.4721
 \end{array}\right).
 \end{matlabEquation}
+
+\begin{solution}
+\ans Yes.
+
+\soln The eigenvalues of $A$ are 
+\begin{verbatim}
+   0.0000 + 4.4722i
+   0.0000 - 4.4722i
+   0.0000 + 2.0000i
+   0.0000 - 2.0000i
+\end{verbatim}
+Having two pairs of purely imaginary complex conjugate eigenvalues leads to
+two-frequency motions.  These motions will be periodic if the quotient of the 
+frequencies is irrational.  That question cannot be decided by numerical
+computation.
+
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c14.5.2b}
@@ -339,6 +384,20 @@ A=\left(\begin{array}{rrrr}
    -7.9443  & -2.4721  & -1.0000  & -4.4721
 \end{array}\right).
 \end{matlabEquation}
+
+\begin{solution}
+\ans No.
+
+\soln The eigenvalues of $A$ are 
+\begin{verbatim}
+  -0.5104 + 4.5851i
+  -0.5104 - 4.5851i
+   0.5104 + 1.8703i
+   0.5104 - 1.8703i
+\end{verbatim}
+The eigenvalues are not purely imaginary.
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c14.5.2c}
@@ -351,6 +410,21 @@ A=\left(\begin{array}{rrrrr}
    -0.5205  &  1.6656  &  1.0410  &  1.6656  &  1.5615
 \end{array}\right).
 \end{matlabEquation}
+
+\begin{solution}
+\ans No.
+
+\soln The eigenvalues of $A$ are 
+\begin{verbatim}
+   0.0003 + 3.1233i
+   0.0003 - 3.1233i
+  -0.0003 + 1.0005i
+  -0.0003 - 1.0005i
+        0          
+\end{verbatim}
+The eigenvalues are not purely imaginary.
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c14.5.2d}
@@ -363,6 +437,24 @@ A=\left(\begin{array}{rrrrr}
    -0.5205 &   1.6656 &   1.0410 &   1.1656 &   0.5615
 \end{array}\right).
 \end{matlabEquation}
+
+\begin{solution}
+\ans No.
+
+\soln The eigenvalues of $A$ are 
+\begin{verbatim}
+  -0.9999 + 2.9587i
+  -0.9999 - 2.9587i
+   0.2677          
+   3.7321          
+  -1.0000          
+\end{verbatim}
+The eigenvalues are not purely imaginary.
+
+
+
+
+\end{solution}
 \end{exercise}
 
 

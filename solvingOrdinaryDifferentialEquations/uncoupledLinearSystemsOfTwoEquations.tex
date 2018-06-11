@@ -327,12 +327,44 @@ the given system of nonlinear autonomous differential equations.
 \dot{x} & = & x - y\\
 \dot{y} & = & x^2 - y.
 \end{eqnarray*}
+
+\begin{solution}
+\ans There are two equilibria at $(0,0)$ and $(1,1)$.
+
+\soln Find the equilibria by solving the equations
+\begin{eqnarray*}
+\dot{x} & = & x-y\\
+\dot{y} & = & x^2-y.
+\end{eqnarray*}
+Substituting $x=y$ from the $1^{st}$ equation into the $2^{nd}$ equation
+yields $y^2-y = y(y-1)=0$.  Therefore, $y=0$ or $y=1$.
+
+
+
+\end{solution}
 \end{exercise}
 \begin{exercise}  \label{c3.5.1B}
 \begin{eqnarray*}
 \dot{x} & = & x^2 - xy\\
 \dot{y} & = & x^2 + y^2 - 4.
 \end{eqnarray*}
+
+\begin{solution}
+\ans There are four equilibria at $(0,2)$, $0,-2)$, 
+$(\sqrt{2},\sqrt{2})$, and $(-\sqrt{2},-\sqrt{2})$.
+
+\soln Find the equilibria by solving the equations
+\begin{eqnarray*}
+\dot{x} & = & x^2-xy\\
+\dot{y} & = & x^2+y^2-4.
+\end{eqnarray*}
+The $1^{st}$ equation implies that either $x=0$ or $x=y$.  Substituting
+$x=0$ into the $2^{nd}$ equation yields $y^2=4$.  Therefore, $y=2$ or $y=-2$.
+Substituting $x=y$ into the $2^{nd}$ equation yields $2y^2=4$. Therefore, 
+$y = \sqrt{2}$ or $y = -\sqrt{2}$.
+
+
+\end{solution}
 \end{exercise}
 
 
@@ -342,12 +374,43 @@ For each choice of $a$ and $d$, determine whether the origin is a
 saddle, source, or sink.
 \begin{exercise} \label{E:uncoupleda}
 $a=1$ and $d=-1$.
+
+\begin{solution}
+
+\ans The origin is a saddle.
+
+\soln This uncoupled system is of the form
+\[
+\begin{array}{rcl}
+\frac{dx}{dt}(t) & = & Ax(t) \\
+\frac{dy}{dt}(t) & = & Dy(t)\end{array}
+\]
+If $AD < 0$, then the origin is a saddle.  If $A < 0$ and
+$D < 0$, then the origin is a sink.  If $A > 0$ and $D > 0$, then
+the origin is a source.  In this case, $AD = -1 < 0$.
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{E:uncoupledb}
 $a=-0.01$ and $d=-2.4$.
+
+\begin{solution}
+
+\ans The origin is a sink.
+
+\soln For this uncoupled system, $A = -0.01 < 0$ and $D = -2.4 < 0$.
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{E:uncoupledc}
 $a=0$ and $d=-2.3$.
+
+\begin{solution}
+For this system, $A = 0$, so the origin is neither a
+saddle, a source nor a sink.  Note that $\frac{dx}{dt} = 0$, so every
+point on the $x$-axis is an equilibrium.
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c3.4.2}
@@ -362,6 +425,29 @@ y_0^ax^d - x_0^dy^a = 0.
 \item[(b)] Verify that if $a=1$ and $d=2$, then the solution lies
 on a parabola tangent to the $x$-axis.
 \end{itemize}
+
+\begin{solution}
+
+The solutions $x(t)$ and $y(t)$ are:
+\[
+\begin{array}{rcl}
+x(t) & = & x_0e^{At} \\
+y(t) & = & y_0e^{Dt}\end{array}.
+\]
+We show that the point $(x(t),y(t))$ lies on the curve
+$y_0^Ax^D - x_0^Dy^A = 0$ as follows.  Substitute the formulas for
+$x(t)$ and $y(t)$ into the equation to obtain
+\[
+y_0^A\left(x_0e^{At}\right)^D - x_0^D\left(y_0e^{Dt}\right)^A =
+x_0^Dy_0^Ae^{ADt} - x_o^Dy_0^Ae^{ADt} = 0.
+\]
+If $A = 1$ and $D = 2$, then the solutions lie on the curve
+$0 = y_0x^2 - x_0^2y$, which can be rewritten as
+$y = \dps \frac{y_0}{x_0^2}x^2$.
+Since $x_0$ and $y_0$ are constants, this curve is a parabola
+tangent to the $x$-axis.
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c3.4.3}
@@ -369,6 +455,24 @@ Use the phase plane picture given in Figure~\ref{pp_dsp1} to
 draw the time series $x(t)$ when $(x(0),y(0)) =
 (\frac{1}{2},\frac{1}{2})$.  Check your answer using {\sf
 pplane8}.
+
+\begin{solution}
+
+We are given $x(0) = \frac{1}{2}$.  Figure \ref{pp_dsp1}
+shows that $x$ increases as $t$
+increases, and that $x$ limits on $0$ as $t$ decreases.  From
+this information, we can sketch a graph of $x(t)$ for the system.
+The graph should be similar to Figure \ref{c3.4.3}, which can
+be viewed in \Matlab by entering the system in {\tt pplane5},
+then choosing ``{\tt x vs.\ t}'' from the graph menu.
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/3-4-3.eps,width=3.0in}}
+		\exercap{c3.4.3}
+\end{figure}
+
+\end{solution}
 \end{exercise}
 
 \CEXER
@@ -382,6 +486,34 @@ to compute phase portraits.  Use {\sf Keyboard input} to look at
 solutions with initial conditions on the $x$ and $y$ axes.  As time
 $t$ increases, do solutions with these initial conditions tend towards 
 or away from the origin?
+
+\begin{solution}
+
+(a) Solutions with initial points on the $y$-axis approach the
+origin as $t$ increases.  Solutions with initial points on the
+$x$-axis go away from the origin as $t$ increases.  Initial points
+on the $x$ and $y$-axes are shown in Figure~\ref{c3.4.4}a.
+
+(b) Solutions with initial points on either axis approach the
+origin as $t$ increases.  However, points on the $x$-axis
+approach slowly because the value of $A$ is small, so the \Matlab
+graph, shown in Figure~\ref{c3.4.4}b, is incomplete.
+
+(c) Solutions on the $y$-axis approach the origin as $t$
+increases.  Solutions on the $x$-axis do not move, since
+$\frac{dx}{dt} = 0$.  Initial conditions for this system are shown
+in Figure~\ref{c3.4.4}c.
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/3-4-4a.eps,width=1.8in}
+                       \psfig{file=exfigure/3-4-4b.eps,width=1.8in}
+                       \psfig{file=exfigure/3-4-4c.eps,width=1.8in}}
+	\centerline{$a = 1\hbox{; }d = -1$\hspace{0.7in}$a = -0.01\hbox{; }d = -2.4$\hspace{0.7in}$a = 0\hbox{; }d = -2.3$}
+	\exercapthree{c3.4.4}
+\end{figure}
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c3.4.5}
@@ -390,12 +522,49 @@ is asymptotically stable.  Make several choices of $a<d<0$ and
 observe that solution trajectories tend to approach the origin
 tangent to one of the axes.  Determine which one.  Try to prove
 that your experimental guess is always correct?
+
+\begin{solution}
+
+\ans Trajectories approach the origin tangent to the $y$-axis if
+$A < D < 0$. 
+
+\soln We can prove this fact by showing that, as $t \rightarrow \infty$,
+the tangent direction of the trajectory limits on the $y$-axis.  The
+tangent vector of the trajectory $(x(t),y(t))$ at any point is:
+\[ \left(\frac{dx}{dt}(t), \frac{dy}{dt}(t)\right) = \left(Ax(t),
+Dy(t)\right) = \left(Ax_0e^{At}, Dy_0e^{Dt}\right) =
+e^{Dt}\left(Ax_0e^{(A - D)t}, Dy_0\right) \]
+The value of $e^{Dt}$ is relevant only to the length of the
+tangent and does not affect the direction.  As $t$ approaches
+infinity, $e^{(A - D)t}$ approaches $0$, since $A - D < 0$.
+Therefore, the limiting tangent direction is
+\[ \lim_{t \rightarrow \infty} \left(Ax_0e^{(A - D)t}, Dy_0\right)
+= (0, Dy_0), \]
+which is on the $y$-axis.  So our conjecture is indeed true.
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c3.4.6}
 Suppose that $a=d<0$.  Verify experimentally using {\sf pplane8}
 that all trajectories approach the origin along straight lines.
 Try to prove this conjecture?
+
+\begin{solution}
+
+If $A = D < 0$, the equations for the system will be
+\[ \begin{array}{rcl}
+\frac{dx}{dt}(t) & = & Ax(t) \\
+\frac{dy}{dt}(t) & = & Ay(t)\end{array}. \]
+Therefore,
+\[ x(t) = x_0e^{At} \AND y(t) = y_0e^{At}. \]
+Solve the first equation for $e^{At}$ and substitute into the
+second, obtaining \[ y(t) = \frac{y_0}{x_0}x(t). \]
+Since $\frac{y_0}{x_0}$ is a constant, all trajectories are
+straight lines.  Since $A < 0$, all trajectories go toward the
+origin as $t$ increases.
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c3.4.7}
@@ -408,6 +577,40 @@ equation
 \]
 for $x,t\in[-5,5]$.  Is there a relationship between solutions to the
 two equations and can you explain what that relationship is?
+
+\begin{solution}
+
+\ans Sets of identical initial conditions have identical trajectories
+for the two systems. 
+
+\soln To see this, graph the systems using {\tt pplane5} and
+{\tt dfield5}, then use keyboard input to enter several sets of initial
+conditions, as shown in Figures~\ref{c3.4.7}a of the {\tt pplane5} system
+and \ref{c3.4.7}b of the {\tt dfield5} system.  To see why this is the case,
+note that {\tt pplane5} graphs the uncoupled system
+\begin{equation} \label{eq:3.4.7}
+\frac{dx}{dt} = 2x \AND \frac{dy}{dt} = -3y.
+\end{equation}
+This is a parameterized system in three variables $(x(t),y(t),t)$.
+We can rewrite this system in two variables $(x(y),y)$, by using the
+chain rule as follows:
+\[ -\frac{2x}{3y} = \frac{\frac{dx}{dt}}{\frac{dy}{dt}} = \frac{dx}{dy}. \]
+Substitute $t$ for $y$ in the new system to verify that \eqref{eq:3.4.7}
+is a parameterization of
+\[ \frac{dx}{dt} = -\frac{2x}{3t}. \]
+
+\begin{figure}[htb]
+			\centerline{%
+			\psfig{file=exfigure/3-4-7a.eps,width=2.75in}
+			\psfig{file=exfigure/3-4-7b.eps,width=2.75in}}
+		\exercaptwo{c3.4.7}
+\end{figure}
+
+
+
+
+
+\end{solution}
 \end{exercise}
 
 

@@ -297,6 +297,38 @@ differential equation.
 \dot{y} & = &  5x+3y - 4(x^2+y^2)y + (x^2+y^2)^2y
 \end{array} 
 \]
+
+\begin{solution}
+
+\ans The system has two limit cycles, one at $r = 1$ and one at $r =
+\sqrt{3}$, where $r$ is the radius of the circle made by the limit cycle.
+
+\soln Write the differential equation in the form of \eqref{e:HopfNF}:
+\[ \begin{array}{rcl}
+\dot{x} & = & a(x^2 + y^2)x - b(x^2 + y^2)y \\
+\dot{y} & = & a(x^2 + y^2)y + b(x^2 + y^2)x \end{array}
+\]
+where $a(r^2) = 3 - 4r^2 + r^4=(r^2-3)(r^2-1)$ and $b(r^2) = 5$.  Then,
+rewrite the system in polar coordinates by calculating $\dot{r}$ and
+$\dot{\theta}$ using \eqref{e:amplitude} and \eqref{e:phase} from the
+chapter:
+\[ \begin{array}{rcccl}
+\dot{r} & = & a(r^2)r & = & (3 - 4r^2 + r^4)r \\
+\dot{\theta} & = & b(r^2) & = & 5 \end{array}
+\]
+A limit cycle occurs at any positive equilibrium of $\frac{dr}{dt}$.
+Solve for $r$ in the first equation to find that equilibria occur
+at $r = 1$ and $r = \sqrt{3}$.  Then graph the system.  Your drawing
+should resemble the {\tt pplane5} graph shown in Figure~\ref{c8.3.1a}.
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/8-3-1.eps,width=3.0in}}
+                \exercap{c8.3.1a}
+\end{figure}
+
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c8.3.1b}
 \[ 
@@ -305,6 +337,34 @@ differential equation.
 \dot{y} & = &  3x-5y + 4(x^2+y^2)y + (x^2+y^2)^2y
 \end{array}
 \]
+
+\begin{solution}
+
+\ans The system has one limit cycle at $r = 1$.
+
+\soln Write the differential equation in the form of \eqref{e:HopfNF},
+where $a(r^2) = -5 + 4r^2 + r^4=(r^2+5)(r^2-1)$ and $b(r^2) = 3$.  Then,
+rewrite the system in polar coordinates by calculating $\dot{r}$ and
+$\dot{\theta}$ using \eqref{e:amplitude} and \eqref{e:phase} from the
+chapter:
+\[ 
+\begin{array}{rcccl}
+\dot{r} & = & a(r^2)r & = & (-5 + 4r^2 + r^4)r \\
+\dot{\theta} & = & b(r^2) & = & 3 \end{array}
+\]
+A limit cycle occurs at any positive equilibrium of $\frac{dr}{dt}$.
+Solve for $r$ in the first equation to find that a positive equilibrium 
+occurs at $r = 1$.  Then graph the system.  Your drawing should resemble the 
+{\tt pplane5} graph shown in Figure~\ref{c8.3.1b}.
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/8-3-1b.eps,width=3.0in}}
+                \exercap{c8.3.1b}
+\end{figure}
+
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c8.3.1c}
 \[ 
@@ -313,11 +373,54 @@ differential equation.
 \dot{y} & = &  x+6y - 5(x^2+y^2)y + 2(x^2+y^2)x + (x^2+y^2)^2y
 \end{array}
 \]
+
+\begin{solution}
+
+\ans The system has two limit cycles, one at $r = \sqrt{2}$ and one
+at $r = \sqrt{3}$. 
+
+\soln Write the differential equation in the form of \eqref{e:HopfNF}
+where $a(r^2) = 6 - 5r^2 + r^4=(r^2-3)(r^2-2)$, and 
+$b(r^2) = 1+2r^2$.  Then,
+rewrite the system in polar coordinates by calculating $\dot{r}$ and
+$\dot{\theta}$ using \eqref{e:amplitude} and \eqref{e:phase} from the
+chapter:
+\[ 
+\begin{array}{rcccl}
+\dot{r} & = & a(r^2)r & = & (-5 + 4r^2 + r^4)r \\
+\dot{\theta} & = & b(r^2) & = & 1+2r^2 \end{array}
+\]
+A limit cycle occurs at any positive equilibrium of $\frac{dr}{dt}$.
+Solve for $r$ in the first equation to find that a positive equilibrium 
+occurs at $r = \sqrt{2}$ and $r = \sqrt{3}$.  Then graph the system.  Your 
+drawing should resemble the {\tt pplane5} graph shown in Figure~\ref{c8.3.1c}.
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/8-3-1c.eps,width=3.0in}}
+                \exercap{c8.3.1c}
+\end{figure}
+
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c8.3.4}
 Use phase -- amplitude equations to find a system of differential equations 
 that has exactly three limit cycles.
+
+\begin{solution}
+
+\soln A sample system of differential equations has the form of 
+\eqref{e:HopfNF}, where $a(r^2) = (r^2-1)(r^2-2)(r^2-3)$
+and $b(r^2) = 1$.
+
+\soln  Choose any system of differential equations that has the form of 
+\eqref{e:HopfNF} where $a(r^2)$ has three positive roots
+and $b(r^2)$ is nowhere zero.
+
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c8.3.5}
@@ -344,6 +447,33 @@ solution of \eqref{E:gradsys}.
 \item[(d)]  Explain why a nonconstant solution of \eqref{E:gradsys} cannot be 
 periodic.
 \end{itemize}
+
+\begin{solution}
+
+\soln (a)  Use the chain rule to calculate
+\[
+\dot{h} = f_x\dot{x}+f_y\dot{y}.
+\]
+Using the gradient system of differential equations, observe that
+\[
+\dot{h} = f_x^2 + f_y^2\ge 0.
+\]
+(b) It follows from (a) that $\dot{h}(t_0)=0$ if and only if 
+$f_x(x(t_0),y(t_0))=0$ and $f_y(x(t_0),y(t_0))=0$.  That is, 
+$\dot{h}(t_0)=0$ if and only if $(x(t_0),y(t_0))$ is an equilibrium for the
+gradient system.
+
+\noindent (c) It follows from (b) that $\dot{h}$ is nowhere zero on a
+nonconstant solution and from (a) that $\dot{h}(t)>0$ on a nonconstant
+solution.  Therefore, $h(t)$ is monotonic increasing along any nonconstant
+solution.
+
+\noindent (d)  If $(x(t),y(t)$ is a nonconstant periodic solution of the
+gradient system with period $T>0$, then $h(t+T)=h(t)$ for all $t$.  Thus,
+$h(t)$ is not monotonic along this solution, contradicting (c).  Therefore,
+nonconstant periodic solutions of gradient systems cannot exist.  
+
+\end{solution}
 \end{exercise}
 
 
@@ -360,6 +490,24 @@ Verify that the system of differential equations
 \end{matlabEquation}
 has a single limit cycle.  Compare the phase portrait of this
 equation with that of \eqref{e:nonlincenter2}.
+
+\begin{solution}
+
+Figure~\ref{c8.3.2} shows the {\tt pplane5} graph of \eqref{8.3.2eq}.
+The system has a single equilibrium at the origin, so all limit cycles
+must surround the origin.  We can verify visually that the system has
+one limit cycle at $r = 1$.  The graph of this system is similar to
+the graph of \eqref{e:nonlincenter2}, since both
+have single equilibria at the origin and single stable limit cycles at
+$r = 1$.
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/8-3-2.eps,width=3.0in}}
+                \exercap{c8.3.2}
+\end{figure}
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c8.3.3}
@@ -372,6 +520,34 @@ Verify that the system of differential equations
 \end{matlabEquation}
 has a single limit cycle in the square $-2.5\leq x,y \leq 2.5$.  How many 
 equilibria does \eqref{8.3.3eq} have in this square?  
+
+\begin{solution}
+
+\ans There are nine equilibria in this square.
+
+\soln  The equilibria found using {\sf pplane5} are:
+\begin{verbatim}
+(-0.7575, 0.3180)       Saddle point.            
+(-1.9192, 0.0951)       Nodal source.            
+(0.0000, 0.0000)        Spiral source.           
+(1.9192, -0.0951)       Nodal source.            
+(-0.7650, -1.2495)      Saddle point.            
+(0.7650, 1.2495)        Saddle point.            
+(0.7575, -0.3180)       Saddle point.            
+(-0.1100, -2.6084)      Nodal source.            
+(0.1100, 2.6084)        Nodal source.            
+\end{verbatim}
+See Figure~\ref{c8.3.3}.
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/8-3-3.eps,width=3.0in}}
+                \exercap{c8.3.3}
+\end{figure}
+
+
+
+\end{solution}
 \end{exercise}
 
 \end{document}

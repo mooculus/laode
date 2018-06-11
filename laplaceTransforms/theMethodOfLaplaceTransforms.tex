@@ -309,10 +309,22 @@ to solve forced second order linear equations, we must be able to
 
 \begin{exercise} \label{c13.1.0a}
 Find the Laplace transform of $x(t)=e^{3t}-2e^{-4t}$.
+
+\begin{solution}
+\ans ${\cal L}[e^{3t}-2e^{-4t}](s) = \frac{1}{s-3} -
+\frac{2}{s+4}$.
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c13.1.0b}
 Find the Laplace transform of $x(t)=14e^{-6t}+3e^{7t}$.
+
+\begin{solution}
+\ans ${\cal L}[14e^{-6t}+3e^{7t}](s) = \frac{14}{s+6} +
+\frac{3}{s-7}$.
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise}  \label{Ex:pf}
@@ -328,6 +340,14 @@ the system of linear equations
 a_1 + a_2 & = & 0\\
 r_2a_1 + r_1a_2 & = & -1.
 \end{eqnarray*}
+
+\begin{solution}
+$\dps\frac{a_1}{s-r_1} + \frac{a_2}{s-r_2} = 
+\frac{a_1(s-r_2)+a_2(s-r_1)}{(s-r_1)(s-r_2)} =
+\frac{(a_1+a_2)s - (a_1r_2+a_2r_1)}{(s-r_1)(s-r_2)}$.
+
+
+\end{solution}
 \end{exercise}
 
 \noindent In Exercises \ref{c13.1.0A} -- \ref{c13.1.0B} use partial fractions
@@ -336,9 +356,26 @@ $Y(s)$.  {\bf Hint:}  In your calculations, you may use the result of
 Exercise~\ref{Ex:pf}.
 \begin{exercise} \label{c13.1.0A}
 $Y(s) = \dps\frac{1}{s^2-4s+3}$.
+
+\begin{solution}
+\ans $\dps x(t) = \frac{1}{2}(e^{3t}-e^t)$.
+
+\soln $\dps\frac{1}{s^2-4s+3} = \frac{1}{(s-3)(s-1)} =
+\frac{1}{2}\left(\frac{1}{s-3} - \frac{1}{s-1}\right)$.
+
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c13.1.0B}
 $Y(s) = \dps\frac{s-1}{s^2+5s+6}$.
+
+\begin{solution}
+\ans $\dps x(t) = 4e^{-3t}-3e^{-2t}$.
+
+\soln $\dps\frac{s-1}{s^2+5s+6} = \frac{s-1}{(s+3)(s+2)} =
+\frac{4}{s+3} - \frac{3}{s+2}$.
+
+\end{solution}
 \end{exercise}
 
 
@@ -346,9 +383,61 @@ $Y(s) = \dps\frac{s-1}{s^2+5s+6}$.
 to compute the solution to the given initial value problem.
 \begin{exercise} \label{c13.1.1}
 $\ddot{x} + 3\dot{x} + 2x = 0, \quad x(0) = 1, \quad \dot{x}(0) = -1$. 
+
+\begin{solution}
+\ans The solution to the initial value problem is
+$x(t) = e^{-t}$.
+
+\soln Using properties~\eqref{Tprops}(a,c), compute:
+\[
+\begin{array}{rcl}
+0 & = & {\cal L}[\ddot{x} + 3\dot{x} + 2x] \\
+& = & (s^2{\cal L}[x] - sx(0) - \dot{x}(0)) + 3(s{\cal L}[x] - x(0))
++ 2{\cal L}[x] \\
+& = & (s^2 + 3s + 2){\cal L}[x] - (3 + s)x(0) - \dot{x}(0) \\
+& = & (s^2 + 3s + 2){\cal L}[x] - (s + 2).
+\end{array}
+\]
+Simplify to obtain
+\[
+{\cal L}[x] = \frac{s + 2}{(s + 2)(s + 1)} = \frac{1}{s + 1}.
+\]
+So, using \eqref{eq:Lexp},
+${\cal L}[x] = {\cal L}[e^{-t}]$.  By property \eqref{Tprops}(b),
+${\cal L}^{-1}$ exists, so we can compute $x(t) = e^{-t}$.
+
+\end{solution}
 \end{exercise}
 \begin{exercise} \label{c13.1.1a}
 $\ddot{x} - 3\dot{x} - 4x = 0, \quad x(0) = 2, \quad \dot{x}(0) = -1$. 
+
+\begin{solution}
+\ans The solution to the initial value problem is
+$\dps x(t) = -\frac{1}{5}(e^{4t}+9e^{-t})$.
+
+\soln Using properties~\eqref{Tprops}(a,c), compute:
+\[
+\begin{array}{rcl}
+0 & = & {\cal L}[\ddot{x} - 3\dot{x} - 4x] \\
+& = & (s^2{\cal L}[x] - sx(0) - \dot{x}(0)) - 3(s{\cal L}[x] - x(0))
+- 4{\cal L}[x] \\
+& = & (s^2 - 3s - 4){\cal L}[x] + (3 - s)x(0) - \dot{x}(0) \\
+& = & (s^2 - 3s - 4){\cal L}[x] + 7 - 2s.
+\end{array}
+\]
+Simplify to obtain
+\[
+{\cal L}[x] = \frac{7-2s}{(s-4)(s+1)} = 
+-\frac{1}{5}\left(\frac{1}{s-4} + \frac{9}{s+1}\right).
+\]
+So, using \eqref{eq:Lexp},
+${\cal L}[x] = {\cal L}[-\frac{1}{5}(e^{4t}+9e^{-t})]$.  By property 
+\eqref{Tprops}(b), ${\cal L}^{-1}$ exists, so we can compute 
+$x(t) = -\frac{1}{5}(e^{4t}+9e^{-t})$.
+
+
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise} \label{c13.4.4}
@@ -361,6 +450,23 @@ has the Laplace transform
 \[
 {\cal L}[x] = \frac{\alpha s^2 +(\beta +a\alpha)s+c}{s(s^2+as+b)}.
 \]
+
+\begin{solution}
+Compute
+\[
+\frac{c}{s} = {\cal L}[c]
+= {\cal L}[\ddot{x}] + a{\cal L}[\dot{x}] + b{\cal L}[x]
+= (s^2 + as + b){\cal L}[x] - (s + a)\alpha - \beta.
+\]
+Solve for ${\cal L}[x]$, obtaining
+\[
+{\cal L}[x]
+= \frac{\frac{c}{s} + \alpha s + (\beta + a\alpha)}{s^2 + as + b}
+= \frac{\alpha s^2 + (\beta + a\alpha)s + c}{s(s^2 + as + b)}.
+\]
+
+
+\end{solution}
 \end{exercise}
 
 \begin{exercise}   \label{exer:kderLap}
@@ -371,6 +477,31 @@ generalized to:
 s^k{\cal L}[y] - s^{k-1} y(0) - \cdots - \frac{d^{k-1} y}{dt^{k-1}}(0).
 \end{equation}
 Use induction to verify \eqref{LapDerk}. 
+
+\begin{solution}
+The case $k = 1$ is true by \eqref{Tprops}(c), that is
+\[
+{\cal L}\left[\frac{dy}{dt}\right] = s{\cal L}[y] = y(0).
+\]
+Now, suppose
+\[
+{\cal L}\left[\frac{d^ky}{dt^k}\right] = s^k{\cal L}[y] - s^{k - 1}y(0)
+- \cdots - \frac{d^{k - 1}y}{dt^{k - 1}}(0).
+\]
+Then we can compute
+\[
+{\cal L}\left[\frac{d^{k + 1}y}{dt^{k + 1}}\right] =
+s{\cal L}\left[\frac{d^ky}{dt^k}\right] - \frac{d^ky}{dt^k}(0)
+= s^{k + 1}{\cal L}[y] - s^{k}y(0)
+- \cdots - s\frac{d^{k - 1}y}{dt^{k - 1}}(0) - \frac{d^ky}{dt^k}(0).
+\]
+So the formula is valid by induction on $k \geq 1$.
+
+
+
+
+
+\end{solution}
 \end{exercise}
 
 
