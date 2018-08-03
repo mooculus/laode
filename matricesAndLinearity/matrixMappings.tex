@@ -59,46 +59,38 @@ that is, a mapping that independently stretches and/or contracts the
 $x$ and $y$ coordinates.  Even these simple looking mappings can move 
 objects in the plane in a somewhat complicated fashion.
 
-\subsection*{The Program Map}  \index{\computer!map}
+\subsection*{The Program {\sf map}}  \index{\computer!map}
 
-We can use \Matlab to explore planar matrix mappings in an efficient way 
+We can use \Matlab to explore planar matrix mappings 
 using the program {\tt map}.  In \Matlab type the command
 \begin{verbatim}
 map
 \end{verbatim}
-and a menu appears labeled {\sf MAP Setup}.  The $2\times 2$ matrix
+and a window appears labeled {\sf Map}.  The $2\times 2$ matrix
 \[
 \mattwo{0}{-1}{1}{0}
 \]
-has been pre-entered.  Click on the {\sf Proceed} button.  A
-window entitled {\sf MAP Display} appears. Click on {\sf Icons}
-and click on an icon --- say {\sf Dog}. \index{\computer!dog}
-Then click in the {\sf MAP Display} window and a blue `{\sf Dog}' 
-will appear in that window.  Now click on
-the {\sf Map} button and a new version of the {\sf Dog} will
+has been pre-entered.  Click on the {\sf Custom} button. In 
+the {\sf Icons} menu click on an icon --- say {\sf Dog} --- and 
+a blue `{\sf Dog}' will appear in the graphing window. \index{\computer!dog}
+Next click on the {\sf Iterate} button and a new version of the {\sf Dog} will
 appear in yellow --- but the yellow {\sf Dog} is rotated about
 the origin counterclockwise by $90^\circ$ from the blue dog.
 Indeed, this matrix $A$ just rotates the plane counterclockwise
-by $90^\circ$.  To verify this statement just click on {\sf Map}
+by $90^\circ$.  To verify this statement click on {\sf Iterate}
 again and see that the yellow dog rotates $90^\circ$
 counterclockwise into the magenta dog.  Of course, the magenta
-dog is just rotated $180^\circ$ from the original blue dog.
-Clicking on {\sf Map} again produces a fourth dog --- this one
-in cyan.  Finally one more click on the {\sf map} button will
+dog is rotated $180^\circ$ from the original blue dog.
+Clicking on {\sf Iterate} once more produces a fourth dog --- this one
+in cyan.  Finally, one more click on the {\sf Iterate} button will
 rotate the cyan dog into a red dog that exactly covers the
 original blue dog.
 
-Choose another icon from the {\sf Icons} menu; a blue version of
-this icon appears in the {\sf MAP Display} window.  Now click on
-{\sf Map} to see that your chosen icon is just rotated
-counterclockwise by $90^\circ$.
-
-Other matrices will produce different motions of the plane.  You
-may either type the entries of a matrix in the {\sf Map Setup}
-window and click on the {\sf Proceed} button or recall one of
-the pre-assigned matrices listed in the menu obtained by
-clicking on {\sf Gallery}.  For example, clicking on
-the {\sf Contracting rotation} button enters the matrix
+Other matrices will produce different motions of the plane.  Click 
+on the {\sf Reset} button.  Then either type the entries in the matrix after 
+pushing the {\sf Custom} button and click on the {\sf Iterate} button 
+or recall one of the pre-assigned matrices listed in the {\sf Gallery} menu.  
+For example, clicking on the {\sf Contracting rotation} button enters the matrix
 \[
 \mattwo{0.3}{-0.8}{0.8}{0.3}
 \]
@@ -106,7 +98,7 @@ This matrix rotates the plane through an angle of approximately
 $69.4^\circ$ counterclockwise and contracts the plane by a
 factor of approximately $0.85$.  Now click on {\sf Dog} in the
 {\sf Icons} menu to bring up the blue dog again.  Repeated
-clicking on {\sf map} rotates and contracts the dog so that dogs
+clicking on {\sf Iterate} rotates and contracts the dog so that dogs
 in a cycling set of colors slowly converge towards the origin in
 a spiral of dogs.
 
@@ -140,7 +132,7 @@ counterclockwise through angle $\theta$.
 It follows from \eqref{e:rotmat} that $R_{180^\circ} = -I_2$.  So rotating a
 vector in the plane by $180^\circ$ is the same as reflecting the vector
 through the origin.  It also follows that the movement associated with the
-linear map $x\mapsto -cx$ where $c>0$ may be thought of as a dilatation
+linear map $x\mapsto -cx$ where $x\in\R^2$ and $c>0$ may be thought of as a dilatation
 ($x\mapsto cx$) followed by rotation through $180^\circ$ ($x\mapsto -x$).
 
 We claim that combining dilatations with general rotations produces spirals.  
@@ -160,7 +152,7 @@ considered while using {\sf map} is
 \mattwo{0.3}{-0.8}{0.8}{0.3}\cong\mattwo{0.85\cos(69.4^\circ)}
 {-0.85\sin(69.4^\circ)}{0.85\sin(69.4^\circ)}{0.85\cos(69.4^\circ)},
 \]
-which has the general form of $S$.
+which is an example of $S$ with $c = 0.85$ and $\theta = 69.4^\circ$.
 
 \subsection*{A Notation for Matrix Mappings}
 \index{matrix!mappings}
@@ -209,7 +201,7 @@ for every vector $x$.  It follows that
 L_{I_n}(x) = x
 \]
 is the {\em identity mapping\/}, \index{identity mapping} since
-it maps every element to itself.  It is for this reason that the
+it maps every vector to itself.  It is for this reason that the
 matrix $I_n$ is called the $n\times n$ {\em identity matrix\/}.
 
 \EXER
@@ -499,7 +491,7 @@ $\theta = \sin^{-1}\left(\frac{b}{\sqrt{a^2 + b^2}}\right) =
 \noindent In Exercises~\ref{c4.2.a4a} -- \ref{c4.2.a4c} use {\sf map} to
 find vectors that are stretched and/or contracted to a multiple of
 themselves by the given linear mapping.  {\bf Hint:}  Choose a vector in the
-{\sf MAP Display} window and apply {\sf Map} several times.
+{\sf Map} window and apply {\sf Iterate} several times.
 \begin{exercise} \label{c4.2.a4a}
 $A=\mattwoc{2}{0}{1.5}{0.5}$.
 
@@ -649,24 +641,20 @@ B=\mattwo{-1}{0}{0}{-1}
 \]
 rotates the plane through an angle of $180^\circ$. Using the program 
 {\sf map} verify that both matrices map the vector $(1,1)$ to its negative
-$(-1,-1)$.  Now perform two experiments.  First using the {\sf icon} menu in 
-{\sf map} place a dog icon at about the point $(1,1)$ and move that dog by 
-matrix $A$.  Then replace the dog in its orginal position near $(1,1)$ and 
-move that dog using matrix $B$.  Describe the difference in the result.
+$(-1,-1)$.  Now perform two experiments.  First, choose the {\sf dog} icon 
+and move that dog by the matrix $A$.  Second, move that dog using the 
+matrix $B$.  Describe the difference in the result.
 
 \begin{solution}
-Both matrices map the dog to the point $(-1,-1)$ but the
+Both matrices map the dog to near the point $(-1,-1)$ but the
 orientation of the dog is different in the two cases.  See 
 Figure~\ref{c4.2.5}.
 \begin{figure}[htb]
      \centerline{%
-     \psfig{file=exfigure/fig3-2-26a.eps,width=3.0in}
-     \psfig{file=exfigure/fig3-2-26b.eps,width=3.0in}}
+     \psfig{file=exfigure/fig3-2-26a.eps,width=2.5in}\hspace*{-0.6in}
+     \psfig{file=exfigure/fig3-2-26b.eps,width=2.5in}}
         \exercaptwo{c4.2.5}
 \end{figure} 
-
-
-
 \end{solution}
 \end{exercise}   
 
