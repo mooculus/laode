@@ -61,22 +61,22 @@ objects in the plane in a somewhat complicated fashion.
 
 \subsection*{The Program {\sf map}}  \index{\computer!map}
 
-We can use \Matlab to explore planar matrix mappings 
+We use \Matlab to explore planar matrix mappings 
 using the program {\tt map}.  In \Matlab type the command
 \begin{verbatim}
 map
 \end{verbatim}
 and a window appears labeled {\sf Map}.  The $2\times 2$ matrix
-\[
+\begin{equation}. \label{e:map_A}
 \mattwo{0}{-1}{1}{0}
-\]
+\end{equation}
 has been pre-entered.  Click on the {\sf Custom} button. In 
 the {\sf Icons} menu click on an icon --- say {\sf Dog} --- and 
 a blue `{\sf Dog}' will appear in the graphing window. \index{\computer!dog}
 Next click on the {\sf Iterate} button and a new version of the {\sf Dog} will
-appear in yellow --- but the yellow {\sf Dog} is rotated about
+appear in yellow ---the yellow {\sf Dog} is just rotated about
 the origin counterclockwise by $90^\circ$ from the blue dog.
-Indeed, this matrix $A$ just rotates the plane counterclockwise
+Indeed, the matrix \eqref{e:map_A} rotates the plane counterclockwise
 by $90^\circ$.  To verify this statement click on {\sf Iterate}
 again and see that the yellow dog rotates $90^\circ$
 counterclockwise into the magenta dog.  Of course, the magenta
@@ -87,10 +87,11 @@ rotate the cyan dog into a red dog that exactly covers the
 original blue dog.
 
 Other matrices will produce different motions of the plane.  Click 
-on the {\sf Reset} button.  Then either type the entries in the matrix after 
-pushing the {\sf Custom} button and click on the {\sf Iterate} button 
-or recall one of the pre-assigned matrices listed in the {\sf Gallery} menu.  
-For example, clicking on the {\sf Contracting rotation} button enters the matrix
+on the {\sf Reset} button.  Then either push the {\sf Custom} button,  
+type the entries in the matrix, and click on the {\sf Iterate} button; 
+or choose one of the pre-assigned matrices listed in the {\sf Gallery} menu
+and click on the {\sf Iterate} button.  
+For example, clicking on the {\sf Contracting rotation} button recalls the matrix
 \[
 \mattwo{0.3}{-0.8}{0.8}{0.3}
 \]
