@@ -10,6 +10,8 @@
 \usepackage{stix}
 \usepackage{gillius}
 
+\usepackage{fancyhdr}
+
 \usepackage{microtype}
 
 \renewcommand{\EXER}{\section*{Exercises~\leaders\vrule height 3.2pt depth -2.8pt \hfill \null}\vspace*{0.2in}\small\setcounter{exercise}{0}}
@@ -172,7 +174,8 @@
   \stepcounter{exercisedepth}
   \ifnum\value{exercisedepth}=1
   \actualexercise
-  \def\@currentlabel{exercise.\thetitlenumber.\thesectiontitlenumber.\theexercise}  
+  \def\@currentlabel{exercise.\thetitlenumber.\thesectiontitlenumber.\theexercise}\def\@currentlabel{\theexercise}
+  
   \else
   \color{white}\tiny
   \fi
@@ -217,7 +220,7 @@
 
 % % Redefine maketitle to give course packet title page and toc.
 \renewcommand{\maketitle}{%
-\pagestyle{empty}
+  \pagestyle{empty}
 \onecolumn
 \begin{center}
   {\scalebox{3}{\large\textsf{\textbf{\textcolor{black}{Linear Algebra}}}}} \\[1ex]
@@ -281,9 +284,18 @@ improvement at \texttt{ximera@math.osu.edu}
 \let\maketitle\othermaketitle % renew maketitle to usual definition.
 }
 
+\newpagestyle{lulu}{ 
+\sethead[\textsl{\ifnum\thesectiontitlenumber=0 Chapter \thetitlenumber\else\textsection \thetitlenumber.\thesectiontitlenumber\fi\hspace{1em}\@title}][][] % even
+{}{}{\textsl{\ifnum\thesectiontitlenumber=0 Chapter \thetitlenumber\else\textsection \thetitlenumber.\thesectiontitlenumber\fi\hspace{1em}\@title}} % odd
+\setfoot[\thepage][][] % even
+{}{}{\thepage} % odd
+}
+
 \newcommand{\frontmatter}{%
-\pagenumbering{roman}%
+  \pagestyle{lulu}%
+  \pagenumbering{roman}%
 \setcounter{page}{1}}
+
 \newcommand{\mainmatter}{%
   \pagenumbering{arabic}%
 \setcounter{page}{1}}

@@ -1,4 +1,4 @@
-\documentclass[10pt,handout,twocolumn,twoside,numbers,wordchoicegiven]{xourse}
+\documentclass[10pt,twocolumn,twoside,numbers,wordchoicegiven]{xourse}
 \input{preamble}
 \newcommand{\labelchapter}[1]{}
 \pdfOnly{\usepackage{printStyles/lulu}}
@@ -7,11 +7,13 @@
 \author{Martin Golubitsky and Michael Dellnitz}
 
 \begin{document}
-%\pdfOnly{\frontmatter}
 \maketitle
 
 \activity{preface.tex}
-%\pdfOnly{\mainmatter}
+
+\pdfOnly{\frontmatter}
+
+\pdfOnly{\mainmatter}
 \chapterstyle
 \activity{preliminaries/preliminaries.tex} %DONE
 \labelchapter{chap:prelim}
@@ -129,9 +131,9 @@
 \activity{matrixNormalForms/markovMatrixTheory.tex}
 \activity{matrixNormalForms/proofOfJordanNormalForm.tex}
 
-%\pdfOnly{\chapterstyle\onecolumn\activity{./commands.tex}}
+\pdfOnly{\chapterstyle\onecolumn\activity{./commands.tex}}
 
-%\pdfOnly{\printindex}
+\pdfOnly{\printindex}
 
 
 \end{document}

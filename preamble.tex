@@ -110,7 +110,7 @@
 %   {\end{equation}\renewcommand\endequation{\eqno \@eqnnum
 % $$\global\@ignoretrue}}
 
-\newcommand{\soln}{\textbf{Solution:}}
+\newcommand{\soln}{\textbf{Solution:} }
 \newcommand{\exercap}[1]{\centerline{Figure~\ref{#1}}}
 \newcommand{\exercaptwo}[1]{\centerline{Figure~\ref{#1}a\hspace{2.1in}
 Figure~\ref{#1}b}}
@@ -120,7 +120,7 @@ Figure~\ref{#1}b\hspace{1.2in}Figure~\ref{#1}c}}
 
 \renewenvironment{solution}{\suppress}{\endsuppress}
 
-
+\ifdefined\ifxake
 
 \ifxake
 \newenvironment{matlabEquation}{\begin{equation}}{\end{equation}}
@@ -128,6 +128,8 @@ Figure~\ref{#1}b\hspace{1.2in}Figure~\ref{#1}c}}
 \newenvironment{matlabEquation}%
 {\let\oldtheequation\theequation\renewcommand{\theequation}{\oldtheequation*}\begin{equation}}%
   {\end{equation}\let\theequation\oldtheequation}
+\fi
+
 \fi
 
 \makeatother
