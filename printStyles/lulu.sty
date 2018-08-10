@@ -162,9 +162,12 @@
 %\let\c@example\relax 
 \newtheorem{example}[theorem]{Example}
 
+\usepackage{comment}
+
 \let\exercise\relax
 \let\endexercise\relax
 \let\c@exercise\relax
+\theoremstyle{definition}
 \newcounter{exercise}
 \newtheorem{actualexercise}[exercise]{}
 
@@ -177,13 +180,13 @@
   \def\@currentlabel{exercise.\thetitlenumber.\thesectiontitlenumber.\theexercise}\def\@currentlabel{\theexercise}
   
   \else
-  \color{white}\tiny
+  \comment
   \fi
 }{
   \ifnum\value{exercisedepth}=1
   \endactualexercise
   \else
-  \color{black}\normalsize
+    \endcomment
   \fi
   \addtocounter{exercisedepth}{-1} 
 }
@@ -304,5 +307,14 @@ improvement at \texttt{ximera@math.osu.edu}
 \makeatletter
 \gdef\ttl@savemark{\sectionmark{}}
 \makeatother
+
+%% ignore various interactive elements in exercises
+\renewenvironment{multipleChoice}{\suppress}{\endsuppress}
+\renewenvironment{selectAll}{\suppress}{\endsuppress}
+\renewenvironment{hint}{\comment}{\endcomment}
+\renewenvironment{solution}{}{}
+
+
+\excludecomment{solution}
 
 \endinput
