@@ -120,11 +120,6 @@ Figure~\ref{#1}b\hspace{1.2in}Figure~\ref{#1}c}}
 
 \renewenvironment{solution}{\suppress}{\endsuppress}
 
-\ifdefined\ifxake
-\else
-\newif\ifxake\xaketrue
-\fi
-
 \ifxake
 \newenvironment{matlabEquation}{\begin{equation}}{\end{equation}}
 \else
