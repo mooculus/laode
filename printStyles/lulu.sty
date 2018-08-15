@@ -288,8 +288,8 @@ improvement at \texttt{ximera@math.osu.edu}
 }
 
 \newpagestyle{lulu}{ 
-\sethead[\textsl{\ifnum\thesectiontitlenumber=0 Chapter \thetitlenumber\else\textsection \thetitlenumber.\thesectiontitlenumber\fi\hspace{1em}\@title}][][] % even
-{}{}{\textsl{\ifnum\thesectiontitlenumber=0 Chapter \thetitlenumber\else\textsection \thetitlenumber.\thesectiontitlenumber\fi\hspace{1em}\@title}} % odd
+\sethead[\textsl{\ifnum\thetitlenumber=0 \else \ifnum\thesectiontitlenumber=0 Chapter \thetitlenumber\else\textsection \thetitlenumber.\thesectiontitlenumber\fi\hspace{1em}\fi\@title}][][] % even
+{}{}{\textsl{\ifnum\thetitlenumber=0 \else \ifnum\thesectiontitlenumber=0 Chapter \thetitlenumber\else\textsection \thetitlenumber.\thesectiontitlenumber\fi\hspace{1em}\fi\@title}} % odd
 \setfoot[\thepage][][] % even
 {}{}{\thepage} % odd
 }
