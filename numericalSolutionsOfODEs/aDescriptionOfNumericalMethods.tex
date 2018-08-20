@@ -59,13 +59,13 @@ $[t,t+h]$.  On the other hand, note that simultaneously the
 length of the interval $[t,t+h]$ is shrinking and that more
 approximations are needed to approximate a solution on a
 fixed time interval.
-\begin{figure}[htb]
+\begin{figure*}[htb]
    \centerline{%
    \psfig{file=../figures/eul1.eps,width=4.6in}}
    \caption{Illustration of one step in Euler's method
    for $h=0.2$.}
    \label{fig:eul1ill}
-\end{figure}
+\end{figure*}
 
 Concretely, Euler's method produces a sequence of approximations
 to a solution of an initial value problem.  To understand this point, 
@@ -143,7 +143,7 @@ xlabel('(b)')
 \end{verbatim}
 Note that in that figure the scale on the vertical axis is
 different from the one in Figure~\ref{fig:eulex1}(a).
-\begin{figure}[htb]
+\begin{figure*}[htb]
    \centerline{%
    \psfig{file=../figures/eulex1.eps,width=3in}
    \psfig{file=../figures/eulex2.eps,width=3in}}
@@ -153,7 +153,7 @@ different from the one in Figure~\ref{fig:eulex1}(a).
     are linear interpolations between the o's.  (b)  A comparison is 
     made to the exact solution pictured as a solid line.}
    \label{fig:eulex1}
-\end{figure}
+\end{figure*}
 
 
 In this example we see that after just $10$ steps the numerical solution 
@@ -280,7 +280,7 @@ the exact solution.  Even if we double the step size\index{step size}
 to $h=0.4$ and reduce the number of steps to $K=5$, the 
 approximation is still acceptable.  See Figure~\ref{fig:mEul}(b).
 
-\begin{figure}[htb]
+\begin{figure*}[htb]
    \centerline{%
    \psfig{file=../figures/meul1.eps,width=3in}
    \psfig{file=../figures/meul2.eps,width=3in}}
@@ -289,7 +289,7 @@ approximation is still acceptable.  See Figure~\ref{fig:mEul}(b).
    with step sizes: (a) $h=0.2$; (b) $h=0.4$.
    The exact solution is shown with a solid line.}
    \label{fig:mEul}
-\end{figure}
+\end{figure*}
 
 \subsection*{Fourth Order Runga-Kutta Method}
 \index{fourth order Runge-Kutta method}
@@ -444,7 +444,7 @@ do not seem to be equally spaced.  However, in
 Figure~\ref{fig:sysEul2} we show graphs of the approximations
 of the time series $x$ vs.\ $t$ and $y$ vs.\ $t$. Here 
 it can be seen that the step size is indeed constant.
-\begin{figure}[htb]
+\begin{figure*}[htb]
    \centerline{%
    \psfig{file=../figures/eulsys2.eps,width=3in}
    \psfig{file=../figures/eulsys3.eps,width=3in}}
@@ -452,7 +452,7 @@ it can be seen that the step size is indeed constant.
    of the solution of \protect\eqref{eq:numanalex1} by Euler's method
    with step size $h=0.05$.}
    \label{fig:sysEul2}
-\end{figure}
+\end{figure*}
 
 
 There are several ways to improve the accuracy of 

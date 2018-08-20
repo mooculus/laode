@@ -57,14 +57,14 @@ left or to the right.  The general saddle-node bifurcation is one whose
 bifurcation diagram looks `parabolic-like'.  Theorem~\ref{T:saddlenode}
 makes this idea precise.
 
-\begin{figure}[htb]
+\begin{figure*}[htb]
            \centerline{%
 	   \psfig{file=../figures/sbifBIF.eps,width=2.5in} \qquad \qquad
 	   \psfig{file=../figures/sbifBIF2.eps,width=2.5in}}
 	 \hspace{1.0in} $a<0$ \hspace{2.8in}  $a>0$  
            \caption{Bifurcation diagrams for \protect\eqref{e:1dsaddlenf}.}
            \label{F:1dsaddle}
-\end{figure}
+\end{figure*}
 
 \begin{theorem}  \label{T:saddlenode} \index{bifurcation!saddle-node}
 Suppose that the differential equation \eqref{e:1dbif} has an equilibrium
@@ -107,10 +107,11 @@ We use implicit differentiation to verify these claims. Differentiating
 f_x(x,R(x)) + f_\rho(x,R(x))R'(x) \equiv 0,
 \end{equation}
 and 
-\begin{equation}  \label{e:implicit2}
-f_{xx}(x,R(x)) + 2f_{x\rho}(x,R(x))R'(x) + f_{\rho\rho}(x,R(x))R'(x)^2 
+\begin{align}  \label{e:implicit2}
+  f_{xx}(x,R(x)) + 2f_{x\rho}(x,R(x))R'(x) \nonumber\\ 
+  + f_{\rho\rho}(x,R(x))R'(x)^2 
 + f_\rho(x,R(x))R''(x) \equiv 0.
-\end{equation}
+\end{align}
 
 Evaluating \eqref{e:implicit1} at $x=x_0$ yields
 \[
@@ -270,7 +271,7 @@ We can, however, verify the existence of a saddle-node bifurcation
 using {\sf pplane8}.  The phase plane portraits are shown in 
 Figure~\ref{F:snex}.
 
-\begin{figure}[htb]
+\begin{figure*}[htb]
            \centerline{%
 	   \psfig{file=../figures/snexa.eps,width=3.2in}
 	   \psfig{file=../figures/snexb.eps,width=3.2in}}
@@ -280,7 +281,7 @@ Figure~\ref{F:snex}.
 	the square $-1\leq x,y \leq 1$.  Note that there are no 
 	equilibria when $\rho=-0.1$ and two equilibria when $\rho=0.1$.}
            \label{F:snex}
-\end{figure}
+\end{figure*}
 
 
 \EXER

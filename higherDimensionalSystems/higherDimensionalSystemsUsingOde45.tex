@@ -91,14 +91,14 @@ xlabel('t')
 We then obtain the result shown in Figure~\ref{fig:flinear1}.  This figure 
 shows the expected oscillation in the $x_1$ and $x_2$ coordinates and the 
 exponential decay in the $x_3$ coordinate.
-\begin{figure}[htb]
+\begin{figure*}[htb]
    \centerline{%
    \psfig{file=../figures/flinear1.eps,width=5.6in,height=2.8in}}
    \caption{Time series showing convergence to the origin for the solution 
 	of the linear system $\dot X=AX$, where $A$ is as in 
 	\protect\eqref{E:3dexample}, with initial condition $X_0=(2,-1,-1)$.}
    \label{fig:flinear1}
-\end{figure}
+\end{figure*}
 
 In drawing Figure~\ref{fig:flinear1} we have introduced another \Matlab 
 graphics command {\tt subplot(m,n,p)}\index{\computer!subplot}.  
@@ -157,14 +157,14 @@ space picture of the linear system given in Figure~\ref{fig:flinear2}.
 These numerical computations are surely in agreement with the conclusion
 of Theorem~\ref{T:nlinearization}.
 
-\begin{figure}[htb]
+\begin{figure*}[htb]
    \centerline{%
    \psfig{file=../figures/fnonlin3.eps,width=5.0in}}
    \caption{Time series showing convergence to the origin for the solution of 
 	the nonlinear system \protect\eqref{E:fnonlin} with initial condition 
 	$X_0=(2,-1,-1)$.}
    \label{F:fnonlin3}
-\end{figure}
+\end{figure*}
  
 \subsection*{Periodic Solutions in Three Dimensions}
 
@@ -196,14 +196,14 @@ $X_0=(0.5,0.4,0.3)$ by typing
 Using {\tt subplot} we can plot the three time series obtaining the result in 
 Figure~\ref{F:3per}.  After an initial transient, each component of the 
 solution settles into a periodic motion with the same period.
-\begin{figure}[htb]
+\begin{figure*}[htb]
    \centerline{%
    \psfig{file=../figures/f3perts.eps,width=3.0in}}
    \caption{Time series showing convergence to a limit cycle for the solution 
 	of the nonlinear system \protect\eqref{E:3per} with initial condition 
 	$X_0=(0.5,0.4,0.3)$.}
    \label{F:3per}
-\end{figure}
+\end{figure*}
 
 In the three-dimensional phase space $x_1,x_2,x_3$ this solution converges to a 
 a simple closed curve or a deformed `circle'.  See Figure~\ref{F:3perps} 

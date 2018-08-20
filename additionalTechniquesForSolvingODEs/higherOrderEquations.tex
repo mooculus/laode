@@ -204,7 +204,7 @@ for $t\in[0,30]$ by typing
 [t,x] = ode45('f17_4_5',[0 30],[1,1]');
 \end{verbatim}
 The result of this computation is shown in Figure~\ref{Fig:micro1}.
-\begin{figure}[htb]
+\begin{figure*}[htb]
  \centerline{%
            \psfig{file=../figures/microx1.eps,width=3.0in}
 	   \psfig{file=../figures/microx2.eps,width=3.0in}}
@@ -212,7 +212,7 @@ The result of this computation is shown in Figure~\ref{Fig:micro1}.
 	   \protect\eqref{E:RCLM} for $t\in[0,30]$ with initial
 	   condition $X(0)=(1,1)^t$.}
            \label{Fig:micro1}
-\end{figure}
+\end{figure*}
 It can be observed that $x_1(t)$ tends to $1$ and $x_2(t)$ tends to
 $0$ for increasing time $t$.  In other words, the solution approaches the 
 time independent solution $X(t)=(1,0)^t$ of \eqref{E:RCLM}.

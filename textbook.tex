@@ -1,37 +1,45 @@
-\documentclass{xourse}
+\documentclass[10pt,twocolumn,handout,twoside,numbers,wordchoicegiven]{xourse}
+
 \input{preamble}
 \newcommand{\labelchapter}[1]{}
 \pdfOnly{\usepackage{printStyles/lulu}}
 
-\title{Textbook}
+\title{Linear Algebra}
 \author{Martin Golubitsky and Michael Dellnitz}
 
 \begin{document}
-%\maketitle
+\maketitle
+
+\pdfOnly{\frontmatter}
 
 \activity{preface.tex}
+
+\pdfOnly{\mainmatter}
 \chapterstyle
-\activity{preliminaries/preliminaries.tex}
+\activity{preliminaries/preliminaries.tex} %DONE
+\labelchapter{chap:prelim}
 \sectionstyle
-\activity{preliminaries/vectorsAndMatrices.tex}
+\activity{preliminaries/vectorsAndMatrices.tex} %DONE
 \activity{preliminaries/mATLAB.tex}
-\activity{preliminaries/specialKindsOfMatrices.tex}
-\activity{preliminaries/theGeometryOfVectorOperations.tex}
+\activity{preliminaries/specialKindsOfMatrices.tex} % DONE but no CEXPR
+\activity{preliminaries/theGeometryOfVectorOperations.tex} % DONE but no CEXPR
 
 \chapterstyle
-\activity{solvingLinearEquations/solvingLinearEquations.tex}
+\activity{solvingLinearEquations/solvingLinearEquations.tex} %DONE
+\labelchapter{lineq}
 \sectionstyle
-\activity{solvingLinearEquations/systemsOfLinearEquationsAndMatrices.tex}
-\activity{solvingLinearEquations/theGeometryOfLowDimensionalSolutions.tex}
-\activity{solvingLinearEquations/gaussianElimination.tex}
-\activity{solvingLinearEquations/reductionToEchelonForm.tex}
-\activity{solvingLinearEquations/linearEquationsWithSpecialCoefficients.tex}
-\activity{solvingLinearEquations/uniquenessOfReducedEchelonForm.tex}
+\activity{solvingLinearEquations/systemsOfLinearEquationsAndMatrices.tex}% DONE but no 
+\activity{solvingLinearEquations/theGeometryOfLowDimensionalSolutions.tex} % DONE
+\activity{solvingLinearEquations/gaussianElimination.tex} % DONE but no CEXPR
+\activity{solvingLinearEquations/reductionToEchelonForm.tex} % DONE but no CEXPR
+\activity{solvingLinearEquations/linearEquationsWithSpecialCoefficients.tex}% DONE but no 
+\activity{solvingLinearEquations/uniquenessOfReducedEchelonForm.tex} %DONE!
 
 \chapterstyle
-\activity{matricesAndLinearity/matricesAndLinearity.tex}
+\activity{matricesAndLinearity/matricesAndLinearity.tex} %DONE
+\labelchapter{chap:matrices}
 \sectionstyle
-\activity{matricesAndLinearity/matrixMultiplicationOfVectors.tex}
+\activity{matricesAndLinearity/matrixMultiplicationOfVectors.tex} % started...
 \activity{matricesAndLinearity/matrixMappings.tex}
 \activity{matricesAndLinearity/linearity.tex}
 \activity{matricesAndLinearity/thePrincipleOfSuperposition.tex}
@@ -42,6 +50,7 @@
 
 \chapterstyle
 \activity{solvingOrdinaryDifferentialEquations/solvingOrdinaryDifferentialEquations.tex}
+\labelchapter{chap:SolveOdes}
 \sectionstyle
 \activity{solvingOrdinaryDifferentialEquations/aSingleDifferentialEquation.tex}
 \activity{solvingOrdinaryDifferentialEquations/graphingSolutionsToDifferentialEquations.tex}
@@ -56,6 +65,7 @@
 
 \chapterstyle
 \activity{vectorSpaces/vectorSpaces.tex}
+\labelchapter{C:vectorspaces}
 \sectionstyle
 \activity{vectorSpaces/vectorSpacesAndSubspaces.tex}
 \activity{vectorSpaces/constructionOfSubspaces.tex}
@@ -66,13 +76,15 @@
 
 \chapterstyle
 \activity{closedFormSolutionsForPlanarODEs/closedFormSolutionsForPlanarODEs.tex}
+\labelchapter{Chap:Planar}
 \sectionstyle
 \activity{closedFormSolutionsForPlanarODEs/theInitialValueProblem.tex}
 \activity{closedFormSolutionsForPlanarODEs/closedFormSolutionsByTheDirectMethod.tex}
-\activity{closedFormSolutionsForPlanarODEs/solutionsUsingMatrixExponentials.tex}
-\activity{closedFormSolutionsForPlanarODEs/linearNormalFormPlanarSystems.tex}
 \activity{closedFormSolutionsForPlanarODEs/similarMatrices.tex}
+%\activity{closedFormSolutionsForPlanarODEs/linearNormalFormPlanarSystems.tex}
+%\activity{closedFormSolutionsForPlanarODEs/solutionsUsingMatrixExponentials.tex}
 \activity{closedFormSolutionsForPlanarODEs/formulasForMatrixExponentials.tex}
+\activity{qualitativeTheoryOfPlanarODEs/sinksSaddlesAndSources.tex}
 \activity{closedFormSolutionsForPlanarODEs/secondOrderEquations.tex}
 
 \chapterstyle
@@ -84,6 +96,7 @@
 
 \chapterstyle
 \activity{determinantsAndEigenvalues/determinantsAndEigenvalues.tex}
+\labelchapter{C:D&E}
 \sectionstyle
 \activity{determinantsAndEigenvalues/determinants.tex}
 \activity{determinantsAndEigenvalues/eigenvalues.tex}
@@ -91,6 +104,7 @@
 
 \chapterstyle
 \activity{linearMapsAndChangesOfCoordinates/linearMapsAndChangesOfCoordinates.tex}
+\labelchapter{C:LMCC}
 \sectionstyle
 \activity{linearMapsAndChangesOfCoordinates/linearMappingsAndBases.tex}
 \activity{linearMapsAndChangesOfCoordinates/rowRankEqualsColumnRank.tex}
@@ -99,6 +113,7 @@
 
 \chapterstyle
 \activity{orthogonality/orthogonality.tex}
+\labelchapter{Chap:LinTrans}
 \sectionstyle
 \activity{orthogonality/orthonormalBases.tex}
 \activity{orthogonality/leastSquaresApproximations.tex}
@@ -126,6 +141,7 @@
 
 \chapterstyle
 \activity{matrixNormalForms/matrixNormalForms.tex}
+\labelchapter{C:HDeigenvalues}
 \sectionstyle
 \activity{matrixNormalForms/realDiagonalizableMatrices.tex}
 \activity{matrixNormalForms/simpleComplexEigenvalues.tex}
@@ -136,6 +152,7 @@
 
 \chapterstyle
 \activity{higherDimensionalSystems/higherDimensionalSystems.tex}
+\labelchapter{C:HDS}
 \sectionstyle
 \activity{higherDimensionalSystems/linearSystemsInJordanNormalForm.tex}
 \activity{higherDimensionalSystems/qualitativeTheoryNearEquilibria.tex}
@@ -146,6 +163,7 @@
 
 \chapterstyle
 \activity{linearDifferentialEquations/linearDifferentialEquations.tex}
+\labelchapter{C:LDE}
 \sectionstyle
 \activity{linearDifferentialEquations/solvingSystemsInOriginalCoordinates.tex}
 \activity{linearDifferentialEquations/higherOrderEquations.tex}
@@ -155,6 +173,7 @@
 
 \chapterstyle
 \activity{laplaceTransforms/laplaceTransforms.tex}
+\labelchapter{C:LT}
 \sectionstyle
 \activity{laplaceTransforms/theMethodOfLaplaceTransforms.tex}
 \activity{laplaceTransforms/laplaceTransformsAndTheirComputation.tex}
@@ -164,6 +183,7 @@
 
 \chapterstyle
 \activity{additionalTechniquesForSolvingODEs/additionalTechniquesForSolvingODEs.tex}
+\labelchapter{chap:SingleOdes}
 \sectionstyle
 \activity{additionalTechniquesForSolvingODEs/nonconstantCoefficientLinearEquations.tex}
 \activity{additionalTechniquesForSolvingODEs/variationOfParametersForSystems.tex}
@@ -175,13 +195,19 @@
 
 \chapterstyle
 \activity{numericalSolutionsOfODEs/numericalSolutionsOfODEs.tex}
+\labelchapter{ch:NumSolODE}
 \sectionstyle
 \activity{numericalSolutionsOfODEs/aDescriptionOfNumericalMethods.tex}
 \activity{numericalSolutionsOfODEs/errorBoundsForEulersMethod.tex}
 \activity{numericalSolutionsOfODEs/localAndGlobalErrorBounds.tex}
 \activity{numericalSolutionsOfODEs/appendixVariableStepMethods.tex}
 
+\pdfOnly{\chapterstyle\onecolumn\activity{./commands.tex}}
+
+\pdfOnly{\printindex}
+
 \end{document}
+
 
 %%% Local Variables:
 %%% mode: latex
