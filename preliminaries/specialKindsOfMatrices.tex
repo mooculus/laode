@@ -128,6 +128,7 @@ The matrix is symmetric.
 
 \end{solution}
 \end{exercise}
+
 \begin{exercise} \label{c1.1.01b}
   $\mattwo{1}{1}{0}{-5}$.
   \begin{multipleChoice}
@@ -140,6 +141,7 @@ The matrix is not symmetric.
 
 \end{solution}
 \end{exercise}
+
 \begin{exercise} \label{c1.1.01c}
   $(3)$.
   \begin{multipleChoice}
@@ -152,6 +154,7 @@ The matrix is symmetric.
 
 \end{solution}
 \end{exercise}
+
 \begin{exercise} \label{c1.1.01d}
   $\left( \begin{array}{rr}
             3 & 4 \\
@@ -167,11 +170,12 @@ The matrix is not symmetric.
 
 \end{solution}
 \end{exercise}
+
 \begin{exercise} \label{c1.1.01e}
- $\left( \begin{array}{rrr}
+ $A = \left( \begin{array}{rrr}
  3 & 4 & -1\\
  4 & 3 &  1\\
-           -1 & 1 & 10\end{array} \right)$.
+ -1 & 1 & 10\end{array} \right)$.
   \begin{multipleChoice}
     \choice[correct]{The matrix is symmetric.}
     \choice{The matrix is not symmetric.}    
@@ -179,7 +183,7 @@ The matrix is not symmetric.
        
 
 \begin{solution}
-The matrix is symmetric.
+Since $a_{21} = a_{12}$, $a_{31} = a_{13}$, and $a_{32} = a_{23}$, the matrix is symmetric.
 
 \end{solution}
 \end{exercise}
@@ -284,7 +288,9 @@ are needed to specify each of the given matrices:
 An upper triangular $2\times 2$ matrix? \begin{prompt}$\answer{3}$\end{prompt}
 
 \begin{solution}
-$3$.
+A $2\times 2$ upper triangular matrix $A$ has the form $A = \left( \begin{array}{cc}
+            a_{11} & a_{12} \\
+            0 & a_{22} \end{array} \right)$.  Thus the number of entries needed to define $A$ is $3$.  
 
 \end{solution}
 \end{exercise}
@@ -300,7 +306,7 @@ $3$.
 An $m\times n$ matrix? \begin{prompt}$\answer{mn}$\end{prompt}
 
 \begin{solution}
-$mn$.
+Each row of the matrix has $n$ entries and there are $m$ rows.  Hence the number of unknown entries is $mn$.
 
 \end{solution}
 \end{exercise}
@@ -327,11 +333,14 @@ $1 + 2 + \cdots + (n-1) + n = \frac{n(n + 1)}{2}$.
 \end{solution}
 \end{exercise}
 \begin{exercise}  \label{c1.3.3c}
-A symmetric $n\times n$ matrix?   \begin{prompt}$\answer{n(n+1)/2}$\end{prompt}
+A symmetric $n\times n$ matrix?   
+\begin{prompt}$\answer{n(n+1)/2}$\end{prompt}
 
 \begin{solution}
-$\frac{n(n + 1)}{2}$.
-
+The number of independent entries in row $k$ of a symmetric matrix is $k$.  Thus the number of independent entries in the matrix is 
+\[
+\sum_{k=1}^n k = \frac{n(n + 1)}{2}.
+\]
 \end{solution}
 \end{exercise}
 
