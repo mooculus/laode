@@ -180,13 +180,13 @@
   \def\@currentlabel{exercise.\thetitlenumber.\thesectiontitlenumber.\theexercise}\def\@currentlabel{\theexercise}
   
   \else
-  \comment
+\suppress
   \fi
 }{
   \ifnum\value{exercisedepth}=1
   \endactualexercise
   \else
-    \endcomment
+\endsuppress
   \fi
   \addtocounter{exercisedepth}{-1} 
 }
@@ -311,9 +311,8 @@ improvement at \texttt{ximera@math.osu.edu}
 %% ignore various interactive elements in exercises
 \renewenvironment{multipleChoice}{\suppress}{\endsuppress}
 \renewenvironment{selectAll}{\suppress}{\endsuppress}
-\renewenvironment{hint}{\comment}{\endcomment}
+\renewenvironment{hint}{\suppress}{\endsuppress}
 \renewenvironment{solution}{}{}
-
 
 \excludecomment{solution}
 
