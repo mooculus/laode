@@ -644,9 +644,13 @@ The rank of the matrix is $2$.
 
 \AEXER
 
-\begin{exercise}
+\begin{exercise} \label{A:2.4.1}
   Prove that the rank of an $m \times n$ matrix $A$ is less than or equal to
   the minimum of $m$ and $n$.
+
+\begin{solution}
+Suppose $A$ is row equivalent to the $m \times n$ reduced row echelon matrix $E$.  The rank of $A$ equals the number of pivots in $E$. Since there is at most $1$ pivot in each column, the number of pivots is less than or equal to the number of columns $n$ of $E$.  Similarly, since each row of $E$ contains at most one pivot, the number of pivots in $E$ is at most the number $m$ of rows of $E$.  It follows that the rank of $A$ is less than or equal to both $m$ and $n$ and hence the minimum of $m$ and $n$.  
+\end{solution}
 
 \end{exercise}
 
