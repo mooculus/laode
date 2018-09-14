@@ -91,6 +91,22 @@
 \newcommand{\cmattwo}[4]{\left(\begin{array}{cc} #1 & #2\\ #3
 &#4\end{array}\right)}
 
+\newcommand{\Matrix}[1]{\ensuremath{\left(\begin{array}{rrrrrrrrrrrrrrrrrr} #1 \end{array}\right)}}
+
+\newcommand{\Matrixc}[1]{\ensuremath{\left(\begin{array}{cccccccccccc} #1 \end{array}\right)}}
+
+
+
+\renewcommand{\labelenumi}{\theenumi)}
+\newenvironment{enumeratea}%
+{\begingroup
+ \renewcommand{\theenumi}{\alph{enumi}}
+ \renewcommand{\labelenumi}{(\theenumi)}
+ \begin{enumerate}}
+ {\end{enumerate}\endgroup}
+
+
+
 \newcounter{help}
 \renewcommand{\thehelp}{\thesection.\arabic{equation}}
 

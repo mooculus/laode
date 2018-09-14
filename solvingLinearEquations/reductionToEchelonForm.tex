@@ -391,7 +391,7 @@ then the solutions to this system are parametrized by $n-\ell$ parameters.
 \TEXER
 
 \noindent In Exercises~\ref{c2.4.1} -- \ref{c2.4.1b} row reduce the given 
-matrix to reduced echelon form and determine the rank of $A$.
+matrix to reduced echelon form by hand and determine its rank.
 \begin{exercise} \label{c2.4.1}
 $A=\left(\begin{array}{rrrr}
 1 &  2 & 1 & 6\\
@@ -644,11 +644,75 @@ The rank of the matrix is $2$.
 
 \AEXER
 
-\begin{exercise}
+\begin{exercise} \label{A:2.4.1}
   Prove that the rank of an $m \times n$ matrix $A$ is less than or equal to
   the minimum of $m$ and $n$.
 
+\begin{solution}
+Suppose $A$ is row equivalent to the $m \times n$ reduced row echelon matrix $E$.  The rank of $A$ equals the number of pivots in $E$. Since there is at most $1$ pivot in each column, the number of pivots is less than or equal to the number of columns $n$ of $E$.  Similarly, since each row of $E$ contains at most one pivot, the number of pivots in $E$ is at most the number $m$ of rows of $E$.  It follows that the rank of $A$ is less than or equal to both $m$ and $n$ and hence the minimum of $m$ and $n$.  
+\end{solution}
 \end{exercise}
+
+\begin{exercise}  \label{A:2.4.2}
+Consider the augmented matrix 
+\[
+A=\left(\begin{array}{cc|c}  
+ 1 & -r & 1\\  
+ r & -1 & 1  
+\end{array}\right)
+\]
+where $r$ is a real parameter. 
+\begin{enumerate}
+\item Find all $r$ so that $\text{rank}(A)=2$.
+
+\item Find all $r$ for which the corresponding linear system has 
+\begin{enumerate}
+\item no solution, 
+\item one solution, and 
+\item infinitely many solutions.
+\end{enumerate}
+\end{enumerate}
+
+\begin{solution}
+Subtracting $r$ times the first row of $A$ from the second row of that matrix yields
+\[
+\left(\begin{array}{cc|c}  
+ 1 & -r & 1\\  
+ 0 & r^2-1 & 1-r 
+\end{array}\right)=\left(\begin{array}{cc|c}  
+ 1 & -r & 1\\  
+ 0 & (r+1)(r-1) & 1-r 
+\end{array}\right)
+\]
+So the reduced row echelon form of $A$ is
+\[
+\text{RREF}(A)=\begin{cases}
+\left(\begin{array}{cc|c}  
+ 1 & 0 & \frac{1}{1+r}\\  
+ 0 & 1 & -\frac{1}{1+r}
+\end{array}\right) & r\neq \pm 1\\
+\left(\begin{array}{cc|c}  
+ 1 & -1 & 1\\  
+ 0 & 0 & 0 
+\end{array}\right) & r=1\\
+\left(\begin{array}{cc|c}  
+ 1 & 1 & 0\\  
+ 0 & 0 & 1 
+\end{array}\right) & r=-1
+\end{cases}
+\]
+\begin{enumerate}
+\item $\text{rank}(A)=2$ if $r\neq 1$.
+\item The linear system corresponding to the augmented matrix $A$ has 
+\begin{enumerate}
+\item no solution if $r=-1$, 
+\item one solution if $r\neq \pm 1$, and  
+\item infinitely many solutions if $r=1$.
+\end{enumerate}
+\end{enumerate}
+\end{solution}
+\end{exercise}
+
 
 
 
