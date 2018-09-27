@@ -424,6 +424,7 @@ The result of the map is another square of area $1$, so $|\det(A)| = 1$.
 
 \end{solution}
 \end{exercise}
+
 \begin{exercise}  \label{c3.8.AC}
 $A=\mattwo{-1}{-0.5}{-2}{-1}$.
 
@@ -438,6 +439,37 @@ The square is mapped to a line, whose area is $0$, so $|\det(A)| = 0$.
 \end{exercise}
 \begin{exercise}  \label{c3.8.AD}
 $A=\mattwo{0.7071}{0.7071}{-0.7071}{0.7071}$.
+\end{exercise}
+
+\AEXER
+
+\begin{exercise}
+Suppose a $2\times 2$ matrix $A$ satisfies the following equation:
+\[
+A\mattwo{0} {2}{1}{ 2} = \mattwo{-1}{2} {1} {4}.
+\]
+Without calculating the entries of $A$, find $\det(A)$.
+
+
+
+
+\begin{solution}
+\ans $\det(A) = 3$.
+
+\soln It follows from the identity that 
+\[
+\det(A)\det\left(\begin{array}{rr} 0 & 2\\1 & 2 \end{array}\right) = \det\left(\begin{array}{rr} -1 & 2\\ 1 & 4 \end{array}\right)
+\]
+Hence
+\[
+-2\det(A) = -6
+\]
+and 
+\[
+\det A = 3.
+\]
+
+\end{solution}
 \end{exercise}
 
 \end{document}
