@@ -183,7 +183,7 @@ Figure~\ref{df1_labelfig} shows the solution starting at the
 initial condition $x(-2) = -4$, which is the point $(x,t)=(-4,-2)$.
 
 
-\subsection*{Graphing Solutions Using {\sf dfield8}}
+\subsection*{Graphing Solutions Using {\dfield}}
 \index{\computer!dfield8}
 
 We now explain how to use \Matlab to display the graphs of
@@ -210,17 +210,17 @@ appears.  In this window, one should see the line
 field shown in Figure~\ref{df1_labelfig}.  We may compute the
 solution going through the point $(t_0,x_0)=(-2,-4)$ in the
 $(t,x)$-plane by clicking on that point with any mouse button.
-{\sf dfield8} should reproduce the right hand side in
+{\dfield} should reproduce the right hand side in
 Figure~\ref{df1_labelfig}.
 
 Suppose that we want to solve numerically equation \eqref{lin1}
-using {\sf dfield8}. To enter this equation with $\lambda = 0.5$,
+using {\dfield}. To enter this equation with $\lambda = 0.5$,
 we have to change the setup.  Begin by clicking into the window
 where the right hand side {\sf x\^{$\,\!$}2--t} can be found and
 then replace it by {\sf 0.5*x}.  Now use the left mouse button
 to click onto the button {\sf Proceed}.  In the window titled
 {\sf DFIELD8 Display}, one should see the line field
-\index{line field!in {\sf dfield8}} shown on
+\index{line field!in {\dfield}} shown on
 the left in Figure~\ref{df_dsp1}.
 \begin{figure*}[htb]
     \centerline{%
@@ -236,7 +236,7 @@ Now we may compute solutions going through a certain point
 $(t_0,x_0)$ in the $(t,x)$-plane by clicking with any mouse
 button on that point.  The solution is then computed first in
 forward time and then in backward time.  For example, if we
-click on a point near $t=x=0$ where $x>0$, {\sf dfield8} produces
+click on a point near $t=x=0$ where $x>0$, {\dfield} produces
 the solution shown on the right in Figure~\ref{df_dsp1}.  Note
 the similarity with the graph of the closed form solution in
 Figure~\ref{graph_labelfig} when $\lambda=0.5$.
@@ -271,7 +271,7 @@ converge to zero as $t$ goes to infinity, which agrees with
 \eqref{explimits}.
 
 
-\subsubsection*{Autonomous and Nonautonomous Equations in {\sf dfield8}}
+\subsubsection*{Autonomous and Nonautonomous Equations in {\dfield}}
 
 In a sense, solutions of autonomous equations do not depend on the initial
 time $t_0$, but just on the initial position $x_0$.  More precisely, let
@@ -299,7 +299,7 @@ just a shift in time $t$.  In general, the same statement is {\em not\/}
 true for nonautonomous equations.
 
 This difference between autonomous and nonautonomous equations can be
-visualized using {\sf dfield8}. On the left in Figure~\ref{F:non-auto}
+visualized using {\dfield}. On the left in Figure~\ref{F:non-auto}
 we graph two solutions of the {\em autonomous\/} differential equation
 $\dot{x}=x^2-2x$ with initial conditions $x(0)=1$ and $x(2)=1$.  Note
 that one solution is obtained from the other just by shifting by two
@@ -460,7 +460,7 @@ Nonautonomous.
 \CEXER
 
 \noindent In Exercises~\ref{c3.2.a01a} -- \ref{c3.2.a01c} use
-{\sf dfield8} to compute several solutions to the given differential
+{\dfield} to compute several solutions to the given differential
 equations in the specified region.
 \begin{exercise} \label{c3.2.a01a}
 $\dot{x} = xt$, $t\in[0,2]$, $x\in[-1,1]$.
@@ -523,14 +523,14 @@ Compute $x(2)$, where $x(t)$ is the solution to the differential equation
 $\dot{x} = 0.6x$ with initial condition $x(0)=0.5$, in two different ways, 
 as follows:
 \begin{itemize}
-\item[(a)] Use {\sf Keyboard input} in {\sf dfield8} to compute the 
+\item[(a)] Use {\sf Keyboard input} in {\dfield} to compute the 
 solution with initial value $x(0)=0.5$.  Use the {\sf zoom in} feature in 
 the {\sf DFIELD8 Edit} menu to compute $x(2)$ to an accuracy of two decimal 
 places.  (Drag a rectangle around the point you are interested in.  Repeat 
 this several times until you can read off the value $x(2)$ of the solution.)  
 \item[(b)] Use \Matlab to compute the value of the exact solution
 of the form \eqref{soln1} with initial value $x(0)=0.5$.  
-\item[(c)] Is your answer obtained using {\sf dfield8} in (a) accurate to 
+\item[(c)] Is your answer obtained using {\dfield} in (a) accurate to 
 within two decimal places of the answer obtained using (b)?  If not, 
 which answer do you trust more, and why?
 \end{itemize}
@@ -571,7 +571,7 @@ is an exact solution to the differential equation.
 \end{exercise}
 
 \begin{exercise} \label{c3.2.2}
-Use {\sf dfield8} to compute solutions to the differential equation
+Use {\dfield} to compute solutions to the differential equation
 $\dot{x} = x^2-tx+2t$. Use {\sf Keyboard input} to compute the solution
 with initial value $x(-1)=-1$.  What is the minimum value of this
 solution $x(t)$ on the interval $-2\leq t\leq 1$?  Plot
@@ -597,7 +597,7 @@ $\frac{dx}{dt} = x^2 -tx +2t$.
 \end{exercise}
 
 \begin{exercise} \label{c3.2.3}
-Use {\sf dfield8} to compute solutions to the differential
+Use {\dfield} to compute solutions to the differential
 equation
 \begin{equation}  \label{E:freehand}
 \dot{x} = x^3-2t^2x-t.
@@ -639,7 +639,7 @@ x(t) = t + \sqrt{t^2-3}
 is the solution to \eqref{ex:at}.  Then show that $x(t)$ satisfies the
 initial condition $x(2)=3$.
 \item[(c)]  Compare your estimate of the solution to \eqref{ex:at}
-obtained using {\sf dfield8} with the exact solution
+obtained using {\dfield} with the exact solution
 \[
 x(137)= 137 +\sqrt{18766} \approx 273.989
 \]

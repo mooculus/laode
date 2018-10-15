@@ -98,7 +98,7 @@ equilibrium $Z_2=(-2.2,0)$ is
 At the equilibrium $Z_2$ we may use \Matlab to show that the 
 eigenvalues of $(dF)_{Z_2}$ are $-0.05\pm 1.4824i$, thus verifying 
 that the equilibrium $Z_2$ is a spiral sink. \index{sink} 
-It is instructive to use {\sf pplane8}\index{\computer!pplane8} to 
+It is instructive to use {\pplane}\index{\computer!pplane8} to 
 show the phase plane of 
 the linearized system\index{linearization}.  
 (To show the linearization, click on the 
@@ -259,13 +259,13 @@ $(8,-3)$ & $-60$ & --- & --- & saddle\\
 \end{table}\index{nodal source}\index{saddle}\index{nodal sink}
 
 Next we use the information about equilibria contained in 
-Table~\ref{t:exertype} and {\sf pplane8}
+Table~\ref{t:exertype} and {\pplane}
 \index{\computer!pplane8} to compute numerically the 
 phase portrait\index{phase!portrait} of equations \eqref{e1:exer}.  Using 
 the {\sf Find the equilibrium} button, put circles around
 the four equilibria.  (Remember to make the display screen large
 enough --- say $-2\leq x \leq 10$ and $-4\leq y \leq 4$.) Also
-let {\sf pplane8} compute the stable and unstable orbits of
+let {\pplane} compute the stable and unstable orbits of
 the two saddles, obtaining the picture in Figure~\ref{F:ex12}.
 Once this picture is drawn we have a good idea of the phase
 portrait --- note, in particular, the saddle sink and saddle
@@ -291,18 +291,18 @@ equations
 \end{matlabEquation}
 It is difficult to find the equilibria in \eqref{e:gradexam} explicitly.
 We can, however, construct the phase plane of this equation with the 
-help of {\sf pplane8}.  First we choose a square in which to display 
+help of {\pplane}.  First we choose a square in which to display 
 the direction field\index{direction field} --- say $-5\leq x,y \leq 5$. See 
 Figure~\ref{F:gradexam} (left).  We then inspect the direction field 
 for possible equilibria.  There is one equilibrium near the origin;  
-when we use the {\sf pplane8} search feature for equilibria by clicking 
+when we use the {\pplane} search feature for equilibria by clicking 
 on the origin, we find a spiral source. Similarly, using the search feature 
 for equilibria by clicking along the negative $x$ axis leads to a saddle.  
-Once a saddle is found, instructing {\sf pplane8} to plot the stable and 
+Once a saddle is found, instructing {\pplane} to plot the stable and 
 unstable orbits of this saddle helps to fill in the phase plane.  
 Some experimentation yields the four equilibria and connecting stable 
 and unstable orbits pictured on the right in Figure~\ref{F:gradexam}.
-These equilibria, which are listed by {\sf pplane8} using the {\sf List
+These equilibria, which are listed by {\pplane} using the {\sf List
 computed equilibrium points} button, are:
 \begin{verbatim}  
 (-0.1066, -0.0047)      Spiral source.           
@@ -551,7 +551,7 @@ Consider the planar nonlinear system of ODEs
 neighborhood of each equilibrium.
 \item[(c)] Sketch the phase portrait of this system.  {\bf Hint}: Check
 for invariant axes.
-\item[(d)] Use {\sf pplane8} to verify your sketch.
+\item[(d)] Use {\pplane} to verify your sketch.
 \end{itemize}
 
 \begin{solution}
@@ -800,11 +800,11 @@ of \eqref{e:nonhypcenter}.
 \CEXER
 
 \begin{exercise} \label{c8.2.10}
-Use {\sf pplane8} to determine the phase portraits of the nonlinear system
-\eqref{e:nonhypcenter}.  Verify that {\sf pplane8} finds (approximately) 
+Use {\pplane} to determine the phase portraits of the nonlinear system
+\eqref{e:nonhypcenter}.  Verify that {\pplane} finds (approximately) 
 periodic solutions on sufficiently small neighborhoods of the origin.  This 
 experiment, coupled with the results from Exercise~\ref{E:nonhyp}, suggests 
-that the numerical methods employed by {\sf pplane8} fail sufficiently close 
+that the numerical methods employed by {\pplane} fail sufficiently close 
 to nonhyperbolic equilibria.
 
 \begin{solution}
@@ -834,10 +834,10 @@ Consider the system of differential equations
 \end{array}
 \end{matlabEquation}
 \begin{itemize}
-\item[(a)] Use {\sf pplane8} to verify that the origin is a nodal
+\item[(a)] Use {\pplane} to verify that the origin is a nodal
 sink\index{nodal sink} with 
 eigenvalues $\lambda_1=-2.866$ and $\lambda_2=-1.134$.
-\item[(b)] Use {\sf pplane8} on the square $-1\leq x,y \leq 1$ to 
+\item[(b)] Use {\pplane} on the square $-1\leq x,y \leq 1$ to 
 verify that trajectories starting near the origin approach the 
 origin on curves tangent to the eigendirection\index{eigendirection} 
 corresponding to the eigenvalue $\lambda_2$.
@@ -856,7 +856,7 @@ Indeed, trajectories approach the origin in the direction of $v_2$.
 \end{exercise}
 
 \begin{exercise} \label{c8.2.12}
-Using {\sf pplane8}, find all equilibria of 
+Using {\pplane}, find all equilibria of 
 \begin{matlabEquation}\label{MATLAB:7}
 \begin{array}{rcl}
 \dot{x} & = & 3x-2y-3x^2+y^2 \\

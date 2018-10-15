@@ -299,7 +299,7 @@ x + y -2 & = 0\\
 \end{array}
 \]
 These equations can be solved for $(x_0,y_0,\rho_0)=(1,1,2)$.  Indeed, for 
-$\rho\approx 2$, {\sf pplane8} can be used to show that there are two 
+$\rho\approx 2$, {\pplane} can be used to show that there are two 
 equilibria near $(1,1)$ (a saddle and a node) when $\rho>2$ and no 
 equilibria near $(1,1)$ when $\rho<2$.
 
@@ -319,7 +319,7 @@ Load the planar system of differential equations
 \dot{x} & = & y \\
 \dot{y} & = & -x + \rho y - y^3  \end{array}
 \end{matlabEquation}
-into {\sf pplane8}.
+into {\pplane}.
 It is straightforward to see that the origin is an equilibrium of 
 \eqref{E:Hopfbif} for all values of $\rho$ --- indeed, the origin is 
 the only equilibrium of \eqref{E:Hopfbif}.  Now plot the phase 
@@ -440,7 +440,7 @@ these points the determinant of the Jacobian matrix is $2$.  Hence the
 linearized equations at both point are centers, and there are two possible
 points of Hopf bifurcation.
 
-Numerical exploration of \eqref{E:hopfdetect} using {\sf pplane8} shows that 
+Numerical exploration of \eqref{E:hopfdetect} using {\pplane} shows that 
 there are unstable limit cycles emanating from both of these points; hence 
 there are exactly two points of Hopf bifurcation in this system of equations.
 
@@ -509,9 +509,9 @@ and that this equilibrium is a saddle when $\rho>-1$.
            \label{F:homobif}
 \end{figure*}
 
-Use {\sf pplane8} to plot the phase plane portraits of \eqref{E:homobif}
+Use {\pplane} to plot the phase plane portraits of \eqref{E:homobif}
 for $\rho=-0.07$, $\rho=0.07$, and $\rho=0.14$.  (These phase portraits 
-are most easily drawn by having {\sf pplane8} find the saddle point and
+are most easily drawn by having {\pplane} find the saddle point and
 then plot the stable and unstable orbits.)  The phase portraits are 
 displayed in Figure~\ref{F:homobif}.  
 
@@ -703,7 +703,7 @@ The unforced Van der Pol equation is: \index{Van der Pol equation}
 \end{matlabEquation}
 Verify analytically that the origin is the only equilibrium of this equation
 and that the only value of $\rho$ where that equilibrium could be a point of
-Hopf bifurcation is $\rho=0$.  Use {\sf pplane8} to verify that there is a 
+Hopf bifurcation is $\rho=0$.  Use {\pplane} to verify that there is a 
 unique limit cycle when $\rho>0$.
 
 \begin{solution}
@@ -827,7 +827,7 @@ Change the sign of the $y^3$ term in the $\dot{y}$ equation in
 \dot{x} & = & y \\
 \dot{y} & = & -x + \rho y + y^3.  \end{array}
 \]
-Use {\sf pplane8}\index{\computer!pplane8}
+Use {\pplane}\index{\computer!pplane8}
 to plot the phase portraits of this system when 
 $\rho=-1$ and $\rho=1$.  Describe the differences between these phase portraits
 and those in Figure~\ref{F:Hopfbif}. Draw the bifurcation diagram.
@@ -863,7 +863,7 @@ Consider the system of differential equations
 when $\rho=-1$.
 \item[(b)]  Show that the linearization of \eqref{E:hbifex} at $X_0$ is a 
 center when $\rho=-1$.  
-\item[(c)]  Let $\rho$ be a number close to $-1$.  Use {\sf pplane8} to 
+\item[(c)]  Let $\rho$ be a number close to $-1$.  Use {\pplane} to 
 determine whether \eqref{E:hbifex} has a spiral sink when $\rho<-1$ or when 
 $\rho>-1$.  
 \item[(d)]  Determine whether limit cycles exist for $\rho<-1$ or for 
@@ -929,7 +929,7 @@ $(\pm\sqrt{\rho},0)$ when $\rho>0$.
 \item[(b)]  Show analytically that the equilibrium at $(\sqrt{\rho},0)$ is 
 always a saddle, while the equilibrium at $(-\sqrt{\rho},0)$ is a spiral sink 
 when $1<\rho<97$.  
-\item[(c)]  Use {\sf pplane8} to show that the phase portrait of \eqref{e:homo} 
+\item[(c)]  Use {\pplane} to show that the phase portrait of \eqref{e:homo} 
 has a homoclinic trajectory between $\rho=1.7$ and $\rho=1.8$.  
 \end{itemize}
 
@@ -1067,7 +1067,7 @@ Figure~\ref{c9.4.3b}\hspace{1.2in}Figure~\ref{c9.4.3c}}
 \end{exercise}
 
 \begin{exercise} \label{c9.4.4}
-Use {\sf pplane8} to determine whether there are small amplitude periodic 
+Use {\pplane} to determine whether there are small amplitude periodic 
 solutions to \eqref{E:hopfex} at $\rho>0$ or at $\rho<0$.
 
 \begin{solution}
