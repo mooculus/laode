@@ -28,13 +28,13 @@ by formula \eqref{e:explicitsoln} when the system is uncoupled.  We have also
 discussed how to visualize the phase plane for different choices of the 
 diagonal entries $a$ and $d$.  At present, we cannot
 solve \eqref{lin3} by formula when the coefficient matrix is not diagonal.
-But we may use {\sf pplane8} to solve the initial value problems numerically 
+But we may use {\pplane} to solve the initial value problems numerically 
 for these coupled systems.  We illustrate this point by solving
 \begin{eqnarray*}
 \frac{dx_1}{dt}(t) & = &  -x_1(t) + 3x_2(t) \\
 \frac{dx_2}{dt}(t) & = &  3x_1(t) - x_2(t).
 \end{eqnarray*}
-After starting {\sf pplane8}, select {\sf linear system} from the
+After starting {\pplane}, select {\sf linear system} from the
 {\sf Gallery} and set the constants to:
 \[
 	a = -1,\quad b = 3,\quad c = 3, \quad d = -1.
@@ -155,7 +155,7 @@ trajectories for \eqref{E:2nd->1st} are just circles centered at the origin.
 \CEXER
 
 \begin{exercise} \label{c3.5.a01}
-Choose the {\sf linear system} in {\sf pplane8} and set $a=0$, $b=1$, and 
+Choose the {\sf linear system} in {\pplane} and set $a=0$, $b=1$, and 
 $c=-1$.  Then find values $d$ such that except for the origin itself all 
 solutions appear to
 \begin{itemize}
@@ -188,7 +188,7 @@ Figure~\ref{c3.5.a01}c.
 \end{exercise}
 
 \begin{exercise} \label{c3.5.2}
-Choose the {\sf linear system} in {\sf pplane8} and set
+Choose the {\sf linear system} in {\pplane} and set
 $a=-1$, $c=3$, and $d=-1$.
 Then find a value for $b$ such that the behavior of the
 solutions of the system is ``qualitatively'' the same as for a
@@ -220,7 +220,7 @@ for the system, two of which begin on the $y$-axis.
 \end{exercise}
 
 \begin{exercise} \label{c3.5.3}
-Choose the {\sf linear system} in {\sf pplane8} and set
+Choose the {\sf linear system} in {\pplane} and set
 $a=d$ and $b=c$.  Verify that for these systems of differential
 equations:
 \begin{itemize}
@@ -261,7 +261,7 @@ Sketch the time series $y(t)$ for the solution to the
 differential equation whose phase plane is pictured in
 Figure~\ref{pp_dsp2} with initial condition
 $(x(0),y(0))=(\frac{1}{2},\frac{1}{2})$ .  Check your answer
-using {\sf pplane8}.
+using {\pplane}.
 
 \begin{solution}
 
