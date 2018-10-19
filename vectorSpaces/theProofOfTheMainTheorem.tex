@@ -675,23 +675,52 @@ ans =
          0         0         0         0         0
          0         0         0         0         0
 \end{verbatim}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 \end{solution}
 \end{exercise}
+
+\AEXER
+
+\begin{exercise} \label{A5.6.1}
+Let $V$ be the subspace of $\R^4$ defined by the equations
+\begin{align*}
+x_1-x_3-x_4&=0\\
+x_2-2x_3+x_4&=0
+\end{align*}
+Consider the vectors
+\[
+v_1=\begin{bmatrix}-1\\1\\0\\-1\end{bmatrix} \qquad 
+v_2=\begin{bmatrix}2\\5\\3\\-1\end{bmatrix} \qquad  
+v_3=\begin{bmatrix}2\\1\\1\\1\end{bmatrix} \qquad  
+v_4=\begin{bmatrix}2\\-2\\0\\2\end{bmatrix}
+\]
+Find all bases of $V$ of the form $\left\{v_i,v_j\right\}$ with $1\leq i< j\leq 4.$ (Hint: use Corollary~\ref{C:dim=n}.)
+
+\textbf{Solution} The vector $v_2$ does not satisfy the second equation, so they are not elements of $V$.  
+The subspace $V$ is two-dimensional, so any two linearly independent vectors contained in it form a basis. 
+The possibilities are 
+\[
+\{v_1,v_3\} \qquad  \{v_1,v_4\} \qquad \{v_3,v_4\}
+\]
+The set $\{v_1,v_4\}$ is not a basis because $v_4= -2v_1$. The sets $\{v_1,v_3\}$ and $\{v_3,v_4\}$ are 
+linearly independent sets of two vectors in $V$; so they are bases. 
+\end{exercise}
+
+\begin{exercise} \label{A5.6.1}
+Let $A$ be an $m\times n$ matrix and $B$ be an $n\times k$ matrix. 
+\begin{enumeratea}
+\item Show that null space$(B) \subseteq$ null space$(AB)$.
+\item Show that nullity$(B) \leq$ nullity$(AB)$.
+\end{enumeratea}
+
+\textbf{Solution}
+Note that if $x\in N(B)$ then 
+\[
+ABx=A(Bx)=A0=0
+\]
+so $x\in$ null space$(AB)$. It follows that null space$(AB)\subseteq$ null space$(B)$. The desired result immediately follows from Corollary~\ref{dimensiondecreases}. Alternatively, suppose by way of contradiction that $\dim$ null space$(AB)>\dim$ null space$(B)$, and let $\{v_1,\ldots,v_d\}$ be a basis for null space$(AB)$, where $d=\dim$ null space$(AB)$. Then $\{v_1,\ldots,v_d \}$ is a set of $d>\dim$ null space$(B)$ linearly independent vectors in null space$(B)$, which contradicts Corollary~\ref{basis<n}.
+\end{exercise}
+
+
 
 
 \end{document}
