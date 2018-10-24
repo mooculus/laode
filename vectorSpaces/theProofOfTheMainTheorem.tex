@@ -332,6 +332,7 @@ reducing the corresponding matrix:
 
 \end{solution}
 \end{exercise}
+
 \begin{exercise} \label{c5.7.1b}
 $v_1=(2,1,-1) \AND v_2=(-4,-2,2)$.
 
@@ -695,7 +696,10 @@ v_4=\begin{bmatrix}2\\-2\\0\\2\end{bmatrix}
 \]
 Find all bases of $V$ of the form $\left\{v_i,v_j\right\}$ with $1\leq i< j\leq 4.$ (Hint: use Corollary~\ref{C:dim=n}.)
 
-\textbf{Solution} The vector $v_2$ does not satisfy the second equation, so they are not elements of $V$.  
+\begin{solution}
+\ans The sets $\{v_1,v_3\}$ and $\{v_3,v_4\}$ are bases. 
+
+\soln The vector $v_2$ does not satisfy the second equation, so they are not elements of $V$.  
 The subspace $V$ is two-dimensional, so any two linearly independent vectors contained in it form a basis. 
 The possibilities are 
 \[
@@ -703,22 +707,130 @@ The possibilities are
 \]
 The set $\{v_1,v_4\}$ is not a basis because $v_4= -2v_1$. The sets $\{v_1,v_3\}$ and $\{v_3,v_4\}$ are 
 linearly independent sets of two vectors in $V$; so they are bases. 
+\end{solution}
 \end{exercise}
 
-\begin{exercise} \label{A5.6.1}
+\begin{exercise} \label{A5.6.2}
 Let $A$ be an $m\times n$ matrix and $B$ be an $n\times k$ matrix. 
 \begin{enumeratea}
 \item Show that null space$(B) \subseteq$ null space$(AB)$.
 \item Show that nullity$(B) \leq$ nullity$(AB)$.
 \end{enumeratea}
 
-\textbf{Solution}
-Note that if $x\in N(B)$ then 
+\begin{solution}
+\soln Note that if $x\in$ null space$(B)$ then 
 \[
 ABx=A(Bx)=A0=0
 \]
 so $x\in$ null space$(AB)$. It follows that null space$(AB)\subseteq$ null space$(B)$. The desired result immediately follows from Corollary~\ref{dimensiondecreases}. Alternatively, suppose by way of contradiction that $\dim$ null space$(AB)>\dim$ null space$(B)$, and let $\{v_1,\ldots,v_d\}$ be a basis for null space$(AB)$, where $d=\dim$ null space$(AB)$. Then $\{v_1,\ldots,v_d \}$ is a set of $d>\dim$ null space$(B)$ linearly independent vectors in null space$(B)$, which contradicts Corollary~\ref{basis<n}.
+\end{solution}
 \end{exercise}
+
+\begin{exercise} \label{A5.6.3}
+Let $\{v_1,v_2,v_3\}$ and $\{w_1,w_2\}$ be linearly independent sets of vectors in a vector space $V$. Show that if
+\[
+\text{span}\{v_1,v_2,v_3\} \cap \text{span}\{w_1,w_2\}=\{0\}
+\]
+then 
+\[
+\dim(\text{span}\{v_1,v_2,v_3,w_1,w_2\}) = 5
+\]
+{\bf Hint}: First show that if $v\in \text{span}\{v_1,v_2,v_3\}$, $w\in \text{span}\{w_1,w_2\}$, and $v+w=0$, then $v=w=0$. 
+
+
+\begin{solution} 
+\soln First, we verify the claim in the hint. Let $v\in \text{span}\{v_1,v_2,v_3\}$, $w\in \text{span}\{w_1,w_2\}$, and $v+w=0$. Since $\text{span}\{w_1,w_2,w_3\}$ is closed under scalar multiplication, it follows that $ v= -w \in  \text{span}\{w_1,w_2\}$. Therefore
+\[
+v\in \text{span}\{v_1,v_2,v_3\} \cap \text{span}\{w_1,w_2\} = \{0\}
+\]
+and $v = w = 0$.
+
+Next, we show that $\{v_1,v_2,v_3,w_1,w_2 \}$ is a linearly independent set, which implies that it is a basis for $\text{span}\{v_1,v_2,v_3, w_1, w_2\}$.  Suppose that $a_1,a_2, a_3$ and $b_1, b_2$ are scalars so that
+\begin{equation} \label{A5.6.3_1}
+a_1 v_1 + a_2 v_2 + a_3 v_3 + b_1 w_1 + b_2 w_2 = 0
+\end{equation}
+Let $v = a_1 v_1 + a_2 v_2 + a_3 v_3$ and $w = b_1 w_1 + b_2 w_2$.  Then $v + w = 0$. So, by the hint, $v = w = 0$.  Since $\{v_1,v_2,v_3\}$ is a linearly independent set so
+\[
+a_1 v_1 + a_2 v_2 + a_3 v_3 = v =0
+\]
+implies that $a_1 = a_2 = a_3 = 0$.  Similarly, $\{w_1, w_2\}$ is a linearly independent set so
+\[
+b_1 w_1 + b_2 w_2 = w = 0
+\]
+implies that $b_1 = b_2 = 0$.  Therefore, the only solution to \eqref{A5.6.3_1} is 
+$a_1 = a_2 = a_3 = b_1 = b_2 = 0$.  Thus, the set $\{v_1,v_2,v_3,w_1,w_2\}$ is linearly independent and therefore a basis for its span.  It follows that
+\[
+\dim(\text{span}\{v_1,v_2,v_3,w_1,w_2\}) = 3 + 2 = 5.
+\]
+\end{solution}
+\end{exercise}
+
+In Exercises~\ref{A5.6.4}-\ref{A5.6.9} decide whether the statement is true or false, and explain your answer.
+
+\begin{exercise}  \label{A5.6.4}
+Every set of three vectors in $\R^3$ is a basis for $\R^3$.
+\begin{solution}
+\ans False  
+
+\soln
+The vectors could be linearly independent. For example $\{e_1,e_2,e_1+e_2\}$ is not a basis for $\R^3$.
+\end{solution}
+\end{exercise}
+
+\begin{exercise}  \label{A5.6.5}
+Every set of four vectors in $\R^3$ is linearly dependent.
+\begin{solution}
+\ans True
+
+\soln
+The dimension of $\R^3$ is three, so any set of more than three vectors in $R^3$ is necessarily linearly dependent.
+\end{solution}
+\end{exercise}
+
+\begin{exercise}  \label{A5.6.6}
+If $\{v_1,v_2\}$ is a basis for the plane $z = 0$ in $\R^3$, then $\{v_1,v_2,e_3\}$ is a basis for $\R^3$.
+\begin{solution}
+\ans True
+\soln
+The vector $e_3$ is not contained in the plane $z=0$, so Lemma~\ref{extendindep} implies that $\{v_1,v_2,e_3\}$  is linearly independent. Therefore, $\{v_1,v_2,e_3\}$  is a basis for $\R^3$, because any set of three linearly independent vectors in a vector space of dimension three is a basis for that vector space. 
+
+Alternatively, $\{e_1,e_2,e_3\}$ is a basis for $\R^3$, so if $w\in \R^3$, then $w = a_1 e_1 +a_2 e_2 +a_3 e_3$ for some scalars $a_1$ and $a_2$. It follows that $a_1 e_1 + a_2 e_2$ is a vector in the plane $z=0$, so there exist scalars $b_1$ and $b_2$ so $a_1 e_1+ a_2 e_2 = b_1 v_1 +b_2 v_2$. Therefore, $w = b_1 v_1 + b_2 v_2 + a_3 e_3$, so $w\in \text{span}\{v_1,v_2,e_3\}$. Therefore, $\{v_1,v_2,e_3\}$ spans $\R^3$, and is a basis for $\R^3$ because any set of three linearly independent vectors in a vector space of dimension three is a basis for that vector space. 
+\end{solution}
+\end{exercise}
+
+\begin{exercise}  \label{A5.6.7}
+If $\{v_1,v_2,v_3\}$ is a basis for $\R^3$, the only subspaces of $R^3$ of dimension one are $\text{span}\{v_1\}, \text{span}\{v_2\}$, and $\text{span}\{v_3\}$. 
+\begin{solution}
+\ans False 
+\soln For example, $\{e_1,e_2,e_3\}$ is a basis for $\R^3$ and $\text{span}\{e_1+e_2\}$ does not equal the $x$, $y$, or $z$-axes.
+\end{solution}
+\end{exercise}
+
+\begin{exercise}  \label{A5.6.8}
+The only subspace of $\R^3$ that contains finitely many vectors is $\{ 0 \}$.
+\begin{solution}
+\ans True
+\soln If a subspace of $\R^3$ contains a nonzero vector, it must contain all scalar multiples of that vector.
+\end{solution}
+\end{exercise}
+
+\begin{exercise}  \label{A5.6.9}
+If $U$ is a subspace of $\R^3$ of dimension 1 and $V$ is a subspace of $\R^3$ of dimension 2, then $U\cap V=\{0\}$.
+\begin{solution}
+\ans False 
+\soln $U\cap V$ is always subspace of $\mathbb{R}^3,$ but its dimension could be one. For example, if $U$ is the $x$-axis ( $U=\text{span}\{e_1\}$) and $V$ is the $xy$-plane ($V=\text{span}\{e_1,e_2\}$) then $U\cap V=U.$
+$U\cap V$ is always subspace of $\R^3$, but its dimension could be one. For example, if $U$ is the $x$-axis ($U=\text{span}\{e_1\}$) and $V$ is the $xy$-plane ($V=\text{span}\{e_1,e_2\}$), then $U\cap V=U$.
+\end{solution}
+\end{exercise}
+
+
+
+
+
+
+
+
+
 
 
 
