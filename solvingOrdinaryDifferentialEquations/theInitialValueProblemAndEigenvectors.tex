@@ -347,7 +347,7 @@ Write the system of linear ordinary differential equations
 in matrix form.
 
 \begin{solution}
-
+\ans
 \arraystart
 \[
 \left(\begin{array}{r} \dps\frac{dx_1}{dt}(t) \\ 
@@ -408,21 +408,22 @@ and let
 \[
 Y(t)=e^{2t} v_1 \AND Z(t)=e^{-t}v_2.
 \]
-\begin{itemize}
-\item[(a)] Show that $Y(t)$ and $Z(t)$ are solutions to \eqref{e:Ceqn}.
-\item[(b)] Show that $X(t)=2Y(t)-14Z(t)$ is a solution to \eqref{e:Ceqn}.
-\item[(c)] Use the principle of superposition to verify that
+\begin{enumeratea}
+\item Show that $Y(t)$ and $Z(t)$ are solutions to \eqref{e:Ceqn}.
+\item Show that $X(t)=2Y(t)-14Z(t)$ is a solution to \eqref{e:Ceqn}.
+\item Use the principle of superposition to verify that
 $X(t)=\alpha Y(t) + \beta Z(t)$ is a solution to \eqref{e:Ceqn}.
-\item[(d)] Using the general solution found in part (c), find a solution
+\item Using the general solution found in part (c), find a solution
 $X(t)$ to \eqref{e:Ceqn} such that
 \[
 X(0) = \left(\begin{array}{r} 3\\-1\end{array}\right).
 \]
-\end{itemize}
+\end{enumeratea}
 
 \begin{solution}
-
-(a) In order to determine that $Y(t)$ is a solution
+\soln
+\begin{enumeratea}
+\item In order to determine that $Y(t)$ is a solution
 to \eqref{e:Ceqn}, substitute $Y(t)$ into both sides of the 
 equation $\frac{dX}{dt} = CX$:
 \[
@@ -449,7 +450,7 @@ CZ(t)
 = \cvectwo{-e^{-t}}{e^{-t}}.
 \]
 
-(b) Again, verify that $X(t) = 2Y(t) - 14Z(t)$ is a solution to
+\item Again, verify that $X(t) = 2Y(t) - 14Z(t)$ is a solution to
 \eqref{e:Ceqn} by substituting into both sides of the equation and
 noting that the values are equal:
 \[
@@ -464,12 +465,12 @@ CX(t) = C\left(2Y(t) - 14Z(t)\right)
 = \cvectwo{4e^{2t} + 14e^{-t}}{-14e^{-t}}.
 \]
 
-(c) As demonstrated in Section~\ref{S:Superposition}, if
+\item As demonstrated in Section~\ref{S:Superposition}, if
 $Y(t)$ and $Z(t)$ are both solutions to
 \eqref{e:Ceqn}, then $X(t) = \alpha Y(t) + \beta Z(t)$ is also
 a solution to \eqref{e:Ceqn}.
 
-(d) \ans 
+\item  \ans 
 \[
 X(t) = 2e^{2t}\vectwo{1}{0} + e^{-t}\vectwo{1}{-1}.
 \]
@@ -489,7 +490,7 @@ We now have the linear system:
 3 & = & \alpha & + & \beta \\
 -1 & = & & & -\beta \end{array} \]
 which we can solve to find $\alpha = 2$ and $\beta = 1$.
-
+\end{enumeratea}
 
 \end{solution}
 \end{exercise}
@@ -619,7 +620,7 @@ and compute $A\inv Av$ where $v$ is an eigenvector of $A$ corresponding to
 the zero eigenvalue.
 
 \begin{solution}
-
+\soln
 Suppose that $A$ is an $n\times n$ matrix with zero eigenvalue.  We need to
 prove that $A$ is not invertible.  Let $v\in\R^n$ be a nonzero 
 eigenvector corresponding to the zero eigenvalue.  Therefore, $Av=0$. 
