@@ -69,6 +69,8 @@ scalars $\alpha_1,\alpha_2\in\R$ to solve any given initial value problem
 of \eqref{ndlinsystem}.   It follows from the uniqueness of solutions to
 initial value problems that all
 solutions to \eqref{ndlinsystem} are included in this family of solutions.
+Uniqueness is proved in the special case of linear systems in 
+Theorem~\ref{T:linODEsoln}.  This proof uses matrix exponentials. 
 
 We generalize this discussion so that we will be able to find closed form 
 solutions to \eqref{ndlinsystem} in Section~\ref{S:TDM} when the eigenvalues 
@@ -121,8 +123,7 @@ X_0 = r_1v_1 + \cdots + r_nv_n.
 We call \eqref{E:genlsoln} the {\em general solution\/} \index{general solution}
 to the system of differential equations $\dot{X}=CX$.  When solving the
 initial value problem we find a {\em particular solution\/}\index{particular
-solution}
-by specifying the scalars $r_1,\ldots,r_n$.
+solution} by specifying the scalars $r_1,\ldots,r_n$.
 
 \begin{corollary}  \label{C:indsoln}
   Let $C$ be an $n\times n$ matrix and let \[
