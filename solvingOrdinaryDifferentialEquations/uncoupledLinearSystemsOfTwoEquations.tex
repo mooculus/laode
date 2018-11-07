@@ -12,41 +12,7 @@
 
 \label{sec:UncoupledLS}
 
-An autonomous system of two (first order) \index{first order}
-differential equations \index{system of differential equations}
-has the form
-\renewcommand{\arraystretch}{1.8}
-\begin{equation} \label{e:aut2}
-\begin{array}{lll}
-\dps \frac{dx}{dt}(t)  & = & f(x(t),y(t)) \\
-\dps \frac{dy}{dt}(t)  & = & g(x(t),y(t)),
-\end{array}
-\end{equation}
-where $f$ and $g$ are functions of the two variables $x$
-and $y$.  Solutions to \eqref{e:aut2} are pairs of functions
-$(x(t),y(t))$.
-
-As in the single equation \eqref{aut}, the simplest
-solutions are equilibria.  An {\em equilibrium\/} \index{equilibrium}
-solution to
-\eqref{e:aut2} is a solution where both functions $x(t)$
-and $y(t)$ are constant functions; that is,
-\[
-x(t) = x_0 \AND  y(t)=y_0.
-\]
-For equilibria, it follows that both
-\[
-\frac{dx}{dt} = 0 \AND \frac{dy}{dt} = 0.
-\]
-Hence, equilibria of \eqref{e:aut2} can be found by
-simultaneously solving the equations
-\begin{eqnarray*}
-f(x,y) & = & 0 \\
-g(x,y) & = & 0.
-\end{eqnarray*}
-
-An autonomous {\em linear\/} system \index{linear!system} of ordinary
-differential equations \index{system of differential equations!linear}
+A system of two linear ordinary differential equations \index{system of differential equations}
 has the form
 \renewcommand{\arraystretch}{1.8}
 \begin{equation} \label{e:autlin}
@@ -56,11 +22,12 @@ has the form
 \end{array}
 \end{equation}
 \renewcommand{\arraystretch}{1.0}%
-where $a,b,c,d$ are real constants.  Note that the origin
-$(x(t),y(t))=(0,0)$ is always an equilibrium for a linear
-system.
+where $a,b,c,d$ are real constants.  Solutions of \eqref{e:autlin} are 
+pairs of functions $(x(t),y(t))$.  Note that the origin
+$(x(t),y(t))=(0,0)$ is always an equilibrium solution to a linear
+system. 
 
-We begin our discussion of linear systems of ordinary
+We begin our discussion of linear systems of 
 differential equations by considering uncoupled
 \index{system of differential equations!uncoupled}systems of the form
 \renewcommand{\arraystretch}{1.8}
@@ -144,8 +111,8 @@ lines; this is a topic to which we return later in this chapter.
 \subsection*{Generating Phase Space Pictures with {\pplane}}
 \index{\computer!pplane8}
 
-How can we visualize a solution $(x(t),y(t))$ to a system of
-differential equations \eqref{e:aut2}?  The time series approach
+How can we visualize a solution $(x(t),y(t))$ in \eqref{e:explicitsoln} 
+to the system of differential equations \eqref{lin2}?  The time series approach
 suggests that we should graph $(x(t),y(t))$ as a function of $t$;
 that is, we should plot the curve
 \[
@@ -177,11 +144,11 @@ for an uncoupled system it is a little difficult to
 {\em see\/} what the trajectory looks like.  At this point
 it is useful to use the computer.
 
-The method used to integrate planar systems of autonomous
+The method used to integrate planar systems of 
 differential equations is similar to that used to integrate
-nonautonomous single equations in {\dfield}.  The solution
-curve $(x(t),y(t))$ to \eqref{e:aut2} at a point $(x_0,y_0)$ is
-tangent to the direction $(f(x_0,y_0),g(x_0,y_0))$.  So
+single equations.  The solution
+curve $(x(t),y(t))$ to \eqref{lin2} at a point $(x_0,y_0)$ is
+tangent to the direction $(f,g) = (ax_0 + by_0, cx_0. + dy_0)$.  So
 the differential equation solver plots the direction field
 \index{direction field}
 $(f,g)$ and then finds curves that are tangent to these
@@ -191,9 +158,9 @@ The program {\pplane}\index{\computer!pplane8}, written by John
 Polking,\index{Polking, John} draws two-dimensional phase planes.  
 In \Matlab type
 \begin{verbatim}
-pplane8
+pplane9
 \end{verbatim}
-and the window with the {\sf PPLANE8 Setup} appears. {\pplane}
+and the window with the {\sf PPLANE9 Setup} appears. {\pplane}
 has a number of preprogrammed differential equations listed in a
 menu accessed by clicking on {\sf Gallery}.  To explore linear
 systems, choose {\sf linear system} in the {\sf Gallery}.  (Note that the 
@@ -203,11 +170,10 @@ lower case {\sf a,b,c,d}.)
 To integrate the uncoupled linear system, set the parameters $b$
 and $c$ equal to zero. We now have the system \eqref{lin2} with
 $a = 2$ and $d = -3$.  After pushing {\sf Proceed}, a display window
-similar to {\dfield} appears.  The main difference is that
-the plane is filled by vectors $(f,g)$ indicating directions,
-rather than by line segments indicating slopes.
+appears. In this window the plane is filled by vectors $(f,g)$ indicating 
+directions.
 
-As with {\dfield} we may start the computations by clicking
+We may start the computations by clicking
 with a mouse button on an initial value $(x_0,y_0)$.  For example,
 if we click approximately onto $(x(0),y(0))=(x_0,y_0)=(1,1)$, then
 the trajectory in the upper right quadrant of
@@ -216,7 +182,7 @@ Figure~\ref{pp_dsp1} displays.
 \begin{figure*}[htb]
      \centerline{%
      \psfig{file=../figures/pp_dsp1.eps,width=3.5in}}
-     \caption{{\sf PPLANE8 Display} for \protect\eqref{lin2} with
+     \caption{{\sf PPLANE9 Display} for \protect\eqref{lin2} with
              $a=2$, $d=-3$ and $x,y\in [-5,5]$. Solutions
              going through $(\pm 1,\pm 1)$ are shown.}
      \label{pp_dsp1}
@@ -279,12 +245,12 @@ We may also use {\pplane} to graph the time series of the
 single components $x(t)$ and $y(t)$ of a solution $(x(t),y(t))$.
 For this we choose {\sf x vs.\ t} from the {\sf Graph} menu.
 After using the mouse to select a solution curve, another window
-with the title {\sf PPLANE8 t-plot} appears.  There the time
+with the title {\sf PPLANE9 t-plot} appears.  There the time
 series of $x(t)$ is shown.  For example, when the differential 
 equation is a sink, we observe that this component
 approaches $0$ as time $t$ tends to infinity.  We may also
 display the time series of both components $x(t)$ and $y(t)$
-simultaneously by clicking on {\sf Both} in the {\sf PPLANE8 t-plot} 
+simultaneously by clicking on {\sf Both} in the {\sf PPLANE9 t-plot} 
 window.  Again we see that both $x(t)$ and $y(t)$ tend
 to $0$ for increasing $t$.
 
@@ -307,7 +273,7 @@ the {\sf Composite} button.  See Figure~\ref{plotall}.
      \centerline{%
      \psfig{file=../figures/plot3d.eps,width=3.0in}
      \psfig{file=../figures/plotall.eps,width=3.0in}}
-     \caption{{\sf PPLANE8 Display} for \protect\eqref{lin2} with
+     \caption{{\sf PPLANE9 Display} for \protect\eqref{lin2} with
              $a=2$, $d=-3$ and $x\in [0,25], y\in [0,20]$. The solution
              going through $(1,1)$ is shown. UL: $(t,x(t))$;
 	UR: $(t,y(t))$; LL: $(x(t),y(t),t)$; LR: all plots.}
@@ -452,7 +418,7 @@ tangent to the $x$-axis.
 \begin{exercise} \label{c3.4.3}
 Use the phase plane picture given in Figure~\ref{pp_dsp1} to
 draw the time series $x(t)$ when $(x(0),y(0)) =
-(\frac{1}{2},\frac{1}{2})$.  Check your answer using {\sf
+\left(\frac{1}{2},\frac{1}{2}\right)$.  Check your answer using {\sf
 pplane8}.
 
 \begin{solution}
@@ -566,6 +532,7 @@ origin as $t$ increases.
 \end{solution}
 \end{exercise}
 
+
 \begin{exercise} \label{c3.4.7}
 Use {\pplane} to compute several solutions of the linear system by
 setting $a=2$ and $d=-3$ in the region $x,y\in[-5,5]$.  Then use
@@ -593,22 +560,20 @@ note that {\tt pplane5} graphs the uncoupled system
 This is a parameterized system in three variables $(x(t),y(t),t)$.
 We can rewrite this system in two variables $(x(y),y)$, by using the
 chain rule as follows:
-\[ -\frac{2x}{3y} = \frac{\frac{dx}{dt}}{\frac{dy}{dt}} = \frac{dx}{dy}. \]
+\[ 
+-\frac{2x}{3y} = \frac{\frac{dx}{dt}}{\frac{dy}{dt}} = \frac{dx}{dy}. 
+\]
 Substitute $t$ for $y$ in the new system to verify that \eqref{eq:3.4.7}
 is a parameterization of
-\[ \frac{dx}{dt} = -\frac{2x}{3t}. \]
-
+\[ 
+\frac{dx}{dt} = -\frac{2x}{3t}. 
+\]
 \begin{figure}[htb]
 			\centerline{%
 			\psfig{file=exfigure/3-4-7a.eps,width=2.75in}
 			\psfig{file=exfigure/3-4-7b.eps,width=2.75in}}
 		\exercaptwo{c3.4.7}
 \end{figure}
-
-
-
-
-
 \end{solution}
 \end{exercise}
 
