@@ -412,5 +412,53 @@ inconsistent.
 \end{solution}
 \end{exercise}
 
+\AEXER
+
+\begin{exercise} \label{A8.2.1}
+Let $C$ be the $3 \times 3$ matrix
+\[
+C=\begin{bmatrix} 
+1 & 1 & 1 \\ 
+-1 & b  &  -1 \\ 
+2 & 2 & b^2+1 
+\end{bmatrix}
+\]
+\begin{enumeratea}
+\item Find all $b$ so that
+	\begin{enumerate}
+	\item $\dim(\text{range}(C))=3$
+	\item $\dim(\text{range}(C))=2$
+	\item $\dim(\text{range}(C))=1$
+	\item $\dim(\text{range}(C))=0$
+	\end{enumerate}
+
+\item Find all $b$ so that
+	\begin{enumerate}
+	\item $\dim(\text{null space}(C))=3$
+	\item $\dim(\text{null space}(C))=2$
+	\item $\dim(\text{null space}(C))=1$
+	\item $\dim(\text{null space}(C))=0$
+	\end{enumerate}
+	
+\item Find all $b$ so that 
+\begin{equation} \label{A8.2.1a}
+Cx=\begin{bmatrix} 1 \\ 1 \\2 \end{bmatrix}
+\end{equation}
+is consistent. (Hint: can you convert this into a statement about the range of $C$?)
+\end{enumeratea}
+
+\begin{solution}
+\soln
+\begin{enumeratea}
+\item The dimension of the range of $C$ is the column rank of $C$ which is the (row) rank of $C$.  By row reduction the rank of $C$ is $3$ when $b^2\neq 1$; the rank of $C$ is $2$ when $b=1$; and the rank of $C$ is $1$ when $b=-1$. 
+
+\item The null space of $C$ has dimension 3 - rank($C$).
+
+\item Equation \eqref{A8.2.1a} has a solution if $\begin{bmatrix} 1 \\ 1 \\2 \end{bmatrix}$ is in the range of $C$.  This is always true when rank$(C) = 3$; that is when $b^2\neq 1$. Finally, one can check by row reduction that the equation is consistent when $b=1$ and inconsistent when $b=-1$.  
+\end{enumeratea}
+
+\end{solution}
+\end{exercise}
+
 
 \end{document}
