@@ -1,0 +1,50 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+
+\noindent In Exercises~\ref{E:uncoupleda} -- \ref{E:uncoupledc}
+consider the uncoupled system of differential equations \eqref{lin2}.
+For each choice of $a$ and $d$, determine whether the origin is a
+saddle, source, or sink.
+\begin{exercise} \label{E:uncoupleda}
+$a=1$ and $d=-1$.
+
+\begin{solution}
+
+\ans The origin is a saddle.
+
+\soln This uncoupled system is of the form
+\[
+\begin{array}{rcl}
+\frac{dx}{dt}(t) & = & Ax(t) \\
+\frac{dy}{dt}(t) & = & Dy(t)\end{array}
+\]
+If $AD < 0$, then the origin is a saddle.  If $A < 0$ and
+$D < 0$, then the origin is a sink.  If $A > 0$ and $D > 0$, then
+the origin is a source.  In this case, $AD = -1 < 0$.
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{E:uncoupledb}
+$a=-0.01$ and $d=-2.4$.
+
+\begin{solution}
+
+\ans The origin is a sink.
+
+\soln For this uncoupled system, $A = -0.01 < 0$ and $D = -2.4 < 0$.
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{E:uncoupledc}
+$a=0$ and $d=-2.3$.
+
+\begin{solution}
+For this system, $A = 0$, so the origin is neither a
+saddle, a source nor a sink.  Note that $\frac{dx}{dt} = 0$, so every
+point on the $x$-axis is an equilibrium.
+
+\end{solution}
+\end{exercise}
+\end{document}

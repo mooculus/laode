@@ -1,0 +1,36 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c9.1.5}
+Consider the two predator-prey equations
+\begin{equation} \label{E:prpr1}
+\begin{array}{rcl}
+\dot{x} & = & x(2-10y)\\
+\dot{y} & = & y(-4+y)
+\end{array}
+\end{equation}
+and 
+\begin{equation} \label{E:prpr2}
+\begin{array}{rcl}
+\dot{x} & = & x(2-0.1y)\\
+\dot{y} & = & y(-4+y)
+\end{array}
+\end{equation}
+In one of these equations the predators eat the prey 100 times more 
+frequently than in the other.  Which one?
+
+\begin{solution}
+
+\ans Predators eat prey faster in the first system \eqref{E:prpr1} than in 
+the second system \eqref{E:prpr2}.
+
+\soln  In the predator prey system \eqref{e:PP}, the $x$ variable is the
+prey population and the $y$ variable is the predator population.  The
+question asks: In which system will the predator population cause a
+larger decrease in the prey population.  That is, in which system is
+the coefficient $\sigma_1$ in \eqref{e:PP} a larger negative number?  In
+the first system $\sigma_1=-10$, while in the second system $\sigma_1=-0.1$.
+
+\end{solution}
+\end{exercise}
+\end{document}

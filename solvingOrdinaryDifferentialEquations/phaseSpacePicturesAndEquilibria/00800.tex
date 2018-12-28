@@ -1,0 +1,44 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c3.3.7}
+Let $x(t)$ be a solution to the initial value problem
+\begin{eqnarray*}
+\dot{x} & = & g(x) \\
+x(0) & = & x_0.
+\end{eqnarray*}
+Let $y(t)=x(-t)$.  Show that $y(t)$ is a solution to the
+initial value problem
+\begin{eqnarray*}
+\dot{y} & = & -g(y) \\
+y(0) & = & x_0.
+\end{eqnarray*}
+(Thus, to integrate the solution $x(t)$ backwards in time is the
+same as solving the differential equation $\dot{y}  =  -g(y)$
+forward in time.)
+
+\begin{solution}
+
+In order to show that $y(t)$ is a solution to the initial value problem
+\[
+\begin{array}{rcl}
+\dot{y} & = & -g(y) \\
+y(0) & = & x_0\end{array}
+\]
+we must show that both of these conditions are valid for $y$.  Recall that
+$y(t) = x(-t)$ where $x(t)$ satisfies the initial value problem
+\[ \begin{array}{rcl}
+\dot{x} & = & g(x) \\
+x(0) & = & x_0.\end{array} \]
+
+The chain rule implies
+\[ \dot{y} = \frac{d}{dt}[y(t)] = \frac{d}{dt}[x(-t)] =
+-\frac{dx}{dt}(-t) = -g(x(-t)) = -g(y(t)). \]
+It follows that $\dot y = -g(y)$.
+In addition,
+\[ y(0) = x(-0) = x(0) = x_0, \]
+so $y(t)$ is indeed a solution to the given initial value problem.
+
+\end{solution}
+\end{exercise}
+\end{document}

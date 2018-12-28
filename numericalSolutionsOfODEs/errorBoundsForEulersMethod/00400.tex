@@ -1,0 +1,53 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c15.2.4}
+Suppose that you want to solve \eqref{eq:simplest} by Euler's
+method with a fixed step size $h=0.005$ on the interval $[0,T]$.  
+How large can you choose $T$ so that the global discretization
+error does not exceed $0.05$?  Confirm your result using \Matlabp.
+
+\begin{solution}
+\ans $T=1.609$.
+
+\soln Using the bound on the global discretization error
+given in Proposition~\ref{prop:globerr1} we can choose
+$T$ satisfying
+\[
+e^{T}(e^{T}-1)\frac{0.005}{2} = 0.05,
+\]
+or, equivalently,
+\[
+e^{2T} - e^T - 20 = 0.
+\]
+Solving this quadratic equation in $e^T$ leads to the positive
+solution
+\[
+e^T = 5 \Rightarrow T \approx 1.609.
+\]
+Now $T/h \approx 321$, and we can verify our result using the
+following \Matlab commands:
+\begin{verbatim}
+h      = 0.005;
+t(1)   = 0;
+x(1)   = 1;
+err(1) = 0;
+est(1) = 0;
+K      = 321;
+for k = 1:K
+    t(k+1) = t(k)+h;
+    x(k+1) = (1+h)*x(k);
+  err(k+1) = exp(t(k+1))-x(k+1);
+end
+plot(t,err)
+xlabel('t')
+ylabel('global error')
+\end{verbatim}
+Indeed, by this choice of $T$ the error is smaller than $0.02$.
+
+
+
+
+\end{solution}
+\end{exercise}
+\end{document}

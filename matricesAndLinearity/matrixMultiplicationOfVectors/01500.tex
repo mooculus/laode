@@ -1,0 +1,82 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c4.1.12}
+Let $A$ be a $3\times 3$ matrix.  Find $A$ so that
+\begin{eqnarray*}
+A\left(\begin{array}{r} 2 \\ -1 \\ 1 \end{array}\right) =
+\left(\begin{array}{r} 1 \\ 1  \\ -1 \end{array}\right) \\
+A\left(\begin{array}{r} 1 \\ -1 \\ 0 \end{array}\right) =
+\left(\begin{array}{r} -1 \\ -2 \\ 1 \end{array}\right)\\
+A\left(\begin{array}{r} 0 \\ 2 \\ 4 \end{array}\right) =
+\left(\begin{array}{r} 5 \\ 1 \\ 1 \end{array}\right).
+\end{eqnarray*}
+{\bf Hint:} Rewrite these three conditions as a system of linear
+equations in the nine entries of $A$.  Then solve this system
+using \Matlabp.  (Then pray that there is an easier way.)
+
+\begin{solution}
+
+\ans The conditions on $A$ are met when
+\[ A = \matthree{2.5}{3.5}{-0.5}{7.5}{9.5}{-4.5}{-5.5}{-6.5}{3.5}. \]
+
+\soln Let
+\[
+A = \matthree{a_{11}}{a_{12}}{a_{13}}{a_{21}}{a_{22}}{a_{23}}{a_{31}}{a_{32}} 
+{a_{33}}
+\]
+Substituting for $A$ in each of the three equations yields:
+\[ \begin{array}{c}
+\matthree{a_{11}}{a_{12}}{a_{13}}{a_{21}}{a_{22}}{a_{23}}{a_{31}}
+{a_{32}} {a_{33}} \vecthree{2}{-1}{1} = \vecthree{1}{1}{-1} \\
+\matthree{a_{11}}{a_{12}}{a_{13}}{a_{21}}{a_{22}}{a_{23}}{a_{31}}
+{a_{32}} {a_{33}} \vecthree{1}{-1}{0} = \vecthree{-1}{-2}{1} \\
+\matthree{a_{11}}{a_{12}}{a_{13}}{a_{21}}{a_{22}}{a_{23}}{a_{31}}
+{a_{32}} {a_{33}} \vecthree{0}{2}{4} = \vecthree{5}{1}{1}.\end{array} \]
+These equations can be rewritten as the linear system:
+\[ \begin{array}{rrrrrrr}
+2a_{11} & - & a_{12} & + & a_{13} & = & 1 \\
+2a_{21} & - & a_{22} & + & a_{23} & = & 1 \\
+2a_{31} & - & a_{32} & + & a_{33} & = & -1 \\
+a_{11} & - & a_{12} & & & = & -1 \\
+a_{21} & - & a_{22} & & & = & -2 \\
+a_{31} & - & a_{32} & & & = & 1 \\
+& & 2a_{12} & + & 4a_{13} & = & 5 \\
+& & 2a_{22} & + & 4a_{23} & = & 1 \\
+& & 2a_{32} & + & 4a_{33} & = & 1 \end{array} \]
+We can enter the left-hand side of the system into \Matlab as
+matrix {\tt C} and the right-hand side as vector {\tt b}. 
+\[ C = \left(\begin{array}{rrrrrrrrr}
+2 & -1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 2 & -1 & 1 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 2 & -1 & 1 \\
+1 & -1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 1 & -1 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 1 & -1 & 0 \\
+0 & 2 & 4 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 2 & 4 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 2 & 4 \end{array}\right)
+\mbox{\hspace{1.0in}}
+b = \left(\begin{array}{r}
+1 \\ 1 \\ - 1 \\ -1 \\ -2 \\ 1 \\ 5 \\ 1 \\ 1 \end{array}\right). \]
+Then solve to obtain:
+
+\begin{verbatim}
+C\b =
+    2.5000
+    3.5000
+   -0.5000
+    7.5000
+    9.5000
+   -4.5000
+   -5.5000
+   -6.5000
+    3.5000
+\end{verbatim}
+Substitute these values back into $A$ to obtain the appropriate matrix.
+
+
+
+\end{solution}
+\end{exercise}
+\end{document}

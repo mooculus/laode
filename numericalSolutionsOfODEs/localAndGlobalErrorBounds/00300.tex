@@ -1,0 +1,49 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\noindent In Exercises~\ref{c15.3.2a} -- \ref{c15.3.2b} find an estimate
+for the constant $C_E$ of the form $C_E \le Kx(t_0)$ where $x(t)$ is the
+solution of the specified initial value problem on $[0,T]$ and $t_0\in[0,T]$.
+\begin{exercise} \label{c15.3.2a}
+$\dps\frac{dx}{dt} = 3 x$ where $x(0) = 2$.
+
+\begin{solution}
+\ans $C_E \le \frac{9}{2}x(T)$.
+
+\soln We want to use \eqref{eq:CE} and compute
+\[
+\frac{\partial f}{\partial t}(t,x)=0\AND
+\frac{\partial f}{\partial x}(t,x)=3.
+\]
+Since the solution of the initial value problem is monotonically
+increasing we find that
+\[
+C_E\le \frac{1}{2}\max\left\{ \left\vert 0+3\cdot 3y\right\vert,
+2\le y\le x(T) \right\} = \frac{9}{2}x(T).
+\]
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c15.3.2b}
+$\dps\frac{dx}{dt} = -x$ where $x(0) = 1$.
+
+\begin{solution}
+\ans $C_E \le \frac{1}{2}x(0)=\frac{1}{2}$.
+
+\soln We want to use \eqref{eq:CE} and compute
+\[
+\frac{\partial f}{\partial t}(t,x)=0\AND
+\frac{\partial f}{\partial x}(t,x)=-1.
+\]
+Since the solution of the initial value problem is monotonically
+decreasing while staying positive we find that
+\[
+C_E\le \frac{1}{2}\max\left\{ \left\vert 0+y\right\vert,
+0<y\le x(0) \right\} = \frac{1}{2}x(0)=\frac{1}{2}.
+\]
+
+
+\end{solution}
+\end{exercise}
+\end{document}

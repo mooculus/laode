@@ -1,0 +1,22 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c4.7.8}
+Recall that a square matrix $C$ is {\em upper triangular\/} if $c_{ij}=0$
+when $i>j$.  Show that the matrix product of two upper triangular $n\times n$
+matrices is also upper triangular.
+
+\begin{solution}
+
+Let $A$ and $B$ be $n \times n$ upper triangular matrices.  To show
+that $AB$ is upper triangular, we must show that if $i > j$, then
+\[ (ab)_{ij} = \sum_{k = 1}^{n} a_{ik}b_{kj} = 0. \]
+For every component of this sum, either $i > k$, in which case $a_{ik}
+= 0$ since $A$ is upper-triangular, or $i \leq k$, in which case, since
+$i > j$, $k > j$, so $b_{kj} = 0$.  Therefore, for all $i > j$,
+$(ab)_{ij} = 0$, so $AB$ is upper triangular.
+
+
+\end{solution}
+\end{exercise}
+\end{document}

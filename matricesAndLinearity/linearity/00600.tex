@@ -1,0 +1,37 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c4.3.5}
+Let $x=(3,-2)$, $y=(2,3)$, and $z=(1,4)$.  For which real
+numbers $\alpha,\beta,\gamma$ does
+\[
+\alpha x + \beta y + \gamma z = (1,-2)?
+\]
+
+\begin{solution}
+
+\ans The equation
+\[ \alpha(3,-2) + \beta(2,3) + \gamma(1,4) = (1,-2) \]
+holds for any real numbers $\alpha$,$\beta$,
+$\gamma$ such that $\alpha = \frac{5}{13}\gamma +
+\frac{7}{13}$ and $\beta = -\frac{14}{13}\gamma
+- \frac{4}{13}$.
+
+\soln Write the equation as the linear system
+\[ \begin{array}{rrrrrrl}
+3\alpha & + & 2\beta & + & \gamma & = & 1 \\
+-2\alpha & + & 3\beta & + & 4\gamma & = & -2. \end{array} \]
+The augmented matrix
+\[ \left(\begin{array}{rrr|r}
+3 & 2 & 1 & 1 \\
+-2 & 3 & 4 & -2 \end{array}\right) \]
+row reduces to
+\[ \left(\begin{array}{rrr|r}
+1 & 0 & -\frac{5}{13} & \frac{7}{13} \\
+0 & 1 & \frac{14}{13} & -\frac{4}{13} \end{array}\right) \]
+and the equation is valid for any values of $\alpha$,$\beta$,
+and $\gamma$ that satisfy this system.
+
+\end{solution}
+\end{exercise}
+\end{document}

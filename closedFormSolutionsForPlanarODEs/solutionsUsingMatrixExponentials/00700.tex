@@ -1,0 +1,238 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\noindent In Exercises~\ref{c6.2.5A} -- \ref{c6.2.5C} we use
+Theorem~\ref{T:linODEsoln}, the uniqueness of solutions to initial value
+problems, in perhaps a surprising way.
+\begin{exercise}  \label{c6.2.5A}
+Prove that
+\[
+e^{t+s} = e^te^s
+\]
+for all real numbers $s$ and $t$.  {\bf Hint:}
+\begin{itemize}
+\item[(a)]  Fix $s$ and verify that $y(t) = e^{t+s}$ is a solution to the
+initial value problem
+\begin{equation}  \label{E:init1}
+\begin{array}{rcl}
+\frac{dx}{dt} & = & x \\
+x(0) & = & e^s
+\end{array}
+\end{equation}
+\item[(b)] Fix $s$ and verify that $z(t) = e^te^s$ is also a solution to
+\eqref{E:init1}.
+\item[(c)]  Use Theorem~\ref{T:linODEsoln} to conclude that $y(t)=z(t)$ for
+every $s$.
+\end{itemize}
+
+\begin{solution}
+
+(a) To verify that $y(t) = e^{t + s}$ is a solution to the initial value
+problem, first substitute $y(t)$ into the left hand side of the equation.
+Using the chain rule, obtain
+\[
+\frac{dy}{dt}(t) = \frac{d}{dt}(e^{t + s}) = \frac{d}{dt}(t + s)e^{t + s}
+= e^{t + s}.
+\]
+Then substitute $y(t)$ into the right hand side of the equation, obtaining
+\[
+y(t) = e^{t + s}.
+\]
+Thus, the left hand and right hand sides are equal, so $y(t)$ is a
+solution to the differential equation.  Finally, check to see that
+$y(t)$ satisfies the initial value:
+\[
+y(0) = e^{0 + s} = e^s
+\]
+as desired.
+
+(b) Similarly, verify that $z(t) = e^te^s$ is a solution to the initial
+value problem by substituting $z(t)$ into each side of the differential
+equation:
+\[
+\frac{dz}{dt}(t) = \frac{d}{dt}(e^te^s) = e^te^s \AND
+z(t) = e^te^s.
+\]
+Note that the results are equal, so that $z(t)$ is a solution to the
+differential equation.  Since
+\[
+z(0) = e^0e^s = e^s,
+\]
+it follows that $z(t)$ is also a solution to the initial value problem.
+
+(c) By Theorem~\ref{exist&unique}, if
+$f(x)$ is differentiable near $x_0$, and if $\frac{df}{dx}$ is continuous,
+then there is a unique solution to the differential equation $\dot{x} = f(x)$
+with initial condition $x(0) = x_0$.  Let $f(x) = x$ and let $x(0) = e^s$.
+Then, as shown in (a) and (b) of this problem, $e^{t + s}$ and $e^te^s$ are
+both solutions.  However, by Theorem~\ref{exist&unique}, there is only one
+solution, so $e^{t + s} = e^te^s$.
+
+\end{solution}
+\end{exercise}
+\begin{exercise}  \label{c6.2.5B}
+Let $A$ be an $n\times n$ matrix.  Prove that
+\[
+e^{(t+s)A} = e^{tA}e^{sA}
+\]
+for all real numbers $s$ and $t$.  {\bf Hint:}
+\begin{itemize}
+\item[(a)]  Fix $s\in\R$ and $X_0\in\R^n$ and verify that
+$Y(t) = e^{(t+s)A}X_0$ is a solution to the initial value problem
+\begin{equation}  \label{E:init2}
+\begin{array}{rcl}
+\frac{dX}{dt} & = & AX \\
+X(0) & = & e^{sA}X_0
+\end{array}
+\end{equation}
+\item[(b)] Fix $s$ and verify that $Z(t) = e^{tA}\left(e^{sA}X_0\right)$ is
+also a solution to \eqref{E:init2}.
+\item[(c)]  Use the $n$ dimensional version of Theorem~\ref{T:linODEsoln} to
+conclude that $Y(t)=Z(t)$ for every $s$ and every $X_0$.
+\end{itemize}
+{\bf Remark:}  Compare the result in this exercise with the calculation in
+Exercise~\ref{c6.2.5}.
+
+\begin{solution}
+
+(a) To verify that $Y(t)$ is a solution to the initial value problem
+\eqref{E:init2}, first substitute $Y(t)$ into the left hand side of the
+equation.  Using the chain rule, obtain
+\[
+\frac{dY}{dt}(t) = \frac{d}{dt}(e^{(t + s)A}X_0) =
+\frac{d}{dt}((t + s)A)e^{(t + s)A}X_0 = Ae^{(t + s)A}X_0.
+\]
+Then substitute $Y(t)$ into the right hand side of the equation, obtaining
+\[
+AY(t) = Ae^{(t + s)A}X_0.
+\]
+Thus, the left hand and right hand sides of the equation are equal, so
+$Y(t)$ is a solution to the differential equation.  Finally, check to see
+that $Y(t)$ satisfies the initial value:
+\[
+Y(0) = e^{(0 + s)A}X_0 = e^{sA}X_0,
+\]
+as desired.
+
+(b) Similarly, verify that $Z(t) = e^{tA}(e^{sA}X_0)$ is a solution to the
+initial value problem by substituting $Z(t)$ into each side of the
+differential equation:
+\[
+\frac{dZ}{dt}(t) = \frac{d}{dt}(e^{tA}(e^{sA}X_0))
+= Ae^{tA}(e^{sA}X_0) \AND
+AZ(t) = Ae^{tA}(e^{sA}X_0).
+\]
+Since the results are equal, $Z(t)$ is a solution to the differential
+equation.  Evaluating at $t = 0$, we find
+\[
+Z(0) = e^{0}(e^{sA}X_0) = e^{sA}X_0,
+\]
+from which it follows that $Z(t)$ is also a solution to the initial
+value problem.
+
+(c) Since $Y(t)$ and $Z(t)$ are both solutions to the initial value problem
+\[
+\begin{array}{rcl}
+\frac{dX}{dt} & = & AX \\
+X(0) & = & e^{sA}X_0,
+\end{array}
+\]
+it follows from the uniqueness part of Theorem~\ref{exist&unique} that
+$Y(t) = Z(t)$.  Thus, $e^{(t + s)A} = e^{tA}e^{sA}$, as desired.
+
+
+\end{solution}
+\end{exercise}
+\begin{exercise}  \label{c6.2.5C}
+Prove that
+\begin{equation}  \label{E:0-110E}
+\exp\left(t\mattwo{0}{-1}{1}{0}\right) =
+\mattwo{\cos t}{-\sin t}{\sin t}{\cos t}.
+\end{equation}
+{\bf Hint:}
+\begin{itemize}
+\item[(a)] Verify that $X_1(t) = \vectwo{\cos t}{\sin t}$ and
+$X_2(t) = \vectwo{-\sin t}{\cos t}$ are solutions to the initial value problems
+\begin{equation}  \label{E:init3}
+\begin{array}{rcl}
+\dps\frac{dX}{dt} & = & \mattwo{0}{-1}{1}{0}X \\
+X(0) & = & e_j
+\end{array}
+\end{equation}
+for $j=1,2$.
+\item[(b)] Since $X_j(0)=e_j$, use Theorem~\ref{T:linODEsoln} to verify that
+\begin{equation}   \label{E:0-110}
+X_j(t) = \exp\left(t\mattwo{0}{-1}{1}{0}\right)e_j.
+\end{equation}
+\item[(c)]  Show that \eqref{E:0-110} proves \eqref{E:0-110E}
+\end{itemize}
+
+\begin{solution}
+
+(a) To verify that $X_1(t) = (\cos t,\sin t)^t$ is a solution to the
+initial value problem \eqref{E:init3}, substitute $X_1(t)$ into the left
+hand side of the differential equation, obtaining
+\[
+\frac{dX_1}{dt} = \frac{d}{dt}\vectwo{\cos t}{\sin t} =
+\vectwo{-\sin t}{\cos t}.
+\]
+Then substitute $X_1(t)$ into the right hand side of the differential
+equation, obtaining
+\[
+\mattwo{0}{-1}{1}{0}X_1 = \mattwo{0}{-1}{1}{0}\vectwo{\cos t}{\sin t}
+= \vectwo{-\sin t}{\cos t}.
+\]
+Since the two sides are equal, $X_1(t)$ is a solution to
+\eqref{E:init3}.  Further, since
+\[
+X_1(0) = \vectwo{\cos 0}{\sin 0} = \vectwo{1}{0} = e_1,
+\]
+$X_1(t)$ is a solution to the given initial value problem.
+
+\para Similarly, to verify that $X_2(t) = (-\sin t,\cos t)^t$ is a
+solution to the initial value problem, substitute $X_2(t)$ into the
+left hand side of the differential equation, obtaining
+\[
+\frac{dX_2}{dt} = \frac{d}{dt}\vectwo{-\sin t}{\cos t} =
+\vectwo{-\cos t}{-\sin t}.
+\]
+Then substitute $X_2(t)$ into the right hand side of the differential
+equation, obtaining
+\[
+\mattwo{0}{-1}{1}{0}X_2 = \mattwo{0}{-1}{1}{0}\vectwo{-\sin t}{\cos t}
+= \vectwo{-\cos t}{-\sin t}.
+\]
+Since the two sides of the differential equation are equal, and since
+\[
+X_2(0) = \vectwo{-\sin 0}{\cos 0} = \vectwo{0}{1} = e_2,
+\]
+$X_2(t)$ is a solution to the initial value problem \eqref{E:init3}.
+
+(b) By Theorem~\ref{T:linODEsoln}, the unique
+solution to \eqref{E:init3} with initial condition $X(0) = e_j$ is
+\[
+Y_j(t) \equiv \exp\left(t\mattwo{0}{-1}{1}{0}\right)e_j.
+\]
+We showed in part (a) that $X_j(t)$ satisfies this initial value
+problem.  Thus, by the uniqueness part of Theorem~\ref{exist&unique},
+$X_j(t) = Y_j(t)$, as desired.
+
+(c) By part (b), $X_j(t)$ is equal to $Y_j(t)$, which is defined as
+the $j^{th}$ column of the matrix
+\[
+\exp\left(t\mattwo{0}{-1}{1}{0}\right).
+\]
+By definition, $X_j(t)$ is equal to the $j^{th}$ column of the matrix
+\[
+\mattwo{\cos t}{-\sin t}{\sin t}{\cos t}.
+\]
+Thus,
+\[
+\exp\left(t\mattwo{0}{-1}{1}{0}\right) =
+\mattwo{\cos t}{-\sin t}{\sin t}{\cos t}.
+\]
+
+\end{solution}
+\end{exercise}
+\end{document}

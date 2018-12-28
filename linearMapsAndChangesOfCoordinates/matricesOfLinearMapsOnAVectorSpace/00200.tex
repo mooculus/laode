@@ -1,0 +1,27 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c7.1.2}
+Let
+\[
+w_1 = (1,2) \AND w_2 = (0,1)
+\]
+and
+\[
+z_1 = (2,3) \AND z_2 = (3,4)
+\]
+be two bases of $\R^2$.  Find $C_{WZ}$.
+
+\begin{solution}
+
+\ans
+\[ C_{\cal WZ} = \mattwo{2}{3}{-1}{-2}. \]
+
+\soln Substitute into Equation~\eqref{e:coordformn} as follows:
+\[ C_{\cal WZ} = (w_1^t|w_2^t)^{-1}(z_1^t|z_2^t) =
+\mattwo{1}{0}{2}{1}^{-1}\mattwo{2}{3}{3}{4} =
+\mattwo{2}{3}{-1}{-2}. \]
+
+\end{solution}
+\end{exercise}
+\end{document}

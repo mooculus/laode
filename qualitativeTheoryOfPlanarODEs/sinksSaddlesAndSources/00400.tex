@@ -1,0 +1,114 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+
+\noindent In Exercises~\ref{E:sima} -- \ref{E:simb} the given matrices $B$
+and $C$ are similar.  Observe that the phase portraits of the systems
+$\dot{X}=BX$ and $\dot{X}=CX$ are qualitatively the same in two steps.
+\begin{itemize}
+\item[(a)]  Use \Matlab to find the $2\times 2$ matrix $P$ such that
+$B=P\inv CP$.  Use {\tt map} to understand how the matrix $P$ moves points 
+in the plane.
+\item[(b)]  Use {\pplane} to observe that $P$ moves solutions of
+$\dot{X}=BX$ to the solution of $\dot{X}=CX$.  Write a sentence or two describing your results.
+\end{itemize}
+\begin{exercise} \label{E:sima}
+$C = \mattwo{2}{3}{-1}{-3} \AND B = \frac{1}{2}\mattwo{1}{-1}{-9}{-3}$.
+
+\begin{solution}
+
+(a) \ans
+\[
+P = \frac{\sqrt{2}}{2}\mattwo{1}{-1}{1}{1}.
+\]
+The matrix $P$ rotates vectors in the plane by $45^\circ$ counterclockwise.
+
+\soln Enter matrices $B$ and $C$ into \Matlabp.  Then type
+\begin{verbatim}
+[Q,D] = eig(C);
+\end{verbatim}
+Since $C$ has distinct eigenvalues (you can check this using
+\Matlabp), the matrix $D$ is a diagonal matrix with the eigenvalues of
+$C$ along its diagonal.  This matrix is similar to $C$.  Indeed, $D =
+Q^{-1}CQ$.  The matrix $D$ is also similar to $B$, and $D= R^{-1}BR$.
+Find the matrix $R$ by typing
+\begin{verbatim}
+[R,D] = eig(B);
+\end{verbatim}
+We know that $D = R^{-1}BR$ and $D = Q^{-1}CQ$ for the same diagonal
+matrix $D$.  Therefore,
+\[
+B = RDR^{-1} = R(Q^{-1}CQ)R^{-1} = (QR^{-1})^{-1}C(QR).
+\]
+Thus, $P = QR^{-1}$, and typing
+\begin{verbatim}
+P = Q*inv(R)
+\end{verbatim}
+in \Matlab yields $P$.
+
+(b) \ans The solutions of $\dot{X} = CX$ are found by rotating the
+solutions of $\dot{X} = BX$ by $45^\circ$ counterclockwise.
+
+\soln Enter the system $\dot{X} = BX$ into {\tt pplane5}.  Then enter the
+system $\dot{X} = CX$.  Note that both systems are saddles.  You can
+plot the stable and unstable trajectories at the origin in each system
+to see that the trajectories for $\dot{X} = CX$ appear to be about
+$45^\circ$ counterclockwise of those for $\dot{X} = BX$.  Thus, if
+$X(t)$ is a solution to $\dot{X} = BX$, then $PX(t)$ is a solution to
+$\dot{X} = CX$, verifying Lemma~\ref{L:simsoln}.
+
+\end{solution}
+
+\end{exercise}
+
+\begin{exercise} \label{E:simb}
+$C = \mattwo{-1}{5}{-5}{-1} \AND B = \mattwo{-1}{0.5}{-50}{-1}$.
+
+\begin{solution}
+
+(a) \ans
+\[
+P \approx \mattwo{7.1063}{0}{0}{0.7106}.
+\]
+The matrix $P$ stretches the $x$-coordinate of a vector and shrinks the
+$y$-coordinate.
+
+\soln Enter matrices $B$ and $C$ into \Matlabp.  Then type
+\begin{verbatim}
+[Q,D] = eig(C);
+\end{verbatim}
+Since $C$ has distinct eigenvalues (you can check this using
+\Matlabp), the matrix $D$ is a diagonal matrix with the eigenvalues of
+$C$ along its diagonal.  This matrix is similar to $C$.  Indeed, $D =
+Q^{-1}CQ$.  The matrix $D$ is also similar to $B$, and $D= R^{-1}BR$.
+Find the matrix $R$ by typing
+\begin{verbatim}
+[R,D] = eig(B);
+\end{verbatim}
+We know that $D = R^{-1}BR$ and $D = Q^{-1}CQ$ for the same diagonal
+matrix $D$.  Therefore,
+\[
+B = RDR^{-1} = R(Q^{-1}CQ)R^{-1} = (QR^{-1})^{-1}C(QR).
+\]
+Thus, $P = QR^{-1}$, and typing
+\begin{verbatim}
+P = Q*inv(R)
+\end{verbatim}
+in \Matlab yields $P$.
+
+(b) \ans The solutions of $\dot{X} = CX$ are obtained from the solutions
+of $\dot{X} = BX$ by stretching the $x$-coordinate by a factor of $7.1063$
+and the $y$-coordinate by a factor of $0.7106$.
+
+\soln Enter the system $\dot{X} = BX$ into {\tt pplane5}.  Then enter the
+system $\dot{X} = CX$.  Note that both systems are spirals.  You can
+plot trajectories in each system to see that the trajectories for
+$\dot{X} = CX$ appear to be similar to those for $\dot{X} = BX$, but
+stretched in one direction and contracted in the other.  Thus, if
+$X(t)$ is a solution to $\dot{X} = BX$, then $PX(t)$ is a solution to
+$\dot{X} = CX$, verifying Lemma~\ref{L:simsoln}.
+
+\end{solution}
+\end{exercise}
+\end{document}

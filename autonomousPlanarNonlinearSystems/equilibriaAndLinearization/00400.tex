@@ -1,0 +1,60 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c8.2.3}
+More generally, consider the population growth model
+\begin{equation} \label{E:pop}
+\frac{dp}{dt} = \lambda(p) p, 
+\end{equation}
+where the growth rate depends on the population.  Assume
+\begin{enumerate}
+\item[(i)] the growth rate is positive when the population is 
+small, that is, $\lambda(0)>0$, and 
+\item[(ii)] the growth rate decreases as the population
+increases, that is, $\frac{d\lambda}{dp} < 0$ for all $p$.
+\end{enumerate}
+Consider the following:
+\begin{enumerate}
+\item[(a)] Show that equation \eqref{E:pop} has at most one
+positive equilibrium $p_e>0$.
+\item[(b)] Let $p(t)$ be a solution to \eqref{E:pop} with
+$p(0)>0$. Determine the asymptotic limit of the population in
+forward time, that is, determine $\dps\lim_{t\to\infty} p(t)$. 
+\item[(c)] Relate your answer in (b) to the solution to
+Exercise~\ref{E:popex}. 
+\end{enumerate}
+{\bf Hint:} There are two possible answers to (b) depending on
+whether \eqref{E:pop} has one positive equilibrium or no positive 
+equilibria.
+
+\begin{solution}
+
+(a) We are given $\frac{d\lambda}{dp} < 0$ for all $p$.  Thus $\lambda(p)$ is a 
+monotonic decreasing function of $p$ when $p>0$ and the graph of 
+$\lambda(p)$ can intersect $\lambda=0$ in at most one point.
+Therefore, \eqref{E:pop} has at most one positive equilibrium.
+
+(b) \ans If there exists a positive equilibrium $p_e$, then
+$\dps\lim_{p \to \infty} p(t) = p_e$.  If no positive equilibrium
+exists, then $\dps\lim_{p \to \infty} p(t) = \infty$.
+
+\soln If there is a positive equilibrium, then it is asymptotically stable.
+To verify this point differentiate the right hand side of \eqref{E:pop} with respect to 
+$p$ and evaluate at $p=p_e$ obtaining
+\[
+\left.\frac{d}{dp}(\lambda(p)p)\right|_{p=p_e} = 
+\lambda(p_e) + \lambda'(p_e)p_e = \lambda'(p_e)p_e <0
+\]
+since $\lambda(p_e) = 0$, $\lambda'(p_e) < 0$, and $p_e > 0$.  
+So $p = p_e$ is a stable equilibrium, and the population limits on
+$p_e$.
+
+\para If no positive equilibrium exists, then $p = 0$, which is unstable,
+is the only equilibrium, and the population grows without bound.
+
+(c) Exercise~\ref{E:popex} is a specific example of \eqref{E:pop} in
+which a positive equilibrium exists at $p = \frac{\lambda_0}{a}$.
+
+\end{solution}
+\end{exercise}
+\end{document}

@@ -1,0 +1,67 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise}  \label{ex:if}
+Show that the differential equation
+\begin{equation} \label{Ex:nexact}
+\frac{dx}{dt} = -\frac{1+3tx}{t^2}
+\end{equation}
+is not exact.  Now multiply both the numerator and denominator of the 
+right side of \eqref{Ex:nexact} by $t$ and show that this `new' differential
+equation 
+\[
+\frac{dx}{dt} = -\frac{t+3t^2x}{t^3}
+\]
+is exact. Now find all solutions to \eqref{Ex:nexact}.
+
+\begin{solution}
+\ans The general solution is 
+\[ x = \frac{C}{t^3} - \frac{1}{2t} \] 
+for some constant $C$.
+
+\soln We can write the differential equation as $\dps\frac{dx}{dt} =
+\frac{G(t,x)}{H(t,x)}$, where $G(t,x) = -1-3tx$ and $H(t,x) = t^2$. 
+Then we compute
+\[
+-\frac{\partial G}{\partial x} = 3t \AND
+\frac{\partial H}{\partial t} = 2t.
+\]
+By Proposition~\ref{prop:exact}, the
+differential equation is exact only if the two sides of \eqref{eq:Gy=Hs} are
+equal.
+On multiplying numerator and denominator by $t$ we obtain
+where $G(t,x) = -t-3t^2x$ and $H(t,x) = t^3$. 
+Then we compute
+\[
+-\frac{\partial G}{\partial x} = 3t^2 \AND
+\frac{\partial H}{\partial t} = 3t^2.
+\]
+So the new form of the differential equation is exact.
+
+Next, we must find a function $F(t,x)$ satisfying \eqref{eq:excond}.
+By integration, obtain
+\[
+\Omega(t,x) = \int H(t,x)dx = \int t^3dx = t^3x.
+\]
+Then, find the function $h(t)$ such that
+\[
+h'(t) = -\frac{\partial}{\partial t}\Omega(t,x) - G(t,x)
+= t.
+\]
+In this case, we can choose 
+\[
+h(t) =  \frac{1}{2}t^2.  
+\]
+Finally, compute
+\[
+F(t,x) = \Omega(t,x) + h(t) = t^3x + \frac{1}{2}t^2,
+\]
+the function satisfying \eqref{eq:excond}.  The general solution is found by 
+solving $F=C$ for $x$; that is, solving
+\[
+\frac{1}{2}t^2 + t^3x = C.
+\]
+
+\end{solution}
+\end{exercise}
+\end{document}

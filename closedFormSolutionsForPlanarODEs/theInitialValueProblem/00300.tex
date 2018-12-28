@@ -1,0 +1,73 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+
+\noindent In Exercises~\ref{c6.1.1a} -- \ref{c6.1.1d}, consider the system of
+differential equations
+\begin{equation} \label{E:c6.1.1}
+\begin{array}{rcr}
+\frac{dx}{dt}  & = & -y \\
+\frac{dy}{dt}  & = &  x.
+\end{array}
+\end{equation}
+\begin{exercise} \label{c6.1.1a}
+Show that $(x_1(t),y_1(t)) = (\cos t,\sin t)$ is a solution to \eqref{E:c6.1.1}.
+
+\begin{solution}
+
+Solve by evaluation:
+$(x_1(t),y_1(t)) = (\cos t, \sin t)$
+is a solution because
+\[ \begin{array}{ccccccc}
+\frac{dx_1}{dt}(t) & = & \frac{d}{dt}(\cos t) & = & -\sin t & = & -y_1(t)
+\\ \frac{dy_1}{dt}(t) & = & \frac{d}{dt}(\sin t) & = & \cos t & = & x_1(t).
+\end{array}. \]
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c6.1.1b}
+Show that $(x_2(t),y_2(t)) = (-\sin t,\cos t)$ is a solution to \eqref{E:c6.1.1}.
+
+\begin{solution}
+To show that $(x_2(t),y_2(t)) = (-\sin t, \cos t)$
+is a solution, calculate $v_1 = (x_1(0),y_1(0))$ and
+$v_2 = (x_2(0),y_2(0))$, obtaining
+\[
+\begin{array}{ccccl}
+v_1 = (x_1(0),y_1(0) & = & (\cos 0,\sin 0) & = & (1,0) \\
+v_2 = (x_2(0),y_2(0) & = & (-\sin 0,\cos 0) & = & (0,1).
+\end{array}
+\]
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c6.1.1c}
+Using Exercises~\ref{c6.1.1a} and \ref{c6.1.1b}, find a solution $(x(t),y(t))$
+to \eqref{E:c6.1.1} that satisfies $(x(0),y(0)) = (0,1)$.
+
+\begin{solution}
+
+If $(x(0),y(0)) = (0,1) = v_2$, then Theorem~\ref{T:solvends} states
+that the solution is
+\[
+(x(t),y(t)) = (x_2(t),y_2(t)) = (-\sin t,\cos t).
+\]
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c6.1.1d}
+Using Exercises~\ref{c6.1.1a} and \ref{c6.1.1b}, find a solution $(x(t),y(t))$
+to \eqref{E:c6.1.1} that satisfies $(x(0),y(0)) = (1,1)$.
+
+\begin{solution}
+
+If $(x(0),y(0)) = (1,1) = v_1 + v_2$, then
+\[
+(x(t),y(t)) = (x_1(t),y_1(t)) + (x_2(t),y_2(t)) =
+(\cos t - \sin t, \cos t + \sin t).
+\]
+
+\end{solution}
+\end{exercise}
+\end{document}

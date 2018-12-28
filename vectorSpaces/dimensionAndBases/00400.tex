@@ -1,0 +1,39 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c5.5.3}
+Find a basis for the null space of
+\[
+A =\left(\begin{array}{rrrr} 1 & 0 & -1 & 2\\ 1 & -1 & 0 & 0\\
+4 & -5 & 1 & -2 \end{array} \right).
+\]
+What is the dimension of the null space of $A$?
+
+\begin{solution}
+
+\ans The vectors $(1,1,1,0)$ and $(-2,-2,0,1)$ form a basis for the
+nullspace of $A$; therefore the dimension of the nullspace is $2$.
+
+\soln Find the set of solutions to $Ax = 0$ by solving
+\[
+\left(\begin{array}{rrrr} 1 & 0 & -1 & 2 \\ 1 & -1 & 0 & 0 \\ 4
+& -5 & 1 & -2 \end{array}\right) \left(\begin{array}{r} x_1 \\ x_2
+\\ x_3 \\ x_4 \end{array}\right) = 0.
+\]
+To solve, row reduce $A$, obtaining
+\[
+\left(\begin{array}{rrrr} 1 & 0 & -1 & 2 \\ 0 & 1 & -1 & 2 \\ 0
+& 0 & 0 & 0 \end{array}\right).
+\]
+So the set of solutions to $Ax = 0$ can be written
+\[
+\left(\begin{array}{r} x_1 \\ x_2 \\ x_3 \\ x_4
+\end{array}\right) = \left(\begin{array}{c} x_3 - 2x_4 \\ x_3 - 2x_4
+\\ x_3 \\ x_4 \end{array}\right) = x_3\left(\begin{array}{r} 1 \\ 1
+\\ 1 \\ 0 \end{array}\right) + x_4\left(\begin{array}{r} -2 \\ -2
+\\ 0 \\ 1 \end{array}\right).
+\]
+
+\end{solution}
+\end{exercise}
+\end{document}

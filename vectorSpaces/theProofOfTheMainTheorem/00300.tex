@@ -1,0 +1,37 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c5.6.1}
+Let $A$ be a $7\times 5$ matrix with $\rank(A)=r$.\index{rank}
+\begin{itemize}
+\item[(a)]	What is the largest value that $r$ can have?
+\item[(b)]	Give a condition equivalent to the system of
+	equations $Ax=b$ having a solution.
+\item[(c)]	What is the dimension of the null space of $A$?
+\item[(d)]	If there is a solution to $Ax=b$, then how many
+parameters are needed to describe the set of all solutions?
+\end{itemize}
+
+\begin{solution}
+
+(a) The largest value that $r$ can have is $5$, since the matrix has
+$5$ columns.  Thus, the reduced echelon form matrix can have at most
+$5$ pivot points.
+
+(b) The equation $Ax = b$ has a solution if the rank of the augmented
+matrix $(A|b)$ is $r$.  If $\rank (A|b)$ is greater than $r$, then
+there is a pivot in the $6^{th}$ column and the system is
+inconsistent, so there is no solution.
+
+(c) The null space has dimension $5 - r$.
+
+(d) The number of parameters needed to describe the solution to
+$Ax = b$ is $5 - r$, since $5 - r$ parameters are needed to describe
+the solutions to $Ax = 0$, and the solutions to the inhomogeneous
+system are obtained by adding the solutions of the homogeneous system
+to one solution of the inhomogeneous system.
+
+
+\end{solution}
+\end{exercise}
+\end{document}

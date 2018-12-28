@@ -1,0 +1,29 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c5.5.5}
+Show that the set ${\cal P}_n$ of all polynomials of degree less than
+or equal to $n$ is a subspace of $\CCone$.  What is $\dim {\cal P}_2$?
+What is $\dim {\cal P}_n$?
+
+\begin{solution}
+
+The set $P_n$ is a subspace if it is closed under addition and
+scalar multiplication.  Let $x(t) = a_0 + a_1t + \cdots +
+a_nt^n$, $y(t) = b_0 + b_1t + \cdots + b_nt^n$ and $s \in \R$.
+Then
+\[
+\begin{array}{l}
+x(t) + y(t) = (a_0 + b_0) + (a_1 + b_1)t + \cdots + (a_n + b_n)t^n \in P_n.
+\\
+cx(t) = c(a_0 + a_1t + \cdots + a_nt^n) = ca_0 + ca_1t + \cdots + ca_nt^n
+\in P_n.
+\end{array}
+\]
+The dimension of $P_2$ is 3, since $x_1 = 1$, $x_2 = t$, and
+$x_3 = t^2$ form a basis for $P_2$.  The dimension of $P_n$ is
+$n + 1$.
+
+\end{solution}
+\end{exercise}
+\end{document}

@@ -1,0 +1,64 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+ In modern language De Moivre's formula states that
+\[
+e^{ni\theta} = \left(e^{i\theta}\right)^n.
+\]
+In Exercises~\ref{c6.6.1a} - \ref{c6.6.1b} use De Moivre's formula coupled
+with Euler's formula \eqref{E:Euler} to determine trigonometric identities
+for the given quantity in terms of $\cos\theta$, $\sin\theta$, $\cos\varphi$,
+$\sin\varphi$.
+\begin{exercise}  \label{c6.6.1a}
+$\cos(\theta+\varphi)$.
+
+\begin{solution}
+
+\ans $\cos(\theta + \varphi) = \cos\theta\cos\varphi -
+\sin\theta\sin\varphi$.
+
+\soln Using Euler's formula (\eqref{E:Euler}):
+\[
+\begin{array}{rcl}
+\cos(\theta + \varphi) + i\sin(\theta + \varphi)
+& = & e^{i(\theta + \varphi)} \\
+& = & e^{i\theta}e^{i\varphi} \\
+& = & (\cos\theta + i\sin\theta)(\cos\varphi + i\sin\varphi) \\
+& = & \cos\theta\cos\varphi + i\sin\theta\cos\varphi +
+i\sin\varphi\cos\theta - \sin\theta\sin\varphi \\
+& = & (\cos\theta\cos\varphi - \sin\theta\sin\varphi) +
+i(\sin\theta\cos\varphi + \sin\varphi\cos\theta)
+\end{array}
+\]
+The real part of this formula is equal to $\cos(\theta + \varphi)$.
+
+\end{solution}
+\end{exercise}
+\begin{exercise}  \label{c6.6.1b}
+$\sin(3\theta)$.
+
+\begin{solution}
+
+\ans $\sin(3\theta) = 3\cos^2\theta\sin\theta - \sin^3\theta$.
+
+\soln Calculate using Euler's formula and De Moivre's formula:
+\[
+\begin{array}{rcl}
+\cos(3\theta) + i\sin(3\theta)
+& = & e^{3i\theta} \\
+& = & (e^{i\theta})^3 \\
+& = & (\cos\theta + i\sin\theta)^3 \\
+& = & (\cos^2\theta + 2i\cos\theta\sin\theta - \sin^2\theta)
+(\cos\theta + i\sin\theta) \\
+& = & \cos^3\theta + 3i\cos^2\theta\sin\theta -
+3\sin^2\theta\cos\theta - i\sin^3\theta \\
+& = & (\cos^3\theta - 3\sin^2\theta\cos\theta) +
+i(3\cos^2\theta\sin\theta - \sin^3\theta).
+\end{array}
+\]
+The imaginary part of this formula is equal to $\sin(3\theta)$.
+
+\end{solution}
+\end{exercise}
+\end{document}

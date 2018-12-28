@@ -1,0 +1,36 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c5.5.1}
+Show that ${\cal U}=\{u_1,u_2,u_3\}$ where
+\[
+u_1=(1,1,0) \quad u_2=(0,1,0) \quad u_3=(-1,0,1)
+\]
+is a basis for $\R^3$.
+
+\begin{solution}
+
+By Theorem~\ref{basis=span+indep},
+${\cal U}$ is a basis for $\R^3$ if the vectors of ${\cal U}$ are
+linearly independent and span $\R^3$.  By Lemma~\ref{L:computerank},
+the dimension of ${\cal U}$ is equal to the rank of the matrix whose
+rows are $u_1$, $u_2$, and $u_3$.  Row reduce this matrix:
+\[
+\matthree{1}{1}{0}{0}{1}{0}{-1}{0}{1} \longrightarrow
+\matthree{1}{0}{0}{0}{1}{0}{0}{0}{1}.
+\]
+So $\dim({\cal U}) = 3 = \dim(\R^3)$, and we need now only show that
+$u_1$, $u_2$, and $u_3$ are linearly independent, which we can do by
+row reducing the matrix whose columns are the vectors of ${\cal U}$ as
+follows:
+\[
+\matthree{1}{0}{-1}{1}{1}{0}{0}{0}{1} \longrightarrow
+\matthree{1}{0}{0}{0}{1}{0}{0}{0}{1}.
+\]
+Therefore, there is no nonzero solution to the equation
+${\cal U}r = 0$, so the vectors of ${\cal U}$ are linearly independent
+and ${\cal U}$ is a basis for $\R^3$.
+
+\end{solution}
+\end{exercise}
+\end{document}

@@ -1,0 +1,79 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\noindent In Exercises~\ref{c6.1.06a} -- \ref{c6.1.06d}, consider the system of
+differential equations
+\begin{equation} \label{Ex.1.06}
+\begin{array}{rcr}
+\frac{dx}{dt}  & = & x-y \\
+\frac{dy}{dt}  & = & -x+y.
+\end{array}
+\end{equation}
+\begin{exercise} \label{c6.1.06a}
+The eigenvalues of the coefficient matrix of \eqref{Ex.1.06} are $0$ and $2$.
+Find the associated eigenvectors.
+
+\begin{solution}
+
+\ans The eigenvector associated to $\lambda_1 = 0$ is $v_1 = (1,1)^t$,
+and the eigenvector associated to $\lambda_2 = 2$ is $v_2 = (1,-1)^t$.
+
+\soln Solve the systems
+\[
+\mattwo{1}{-1}{-1}{1}v_1 = 0 \AND \mattwo{1}{-1}{-1}{0}v_2 = 2v_2.
+\]
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c6.1.06b}
+Find the solution to \eqref{Ex.1.06} satisfying initial conditions
+$X(0)=(2,-2)^t$.
+
+\begin{solution}
+\ans The solution to \eqref{Ex.1.06} with initial condition
+$X(0) = (2,-2)^t$ is 
+\[
+X(t) = 2e^{2t}\vectwo{1}{-1}.
+\]
+
+\soln Note that initial conditions $v_1$ and $v_2$ are linearly
+independent.  Therefore, by Theorem~\ref{T:solvends}, the general solution
+to \eqref{Ex.1.06} with initial condition $X(0)$ is
+\[
+X(t) = r_1\vectwo{1}{1} + r_2e^{2t}\vectwo{1}{-1}.
+\]
+Find values for $r_1$ and $r_2$ by solving:
+\begin{equation} \label{c6.1.06eq}
+X(0) = r_1\vectwo{1}{1} + r_2\vectwo{1}{-1}.
+\end{equation}
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c6.1.06c}
+Find the solution to \eqref{Ex.1.06} satisfying initial conditions
+$X(0)=(2,6)^t$.
+
+\begin{solution}
+The solution with initial condition $X(0) = (2,6)^t$ is 
+\[
+X(t) = 4\vectwo{1}{1} - 2e^{2t}\vectwo{1}{-1}.
+\]
+
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c6.1.06d}
+Find the solution to \eqref{Ex.1.06} satisfying initial conditions
+$X(0)=(1,0)^t$.
+
+\begin{solution}
+The solution with initial condition $X(0) = (1,0)^t$ is
+\[
+X(t) = \frac{1}{2}\vectwo{1}{1} + \frac{1}{2}e^{2t}\vectwo{1}{-1}.
+\]
+
+
+\end{solution}
+\end{exercise}
+\end{document}

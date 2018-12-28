@@ -1,0 +1,25 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c10.3.3}
+Let
+\[
+A=\left(\begin{array}{rrr} -1 & 4 & -2 \\ 0 & 3 & -2 \\ 0 & 4 & -3 \end{array}
+\right).
+\]
+Find the eigenvalues and eigenvectors of $A$, and find an invertible  
+matrix $S$ so that $S\inv AS$ is diagonal.
+
+\begin{solution}
+
+The eigenvalues of $A$ are $\lambda_1 = 1$ and $\lambda_2 = -1$.  The
+eigenvector associated to $\lambda_1$ is $v_1 = (1,1,1)^t$.  There are
+two eigenvectors associated to $\lambda_2$: $v_2 = (1,0,0)^t$ and
+$v_3 = (0,1,2)^t$.
+\[
+S = (v_1|v_2|v_3) = \matthree{1}{1}{0}{1}{0}{1}{1}{0}{2}.
+\]
+
+\end{solution}
+\end{exercise}
+\end{document}

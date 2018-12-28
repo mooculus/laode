@@ -1,0 +1,56 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c8.3.5}
+An autonomous planar system of differential equations is a {\em gradient\/} 
+\index{gradient} system if there exists a real-valued differentiable function 
+$f(x,y)$ such that 
+\begin{equation} \label{E:gradsys}
+\begin{array}{rcl}
+\dot{x} & = & f_x(x,y) \\
+\dot{y} & = & f_y(x,y).
+\end{array}
+\end{equation}
+Prove that gradient systems never have periodic solutions.  
+
+{\bf Hint:} Proceed in four steps as follows.
+\begin{itemize}
+\item[(a)]  Let $(x(t),y(t))$ be a solution to \eqref{E:gradsys} and let 
+$h(t)=f(x(t),y(t))$.  So $h:\R\to\R$.  Use the chain rule to show that 
+$h'(t)\geq 0$.
+\item[(b)]  Show that $h'(t_0) = 0$ for some $t_0$ if and only if 
+$(x(t),y(t)$ is an equilibrium of  \eqref{E:gradsys}.
+\item[(c)]  Show that $h$ is monotonic increasing along any nonconstant 
+solution of \eqref{E:gradsys}. 
+\item[(d)]  Explain why a nonconstant solution of \eqref{E:gradsys} cannot be 
+periodic.
+\end{itemize}
+
+\begin{solution}
+
+\soln (a)  Use the chain rule to calculate
+\[
+\dot{h} = f_x\dot{x}+f_y\dot{y}.
+\]
+Using the gradient system of differential equations, observe that
+\[
+\dot{h} = f_x^2 + f_y^2\ge 0.
+\]
+(b) It follows from (a) that $\dot{h}(t_0)=0$ if and only if 
+$f_x(x(t_0),y(t_0))=0$ and $f_y(x(t_0),y(t_0))=0$.  That is, 
+$\dot{h}(t_0)=0$ if and only if $(x(t_0),y(t_0))$ is an equilibrium for the
+gradient system.
+
+\noindent (c) It follows from (b) that $\dot{h}$ is nowhere zero on a
+nonconstant solution and from (a) that $\dot{h}(t)>0$ on a nonconstant
+solution.  Therefore, $h(t)$ is monotonic increasing along any nonconstant
+solution.
+
+\noindent (d)  If $(x(t),y(t)$ is a nonconstant periodic solution of the
+gradient system with period $T>0$, then $h(t+T)=h(t)$ for all $t$.  Thus,
+$h(t)$ is not monotonic along this solution, contradicting (c).  Therefore,
+nonconstant periodic solutions of gradient systems cannot exist.  
+
+\end{solution}
+\end{exercise}
+\end{document}

@@ -1,0 +1,73 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c8.2.7}
+Consider the system of differential equations \eqref{e:global2exam}
+that depends on the constant $a$.  
+\begin{itemize}
+\item[(a)]	Find the equilibria of this system.
+\item[(b)]	Find the Jacobian matrices at the equilibria.  
+\item[(c)]	For which values of $a$ are the equilibria not
+		hyperbolic?
+\item[(d)]	For those values of $a$ where the equilibria are 
+		hyperbolic, determine whether or not these equilibria 
+		are asymptotically stable.
+\item[(e)]	For each nonhyperbolic equilibrium, write the linearized 
+		system and draw its phase plane.
+\end{itemize}
+
+\begin{solution}
+
+(a) Solving system \eqref{e:global2exam} for $\dot{x} = \dot{y} = 0$
+yields equilibria at $(0,0)$, $(\sqrt{2.2},0)$, and $(-\sqrt{2.2},0)$.
+
+(b) The general Jacobian matrix for \eqref{e:global2exam} is
+\[
+(dJ)_{(x,y)} = \cmattwo{0}{1}{2.2 - 3x^2 + ay}{2.1 + ax}.
+\]
+The Jacobian matrices at the equilibria are:
+\[ \begin{array}{rcl}
+(dJ)_{(0,0)} & = & \cmattwo{0}{1}{2.2}{2.1} \\
+(dJ)_{(\sqrt{2.2},0)} & = & \cmattwo{0}{1}{-4.4}{2.1 + \sqrt{2.2}a} \\
+(dJ)_{(-\sqrt{2.2},0)} & = & \cmattwo{0}{1}{-4.4}{2.1 - \sqrt{2.2}a}. \\
+\end{array}
+\]
+
+(c) \ans The Jacobian of the equilibrium at $(\sqrt{2.2},0)$ is not
+hyperbolic at $a = -2.1\left/\sqrt{2.2}\right.$, and the Jacobian of the
+equilibrium at $(-\sqrt{2.2},0)$ is not hyperbolic at
+$a = 2.1\left/\sqrt{2.2}\right.$.
+
+\soln Note that a matrix is nonhyperbolic if the determinant is positive
+and the trace is zero.
+
+(d) \ans The equilibrium at $(\sqrt{2.2},0)$ is asymptotically stable for
+$a < -2.1\left/\sqrt{2.2}\right.$ and the equilibrium at
+$(-\sqrt{2.2},0)$ is asymptotically stable for
+$a > 2.1\left/\sqrt{2.2}\right.$.  Thus, there is no value of $a$ for which
+both equilibria are stable.  The equilibrium at $(0,0)$ is not stable,
+since the eigenvalues of the Jacobian have opposite sign.
+
+\soln Note that the determinant of the Jacobian is always positive, so
+the equilibria are stable for values of $a$ at which the trace is negative.
+
+(e) For $a = -2.1/\sqrt{2.2}$, the equilibrium at $(\sqrt{2.2},0)$
+is non-hyperbolic, with Jacobian matrix
+\[
+(dJ)_{(\sqrt{2.2},0)} = \mattwo{0}{1}{-4.4}{0}.
+\]
+The linear system $\dot{X} = (dJ)_{(\sqrt{2.2},0)}X$ is pictured in
+Figure~\ref{c8.2.7}.  Note that the system is a center.  For
+$a = 2.1/\sqrt{2.2}$, the equilibrium at $(-\sqrt{2.2},0)$ is
+nonhyperbolic.  Its Jacobian at this point is identical to
+$(dJ)_{(\sqrt{2.2},0)}$.
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/8-2-7.eps,width=3.0in}}
+                \exercap{c8.2.7}
+\end{figure}
+
+\end{solution}
+\end{exercise}
+\end{document}

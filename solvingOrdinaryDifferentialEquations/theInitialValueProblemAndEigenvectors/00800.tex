@@ -1,0 +1,23 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise}  \label{c4.9.6A}
+Suppose that $A$ is an $n\times n$ matrix with zero as an eigenvalue.
+Show that $A$ is not invertible.  {\bf Hint:}  Assume that $A$ is invertible 
+and compute $A\inv Av$ where $v$ is an eigenvector of $A$ corresponding to 
+the zero eigenvalue.
+
+\begin{solution}
+\soln
+Suppose that $A$ is an $n\times n$ matrix with zero eigenvalue.  We need to
+prove that $A$ is not invertible.  Let $v\in\R^n$ be a nonzero 
+eigenvector corresponding to the zero eigenvalue.  Therefore, $Av=0$. 
+Suppose that $A\inv$ exists.  Then
+\[
+v = I_nv = A\inv Av = A\inv 0 = 0,
+\]
+which is a contradiction.  Therefore, $A$ is not invertible.
+
+\end{solution}
+\end{exercise}
+\end{document}

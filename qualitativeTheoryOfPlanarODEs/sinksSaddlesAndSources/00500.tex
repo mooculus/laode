@@ -1,0 +1,89 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\AEXER
+
+
+In Exercises~\ref{A6.4.1}-\ref{A6.4.3} use the given data (the eigenvectors 
+$v_1,v_2\in\R^2$ and associated eigenvalues $\lambda_1,\lambda_2\in\C$
+of the $2\times 2$ matrix $C$, and initial condition $X_0\in\R^2$) to   
+\begin{enumeratea}
+\item Find the general solution of the system of differential equations 
+\begin{equation} \label{A6.4-a}
+\frac{dX}{dt} = CX. 
+\end{equation}
+\item Sketch the trajectory in phase space of \eqref{A6.4-a} with initial condition $X_0$.
+%\item Sketch the time series of the first coordinate of \eqref{A6.4-a} with initial condition $X_0$.
+\end{enumeratea}
+
+\begin{exercise} \label{A6.4.1}
+\[
+v_1 = \Matrix{ 1 \\ -1} \quad  v_2 = \Matrix{ 1 \\ 1 }\quad  \lambda_1 = -1\quad \lambda_2 = 3\quad  X_0 = \Matrix{2 \\ 0 }
+\]
+
+\begin{solution}
+\soln Since the eigenvalues are real, the general solution is given by \eqref{E:RD2} and is:
+\[
+X(t) = \alpha_1 e^{-t} \Matrix{ 1 \\ -1} + \alpha_2 e^{3t}\Matrix{ 1 \\ 1 }
+\]
+%The solution to the initial value problem is
+%\[X(0) = \Matrix{2 \\ 0 }=  \alpha_1\Matrix{ 1 \\ -1} + \alpha_2 \Matrix{ 1 \\ 1 }\]
+%That is,  $\alpha_1 = 1 = \alpha_2$.
+ 
+\begin{figure}[htb]
+           \centerline{%
+           \psfig{file=exfigure/A6_4_1a.eps,width=2.0in}}
+	 %  \psfig{file=exfigure/A6_4_1b.eps,width=2.0in}}
+           \exercap{A6.4.1}
+\end{figure}
+
+\end{solution}
+\end{exercise}
+
+\begin{exercise} \label{A6.4.2}
+\[
+v_1 = \Matrix{ 1 \\ -1}; v_2 = \Matrix{ 0 \\ -3 }; \lambda_1 = -1; \lambda_2 = 3; X_0 = \Matrix{2 \\ -2 }
+\]
+
+\begin{solution}
+\soln Since the eigenvalues are real the general solution is given by \eqref{E:RD2} and is:
+\[
+X(t) = \alpha_1 e^{-t} \Matrix{ 1 \\ -1} + \alpha_2 e^{3t}\Matrix{ 0 \\ -3 }
+\]
+%The solution to the initial value problem is
+%\[X(t) =  2e^{-t} \Matrix{ 1 \\ -1} \]
+
+\begin{figure}[htb]
+           \centerline{%
+           \psfig{file=exfigure/A6_4_2a.eps,width=2.0in}}
+           \exercap{A6.4.2}
+\end{figure}
+\end{solution}
+\end{exercise}
+
+\begin{exercise} \label{A6.4.3}
+\[
+v_1 = \Matrixc{ 1 -i \\ -1}; v_2 = \Matrixc{ 1 + i \\ -1 }; \lambda_1 = -1+i;  \lambda_2 = -1-i; X_0 = \Matrix{2 \\ 0}
+\]
+
+\begin{solution}
+\soln Since the eigenvalues are complex conjugates, the general solution is given by \eqref{E:CC1} and is
+\[
+X(t) = \alpha_1 X_1(t) + \alpha_2 X_2(t)
+\]
+where $u=\RE(v_1)$, $w=\IM(v_1)$, and 
+\[
+\begin{array}{rcl}
+X_1(t) & = & e^{-t}(\cos(t)u -\sin(t)w)\\
+X_2(t) & = & e^{-t}(\sin(t)u +\cos(t)w).
+\end{array}
+\]
+\begin{figure}[htb]
+           \centerline{%
+           \psfig{file=exfigure/A6_4_3a.eps,width=2.0in}}
+           \exercap{A6.4.3}
+\end{figure}
+\end{solution}
+\end{exercise}
+\end{document}

@@ -1,0 +1,55 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c4.10.5}
+Suppose the apartment in Figure~\ref{F:apart} is populated by dogs rather than
+cats.  Suppose that dogs will actually move when told; that is, at each step
+a dog will move from the room that he occupies to another room.
+\begin{itemize}
+\item[(a)]  Calculate the transition matrix {\tt PDOG} for this Markov chain
+and verify that {\tt PDOG} is a Markov matrix.
+\item[(b)]  Find the probability that a dog starting in room~2 will end up in
+room~3 after $5$ steps.
+\item[(c)]  Find the probability that a dog starting in room~3 will end up in
+room~1 after $4$ steps.  Explain why your answer is correct without using
+\Matlabp.
+\item[(d)]  Suppose that the initial population consists of 100 dogs.  After
+a large number of steps what will be the distribution of the dogs in the four
+rooms.
+\end{itemize}
+
+\begin{solution}
+
+(a) \ans Let $D =${\tt PDOG} be the transition matrix for this Markov chain:
+\[
+D = \left(\begin{array}{rrrr} 0 & \frac{1}{3} & \frac{1}{3} &
+\frac{1}{3} \\ 1 & 0 & 0 & 0 \\ 0 & 0 & 0 & 1 \\
+0 & \frac{1}{2} & \frac{1}{2} & 0 \end{array}\right).
+\]
+
+\soln All entries of $D$ are nonnegative and the entries of each row of
+$D$ sum to $1$.  The \Matlab command {\tt D\^{}5} verifies that all
+entries of the matrix $D^5$ are positive.  Therefore,
+Definition~\ref{D:Markov} is valid for $D$.
+
+(b) The probability that a dog starting in room 2 will end up in room
+3 after 5 steps is element $(2,3)$ of the matrix $D^5$, or
+$\frac{7}{36}$.
+
+(c) \ans The probability that a dog starting in room 3 will end up in room
+1 after 4 steps is 0.
+
+\soln The only way a dog in room 3 can get to room 1
+is by going from room 3 to room 4, then to room 2, then to room 1, which
+takes three steps.  The dog must then leave room 1 on the fourth step,
+and there is no other combination of steps by which the dog could go to
+room 1 in four steps.
+
+(d) \ans After a large number of steps, there will be approximately $23$
+dogs in each of rooms 1, 2, and 3, and $31$ dogs in room 4.
+
+\soln Using \Matlab, evaluate $D^k$ for large values of $k$.
+
+\end{solution}
+\end{exercise}
+\end{document}

@@ -1,0 +1,45 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise}  \label{c12.3.2}
+Attempt to use the method of elimination to solve the following system
+\[
+\begin{array}{rcl}
+\dot{x} & = & 2x + z\\
+\dot{y} & = & 3y + z\\
+\dot{z} & = & z.
+\end{array}
+\]
+Use the characteristic equation \eqref{E:Elimination} to solve for $x(t)$ and 
+then attempt to use the system of differential equations to solve for $y(t)$ 
+and $z(t)$.  What goes wrong?
+
+\begin{solution}
+
+The system of differential equations may be written in the form $\dot{X}=CX$ where
+\[
+C=\matthree{2}{0}{1}{0}{3}{1}{0}{0}{1}.
+\]
+The characteristic polynomial of $C$ =s
+$p_C(\lambda)=-(\lambda-1)(\lambda-2)(\lambda-3)$.  Therefore, 
+\[
+x(t) = ae^t+be^{2t}+ce^{3t}
+\]
+for some constants $a,b,c$.  We can use the first differential equation to solve for
+$z$ as
+\[
+z = \dot{x}-2x = ce^{3t}-ae^t.
+\]
+There is, however, no way to solve for $y$ directly from the given information.  The
+second eqution, the only one to contain $y$, leads to solving an inhomogeneous
+differential equation
+\[
+\dot{y} = 3y + ce^{3t}-ae^t.
+\]
+So the method of elimination fails in this case.  Using the characteristic equation
+to solve for $y$ or $z$ first (instead of $x$) leads to similar problems. 
+
+
+\end{solution}
+\end{exercise} 
+\end{document}

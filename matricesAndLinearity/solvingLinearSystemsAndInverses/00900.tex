@@ -1,0 +1,36 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c4.9.6}
+For which values of $a,b,c$ is the matrix
+\[
+A =\left(\begin{array}{rrr} 1 & a & b\\ 0 & 1 & c\\ 0 & 0 & 1
+\end{array}\right)
+\]
+invertible?  Find $A\inv$ when it exists.
+
+\begin{solution}
+
+\ans
+The matrix $A$ is invertible for any choice of $a$, $b$, and $c$, and
+\[
+A^{-1} = \left(\begin{array}{rrc} 1 & -a & -b + ac \\ 0 & 1 & -c 
+\\ 0 & 0 & 1 \end{array}\right).
+\]
+
+\soln Theorem~\ref{invertequiv} states that a matrix is invertible if
+it is row equivalent to $I_n$.  By row reducing the augmented matrix
+$(A|I_3)$ as follows:
+\[
+\left(\begin{array}{rrr|rrr} 1 & a & b & 1 & 0 & 0 \\
+0 & 1 & c & 0 & 1 & 0 \\ 0 & 0 & 1 & 0 & 0 & 1
+\end{array}\right) \rightarrow \left(\begin{array}{rrr|rrc}
+1 & 0 & 0 & 1 & -a & -b + ac \\ 0 & 1 & 0 & 0 & 1 & -c \\
+0 & 0 & 1 & 0 & 0 & 1 \end{array}\right)
+\]
+we show that $A$ is invertible for any choice of $a$, $b$, and
+$c$, and find a value for $A^{-1}$.
+
+\end{solution}
+\end{exercise}
+\end{document}

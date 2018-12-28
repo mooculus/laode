@@ -1,0 +1,35 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\noindent In Exercises~\ref{c7.8.6a} -- \ref{c7.8.6b} use the program
+{\sf map} to guess one of the eigenvectors of the given matrix.  What is
+the corresponding eigenvalue?  Using {\sf map}, can you find a second
+eigenvalue and eigenvector?
+\begin{exercise} \label{c7.8.6a}
+$A=\left(\begin{array}{rr} 2 & 4\\ 2 & 0
+\end{array}\right)$.
+
+\begin{solution}
+The eigenvectors are $v_1 = (2,1)^t$, with eigenvalue
+$\lambda_1 = 4$, and $v_2 = (1,-1)^t$, with eigenvalue $\lambda_2 = -2$.
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c7.8.6b}
+$B=\left(\begin{array}{rr} 2 & -1\\ 0.25 & 1
+\end{array}\right)$.
+
+\noindent {\bf Hint:} Use the feature {\sf Rescale} in the
+{\sf MAP Options}.  Then the length of the vector is rescaled to one
+after each use of the command {\sf Map}. In this way you can avoid
+overflows in the computations while still being able to see the
+directions where the vectors are moved by the matrix mapping.
+
+\begin{solution}
+The matrix has a single eigenvector, $v = (2,1)^t$, with
+corresponding eigenvalue $\lambda = 1.5$.
+
+\end{solution}
+\end{exercise}
+\end{document}

@@ -1,0 +1,73 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+
+\noindent In Exercises~\ref{c12.3.1a} -- \ref{c12.3.1f} write the 
+homogeneous differential equation $p(D)x=0$ using $d/dt$ notation,
+factor the characteristic polynomial, and then find the general solution.
+\begin{exercise}  \label{c12.3.1a}
+$p(D) = D + 1$.
+
+\begin{solution}
+\ans The equation $p(D)x = 0$ can be written as
+\[
+\frac{dx}{dt} + x = 0.
+\]
+The characteristic polynomial is
+$\lambda + 1$
+and the general solution is
+\[
+x(t) = \alpha_1e^{-t}.
+\]
+
+\soln The characteristic polynomial has a real eigenvalue at $\lambda = -1$.
+
+\end{solution}
+\end{exercise}
+\begin{exercise}  \label{c12.3.1b}
+$p(D) = -D^2 - 5$.
+
+\begin{solution}
+\ans The equation $p(D)x = 0$ can be written as
+\[
+-\frac{d^2x}{dt^2} - 5x = 0.
+\]
+The characteristic polynomial is
+$-\lambda^2 - 5$
+and the general solution is
+\[
+x(t) = \alpha_1\cos(\sqrt{5}t) + \alpha_2\sin(\sqrt{5}t).
+\]
+
+\soln The characteristic polynomial has complex conjugate eigenvalues
+at $\lambda = \pm\sqrt{5}i$.
+
+
+\end{solution}
+\end{exercise}
+
+\begin{exercise}  \label{c12.3.1f}
+$p(D) = -4D^5 +4D^4 -8D^2$.
+
+\begin{solution}
+\ans The equation $p(D)x = 0$ can be written as
+\[
+-4\frac{d^5x}{dt^5} + 4\frac{d^4x}{dt^4} - 8\frac{d^2x}{dt^2} = 0.
+\]
+The characteristic polynomial is
+$\lambda^2(\lambda + 1)(\lambda^2 - 2\lambda + 2)$
+and the general solution is
+\[
+x(t) = \alpha_1 + \alpha_2 t + \alpha_3e^{-t} +
+\alpha_4e^t\cos t + \alpha_5e^t\sin t.
+\]
+
+\soln The characteristic polynomial has a double eigenvalue at
+$\lambda_1 = 0$, another real eigenvalue at $\lambda_2 = -1$, and complex
+conjugate eigenvalues at $\lambda_3 = 1 \pm i$.
+
+
+\end{solution}
+\end{exercise}
+\end{document}

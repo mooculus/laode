@@ -1,0 +1,26 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c10.1.2}
+Find $\det(A\inv)$ where 
+$A = \left(\begin{array}{rrr} -2 & -3 & 2 \\ 4 & 1 & 3 \\ -1 & 1 & 1
+\end{array} \right)$. 
+
+\begin{solution}
+
+\ans The solution is $\det(A^{-1}) = \frac{1}{35}$.
+
+\soln By Definition~\ref{D:determinants}(c),
+$\det(A)\det(A^{-1}) = \det(I_3) = 1$.  Therefore,
+\[
+\det(A^{-1}) = \frac{1}{\det(A)}.
+\]
+Now compute $\det(A)$ using \eqref{e:inductdet}:
+\[
+\det(A) = -2\mattwo{1}{3}{1}{1} + 3\mattwo{4}{3}{-1}{1}
++ 2\mattwo{4}{1}{-1}{1} = 35.
+\]
+
+\end{solution}
+\end{exercise}
+\end{document}

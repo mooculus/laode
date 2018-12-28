@@ -1,0 +1,52 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c7.6.3}
+In Table~\ref{T:sunny} we present weather data from ten U.S. cities.  The
+data is the average number of days in the year with precipitation and the
+percentage of sunny hours to hours when it could be sunny.  Find the best
+linear fit to this data.
+\begin{table}[htb]
+\begin{center}
+\begin{tabular}{|c||c|c||c||c|c|}
+\hline
+City & Rainy Days & Sunny (\%) & City & Rainy Days & Sunny (\%)\\
+\hline
+Charleston 	&   92 & 72 & Kansas City 	&   98 & 59\\
+Chicago 	&  121 & 54 & Miami 		&  114 & 85 \\
+Dallas 		&   82 & 65 & New Orleans 	&  103 & 61 \\
+Denver 		&   82 & 67 & Phoenix 		&   28 & 88 \\
+Duluth 		&  136 & 52 & Salt Lake City 	&   99 & 59 \\
+\hline
+\end{tabular}
+\caption{Precipitation Days Versus Sunny Time for Selected U.S. Cities.}
+\label{T:sunny}
+\end{center}
+\end{table}
+
+\begin{solution}
+
+\ans Let $R$ be the number of days in the year with precipitation and
+let $s$ be the percentage of sunny hours to daylight hours.  Then the
+best linear estimate of the relationship between the two is:
+\[ R \approx 199.2 - 156.6s. \]
+
+\soln In \Matlabp, enter the data for number of rainy days as the vector
+$R$, and then enter the data for percentage of sunny hours as the vector
+$s_1$.  Then create the $1 \times 10$ vector $s_2 = (1,1,\dots,1)$.  Now,
+find the best vector $b = (b_1,b_2)$ such that $R = b_1s_1 + b_2s_2$. 
+This vector can be found using \eqref{E:nearestvector}.  The solution vector
+is $(b_1,b_2) \approx (-156.6,199.2)$.  Figure~\ref{c7.6.3} shows the
+actual data graphed against the linear estimate.
+
+\begin{figure}[htb]
+		\centerline{%
+		\psfig{file=exfigure/7-6-3.eps,width=3.0in}}
+	\exercap{c7.6.3}
+\end{figure}
+
+
+
+\end{solution}
+\end{exercise}
+\end{document}

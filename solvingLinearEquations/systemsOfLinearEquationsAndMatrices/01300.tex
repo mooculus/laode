@@ -1,0 +1,75 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c2.1.7}
+Suppose that the four substances $S_1$, $S_2$, $S_3$, $S_4$
+contain the following percentages of vitamins A, B, C and F by
+weight
+\begin{center}
+\begin{tabular}{|c||r|r|r|r|}
+\hline
+Vitamin   & $S_1$ & $S_2$ & $S_3$ & $S_4$\\
+\hline
+ A & 25\% &    19\% &    20\% &    3\% \\
+ B &  2\% &    14\% &     2\% &   14\% \\
+ C &  8\% &     4\% &     1\% &     0\% \\
+ F & 25\% &    31\% &    25\% &    16\% \\
+\hline
+\end{tabular}
+\end{center}
+Mix the substances $S_1$, $S_2$, $S_3$ and $S_4$ so that the
+resulting mixture contains precisely $3.85$ grams of vitamin A,
+$2.30$ grams of vitamin B, $0.80$ grams of vitamin C, and $5.95$
+grams of vitamin F.  How many grams of each substance have to be
+contained in the mixture?
+
+Discuss what happens if we require that the resulting mixture contains
+$2.00$ grams of vitamin B instead of $2.30$ grams.
+
+\begin{solution}
+\ans The vector of solutions is:
+\begin{verbatim}
+ans =
+    7.3828
+    4.1016
+    4.5313
+   10.6250
+\end{verbatim}
+\soln First, translate the data in the table to a system of linear
+equations, relating the quantities of $S_1$, $S_2$, $S_3$, and $S_4$
+in the mixture to the quantities of vitamins $A$, $B$, $C$, and $F$. 
+The first equation is $.25S_1 + .19S_2 + .20S_3 + .03S_4 = A$, and
+the other three equations correspond to the other vitamins.  From
+this data, find the coefficient matrix $A$ for the system.  The desired
+quantities of each vitamin form the solution vector $b$.
+\begin{verbatim}
+A =                                             b =
+    0.2500    0.1900    0.2000    0.0300           3.8500
+    0.0200    0.1400    0.0200    0.1400           2.3000
+    0.0800    0.0400    0.0100         0           0.8000
+    0.2500    0.3100    0.2500    0.1600           5.9500
+\end{verbatim}
+As in the previous problems, the system can be solved by
+typing {\tt A}$\backslash${\tt b}.
+
+\para If $b(2) = 2.00$ instead of $2.30$, then
+{\tt A}$\backslash${\tt b} yields
+
+\begin{verbatim}
+ans =
+   22.4023
+  -27.8320
+   12.1094
+   37.1875
+\end{verbatim}
+Note that the components of the answer vector refer to weights of
+substances, which cannot be negative.  This answer contains a negative
+component; so although a mathematically valid solution exists, we
+cannot mix the substances in such a way that
+
+$b = \left(\begin{array}{r} 3.85 \\ 2.00 \\ 0.80 \\ 5.95\end{array} \right)$.
+
+
+\end{solution}
+\end{exercise}
+\end{document}

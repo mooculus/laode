@@ -1,0 +1,42 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{E:popex}
+Recall that the simplest population growth model
+\index{population model} is 
+\[
+\frac{dp}{dt} = \lambda p,
+\]
+where $p(t)$ is the population at time $t$ and $\lambda$ is the
+population growth rate. Suppose that the growth rate depends on
+the size of the population, as follows:
+\[
+\lambda(p) = \lambda_0 - ap,
+\]
+where $\lambda_0>0$ and $a>0$ are constants.  Suppose that
+$p(t)$ is a solution and $p(0)>0$.  What is the asymptotic
+limit of the population in forward time, that is, what is
+$\dps\lim_{t\to\infty} p(t)$?
+
+\begin{solution}
+
+\ans The asymptotic limit of the population in forward time is
+$\frac{\lambda_0}{a}$.
+
+\soln Substitute $\lambda(p)$ into the population model, obtaining
+\[
+\frac{dp}{dt} = (\lambda_0 - ap)p\equiv f(p).
+\]
+Solve for $f(p)= 0$ to find that the system has equilibria
+at $p = 0$ and $p = \frac{\lambda_0}{a}$.  Then, find that
+\[
+\frac{df}{dp}(0) = \lambda_0 > 0 \AND
+\frac{df}{dp}(\lambda_0/a) = -\lambda_0 < 0;
+\]
+so the equilibrium at $p = 0$ is unstable and the equilibrium at
+$p = \frac{\lambda_0}{a} > 0$ is stable.  Therefore, a solution with 
+initial population $p(0) > 0$ limits on $\frac{\lambda_0}{a}$.
+
+\end{solution}
+\end{exercise}  \index{population model}
+\end{document}

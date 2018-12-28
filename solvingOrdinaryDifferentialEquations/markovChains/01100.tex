@@ -1,0 +1,31 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c4.10.9}
+Suppose that the original man in the text with umbrellas has only three
+umbrellas instead of four.  What is the probability that on a given day he
+will get wet going to work?
+
+\begin{solution}
+
+\ans The probability that the man will get wet going to work is $1.53\%$.
+
+\soln Create the $4 \times 4$ matrices $P$ (the transition matrix between
+morning and afternoon) and $Q$ (the transition matrix between afternoon
+and the next morning), then multiply to obtain \begin{verbatim}
+R =
+    0.7000    0.3000         0         0
+    0.1400    0.6200    0.2400         0
+         0    0.1400    0.6200    0.2400
+         0         0    0.1400    0.8600
+\end{verbatim}
+Find the eigenvector $V$ of $R$.  The first element of $V$ is $0.0763$,
+the probability that there will be no umbrella in the house on a given
+morning.  Multiply this by the probability that it will rain in the
+morning to obtain the solution.
+
+
+
+\end{solution}
+\end{exercise}
+\end{document}

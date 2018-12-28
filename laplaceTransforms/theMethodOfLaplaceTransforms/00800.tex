@@ -1,0 +1,38 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise}   \label{exer:kderLap}
+Identity \eqref{eq:dderLap}\index{Laplace transform!derivative property} may be 
+generalized to: 
+\begin{equation}  \label{LapDerk}
+{\cal L}\left[\frac{d^k y}{dt^k}\right] =
+s^k{\cal L}[y] - s^{k-1} y(0) - \cdots - \frac{d^{k-1} y}{dt^{k-1}}(0).
+\end{equation}
+Use induction to verify \eqref{LapDerk}. 
+
+\begin{solution}
+The case $k = 1$ is true by \eqref{Tprops}(c), that is
+\[
+{\cal L}\left[\frac{dy}{dt}\right] = s{\cal L}[y] = y(0).
+\]
+Now, suppose
+\[
+{\cal L}\left[\frac{d^ky}{dt^k}\right] = s^k{\cal L}[y] - s^{k - 1}y(0)
+- \cdots - \frac{d^{k - 1}y}{dt^{k - 1}}(0).
+\]
+Then we can compute
+\[
+{\cal L}\left[\frac{d^{k + 1}y}{dt^{k + 1}}\right] =
+s{\cal L}\left[\frac{d^ky}{dt^k}\right] - \frac{d^ky}{dt^k}(0)
+= s^{k + 1}{\cal L}[y] - s^{k}y(0)
+- \cdots - s\frac{d^{k - 1}y}{dt^{k - 1}}(0) - \frac{d^ky}{dt^k}(0).
+\]
+So the formula is valid by induction on $k \geq 1$.
+
+
+
+
+
+\end{solution}
+\end{exercise}
+\end{document}

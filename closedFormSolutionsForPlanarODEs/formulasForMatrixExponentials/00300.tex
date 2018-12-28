@@ -1,0 +1,103 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c6.6.3}
+Find all solutions to the linear system of ODEs
+\[
+\frac{dX}{dt} = \mattwo{-2}{4}{-1}{1} X.
+\]
+
+\begin{solution}
+
+\ans The general solution is
+\[
+X(t) = e^{-\frac{1}{2}t}\cmattwo{\cos\left({\frac{\sqrt{7}}{2}t}\right) -
+\frac{3}{2\sqrt{7}}\sin\left({\frac{\sqrt{7}}{2}t}\right)}
+{\frac{4}{\sqrt{7}}\sin\left({\frac{\sqrt{7}}{2}t}\right)}
+{-\frac{1}{\sqrt{7}}\sin\left({\frac{\sqrt{7}}{2}t}\right)}
+{\cos\left({\frac{\sqrt{7}}{2}t}\right) +
+\frac{3}{2\sqrt{7}}\sin\left({\frac{\sqrt{7}}{2}t}\right)}X(0).
+\]
+
+\soln Let
+\[
+C = \mattwo{-2}{4}{-1}{1}.
+\]
+Then the solution to the system is $X(t) = e^{tC}X_0$, where
+$X_0 = X(0)$ is the initial condition of the system.
+Find the eigenvalues of $C$ by solving
+\[
+0 = \lambda^2 - \trace(C) + \det(C) = \lambda^2 + \lambda + 2.
+\]
+The eigenvalues are $\lambda_1 = \frac{1}{2}(-1 + \sqrt{7}i)$ and
+$\lambda_2 = \frac{1}{2}(-1 - \sqrt{7}i)$.  Find $e^{tC}$ using
+\eqref{E:exdist}:
+\[
+e^{tC} = \frac{1}{\lambda_2 - \lambda_1}(e^{\lambda_1 t}(C -
+\lambda_2 I_2) - e^{\lambda_2 t}(C - \lambda_1 I_2)).
+\]
+Since the scalar
+\[
+\frac{1}{\lambda_2 - \lambda_1} = -\frac{1}{2\sqrt{7}}i
+\]
+is purely
+imaginary, we need compute only the imaginary parts of
+$e^{\lambda_1 t}(C - \lambda_2 I_2)$ and $e^{\lambda_2 t}(C - \lambda_1 I_2)$
+to obtain the real solution to the differential equation $X(t) = e^{tC}X_0$.
+So, compute
+\[
+\begin{array}{rcl}
+e^{\lambda_1 t}(C - \lambda_2 I_2)
+& = & e^{-\frac{1}{2}t}e^{\frac{\sqrt{7}}{2}it}
+\left(\mattwo{-2}{4}{-1}{1} - \cmattwo{-\frac{3}{2} - \frac{\sqrt{7}}{2}i}
+{0}{0}{-\frac{3}{2} - \frac{\sqrt{7}}{2}i}\right) \\
+& = & e^{-\frac{1}{2}t}\left(\cos\left(\frac{\sqrt{7}}{2}t\right) +
+i\sin\left(\frac{\sqrt{7}}{2}t\right)\right)
+\cmattwo{-\frac{3}{2} + \frac{\sqrt{7}}{2}i}{4}{-1}{\frac{3}{2} +
+\frac{\sqrt{7}}{2}i}.
+\end{array}
+\]
+The imaginary part of this product is
+\[
+ie^{-\frac{1}{2}t}\cmattwo{-\frac{3}{2}\sin\left(\frac{\sqrt{7}}{2}
+t\right) + \frac{\sqrt{7}}{2}\cos\left(\frac{\sqrt{7}}{2}t\right)}
+{4\sin\left(\frac{\sqrt{7}}{2}t\right)}{-\sin\left(\frac{\sqrt{7}}{2}t\right)}
+{\frac{3}{2}\sin\left(\frac{\sqrt{7}}{2}
+t\right) + \frac{\sqrt{7}}{2}\cos\left(\frac{\sqrt{7}}{2}t\right)}.
+\]
+Then compute
+\[
+\begin{array}{rcl}
+e^{\lambda_2 t}(C - \lambda_1 I_2)
+& = & e^{-\frac{1}{2}t}e^{-\frac{\sqrt{7}}{2}it}
+\left(\mattwo{-2}{4}{-1}{1} - \cmattwo{-\frac{3}{2} + \frac{\sqrt{7}}{2}i}
+{0}{0}{-\frac{3}{2} + \frac{\sqrt{7}}{2}i}\right) \\
+& = & e^{-\frac{1}{2}t}\left(\cos\frac{\sqrt{7}}{2}t -
+i\sin\frac{\sqrt{7}}{2}t\right)
+\cmattwo{-\frac{3}{2} - \frac{\sqrt{7}}{2}i}{4}{-1}{\frac{3}{2} -
+\frac{\sqrt{7}}{2}i}.
+\end{array}
+\]
+The imaginary part of this product is
+\[
+ie^{-\frac{1}{2}t}\cmattwo{\frac{3}{2}\sin\left(\frac{\sqrt{7}}{2}
+t\right) - \frac{\sqrt{7}}{2}\cos\left(\frac{\sqrt{7}}{2}t\right)}
+{-4\sin\left(\frac{\sqrt{7}}{2}t\right)}{\sin\left(\frac{\sqrt{7}}{2}t\right)}
+{-\frac{3}{2}\sin\left(\frac{\sqrt{7}}{2}
+t\right) - \frac{\sqrt{7}}{2}\cos\left(\frac{\sqrt{7}}{2}t\right)}.
+\]
+
+Thus, the general solution is
+\[
+X(t) = \frac{1}{2\sqrt{7}}
+e^{-\frac{1}{2}t}\cmattwo{-3\sin\left(\frac{\sqrt{7}}{2}t\right) +
+\sqrt{7}\cos\left(\frac{\sqrt{7}}{2}t\right)}
+{8\sin\left(\frac{\sqrt{7}}{2}t\right)}{-2\sin\left(\frac{\sqrt{7}}{2}t\right)}
+{3\sin\left(\frac{\sqrt{7}}{2}t\right) +
+\sqrt{7}\cos\left(\frac{\sqrt{7}}{2}t\right)}X_0.
+\]
+
+
+\end{solution}
+\end{exercise}
+\end{document}

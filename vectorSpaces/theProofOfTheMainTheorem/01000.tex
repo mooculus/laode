@@ -1,0 +1,37 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c5.6.6}
+Find a basis for the subspace of $\R^5$ spanned by
+\begin{matlabEquation}\label{MATLAB:63}
+\begin{array}{rcl}
+u_1 & = & (1,1,0,0,1) \\
+u_2 & = & (0,2,0,1,-1)  \\
+u_3 & = & (0,-1,1,0,2)   \\
+u_4 & = & (1,4,1,2,1)  \\
+u_5 & = & (0,0,2,1,3).
+\end{array}
+\end{matlabEquation}
+
+\begin{solution}
+
+\ans The vectors $(1,0,0,-\frac{1}{2},\frac{3}{2})$, $(0,1,0,\frac{1}{2},
+-\frac{1}{2})$, and $(0,0,1,\frac{1}{2},\frac{3}{2})$ form a basis
+for the subspace spanned by $u_1, \dots ,u_5$.
+
+\soln Row reduce the matrix {\tt M}, whose
+rows are $u_1$, $u_2$, $u_3$, $u_4$ and $u_5$.  According to 
+Lemma~\ref{extendindep}, the rows of the
+reduced echelon matrix form a basis for $\{u_1,\dots ,u_5\}$.  The
+command {\tt rref(M)} yields:
+\begin{verbatim}
+ans =
+    1.0000         0         0   -0.5000    1.5000
+         0    1.0000         0    0.5000   -0.5000
+         0         0    1.0000    0.5000    1.5000
+         0         0         0         0         0
+         0         0         0         0         0
+\end{verbatim}
+\end{solution}
+\end{exercise}
+\end{document}

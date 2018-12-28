@@ -1,0 +1,35 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise}  \label{E:notcircles}
+Consider the system of differential equations $\dot{X}=CX$ where
+$C=\mattwo{2}{-10}{1}{-2}$.  By hand show that this system is a center and
+use {\pplane} to determine its phase portrait.  Describe both the
+similarities and the differences of the phase portrait of this system
+and the phase portrait in Figure~\ref{F:center}.
+
+\begin{solution}
+
+By definition, a system $\dot{X} = CX$ is a center if the eigenvalues
+of $C$ are purely imaginary.  This occurs when $\det(C) > 0$ and
+$\trace(C) = 0$.  In this case, $\det(C) = 6$ and $\trace(C) = 0$, so
+the system is indeed a center.  The phase portrait is shown in
+Figure~\ref{E:notcircles}.  In this phase portrait and in the one
+shown in Figure~\ref{F:center}, all
+trajectories are closed ellipses.  However, the trajectories in
+Figure~\ref{F:center} are circular, while the ones in this exercise
+are not.  This is true because Figure~\ref{F:center} graphs the system
+$\dot{X} = BX$, where
+\[ B = \mattwo{0}{-\tau}{\tau}{0}, \]
+while this problem graphs the system $\dot{X} = CX$, where $C = 
+PBP^{-1}$ and $P \neq I_2$.
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/notcircles.eps,width=3.0in}}
+                \exercap{E:notcircles}
+\end{figure}
+
+\end{solution}
+\end{exercise}
+\end{document}

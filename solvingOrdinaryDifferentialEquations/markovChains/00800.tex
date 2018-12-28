@@ -1,0 +1,49 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c4.10.6}
+A truck rental company has locations in three cities A, B and C.
+Statistically, the company knows that the trucks rented at one location will
+be returned in one week to the three locations in the following proportions.
+\begin{center}
+\begin{tabular}{|c||c|c|c|}
+\hline
+Rental Location &  Returned to A & Returned to B & Returned to C\\
+\hline
+A  & 75\% & 10\%  & 15\% \\
+\hline
+B & 5\% & 85\% & 10\% \\
+\hline
+C & 20\% & 20\% & 60\%\\
+\hline
+\end{tabular}
+\end{center}
+Suppose that the company has 250 trucks.  How should the company distribute
+the trucks so that the number of trucks available at each location remains
+approximately constant from one week to the next?
+
+\begin{solution}
+
+\ans The company should put $70$ trucks in city $A$, $123$ trucks in city
+$B$, and $57$ trucks in city $C$.
+
+\soln Given initial truck distribution $V_0 = (V_A,V_B,V_C)$, the
+distribution after $k$ weeks is $(P^t)^kV_0$, where $P$ is the transition
+matrix for the movement of trucks.  As $k \rightarrow \infty$, $(P^t)^k$
+approaches
+\begin{verbatim}
+    0.2807    0.2807    0.2807
+    0.4912    0.4912    0.4912
+    0.2281    0.2281    0.2281
+\end{verbatim}
+So, if the distribution of trucks is to remain constant, then, for large
+values of $k$,
+\[
+\vecthree{V_A}{V_B}{V_C} = (P^t)^kV_0 = \cvecthree{0.2807(V_A +
+V_B + V_C}{0.4912(V_A + V_B + V_C}{0.2281(V_A + V_B + V_C} =
+\cvecthree{70.1754}{122.8070}{57.0175}.
+\]
+
+\end{solution}
+\end{exercise}
+\end{document}

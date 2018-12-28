@@ -1,0 +1,36 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c9.7.2}
+Show that the differential equation
+\[
+\dot{x} = \rho - x^2 + 2x
+\]
+undergoes a saddle-node bifurcation at $\rho=-1$ where two equilibria
+appear as $\rho$ increases through $-1$.  Draw the bifurcation diagram
+for this differential equation.
+
+\begin{solution}
+
+\ans The bifurcation diagram (Figure~\ref{c9.7.2}) shows two equilibria
+appearing as $\rho$ increases through $-1$.
+
+\soln The equilibria of the equation occur when $f(x,\rho) = \rho - x^2 +
+2x = 0$.  Solve for $x$ in this equation to find that $x = 1 \pm
+\sqrt{\rho + 1}$ at all equilibria.  Thus, the differential equation has
+two real equilibria when $\rho > -1$, one real equilibrium at $x = 1$ when
+$\rho = -1$, and no real equilibria when $\rho < -1$.  To find the
+stability of the equilibria, compute $f_x(x,\rho) = -2x + 2$.  Thus, if
+$\rho > -1$, then
+$f_x(1 + \sqrt{\rho + 1},\rho) = -2\sqrt{\rho + 1} < 0$ and
+$f_x(1 - \sqrt{\rho + 1},\rho) = 2\sqrt{\rho + 1} > 0$.
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/9-7-2.eps,width=3.0in}}
+                \exercap{c9.7.2}
+\end{figure}
+
+\end{solution}
+\end{exercise}
+\end{document}

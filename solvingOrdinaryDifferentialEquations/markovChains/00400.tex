@@ -1,0 +1,31 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c4.10.3}
+The state diagram of a Markov chain is given in Figure~\ref{F:Mchain}.
+Assume that each arrow leaving a state has equal probability of being chosen.
+Find the transition matrix for this chain.
+
+\begin{solution}
+
+Let $P$ be the transition matrix associated with Figure~\ref{F:Mchain}.
+Then,
+\[ P = \left(\begin{array}{rrrrr}
+\frac{1}{3} & 0 & \frac{1}{3} & \frac{1}{3} & 0 \\
+\frac{1}{3} & \frac{1}{3} & \frac{1}{3} & 0 & 0 \\
+0 & 0 & \frac{1}{2} & \frac{1}{2} & 0 \\
+0 & 0 & 0 & \frac{1}{2} & \frac{1}{2} \\
+\frac{1}{4} & \frac{1}{4} & 0 & \frac{1}{4} & \frac{1}{4}
+\end{array}\right). \]
+
+\end{solution}
+\end{exercise}
+\begin{figure}[htb]
+        \centerline{%
+        \psfig{file=../figures/Mchain.eps,width=3.0in}}
+        \caption{State diagram of a Markov chain.}
+        \label{F:Mchain}
+\end{figure}
+
+
+\end{document}

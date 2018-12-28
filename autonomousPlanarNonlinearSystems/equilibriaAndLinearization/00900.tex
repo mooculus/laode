@@ -1,0 +1,31 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c8.2.8}
+Find all equilibria of the system of ODEs
+\begin{eqnarray*}
+\dot{x} & = & 2x - y \\
+\dot{y} & = & 11x + x^2 - 3y^2.
+\end{eqnarray*}
+Also determine the types of each of these equilibria.
+
+\begin{solution}
+
+\ans There are two equilibria: a spiral source at $(0,0)$, and a saddle
+at $(1,2)$.
+
+\soln Solve the system for $\dot{x} = \dot{y} = 0$.  Then, compute the
+Jacobian matrices at the equilibria, in this case
+\[
+(dJ)_{(0,0)} = \mattwo{2}{-1}{11}{0} \qquad
+(dJ)_{(1,2)} = \mattwo{2}{-1}{13}{-12}
+\]
+and compute the eigenvalues of these matrices.  The eigenvalues of the
+Jacobian of $(0,0)$ are $1 \pm \sqrt{10}i$.  Since the eigenvalues
+are complex with positive real part, the equilibrium is
+a spiral source.  The determinant of the Jacobian of $(1,2)$ is
+$-11 < 0$.  Thus the equilibrium is a saddle.
+
+\end{solution}
+\end{exercise}
+\end{document}

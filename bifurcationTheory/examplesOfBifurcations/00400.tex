@@ -1,0 +1,36 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c9.7.3}
+Sketch the bifurcation diagram of the one parameter family of differential 
+equations
+\begin{equation} \label{E:ex2}
+\dot{x} = 3x^4 - 8x^3 - 6x^2 + 24x - \rho.
+\end{equation}
+What is the maximum number of equilibria for \eqref{E:ex2} and for which 
+values of $\rho$ does this maximum number occur? {\bf Hint:} Graph the 
+function $\rho=3x^4 - 8x^3 - 6x^2 + 24x$ by finding its maxima and minima. 
+
+\begin{solution}
+
+\ans The maximum number of equilibria is 4.  This maximum occurs when
+$8 < \rho < 13$.  The bifurcation diagram is shown in Figure~\ref{c9.7.3}.
+
+\soln The equilibria of the equation occur when
+$\rho = 3x^4 - 8x^3 - 6x^2 + 24x$.  Note that minimum and maximum points of
+$\rho$ as a function of $x$ occur when $\rho_x = 0$.  Thus, minima occur
+at $(x,\rho) = (-1,-19)$ and $(x,\rho) = (2,8)$, and a maximum occurs at
+$(x,\rho) = (1,13)$.  So, as $\rho$ increases, two equilibria appear at
+$\rho = -19$, two equilibria appear at $\rho = 8$, and two equilibria
+disappear at $\rho = 13$.  When $x < -1$ and when $1 < x < 2$, equilibria
+are stable.  For $-1 < x < 1$ and $2 < x$, equilibria are unstable.
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/9-7-3.eps,width=3.0in}}
+                \exercap{c9.7.3}
+\end{figure}
+
+\end{solution}
+\end{exercise}
+\end{document}

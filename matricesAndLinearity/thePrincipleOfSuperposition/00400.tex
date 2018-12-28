@@ -1,0 +1,48 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c4.4.3}
+\begin{itemize}
+\item[(a)] Find all solutions to the homogeneous equation
+$Ax=0$ where
+\[
+A = \left(\begin{array}{ccc} 2 & 3 & 1 \\ 1 & 1 & 4 \end{array}
+\right).
+\]
+\item[(b)] Find a single solution to the inhomogeneous equation
+\begin{equation}  \label{E:inhom}
+Ax =\vectwo{6}{6}.
+\end{equation}
+\item[(c)] Use your answers in (a) and (b) to find all solutions
+to \eqref{E:inhom}.
+\end{itemize}
+
+\begin{solution}
+
+(a) \ans All solutions to the homogeneous equation are of the form
+\[
+x = \vecthree{x_1}{x_2}{x_3} = s\vecthree{-11}{7}{1}.
+\]
+
+\soln Row reduce the matrix of the homogeneous system
+$Ax = 0$ to obtain:
+\[
+\left(\begin{array}{rrr} 1 & 0 & 11 \\ 0 & 1 & -7 \end{array}\right).
+\]
+So $x_1 = -11s$, $x_2 = 7s$ and $x_3 = s$.
+
+(b) \ans One possible solution is
+\[ \vecthree{x_1}{x_2}{x_3} = \vecthree{1}{1}{1}. \]
+
+\soln Assign a value to $x_3$, then substitute into the two equations
+of the inhomogeneous system to obtain values for $x_1$ and $x_2$.
+
+(c) All solutions to \eqref{E:inhom} can be found by adding a
+single solution of the inhomogeneous system to all solutions
+of the homogeneous system, so:
+\[
+x = \vecthree{1}{1}{1} + s\vecthree{-11}{7}{1}.
+\]
+\end{solution}
+\end{exercise}
+\end{document}

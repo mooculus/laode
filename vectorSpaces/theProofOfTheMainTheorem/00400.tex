@@ -1,0 +1,49 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c5.6.2}
+Let
+\[
+A=\left(\begin{array}{rrrr} 1 & 3 & -1 & 4\\ 2& 1 & 5 & 7\\ 3 & 4 & 4 & 11
+\end{array}\right).
+\]
+\begin{itemize}
+\item[(a)] Find a basis for the subspace ${\cal C}\subset\R^3$ spanned by the
+columns of $A$.
+\item[(b)] Find a basis for the subspace ${\cal R}\subset\R^4$ spanned by the
+rows of $A$.
+\item[(c)] What is the relationship between $\dim {\cal C}$ and
+$\dim {\cal R}$?
+\end{itemize}
+
+\begin{solution}
+
+\ans (a) The vectors $(1,2,3)$ and $(3,1,4)$ form a basis for the subspace
+	$\CC$ of $\R^3$ spanned by the columns of $A$.
+
+(b) The vectors $(1,3,-1,4)$ and $(2,1,5,7)$ form a basis for the subspace
+	$\R$ of $\R^4$ spanned by the rowss of $A$.
+
+(c) $\dim \CC = \dim \R$.
+
+\soln (a) Note that 
+\begin{eqnarray*} 
+\vecthree{-1}{5}{4} = \frac{16}{5}\vecthree{1}{2}{3} 
+	- \frac{7}{5}\vecthree{3}{1}{4} \\ 
+\vecthree{4}{7}{11} = \frac{17}{5}\vecthree{1}{2}{3} 
+	+ \frac{1}{5}\vecthree{3}{1}{4}
+\end{eqnarray*}
+So the two vectors $(1, 2, 3)$ and $(3,1,4)$ span $\CC$.  Since they are 
+linearly independent, these vectors are a basis for $\CC$ and $\dim =\CC=2$.
+
+(b) Note that 
+\[
+(3,4,4,11) = (1,3,-1,4) + (2,1,5,7).
+\]
+Therefore, $\{(1,3,-1,4),(2,1,5,7)\}$ is a basis for $\mathcal{R}$ and 
+$\dim \mathcal{R}=2$
+
+
+\end{solution}
+\end{exercise}
+\end{document}

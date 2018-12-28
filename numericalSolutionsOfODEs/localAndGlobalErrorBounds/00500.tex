@@ -1,0 +1,42 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c15.3.3}
+Set $\lambda=0.2$ and the step size $h=0.1$.  Use \Matlab to compute 
+the global discretization error and its bound in \eqref{eq:geestimate}
+on the interval $[0,1]$.  Compare the result with the ones obtained 
+in Figures~\ref{fig:globerr1} and \ref{fig:Lgeest}.
+
+\begin{solution}
+
+Proceeding as in the text we use the \Matlab commands
+\begin{verbatim}
+h      = 0.1;
+L      = 0.2;
+t(1)   = 0;
+x(1)   = 1;
+err(1) = 0;
+est(1) = 0;
+K      = 1/h;
+for k = 1:K
+     t(k+1) = t(k)+h;
+     x(k+1) = (1+L*h)*x(k);
+   err(k+1) = exp(L*t(k+1))-x(k+1);
+   est(k+1) = exp(L)*(exp(L*k*h)-1)*L*h/2;
+end
+plot(t,err,'+')
+hold on
+plot(t,est,'x')
+\end{verbatim}
+to derive the desired result.  It can be seen that in this case
+the error is significantly smaller than in Figures~\ref{fig:globerr1}
+and \ref{fig:Lgeest} due to the fact that here $L=0.2$ is smaller
+than in those cases.  In fact, the error is bounded by $0.003$.
+
+
+
+
+
+\end{solution}
+\end{exercise}
+\end{document}

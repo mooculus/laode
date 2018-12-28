@@ -1,0 +1,93 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\noindent In Exercises~\ref{c6.1.3a} -- \ref{c6.1.3c}, consider the matrix
+\[
+C = \left(\begin{array}{rrr} -1 & -10 & -6\\  0 & 4  & 3 \\  0  & -14  & -9
+	\end{array}\right).
+\]
+\begin{exercise} \label{c6.1.3a}
+Verify that
+\[
+v_1 = \left(\begin{array}{r} 1 \\ 0\\ 0\end{array}\right) \qquad
+v_2 = \left(\begin{array}{r} 2 \\ -1\\ 2\end{array}\right) \quad \AND \quad
+v_3 = \left(\begin{array}{r} 6 \\ -3\\ 7\end{array}\right)
+\]
+are eigenvectors of $C$ and find the associated eigenvalues.
+
+\begin{solution}
+
+\ans The vector $v_1 = (1,0,0)^t$ is an eigenvector with associated
+eigenvalue $\lambda_1 = -1$.  The vector $v_2 = (2,-1,2)^t$ is an
+eigenvector with associated eigenvalue $\lambda_2 = -2$.  The vector
+$v_3 = (6,-3,7)^t$ is an eigenvector with associated eigenvalue
+$\lambda_3 = -3$.
+
+\soln To verify, compute
+\[
+\begin{array}{l}
+\matthree{-1}{-10}{-6}{0}{4}{3}{0}{-14}{-9}\vecthree{1}{0}{0} =
+\vecthree{-1}{0}{0} = -1\vecthree{1}{0}{0}. \\
+\matthree{-1}{-10}{-6}{0}{4}{3}{0}{-14}{-9}\vecthree{2}{-1}{2} =
+\vecthree{-4}{2}{-4} = -2\vecthree{2}{-1}{2}. \\
+\matthree{-1}{-10}{-6}{0}{4}{3}{0}{-14}{-9}\vecthree{6}{-3}{7} =
+\vecthree{-18}{9}{-21} = -3\vecthree{6}{-3}{7}.
+\end{array}
+\]
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c6.1.3b}
+Find a solution to the system of differential equations
+$\dot{X}=CX$ satisfying the initial condition $X(0)= (10, -4, 9)^t$.
+
+\begin{solution}
+\ans The solution
+\[
+X(t) = 2e^{-t}\vecthree{1}{0}{0} + e^{-2t}\vecthree{2}{-1}{2}
++ e^{-3t}\vecthree{6}{-3}{7}
+\]
+satisfies the initial condition $X(0) = (10,-4,9)^t$.
+
+
+\soln Note that, as a special case of Theorem~\ref{T:solvends}, three
+linearly independent eigenvectors
+uniquely define a solution for $\dot{X} = CX$ with initial condition
+$X(0)$.  First, row reduce the matrix $(v_1|v_2|v_3)$ to verify that
+the eigenvectors are linearly independent.  Then, find scalars $r_1$,
+$r_2$, and $r_3$ such that:
+\[
+X(0) = r_1v_1 + r_2v_2 + r_3v_3.
+\]
+In this case, $r_1 = 2$, $r_2 = 1$, and $r_3 = 1$.  Substitute these
+values into
+\[
+X(t) = r_1e^{\lambda_1t}v_1 + r_2e^{\lambda_2t}v_2 +
+r_3e^{\lambda_3t}v_3
+\]
+to obtain the solution.
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c6.1.3c}
+Find a solution to the system of differential equations
+$\dot{X}=CX$ satisfying the initial condition $X(0)= ( 2, -1, 3)^t$.
+
+\begin{solution}
+\ans The solution
+\[
+X(t) = -2e^{-2t}\vecthree{2}{-1}{2} + e^{-3t}\vecthree{6}{-3}{7}
+\]
+satisfies the initial condition $X(0) = (2,-1,3)^t$.
+
+\soln Solving the system
+\[
+X(0) = \vecthree{2}{-1}{3} = r_1\vecthree{1}{0}{0} +
+r_2\vecthree{2}{-1}{2} + r_3\vecthree{6}{-3}{7}
+\]
+yields $r_1 = 0$, $r_2 = -2$, and $r_3 = 1$.
+
+\end{solution}
+\end{exercise}
+\end{document}

@@ -1,0 +1,101 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\CEXER
+
+\noindent In Exercises~\ref{c10.2.9a} -- \ref{c10.2.9b}, use \Matlab to 
+compute (a) the eigenvalues, traces, and characteristic polynomials of 
+the given matrix.  (b) Use the results from part (a) to confirm 
+Theorems~\ref{T:inveig} and \ref{T:tracen}.
+\begin{exercise} \label{c10.2.9a}
+\begin{matlabEquation}\label{find-eigenvalues}
+A=\left( \begin{array}{rrrrr}
+      -12 & -19 &  -3 &  14 &   0\\
+      -12 &  10 &  14 & -19 &   8\\
+        4 &  -2 &   1 &   7 &  -3\\
+       -9 &  17 & -12 &  -5 &  -8\\
+      -12 &  -1 &   7 &  13 & -12
+\end{array} \right).
+\end{matlabEquation}
+
+\begin{solution}
+
+(a) By calculation in \Matlab using the {\tt eig}, {\tt trace}, and
+{\tt poly} commands, the eigenvalues of $A$ are 
+\[
+\lambda = -0.5861 \pm 20.2517, \quad
+\lambda = -12.9416, \quad
+\lambda = -9.1033, \AND
+\lambda = 5.2171.
+\]
+The trace of $A$ is $-18$.  The characteristic polynomial of $A$ is
+\[
+p_A = \lambda^5 + 18\lambda^4 + 433\lambda^3 + 6296\lambda^2 +
+429\lambda - 252292.
+\]
+Note that in order to obtain an accurate value for the characteristic
+polynomial, it may be necessary to use the {\tt format} command.
+
+(b) Theorem~\ref{T:inveig} states that the eigenvalues of $A^{-1}$ are
+the inverses of the eigenvalues of $A$.  In \Matlab, compute
+\begin{verbatim}
+eig(inv(A)) =
+  -0.1098    
+  -0.0773    
+  -0.0014 + 0.0493i
+  -0.0014 - 0.0493i
+   0.1917
+\end{verbatim}
+Then, compute the inverse of each eigenvalue of $A$ to find that if
+$\lambda$ is an eigenvalue of $A$, then $\lambda^{-1}$ is indeed an
+eigenvalue of $A^{-1}$. 
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c10.2.9b}
+\begin{matlabEquation}\label{compute-more-eigenvalues}
+B=\left( \begin{array}{rrrrrr}
+      -12 &  -5 &  13 &  -6 & -5 &  12\\
+        7 &  14 &   6 &   1 &  8 &  18\\
+       -8 &  14 &  13 &   9 &  2 &   1\\
+        2 &   4 &   6 &  -8 & -2 &  15\\
+      -14 &   0 &  -6 &  14 &  8 & -13\\
+        8 &  16 &  -8 &   3 &  5 &  19
+\end{array} \right).
+\end{matlabEquation}
+
+\begin{solution}
+
+(a) The eigenvalues of $B$ are
+\[
+\lambda = 32.6273, \quad
+\lambda = -12.1564 \pm 5.8787i, \quad
+\lambda = 18.0009, \quad
+\lambda = -3.4878, \AND 
+\lambda = 11.1723.
+\]
+The trace of $B$ is $34$.  The characteristic polynomial of $B$ is
+\[
+p_B = \lambda^6 - 24\lambda^5 - 298\lambda^4 + 9618\lambda^3
++ 86273\lambda^2 - 1019656\lambda - 4172976.
+\]
+
+(b) Theorem~\ref{T:inveig} states that the eigenvalues of $A^{-1}$ are
+the inverses of the eigenvalues of $A$.  In \Matlab, compute
+\begin{verbatim}
+eig(inv(B)) =
+  -0.2867
+  -0.0667 + 0.0322i
+  -0.0667 - 0.0322i
+   0.0895
+   0.0556
+   0.0306
+\end{verbatim}
+Then, compute the inverse of each eigenvalue of $B$ to find that if
+$\lambda$ is an eigenvalue of $B$, then $\lambda^{-1}$
+is indeed an eigenvalue of $B^{-1}$.
+
+\end{solution}
+\end{exercise}
+\end{document}

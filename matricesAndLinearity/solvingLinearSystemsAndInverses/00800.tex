@@ -1,0 +1,28 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c4.8.6}
+Let $A$ be an $n\times n$ matrix that satisfies
+\[
+A^m + a_{m-1}A^{m-1} + \cdots + a_1A + I_n = 0.
+\]
+Show that $A$ is invertible.
+
+\begin{solution}
+
+Given that
+\[
+A^m + a_{m - 1}A^{m - 1} + \cdots + a_1A + I_n = 0,
+\]
+we can compute
+\[
+A(-(A^{m - 1} + a_{m - 1}A^{m - 2} + \cdots + a_1) = I_n.
+\]
+Therefore, $A$ is an invertible matrix with inverse
+\[
+-(A^{m - 1} + a_{m - 1}A^{m - 2} + \cdots + a_1).
+\]
+
+\end{solution}
+\end{exercise}
+\end{document}

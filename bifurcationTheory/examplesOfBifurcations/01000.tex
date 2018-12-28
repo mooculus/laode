@@ -1,0 +1,67 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c9.7.4}
+Consider the system of differential equations
+\begin{matlabEquation}  \label{E:hbifex}
+\begin{array}{rcl}
+\dot{x} & = & -1 + \rho + 5x + 2.5y + x^2 - x^3 \\
+\dot{y} & = & -5 - x + 4y - y^2.  \end{array}
+\end{matlabEquation}
+\begin{itemize}
+\item[(a)]  Verify that \eqref{E:hbifex} has an equilibrium at $X_0=(-1,2)$ 
+when $\rho=-1$.
+\item[(b)]  Show that the linearization of \eqref{E:hbifex} at $X_0$ is a 
+center when $\rho=-1$.  
+\item[(c)]  Let $\rho$ be a number close to $-1$.  Use {\pplane} to 
+determine whether \eqref{E:hbifex} has a spiral sink when $\rho<-1$ or when 
+$\rho>-1$.  
+\item[(d)]  Determine whether limit cycles exist for $\rho<-1$ or for 
+$\rho>-1$.
+\item[(e)]  Find an approximate value of $\rho$ at which \eqref{E:hbifex}
+has a second Hopf bifurcation.
+\end{itemize} 
+
+\begin{solution}
+
+\ans (c) The system has a spiral sink when $\rho<-1$; (d) limit cycles exist 
+when $\rho>-1$; a second Hopf bifurcation occurs near $\rho=-0.4$.
+
+
+\soln  The differential equation \eqref{E:hbifex} is:
+\[
+\begin{array}{rcl}
+\dot{x} & = & -1 + \rho + 5x + 2.5y + x^2 - x^3 \\
+\dot{y} & = & -5 - x + 4y - y^2.  \end{array}
+\]
+(a) Substitute $x=-1$, $y=2$, and $\rho=-1$ into these equations to 
+verify that $X_0=(-1,2)$ is an equilibrium when $\rho=-1$.
+
+(b) The Jacobian matrix of this system at $X_0$ is:
+\[
+J = (dF)_{X_0} = \left.\cmattwo{5 + 2x-3x^2}{2.5}{-1}{4-2y}\right|_{(-1,2)}
+= \mattwo{0}{2.5}{-1}{0}.
+\]
+Since $\trace(J)=0$ and $\det(J)=2.5>0$, $X_0$ is a center.
+
+(c) Figure~\ref{c9.7.4}a shows the phase portrait for $\rho=-1.1$ and 
+Figure~\ref{c9.7.4}b for $\rho=-0.9$.  From these figures we can conclude 
+that the system has a spiral sink when $\rho<-1$.
+
+(d) Limit cycles exist when $\rho>-1$.
+
+(e)  As $\rho$ increases from $-1$, {\sf pplane5} shows that the limit 
+cycle shrinks and disappears before $\rho=-0.1$. Numerical exploration
+suggests that there is a Hopf bifurcation when $\rho\approx -0.4$.
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/9-7-4a.eps,width=2.75in}
+                       \psfig{file=exfigure/9-7-4b.eps,width=2.75in}}
+                \exercaptwo{c9.7.4}
+\end{figure}
+
+
+\end{solution}
+\end{exercise}
+\end{document}

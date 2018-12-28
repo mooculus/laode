@@ -1,0 +1,107 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\noindent {\bf Remark:}  The completion of Exercises~\ref{c6.2.7} and
+\ref{c6.2.8} constitutes a proof that the infinite series definition of
+the matrix exponential is a convergent series for all $n\times n$ matrices.
+
+\begin{exercise}  \label{c6.2.7}
+Let $A=(a_{ij})$ be an $n\times n$ matrix.  Define
+\[
+||A||_m = \max_{1\leq i\leq n} (|a_{i1}|+\cdots+|a_{in}|)
+= \max_{1\leq i\leq n} \left(\sum_{j=1}^n|a_{ij}|\right).
+\]
+That is, to compute $||A||_m$, first sum the absolute values of the entries
+in each row of $A$, and then take the maximum of these sums.  Prove that:
+\[
+||AB||_m \leq ||A||_m ||B||_m.
+\]
+{\bf Hint:} Begin by noting that
+\begin{align*}
+||AB||_m &=
+\max_{1\leq i\leq n}\left(\sum_{j=1}^n\left|\sum_{k=1}^na_{ik}b_{kj}\right|
+\right)\leq \max_{1\leq i\leq n}\left(\sum_{j=1}^n\sum_{k=1}^n\left|a_{ik}b_{kj}
+           \right|\right) \\
+  &= \max_{1\leq i\leq n}\left(\sum_{k=1}^n\sum_{j=1}^n
+\left|a_{ik}b_{kj}\right|\right).
+\end{align*}
+
+\begin{solution}
+Using the hint from the text:
+\[
+||AB||_m \leq \max_{1\leq i\leq n}
+\left(\sum_k\sum_j\left|a_{ik}b_{kj}\right|\right) \leq
+\max_{1\leq i\leq n} \left(\sum_k|a_{ik}|\sum_j|b_{kj}|\right).
+\]
+Then, because $\sum_j|b_{kj}|$ is the sum of the entries in the $k^{th}$
+row of $B$:
+\[
+\max_{1\leq i\leq n}
+\left(\sum_k|a_{ik}|\sum_j|b_{kj}|\right) \leq
+\max_{1 \leq i \leq n}
+\left(||B||_m \sum_k|a_{ik}|\right) =
+||A||_m ||B||_m.
+\]
+Thus $||AB||_m \leq ||A||_m ||B||_m$.
+
+\end{solution}
+\end{exercise}
+
+\begin{exercise} \label{c6.2.8}
+Recall that an infinite series of real numbers
+\[
+c_1+c_2 +\cdots+c_N + \cdots
+\]
+converges absolutely if there is a constant $K$ such that for every $N$
+the partial sum satisfies:
+\[
+|c_1| + |c_2| + \cdots + |c_N| \leq K.
+\]
+
+Let $A$ be an $n\times n$ matrix.  To prove that the matrix exponential $e^A$
+is an absolutely convergent infinite series use Exercise~\ref{c6.2.7} and the
+following steps.  Let $a_N$ be the $(i,j)^{th}$ entry in the matrix $A^N$
+where $A^0=I_n$.
+\begin{itemize}
+\item[(a)]  $|a_N| \leq ||A^N||_m$.
+\item[(b)]  $||A^N||_m \leq ||A||_m^N$.
+\item[(c)]  $|a_0| + |a_1| + \cdots + \frac{1}{N!}|a_N| \leq e^{||A||_m}$.
+\end{itemize}
+
+\begin{solution}
+
+(a) Let $a_{ij}$ be the $(i,j)^{th}$ entry in $n \times n$ matrix $A$. 
+Then, since $|a_{ij}| \geq 0$ for all $(i,j)$,
+\[ |a_{ij}| \leq |a_{i1}| + \cdots + |a_{in}| \leq
+\max_i(|a_{i1}| + \cdots + |a_{in}|) = ||A||_m. \]
+This statement is valid for the matrix $A^N$, so $|a_N| \leq ||A^N||_m$.
+
+(b) To show this, we use the fact that $||A^N||_m = ||A^{N - 1}A||_m$.
+According to Exercise~\ref{c6.2.7},
+\[
+||A^{N - 1}A||_m \leq ||A^{N - 1}||_m ||A||_m.
+\]
+Expanding $||A^N||_m$ in this way, we find that
+\[
+||A^N||_m \leq ||A||_m \cdots ||A||_m = ||A||^N_m.
+\]
+
+(c) According to our result in (a)
+\[ |a_0| + |a_1| + \cdots + \frac{1}{N!}|a_N| = \sum_N
+\frac{1}{N!}|a_N| \leq \sum_N \frac{1}{N!}||A^N||_m. \]
+According to the result in (b)
+\[ \sum_N \frac{1}{N!}||A^N||_m \leq \sum_N \frac{1}{N!}||A||^N_m. \]
+We know that
+\[ \sum_{N = 0}^{\infty} \frac{1}{N!}||A||^N_m = e^{||A||_m}.  \]
+Therefore,
+\[ \sum_N \frac{1}{N!}|a_N| \leq e^{||A||_m}, \]
+so $e^A$ is absolutely convergent.
+
+
+
+
+
+\end{solution}
+\end{exercise}
+\end{document}

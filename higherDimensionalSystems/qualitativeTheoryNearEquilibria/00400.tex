@@ -1,0 +1,59 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c14.2.1E}
+Consider the system of ODEs $\dot{X}=F(X)$ where
+\[
+F(x,y,z) = (x^2 - z, y^2 - z, 2x + y - 3).
+\]
+Find all equilibria of this system and determine the number of stable and 
+unstable directions for each of these equilibria.
+
+\begin{solution}
+\ans There are two equilibria $(1,1,1)$ and $(3,-3,9)$.
+The equilibium $(1,1,1)$ has three unstable directions while the
+equilibrium $(3,-3,9)$ has two unstable directions and one stable directions.
+
+\soln  Finding the equilibria is done by solving the equations
+\begin{eqnarray*}
+x^2-z & = & 0 \\
+y^2-z & = & 0 \\
+2x+y-3 & = & 0.
+\end{eqnarray*}
+The first two equations imply that $x^2=y^2$.  Hence $x=y$ or $x=-y$. 
+Substituting into the third equation allows us to find the two equilibria
+$(1,1,1)$ and $(3,-3,9)$.  Next, compute the Jacobian matrix
+\[
+J(x,y,z) = \left(\begin{array}{ccc}
+2x & 0 & -1\\ 0 & 2y & -1\\ 2 & 1 & 0 \end{array}\right).
+\]
+Evaluating at the equilibria yields the matrices
+\[
+J(1,1,1) = \left(\begin{array}{ccc}
+2 & 0 & -1\\ 0 & 2 & -1\\ 2 & 1 & 0 \end{array}\right)
+\AND 
+J(3,-3,9) = \left(\begin{array}{ccc}
+6 & 0 & -1\\ 0 & 6 & -1\\ 2 & 1 & 0 \end{array}\right).
+\]
+The eigenvalues of $J(1,1,1)$ are
+\begin{verbatim}
+   1.0000 + 1.4142i
+   1.0000 - 1.4142i
+   2.0000     
+\end{verbatim}
+and the eigenvalues of $J(3,-3,9)$ are
+\begin{verbatim}
+    5.6514
+    0.1820
+   -5.8334
+\end{verbatim}
+The equilibium $(1,1,1)$ has three unstable directions while the
+equilibrium $(3,-3,9)$ has two unstable directions and one stable 
+directions.
+
+
+
+
+\end{solution}
+\end{exercise}
+\end{document}

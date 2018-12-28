@@ -1,0 +1,31 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c7.8.7}
+The \Matlab command {\tt eig}\index{\computer!eig} computes the eigenvalues
+of matrices.  Use {\tt eig} to compute the eigenvalues of 
+$A = \mattwoc{2.34}{-1.43}{\pi}{e}$.
+
+\begin{solution}
+\ans The eigenvalues of $A$ are $\lambda \approx 2.5291 \pm
+2.1111i$.
+
+\soln Enter the matrix $A$ into \Matlab and find its eigenvalues by typing
+\begin{verbatim}
+A = [2.34 -1.43; pi exp(1)];
+eig(A)
+\end{verbatim}
+
+
+
+
+
+
+
+
+
+
+
+\end{solution}
+\end{exercise}
+\end{document}

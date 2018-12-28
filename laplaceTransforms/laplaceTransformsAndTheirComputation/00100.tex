@@ -1,0 +1,83 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\TEXER
+
+\noindent In Exercises~\ref{c13.3.1a} -- \ref{c13.3.1d} compute the Laplace 
+transform for each function $x(t)$:
+\begin{exercise} \label{c13.3.1a}
+$x(t) = 4\cos(t-1)$,
+
+\begin{solution}
+\ans
+\[
+{\cal L}[4\cos(t - 1)] =
+4\left(\frac{s\cos(1) + \sin(1)}{s^2 + 1}\right).
+\]
+\soln Compute ${\cal L}[x]$ using trigonometric identities and
+Table~\ref{tab:Laplist}:
+\[
+\begin{array}{rcl}
+{\cal L}[4\cos(t - 1)]
+& = & 4{\cal L}[\cos(t)\cos(1) + \sin(t)\sin(1)] \\
+& = & \dps 4\left(\cos(1)\frac{s}{s^2 + 1} + \sin(1)\frac{1}{s^2 + 1}\right).
+\end{array}
+\]
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c13.3.1b}
+$x(t) = \sin(3(t-2))$,
+
+\begin{solution}
+\ans
+\[
+{\cal L}[\sin(3(t - 2))] = 
+\frac{3\cos(6) - s\sin(6)}{s^2 + 9}.
+\]
+\soln Compute ${\cal L}[x]$ using trigonometric identities and
+Table~\ref{tab:Laplist}:
+\[
+\begin{array}{rcl}
+{\cal L}[\sin(3(t - 2))]
+& = & {\cal L}[\sin(3t)\cos(6) - \cos(3t)\sin(6)] \\
+& = & \dps \cos(6)\frac{3}{s^2 + 9} - \sin(6)\frac{s}{s^2 + 9}.
+\end{array}
+\]
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c13.3.1c}
+$x(t) = (t-3)^2$.
+
+\begin{solution}
+\ans
+\[
+{\cal L}[(t - 3)^2] = \frac{9s^2 - 6s + 2}{s^3}.
+\]
+\soln Compute ${\cal L}[x]$ using Table~\ref{tab:Laplist}:
+\[
+{\cal L}[(t - 3)^2] = {\cal L}[t^2] - 6{\cal L}[t] + 9{\cal L}[1]
+= \frac{2}{s^3} - 6\left(\frac{1}{s^2}\right) + 9\left(\frac{1}{s}
+\right).
+\]
+
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c13.3.1d}
+$x(t) = te^{-2t}$.
+
+\begin{solution}
+\ans $\dps {\cal L}[te^{-2t}](s)=\frac{1}{(s+2)^2}$.
+
+\soln  From Proposition~\ref{prop:eHcLap1} we see that
+\[
+{\cal L}[te^{-2t}](s) = Y(s+2),
+\]
+where ${\cal L}[t](s) = Y(s)$.  But ${\cal L}[t] = \frac{1}{s^2}$.
+
+\end{solution}
+\end{exercise}
+\end{document}

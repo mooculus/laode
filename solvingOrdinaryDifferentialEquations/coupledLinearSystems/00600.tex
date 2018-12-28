@@ -1,0 +1,27 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c3.5.4}
+Sketch the time series $y(t)$ for the solution to the
+differential equation whose phase plane is pictured in
+Figure~\ref{pp_dsp2} with initial condition
+$(x(0),y(0))=\left(\frac{1}{2},\frac{1}{2}\right)$ .  Check your answer
+using {\pplane}.
+
+\begin{solution}
+
+The {\tt pplane5} graph for the linear system (Figure \ref{pp_dsp2}) is
+a spiral.  So as $t \rightarrow \infty$, $y$ approaches $0$ oscillating
+between positive and negative values.  The graph of {\tt y vs.\ t} for the
+trajectory with initial condition $(x_0,y_0) = \left(\frac{1}{2},
+\frac{1}{2}\right)$ is shown in Figure \ref{c3.5.4}.
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/3-5-4.eps,width=3.0in}}
+			\exercap{c3.5.4}
+\end{figure}
+
+\end{solution}
+\end{exercise}
+\end{document}

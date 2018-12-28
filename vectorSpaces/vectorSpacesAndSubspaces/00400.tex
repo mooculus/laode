@@ -1,0 +1,35 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c5.1.3}
+Let
+\[
+A=\left(\begin{array}{rrr} 1 & 1 & 0\\ 1 & -1 & 1 \end{array}
+\right).
+\]
+Let $V_3$ be the set of vectors $x\in\R^3$ such that $Ax=0$.
+Verify that $V_3$ is a subspace of $\R^3$.  Compare $V_1$ with
+$V_3$.
+
+\begin{solution}
+
+The set $V_3$ is a subspace of $R^3$ since the solution set to
+any equation $Ax = 0$ is a space.  This is demonstrated by the
+principle of superposition introduced in Section~\ref{S:Superposition}.
+Also, $V_3 = V_1$.  
+
+\para We can show that $V_3 = V_1$ by row reducing to find the
+solutions to $Ax = 0$:
+\[
+\left(\begin{array}{rrr} 1 & 1 & 0 \\ 1 & -1 & 1
+\end{array}\right) \longrightarrow \left(\begin{array}{rrr} 1 & 0 &
+\frac{1}{2} \\ 0 & 1 & -\frac{1}{2} \end{array}\right).
+\]
+So all vectors in $V_3$ are of the form $x = s(-\frac{1}{2},
+\frac{1}{2}, 1)$, where $s \in \R$.  The vector $x$ is an element
+of $V_1$ for each $s$.
+
+
+\end{solution}
+\end{exercise}
+\end{document}

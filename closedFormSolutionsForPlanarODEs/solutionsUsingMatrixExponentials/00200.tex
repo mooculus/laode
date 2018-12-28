@@ -1,0 +1,42 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c6.2.1}
+Let $L$ be the $3\times 3$ matrix
+\[
+     L = \left(\begin{array}{rrr}
+    2 & 0 & -1\\
+    0 & -1 & 3\\
+    1 & 0 & 1
+               \end{array}\right).
+\]
+Find the smallest integer $m$ such that
+\[
+  I_3+L+\frac{1}{2!} L^2 + \frac{1}{3!} L^3 + \cdots
+  + \frac{1}{m!} L^m
+\]
+is equal to $e^L$ up to a precision of two decimal places.  More
+exactly, use the \Matlab command {\tt expm} to compute $e^L$ and
+use \Matlab commands to compute the series expansion to order $m$.  Note
+that the command for computing $n!$ in \Matlab is
+{\tt prod(1:n)}\index{\computer!prod}.
+
+\begin{solution}
+
+\ans When $m = 7$, the power series is accurate up to two decimal places.
+
+\soln Enter {\tt L} into \Matlab, then use the command {\tt expm(L)} to
+find the value of $e^L$.
+\begin{verbatim}
+ans = 
+    4.8746         0   -3.9421
+    3.1370    0.3679    2.4154
+    3.9421         0    0.9324
+\end{verbatim}
+Then, add elements of the power series to $I_3$ until this answer is
+is equal to the \Matlab generated answer up to a precision of two
+digits.
+
+\end{solution}
+\end{exercise}
+\end{document}

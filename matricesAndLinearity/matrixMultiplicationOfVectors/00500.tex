@@ -1,0 +1,53 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c4.1.b3}
+Let
+\[
+A=\left(
+\begin{array}{rrrr}
+ a_{11} & a_{12} & \cdots & a_{1n} \\
+ a_{21} & a_{22} & \cdots & a_{2n}  \\
+ \vdots & \vdots &        & \vdots  \\
+ a_{m1} & a_{m2} & \cdots & a_{mn}
+\end{array}
+\right)\quad\mbox{and}\quad
+x =
+\left( \begin{array}{r} x_1\\ x_2\\ \vdots\\ x_n\end{array}\right).
+\]
+Denote the columns of the matrix $A$ by
+\[
+A_1 =
+\left(\begin{array}{c} a_{11}\\ a_{21}\\ \vdots\\
+a_{m1}\end{array}\right),\quad
+A_2 =
+\left(\begin{array}{c} a_{12}\\ a_{22}\\ \vdots\\
+a_{m2}\end{array}\right),\quad
+\cdots\quad
+A_n =
+\left(\begin{array}{c} a_{1n}\\ a_{2n}\\ \vdots\\ a_{mn}\end{array}\right).
+\]
+Show that the matrix vector product $Ax$ can be written as
+\[
+Ax = x_1 A_1 + x_2 A_2 + \cdots + x_n A_n,
+\]
+where $x_j A_j$ denotes scalar multiplication (see Chapter~\ref{chap:prelim}).
+
+\begin{solution}
+
+Compute $Ax$ directly:
+\[ Ax = \left(\begin{array}{c} x_1a_{11} + x_2a_{12} + \cdots +
+x_na_{1n} \\  x_1a_{21} + x_2a_{22} + \cdots + x_na_{2n} \\
+\\ \vdots \\ x_1a_{m1} + x_2a_{m2} + \cdots + x_na_{mn}
+\end{array}\right) = x_1\left(\begin{array}{r} a_{11} \\ a_{21} \\
+\vdots \\ a_{m1} \end{array}\right) + x_2\left(\begin{array}{r}
+a_{12} \\ a_{22} \\ \vdots \\ a_{m2} \end{array}\right) + \cdots
++ x_n\left(\begin{array}{r} a_{1n} \\ a_{2n} \\
+\vdots \\ a_{mn} \end{array}\right). \]
+So, it is indeed true that $Ax = x_1A_1 + x_2A_2 + \cdots
++ x_nA_n$.
+
+
+\end{solution}
+\end{exercise}
+\end{document}

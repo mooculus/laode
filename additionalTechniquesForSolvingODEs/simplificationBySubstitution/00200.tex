@@ -1,0 +1,120 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\noindent In Exercises~\ref{c14.5.6} -- \ref{c14.5.9} solve the given initial 
+value problem by an appropriate solution technique.
+\begin{exercise} \label{c14.5.6}
+$\dps \frac{dx}{dt} = \sec\left(\frac{x}{t}\right)+\frac{x}{t}$ where
+$x(1)=\pi$.
+
+\begin{solution}
+\ans $x(t) = t\sin\inv(\ln|t|)$.
+
+\soln  This differential equation is an equation with homogeneous
+coefficients where $F(v) = v + \sec v$.  Using the substitution $v=x/t$, we
+are led to the differential equation $t\dot{v}=\sec v$, which can be solved
+by separation of variables.  That is, solve
+\[
+\cos v \frac{dv}{dt} = \frac{1}{t}
+\]
+by integration, obtaining
+\[
+\sin v = \ln|t| + c.
+\]
+We can solve for $c$ using the initial condition $x(1)=\pi$, which implies
+that $v(1)=x(1)/1=\pi$.  Therefore, $c=0$.  Hence
+\[
+v = \sin\inv(\ln|t|).
+\]
+Using the identity $v=x/t$ leads to the answer. 
+ 
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c14.5.7}
+$\dps \frac{dx}{dt} = x+x^2$ where $x(2)=1$.
+
+\begin{solution}
+\ans $x(t) = \dps\frac{t}{4-t}$.
+
+\soln  Although this equation is a Bernoulli equation, it is most directly
+solved by separation of variables.  That is, solve
+\[
+\frac{1}{x(x+1)}\frac{dx}{dt} = 1.
+\]
+Using partial fractions, we obtain
+\[
+\left(\frac{1}{x}-\frac{1}{x+1}\right)\frac{dx}{dt} = 1
+\]
+On integration, we find
+\[
+\ln\left|\frac{x}{x+1}\right| = \ln|t| + c.
+\]
+Therefore,
+\[
+\frac{x}{x+1} = ct,
+\]
+for some constant $c$.  Using the initial condition $x(2)=1$ leads to
+$c=\frac{1}{4}$.  After cross-multiplying we are led to the answer.
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c14.5.8}
+$\dps \frac{dx}{dt} = -\frac{x}{t}-t^3 x^3$ where $x(1)=1$.
+
+\begin{solution}
+\ans $x(t) = \dps\frac{1}{t^2}$.
+
+\soln This differential equation is a Bernoulli equation with
+\[
+r(t) = -\frac{1}{t},\quad s(t) = -t^3 \AND p=3.
+\]
+After transformation the corresponding linear initial value problem
+is given by
+\[
+\frac{dv}{dt} = \frac{2}{t} v + 2t^3,\quad v(1)=1.
+\]
+We solve this equation by variation of parameters.  The solution
+of the homogeneous equation $\dot v = \frac{2}{t} v$ is
+$v_h(t)=t^2$, and we use Theorem~\ref{thm:varpar} to find the solution
+\[
+v(t) = c(t) v_h(t) = t^2 v_h(t) = t^4.
+\]
+Back substitution now leads to the solution
+\[
+x(t) = (v(t))^{-\frac{1}{2}} = \frac{1}{t^2}.
+\]
+
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c14.5.9}
+$\dps \frac{dx}{dt} = \frac{x(x+t)}{t^2}$ where $x(1)=1$.
+
+\begin{solution}
+\ans $x(t) = \dps\frac{t}{1-\ln|t|}$.
+
+\soln  This differential equation is an equation with homogeneous
+coefficients where $F(v) = v + v^2$.  Using the substitution $v=x/t$, we
+are led to the differential equation $t\dot{v}=v^2$, which can be solved
+by separation of variables.  That is, solve
+\[
+ \frac{1}{v^2} \frac{dv}{dt} = \frac{1}{t}
+\]
+by integration, obtaining
+\[
+-\frac{1}{v} = \ln|t| + c.
+\]
+We can solve for $c$ using the initial condition $x(1)=1$, which implies
+that $v(1)=x(1)/1=1$.  Therefore, $c=-1$.  Hence
+\[
+v = \frac{1}{1-\ln|t|}.
+\]
+Using the identity $v=x/t$ leads to the answer.   Note that this equation is
+also a Bernoulli equation and could be solved using the techniques for
+Bernoulli equations, as well.
+
+\end{solution}
+\end{exercise}
+\end{document}

@@ -1,0 +1,41 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c5.2.3}
+Write a system of two linear equations of the form $Ax=0$ where
+$A$ is a $2\times 4$ matrix whose subspace of solutions in $\R^4$
+is the span of the two vectors
+\[
+v_1 = \left(\begin{array}{r} 1 \\ -1 \\ 0 \\  0 \end{array}\right) \AND
+v_2 = \left(\begin{array}{r} 0 \\  0 \\ 1 \\ -1 \end{array}\right).
+\]
+
+\begin{solution}
+
+\ans The matrix $A$ whose subspace of solutions in $\R^4$ is the span of
+$v_1$ and $v_2$ is
+\[
+A = \left(\begin{array}{rrrr} 1 & 1 & 0 & 0 \\ 0 & 0 & 1 & 1
+\end{array}\right).
+\]
+
+\soln Note that all vectors $x$ in the spanning set of $v_1$ and $v_2$
+are of the form:
+\[
+x = \left(\begin{array}{r} x_1 \\ x_2 \\ x_3 \\ x_4
+\end{array}\right)
+= a\left(\begin{array}{r} 1 \\ -1 \\ 0 \\ 0 \end{array}\right) + 
+b\left(\begin{array}{r} 0 \\ 0 \\ 1 \\ -1 \end{array}\right) =
+\left(\begin{array}{r} a \\ -a \\ b \\ -b \end{array}\right).
+\]
+Therefore, $x_1 = -x_2$ and $x_3 = -x_4$.  So,
+\[
+\begin{array}{rrrrrrrrl}
+x_1 & + & x_2 & & & & & = & 0 \\
+& & & & x_3 & + & x_4 & = & 0. \end{array}
+\]
+The matrix of this system is $A$.
+
+\end{solution}
+\end{exercise}
+\end{document}

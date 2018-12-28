@@ -1,0 +1,60 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\noindent In Exercises~\ref{c9.6.3a} -- \ref{c9.6.3b}, consider the system 
+of differential equations \eqref{E:infinity}.
+\begin{matlabEquation}  \label{E:infinity}
+\begin{array}{rcl}
+\dot{x} & = & y \\
+\dot{y} & = & -x +\rho y + \frac{1}{2}\cos(x)y
+\end{array}
+\end{matlabEquation}
+\begin{exercise} \label{c9.6.3a}
+How many periodic solutions does \eqref{E:infinity} appear to have 
+when $\rho=0$?  Be careful when answering this question.  First use 
+{\pplane} to determine the number of limit cycles on the square 
+$-\ell \leq x,y \leq\ell$ when $\ell=2$.  Then compute with $\ell=10$ and 
+$\ell=40$.
+
+\begin{solution}
+
+\ans The system appears to have an infinite number of limit cycles
+as the size of the computation area increases.
+
+\soln In the region $-2 \leq x,y \leq 2$, the system appears to have no
+limit cycles.  However, in the region $-10 \leq x,y \leq 10$, there are
+four limit cycles, and there are more in the larger region $-40 \leq x,y
+\leq 40$.  Figure~\ref{c9.6.3a} shows the system with $\rho = 0$ on the
+square $-10 \leq x,y \leq 10$.
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c9.6.3b}
+Find the number of limit cycles to \eqref{E:infinity} on the square 
+with $\ell=7$ when $\rho=0.06$ and when $\rho=0.07$.  Has a bifurcation
+ occurred between these two values of $\rho$ and, if so, what kind of 
+bifurcation?
+
+\begin{solution}
+
+Figure~\ref{c9.6.3b}a shows the system with $\rho = 0.06$, and 
+Figure~\ref{c9.6.3b}b shows the system with $\rho = 0.07$.  The system
+has two periodic solutions at $\rho = 0.06$, and none at $\rho = 0.07$.
+A saddle node bifurcation for periodic solutions occurs between these
+two values of $\rho$.
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/9-6-3a.eps,width=1.8in}
+                       \psfig{file=exfigure/9-6-3b.eps,width=1.8in}
+                       \psfig{file=exfigure/9-6-3c.eps,width=1.8in}}
+		\centerline{$\rho = 0$\hspace{1.3in}$\rho = 0.06$
+\hspace{1.3in}$\rho = 0.07$}
+		\centerline{Figure~\ref{c9.6.3a}\hspace{1.2in}
+Figure~\ref{c9.6.3b}a\hspace{1.2in}Figure~\ref{c9.6.3b}b}
+\end{figure}
+
+\end{solution}
+\end{exercise}
+\end{document}

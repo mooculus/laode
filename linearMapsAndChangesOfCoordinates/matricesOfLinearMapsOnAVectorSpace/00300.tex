@@ -1,0 +1,27 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c7.3.2}
+Let $f_1(t)=\cos t$ and $f_2(t)=\sin t$ be functions in $\CCone$.
+Let $V$ be the two dimensional subspace spanned by $f_1,f_2$; so
+${\cal F}=\{f_1,f_2\}$ is a basis for $V$.  Let $L:V\to V$ be the
+linear mapping defined by $L(f)=\frac{df}{dt}$.  Find $[L]_{\cal F}$.
+
+\begin{solution}
+
+\ans \[ [L]_{\cal F} = \mattwo{0}{1}{-1}{0}. \]
+
+\soln By Definition~\ref{D:matrixincoord}, the $j^{th}$
+column of $[L]_{\cal F}$ is $[L(f_j)]_{\cal F}$.  In this case,
+\[
+L(f_1) = \frac{d}{dt}(\cos t) = -\sin t \AND
+L(f_2) = \frac{d}{dt}(\sin t) = \cos t.
+\]
+The basis $\{f_1,f_2\}$ is $\{\cos t,\sin t\}$.  In this basis,
+$-\sin t$ has coordinates $(0,-1)$, and $\cos t$ has coordinates
+$(1,0)$.  Therefore, the $1^{st}$ column of $[L]_{\cal F}$ is
+$(0,-1)$ and the $2^{nd}$ column is $(1,0)$.
+
+\end{solution}
+\end{exercise}
+\end{document}

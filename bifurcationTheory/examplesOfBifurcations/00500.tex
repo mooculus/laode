@@ -1,0 +1,45 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c9.4.1}
+The unforced Van der Pol equation is: \index{Van der Pol equation}
+\begin{matlabEquation}\label{MATLAB:23}
+\begin{array}{rcl}
+\dot{x} & = & \rho x - y -x^3 \\
+\dot{y} & = & x.
+\end{array}
+\end{matlabEquation}
+Verify analytically that the origin is the only equilibrium of this equation
+and that the only value of $\rho$ where that equilibrium could be a point of
+Hopf bifurcation is $\rho=0$.  Use {\pplane} to verify that there is a 
+unique limit cycle when $\rho>0$.
+
+\begin{solution}
+
+Find equilibria in the Van der Pol equations by setting $\dot{y}=0$ 
+to obtain $x=0$ and $\dot{x} = 0$ to obtain $y=0$.  This calculation
+verifies that $(0,0)$ is the only equilibrium of the Van der Pol system.  
+
+A Hopf bifurcation occurs at the equilibrium at the origin when 
+the Jacobian at the origin has zero trace and positive determinant.  
+The Jacobian of the Van der Pol system is
+\[
+J = (dJ)_{(0,0)} = \left.\cmattwo{\rho-3x^2}{-1}{1}{0}\right|_{(0,0)} =
+\mattwo{\rho}{-1}{1}{0}.
+\]
+Thus, $\det(J) = 1 > 0$ and $\trace(J) = \rho$.  Hopf bifurcation can only
+occur in this system when $\rho = 0$.  Figure~\ref{c9.4.1}a shows
+a {\tt pplane5} graph of the system with $\rho = 0$, and
+Figure~\ref{c9.4.1}b shows the system with $\rho = 0.4$.  One limit
+cycle can be seen surrounding the origin in this graph.
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/9-4-1a.eps,width=2.75in}
+                       \psfig{file=exfigure/9-4-1b.eps,width=2.75in}}
+                \exercaptwo{c9.4.1}
+\end{figure}
+
+\end{solution}
+\end{exercise} 
+\end{document}

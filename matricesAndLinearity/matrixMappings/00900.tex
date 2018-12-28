@@ -1,0 +1,22 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c7.8.2}
+Determine a rotation matrix that maps the vectors $(3,4)$ and
+$(1,-2)$ onto the vectors $(-4,3)$ and $(2,1)$ respectively.
+
+\begin{solution}
+
+\ans The matrix
+\[ R_{90^\circ} = \mattwo{\cos{90^\circ}}{-\sin{90^\circ}}
+{\sin{90^\circ}}{\cos{90^\circ}} = \mattwo{0}{-1}{1}{0} \]
+performs the desired transformation.
+
+\soln Note that the transformations $(3,4) \rightarrow (-4,3)$ and
+$(1,-2) \rightarrow (2,1)$ are obtained by rotating the plane
+$90^\circ$ counterclockwise.  Then use \eqref{e:rotmat} to obtain the
+matrix corresponding to this rotation.
+
+\end{solution}
+\end{exercise}
+\end{document}

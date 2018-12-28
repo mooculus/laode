@@ -1,0 +1,38 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise}  \label{c7.2.2c}
+Use Exercises~\ref{c7.2.2a}, \ref{c7.2.2b} and
+Theorem~\ref{L:linmapfrombasis} to show that
+\[
+\frac{d}{dt}\compose L:{\cal P}_2\to{\cal P}_2
+\]
+is the identity map.
+
+\begin{solution}
+
+Let $M = \frac{d}{dt} \circ L$ be a mapping ${\cal P}_2
+\rightarrow {\cal P}_2$.  The fundamental
+theorem of calculus states that, for any function $g$,
+\[ \frac{d}{dt}\int_0^t g(\tau)d\tau = g(t). \]
+Thus $M(g) = g$ is valid for all values of $g$, so $M$ is the
+identity map.
+
+\para To prove this fact explicitly for this case, note that $M$ is
+the identity mapping if it maps every polynomial in ${\cal P}_2$ to
+itself.  Lemma~\ref{L:linmapfrombasis} states that this mapping can
+be uniquely determined by a basis of ${\cal P}_2$.  According to
+Exercise~\ref{c7.2.2}, $\{1,t,t^2\}$ is a basis for ${\cal P}_2$. 
+Therefore, $M$ is the identity map if $M(1) = 1$, $M(t) = t$ and
+$M(t^2) = t^2$:
+\[ \frac{d}{dt} \circ L (1) = \frac{d}{dt}\left(\int_0^tds\right) =
+\frac{d}{dt}(t) = 1. \]
+\[ \frac{d}{dt} \circ L (t) = \frac{d}{dt}\left(\int_0^tsds\right) =
+\frac{d}{dt}\left(\frac{t^2}{2}\right) = t. \]
+\[ \frac{d}{dt} \circ L (t^2) = \frac{d}{dt}\left(\int_0^ts^2ds\right) =
+\frac{d}{dt}\left(\frac{t^3}{3}\right) = t^2. \]
+So $\frac{d}{dt} \circ L$ is indeed the identity map for ${\cal P}_2$.
+
+\end{solution}
+\end{exercise}
+\end{document}

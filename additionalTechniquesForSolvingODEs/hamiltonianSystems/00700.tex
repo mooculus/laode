@@ -1,0 +1,36 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c14.7.10}
+Consider the Hamiltonian  $H(x,y) = x^3 + x^2 - y^2$.  Show that the 
+associated Hamiltonian system has a homoclinic trajectory.  {\bf Hint:} 
+Consider the level curve $H(x,y)=0$.\index{homoclinic}
+
+\begin{solution}
+
+Note that there are two equilibria of this Hamiltonian system: $(0,0)$ and
+$(-\frac{2}{3},0)$.  The level contour $H(x,y)=0$ consists of solutions to 
+the equation $y^2=x^2+x^3$ and the only equilibrium on this level set is the
+origin.  The Jacobian at the origin is
+\[
+J = \mattwo{0}{-2}{-2}{0}
+\]
+from which it follows that the origin is a saddle, as $\det(J)=-4<0$. (The
+equilibrium at $(-\frac{2}{3},0)$ is a center.)
+
+For each value of $x$ for which $x^2+x^3>0$, there correspond two points of
+the level set $y=\pm\sqrt{x^2+x^3}$.  Note that $x^2+x^3>0$ for all 
+$x\in(-1,0)$ and $x^2+x^3$ vanishes at the endpoints of this interval. 
+Therefore, the level contour contains a circle-like curve emanating from and
+returning to the origin.  This curve is a homoclinic trajectory.  See
+Figure~\ref{c14.7.10} for the graph of this level set.
+ 
+\begin{figure}[htb]
+     \centerline{%
+     \psfig{file=exfigure/fig14-7-10.eps,width=3.0in}}
+        \exercap{c14.7.10}
+\end{figure} 
+
+\end{solution}
+\end{exercise}
+\end{document}

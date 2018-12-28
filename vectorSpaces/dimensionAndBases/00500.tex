@@ -1,0 +1,49 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c5.5.4}
+Show that the set $V$ of all $2\times 2$ matrices is a vector space.
+Show that the dimension of $V$ is four by finding a basis of $V$
+with four elements.  Show that the space $M(m,n)$ of all $m\times n$
+matrices is also a vector space.  What is $\dim M(m,n)$?
+
+\begin{solution}
+
+The set $V$ is a vector space because the operations of addition and
+scalar multiplication satisfy the eight properties of
+vector spaces described in Table~\ref{vectorspacelist}.  For $2 \times
+2$ matrices, matrix addition is defined for two matrices such that:
+\[
+\mattwo{a_1}{b_1}{c_1}{d_1} + \mattwo{a_2}{b_2}{c_2}{d_2} =
+\mattwo{a_1 + a_2}{b_1 + b_2}{c_1 + c_2}{d_1 + d_2}
+\]
+and scalar multiplication is defined for a matrix and a scalar such that:
+\[
+s\mattwo{a}{b}{c}{d} = \mattwo{sa}{sb}{sc}{sd}.
+\]
+So, using these definitions, addition is commutative and associative,
+and the additive identity is the $2 \times 2$ matrix of zeroes.  If
+\[
+W = \mattwo{w_{11}}{w_{12}}{w_{21}}{w_{22}} \mbox{then}
+\quad W^{-1} = \mattwo{-w_{11}}{-w_{12}}{-w_{21}}{-w_{22}}.
+\]
+Scalar multiplication is associative.  There is a multiplicative
+identity, $I_2$, and scalar multiplication is distributive both
+for scalars and for matrices.  So $V$ is a vector space.  One basis
+for $V$ is
+\[
+\mattwo{1}{0}{0}{0}, \mattwo{0}{1}{0}{0}, \mattwo{0}{0}{1}{0}
+\AND \mattwo{0}{0}{0}{1}.
+\]
+
+\para The set of $m \times n$ matrices is also a vector space, since
+it also satisfies the eight properties of vector spaces.  In this
+case, the additive identity is the $m \times n$ zero matrix, and
+the multiplicative identity is $I_n$.  The dimension of the set is
+$mn$, since one basis consists of the $mn$ matrices with $a_{ij}
+= 1$ and all other entries $0$, for $1 \leq i \leq m$ and $1 \leq j
+\leq n$.
+
+\end{solution}
+\end{exercise}
+\end{document}

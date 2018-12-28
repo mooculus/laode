@@ -1,0 +1,18 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c6.7.3}
+Prove that a nonzero solution to a second order linear differential equation
+with constant coefficients cannot be identically equal to zero on a nonempty
+interval.
+
+\begin{solution}
+
+Suppose $x(t) = 0$ for all $t \in [a,b]$.  Then there exists a 
+$c \in [a,b]$ such that $x(c) = 0$ and $\dot{x}(c) = 0$, since $x(c) =
+0 = x(c + \epsilon)$ for small $\epsilon$.  According to the differential
+equation for $x$, $\ddot{x}(c) = 0$.  Thus $x$ is identically $0$.
+
+\end{solution}
+\end{exercise}
+\end{document}

@@ -1,0 +1,49 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{A3.7.1}
+Let $A$ and $B$ be $3\times 3$ invertible matrices so that
+\[
+A^{-1} = \Matrix{1 & 0 & -1 \\ -1 & -1 &0 \\ 0 & 1 & -1}
+\quad\text{and}\quad
+B^{-1} = \Matrix{1 & 1 & 1 \\ 1 &1 &0 \\ 1 & 0 & 0}
+\]
+Without computing $A$ or $B$, determine the following:
+\begin{enumeratea}
+\item $\rank(A)$
+\item The solution to 
+\[
+Bx=\Matrix{1 \\ 1 \\ 1}
+\]
+\item $(2BA)^{-1}$
+\item The matrix $C$ so that $ACB+3I_3=0$.
+\end{enumeratea} 
+
+
+
+\begin{solution}
+\begin{enumeratea}
+\item $A$ is an invertible $3\times 3$ matrix, so $\rank(A)=3$.
+\item The solution is 
+\[
+x = B^{-1}\Matrix{1 \\ 1 \\ 1}= \Matrix{1 & 1 & 1 \\ 1 &1 &0 \\ 1 & 0 & 0} \Matrix{1 \\ 1 \\ 1}=\Matrix{3 \\ 2 \\ 1}
+\]
+\item 
+\[
+(2BA)^{-1}=\frac{1}{2}A^{-1}B^{-1}=\frac{1}{2}
+\Matrix{1 & 0 & -1 \\  -1 &-1 &0 \\  0 & 1 & -1}
+\Matrix{1 & 1 & 1 \\  1 &1 &0 \\  1 & 0 & 0}
+=\frac{1}{2}\Matrix{ 0 & 1 & 1 \\ -2 &-2 &-1 \\ 0 & 1 & 0}
+\]
+\item Recall that multiplication on the left by a matrix is not the same as multiplication on the right. We have that
+\begin{align*}
+ACB=-3I_3\implies&\;\;  A^{-1}ACB=-3A^{-1}I_3 &&\text{multiplying on the left by $A^{-1}$}\\
+\implies & \;\; CB=-3A^{-1}\\
+\implies & CBB^{-1}=-3A^{-1}B^{-1}&&\text{multiplying on the right by $B^{-1}$}\\
+\implies & C=-3A^{-1}B^{-1}\\
+\implies & C=-3\Matrix{ 0 & 1 & 1 \\ -2 &-2 &-1 \\ 0 & 1 & 0}
+\end{align*}
+\end{enumeratea}
+\end{solution}
+\end{exercise}
+\end{document}

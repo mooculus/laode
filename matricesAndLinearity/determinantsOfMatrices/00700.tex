@@ -1,0 +1,35 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c7.8.3}
+Sketch the triangle whose vertices are $0$, $p=(3,0)^t$, and
+$q=(0,2)^t$; and find the area of this triangle.  Let
+\[
+M=\mattwo{-4}{-3}{5}{-2}.
+\]
+Sketch the triangle whose vertices are $0$, $Mp$, and $Mq$; and
+find the area of this triangle.
+
+\begin{solution}
+
+\ans Let $T$ be the triangle whose vertices are $0$, $p$, and $q$, and
+let $U$ be the triangle whose vertices are $0$, $Mp$ and $Mq$.  Then
+$A_T = 3$ is the area of $T$, and $A_U = 69$ is the area of $U$.
+
+\soln Use the formula for the area of a triangle to compute
+$A_T = \frac{1}{2}(3)(2) = 3$.  Then, use Theorem~\ref{T:det&area} to
+compute
+\[
+A_U = |\det{M}|A_T = 23(3) = 69.
+\]
+Figure~\ref{c7.8.3} shows triangles $T$ and $U$.
+
+\begin{figure}[htb]
+		\centerline{%
+		\includegraphics[width=3.0in]{exfigure/7-8-3.eps}}
+	\exercap{c7.8.3}
+\end{figure}
+
+\end{solution}
+\end{exercise}
+\end{document}

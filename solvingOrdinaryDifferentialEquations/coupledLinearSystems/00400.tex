@@ -1,0 +1,38 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c3.5.3}
+Choose the {\sf linear system} in {\pplane} and set
+$a=d$ and $b=c$.  Verify that for these systems of differential
+equations:
+\begin{itemize}
+\item[(a)]  When $|a|<b$ typical trajectories approach the line
+$y=x$ as $t\to\infty$ and the line $y=-x$ as $t\to -\infty$.
+\item[(b)]  Assume that $b$ is positive, $a$ is negative, and $b<-a$. 
+With these assumptions show that the origin is a sink and that typical 
+trajectories approach the origin tangent to the line $y=x$.
+\end{itemize}
+
+\begin{solution}
+
+Graphs made in {\tt pplane5} using the {\tt axis('equal')} command
+verify these statements regarding linear systems where $A = D$
+and $B = C$.  Figure \ref{c3.5.3}a, uses $A = D = -1$ and
+$B = C = 2$, and shows four sample trajectories which approach
+the line $y = x$ as $t \rightarrow \infty$.  Figure
+\ref{c3.5.3}b graphs the linear system with $A = D = -3$
+and $B = C = 2$.  It shows four sample trajectories, three of
+which approach the origin tangent to $y = x$.  The fourth
+trajectory has an initial point $0 < x_0 = -y_0$ and approaches
+the origin on the straight line $y = -x$, which is orthogonal
+to $y = x$.
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/3-5-3a.eps,width=2.75in}
+                       \psfig{file=exfigure/3-5-3b.eps,width=2.75in}}
+			\exercaptwo{c3.5.3}	
+\end{figure}
+
+\end{solution}
+\end{exercise}
+\end{document}

@@ -1,0 +1,33 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c8.2.11}
+Consider the system of differential equations 
+\begin{matlabEquation}\label{MATLAB:6}
+\begin{array}{rcl}
+\dot{x} & = & -x - y + x^2 - y^2\\
+\dot{y} & = & 0.25x - 3y - 2xy + y^2
+\end{array}
+\end{matlabEquation}
+\begin{itemize}
+\item[(a)] Use {\pplane} to verify that the origin is a nodal
+sink\index{nodal sink} with 
+eigenvalues $\lambda_1=-2.866$ and $\lambda_2=-1.134$.
+\item[(b)] Use {\pplane} on the square $-1\leq x,y \leq 1$ to 
+verify that trajectories starting near the origin approach the 
+origin on curves tangent to the eigendirection\index{eigendirection} 
+corresponding to the eigenvalue $\lambda_2$.
+\end{itemize}
+
+\begin{solution}
+
+(a) The {\tt pplane5} command {\tt find an equilibrium} verifies this.
+
+(b) {\tt pplane5} computes the eigenvectors as $v_1 = (0.4723,0.8814)$
+(the eigenvector associated to $\lambda_1$) and $v_2 =
+(0.9911,0.1328)$ (the eigenvector associated to $\lambda_2$).
+Indeed, trajectories approach the origin in the direction of $v_2$.
+
+\end{solution}
+\end{exercise}
+\end{document}

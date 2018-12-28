@@ -1,0 +1,37 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c10.2.2}
+Find a basis for the eigenspace of 
+\[
+A = \left(\begin{array}{rrr} 3 & 1 & -1 \\ -1 & 1 & 1 \\ 2 & 2 & 0 
+\end{array}\right)
+\]
+corresponding to the eigenvalue $\lambda=2$.
+
+\begin{solution}
+
+\ans A basis for the eigenspace of $A$ corresponding to the eigenvalue
+$\lambda = 2$ is:
+\[
+\left\{\vecthree{-1}{1}{0}, \vecthree{1}{0}{1}\right\}.
+\]
+
+\soln First, find all eigenvectors of $A$ with eigenvalue
+$\lambda = 2$, that is, all vectors $v = (v_1,v_2,v_3)$ such
+that $(A - 2I_3)v = 0$.  Solve the system
+\[
+\matthree{1}{1}{-1}{-1}{-1}{1}{2}{2}{-2}\vecthree{v_1}{v_2}{v_3} =
+\vecthree{0}{0}{0}.
+\]
+All solutions $v$ to this system satisfy $v_1 = v_3 - v_2$.  Thus:
+\[
+v = \cvecthree{v_3 - v_2}{v_2}{v_3} = v_2\vecthree{-1}{1}{0} +
+v_3\vecthree{1}{0}{1}.
+\]
+Therefore, the vectors $(-1,1,0)^t$ and $(1,0,1)^t$ form a basis
+for this eigenspace.
+
+\end{solution}
+\end{exercise}
+\end{document}

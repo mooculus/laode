@@ -1,0 +1,36 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise}  \label{c6.6.05}
+Justify Euler's formula \eqref{E:Euler} as follows.  Recall the
+Taylor series
+\begin{eqnarray*}
+e^x & = & 1 + x + \frac{1}{2!}x^2 + \cdots + \frac{1}{n!}x^n + \cdots\\
+\cos x & = & 1 - \frac{1}{2!}x^2 + \frac{1}{4!}x^4 + \cdots +
+(-1)^n \frac{1}{(2n)!}x^{2n} + \cdots \\
+\sin x & = & x - \frac{1}{3!}x^3 + \frac{1}{5!}x^5 + \cdots +
+(-1)^n \frac{1}{(2n+1)!}x^{2n+1} + \cdots.
+\end{eqnarray*}
+Now evaluate the Taylor series $e^{i\theta}$ and separate into real and
+imaginary parts.
+
+\begin{solution}
+
+Using the identities $i^2 = -1$, $i^3 = -i$, and $i^4 = 1$, write
+the Taylor series:
+\[
+\begin{array}{rcl}
+e^{i\theta} & = & 1 + i\theta + \frac{1}{2!}(i\theta)^2 +
+\frac{1}{3!}(i\theta)^3 + \frac{1}{4!}(i\theta)^4 +
+\frac{1}{5!}(i\theta)^5 + \cdots \\
+& = & 1 + i\theta - \frac{1}{2!}\theta^2 - \frac{1}{3!}i\theta^3 +
+\frac{1}{4!}\theta^4 + \frac{1}{5!}i\theta^5 + \cdots \\
+& = & (1 - \frac{1}{2!}\theta^2 + \frac{1}{4!}\theta^4 - \cdots)
++ i(\theta - \frac{1}{3!}\theta^3 + \frac{1}{5!}\theta^5 - \cdots) \\
+& = & \cos\theta + i\sin\theta. \end{array}
+\]
+
+
+\end{solution}
+\end{exercise}
+\end{document}

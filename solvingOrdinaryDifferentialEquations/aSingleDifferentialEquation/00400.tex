@@ -1,0 +1,28 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c3.1.2}
+Solve the differential equation
+\[
+\frac{dx}{dt} = -3x.
+\]
+At what time $t_1$ will $x(t_1)$ be half of $x(0)$?
+
+\begin{solution}
+
+\ans Using the initial value problem, we find that $\frac{dx}{dt} = -3x$
+implies $x(t) = x_0e^{-3t}$.  Given this equation, $x(t_1)$ will be half
+of $x(0)$ at time $t_1 = -\frac{1}{3} \ln(0.5)$.
+
+\soln Find this value of $t_1$ by substituting into the formula for $x$. 
+That is, use:
+\[
+x_0e^{-3t_1} = x(t_1) = \frac{1}{2}x_0
+\]
+which implies
+\[ e^{-3t_1} = \frac{1}{2}. \]
+Then solve for $t_1$.
+
+\end{solution}
+\end{exercise}
+\end{document}

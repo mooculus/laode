@@ -1,0 +1,91 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\CEXER
+
+\noindent For each function specified in Exercises~\ref{c11.3.2a} -- 
+\ref{c11.3.2f}, write an m-file that makes that function available in 
+\Matlabp.
+\begin{exercise} \label{c11.3.2a}
+$f1:\R\to\R$ where $f1(t)=\sin(t) - t^3$.
+
+\begin{solution}
+
+Create the file {\tt exode3\_1.m} containing the text
+\begin{verbatim}
+function f1 = exode3_1(t)
+f1 = sin(t) - t^3;
+\end{verbatim}
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c11.3.2b}
+$f2:\R^2\to\R$ where $f2(x,y)=x(1-y)$.
+
+\begin{solution}
+
+Create the file {\tt exode3\_2.m} containing the text
+\begin{verbatim}
+function f2 = exode3_2(x,y)
+f2 = x*(1 - y);
+\end{verbatim}
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c11.3.2c}
+$f3:\R^2\to\R^2$ where  
+$f3(x,y)=\left(\begin{array}{c} xy-1\\x+2y\end{array}\right)$.
+
+\begin{solution}
+
+Create the file {\tt exode3\_3.m} containing the text
+\begin{verbatim}
+function f3 = exode3_3(x,y)
+f3 = [x*y - 1, x + 2*y];
+\end{verbatim}
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c11.3.2d}
+$f4:\R^3\to\R$ where $f4(u)=u_1-u_2^2 + u_3$ and $u=(u_1,u_2,u_3)^t$.
+
+\begin{solution}
+
+Create the file {\tt exode3\_4.m} containing the text
+\begin{verbatim}
+function f4 = exode3_4(u)
+f4 = u(1) - u(2)^2 + u(3);
+\end{verbatim}
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c11.3.2e}
+$f5:\R^3\to\R^2$ where $f5(u)=\left(\begin{array}{c} u_1 -2u_3\\u_1 u_2 u_3\end{array}\right)$ and $u=(u_1,u_2,u_3)^t$.
+
+\begin{solution}
+
+Create the file {\tt exode3\_5.m} containing the text
+\begin{verbatim}
+function f5 = exode3_5(u)
+f5 = [u(1) - 2*u(3); u(1)*u(2)*u(3)];
+\end{verbatim}
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c11.3.2f}
+$f6:\R^3\to\R^3$ where $f6(u)=\left(\begin{array}{c} u_3\\u_1 u_3\\ 
+\sin u_2\end{array}\right)$ and $u=(u_1,u_2,u_3)^t$.
+
+\begin{solution}
+
+Create the file {\tt exode3\_6.m} containing the text
+\begin{verbatim}
+function f6 = exode3_6(u)
+f6 = [u(3); u(1)*u(3); sin(u(2))];
+\end{verbatim}
+
+
+\end{solution}
+\end{exercise}
+\end{document}

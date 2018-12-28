@@ -1,0 +1,30 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c13.1.2}
+Suppose that $z(t)=ty(t)$.  Using \eqref{E:laplace} show that
+\[
+{\cal L}[z](s) = -\frac{\dps d}{\dps ds} {\cal L}[y](s).
+\]
+
+\begin{solution}
+Compute
+\[
+\begin{array}{rcl}
+\frac{d}{ds}{\cal L}[y](s)
+& = & \frac{d}{ds}\left(\int_0^\infty e^{-st}y(t)dt\right) \\
+& = & \int_0^\infty\left(\frac{d}{ds} e^{-st}y(t)dt\right) \\
+& = & \int_0^\infty (-te^{-st}y(t)dt) \\
+& = & -\int_0^\infty (z(t)e^{-st}dt) \\
+& = & -{\cal L}[z](s)
+\end{array}
+\]
+as desired.
+
+
+
+
+
+\end{solution}
+\end{exercise}
+\end{document}

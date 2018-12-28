@@ -1,0 +1,51 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c5.1.9}
+Recall from equation~\eqref{e:solnODE} of Section~\ref{S:IVP&E}
+that solutions to the system of differential equations
+\[
+\frac{dX}{dt} = \mattwo{-1}{3}{3}{-1} X
+\]
+are
+\[
+X(t) = \alpha e^{2t}\vectwo{1}{1} + \beta e^{-4t}\vectwo{1}{-1}.
+\]
+Use this formula for solutions to show that the set of solutions
+to this system of differential equations is a vector subspace of
+$(\CCone)^2$.
+
+\begin{solution}
+
+Let $V \subset (\CCone)^2$ be the set of solutions to \eqref{e:solnODE}.
+The set is closed under both addition and scalar multiplication and
+is a subspace.
+To demonstrate, let
+\[
+x_1(t) = \alpha_1 e^{2t}\vectwo{1}{1} +
+\beta_1 e^{-4t}\vectwo{1}{-1} \AND x_2(t) =
+\alpha_2 e^{2t}\vectwo{1}{1} + \beta_2 e^{-4t}\vectwo{1}{-1}
+\]
+be elements of this set.  Adding $x_1$ and $x_2$ yields
+\[
+\left(\alpha_1 e^{2t}\vectwo{1}{1} +
+\beta_1 e^{-4t}\vectwo{1}{-1}\right) +
+\left(\alpha_2 e^{2t}\vectwo{1}{1}
++ \beta_2 e^{-4t}\vectwo{1}{-1}\right)
+\]
+\[
+= (\alpha_1 + \alpha_2)e^{2t}\vectwo{1}{1} +
+(\beta_1 + \beta_2) e^{-4t}\vectwo{1}{-1} \in V
+\]
+and multiplying $x_1$ by any real scalar $r$ yields
+\[
+rx_1 = r\left(\alpha_1 e^{2t}\vectwo{1}{1} +
+\beta_1 e^{-4t}\vectwo{1}{-1}\right) = r\alpha_1 e^{2t}\vectwo{1}{1} +
+r\beta_1 e^{-4t}\vectwo{1}{-1} \in V.
+\]
+
+
+
+\end{solution}
+\end{exercise}
+\end{document}

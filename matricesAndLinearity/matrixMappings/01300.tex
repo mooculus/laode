@@ -1,0 +1,48 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+
+\CEXER
+
+
+\noindent In Exercises~\ref{c4.2.a4a} -- \ref{c4.2.a4c} use {\sf map} to
+find vectors that are stretched and/or contracted to a multiple of
+themselves by the given linear mapping.  {\bf Hint:}  Choose a vector in the
+{\sf Map} window and apply {\sf Iterate} several times.
+\begin{exercise} \label{c4.2.a4a}
+$A=\mattwoc{2}{0}{1.5}{0.5}$.
+
+\begin{solution}
+The matrix $A$ maps any vector $x$ of the form
+$x = s(1,1)^t$, where $s$ is a real scalar, to twice its length, and any
+vector of the form $x = s(0,1)^t$ to half its length.
+
+\para If you are having trouble finding this vector with {\tt map},
+turn on the rescale vectors option, which scales every vector to length
+$1$ after mapping it.  Then, test vectors by applying {\sf map} several
+times until you find a vector which (approximately) maps to itself.
+
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c4.2.a4b}
+$B=\mattwo{1.2}{-1.5}{-0.4}{1.2}$.
+
+\begin{solution}
+The matrix $B$ maps any vector of the form
+$x \approx s(-0.89,0.46)$ to approximately $1.97$ times its length.
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c4.2.a4c}
+$C=\mattwo{2}{-1.25}{0}{-0.5}$.
+
+\begin{solution}
+The matrix $C$ maps any vector of the form $x = s(1,0)$
+to twice its length and maps any vector of the form $x = s(1,2)$ to
+$-\frac{1}{2}$ times its length.
+
+\end{solution}
+\end{exercise}
+\end{document}

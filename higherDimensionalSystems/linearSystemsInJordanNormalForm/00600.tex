@@ -1,0 +1,49 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c11.1.3B}
+Consider the differential equation $\dot{X}=JX$ where $J$ is the single Jordan 
+block $4\times 4$ matrix with double eigenvalues $i$ and $-i$.  Show that most 
+solutions spiral away from the origin in both forward and backward time.
+
+\begin{solution}
+The differential equation $\dot{X}=JX$, where $J$ is the 
+single Jordan block $4\times 4$ matrix with double eigenvalues $i$ and $-i$,
+is:
+\[
+\dot{X} = \left(\begin{array}{rr|rr}
+ 0 & -1 & 1 &  0 \\
+ 1 &  0 & 0 &  1 \\
+\hline
+ 0 &  0 & 0 & -1\\
+ 0 &  0 & 1 &  0
+\end{array}\right)X.  
+\]
+Solutions to this differential equation are:
+\[
+X(t) = e^{tJ}X_0 = \left(\begin{array}{rrrr}
+  \cos t & -\sin t & t\cos t & -t\sin t\\
+  \sin t &  \cos t & t\sin t &  t\cos t\\
+     0   &    0    &  \cos t &  -\sin t\\
+     0   &    0    &  \sin t &   \cos t  
+\end{array}\right)
+\left(\begin{array}{r} x_1^0 \\  x_2^0 \\ x_3^0 \\ x_4^0 \end{array}\right)
+\]
+The first two coordinates of this solution are:
+\begin{eqnarray*}
+x_1(t) & = & x_1^0\cos t - x_2^0\sin t + x_3^0t\cos t - x_4^0t\sin t\\
+x_2(t) & = & x_1^0\sin t + x_2^0\cos t + x_3^0t\sin t + x_4^0t\cos t
+\end{eqnarray*}
+We can rewrite these coordinates in vector form as:
+\[
+\vectwo{x_1(t)}{x_2(t)} =
+(x_1^0 + tx_3^0t)\vectwo{\cos t}{\sin t} + 
+(x_2^0 + tx_4^0t)\vectwo{-\sin t}{\cos t}.
+\] 
+As long as either $x_3^0\neq 0$ or $x_4^0\neq 0$, the solution will spiral 
+away from the origin (as seen by its projection in the $x_1x_2$ plane) in 
+both forward and backward time.
+
+\end{solution}
+\end{exercise} 
+\end{document}

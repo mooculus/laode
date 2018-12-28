@@ -1,0 +1,42 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{A5.6.3}
+Let $\{v_1,v_2,v_3\}$ and $\{w_1,w_2\}$ be linearly independent sets of vectors in a vector space $V$. Show that if
+\[
+\text{span}\{v_1,v_2,v_3\} \cap \text{span}\{w_1,w_2\}=\{0\}
+\]
+then 
+\[
+\dim(\text{span}\{v_1,v_2,v_3,w_1,w_2\}) = 5
+\]
+{\bf Hint}: First show that if $v\in \text{span}\{v_1,v_2,v_3\}$, $w\in \text{span}\{w_1,w_2\}$, and $v+w=0$, then $v=w=0$. 
+
+
+\begin{solution} 
+\soln First, we verify the claim in the hint. Let $v\in \text{span}\{v_1,v_2,v_3\}$, $w\in \text{span}\{w_1,w_2\}$, and $v+w=0$. Since $\text{span}\{w_1,w_2,w_3\}$ is closed under scalar multiplication, it follows that $ v= -w \in  \text{span}\{w_1,w_2\}$. Therefore
+\[
+v\in \text{span}\{v_1,v_2,v_3\} \cap \text{span}\{w_1,w_2\} = \{0\}
+\]
+and $v = w = 0$.
+
+Next, we show that $\{v_1,v_2,v_3,w_1,w_2 \}$ is a linearly independent set, which implies that it is a basis for $\text{span}\{v_1,v_2,v_3, w_1, w_2\}$.  Suppose that $a_1,a_2, a_3$ and $b_1, b_2$ are scalars so that
+\begin{equation} \label{A5.6.3_1}
+a_1 v_1 + a_2 v_2 + a_3 v_3 + b_1 w_1 + b_2 w_2 = 0
+\end{equation}
+Let $v = a_1 v_1 + a_2 v_2 + a_3 v_3$ and $w = b_1 w_1 + b_2 w_2$.  Then $v + w = 0$. So, by the hint, $v = w = 0$.  Since $\{v_1,v_2,v_3\}$ is a linearly independent set so
+\[
+a_1 v_1 + a_2 v_2 + a_3 v_3 = v =0
+\]
+implies that $a_1 = a_2 = a_3 = 0$.  Similarly, $\{w_1, w_2\}$ is a linearly independent set so
+\[
+b_1 w_1 + b_2 w_2 = w = 0
+\]
+implies that $b_1 = b_2 = 0$.  Therefore, the only solution to \eqref{A5.6.3_1} is 
+$a_1 = a_2 = a_3 = b_1 = b_2 = 0$.  Thus, the set $\{v_1,v_2,v_3,w_1,w_2\}$ is linearly independent and therefore a basis for its span.  It follows that
+\[
+\dim(\text{span}\{v_1,v_2,v_3,w_1,w_2\}) = 3 + 2 = 5.
+\]
+\end{solution}
+\end{exercise}
+\end{document}

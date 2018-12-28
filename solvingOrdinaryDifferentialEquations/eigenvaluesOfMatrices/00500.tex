@@ -1,0 +1,62 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c6.4.3}
+\begin{itemize}
+\item[(a)] Let $A$ and $B$ be $2\times 2$ matrices. Using direct
+calculation, show that
+\begin{equation}  \label{e:trAB=trBA}
+{\rm tr}(AB) = {\rm tr}(BA).
+\end{equation}
+\item[(b)] Now let $A$ and $B$ be $n\times n$ matrices. Verify
+by direct calculation that \eqref{e:trAB=trBA} is still valid.
+\end{itemize}
+
+\begin{solution}
+
+(a) Let
+\[
+A = \mattwo{a_{11}}{a_{12}}{a_{21}}{a_{22}} \AND
+B = \mattwo{b_{11}}{b_{12}}{b_{21}}{b_{22}}
+\]
+
+Calculate $\trace(AB)$ and compare to $\trace(BA)$:
+\[
+\trace(AB) =
+\trace\mattwo{a_{11}b_{11} + a_{12}b_{21}}{a_{11}b_{12} + a_{12}b_{22}}
+{a_{21}b_{11} + a_{22}b_{21}}{a_{21}b_{12} + a_{22}b_{22}} =
+a_{11}b_{11} + a_{12}b_{21} + a_{21}b_{12} + a_{22}b_{22}.
+\]
+
+\[
+\trace(BA) =
+\trace\mattwo{a_{11}b_{11} + a_{21}b_{12}}{a_{12}b_{11} + a_{22}b_{12}}
+{a_{11}b_{21} + a_{21}b_{22}}{a_{12}b_{21} + a_{22}b_{22}} =
+a_{11}b_{11} + a_{21}b_{12} + a_{12}b_{21} + a_{22}b_{22}.
+\]
+So, indeed, $\trace(AB) = \trace(BA)$ for $2 \times 2$ matrices
+$A$ and $B$.
+
+(b) Let $C = AB$.  Then each element along the main diagonal of $C$ is:
+\[
+c_{ii} = a_{i1}b_{1i} + \cdots + a_{in}b_{ni} =
+\sum_{j = 1}^{n} a_{ij}b_{ji}.
+\]
+Thus,
+\[
+\trace(C) = \sum_{i = 1}^{n} \sum_{j = 1}^{n} a_{ij}b_{ji}.
+\]
+Let $D = BA$.  Then each element along the main diagonal of $D$ is:
+\[
+d_{ii} = b_{i1}a_{1i} + \cdots + a_{in}b_{ni} =
+\sum_{j = 1}^n a_{ij}b_{ji}.
+\]
+Therefore,
+\[
+\trace(D) = \sum_{i = 1}^{n} \sum_{j = 1}^{n} b_{ij}a_{ji}
+= \sum_{i = 1}^{n} \sum_{j = 1}^{n} a_{ij}b_{ji} = \trace(C).
+\]
+
+\end{solution}
+\end{exercise}
+\end{document}

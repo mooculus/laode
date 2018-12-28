@@ -1,0 +1,46 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c10.4.6}
+Consider the $2\times 2$ matrix
+\[
+A = \mattwo{-0.8318}{-1.9755}{0.9878}{1.1437}.
+\]
+\begin{itemize}
+\item[(a)]  Use \Matlab to find the complex conjugate eigenvalues and 
+eigenvectors of $A$.
+\item[(b)]  Find the real block diagonal normal form of $A$ and describe
+geometrically the motion of this normal form on the plane.
+\item[(c)]  Using {\sf map} describe geometrically how $A$ maps vectors in 
+the plane to vectors in the plane. 
+\end{itemize}
+
+\begin{solution}
+
+(a) Enter the matrix in \Matlabp, then type {\tt [S,D] = eig(A)} to
+find the eigenvectors 
+S =
+ 
+   0.8165             0.8165
+  -0.4082 - 0.4083i  -0.4082 + 0.4083i
+
+$v_1 = (0.8165, -0.4082 - 0.4083i)^t$ and
+$v_2 = (0.8165, -0.4082 + 0.4083i)^t$ with eigenvalues
+$\lambda_1 = 0.1559 + 0.9878i$ and $\lambda_2 = 0.1559 - 0.9878i$.
+
+(b) The real block diagonal normal form of $A$ is
+\[
+R = \mattwo{\sigma}{-\tau}{\tau}{\sigma} = \mattwo{0.1559}{-0.9878}
+{0.9878}{0.1559}
+\]
+where $\lambda_1 = \sigma + i\tau$.  Note that $|\lambda_j|=1$.  
+This matrix rotates a vector through an angle of 
+$\cos^{-1}(0.1559) \approx \sqrt{2}$, and does not alter its length.  
+
+
+(c) In this case, the matrix rotates and dilatates the vector so that
+the endpoints of the iterated vectors lie on an ellipse.
+
+\end{solution}
+\end{exercise}
+\end{document}

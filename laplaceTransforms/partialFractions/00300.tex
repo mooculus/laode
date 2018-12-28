@@ -1,0 +1,29 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c13.3.4}
+The {\tt residue} command in \Matlab also works when the degree of the
+numerator $p(s)$ is greater than the degree of the denominator $q(s)$.
+In this case the answer has the form `partial fractions + polynomial'.
+The {\tt residue} command stores the polynomial part in a vector {\tt k}.
+To explore this feature, enter the vectors {\tt p = [2,0,-2,0]} and
+{\tt q = [1,0,-4]}, and type the command
+\begin{verbatim}
+[c,r,k] = residue(p,q)
+\end{verbatim}
+Explain the result of this calculation by comparing it to the expansion
+\[
+\frac{2(s^3-s)}{s^2-4} = \frac{3}{s-2} + \frac{3}{s+2} +2s.
+\]
+
+\begin{solution}
+
+\Matlab returns $c = (3,3)^t$, $r = (2,-2)^t$ and $k = (2,0)$.
+Column vectors $c$ and $r$ correspond to the coefficients and roots of
+the partial fractions, as expected.  The row vector $k =
+(a_d,\dots,a_0)$ contains the coefficients of a polynomial of the form
+$a_ds^d + \cdots + a_1s + a_0$.
+
+\end{solution}
+\end{exercise}
+\end{document}

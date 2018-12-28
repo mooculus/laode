@@ -1,0 +1,112 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+
+\CEXER
+\noindent In Exercises~\ref{c10.5.3A} -- \ref{c10.5.3B}, use \Matlab to find 
+the eigenvalues and their algebraic and geometric multiplicities for the given 
+matrix.
+\begin{exercise} \label{c10.5.3A}
+\begin{matlabEquation}\label{eigenvalue-exercise}
+A=\left(\begin{array}{rrrr} 2 & 3 & -21 & -3 \\2 & 7 & -41 & -5 \\ 
+0 & 1 & -5 & -1 \\ 0 & 0 & 4 & 4 \end{array}
+\right).
+\end{matlabEquation}
+
+\begin{solution}
+\ans The eigenvalue $2$ has algebraic multiplicity $4$ and geometric
+multiplicity $1$.
+
+\soln Using \Matlab to find eigenvalues of high algebraic multiplicity is numerically
+dangerous. Type {\tt eig(A)} and obtain
+\begin{verbatim}
+   2.0000 + 0.0006i
+   2.0000 - 0.0006i
+   1.9994          
+   2.0006          
+\end{verbatim}
+Since the coefficients of $A$ are all integers, you might be suspicious of the answer
+and guess that all of the eigenvalues of $A$ equal $2$.  Type {\tt null(A-2*eye(4))}
+and obtain
+\begin{verbatim}
+ans =
+   -0.4804
+   -0.8006
+   -0.1601
+    0.3203
+\end{verbatim}
+dividing by {\tt ans(3)} yields the eigenvector $v_1=(3,5,1,-2)$.  To check whether
+the eigenvalue $2$ has algebraic multiplicity greater than $1$, type 
+{\tt null((A-eye(4))\^{}2)} and obtain
+\begin{verbatim}
+ans =
+    0.5071         0
+    0.8452         0
+    0.1690         0
+         0    1.0000
+\end{verbatim}
+Thus $v_2=(0,0,0,1)$ is a generalized eigenvector of $A$ with index $2$ and eigenvalue
+$2$.  To find generalized eigenvectors of index $3$ type {\tt null((A-eye(4))\^{}3)} 
+and obtain
+\begin{verbatim}
+ans =
+   -0.9487         0         0
+         0    1.0000         0
+   -0.3162         0         0
+         0         0    1.0000
+\end{verbatim}
+Thus, $v_3=(0,1,0,0)$ is a generalized eigenvector of index $3$.  Type 
+{\tt null((A-eye(4))\^{}4)} and obtain
+\begin{verbatim}
+ans =
+     1     0     0     0
+     0     1     0     0
+     0     0     1     0
+     0     0     0     1
+\end{verbatim}
+to see that $2$ is an eigenvalue of $A$ of algebraic multiplicity $4$ and geometric
+multiplicity $1$.  
+
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c10.5.3B}
+\begin{matlabEquation}\label{eigenvalue-exercise-2}
+B=\left(\begin{array}{rrrrr} 179 & -230 & 0 & 10 & -30 \\
+144 & -185 & 0 & 8 & -24 \\ 30 & -39 & -1 & 3 & -9 \\ 192 & -245 & 0 & 9 & -30 
+\\ 40 & -51 & 0 & 2 & -7\end{array}\right).
+\end{matlabEquation}
+
+\begin{solution}
+\ans The eigenvalue $-1$ has algebraic multiplicity $5$ and geometric
+multiplicity $3$.
+
+\soln Type {\tt eig(A)} and obtain
+\begin{verbatim}
+ans =
+  -1.0000          
+  -1.0000 + 0.0000i
+  -1.0000 - 0.0000i
+  -1.0000          
+  -1.0000         
+\end{verbatim}
+Type {\tt null(B+eye(5))}
+and obtain
+\begin{verbatim}
+ans =
+    0.7701   -0.1043    0.0000
+    0.6160   -0.0835    0.0000
+   -0.0000   -0.0000   -1.0000
+   -0.0966   -0.9443    0.0000
+   -0.1349   -0.3008    0.0000
+\end{verbatim}
+We see that $-1$ is an eigenvalue of $B$ with geometric multiplicity $5$. 
+
+
+
+
+
+\end{solution}
+\end{exercise}
+\end{document}

@@ -1,0 +1,63 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise}  \label{exer:at}
+\begin{itemize}
+\item[(a)]  Draw the direction field for
+\begin{equation} \label{ex:at}
+\frac{dx}{dt} = \frac{x}{x-t}.
+\end{equation}
+Assuming that $x(2)=3$, estimate $x(137)$.
+\item[(b)]  Verify that
+\[
+x(t) = t + \sqrt{t^2-3}
+\]
+is the solution to \eqref{ex:at}.  Then show that $x(t)$ satisfies the
+initial condition $x(2)=3$.
+\item[(c)]  Compare your estimate of the solution to \eqref{ex:at}
+obtained using {\dfield} with the exact solution
+\[
+x(137)= 137 +\sqrt{18766} \approx 273.989
+\]
+\end{itemize}
+
+\begin{solution}
+
+(a) The {\tt dfield5} estimate is $x(137) = 273.989$, found by zooming
+in on the graph shown in Figure~\ref{exer:at}.  This figure shows the
+direction field for $\frac{dx}{dt} = \frac{x}{x - t}$ with the desired
+initial condition $x(2) = 3$ on the interval $0 \leq t \leq 150$, $0
+\leq x \leq 300$.
+
+(b) In order to verify that the equation $x(t) = t + \sqrt{t^2 - 3}$
+is a solution to
+\[
+\begin{array}{rcl}
+\frac{dx}{dt} & = & \frac{x}{x - t} \\
+x(2) & = & 3\end{array}
+\]
+we must show that both of these conditions are valid for the equation.
+To show that the first condition holds, take the derivative of $x(t)$.
+\[
+\frac{dx}{dt} = 1 + \frac{t}{\sqrt{t^2 - 3}} = \frac{t + {\sqrt{t^2 - 
+3}}}{\left({\sqrt{t^2 - 3}} + t\right) - t} = \frac{x}{x - t}.
+\]
+To show that the second condition holds, substitute into the formula for
+$x(t)$ to obtain:
+\[ x(2) = 2 + \sqrt{2^2 - 3} = 3. \]
+
+(c) The {\tt dfield5} solution coincides with the algebraic solution to at
+least 3 decimal places.
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/3-2-4.eps,width=3.0in}}
+		\exercap{exer:at}
+\end{figure}
+
+
+
+
+\end{solution}
+\end{exercise}
+\end{document}

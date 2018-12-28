@@ -1,0 +1,22 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c10.1.3}
+Show that the determinants of similar $n\times n$ matrices are
+equal. 
+
+\begin{solution}
+
+Two $n \times n$ matrices $B$ and $C$ are similar if there exists
+an $n \times n$ matrix $P$ such that $B = P^{-1}CP$.  Therefore, by
+Definition~\ref{D:determinants}(c),
+\[
+\det(B) = \det(P^{-1}CP)
+= \det(P^{-1})\det(C)\det(P)
+= \det(P)^{-1}\det(P)\det(C)
+= \det(C).
+\]
+
+\end{solution}
+\end{exercise}
+\end{document}

@@ -1,0 +1,32 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c5.1.7a}
+For which scalars $a,b,c$ do the solutions to the equation
+\[
+ax+by = c
+\]
+form a subspace of $\R^2$?
+
+\begin{solution}
+
+\ans Let $V$ be the subset of solutions $(x,y)$ to $ax + by = c$.
+The subset $V$ is a subspace when $c = 0$ and is not a subspace
+when $c \neq 0$. 
+
+\soln Let $(x_1,y_1)$ and $(x_2,y_2)$ be elements of $V$.  Then
+\[
+a(x_1 + x_2) + b(y_1 + y_2) = (ax_1 + by_1) + (ax_2 + by_2) =
+c + c = 2c.
+\]
+Thus $V$ is closed under addition only when $2c = c$, so $c = 0$.
+Similarly, for any scalar $r$,
+\[
+r(ax_1 + by_1) = cr.
+\]
+So $V$ is closed under scalar multiplication only when $rc = c$ for
+any scalar $r$.  Thus, $c = 0$.
+
+\end{solution}
+\end{exercise}
+\end{document}

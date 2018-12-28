@@ -1,0 +1,105 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\noindent In Exercises~\ref{c14.w.3a} -- \ref{c14.w.3c} verify \eqref{E:ccw} 
+for the given matrix $A$.  {\bf Hint:} First, you need to find linearly 
+independent solutions to the system $\dot{X}=AX$.
+\begin{exercise} 	\label{c14.w.3a}
+$A = \mattwo{0}{-1}{1}{0}$.
+
+\begin{solution}
+\ans The Wronskian is $W(t) = 1$.
+
+\soln First, find that $A$ has an eigenvalue $\lambda = i$ with corresponding
+eigenvector $v = (1,-i)^t$.  Thus, the vectors $X_1(t) = (\cos t, \sin t)^t$
+and $X_2(t) = (-\sin t, \cos t)^t$ are linearly independent solutions to
+$\dot{X} = AX$.  So the matrix whose columns are solutions to this system
+is
+\[
+Y(t) = \mattwo{\cos t}{-\sin t}{\sin t}{\cos t}.
+\]
+Compute the right hand side of \eqref{E:ccw}:
+\[
+W(t) = e^{\trace(A)t}W(0) = e^0\det(Y(0)) = 1.
+\]
+To verify that this result is correct, compute the left hand side of
+\eqref{E:ccw} by definition of the Wronskian:
+\[
+W(t) = \det(Y(t)) = \cos^2 t + \sin^2 t = 1.
+\]
+
+\end{solution}
+\end{exercise}
+\begin{exercise} 	\label{c14.w.3b}
+$A = \mattwo{2}{3}{3}{2}$.
+
+\begin{solution}
+\ans The Wronskian is $W(t) = -2e^{4t}$.
+
+\soln First, find that $A$ has eigenvalues $\lambda_1 = 5$ and
+$\lambda_2 = -1$ with corresponding eigenvectors $v_1 = (1,1)^t$ and
+$v_2 = (1,-1)^t$.  Thus, the vectors $X_1(t) = e^{5t}(1,1)^t$ and
+$X_2(t) = e^{-t}(1,-1)^t$ are linearly independent solutions to
+$\dot{X} = AX$.  So the matrix whose columns are solutions to this
+system is
+\[
+Y(t) = \mattwo{e^{5t}}{e^{-t}}{e^{5t}}{-e^{-t}}.
+\]
+Compute the right hand side of \eqref{E:ccw}:
+\[
+W(t) = e^{\trace(A)t}W(0) = e^{4t}\det(Y(0)) = -2e^{4t}.
+\]
+To verify that this result is correct, compute the left hand side of
+\eqref{E:ccw} by definition of the Wronskian:
+\[
+W(t) = \det(Y(t)) = -2e^{4t}.
+\]
+
+\end{solution}
+\end{exercise}
+\begin{exercise} 	\label{c14.w.3c}
+$A = \mattwo{2}{-2}{4}{-3}$.
+
+\begin{solution}
+\ans The Wronskian is $W(t) = -4\sqrt{7}e^{-t}$.
+
+\soln First, find that $A$ has an eigenvalue $\lambda =
+\frac{1}{2}(-1 + \sqrt{7}i$ with corresponding
+eigenvector $v = (4,5 - \sqrt{7}i)^t$.  Thus, the vectors
+\[
+\begin{array}{rcl}
+X_1(t) & = & e^{-\frac{1}{2}t}\cvectwo{4\cos\left(\frac{\sqrt{7}}{2}t\right)}
+{5\cos\left(\frac{\sqrt{7}}{2}t\right) +
+\sqrt{7}\sin\left(\frac{\sqrt{7}}{2}t\right)} \\
+X_2(t) & = & e^{-\frac{1}{2}t}\cvectwo{4\sin\left(\frac{\sqrt{7}}{2}t\right)}
+{5\sin\left(\frac{\sqrt{7}}{2}t\right) -
+\sqrt{7}\cos\left(\frac{\sqrt{7}}{2}t\right)}
+\end{array}
+\]
+are linearly independent solutions to $\dot{X} = AX$.  So the matrix
+whose columns are solutions to this system is
+\[
+Y(t) = e^{-\frac{1}{2}t}\cmattwo{4\cos\left(\frac{\sqrt{7}}{2}t\right)}
+{4\sin\left(\frac{\sqrt{7}}{2}t\right)}
+{5\cos\left(\frac{\sqrt{7}}{2}t\right) +
+\sqrt{7}\sin\left(\frac{\sqrt{7}}{2}t\right)}
+{5\sin\left(\frac{\sqrt{7}}{2}t\right) -
+\sqrt{7}\cos\left(\frac{\sqrt{7}}{2}t\right)}.
+\]
+Compute the right hand side of \eqref{E:ccw}:
+\[
+W(t) = e^{\trace(A)t}W(0) = e^{-t}\det(Y(0)) = -4\sqrt{7}e^{-t}.
+\]
+To verify that this result is correct, compute the left hand side of
+\eqref{E:ccw} by definition of the Wronskian:
+\[
+W(t) = \det(Y(t)) = -4\sqrt{7}e^{-t}.
+\]
+
+
+
+
+\end{solution}
+\end{exercise}
+\end{document}

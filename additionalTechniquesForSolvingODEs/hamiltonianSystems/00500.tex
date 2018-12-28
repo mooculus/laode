@@ -1,0 +1,29 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c14.7.8}
+Let $J$ be the Jacobian matrix of an equilibrium in a planar Hamiltonian 
+system. Show that $\trace(J)=0$.  If $\det(J)\neq 0$, what are the possible
+types for this equilibrium?
+
+\begin{solution}
+\ans The equilibria are saddles or centers.
+
+\soln  Hamiltonian equations have the form 
+\begin{eqnarray*}
+\dot{x} & = & H_y \\
+\dot{y} & = & -H_x.
+\end{eqnarray*}
+The Jacobian at an equilibrium is:
+\[
+J = \mattwo{H_{yx}}{H_{yy}}{-H_{xx}}{-H_{xy}}.
+\]
+Then $\trace(J)=H_{yx}-H_{xy}=0$ by equality of mixed partials.  Since 
+$\trace(J)=0$, equilibria are either saddles ($\det(J)<0$) or centers
+($\det(J)>0$).
+
+
+
+\end{solution}
+\end{exercise}
+\end{document}

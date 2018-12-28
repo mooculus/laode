@@ -1,0 +1,91 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\CEXER
+
+\noindent In Exercises~\ref{c15.2.3a} -- \ref{c15.2.3b}
+determine a step size $h$ such that the global discretization error
+for the solution of \eqref{eq:simplest} on the given interval using 
+Euler's method is less than the given absolute tolerance.  Verify 
+your results by a computation of the global discretization error 
+using \Matlabp.
+\begin{exercise} \label{c15.2.3a}
+Interval $[0,4]$ and absolute tolerance $2$.
+
+\begin{solution}
+\ans $h=0.0014$.
+
+\soln Using the bound on the global discretization error
+given in Proposition~\ref{prop:globerr1} we can choose a
+step length $h$ satisfying
+\[
+e^4(e^4-1)\frac{h}{2} = 2,
+\]
+or, equivalently,
+\[
+h = \frac{4}{e^4(e^4-1)} \approx 0.0014.
+\]
+Now $4/h \approx 2927$, and we can verify our result using the
+following \Matlab commands:
+\begin{verbatim}
+h      = 0.0014;
+t(1)   = 0;
+x(1)   = 1;
+err(1) = 0;
+est(1) = 0;
+K      = 2927;
+for k = 1:K
+    t(k+1) = t(k)+h;
+    x(k+1) = (1+h)*x(k);
+  err(k+1) = exp(t(k+1))-x(k+1);
+end
+plot(t,err)
+xlabel('t')
+ylabel('global error')
+\end{verbatim}
+Indeed, by this choice of $h$ the error is always smaller than $0.18$.
+
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c15.2.3b}
+Interval $[0,5]$ and absolute tolerance $10$.
+
+\begin{solution}
+\ans $h=0.000914$.
+
+\soln Using the bound on the global discretization error
+given in Proposition~\ref{prop:globerr1} we can choose a
+step length $h$ satisfying
+\[
+e^{5}(e^{5}-1)\frac{h}{2} = 10,
+\]
+or, equivalently,
+\[
+h = \frac{20}{e^{5}(e^{5}-1)} \approx 0.000914.
+\]
+Now $5/h \approx 5470$, and we can verify our result using the
+following \Matlab commands:
+\begin{verbatim}
+h      = 0.000914;
+t(1)   = 0;
+x(1)   = 1;
+err(1) = 0;
+est(1) = 0;
+K      = 5470;
+for k = 1:K
+    t(k+1) = t(k)+h;
+    x(k+1) = (1+h)*x(k);
+  err(k+1) = exp(t(k+1))-x(k+1);
+end
+plot(t,err)
+xlabel('t')
+ylabel('global error')
+\end{verbatim}
+Indeed, by this choice of $h$ the error is always smaller than $0.35$.
+
+
+\end{solution}
+\end{exercise}
+\end{document}

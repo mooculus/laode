@@ -1,0 +1,43 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise}  \label{A8.1.1}
+Show that
+\[
+\frac{d^2}{dt^2}:{\cal P}_4\to{\cal P}_2
+\]
+is a linear mapping.  Then compute bases for the null space  
+and range of $\frac{d^2}{dt^2}$.
+
+\begin{solution}
+
+\soln Let $L$ be a transformation that maps $p(t) \mapsto
+\frac{d^2p}{dt^2}(t)$.  For 
+\[
+p(t) =  p_0 + p_1t + p_2t^2 + p_3t^3+p_4t^4,
+\]
+then
+\[
+L(p(t)) = 2p_2 + 6p_3t + 12p_4t^2,
+\]
+so $L$ is a mapping $L:{\cal P}_4 \rightarrow {\cal P}_2$.  From calculus, we
+know that, for any functions $f$ and $g$:
+\[ 
+\frac{d^2}{dt^2}(f + g)(t) = \frac{d^2}{dt^2}f(t) + \frac{d^2}{dt^2}g(t), 
+\]
+and that, for any scalar $c$:
+\[ 
+\frac{d^2}{dt^2}(cf)(t) = c\frac{d^2}{dt^2}f(t). 
+\]
+It follows that $L$ is a linear mapping.  The null space is
+\[
+\{p\in  {\cal P}_4: p_2=p_3=p_4=0\} 
+\]
+with basis $\{1,t\}$ and 
+\[
+\text{range}(L) =\{2p_2 + 6p_3 t +12 p_4 t^2\} 
+\]
+with basis $\{1,t,t^2\}$.
+\end{solution}
+\end{exercise}
+\end{document}

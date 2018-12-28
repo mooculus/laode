@@ -1,0 +1,22 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise}  \label{c4.2.3b}
+Using Exercise~\ref{c4.2.3a} observe that the matrix
+$\mattwo{3}{4}{-4}{3}$ rotates the plane counterclockwise through
+an angle $\theta$ and then dilates the planes by a factor of $c$.
+Find $\theta$ and $c$.  Use {\tt map} to verify your results.
+
+\begin{solution}
+\ans This matrix is a counterclockwise rotation through an 
+angle $\theta = \sin^{-1}\left(\frac{-4}{5}\right) \approx 2\pi-0.9273
+\approx 5.3559$ and a dilatation by a scalar $c = 5$.
+
+\soln This follows from Exercise~\ref{c4.2.3a} with $a = 3$
+and $b = -4$.  Thus, $c = \sqrt{a^2 + b^2} = 5$ and
+$\theta = \sin^{-1}\left(\frac{b}{\sqrt{a^2 + b^2}}\right) = 
+\sin^{-1}\left(\frac{-4}{5}\right)$.  Add $2\pi$ to correspond to counterclockwise rotation.
+
+\end{solution}
+\end{exercise}
+\end{document}

@@ -1,0 +1,64 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\noindent In Exercises~\ref{c9.6.2a} -- \ref{c9.6.2c}, consider the system 
+of differential equations \eqref{E:homo2}
+\begin{matlabEquation}  \label{E:homo2}
+\begin{array}{rcl}
+\dot{x} & = & -y + \rho x + 0.1 x^2 - 0.5 y^5 \\
+\dot{y} & = & x +\rho y + 0.1 y^3 - x^4
+\end{array}
+\end{matlabEquation}
+in the square $-1.5\leq x,y\leq 1.5$.
+\begin{exercise} \label{c9.6.2a}
+Verify numerically that \eqref{E:homo2} appears to have a limit cycle for 
+$\rho=-0.02$.
+
+\begin{solution}
+Figure~\ref{c9.6.2a} shows the system with $\rho = -0.02$. 
+At this point, there is a periodic solution around the origin.
+
+\end{solution}
+\end{exercise} 
+\begin{exercise} \label{c9.6.2b}
+Verify numerically that \eqref{E:homo2} does not appear to have a limit cycle 
+when $\rho=-0.03$.
+
+\begin{solution}
+Figure~\ref{c9.6.2b} shows the system with $\rho = -0.03$. 
+At this point, there is no periodic solution.
+
+\end{solution}
+\end{exercise} 
+\begin{exercise} \label{c9.6.2c}
+Determine numerically to two significant figures, the value of $\rho$
+where \eqref{E:homo2} has a homoclinic bifurcation. 
+
+\begin{solution}
+
+\ans By examination of {\tt pplane5} graphs of \eqref{E:homo2}, a homoclinic
+bifurcation occurs near $\rho = -0.027$.
+
+\soln 
+Using {\tt pplane5}, graph the system as $\rho$ decreases from $-0.02$, and
+note that the periodic solution disappears at when stable and unstable
+orbits of the saddle point coincide.  This homoclinic bifurcation occurs
+at $\rho \approx -0.027$.  Figure~\ref{c9.6.2c} shows the system with
+$\rho = -0.027$.  Note that these figures are created by mapping the stable
+and unstable trajectories of the saddle point.
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/9-6-2a.eps,width=1.8in}
+                       \psfig{file=exfigure/9-6-2b.eps,width=1.8in}
+                       \psfig{file=exfigure/9-6-2c.eps,width=1.8in}}
+		\centerline{$\rho = -0.02$\hspace{1.1in}$\rho = -0.03$
+\hspace{1.1in}$\rho = -0.027$}
+		\centerline{Figure~\ref{c9.6.2a}\hspace{1.2in}
+Figure~\ref{c9.6.2b}\hspace{1.2in}Figure~\ref{c9.6.2c}}
+\end{figure}
+
+\end{solution}
+\end{exercise} 
+\end{document}

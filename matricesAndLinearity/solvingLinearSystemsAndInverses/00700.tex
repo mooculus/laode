@@ -1,0 +1,22 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c4.8.5}
+Let $A$ be an $n\times n$ matrix that satisfies
+\[
+A^3 + a_2A^2 + a_1A + I_n = 0,
+\]
+where $A^2=AA$ and $A^3=AA^2$.  Show that $A$ is invertible. \\
+{\bf Hint:}  Let $B = -(A^2+a_2A+a_1I_n)$ and verify that $AB=BA=I_n$.
+
+\begin{solution}
+
+The matrix $A$ is invertible with inverse $B = -(A^2 + a_2A + a_1)$.
+To show this, note that
+\[ AB = A(-(A^2 + a_2A + a_1)) = I_n \]
+if and only if $A^3 + a_2A^2 + a_1A = -I_n$.  This condition is valid
+by definition of $A$, so $A$ is invertible.  Similarly, $BA = I_n$.
+
+\end{solution}
+\end{exercise}
+\end{document}

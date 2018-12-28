@@ -1,0 +1,86 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\noindent In Exercises~\ref{E:sisasoa} -- \ref{E:sisasof} determine
+whether the equilibrium at the origin in the system of differential
+equations $\dot{X}=CX$ is a sink, a saddle or a source.
+\begin{exercise} \label{E:sisasoa}
+$C=\mattwo{-2}{2}{0}{-1}$.
+
+\begin{solution}
+\ans The origin of the system $\dot{X} = CX$ is a sink.
+
+\soln The characteristic polynomial of $C$ is
+$p_C(\lambda) = \lambda^2 + 3\lambda + 2$.  So the eigenvalues are
+$\lambda_1 = -1$ and $\lambda_2 = -2$.  Since both eigenvalues have
+negative real part, the origin is a sink.
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{E:sisasob}
+$C=\mattwo{3}{5}{0}{-2}$.
+
+\begin{solution}
+\ans The origin of the system $\dot{X} = CX$ is a saddle.
+
+\soln The characteristic polynomial of $C$ is
+$p_C(\lambda) = \lambda^2 - \lambda - 6$.  So the eigenvalues are
+$\lambda_1 = 3$ and $\lambda_2 = -2$.  Since one eigenvalue is negative
+and one is positive, the origin is a saddle.
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{E:sisasoc}
+$C=\mattwo{4}{2}{-1}{2}$.
+
+\begin{solution}
+\ans The origin of the system $\dot{X} = CX$ is a source.
+
+\soln The characteristic polynomial of $C$ is
+$p_C(\lambda) = \lambda^2 - 6\lambda + 10$.  So the eigenvalues are
+$\lambda = 3 \pm i$.  Since both eigenvalues have positive real part,
+the origin is a source.
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{E:sisasod}
+$C=\mattwo{8}{0}{-5}{3}$.
+
+\begin{solution}
+\ans The origin of the system $\dot{X} = CX$ is a source.
+
+\soln The characteristic polynomial of $C$ is
+$p_C(\lambda) = \lambda^2 - 11\lambda + 24$.  So the eigenvalues are
+$\lambda_1 = 8$ and $\lambda_2 = 3$.  Since both eigenvalues have
+positive real part, the origin is a source.
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{E:sisasoe}
+$C=\mattwo{9}{-11}{-11}{9}$.
+
+\begin{solution}
+\ans The origin of the system $\dot{X} = CX$ is a saddle.
+
+\soln The characteristic polynomial of $C$ is
+$p_C(\lambda) = \lambda^2 - 18\lambda - 40$.  So the eigenvalues are
+$\lambda_1 = 20$ and $\lambda_2 = -2$.  Since one eigenvalue is positive
+and one is negative, the origin is a saddle.
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{E:sisasof}
+$C=\mattwo{1}{-8}{2}{1}$.
+
+\begin{solution}
+\ans The origin of the system $\dot{X} = CX$ is a source.
+
+\soln The characteristic polynomial of $C$ is
+$p_C(\lambda) = \lambda^2 - 2\lambda + 17$.  So the eigenvalues are
+$\lambda = 1 \pm 4i$.  Since both eigenvalues have positive real part,
+the origin is a source.
+
+\end{solution}
+\end{exercise}
+\end{document}

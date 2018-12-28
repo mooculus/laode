@@ -1,0 +1,63 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise}  \label{A:2.4.2}
+Consider the augmented matrix 
+\[
+A=\left(\begin{array}{cc|c}  
+ 1 & -r & 1\\  
+ r & -1 & 1  
+\end{array}\right)
+\]
+where $r$ is a real parameter. 
+\begin{enumerate}
+\item Find all $r$ so that $\text{rank}(A)=2$.
+
+\item Find all $r$ for which the corresponding linear system has 
+\begin{enumerate}
+\item no solution, 
+\item one solution, and 
+\item infinitely many solutions.
+\end{enumerate}
+\end{enumerate}
+
+\begin{solution}
+Subtracting $r$ times the first row of $A$ from the second row of that matrix yields
+\[
+\left(\begin{array}{cc|c}  
+ 1 & -r & 1\\  
+ 0 & r^2-1 & 1-r 
+\end{array}\right)=\left(\begin{array}{cc|c}  
+ 1 & -r & 1\\  
+ 0 & (r+1)(r-1) & 1-r 
+\end{array}\right)
+\]
+So the reduced row echelon form of $A$ is
+\[
+\text{RREF}(A)=\begin{cases}
+\left(\begin{array}{cc|c}  
+ 1 & 0 & \frac{1}{1+r}\\  
+ 0 & 1 & -\frac{1}{1+r}
+\end{array}\right) & r\neq \pm 1\\
+\left(\begin{array}{cc|c}  
+ 1 & -1 & 1\\  
+ 0 & 0 & 0 
+\end{array}\right) & r=1\\
+\left(\begin{array}{cc|c}  
+ 1 & 1 & 0\\  
+ 0 & 0 & 1 
+\end{array}\right) & r=-1
+\end{cases}
+\]
+\begin{enumerate}
+\item $\text{rank}(A)=2$ if $r\neq 1$.
+\item The linear system corresponding to the augmented matrix $A$ has 
+\begin{enumerate}
+\item no solution if $r=-1$, 
+\item one solution if $r\neq \pm 1$, and  
+\item infinitely many solutions if $r=1$.
+\end{enumerate}
+\end{enumerate}
+\end{solution}
+\end{exercise}
+\end{document}

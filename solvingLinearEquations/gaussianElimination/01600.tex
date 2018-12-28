@@ -1,0 +1,92 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c2.3.4}
+{\bf Comment:} {\rm To understand the point of this exercise you
+must begin by typing the \Matlab command {\tt format short e}.
+This command will set a format in which you can see the
+difficulties that sometimes arise in numerical computations.}
+
+Consider the following two $3\times 3$-matrices:
+\begin{matlabEquation}\label{MATLAB:14}
+A=\left( \begin{array}{rrr}
+     1  &  3  &  4\\
+     2  &  1  &  1\\
+    -4  &  3  &  5
+\end{array}\right) \AND
+B=\left( \begin{array}{rrr}
+     3  &  1  &  4\\
+     1  &  2  &  1\\
+     3  & -4  &  5
+\end{array}\right).
+\end{matlabEquation}
+Note that matrix $B$ is obtained from matrix $A$ by interchanging the
+first two columns.
+\begin{itemize}
+\item[(a)] Use \Matlab to put $A$ into row echelon form using the
+transformations
+\begin{enumerate}
+\item Subtract $2$ times the $1^{st}$ row from the $2^{nd}$.
+\item Add $4$ times the $1^{st}$ row to the $3^{rd}$.
+\item Divide the $2^{nd}$ row by $-5$.
+\item Subtract $15$ times the $2^{nd}$ row from the $3^{rd}$.
+\end{enumerate}
+\item[(b)] Put $B$ by hand into row echelon form using the
+transformations
+\begin{enumerate}
+\item Divide the $1^{st}$ row by $3$.
+\item Subtract the $1^{st}$ row from the $2^{nd}$.
+\item Subtract $3$ times the $1^{st}$ row from the $3^{rd}$.
+\item Multiply the $2^{nd}$ row by $3/5$.
+\item Add $5$ times the $2^{nd}$ row to the $3^{rd}$.
+\end{enumerate}
+\item[(c)] Use \Matlab to put $B$ into row echelon form using the
+same transformations as in part (b).
+\item[(d)] Discuss the outcome of the three transformations.  Is
+there a difference in the results?  Would you expect to see a
+difference?  Could the difference be crucial when solving a system
+of linear equations?
+\end{itemize}
+
+\begin{solution}
+
+(a)
+\begin{verbatim}
+A =
+   1.0000e+00   3.0000e+00   4.0000e+00
+            0   1.0000e+00   1.4000e+00
+            0            0            0
+\end{verbatim}
+
+(b)
+$B = \left(\begin{array}{rrr}
+1 & \frac{1}{3} & \frac{4}{3} \\
+0 & 1 & -\frac{1}{5} \\
+0 & 0 & 0\end{array} \right)$
+
+(c)
+\begin{verbatim}
+B =
+   1.0000e+00   3.3333e-01   1.3333e+00
+            0   1.0000e+00  -2.0000e-01
+            0            0   2.2204e-16
+\end{verbatim}
+
+
+(d) Note that switching the first two columns of matrix {\tt A} produces
+matrix {\tt B}.  Suppose that {\tt A} and {\tt B} represent the left-hand
+sides of linear systems with the same vector representing the right-hand
+sides.  If the solution of system {\tt A} is $(x,y,z) = (a,b,c)$, then the
+solution of system {\tt B} should be $(x,y,z) = (b,a,c)$.  However,
+according to the row reduced matrices produced by \Matlab, the system
+corresponding to {\tt B} has a unique solution, and the system
+corresponding to {\tt A} does not.  Row reducing {\tt B} by hand shows
+that there is not a unique solution.  \Matlab calculations provide one because of 
+roundoff error.  The division by 3 in the first step of the row reduction
+for {\tt B} causes a rounding inaccuracy.  Because of this, \Matlab
+eventually computes a very small nonzero value for {\tt B}$(3,3)$
+rather than the correct answer of 0.
+
+\end{solution}
+\end{exercise}
+\end{document}

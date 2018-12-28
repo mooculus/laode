@@ -1,0 +1,47 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\noindent In Exercises~\ref{c10.2.7a} -- \ref{c10.2.7b} decide whether 
+the given statements are {\em true\/} or {\em false\/}. If the 
+statements are false, give a counterexample; if the statements are true, 
+give a proof.
+\begin{exercise} \label{c10.2.7a}
+If the eigenvalues of a $2\times 2$ matrix are equal to $1$,
+then the four entries of that matrix are each less than $500$.
+
+\begin{solution}
+
+\ans The statement is false. 
+
+\soln  A counterexample is the matrix $A = \mattwo{1}{500}{0}{1}$.
+
+\end{solution}
+\end{exercise}
+
+\begin{exercise} \label{c10.2.7ab}
+If $A$ is a $4\times 4$ matrix and $\det(A)>0$, then $\det(-A)>0$. 
+
+\begin{solution}
+\ans The statement is true.
+
+\soln Since $A$ is a $4\times 4$ matrix, $\det(-A) = (-1)^4\det(A)=\det(A)>0$. 
+\end{solution}
+\end{exercise}
+
+\begin{exercise} \label{c10.2.7b}
+The trace of the product of two $n\times n$ matrices is the
+product of the traces.
+
+\begin{solution}
+\ans The statement is false.
+
+\soln For example, let
+\[
+A = \mattwo{1}{-1}{0}{1} \AND B = \mattwo{1}{-1}{2}{0}.
+\]
+Then $\trace(A)\trace(B) = 2(1) = 2$, and $\trace(AB) = -1$.
+
+\end{solution}
+\end{exercise}
+\end{document}

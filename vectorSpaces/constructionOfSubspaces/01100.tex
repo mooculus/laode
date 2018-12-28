@@ -1,0 +1,36 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c5.2.10}
+Let $Ax=b$ be a system of $m$ linear equations in $n$ unknowns,
+and let $r=\rank(A)$ and $s=\rank(A|b)$.  Suppose that this system
+has a unique solution.  What can you say about the relative
+magnitudes of $m,n,r,s$?
+
+\begin{solution}
+
+\ans The relationship of the constants is $m \geq n = r = s$.
+
+\soln The rank of matrix $A$ cannot be greater than the rank of matrix
+$(A|b)$, since $(A|b)$ consists of $A$ plus one column.  The rank of $A$
+is the number of pivots in the row reduced matrix.  $(A|b)$ can be row 
+reduced through the same operations, and will have either the same number
+of pivots as $A$ or, if there is a pivot in the last column, one more
+pivot than $A$.  Since the system has a unique solution, it is consistent,
+and therefore $(A|b)$ cannot have a pivot in the $(n + 1)^{st}$ column, so
+$r = \rank(A) = \rank(A|b) = s$.
+
+\para The set of solutions is parameterized by $n - r$ parameters,
+where $n$ is the number of columns of $A$.  Since there is a unique
+solution, the set of solutions is parameterized by $0$ parameters,
+so $n = r$.
+
+\para The number $m$ of rows of the matrix must be greater than or
+equal to $n$ in order for the system to have a unique solution, since
+there must be $n$ pivots, and each pivot must be in a separate row.
+
+
+
+\end{solution}
+\end{exercise}
+\end{document}

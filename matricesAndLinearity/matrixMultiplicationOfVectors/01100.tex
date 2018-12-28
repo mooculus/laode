@@ -1,0 +1,41 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c4.1.9}
+Is there an upper triangular $2\times 2$ matrix $A$ such that
+\begin{equation}  \label{eq:avect}
+A\vectwo{1}{0} = \vectwo{1}{2}?
+\end{equation}
+Is there a symmetric $2\times 2$ matrix $A$ satisfying \eqref{eq:avect}?
+
+\begin{solution}
+
+\ans There is no $2 \times 2$ upper triangular matrix $A$ that
+satisfies equation \eqref{eq:avect}, but any symmetric matrix $A$ of the form
+\[ A = \mattwo{1}{2}{2}{a_{22}}, \]
+where $a_{22}$ is a real number, satisfies \eqref{eq:avect}.
+
+\soln Let $A$ be the upper triangular matrix
+\[ \mattwo{a_{11}}{a_{12}}{0}{a_{22}}. \]
+The resulting matrix equation
+\[ \mattwo{a_{11}}{a_{12}}{0}{a_{22}}
+\vectwo{1}{0} = \vectwo{1}{2} \]
+yields the linear equations
+\[ \begin{array}{rcl}
+a_{11} & = & 1 \\
+0 & = & 2.\end{array} \]
+The second equation is inconsistent, so there is no solution.
+
+\para Then let $A$ be the symmetric matrix
+\[ \mattwo{a_{11}}{a_{12}}{a_{12}}{a_{22}}. \]
+Write the matrix equation
+\[ \mattwo{a_{11}}{a_{12}}{a_{12}}{a_{22}}
+\vectwo{1}{0} = \vectwo{1}{2}, \]
+from which we obtain the consistent linear system
+\[ \begin{array}{rcl}
+a_{11} & = & 1 \\
+a_{12} & = & 2.\end{array} \]
+
+\end{solution}
+\end{exercise}
+\end{document}

@@ -1,0 +1,77 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c5.8.6}
+Let
+\begin{matlabEquation}\label{MATLAB:38}
+A = \left(\begin{array}{rrrr} 1 & 1 & 2 & 2 \\ 0 & -1 & 3 & 1 \\
+   2 & -1 & 1 & 0 \\ -1 & 0 & 7 & 4 \end{array}\right).
+\end{matlabEquation}
+\begin{itemize}
+\item[(a)]  Compute $\rank(A)$ and exhibit a basis for the row space of $A$.
+\item[(b)]  Find a basis for the column space of $A$.
+\item[(c)]  Find all solutions to the homogeneous equation $Ax=0$.
+\item[(d)]  Does
+\[
+Ax = \left( \begin{array}{c} 4 \\ 2\\ 2\\ 1 \end{array} \right)
+\]
+have a solution?
+\end{itemize}
+
+\begin{solution}
+
+(a) \ans The vectors $(1,0,0,\frac{1}{12})$, $(0,1,0,\frac{3}{4})$,
+and $(0,0,1,\frac{7}{12})$ form a basis for the row space of $A$ and
+$\rank(A) = 3$.
+
+\soln Row reducing {\tt A} in \Matlab yields:
+\begin{verbatim}
+ans =
+    1.0000         0         0    0.0833
+         0    1.0000         0    0.7500
+         0         0    1.0000    0.5833
+         0         0         0         0
+\end{verbatim}
+
+(b) \ans The vectors $(1,0,0,1)$, $(0,1,0,2)$, and $(0,0,1,-1)$ form a
+basis for the column space of $A$.
+
+\soln Row reduce $A^t$ in \Matlab with the command {\tt rref(A')} to obtain
+\begin{verbatim}
+ans =
+      1            0            0            1      
+      0            1            0            2      
+      0            0            1           -1      
+      0            0            0            0      
+\end{verbatim}
+
+(c) \ans $Ax = 0$ when $x = s(-\frac{1}{12},-\frac{3}{4}, -\frac{7}{12},1)$.
+
+\soln The solutions to the homogeneous system $Ax = 0$ can be found
+using the row reduced matrix $A$, which we computed in part (a).
+
+(d) \ans The vector $(4,2,2,1)$ is not in the span of the columns of
+$A$.
+
+\soln Row reducing the augmented matrix
+\[
+\left(\begin{array}{rrrr|r} 1 & 1 & 2 & 2 & 4 \\ 0 & -1 & 3 &
+1 & 2 \\ 2 & -1 & 1 & 0 & 2 \\ -1 & 0 & 7 & 4 & 1 \end{array}\right)
+\]
+in \Matlab yields
+\begin{verbatim}
+ans =
+      1            0            0           1/12          0      
+      0            1            0           3/4           0      
+      0            0            1           7/12          0      
+      0            0            0            0            1      
+\end{verbatim}
+Since there is a pivot point in the last column, the system is
+inconsistent.
+
+
+
+
+\end{solution}
+\end{exercise}
+\end{document}

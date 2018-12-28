@@ -1,0 +1,204 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\noindent In Exercises~\ref{c11.1.5A} -- \ref{c11.1.5B} solve the initial 
+value problem $\dot{X}=AX$ for the given matrix $A$ and initial vector
+$X_0$ in the form of \eqref{E:solvedebf} by converting $A$ to Jordan normal
+form.
+\begin{exercise} \label{c11.1.5A}
+\begin{matlabEquation}\label{MATLAB:45}
+A=\left(\begin{array}{rrr}  
+    -3  &  -7 &   -2\\
+    11  &  19  &   5\\
+   -32  & -51 &  -13 \end{array} \right) \AND X_0=(1,0,-1)^t.
+\end{matlabEquation}
+
+\begin{solution}
+
+\ans $X(t) = e^t\left(\begin{array}{rrr}
+     3  &  -4   &   1\\
+    -6   &  11   &   0\\
+    15   & -32   &   0 \end{array}\right)
+\left(\begin{array}{rrr}
+     1  &  t   &   \frac{1}{2}t^2\\
+    0   &  1   &   t\\
+    0   &  0   &   1 \end{array}\right)
+\left(\begin{array}{r} 0.4074\\ 0.2222\\ 0.6667\end{array}\right)$.
+
+\vspace{0.08in}
+
+\soln  In \Matlabp, load the matrix $A$ and the
+initial vector $X_0$.  Begin by finding the eigenvalues of $A$ by typing {\tt
+eig(A)} and obtaining
+\begin{verbatim}
+ans =
+   1.0000          
+   1.0000 + 0.0000i
+   1.0000 - 0.0000i
+\end{verbatim}
+So $1$ is an eigenvalue of $A$ of multiplicity three.  To find the Jordan
+block structure of $A$ type {\tt null(A-eye(3))} obtaining
+\begin{verbatim}
+ans =
+    0.1826
+   -0.3651
+    0.9129
+\end{verbatim}
+Thus, the Jordan normal form of $A$ is 
+\[
+J = \left(\begin{array}{rrr} 1 & 1 & 0\\ 0 & 1 & 1\\ 0 & 0 & 1 
+\end{array}\right).
+\]
+The solution to the differential equation is:
+\[
+X(t) = e^{tA}X_0 = e^{tSJS\inv}X_0= Se^{tJ}S\inv X_0.
+\]
+where $J=S\inv AS$.  To compute the matrix $S$ we need to choose a vector 
+$v_3$ that is in $\R^3\setmin\nulls(A-I_3)^2$.  The vector $v_3=e_3$ will
+work. Then type the commands
+\begin{verbatim}
+v3 = [1 0 0]';
+v2 = (A-eye(3))*v2;
+v1 = (A-eye(3))*v2;
+S  = [v1 v2 v3]
+\end{verbatim}
+obtaining
+\begin{verbatim}
+S =
+     3    -4     1
+    -6    11     0
+    15   -32     0
+\end{verbatim}
+To check that we have derived the correct matrix type {\tt inv(S)*A*S}
+and obtain
+\begin{verbatim}
+ans =
+    1.0000    1.0000    0.0000
+   -0.0000    1.0000    1.0000
+   -0.0000    0.0000    1.0000
+\end{verbatim}
+It follows that the solution is:
+\[
+X(t) = Se^{tJ}S\inv X_0 = e^t\left(\begin{array}{rrr}
+     3  &  -4   &   1\\
+    -6   &  11   &   0\\
+    15   & -32   &   0 \end{array}\right)
+\left(\begin{array}{rrr}
+     1  &  t   &   \frac{1}{2}t^2\\
+    0   &  1   &   t\\
+    0   &  0   &   1 \end{array}\right)
+\left(\begin{array}{r} 0.4074\\ 0.2222\\ 0.6667\end{array}\right)
+\] 
+where $S\inv X_0$ is calculated by typing {\tt inv(S)*X0}.
+
+
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c11.1.5B}
+\begin{matlabEquation}\label{MATLAB:46}
+A=\left(\begin{array}{rrrr}  
+  103 &  138 &  124 &  -215 \\
+  -67 &  -85 &  -68 &   142 \\
+   22 &   27 &   20 &   -47 \\
+   19 &   27 &   27 &   -39 \end{array} \right) \AND X_0=(1,2,0,3)^t.
+\end{matlabEquation}
+
+\begin{solution}
+
+\ans $X(t) = S
+\cmattwo{e^{-t}\left(\begin{array}{rrr}
+     1  &  t   &   \frac{1}{2}t^2\\
+    0   &  1   &   t\\
+    0   &  0   &   1 \end{array}\right)}{0}{0}{e^{2t}}
+\left(\begin{array}{r} 2.0203\\ -1.4811 \\ 3.8936\\ 66.0000
+\end{array}\right)$ where
+\[
+S = \left(\begin{array}{rrrr}
+   12.3281 & -20.9940 &        0 &  -0.8333\\
+    3.0820 &  24.8011 &  -0.1271 &   0.5000\\
+   -3.0820 &  -9.3911 &   0.8522 &  -0.1667\\
+    6.1640 &   0.2900 &   0.5075 &  -0.1667 \end{array}\right).
+\]
+
+\vspace{0.08in}
+
+\soln  In \Matlabp, load the matrix $A$ and the
+initial vector $X_0$.  Begin by finding the eigenvalues of $A$ by typing 
+{\tt eig(A)} and obtaining
+\begin{verbatim}
+ans =
+   2.0000          
+  -1.0000 + 0.0001i
+  -1.0000 - 0.0001i
+  -1.0001   
+\end{verbatim}
+To verify that $-1$ is an eigenvalue of $A$ of multiplicity three, type
+{\tt null((A+eye(4))\^3)} obtaining the three-dimensional subspace spanned by
+\begin{verbatim}
+ans =
+         0   -0.9423         0
+    0.8581    0.1666   -0.1271
+   -0.1621    0.1666    0.8522
+    0.4872   -0.2379    0.5075
+\end{verbatim}
+To find the Jordan block structure of $A$ type {\tt null(A+eye(4))} obtaining
+\begin{verbatim}
+ans =
+   -0.8528
+   -0.2132
+    0.2132
+   -0.4264
+\end{verbatim}
+Thus, the Jordan normal form of $A$ is 
+\[
+J = \left(\begin{array}{rrrr} 1 & 1 & 0 & 0\\ 0 & 1 & 1 & 0\\ 0 & 0 & 1 & 0\\
+0 & 0 & 0 & 2 \end{array}\right).
+\]
+The solution to the differential equation is:
+\[
+X(t) = e^{tA}X_0 = e^{tSJS\inv}X_0= Se^{tJ}S\inv X_0.
+\]
+where $J=S\inv AS$.  To compute the matrix $S$ we need to choose a vector 
+$v_3$ that is in $\nulls(A+I_4)^3\setmin\nulls(A+I_4)^2$.  The vector 
+$v_3 = (0, -0.1271, 0.8522, 0.5075)^t$ will work. Then type the commands
+\begin{verbatim}
+v2 = (A+eye(4))*v3;
+v1 = (A+eye(4))*v2;
+v4 = null(A-2*eye(4));
+S  = [v1 v2 v3 v4]
+\end{verbatim}
+obtaining
+\begin{verbatim}
+S =
+   12.3281  -20.9940         0   -0.8333
+    3.0820   24.8011   -0.1271    0.5000
+   -3.0820   -9.3911    0.8522   -0.1667
+    6.1640    0.2900    0.5075   -0.1667
+\end{verbatim}
+To check that we have derived the correct matrix type {\tt inv(S)*A*S}
+and obtain
+\begin{verbatim}
+ans =
+   -1.0000    1.0000    0.0000   -0.0000
+    0.0000   -1.0000    1.0000    0.0000
+   -0.0000   -0.0000   -1.0000    0.0000
+   -0.0000   -0.0000    0.0000    2.0000
+\end{verbatim}
+It follows that the solution is:
+\begin{eqnarray*}
+X(t) & = & Se^{tJ}S\inv X_0 \\ & = & 
+S\cmattwo{e^{-t}\left(\begin{array}{rrr}
+     1  &  t   &   \frac{1}{2}t^2\\
+    0   &  1   &   t\\
+    0   &  0   &   1 \end{array}\right)}{0}{0}{e^{2t}}
+\left(\begin{array}{r} 2.0203\\ -1.4811 \\ 3.8936\\ 66.0000 \end{array}\right)
+\end{eqnarray*}
+where $S$ has been defined previously and $S\inv X_0$ is calculated by typing 
+{\tt inv(S)*X0}.
+
+
+\end{solution}
+\end{exercise}
+\end{document}

@@ -1,0 +1,71 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise}  \label{c17.3.4}
+Find the general solution to the system of differential equations
+\[
+\frac{dX}{dt}= \mattwoc{0}{1}{\frac{3}{t^2}}{\frac{1}{t}}X+\vectwoc{t}{2t}.
+\]
+{\bf Hint:} Verify that 
+\[
+X_1(t) = \vectwoc{t^3}{3t^2}\AND X_2(t) = \vectwoc{\frac{1}{t}}{-\frac{1}{t^2}}
+\]
+are solutions to the homogeneous equation and then use variation of parameters.
+
+\begin{solution}
+
+\ans $X(t) = \left(\alpha_1+\frac{1}{4}\left(2\ln t -
+\frac{1}{t}\right)\right)X_1(t) + \left(\alpha_2 + \frac{1}{8}
+\left(2t^3-t^4\right)\right)X_2(t)$.
+
+\soln  Begin by verifying that $X_1=(t^3,3t^2)^t$ and 
+$X_2=(\frac{1}{t},-\frac{1}{t^2})^t$ solve the homogeneous
+equation
+\[
+\frac{dX}{dt}= \cmattwo{0}{1}{\frac{3}{t^2}}{\frac{1}{t}}X.
+\]
+That is,
+\[
+\dot{X}_1 = \cvectwo{3t^2}{6t} \AND 
+\mattwo{0}{1}{\frac{3}{t^2}}{\frac{1}{t}}\cvectwo{t^3}{3t^2} = 
+\cvectwo{3t^2}{3t+3t} = \cvectwo{3t^2}{6t}
+\]
+and 
+\[
+\dot{X}_2 = \vectwo{-\frac{1}{t^2}}{\frac{2}{t^3}} \AND 
+\mattwo{0}{1}{\frac{3}{t^2}}{\frac{1}{t}}
+\vectwo{\frac{1}{t}}{-\frac{1}{t^2}} = 
+\cvectwo{-\frac{1}{t^2}}{\frac{3}{t^3}-\frac{1}{t^3}} 
+= \vectwo{-\frac{1}{t^2}}{\frac{2}{t^3}}
+\]
+
+Next we look for a particular solution to the inhomogeneous equation of 
+the form $X(t)=c_1(t)X_1(t)+c_2(t)X_2(t)$.  Equation~\eqref{e:D(t)} in
+Theorem~\ref{thm:varparsys} states that $c_j$ satisfies
+\[
+\vectwo{\dot{c}_1}{\dot{c}_2} = (X_1|X_2)\inv \vectwo{t}{2t}.
+\]
+Now 
+\[
+ (X_1|X_2)\inv = \mattwo{t^3}{\frac{1}{t}}{3t^2}{-\frac{1}{t^2}}\inv = 
+\frac{1}{4t}\mattwo{\frac{1}{t^2}}{\frac{1}{t}}{3t^2}{-t^3}
+\]
+It follows that 
+\begin{eqnarray*}
+\dot{c}_1 & = & \frac{1}{4}\left(\frac{1}{t^2}+\frac{2}{t}\right) \\
+\dot{c}_2 & = & \frac{1}{4}\left(3t^2-2t^3\right).
+\end{eqnarray*}
+Integration yields
+\begin{eqnarray*} 
+c_1 & = & \frac{1}{4}\left(2\ln t - \frac{1}{t}\right)\\
+c_2 & = & \frac{1}{8}\left(2t^3-t^4\right).
+\end{eqnarray*}
+Adding the general solution to the homogeneous equation to the specific
+solution to the inhomogeneous equation yields the general solution to the
+inhomogeneous equation.
+
+
+
+\end{solution}
+\end{exercise}
+\end{document}

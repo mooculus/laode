@@ -1,0 +1,22 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c15.1.2}
+Write down the implicit trapezoidal rule for the initial
+value problem \eqref{eq:numanalsys}.
+
+\begin{solution}
+An application of the implicit trapezoidal rule to
+the system \eqref{eq:numanalsys} leads to
+\begin{eqnarray*}
+\vectwo{x_{k+1}}{y_{k+1}} & = &  \vectwo{x_k}{y_k} +
+\frac{h}{2} \left(\vectwo{f(t_k,x_k,y_k)}{g(t_k,x_k,y_k)}
++\vectwo{f(t_{k+1},x_{k+1},y_{k+1})}{g(t_{k+1},x_{k+1},y_{k+1})}\right)\\
+t_{k+1} &=& t_k + h.
+\end{eqnarray*}
+
+
+
+\end{solution}
+\end{exercise}
+\end{document}

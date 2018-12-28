@@ -1,0 +1,87 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+
+
+\CEXER
+
+\noindent In Exercises~\ref{c14.2.11a} -- \ref{c14.2.11c} use 
+{\dfield}\index{\computer!dfield8} 
+to compute solutions to the given linear differential equations.  What is 
+the asymptotic behavior of the solutions as $t$ tends to infinity?  Use 
+variation of parameters to explain the behavior.
+\begin{exercise}   \label{c14.2.11a}
+$\dps\frac{dx}{dt} = -2 x + t$.
+
+\begin{solution}
+Using {\sf dfield5} we see in Figure~\ref{c14.2.11a} that
+solutions are asymptotic to a line parallel to $x=\frac{1}{2}t$.
+
+\begin{figure}[htb]
+     \centerline{%
+     \psfig{file=exfigure/fig17-1-11.eps,width=3.0in}}
+        \exercap{c14.2.11a}
+\end{figure} 
+Using variation of parameters we find that the general solution to the
+differential equation $\dot{x}=-2x+t$ is 
+\[
+x(t) = \frac{1}{2}\left(t-\frac{1}{2}\right) +Ke^{-2t}.
+\]
+As $t\to\infty$, the solution $x(t)$ approaches the straight line 
+$x= \frac{1}{2}t-\frac{1}{4}$.
+
+\end{solution}
+\end{exercise}
+\begin{exercise}   \label{c14.2.11b}
+$\dps\frac{dx}{dt} = -2 x + t^2$.
+
+\begin{solution}
+Using {\sf dfield5} and variation of parameters we see in 
+Figure~\ref{c14.2.11b} that solutions are asymptotic to the
+parabola $x=\frac{1}{2}((t-frac{1}{2})^2+\frac{1}{4})$.
+Using variation of parameters we find that the general solution to the
+differential equation $\dot{x}=-2x+t^2$ is 
+\[
+x(t) = \frac{1}{2}\left(t^2-t+\frac{1}{2}\right) + Ke^{-2t}.
+\]
+As $t\to\infty$, the solution $x(t)$ approaches the parabola  
+$x= \frac{1}{2}(t^2-t+\frac{1}{2})$ --- which is verified by the 
+{\sf dfield5} calculations shown in Figure~\ref{c14.2.11b}.
+
+\begin{figure}[htb]
+     \centerline{%
+     \psfig{file=exfigure/fig17-1-12.eps,width=3.0in}}
+        \exercap{c14.2.11b}
+\end{figure} 
+
+\end{solution}
+\end{exercise}
+\begin{exercise}   \label{c14.2.11c}
+$\dps\frac{dx}{dt} = -2 x + \sin t$.
+
+\begin{solution}
+
+Using {\sf dfield5} and variation of parameters we see in 
+Figure~\ref{c14.2.11c} that solutions are asymptotic to the
+periodic function $x=\frac{1}{5}(\cos t-2\sin t)$.
+Using variation of parameters we find that the general solution to the
+differential equation $\dot{x}=-2x+\sin t$ is 
+\[
+x(t) = \frac{1}{5}(\cos t-2\sin t) + Ke^{-2t}.
+\]
+As $t\to\infty$, the solution $x(t)$ approaches the function  
+$x= \frac{1}{5}(\cos t-2\sin t)$ --- which is verified by the 
+{\sf dfield5} calculations shown in Figure~\ref{c14.2.11c}.
+
+\begin{figure}[htb]
+     \centerline{%
+     \psfig{file=exfigure/fig17-1-13.eps,width=3.0in}}
+        \exercap{c14.2.11c}
+\end{figure} 
+
+
+
+\end{solution}
+\end{exercise}
+\end{document}

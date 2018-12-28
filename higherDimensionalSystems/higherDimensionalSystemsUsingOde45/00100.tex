@@ -1,0 +1,106 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\CEXER
+
+\noindent In Exercises~\ref{c11.3.1a} -- \ref{c11.3.1b} use linear algebra to 
+decide whether or not the origin is an asymptotically stable equilibrium for 
+each system of ODEs $\dot{X}=AX$. If the origin is unstable, find an initial 
+condition such that the corresponding solution approaches the origin as $t$ 
+tends to infinity.  Verify these calculations using {\tt ode45}.
+\begin{exercise} \label{c11.3.1a}
+\begin{matlabEquation}\label{MATLAB:55}
+A =  \left(\begin{array}{rrrr}
+    -5  &  1  & -3  &  0\\
+    -2  &  3  & -3  &  0\\
+     4  & 11  & -5  &  0\\
+     2  & -5  &  3  & -2
+\end{array}\right)
+\end{matlabEquation}
+
+\begin{solution}
+
+\ans The origin is a stable equilibrium.
+
+\soln Create the following m-file to define the function {\tt exode4\_1}:
+\begin{verbatim}
+function f=exode4_1(t,x)
+A = [-5     1    -3     0
+     -2     3    -3     0
+      4    11    -5     0
+      2    -5     3    -2];
+f = A*x;
+\end{verbatim}
+Compute the eigenvalues of $A$.  In this case, $\lambda_1 = -2$, $\lambda_2
+\approx -0.25$, $\lambda_3 \approx -3.38 + 5.38i$, and $\lambda_4 \approx
+-3.38 - 5.38i$ are eigenvalues of $A$.  All four eigenvalues have negative
+real part, so the origin is a stable equilibrium.
+
+\para To view the system using {\tt ode45}, choose an initial vector $X_0$
+near the origin, and run {\tt ode45} using this vector.  Graphing the
+components of the resulting $x$ confirms that all components converge on $0$
+in forward time.  For example, the command
+\begin{verbatim}
+[t,x]=ode45('exode1',[0 5],[1,1,1,1]');
+\end{verbatim}
+runs {\tt ode45} on the system with initial vector $X_0 = (1,1,1,1)^t$.
+The trajectories of the components of $x$ are shown in Figure~\ref{c11.3.1a}.
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/11-3-1a.eps,width=3.0in}}
+                \exercap{c11.3.1a}
+\end{figure}
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c11.3.1b}
+\begin{matlabEquation}\label{MATLAB:56}
+A =  \left(\begin{array}{rrrr}
+     0  &  1  & -3  &  0\\
+    -2  &  3  & -3  &  0\\
+     4  & 11  & -5  &  0\\
+     2  & -5  &  3  & -2
+\end{array}\right).
+\end{matlabEquation}
+
+\begin{solution}
+
+\ans For the system $\dot{X} = AX$, the origin is not a stable
+equilibrium, but for the initial condition $X_0 = (0,0,0,1)^t$, the
+solution approaches the origin as $t$ tends to infinity.
+
+\soln Create the m-file {\tt exode4\_2.m} corresponding to the system 
+$\dot{X} = AX$:
+\begin{verbatim}
+function f = exode4_2(t,x)
+A = [0     1    -3     0
+    -2     3    -3     0
+     4    11    -5     0
+     2    -5     3    -2];
+f = A*x;
+\end{verbatim}
+Compute the eigenvalues of $A$.  In this case, $\lambda_1 = -2$, $\lambda_2
+= -2 + 6i$, $\lambda_3 = -2 - 6i$, and $\lambda_4 = 2$ are eigenvalues of
+$A$.  In particular, $\lambda_4$ is positive and real, so the origin is not
+a stable equilibrium for the system.
+
+\para Confirm your results by choosing some initial vector, for instance,
+$X_0 = (1,0,1,0)^t$ and computing its graph using {\tt ode45}.  Note that
+values of the $x_i$ diverge as $t$ increases.
+The trajectories of the components of $x$ are shown in Figure~\ref{c11.3.1b}. 
+
+\para The eigenvalue $\lambda_1 = -2$ is negative and has
+associated eigenvector $v = (0,0,0,1)^t$.  Run {\tt ode45} again, this
+time with $X_0 = v$.  All solutions approach the origin.
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/11-3-1b.eps,width=3.0in}}
+                \exercap{c11.3.1b}
+\end{figure}
+
+\end{solution}
+\end{exercise}
+\end{document}

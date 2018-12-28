@@ -1,0 +1,49 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c6.6.2}
+Solve the initial value problem
+\[
+\frac{dX}{dt} = \mattwo{0}{1}{-2}{3} X
+\]
+where $X(0)=(2,1)^t$.
+
+\begin{solution}
+
+\ans The solution to the given initial value problem with $X(0) = (2,1)^t$
+is
+\[
+X(t) = -3e^t\vectwo{1}{1} + e^{2t}\vectwo{1}{2}
+= \cvectwo{e^{2t} - 3e^t}{2e^{2t} - 3e^t}.
+\]
+
+\soln Let \[ C = \mattwo{0}{1}{-2}{3}. \]
+Then the solution to the system is $X(t) = e^{tC}X_0$, where
+$X_0 = X(0) = (2,1)^t$.
+To find $e^{tC}$, first find the eigenvalues of $C$ by solving
+\[
+0 = \lambda^2 - \trace(C) + \det(C) = (\lambda - 1)(\lambda - 2).
+\]
+The eigenvalues are $\lambda_1 = 1$ and $\lambda_2 = 2$.  We can
+then find $e^{tC}$ using \eqref{E:exdist}:
+\[
+\begin{array}{rcl}
+e^{tC} & = & \frac{1}{\lambda_2 - \lambda_1}(e^{\lambda_1 t}(C -
+\lambda_2 I_2) - e^{\lambda_2 t}(C - \lambda_1 I_2)) \\
+& = & e^t\left(\mattwo{0}{1}{-2}{3} - \mattwo{2}{0}{0}{2}\right) -
+e^{2t}\left(\mattwo{0}{1}{-2}{3} - \mattwo{1}{0}{0}{1}\right) \\
+& = &
+e^t\mattwo{-2}{1}{-2}{1} - e^{2t}\mattwo{-1}{1}{-2}{2}.
+\end{array}
+\]
+So, we can now compute
+\[
+X(t) = e^{tC}X_0
+= \left(e^t\mattwo{-2}{1}{-2}{1} -
+e^{2t}\mattwo{-1}{1}{-2}{2}\right)\vectwo{2}{1}.
+\]
+Complete the matrix multiplication to obtain $X(t)$.
+
+\end{solution}
+\end{exercise}
+\end{document}

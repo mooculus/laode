@@ -1,0 +1,24 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c5.8.5}
+Let $B$ be an $m\times p$ matrix and let $C$ be a $p\times n$
+matrix. Prove that the rank of the $m\times n$ matrix $A=BC$
+satisfies
+\[
+\rank(A) \leq \min\{\rank(B),\;\rank(C)\}.
+\]
+
+\begin{solution}
+
+We show that $\rank(A) \leq \min\{\rank(B),\rank(C)\}$ by noting that,
+if $A = BC$, then the columns of $A$ are linear combinations of the
+columns of $B$, so the span of the column space of $A$ cannot exceed
+the span of the column space of $B$.  Therefore, $\rank(A) \leq
+\rank(B)$.  Next, note that $A^t = C^tB^t$.  By a similar argument,
+$\rank(A^t) \leq \rank(C^t)$.  Since $\rank(A) = \rank(A^t)$,
+$\rank(A) \leq \min\{\rank(B),\rank(C)\}$.
+
+\end{solution}
+\end{exercise}
+\end{document}

@@ -1,0 +1,37 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c4.10.4}
+Suppose that $P$ and $Q$ are each $n\times n$ matrices whose rows sum to $1$.
+Show that $PQ$ is also an $n\times n$ matrix whose rows sum to $1$.
+
+\begin{solution}
+
+Let
+\[
+P = \left(\begin{array}{ccc} p_{11} & \cdots & p_{1n} \\
+\vdots & \ddots & \vdots \\ p_{n1} & \cdots & p_{nn}
+\end{array}\right) \AND Q = \left(\begin{array}{ccc} q_{11} &
+\cdots & q_{1n} \\ \vdots & \ddots & \vdots \\ q_{n1} & \cdots
+& q_{nn} \end{array}\right).
+\]
+Then,
+\[
+PQ = \left(\begin{array}{ccc} p_{11}q_{11} + \cdots + p_{1n}q_{n1}
+& \cdots & p_{11}q_{1n} + \cdots + p_{1n}q_{nn} \\
+\vdots & \ddots & \vdots \\ p_{n1}q_{11} + \cdots + p_{nn}q_{n1}
+& \cdots & p_{n1}q_{1n} + \cdots + p_{nn}q_{nn} \end{array}\right).
+\]
+So, the sum of the entries in the $i^{th}$ row is
+\[
+\begin{array}{rcl}
+(p_{i1}q_{11} + \cdots + p_{in}q_{n1}) + \cdots + (p_{i1}q_{1n} +
+\cdots + p_{in}q_{nn}) & = & \\
+p_{i1}(q_{11} + \cdots + q_{1n}) + \cdots + p_{in}(q_{n1} +
+\cdots + q_{nn}) & = & \\ p_{i1} + \cdots + p_{in} & = & 1.
+\end{array}
+\]
+
+\end{solution}
+\end{exercise}
+\end{document}

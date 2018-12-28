@@ -1,0 +1,66 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\TEXER
+
+In Exercises~\ref{c14.4.1a} -- \ref{c14.4.1d} compute the Wronskian
+$W(t)$ for the specified matrices:
+
+\begin{exercise} \label{c14.4.1a}
+$Y(t) = \mattwo{t}{1}{-1}{t}$.
+
+\begin{solution}
+\ans The Wronskian is $W(t) = t^2 + 1$.
+
+\soln $W(t) = \det(Y(t)) = \det\mattwo{t}{1}{-1}{t} = t^2 + 1$.
+
+\end{solution}
+\end{exercise}
+
+\begin{exercise} \label{c14.4.1b}
+$Y(t) = \mattwo{\cos t}{-\sin t}{\sin t}{\cos t}$.
+
+\begin{solution}
+\ans The Wronskian is $W(t) = 1$.
+
+\soln $W(t) = \det(Y(t)) = \det\mattwo{\cos t}{-\sin t}{\sin t}{\cos t} =
+\cos^2 t + \sin^2 t = 1$.
+
+\end{solution}
+\end{exercise}
+
+\begin{exercise} \label{c14.4.1c}
+$Y(t) = \left(\begin{array}{ccc}
+0 & t & e^t\\  1 & t & te^t \\ t & t & t^2 e^t \end{array}\right)$.
+
+\begin{solution}
+\ans The Wronskian is $W(t) = te^t(1 - t)$.
+
+\soln
+\[
+W(t) = \det(Y(t)) = \det\cmatthree{0}{t}{e^t}{1}{t}{te^t}{t}{t}{t^2e^t}
+= te^t - t^2e^t.
+\]
+
+\end{solution}
+\end{exercise}
+
+\begin{exercise} \label{c14.4.1d}
+$Y(t) = \left(\begin{array}{ccc}
+1 & 0 & 1\\  1 + \sin t & 1 & e^t \\ -4 + \cos t & t & te^t 
+\end{array}\right)$.
+
+\begin{solution}
+\ans The Wronskian is $W(t) = t + t\sin t - \cos t + 4$.
+
+\soln
+\[
+W(t) = \det(Y(t)) =
+\det\cmatthree{1}{0}{1}{1 + \sin t}{1}{e^t}{-4 + \cos t}{t}{te^t} =
+t + t\sin t - \cos t + 4.
+\]
+
+\end{solution}
+\end{exercise}
+\end{document}

@@ -1,0 +1,26 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise}  \label{c14.w.2}
+Use \eqref{L:Wronskian} to verify that the Wronskian for solutions to the linear 
+constant coefficient system of ODE $\dot{X}=AX$ is
+\begin{equation}  \label{E:ccw}
+W(t) = e^{\trace(A)t}W(0).
+\end{equation}
+
+\begin{solution}
+Equation \eqref{L:Wronskian}
+states that the Wronskian for solutions to $\dot{X} = AX$ is
+\[
+W(t) = e^{\int_0^t\trace(A(\tau))d\tau}W(0).
+\]
+If $\dot{X} = AX$ is a linear constant coefficient system, then $A$ is not
+time-dependent, so $\trace(A(t)) = \trace(A)$ for all $t$.  Thus,
+\[
+\int_0^t\trace(A(\tau))d\tau = \int_0^t\trace(A)d\tau = \trace(A)t,
+\]
+and $W(t) = e^{\trace(A)t}W(0)$, as desired.
+
+\end{solution}
+\end{exercise}
+\end{document}

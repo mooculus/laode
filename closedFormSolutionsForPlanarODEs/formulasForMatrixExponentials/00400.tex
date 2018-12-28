@@ -1,0 +1,79 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c6.6.4}
+Solve the initial value problem
+\[
+\frac{dX}{dt} =  \mattwo{2}{1}{-2}{0}X
+\]
+where $X(0)=(1,1)^t$.
+
+\begin{solution}
+
+\ans The solution to the initial value problem $X(0) = (1,1)^t$ is:
+\[
+X(t) = e^t\vectwo{2\sin{t} + \cos{t}}{-3\sin{t} + \cos{t}}.
+\]
+
+\soln Let
+\[
+C = \mattwo{2}{1}{-2}{0}.
+\]
+Then the solution to the system is $X(t) = e^{tC}X_0$, where
+$X_0 = X(0)$ is the initial condition of the system.
+Find the eigenvalues of $C$ by solving
+\[
+0 = \lambda^2 - \trace(C) + \det(C) = \lambda^2 - 2\lambda + 2.
+\]
+So the eigenvalues of $C$ are $\lambda_1 = 1 + i$ and $\lambda_2 = 1 - i$.
+We can then find $e^{tC}$ using 
+\eqref{E:exdist}:
+\[
+e^{tC} = \frac{1}{\lambda_2 - \lambda_1}(e^{\lambda_1 t}(C -
+\lambda_2 I_2) - e^{\lambda_2 t}(C - \lambda_1 I_2)).
+\]
+Since the scalar
+\[
+\frac{1}{\lambda_2 - \lambda_1} = -\frac{1}{2}i
+\]
+is purely imaginary, we need compute only the imaginary parts of
+$e^{\lambda_1 t}(C - \lambda_2 I_2)$ and $e^{\lambda_2 t}(C - \lambda_1 I_2)$
+to obtain the real solution to the differential equation $X(t) = e^{tC}X_0$.
+So, compute
+\[
+\begin{array}{rcl}
+e^{\lambda_1 t}(C - \lambda_2 I_2)
+& = & e^{t}e^{it}\left(\mattwo{2}{1}{-2}{0} - \cmattwo{1 - i}{0}{0}{1 - i}
+\right) \\
+& = & e^{t}(\cos t + i\sin t)\cmattwo{1 + i}{1}{-2}{-1 + i}.
+\end{array}
+\]
+The imaginary part of this product is
+\[
+ie^t\cmattwo{\sin t + \cos t}{\sin t}{-2\sin t}{-\sin t + \cos t}.
+\]
+Then compute
+\[
+\begin{array}{rcl}
+e^{\lambda_2 t}(C - \lambda_1 I_2)
+& = & e^{t}e^{-it}\left(\mattwo{2}{1}{-2}{0} - \cmattwo{1 + i}{0}{0}{1 + i}
+\right) \\
+& = & e^{t}(\cos t - i\sin t)\cmattwo{1 - i}{1}{-2}{-1 - i}.
+\end{array}
+\]
+The imaginary part of this product is
+\[
+ie^t\cmattwo{-\sin t - \cos t}{-\sin t}{2\sin t}{\sin t - \cos t}.
+\]
+Thus, the solution to the given initial value problem is
+\[
+X(t) = e^{tC}X_0 =
+\frac{1}{2}\cmattwo{2\sin t + 2\cos t}{2\sin t}{-4\sin t}{-2\sin t + 2\cos t}
+\vectwo{1}{0}.
+\]
+Complete the matrix multiplication to obtain $X(t)$.
+
+
+\end{solution}
+\end{exercise}
+\end{document}

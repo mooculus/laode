@@ -1,0 +1,45 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{A3.7.2}
+True or False: Determine whether the following statements are true or false, and explain your answer.
+\begin{enumeratea}
+\item The only $3\times 2$ matrix $A$ so that $Ax = 0 $ for all $x \in \R^2$ is $A=0$.
+
+\item A system of 5 equations in 3 unknowns with the solution $x_1=0, x_2=-3,x_3=1$ must have infinitely many solutions.
+
+\item If $A$ is a $2\times 2$ matrix and $A^2=0$, then $A=0$.
+
+\item  If $u,v\in \R^3$ are perpendicular, then $\left\| u + v \right\| =\left\| u \right\|+\left\| v \right\|$.  
+
+\end{enumeratea}
+
+\begin{solution}
+\begin{enumeratea}
+\item True:
+\[
+A=\Matrix{ A e_1 & A e_2}=\Matrix{0 & 0}=\Matrix{ 0 & 0 \\ 0 & 0 \\ 0 & 0}=0
+\]
+\item False, it may have a unique solution. For example, the system of equations
+\[
+\Matrix{ 1 & 0 & 0\\ 0 & 1 & 0 \\ 0 & 0 & 1 \\ 1 & 1 & 1 \\ 1 & 0 & 1} = \Matrix{ 0 \\ -3 \\ 1 \\ -2 \\ 1}
+\]
+has $x_1=0, x_2=-3,x_3=1$ as a unique solution.
+\item False: if 
+\[
+A=\Matrix{0 & 1 \\ 0 & 0}
+\]
+then $A^2=0$.
+\item False:
+\[
+\Matrix{ 1 \\ 0 \\ 0} + \Matrix{ 0 \\ 1 \\ 0} = \sqrt{2}\neq 2 = \Matrix{ 1 \\ 0 \\ 0} + \Matrix{0 \\ 1 \\ 0}
+\]
+However, by the Pythagorean theorem, 
+\[
+\left\|u + v \right\|^2=\left\| u \right\|^2+\left\| v \right\|^2 
+\]
+\end{enumeratea}
+\end{solution}
+
+\end{exercise}
+\end{document}

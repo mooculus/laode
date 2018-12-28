@@ -1,0 +1,93 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\noindent In Exercises~\ref{c4.3.6a} -- \ref{c4.3.6d} determine
+whether the given transformation is linear.
+\begin{exercise} \label{c4.3.6a}
+  $T:\R^3\to\R^2$ defined by $T(x_1,x_2,x_3)=(x_1+2x_2-x_3,x_1-4x_3)$.
+
+\begin{solution}
+\ans The transformation $T(x,y,z) = (x + 2y - z, x - 4z)$
+is linear.
+
+\soln Use the definition that a mapping is linear if it satisfies
+\eqref{sum} and \eqref{product} to verify:
+
+\para Let $X_1 = (x_1,y_1,z_1)$ and let $X_2 = (x_2,y_2,z_2)$.
+Verify \eqref{sum} by computing $T(X_1 + X_2)$ and comparing it
+to $T(X_1) + T(X_2)$.
+\[ \begin{array}{rcl}
+T(X_1 + X_2) & = & T((x_1,y_1,z_1) + (x_2, y_2, z_2)) \\
+& = & T(x_1 + x_2, y_1 + y_2, z_1 + z_2) \\
+& = & ((x_1 + x_2) + 2(y_1 + y_2) - (z_1 + z_2),
+(x_1 + x_2) - 4(z_1 + z_2)) \\ & = &
+(x_1 + x_2 + 2y_1 + 2y_2 - z_1 - z_2, x_1 + x_2 - 4z_1 - 4z_2) \\
+& = & (x_1 + 2y_1 - z_1, x_1 - 4z_1) +
+(x_2 + 2y_2 - z_2, x_2 - 4z_2). \end{array} \]
+\[ 
+\begin{array}{rcl}
+T(X_1) + T(X_2)
+& = & T(x_1,y_1,z_1) + T(x_2,y_2,z_2) \\
+& = & (x_1 + 2y_1 - z_1, x_1 - 4z_1) +
+(x_2 + 2y_2 - z_2, x_2 - 4z_2). \end{array} 
+\]
+Let $X = (x,y,z)$ and let $c$ be any real scalar.  Verify
+\eqref{product} by computing $cT(X)$ and comparing it to $T(cX)$.
+\[ 
+\begin{array}{rcl}
+cT(X) & = & cT(x,y,z) \\
+& = & c(x + 2y - z, x - 4z) \\
+& = & (cx + 2cy - cz, cx - 4cz). 
+\end{array} 
+\]
+\[ 
+\begin{array}{rcl}
+T(cX) & = & T(cx,cy,cz) \\
+& = & T(cX) \\
+& = & (cx + 2cy - cz, cx - 4cz). \end{array} 
+\]
+So $T(x,y,z) = (x + 2y - z, x - 4z)$ is a linear mapping.
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c4.3.6b}
+  $T:\R^2\to\R^2$ defined by $T(x_1,x_2)=(x_1+x_1x_2,2x_2)$.
+
+\begin{solution}
+\ans The transformation $T(x,y) = (x + xy, 2y)$ is not linear.
+
+\soln If $T$ is a linear transformation, then
+\[
+T(x_1 + x_2,y_1 + y_2) = T(x_1,y_1) + T(x_2,y_2)
+\]
+for any real numbers $x_1$,$x_2$,$y_1$,$y_2$.  However,
+\[
+\begin{array}{rcl}
+T(1,1) & = & (2,2) \\
+T(1,0) + T(0,1) & = & (1,0) + (0,2) = (1,2).\end{array}
+\]
+Therefore $T(1,1) \neq T(1,0) + T(0,1)$ and $T$ is not linear.
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c4.3.6c}
+  $T:\R^2\to\R^2$ defined by $T(x_1,x_2)=(x_1+x_2,x_1-x_2-1)$.
+
+\begin{solution}
+The transformation $T(x,y) = (x + y, x - y - 1)$
+is not linear because $T(0,0) = (0,-1) \neq 0$, contradicting
+Theorem~\ref{lin-matrices}.
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c4.3.6d}
+  $T:\R^2\to\R^3$ defined by $T(x_1,x_2)=(1,x_1+x_2,2x_2)$
+
+\begin{solution}
+The transformation $T(x,y) = (1,x + y, 2y)$ is not linear
+because $T(0,0) = (1,0,0) \neq 0$.
+
+\end{solution}
+\end{exercise}
+\end{document}

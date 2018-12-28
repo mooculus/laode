@@ -1,0 +1,103 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\noindent In Exercises~\ref{c10.5.3a} -- \ref{c10.5.4c} find the 
+Jordan normal forms for the given matrix.
+\begin{exercise} \label{c10.5.3a}
+$A = \mattwo{2}{4}{1}{1}$. 
+
+\begin{solution}
+
+\ans The Jordan normal form of matrix $A$ is
+\[
+\cmattwo{\frac{3 + \sqrt{17}}{2}}{0}{0}{\frac{3 - \sqrt{17}}{2}}.
+\]
+
+\soln Matrix $A$ has two distinct real eigenvalues at
+$\lambda = \frac{3 + \sqrt{17}}{2}$ and 
+$\lambda = \frac{3 - \sqrt{17}}{2}$.
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c10.5.3b}
+$B = \mattwo{9}{25}{-4}{-11}$.
+
+\begin{solution}
+
+\ans The Jordan normal form of matrix $B$ is
+\[
+\mattwo{-1}{1}{0}{-1}.
+\]
+
+\soln Matrix $B$ has one real eigenvalue at $\lambda = -1$ with one
+linearly independent eigenvector.
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c10.5.4}
+$C = \left(\begin{array}{rrr} -5 & -8 & -9 \\  5 & 9 & 9 \\
+ -1 & -2 & -1 \end{array}\right)$.
+
+\begin{solution}
+
+\ans The Jordan normal form of matrix $C$ is
+\[
+\matthree{-1}{0}{0}{0}{2}{1}{0}{0}{2}.
+\]
+
+\soln Matrix $C$ has two real eigenvalues.  The eigenvalue at $-1$ has
+algebraic multiplicity of $1$, and the eigenvalue at $2$ has algebraic
+multiplicity of $2$, and only $1$ linearly independent eigenvector.
+
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c10.5.4a}
+$D = \left(\begin{array}{rrr} 0 & 1 & 0 \\  0 & 0 & 1 \\
+1 & 1 & -1 \end{array}\right)$.
+
+\begin{solution}
+\ans The Jordan normal form of matrix $D$ is
+\[
+\matthree{-1}{1}{0}{0}{-1}{0}{0}{0}{1}.
+\]
+
+\soln Matrix $D$ has two real eigenvalues.  The eigenvalue at $-1$ has
+algebraic multiplicity of $2$ and geometric multiplicity $1$, and the eigenvalue at 
+$1$ has multiplicity of $1$.
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c10.5.4b}
+$E = \left(\begin{array}{rrr} 2 & 0 & -1 \\  2 & 1 & -1 \\
+1 & 0 & 0 \end{array}\right)$.
+
+\begin{solution}
+\ans The Jordan normal form of matrix $E$ is
+\[
+\matthree{1}{1}{0}{0}{1}{1}{0}{0}{1}.
+\]
+
+\soln Matrix $E$ has one eigenvalue at $1$ of algebraic multiplicity of $3$ and 
+geometric multiplicity $1$.
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c10.5.4c}
+$F = \left(\begin{array}{rrr} 3 & -1 & 2 \\  -1 & 2 & -1 \\
+-1 & 1 & 0 \end{array}\right)$.
+
+\begin{solution}
+\ans The Jordan normal form of matrix $F$ is
+\[
+\matthree{2}{1}{0}{0}{2}{0}{0}{0}{1}.
+\]
+
+\soln Matrix $F$ has two real eigenvalues.  The eigenvalue at $2$ has
+algebraic multiplicity of $2$ and geometric multiplicity $1$, and the eigenvalue at 
+$1$ has multiplicity of $1$.
+
+\end{solution}
+\end{exercise}
+\end{document}

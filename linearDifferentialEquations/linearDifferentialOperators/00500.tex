@@ -1,0 +1,114 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\noindent In Exercises~\ref{c12.3.4a} -- \ref{c12.3.4d} apply the
+method of elimination to find the general solution of the given
+system of differential equations.
+\begin{exercise} \label{c12.3.4a}
+$\begin{array}{rcl}
+\dot{x} & = & y\\
+\dot{y} & = & 2x+y
+\end{array}$
+
+\begin{solution}
+\ans $X(t) = ae{2t}\vectwo{1}{2} + be^{-t}\vectwo{1}{-1}$.
+
+\soln  The characteristic polynomial of the coefficient matrix is 
+$p(\lambda) = \lambda^2-\lambda-2=(\lambda-2)(\lambda+1)$.  Therefore, 
+\[
+x(t) = ae^{2t}+be^{-t}.
+\]
+It follows from the first differential equation that 
+\[
+y = \dot{x} = 2ae^{2t}-be^{-t}.
+\]
+Therefore,
+\[
+X(t) = ae^{2t}\vectwo{1}{2} + be^{-t}\vectwo{1}{-1}.
+\]
+
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c12.3.4b}
+$\begin{array}{rcl}
+\dot{x} & = & x-y\\
+\dot{y} & = & x+y
+\end{array}$
+
+\begin{solution}
+\ans $X(t) = ae^t\cos t\vectwo{1}{1} + be^t\sin t\vectwo{1}{-1}$.
+
+\soln  The characteristic polynomial of the coefficient matrix is 
+$p(\lambda) = \lambda^2-2\lambda+2$.  The roots of $p(\lambda)$ are $1\pm i$. 
+Therefore, 
+\[
+x(t) = ae^t\cos t+be^t\sin t.
+\]
+It follows from the first differential equation that 
+\[
+y = x-\dot{x} = e^t(a\cos t+b\sin t) - e^t(a\cos t+b\sin t-a\sin t+b\cos t)
+=e^t(a\sin t-b\cos t).
+\]
+Therefore,
+\[
+X(t) = ae^t\cos t\vectwo{1}{1} + be^t\sin t\vectwo{1}{-1}.
+\]
+
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c12.3.4c}
+$\begin{array}{rcl}
+\dot{x} & = & x+y\\
+\dot{y} & = & 4x-2y
+\end{array}$
+
+\begin{solution}
+\ans $X(t) = ae^{2t}\vectwo{1}{1} + be^t\vectwo{1}{-4}$.
+
+\soln  The characteristic polynomial of the coefficient matrix is 
+$p(\lambda) = \lambda^2+\lambda-6=(\lambda-2)(\lambda+3)$.  Therefore, 
+\[
+x(t) = ae^{2t}+be^{-3t}.
+\]
+It follows from the first differential equation that 
+\[
+y =\dot{x}-x = (2ae^{2t}-3be^{-3t})-(ae^{2t}+be^{-3t}) = ae^{2t}-4be^{-3t}.
+\]
+Therefore,
+\[
+X(t) = ae^{2t}\vectwo{1}{1} + be^{-3t}\vectwo{1}{-4}.
+\]
+
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c12.3.4d}
+$\begin{array}{rcl}
+\dot{x} & = & 2x-y\\
+\dot{y} & = & y
+\end{array}$
+
+\begin{solution}
+\ans $X(t) = ae^{2t}\vectwo{1}{0} + be^t\vectwo{1}{1}$.
+
+\soln  The characteristic polynomial of the coefficient matrix is 
+$p(\lambda) = \lambda^2-3\lambda+2=(\lambda-2)(\lambda-1)$.  Therefore, 
+\[
+x(t) = ae^{2t}+be^t.
+\]
+It follows from the first differential equation that 
+\[
+y = 2x-\dot{x} = 2(ae^{2t}+be^t)-(2ae^{2t}+be^t) = be^t.
+\]
+Therefore,
+\[
+X(t) = ae^{2t}\vectwo{1}{0} + be^t\vectwo{1}{1}.
+\]
+
+
+\end{solution}
+\end{exercise}
+\end{document}

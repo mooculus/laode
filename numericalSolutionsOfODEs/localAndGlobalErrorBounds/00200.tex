@@ -1,0 +1,35 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c15.3.1}
+Determine the function $\Phi=\Phi(t_k,x_k,h)$ which belongs to the 
+fourth order Runge-Kutta method.
+
+\begin{solution}
+\ans
+\begin{eqnarray*}
+\Phi(t_k,x_k,h) & = & \frac{1}{6}\Big[f(t_k,x_k)+\\
+&&2f\left(t_k+\frac{h}{2},x_k+\frac{h}{2}f(t_k,x_k)\right) +\\
+&&2f\left(t_k+\frac{h}{2},x_k+
+  \frac{h}{2}f\left(t_k+\frac{h}{2},x_k+\frac{h}{2}f(t_k,x_k)\right)\right)+\\
+&&\left.f\left(t_k+h,x_k+hf\left(t_k+\frac{h}{2},x_k+
+  \frac{h}{2}f\left(t_k+\frac{h}{2},x_k+
+  \frac{h}{2}f(t_k,x_k)\right)\right)\right)\right]
+\end{eqnarray*}
+
+\soln The fourth order Runge-Kutta method is given by
+\[
+x_{k+1} = x_k+\frac{h}{6}(f_1+2f_2+2f_3+f_4),
+\]
+where
+\begin{eqnarray*}
+f_1 &=& f(t_k,x_k)\\
+f_2 &=& f\left(t_k+\frac{h}{2},x_k+\frac{h}{2}f_1\right)\\
+f_3 &=& f\left(t_k+\frac{h}{2},x_k+\frac{h}{2}f_2\right)\\
+f_4 &=& f(t_k+h,x_k+hf_3).
+\end{eqnarray*}
+The result follows by inserting these expressions for $f_1,\ldots,f_4$.
+
+\end{solution}
+\end{exercise}
+\end{document}

@@ -1,0 +1,25 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c3.4.6}
+Suppose that $a=d<0$.  Verify experimentally using {\pplane}
+that all trajectories approach the origin along straight lines.
+Try to prove this conjecture?
+
+\begin{solution}
+
+If $A = D < 0$, the equations for the system will be
+\[ \begin{array}{rcl}
+\frac{dx}{dt}(t) & = & Ax(t) \\
+\frac{dy}{dt}(t) & = & Ay(t)\end{array}. \]
+Therefore,
+\[ x(t) = x_0e^{At} \AND y(t) = y_0e^{At}. \]
+Solve the first equation for $e^{At}$ and substitute into the
+second, obtaining \[ y(t) = \frac{y_0}{x_0}x(t). \]
+Since $\frac{y_0}{x_0}$ is a constant, all trajectories are
+straight lines.  Since $A < 0$, all trajectories go toward the
+origin as $t$ increases.
+
+\end{solution}
+\end{exercise}
+\end{document}

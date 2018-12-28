@@ -1,0 +1,17 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c10.3.6C}
+Let $A$ be an $n\times n$ matrix all of whose eigenvalues equal $\pm 1$. Show
+that if $A$ is diagonalizable, the $A^2=I_n$.
+
+\begin{solution}
+Since $A$ is diagonalizable, there is an invertible matrix $S$ such 
+that $S\inv AS$ is diagonal.  The diagonal entries of  $S\inv AS$ are the eigenvalues
+of $A$; that is, the diagonal entries equal $\pm 1$.  Therefore, $(S\inv AS)^2=I_n$.
+But $(S\inv AS)^2 = S\inv A^2 S$.   Therefore, $S\inv A^2 S=I_n$ which implies that
+$A^2=I_n$.
+
+\end{solution}
+\end{exercise}
+\end{document}

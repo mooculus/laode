@@ -1,0 +1,204 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+In Exercises~\ref{c6.6.2a} -- \ref{c6.6.2d} compute the general solution for
+the given system of differential equations.
+\begin{exercise}  \label{c6.6.2a}
+$\dps\frac{dX}{dt} = \mattwo{-1}{-4}{2}{3} X$.
+
+\begin{solution}
+
+\ans The general solution to the differential equation is
+\[
+X(t) =
+\alpha_1\cvectwo{2e^t\cos(2t)}{e^t(\sin(2t) - \cos(2t))} +
+\alpha_2\cvectwo{2e^t\sin(2t)}{-e^t(\sin(2t) + \cos(2t))}.
+\]
+
+\soln First, find the eigenvalues of $C$, which are the roots of the
+characteristic polynomial
+\[
+p_C(\lambda) = \lambda^2 - 2\lambda + 5.
+\]
+The eigenvalues are $\lambda_1 = 1 + 2i$ and $\lambda_2 = 1 - 2i$.  Then,
+find the eigenvector associated to $\lambda_1$ by solving the equation
+\[
+(C - \lambda_1I_2)v_1 =
+\left(\mattwo{-1}{-4}{2}{3} - \cmattwo{1 + 2i}{0}{0}{1 + 2i}\right)v_1
+= \cmattwo{-2 - 2i}{-4}{2}{2 - 2i}v_1 = 0.
+\]
+Solve this equation to find that
+\[
+v_1 = \cvectwo{2}{-1 - i} = \vectwo{2}{-1} + i\vectwo{0}{-1}
+\]
+is an eigenvector of $C$.  Since the eigenvalues of $C$ are complex, we
+can find the general solution using \eqref{E:CC1} and \eqref{E:CC2}.  In this
+case, since $\lambda_1 = 1 + 2i$ is an eigenvalue, let $\sigma = 1$ and
+let $\tau = 2$.  Then $v_1 = v + iw$, where $v = (2,-1)^t$ and
+$w = (0,-1)^t$.  By \eqref{E:CC1},
+\[
+X_1(t) = e^{\sigma t}(\cos(\tau t)v - \sin(\tau t)w) \AND
+X_2(t) = e^{\sigma t}(\sin(\tau t)v + \cos(\tau t)w)
+\]
+are solutions to the differential equation.  In this case,
+\[
+\begin{array}{rcl}
+X_1(t) & = & e^t\left(\cos(2t)\vectwo{2}{-1} -
+\sin(2t)\vectwo{0}{-1}\right)
+= e^t\cvectwo{2\cos(2t)}{\sin(2t) - \cos(2t)}. \\
+X_2(t) & = & e^t\left(\sin(2t)\vectwo{2}{-1} +
+\cos(2t)\vectwo{0}{-1}\right)
+= e^t\cvectwo{2\sin(2t)}{-\sin(2t) - \cos(2t)}.
+\end{array}
+\]
+The general solution consists of all linear combinations
+$X(t) = \alpha_1X_1(t) + \alpha_2X_2(t)$.
+
+
+\end{solution}
+\end{exercise}
+\begin{exercise}  \label{c6.6.2b}
+$\dps\frac{dX}{dt} = \mattwo{8}{-15}{3}{-4} X$.
+
+\begin{solution}
+
+\ans The general solution to the differential equation is
+\[
+X(t) =
+\alpha_1\cvectwo{5e^{2t}\cos(3t)}{e^{2t}(2\cos(3t) + \sin(3t))} +
+\alpha_2\cvectwo{5e^{2t}\sin(3t)}{e^{2t}(2\sin(3t) - \cos(3t))}.
+\]
+
+\soln First, find the eigenvalues of $C$, which are the roots of the
+characteristic polynomial
+\[
+p_C(\lambda) = \lambda^2 - 4\lambda + 13.
+\]
+The eigenvalues are $\lambda_1 = 2 + 3i$ and $\lambda_2 = 2 - 3i$.  Then,
+find the eigenvector associated to $\lambda_1$ by solving the equation
+\[
+(C - \lambda_1I_2)v_1 =
+\left(\mattwo{8}{-15}{3}{-4} - \cmattwo{2 + 3i}{0}{0}{2 + 3i}\right)v_1
+= \cmattwo{6 - 3i}{-15}{3}{-6 - 3i}v_1 = 0.
+\]
+Solve this equation to find that
+\[
+v_1 = \cvectwo{5}{2 - i} = \vectwo{5}{2} + i\vectwo{0}{-1}
+\]
+is an eigenvector of $C$.  Since the eigenvalues of $C$ are complex, we
+can find the general solution using \eqref{E:CC1} and \eqref{E:CC2}.  In this
+case, since $\lambda_1 = 2 + 3i$ is
+an eigenvalue, let $\sigma = 2$ and let $\tau = 3$.  Then $v_1 = v + iw$,
+where $v = (5,2)^t$ and $w = (0,-1)^t$.  By \eqref{E:CC1},
+\[
+X_1(t) = e^{\sigma t}(\cos(\tau t)v - \sin(\tau t)w) \AND
+X_2(t) = e^{\sigma t}(\sin(\tau t)v + \cos(\tau t)w)
+\]
+are solutions to the differential equation.  In this case,
+\[
+\begin{array}{rcl}
+X_1(t) & = & e^{2t}\left(\cos(3t)\vectwo{5}{2} -
+\sin(3t)\vectwo{0}{-1}\right)
+= e^{2t}\cvectwo{5\cos(3t)}{\sin(3t) + 2\cos(3t)}. \\
+X_2(t) & = & e^{2t}\left(\sin(3t)\vectwo{5}{2} +
+\cos(3t)\vectwo{0}{-1}\right)
+= e^{2t}\cvectwo{5\sin(3t)}{2\sin(3t) - \cos(3t)}.
+\end{array}
+\]
+The general solution consists of all linear combinations
+$X(t) = \alpha_1X_1(t) + \alpha_2X_2(t)$.
+
+
+\end{solution}
+\end{exercise}
+\begin{exercise}  \label{c6.6.2c}
+$\dps\frac{dX}{dt} = \mattwo{5}{-1}{1}{3} X$.
+
+\begin{solution}
+\ans The general solution to the differential equation is
+\[
+X(t) = \alpha e^{4t}\vectwo{1}{1} + \beta e^{4t}\cvectwo{t + \frac{1}{2}}
+{t - \frac{1}{2}}.
+\]
+
+\soln First, find the eigenvalues of $C$, which are the roots of the
+characteristic polynomial
+\[
+p_C(\lambda) = \lambda^2 - 8\lambda + 16 = (\lambda - 4)^2.
+\]
+Thus, $C$ has a double eigenvalue at $\lambda_1 = 4$.  Since $C$ is not
+a multiple of $I_2$, $C$ has only one linearly independent eigenvector.
+Find this eigenvector by solving the equation
+\[
+(C - \lambda_1I_2)v_1 = \left(\mattwo{5}{-1}{1}{3} - \mattwo{4}{0}{0}{4}
+\right)v_1 = \mattwo{1}{-1}{1}{-1}v_1 = 0,
+\]
+obtaining $v_1 = (1,1)^t$.  Find the generalized eigenvector $w_1$ by
+solving the equation $(C - \lambda_1 I_2)w_1 = v_1$, that is
+\[
+\mattwo{1}{-1}{1}{-1}w_1 = \vectwo{1}{1}.
+\]
+So $w_1 = (\frac{1}{2},-\frac{1}{2})^t$ is the generalized eigenvector.
+Now, by \eqref{e:exp1eva}, we know that the
+general solution to $\dot{X} = CX$ when $C$ has equal eigenvalues and only
+one independent eigenvector is
+\[
+X(t) = e^{\lambda_1 t}(\alpha v_1 + \beta(w_1 + tv_1)).
+\]
+In this case,
+\[
+X(t) = e^{4t}\left(\alpha \vectwo{1}{1} + \beta\left(\vectwo{\frac{1}{2}}
+{-\frac{1}{2}} + t\vectwo{1}{1}\right)\right).
+\]
+
+
+\end{solution}
+\end{exercise}
+\begin{exercise}  \label{c6.6.2d}
+$\dps\frac{dX}{dt} = \mattwo{-4}{4}{-1}{0} X$.
+
+\begin{solution}
+\ans The general solution to the differential equation is
+\[
+X(t) = \alpha e^{-2t}\cvectwo{2}{1} + \beta e^{-2t}\cvectwo{2t + 1}{t + 1}.
+\]
+
+\soln First, find the eigenvalues of $C$, which are the roots of the
+characteristic polynomial
+\[
+p_C(\lambda) = \lambda^2 + 4\lambda + 4 = (\lambda + 2)^2.
+\]
+Thus, $C$ has a double eigenvalue at $\lambda_1 = -2$.  Since $C$ is not
+a multiple of $I_2$, $C$ has only one linearly independent eigenvector.
+Find this eigenvector by solving the equation
+\[
+(C - \lambda_1I_2)v_1 = \left(\mattwo{-4}{4}{-1}{0} + \mattwo{2}{0}{0}{2}
+\right)v_1 = \mattwo{-2}{4}{-1}{2}v_1 = 0,
+\]
+obtaining $v_1 = (2,1)^t$.  Find the generalized eigenvector $w_1$ by
+solving the equation $(C - \lambda_1 I_2)w_1 = v_1$, that is,
+\[
+\mattwo{-2}{4}{-1}{2}w_1 = \vectwo{2}{1}.
+\]
+So $w_1 = (1,1)^t$ is the generalized eigenvector.
+Now, by \eqref{e:exp1eva}, we know that the
+general solution to $\dot{X} = CX$ when $C$ has equal eigenvalues and only
+one independent eigenvector is
+\[
+X(t) = e^{\lambda_1 t}(\alpha v_1 + \beta(w_1 + tv_1)).
+\]
+In this case,
+\[
+X(t) = e^{-2t}\left(\alpha \vectwo{2}{1} + \beta\left(\vectwo{1}{1} +
+t\vectwo{2}{1}\right)\right).
+\]
+
+
+
+
+
+
+\end{solution}
+\end{exercise}
+\end{document}

@@ -1,0 +1,21 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c4.8.4}
+Let $A,B,C$ be general $n\times n$ matrices.  Simplify the expression
+$A\inv(BA\inv)\inv(CB\inv)\inv$.
+
+\begin{solution}
+
+\ans The expression simplifies to $C^{-1}$.
+
+\soln Proposition~\ref{P:invprod} states that, if $A$ and $B$ are
+invertible matrices such that $AB$ is defined, then $(AB)^{-1} =
+B^{-1}A^{-1}$.  Therefore,
+\[
+A^{-1}(BA^{-1})^{-1}(CB^{-1})^{-1} = A^{-1}AB^{-1}BC^{-1} = C^{-1}.
+\]
+
+\end{solution}
+\end{exercise}
+\end{document}

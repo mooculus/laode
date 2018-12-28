@@ -1,0 +1,23 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c5.2.8b}
+Let $V$ be a vector space and let $v,w\in V$ be vectors.  Show that
+\[
+\Span\{v,w\}=\Span\{v,w,v+3w\}.
+\]
+
+\begin{solution}
+Every vector $x \in \Span\{v,w\}$ is of the form 
+\[
+x = av + bw = av + bw + 0(v + 3w) \in \Span\{v,w,v+3w\}.
+\]
+  Also, every vector $y \in \Span\{v,w,v+3w\}$ is of the form
+\[
+y = cv + dw + f(v + 3w) = (c + f)v + (d + 3f)w \in \Span\{v,w\}.
+\]
+Therefore, $\Span\{v,w\} = \Span\{v,w,v+3w\}$.
+
+\end{solution}
+\end{exercise}
+\end{document}

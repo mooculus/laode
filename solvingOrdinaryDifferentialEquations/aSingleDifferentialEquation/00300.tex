@@ -1,0 +1,25 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c3.1.1}
+Solve the differential equation
+\[
+\frac{dx}{dt} = 2x,
+\]
+where $x(0)=1$.  At what time $t_1$ will $x(t_1)=2$?
+
+\begin{solution}
+
+\ans The solution for the given initial value problem is
+$\dps x(t) = e^{2t}$.  From this equation, we find that $x(t_1) = 2$
+when $t_1 = \frac{1}{2}\ln 2$.
+
+\soln Note that $\frac{dx}{dt} = \lambda x$ implies $x(t) =
+x_0e^{\lambda t}$.  In this case, $\frac{dx}{dt} = 2x$, so
+$\lambda = 2$, and $x_0 = 1$, so $x(t) = e^{2t}$.  In order to
+find $t_1$, substitute into the formula for $x(t)$, obtaining
+$e^{2t_1} = 2$ and solve for $t_1$.
+
+\end{solution}
+\end{exercise}
+\end{document}

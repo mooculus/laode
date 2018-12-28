@@ -1,0 +1,43 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c12.5.3}
+Let $x_\omega(t)$ be the solution to \eqref{eq:uspf} given in 
+\eqref{e:x(t)reson}.  Show that 
+\[
+\lim_{\omega\to 1}x_\omega(t) = x_1(t)
+\]
+for every real number $t$.
+
+\begin{solution}
+
+Compute
+\[
+\lim_{\omega \rightarrow 1} x_\omega(t) =
+\lim_{\omega \rightarrow 1}\left(\cos t + \frac{1}{1 - \omega^2}
+(\cos(\omega t) - \cos t)\right) =
+\cos t + \lim_{\omega \rightarrow 1}\frac{\cos(\omega t) - \cos t}
+{(1 - \omega)(1 + \omega)}.
+\]
+Since $\dps \lim_{\omega \rightarrow 1}(1 + \omega) = 2$, we can write
+\[
+\lim_{\omega \rightarrow 1} x_\omega(t) =
+\cos t - \frac{1}{2}\lim_{\omega \rightarrow 1}
+\frac{\cos(\omega t) - \cos t}{\omega - 1}.
+\]
+Now, let $f(\omega) = \cos(\omega t)$.  Then
+\[
+\begin{array}{rcl}
+\dps \lim_{\omega \rightarrow 1} x_\omega(t) & = &
+\cos t - \dps \frac{1}{2}\lim_{\omega \rightarrow 1}
+\frac{f(\omega) - f(1)}{\omega - 1} \\
+& = & \cos t - f'(1) \\
+& = & \cos t + \frac{1}{2}\left.t\sin(\omega t)\right|_{\omega = 1} \\
+& = & \cos t + \frac{1}{2}t\sin t \\
+& = & x_1(t).
+\end{array}
+\]
+
+\end{solution}
+\end{exercise} 
+\end{document}

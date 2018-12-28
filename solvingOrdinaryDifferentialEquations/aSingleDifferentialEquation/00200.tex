@@ -1,0 +1,106 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\noindent In Exercises~\ref{c3.1.ba} -- \ref{c3.1.bd} determine whether
+or not each of the given functions $x_1(t)$ and $x_2(t)$ is a solution 
+to the given differential equation.
+\begin{exercise}  \label{c3.1.ba}
+ODE:\quad $\frac{\dps dx}{\dps dt} = \frac{\dps t}{\dps x-1}$.
+Functions:\quad $x_1(t)=t+1 \AND x_2(t)= \frac{\dps 1+\sqrt{4t^2+1}}{\dps 2}$.
+
+\begin{solution}
+
+\ans The function $x_1(t)$ is a solution to the differential equation;
+the function $x_2(t)$ is not a solution.
+
+\soln Compute
+\[
+\frac{d}{dt}(x_1) = \frac{d}{dt}(t + 1) = 1, \AND
+\frac{dx_1}{dt} = \frac{t}{x_1 - 1} = \frac{t}{(t + 1) - 1} = 1.
+\]
+Thus, $x_1(t)$ is a solution to the differential equation.  Then compute
+\[
+\frac{d}{dt}(x_2) = \frac{d}{dt}\left(\frac{1 + \sqrt{4t^2 + 1}}{2}\right)
+= \frac{4t}{\sqrt{4t^2 + 1}}, \AND
+\frac{dx_2}{dt} = \frac{t}{x_2 - 1} = \frac{2t}{\sqrt{4t^2 + 1} - 1}.
+\]
+Thus, $\frac{d}{dt}(x_2) \neq \frac{dx_2}{dt}$, so $x_2(t)$ is not a
+solution to the differential equation.
+
+
+\end{solution}
+\end{exercise}
+\begin{exercise}  \label{c3.1.bb}
+ODE:\quad $\frac{\dps dx}{\dps dt} = x + e^t$.
+Functions:\quad $x_1(t)=te^t \AND x_2(t)= 2e^t$.
+
+\begin{solution}
+
+\ans The function $x_1(t)$ is a solution to the differential equation;
+the function $x_2(t)$ is not a solution.
+
+\soln Compute
+\[
+\frac{d}{dt}(x_1) = \frac{d}{dt}(te^t) = te^t + e^t, \AND
+\frac{dx_1}{dt} = x_1 + e^t = te^t + e^t.
+\]
+Thus, $x_1(t)$ is a solution to the differential equation.  Then compute
+\[
+\frac{d}{dt}(x_2) = \frac{d}{dt}(2e^t) = 2e^t, \AND
+\frac{dx_2}{dt} = x_2 + e^t = 2e^t + e^t = 3e^t.
+\]
+Thus, $\frac{d}{dt}(x_2) \neq \frac{dx_2}{dt}$, so $x_2(t)$ is not a
+solution to the differential equation.
+
+\end{solution}
+\end{exercise}
+\begin{exercise}  \label{c3.1.bc}
+ODE:\quad $\frac{\dps dx}{\dps dt} = x^2 + 1$.
+Functions:\quad $x_1(t)=-\tan t \AND x_2(t)= \tan t$.
+
+\begin{solution}
+
+\ans The function $x_1(t)$ is not a solution to the differential equation;
+the function $x_2(t)$ is a solution.
+
+\soln Compute
+\[
+\frac{d}{dt}(x_1) = \frac{d}{dt}(-\tan(t)) = -\sec^2(t), \AND
+\frac{dx_1}{dt} = x_1^2 + 1 = \tan^2(t) + 1 = \sec^2(t).
+\]
+Thus, $\frac{d}{dt}(x_1) \neq \frac{dx_1}{dt}$, so $x_1(t)$ is not a
+solution to the differential equation.  Then compute
+\[
+\frac{d}{dt}(x_2) = \frac{d}{dt}(\tan(t)) = \sec^2(t), \AND
+\frac{dx_2}{dt} = x_2^2 + 1 = \tan^2(t) + 1 = \sec^2(t).
+\]
+Thus, $x_2(t)$ is a solution to the differential equation. 
+
+\end{solution}
+\end{exercise}
+\begin{exercise}  \label{c3.1.bd}
+ODE:\quad $\frac{\dps dx}{\dps dt} = \frac{\dps x}{\dps t}$.
+Functions:\quad $x_1(t)=t+1 \AND x_2(t)= 5t$.
+
+\begin{solution}
+
+\ans The function $x_1(t)$ is not a solution to the differential equation;
+the function $x_2(t)$ is a solution.
+
+\soln Compute
+\[
+\frac{d}{dt}(x_1) = \frac{d}{dt}(t + 1) = 1, \AND
+\frac{dx_1}{dt} = \frac{x_1}{t} = \frac{t + 1}{t}.
+\]
+Thus, $\frac{d}{dt}(x_1) \neq \frac{dx_1}{dt}$, so $x_1(t)$ is not a
+solution to the differential equation.  Then compute
+\[
+\frac{d}{dt}(x_2) = \frac{d}{dt}(5t) = 5, \AND
+\frac{dx_2}{dt} = \frac{x_2}{t} = \frac{5t}{t} = 5.
+\]
+Thus, $x_2(t)$ is a solution to the differential equation.
+
+\end{solution}
+\end{exercise}
+\end{document}

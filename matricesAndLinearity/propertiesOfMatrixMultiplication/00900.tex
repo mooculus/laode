@@ -1,0 +1,23 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c4.7.2.1}
+Experimentally, find two symmetric $2\times 2$ matrices $A$ and $B$ for
+which the matrix product $AB$ is {\em not\/} symmetric.
+
+\begin{solution}
+Let
+\[ A = \mattwo{1}{2}{2}{-1} \AND B = \mattwo{2}{-1}{-1}{2} \]
+be symmetric matrices.  Then
+\[ AB = \mattwo{0}{3}{5}{-4} \]
+is not symmetric.  In general, for
+\[ A = \mattwo{a_{11}}{a_{12}}{a_{12}}{a_{22}} \AND
+B = \mattwo{b_{11}}{b_{12}}{b_{12}}{b_{22}}, \]
+$AB$ is symmetric if $a_{12}b_{11} + a_{22}b_{12} = a_{11}b_{12}
++ a_{12}b_{22}$.
+
+
+
+\end{solution}
+\end{exercise}
+\end{document}

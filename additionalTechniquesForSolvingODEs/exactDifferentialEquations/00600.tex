@@ -1,0 +1,44 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c14.6.7}
+Let $G,H:\R^2\to\R$ be continuous functions and suppose that the differential 
+equation 
+\begin{equation}  \label{eq:if1}
+\frac{dx}{dt} = \frac{G(t,x)}{H(t,x)}
+\end{equation}
+is {\bf not} exact.   An {\em integrating factor\/} for \eqref{eq:if1} is 
+a function $\rho:\R^2\rightarrow\R$ such that the differential equation
+\[
+\frac{dx}{dt} = \frac{\rho(t,x) G(t,x)}{\rho(t,x)H(t,x)}
+\]
+is exact.  Suppose that there exists an integrating factor $\rho(t)$ for 
+\eqref{eq:if1} that is a function of $t$ alone.  Show that $\rho$ satisfies
+\[
+\frac{d\rho}{dt} = -\frac{\rho}{H}
+\left( \frac{\partial G}{\partial x}+\frac{\partial H}{\partial t}\right).
+\]
+
+\begin{solution}
+
+Suppose that $\rho(t)$ is an integrating factor for the differential equation
+\[
+\frac{dx}{dt}(t) = \frac{G(x,t)}{H(x,t)}=\frac{\rho(t)G(x,t)}{\rho(t)H(x,t)}.
+\]
+That is,
+\[
+-\frac{d}{dx}(\rho(t)G(x,t)) = \frac{d}{dt}(\rho(t)H(x,t)).
+\]
+Differentiation yields
+\[
+-\rho(t)G_x(x,t) = \rho_t(t)H(x,t) + \rho(t)H_t(x,t).
+\]
+Therefore,
+\begin{equation} \label{EX:if}
+\rho_t = -\rho\frac{G_x+H_t}{H},
+\end{equation}
+as claimed.
+
+\end{solution}
+\end{exercise}
+\end{document}

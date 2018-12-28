@@ -1,0 +1,24 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise}  \label{c10.4.4}
+Let 
+\[
+A=\mattwo{2}{5}{-2}{0}.
+\]
+Find a complex $2\times 2$ matrix $T$ such that $T\inv AT$ is complex
+diagonal and a real $2\times 2$ matrix $S$ so that $S\inv AS$ is in real
+block diagonal form.
+
+\begin{solution}
+
+\ans $T = \mattwoc{5}{5}{-1+3i}{-1-3i}$ and $S=\mattwoc{5}{-1}{0}{3}$ 
+
+\soln The eigenvalues of $A$ are $1\pm 3i$ and the associated eigenvectors 
+are $(5,-1\pm 3i)^t$.  The columns of $T$ are just the eigenvectors of $A$
+and the real and imaginary parts of the eigenvectors are the columns of $S$. 
+
+
+\end{solution}
+\end{exercise}
+\end{document}

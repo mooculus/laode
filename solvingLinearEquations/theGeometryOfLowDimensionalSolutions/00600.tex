@@ -1,0 +1,43 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c2.2.9}
+\begin{itemize}
+\item[(a)] Find a vector $u$ normal to the plane $2x+2y+z=3$.
+  \begin{prompt}
+    \begin{validator}[(ux==uy) && (uy==2*uz) && (uy != 0)]
+      \(
+        u = \left( \answer[format=integer,id=ux]{2}, \answer[format=integer,id=uy]{2}, \answer[format=integer,id=uz]{1} \right)
+      \)
+    \end{validator}
+  \end{prompt}
+\item[(b)] Find a vector $v$ normal to the plane $x+y+2z=4$.
+  \begin{prompt}
+    \begin{validator}[(vx==vy) && (2*vy==vz) && (vy != 0)]
+      \(
+        v = \left( \answer[format=integer,id=vx]{1}, \answer[format=integer,id=vy]{1}, \answer[format=integer,id=vz]{2} \right)
+      \)
+    \end{validator}
+  \end{prompt}
+\item[(c)] Find the cosine of the angle $\theta$ between the vectors $u$ and $v$.
+  \begin{prompt}
+    \[
+      \cos \theta = \answer{\frac{2}{\sqrt{6}}}
+    \]
+  \end{prompt}
+\end{itemize}
+
+\begin{solution}
+
+(a) $u = (2,2,1)$, since we know that the normal vector to the plane
+$ax + by + cz = d$ is $(a,b,c)$.
+
+(b) $v = (1,1,2)$.
+
+(c) $\cos\theta = \frac{u \cdot v}{||u||\;||v||} = \frac{2}{\sqrt{6}}$.
+In \Matlabp, type {\tt acos(2/sqrt(6))*180/pi} to obtain $\theta =
+35.2644^\circ$.
+
+\end{solution}
+\end{exercise}
+\end{document}

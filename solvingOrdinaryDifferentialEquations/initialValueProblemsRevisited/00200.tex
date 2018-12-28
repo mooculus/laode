@@ -1,0 +1,74 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise}  \label{c4.10A.2}
+Solve the initial value problem $\dot{X}=CX$ where $X_0=e_1$ given that
+\begin{itemize}
+\item[(a)]	$X(t) = e^{-t}\vectwo{1}{2}$ is a solution,
+\item[(b)]	$\trace(C)=3$, and
+\item[(c)]	$C$ is a symmetric matrix.
+\end{itemize}
+
+\begin{solution}
+\ans The solution to the differential equation $\dot{X} =
+CX$ with the given restrictions is
+\[
+X(t) = \frac{1}{5}e^{-t}\vectwo{1}{2} + \frac{2}{5}e^{4t}\vectwo{2}{-1}
+= \frac{1}{5}\cvectwo{e^{-t} + 4e^{4t}}{2e^{-t} - 2e^{4t}}.
+\]
+
+\soln First, find the matrix $C$ using the given information:
+First, since $C$ is symmetric, we can write
+\[
+C = \mattwo{a}{b}{b}{d}.
+\]
+Then, we are given $\trace(C) = a + d = 3$, so we can rewrite $C$ as
+\[
+C = \cmattwo{a}{b}{b}{3 - a}.
+\]
+Since $X(t) = e^{-t}(1,2)^t$ is a solution, $\lambda_1 = -1$
+must be an eigenvalue of $C$ with associated eigenvector $v_1 = (1,2)^t$.
+Thus $Cv_1 = \lambda_1v_1$, or
+\[
+\cmattwo{a}{b}{b}{3 - a}\vectwo{1}{2} = \cvectwo{a + 2b}{b + 2(3 - a)}
+= \cvectwo{a + 2b}{-2a + b + 6} = \vectwo{-1}{-2}.
+\]
+This equation yields the linear system
+\[
+\begin{array}{rrrrr}
+a & + & 2b & = & -1 \\
+-2a & + & b & = & -8
+\end{array}
+\]
+which we can solve to obtain $a = 3$ and $b = -2$.  So
+\[
+C = \mattwo{3}{-2}{-2}{0}.
+\]
+Now, find $\lambda_2$, the other root of
+\[
+p_C(\lambda) = \lambda^2 - \trace(C) + \det(C) = \lambda^2 - 3\lambda -4
+= (\lambda + 1)(\lambda - 4).
+\]
+Thus, the second eigenvalue of $C$ is $\lambda_2 = 4$, and we can solve
+\[
+(C - \lambda_2I_2)v_2 = \left(\mattwo{3}{-2}{-2}{0} - \mattwo{4}{0}{0}{4}
+\right)v_2 = \mattwo{-1}{-2}{-2}{-4}v_2 = 0
+\]
+to obtain $v_2 = (2,-1)^t$, the eigenvector associated to $\lambda_2$.
+The general solution to $\dot{X} = CX$ is
+\[
+X(t) = \alpha_1e^{-t}\vectwo{1}{2} + \alpha_2e^{4t}\vectwo{2}{-1}.
+\]
+Find $\alpha_1$ and $\alpha_2$ by substituting the initial condition $X(0)
+= X_0$ into this formula:
+\[
+\vectwo{1}{0} = X(0) = \alpha_1\vectwo{1}{2} + \alpha_2\vectwo{2}{-1}
+= \cvectwo{\alpha_1 + 2\alpha_2}{2\alpha_1 - \alpha_2}.
+\]
+Thus, $\alpha_1 = \frac{1}{5}$ and $\alpha_2 = \frac{2}{5}$, so we find
+the general solution.
+
+
+\end{solution}
+\end{exercise}
+\end{document}

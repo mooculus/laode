@@ -1,0 +1,33 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c8.3.2}
+Verify that the system of differential equations
+\begin{matlabEquation} \label{8.3.2eq} 
+\begin{array}{rcl}
+\dot{x} & = & x-2y -(x^2+y^2)x + 0.1x^2\\
+\dot{y} & = & 2x+y - (x^2+y^2)y - 0.2(y^2-x^2)
+\end{array}
+\end{matlabEquation}
+has a single limit cycle.  Compare the phase portrait of this
+equation with that of \eqref{e:nonlincenter2}.
+
+\begin{solution}
+
+Figure~\ref{c8.3.2} shows the {\tt pplane5} graph of \eqref{8.3.2eq}.
+The system has a single equilibrium at the origin, so all limit cycles
+must surround the origin.  We can verify visually that the system has
+one limit cycle at $r = 1$.  The graph of this system is similar to
+the graph of \eqref{e:nonlincenter2}, since both
+have single equilibria at the origin and single stable limit cycles at
+$r = 1$.
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/8-3-2.eps,width=3.0in}}
+                \exercap{c8.3.2}
+\end{figure}
+
+\end{solution}
+\end{exercise}
+\end{document}

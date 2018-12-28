@@ -1,0 +1,27 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c2.1.2}
+Matrices are entered in \Matlab as follows. To enter
+the $2\times 3$ matrix $A$, type {\tt A = [ -1 1 2; 4 1 2]}.
+Enter this matrix into \Matlabp; the displayed matrix should be
+\begin{verbatim}
+A =
+    -1     1     2
+     4     1     2
+\end{verbatim}
+Now change the entry in the $2^{nd}$ row, $1^{st}$ column to
+$-5$.
+
+\begin{solution}
+Type {\tt A(2,1) = -5}.  \Matlab responds with
+\begin{verbatim}
+A =
+    -1     1     2
+    -5     1     2
+\end{verbatim}
+
+
+\end{solution}
+\end{exercise}
+\end{document}

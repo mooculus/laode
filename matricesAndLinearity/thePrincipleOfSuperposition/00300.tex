@@ -1,0 +1,40 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c4.4.2}
+Write all solutions to the homogeneous system of linear
+equations
+\begin{eqnarray*}
+x_1+2x_2+x_4-x_5 = 0\\
+x_3-2x_4+x_5 = 0
+\end{eqnarray*}
+as the general superposition of three vectors.
+
+\begin{solution}
+
+\ans Every solution can be written as a superposition of the vectors
+\[
+\left(\begin{array}{r} -2 \\ 1 \\ 0 \\ 0 \\ 0\end{array}\right), \quad
+\left(\begin{array}{r} -1 \\ 0 \\ 2 \\ 1 \\ 0 \end{array}\right) \AND
+\left(\begin{array}{r} 1 \\ 0 \\ -1 \\ 0 \\ 1 \end{array}\right).
+\]
+
+\soln Write the matrix of the homogeneous system:
+\[
+\left(\begin{array}{rrrrr} 1 & 2 & 0 & 1 & -1 \\
+0 & 0 & 1 & -2 & 1 \end{array}\right).
+\]
+This matrix cannot be row reduced further.  Every solution has the form
+\[
+\left(\begin{array}{r} x_1 \\ x_2 \\ x_3 \\ x_4 \\ x_5
+\end{array}\right) = \left(\begin{array}{c} x_5 - x_4 - 2x_2 \\
+x_2 \\ -x_5 + 2x_4 \\ x_4 \\ x_5 \end{array}\right) = 
+x_2\left(\begin{array}{r} -2 \\ 1 \\ 0 \\ 0 \\ 0
+\end{array}\right) + x_4\left(\begin{array}{r} -1 \\ 0 \\ 2 \\
+1 \\ 0 \end{array}\right) + x_5\left(\begin{array}{r} 1 \\ 0 \\
+-1 \\ 0 \\ 1 \end{array}\right).
+\]
+
+\end{solution}
+\end{exercise}
+\end{document}

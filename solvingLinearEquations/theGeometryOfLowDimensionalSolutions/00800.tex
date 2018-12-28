@@ -1,0 +1,46 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c2.2.10}
+Determine graphically the geometry of the set of solutions to the
+system of equations in the three unknowns $x,y,z$:
+\[
+\begin{array}{rcrcr}
+  x & + & 3z  & = & 1\\
+ 3x & - &  z  & = & 1\\
+    &   &  z  & = & 2
+\end{array}
+\]
+by sketching the plane of solutions for each equation individually.
+Describe in words why there are no solutions to this system.
+(Use \Matlab graphics to verify your sketch.  Note that you should
+enter the last equation as {\tt z = 2 - 0*x - 0*y} and the first two
+equations with {\tt 0*y} terms.  Try different views --- but include
+{\tt view([0 1 0])} as one view.)
+
+\begin{solution}
+
+The system has no solutions because there is no point at which the three
+planes intersect.  Figure~\ref{c2.2.10}a shows the \Matlab graph of
+the system.  The commands {\tt view([0 -1 0])} and 
+{\tt axis([-7 3 -3 3 -1 3])}
+produce a view of the graph in which the geometry
+can be seen, shown in Figure~\ref{c2.2.10}b.
+Since there is no $y$ term in any of the equations, all three planes
+are perpendicular to this view, and therefore appear as lines in the
+graph.
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/2-2-10a.eps,width=2.75in}
+                       \psfig{file=exfigure/2-2-10b.eps,width=2.75in}}
+		\exercaptwo{c2.2.10}
+\end{figure}
+
+
+
+
+
+\end{solution}
+\end{exercise}
+\end{document}

@@ -1,0 +1,22 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise}  \label{c6.2.6A}
+Let $C$ be an $n\times n$ matrix.  Use Theorem~\ref{T:linODEsoln} to show
+that the $n$ columns of the $n\times n$ matrix $e^{tC}$ give a basis of
+solutions for the system of differential equations $\dot{X}=CX$.
+
+\begin{solution}
+By Theorem~\ref{T:linODEsoln},
+the unique solution to the differential equation $\dot{X} = CX$ with
+initial condition $X(0) = X_0$ is $X(t) = e^{tC}X_0$.  Let $X(0) =
+e_j$.  Then the vector $X_j(t) = e^{tC}e_j$ is a solution to the
+differential equation, and is the $j^{th}$ column of the matrix
+$e^{tC}$.  Thus, each column of $e^{tC}$ is a solution to the
+differential equation, and the set of columns forms a basis of
+solutions.
+
+
+\end{solution}
+\end{exercise}
+\end{document}

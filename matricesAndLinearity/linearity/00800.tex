@@ -1,0 +1,53 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c4.3.7}
+Find the $2\times 3$ matrix $A$ that satisfies
+\[
+Ae_1  =  \vectwo{2}{3},\qquad
+Ae_2  =  \vectwo{1}{-1}, \AND
+Ae_3  = \vectwo{0}{1}.
+\]
+
+\begin{solution}
+
+\ans The matrix that satisfies these conditions is
+\[
+A = \left(\begin{array}{rrr} 2 & 1 & 0 \\ 3 & -1 & 1
+\end{array}\right).
+\]
+
+\soln Let
+\[
+A = \left(\begin{array}{rrr}
+a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23}
+\end{array}\right).
+\]
+Rewrite the conditions on $A$ as:
+\[
+\left(\begin{array}{rrr}
+a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23}
+\end{array}\right) \vecthree{1}{0}{0} = \vectwo{2}{3}
+\]
+\[
+\left(\begin{array}{rrr}
+a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23}
+\end{array}\right) \vecthree{0}{1}{0} = \vectwo{1}{-1}
+\]
+\[
+\left(\begin{array}{rrr}
+a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23}
+\end{array}\right) \vecthree{0}{0}{1} = \vectwo{0}{1}
+\]
+These equations imply:
+\[ \begin{array}{rcl} a_{11} & = & 2 \\ a_{21} & = & 3 \end{array},
+\quad
+\begin{array}{rcr} a_{12} & = & 1 \\ a_{22} & = & -1 \end{array}
+\AND
+\begin{array}{rcl} a_{13} & = & 0 \\ a_{23} & = & 1 \end{array}
+\]
+and determine the matrix $A$.
+
+\end{solution}
+\end{exercise}
+\end{document}

@@ -1,0 +1,74 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\CEXER
+
+\noindent In Exercises~\ref{c4.1.a10a} -- \ref{c4.1.a10b} use \Matlab to
+compute $b=Ax$ for the given $A$ and $x$.
+\begin{exercise} \label{c4.1.a10a}
+\begin{matlabEquation}\label{multiplication-exercise}
+A=\left(
+\begin{array}{rrrrr}
+   -0.2 &   -1.8 &    3.9 &    -6 &   -1.6\\
+    6.3 &    8   &    3   &    2.5 &    5.1\\
+   -0.8 &   -9.9 &    9.7 &    4.7 &    5.9\\
+   -0.9 &   -4.1 &    1.1 &   -2.5 &    8.4\\
+   -1 &   -9 &   -2 &  -9.8 &    6.9
+\end{array}\right)
+\AND
+x = \left( \begin{array}{r} -2.6\\  2.4\\  4.6\\   -6.1\\    8.1
+\end{array}\right).
+\end{matlabEquation}
+
+\begin{solution}
+After loading the system into \Matlabp, typing
+{\tt b = A*x} yields
+\begin{verbatim}
+b =
+   37.7800
+   42.6800
+   42.0600
+   77.6100
+   87.4700
+\end{verbatim}
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c4.1.a10b}
+\begin{matlabEquation}\label{multiplication-exercise-2}
+A=\left(
+\begin{array}{rrrrrrr}
+    14 & -22  &-26 &  -2 & -77 & 100 & -90\\
+    26 &  25  &-15 & -63 &  33 &  92 &  14\\
+   -53 &  40  & 19 &  40 & -27 & -88 &  40\\
+    10 & -21  & 13 &  97 & -72 & -28 &  92\\
+    86 & -17  & 43 &  61 &  13 &  10 &  50\\
+   -33 &  31  &  2 &  41 &  65 & -48 &  48\\
+    31 &  68  & 55 &  -3 &  35 &  19 & -14
+\end{array}
+\right)\end{matlabEquation}
+and
+\begin{equation*}
+x = \left( \begin{array}{r} 2.7\\   6.1\\   -8.3\\    8.9\\    8.3\\    2\\
+  -4.9
+\end{array}\right).
+\end{equation*}
+
+\begin{solution}
+Load the system into \Matlabp, then type {\tt b = A*x}
+to obtain:
+\begin{verbatim}
+b =
+  103.5000
+  175.8000
+ -296.9000
+ -450.1000
+  197.4000
+  656.6000
+  412.4000
+\end{verbatim}
+
+\end{solution}
+\end{exercise}
+\end{document}

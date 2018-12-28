@@ -1,3 +1,5 @@
+ 
+
 \usepackage{epsfig}
 
 \graphicspath{
@@ -5,8 +7,15 @@
   {figures/}
 }
 
-
 \usepackage{morewrites}
+\makeatletter
+\newcommand\subfile[1]{%
+\renewcommand{\input}[1]{}%
+\begingroup\skip@preamble\otherinput{#1}\endgroup\par\vspace{\topsep}
+\let\input\otherinput}
+\makeatother
+
+\newcommand{\includeexercises}{\directlua{dofile("/home/jim/linearAlgebra/laode/exercises.lua")}}
 
 %\newcounter{ccounter}
 %\setcounter{ccounter}{1}
@@ -66,6 +75,7 @@
 \newcommand{\vectwo}[2]{\left(\begin{array}{r} #1 \\ #2\end{array}\right)}
 \newcommand{\vectwoc}[2]{\left(\begin{array}{c} #1 \\ #2\end{array}\right)}
 
+\newcommand{\ignore}[1]{}
 
 
 \newcommand{\inv}{^{-1}}
@@ -100,7 +110,6 @@
 
 \newcommand{\Matrixc}[1]{\ensuremath{\left(\begin{array}{cccccccccccc} #1 \end{array}\right)}}
 
-\newcommand{\ignore}[1]{}
 
 
 \renewcommand{\labelenumi}{\theenumi)}

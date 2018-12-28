@@ -1,0 +1,60 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\noindent In Exercises~\ref{c6.1.2a} -- \ref{c6.1.2b}, consider the system of
+differential equations
+\begin{equation}  \label{E:c6.1.2}
+\begin{array}{rcl}
+\frac{dx}{dt} & = & -2x+7y \\
+\frac{dy}{dt} & = &  5y,
+\end{array}
+\end{equation}
+\begin{exercise} \label{c6.1.2a}
+Find a solution to \eqref{E:c6.1.2}
+satisfying the initial condition $(x(0),y(0)) = (1,0)$.
+
+\begin{solution}
+
+\ans If $(x(0),y(0)) = (1,0) = X_2(0)$, then
+\[
+(x(t),y(t)) = e^{-2t}(1,0).
+\]
+
+\soln The general solution to the system is
+\[
+X(t) = r_1e^{5t}(1,1) + r_2e^{-2t}(1,0).
+\]
+To obtain this solution, first rewrite the system of differential
+equations as
+\[
+\frac{dX}{dt} = CX = \mattwo{-2}{7}{5}{0}\vectwo{x}{y}.
+\]
+By inspection of $C$, $(1,1)^t$ and $(1,0)^t$ are eigenvectors with
+eigenvalues $5$ and $-2$ respectively.  Therefore:
+\[
+X_1(t) = e^{5t}\vectwo{1}{1} \AND X_2(t) = e^{-2t}\vectwo{1}{0}
+\]
+are solutions to the differential equation.
+The initial values $X_1(0) = (1,1)$ and $X_2(0) = (1,0)$ are linearly
+independent, so the general solution is valid.
+To find $r_1$ and $r_2$, evaluate
+\[
+X(0) = (x(0),y(0)) = r_1(1,1) + r_2(1,0) = (r_1 + r_2,r_1).
+\]
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c6.1.2b}
+Find a solution to \eqref{E:c6.1.2}
+satisfying the initial condition $(x(0),y(0)) = (-1,2)$.
+
+\begin{solution}
+If $(x(0),y(0)) = (-1,2) = 2X_1(0) - 3X_2(0)$, then
+\[
+(x(t),y(t)) = 2e^{5t}(1,1) - 3e^{-2t}(1,0).
+\]
+
+\end{solution}
+\end{exercise}
+\end{document}

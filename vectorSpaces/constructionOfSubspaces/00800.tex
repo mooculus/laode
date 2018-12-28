@@ -1,0 +1,23 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c5.2.8a}
+Let $V$ be a vector space and let $v\in V$ be a nonzero vector.  Show that
+\[
+\Span\{v,v\}=\Span\{v\}.
+\]
+
+\begin{solution}
+
+Every vector $x \in \Span\{v\}$ is of the form $x = av
+= av + 0v$, so $x \in \Span\{v,v\}$.  Therefore, $\Span\{v\}
+\subset \Span\{v,v\}$.  Every vector $y \in \Span\{v,v\}$ is of the
+form 
+\[
+y = bv + cv = (b + c)v \in \Span\{v\}.
+\]
+Therefore $\Span\{v,v\} \subset \Span\{v,v\}$, so the two spans are equal.
+
+\end{solution}
+\end{exercise}
+\end{document}

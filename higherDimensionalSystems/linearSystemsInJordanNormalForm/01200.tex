@@ -1,0 +1,114 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+In Exercises~\ref{c11.1.6A} -- \ref{c11.1.6B}, components of solutions to 
+differential equation $\dot{X}=AX$ are linear combinations of functions of 
+the form $t^je^{\lambda t}$ when $\lambda$ is a real eigenvalue of $A$ and 
+$t^je^{\sigma t}\cos(\tau t)$ and $t^je^{\sigma t}\sin(\tau t)$ when
+$\lambda=\sigma\pm i\tau$ is a complex eigenvalue of $A$.  Determine the
+precise values of $j$ and $\lambda$ for each of the given matrices.  Do not
+attempt to write down the closed form solutions to these systems of
+differential equations.
+\begin{exercise} \label{c11.1.6A}
+\begin{matlabEquation}\label{MATLAB:47}
+A=\left(\begin{array}{rrrr}  
+   -3 &  77 & -124 & -225 \\
+   10 &  -1 &   69 &  105 \\
+  -26 & -47 & -112 & -148 \\
+   18 &  24 &   89 &  124 \end{array} \right).
+\end{matlabEquation}
+
+\begin{solution}
+\ans Solutions are linear combinations of the functions 
+$e^{5t}$ and $t^je^t$ for $j=0,1,2$.
+
+\soln In \Matlabp, load the matrix $A$.  Begin by 
+finding the eigenvalues of $A$ by typing {\tt eig(A)} and obtaining
+\begin{verbatim}
+ans =
+   5.0000          
+   0.9999          
+   1.0000 + 0.0001i
+   1.0000 - 0.0001i
+\end{verbatim}
+Because of numerical errors there may be some confusion.  The eigenvalues of
+$A$ are $1$ with multiplicity three and $5$ with multiplicity one.  Next,
+find the Jordan block structure corresponding to the eigenvalue $1$ by typing
+{\tt null(A-eye(4))} and obtaining
+\begin{verbatim}
+ans =
+   -0.9733
+    0.2141
+    0.0584
+    0.0584
+\end{verbatim}
+Therefore, there is one Jordan block associated to the eigenvalue $1$.  The
+solutions to the associated linear differential equation are linear
+combinations of the functions $e^{5t}$, $e^t$, $te^t$, and $t^2e^t$.
+
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c11.1.6B}
+\begin{matlabEquation}\label{MATLAB:48}
+A=\left(\begin{array}{rrrrrr}  
+   29 &  27 &  -4 &  -7 &  -3 & -20 \\
+  -26 & -23 &   5 &   9 &   3 &  23 \\
+   12 &  26 &  -4 &  32 &   7 & -24 \\
+   12 &  12 &  -3 &  -1 &  -1 & -13 \\
+   -8 & -10 &   4 &  -3 &   1 &  16 \\
+   -4 &  -8 &   2 &  -9 &  -2 &  10  \end{array} \right).
+\end{matlabEquation}
+
+\begin{solution}
+\ans Solutions are linear combinations of the functions 
+$t^je^{2t}$, $t^je^{2t}\cos t$, and $t^je^{2t}\sin t$ where $j=0,1$.
+
+\soln In \Matlabp, load the matrix $A$.  Begin by 
+finding the eigenvalues of $A$ by typing {\tt eig(A)} and obtaining
+\begin{verbatim}
+ans =
+   2.0000 + 1.0000i
+   2.0000 - 1.0000i
+   2.0000 + 1.0000i
+   2.0000 - 1.0000i
+   2.0000 + 0.0000i
+   2.0000 - 0.0000i
+\end{verbatim}
+The eigenvalues of $A$ are $2$, $2+i$, and $2-i$, each with multiplicity two.
+Find the Jordan block structure corresponding to the eigenvalue $2$ by typing
+{\tt null(A-2*eye(6))} and obtaining
+\begin{verbatim}
+ans =
+   -0.5657
+    0.5657
+   -0.4243
+   -0.2828
+    0.2828
+    0.1414
+\end{verbatim}
+So there is one Jordan block associated to the eigenvalue $2$.  Next, 
+find the Jordan block structure corresponding to the eigenvalues $2\pm i$ by 
+typing {\tt null(A-(2+i)*eye(6))} and obtaining
+\begin{verbatim}
+ans =
+  -0.6415          
+   0.6169 - 0.0228i
+  -0.2847 + 0.0105i
+  -0.2847 + 0.0105i
+   0.1898 - 0.0070i
+   0.0949 - 0.0035i
+\end{verbatim}
+Again there is one Jordan block associated to the mutiple eigenvalues 
+$2\pm i$.  It follows that solutions to the associated linear differential 
+equation are linear combinations of the functions $e^{2t}$, $te^{2t}$, 
+$e^{2t}\cos t$, $e^{2t}\sin t$, $te^{2t}\cos t$, and $te^{2t}\sin t$.
+
+
+
+
+
+\end{solution}
+\end{exercise}
+\end{document}

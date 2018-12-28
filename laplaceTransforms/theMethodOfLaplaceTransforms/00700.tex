@@ -1,0 +1,32 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c13.4.4}
+Let $\alpha,\beta,a,b,c$ be real numbers.  Show that the solution
+of the initial value problem
+\[
+\ddot x +a\dot x +b x=c,\quad x(0)=\alpha,\quad \dot x(0)=\beta,
+\]
+has the Laplace transform
+\[
+{\cal L}[x] = \frac{\alpha s^2 +(\beta +a\alpha)s+c}{s(s^2+as+b)}.
+\]
+
+\begin{solution}
+Compute
+\[
+\frac{c}{s} = {\cal L}[c]
+= {\cal L}[\ddot{x}] + a{\cal L}[\dot{x}] + b{\cal L}[x]
+= (s^2 + as + b){\cal L}[x] - (s + a)\alpha - \beta.
+\]
+Solve for ${\cal L}[x]$, obtaining
+\[
+{\cal L}[x]
+= \frac{\frac{c}{s} + \alpha s + (\beta + a\alpha)}{s^2 + as + b}
+= \frac{\alpha s^2 + (\beta + a\alpha)s + c}{s(s^2 + as + b)}.
+\]
+
+
+\end{solution}
+\end{exercise}
+\end{document}

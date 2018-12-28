@@ -1,0 +1,29 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c8.2.10}
+Use {\pplane} to determine the phase portraits of the nonlinear system
+\eqref{e:nonhypcenter}.  Verify that {\pplane} finds (approximately) 
+periodic solutions on sufficiently small neighborhoods of the origin.  This 
+experiment, coupled with the results from Exercise~\ref{E:nonhyp}, suggests 
+that the numerical methods employed by {\pplane} fail sufficiently close 
+to nonhyperbolic equilibria.
+
+\begin{solution}
+
+System \eqref{e:nonhypcenter} is shown in Figure~\ref{c8.2.10}a with four
+trajectories.  Figure~\ref{c8.2.10}b shows the system in a small
+neighborhood of the origin.  In this graph, trajectories appear to be
+closed orbits.  Using the {\tt find an equilibrium} command, we find
+that \Matlab considers the origin to be a spiral.
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/8-2-10a.eps,width=2.75in}
+                       \psfig{file=exfigure/8-2-10b.eps,width=2.75in}}
+                \exercaptwo{c8.2.10}
+\end{figure}
+
+\end{solution}
+\end{exercise}
+\end{document}

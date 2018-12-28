@@ -1,0 +1,31 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c15.1.4a}
+Use formula \eqref{eq:tfeul} to show that the first step in
+the numerical approximations shown in Figures~\ref{fig:eulex1}(b)
+and \ref{fig:eulimpr} have to lie below the graph of
+the exact solution $x(t)$.
+
+\begin{solution}
+The first step in Euler's method is given by
+\[
+x_1 = x_0 + hf(t_0,x_0),
+\]
+and hence formula \eqref{eq:tfeul} implies that
+\begin{eqnarray*}
+x(t_1) &=&  x(t_0)+h\frac{dx}{dt}(t_0)+
+\frac{h^2}{2}\frac{d^2x}{dt^2}(t_0+\theta h)\\
+&=& x_0 + hf(t_0,x_0) +\frac{h^2}{2}\frac{d^2x}{dt^2}(t_0+\theta h)\\
+&=& x_1 +\frac{h^2}{2}\frac{d^2x}{dt^2}(t_0+\theta h).
+\end{eqnarray*}
+The exact solution is $x(t)= 4e^{t-1}-t-1$ with the second order
+derivative
+\[
+\frac{d^2x}{dt^2}(t) = 4e^{t-1}>0\quad \mbox{for all $t$.}
+\]
+It follows that $x(t_1) > x_1$.
+
+\end{solution}
+\end{exercise}
+\end{document}

@@ -1,0 +1,26 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c7.1.6}
+Let
+\[
+w_1=(1,0,2), \quad w_2=(2,1,4), \AND w_3=(0,1,-1)
+\]
+be a basis for $\R^3$.  Find $[v]_{\cal W}$ where $v=(2,1,5)$.
+
+\begin{solution}
+
+\ans $[v]_W = (-2,2,-1)$.
+
+\soln Use \Matlab to row reduce the augmented matrix
+$(w_1^t|w_2^t|w_3^t|v)$, obtaining:
+\begin{verbatim}
+ans = 
+     1     0     0    -2
+     0     1     0     2
+     0     0     1    -1
+\end{verbatim}
+
+\end{solution}
+\end{exercise}
+\end{document}

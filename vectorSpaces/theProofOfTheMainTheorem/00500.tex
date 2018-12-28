@@ -1,0 +1,46 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c5.6.3}
+Show that the vectors
+\[
+v_1=(2,3,1) \AND v_2=(1,1,3)
+\]
+are linearly independent.   Show that the span of $v_1$ and $v_2$
+forms a plane in $\R^3$ by showing that every linear combination
+ is the solution to a single linear equation.  Use this equation
+to determine the normal vector $N$ to this plane.  Verify
+Lemma~\ref{extendindep} by verifying directly that $v_1,v_2,N$
+are linearly independent vectors.
+
+\begin{solution}
+
+There is no scalar $\alpha$ such that $(2,3,1) = \alpha(1,1,3)$, so
+$v_1$ and $v_2$ are linearly independent.
+The set of linear combinations of $v_1$ and $v_2$ is the set of
+solutions to
+\[
+\begin{array}{rrrrrrl}
+2a_1 & + & 3a_1 & + & a_3 & = & 0 \\
+a_1 & + & a_2 & + & 3a_3 & = & 0. \end{array}
+\]
+Row reducing this system yields $a_1 = -8a_3$ and $a_2 = 5a_3$.
+Let $a_3 = 0$.  Then every linear combination of $v_1$ and $v_2$ is
+of the form
+\[
+8x_1 - 5x_2 - x_3 = 0
+\]
+which is the equation of a plane in $\R^3$.  The normal vector to this
+plane is $N = (8,-5,-1)$.  Row reduce the matrix whose columns
+are the vectors $v_1$, $v_2$, and $N$ to verify that these vectors
+are linearly independent.
+\[
+\matthree{2}{1}{8}{3}{1}{-5}{1}{3}{-1} \longrightarrow
+\matthree{1}{0}{0}{0}{1}{0}{0}{0}{1}.
+\]
+So the vectors are indeed linearly independent, verifying
+Lemma~\ref{extendindep}.
+
+\end{solution}
+\end{exercise}
+\end{document}

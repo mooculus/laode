@@ -1,0 +1,29 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise}  \label{c10.5.5A}
+Compute $e^{tJ}$ where $J=\left(\begin{array}{rrr} 2 & 0 & 0 \\  0 & -1 & 1 \\
+0 & 0 & -1 \end{array}\right)$.
+
+\begin{solution}
+\ans $e^{tJ} =
+\cmatthree{e^t}{0}{0}{0}{e^{-t}}{te^{-t}}{0}{0}{e^{-t}}$.
+
+\soln The matrix $J$ is in block diagonal form so we can compute the matrix exponential 
+by computing the matrix exponential of each block.  In particular, let 
+\[
+M = \mattwo{-1}{1}{0}{-1}.
+\]
+Then 
+\[
+e^{tM} = e^{-t}(I_2+tM) = e^{-t}\mattwo{1}{t}{0}{1}.
+\]
+Therefore,
+\[
+e^{tJ} = \mattwo{e^t}{0}{0}{e^{tM}} = 
+\cmatthree{e^t}{0}{0}{0}{e^{-t}}{te^{-t}}{0}{0}{e^{-t}}.
+\]
+
+\end{solution}
+\end{exercise}
+\end{document}

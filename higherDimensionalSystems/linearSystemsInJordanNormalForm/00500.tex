@@ -1,0 +1,25 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c11.1.3A}
+Consider the differential equation $\dot{X}=JX$ where $J$ is the single Jordan 
+block $2\times 2$ matrix with double eigenvalue $0$.  Show that most 
+solutions are unbounded in both forward and backward time.
+
+\begin{solution}
+The differential equation $\dot{X}=JX$, where $J$ is the 
+single Jordan block $2\times 2$ matrix with double eigenvalue $0$, is
+\[
+\dot{X} = \mattwo{0}{1}{0}{0}X.
+\]
+Solutions to this differential equation are:
+\[
+X(t) = e^{tJ}X_0 = \mattwo{1}{t}{0}{1}\vectwo{x_0}{y_0} =
+\cvectwo{x_0+y_0t}{y_0}.
+\]
+As long as $y_0\neq 0$, the solution is unbounded in both forward and 
+backward time.  Most solutions start with initial condition $y_o\neq 0$.
+
+\end{solution}
+\end{exercise}
+\end{document}

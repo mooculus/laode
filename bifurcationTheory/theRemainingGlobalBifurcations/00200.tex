@@ -1,0 +1,38 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c9.5.1}
+Use {\pplane} to analyze the phase portraits for the system
+\begin{matlabEquation}\label{MATLAB:21}
+\begin{array}{rcl}
+\dot{x} & = & (-\rho+3(0.5x^2+y^2)-(x^2+y^2)^2)x-2y \\
+\dot{y} & = & (-\rho+3(x^2+y^2)-(1.3x^2+y^2)^2)y+x
+\end{array}
+\end{matlabEquation}
+for $\rho=0.7$ and $\rho=1.1$ on the square $-2\leq x,y\leq 2$.  Is there 
+a bifurcation between these two values of $\rho$?  If so, what kind of 
+bifurcation is it and what is the bifurcation value of $\rho$ to within 
+$\pm 0.02$?
+
+\begin{solution}
+
+The system has a saddle-node bifurcation of periodic solutions
+at $\rho \approx 0.995$.  Figure~\ref{c9.5.1}a shows the system
+with $\rho = 0.7$, at which point there are two limit cycles. 
+Figure~\ref{c9.5.1}b shows the system with $\rho = 0.995$, near the point
+of collision.  Figure~\ref{c9.5.1}c shows the system with $\rho = 1.1$, where
+there are no periodic solutions.
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/9-5-1a.eps,width=1.8in}
+                       \psfig{file=exfigure/9-5-1b.eps,width=1.8in}
+                       \psfig{file=exfigure/9-5-1c.eps,width=1.8in}}
+		\centerline{$\rho = 0.7$\hspace{1.3in}$\rho = 0.995$
+\hspace{1.3in}$\rho = 1.1$}
+                \exercapthree{c9.5.1}
+\end{figure}
+
+\end{solution}
+\end{exercise}
+\end{document}

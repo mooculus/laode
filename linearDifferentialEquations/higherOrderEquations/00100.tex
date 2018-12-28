@@ -1,0 +1,62 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\TEXER
+
+
+\noindent In Exercises~\ref{c12.2.a} -- \ref{c12.2.d} rewrite the given
+higher order equation as a first order system.
+\begin{exercise} \label{c12.2.a}
+$\ddot{x}+5\dot{x}+x = 0$
+
+\begin{solution}
+\ans $\left\{\begin{array}{rcl} \dot{x} & = & y \\
+\dot{y} & = & -x-5y. \end{array}\right.$
+
+\soln  Let $y = \dot{x}$.  Then $\dot{y}+5y+x=0$.
+
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c12.2.b}
+$\ddot{x}-10x = 0$
+
+\begin{solution}
+\ans $\left\{\begin{array}{rcl} \dot{x} & = & y \\
+\dot{y} & = & 10x. \end{array}\right.$
+
+\soln  Let $y = \dot{x}$.  Then $\dot{y}-10x=0$.
+
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c12.2.c}
+$\frac{d^3x}{dt^3}-4\frac{d^2x}{dt^2}-10x = 0$
+
+\begin{solution}
+\ans $\left\{\begin{array}{rcl} \dot{x} & = & y \\
+\dot{y} & = & z\\
+\dot{z} & = & 10x+4z. \end{array}\right.$
+
+\soln  Let $y = \dot{x}$ and $z=\dot{y}=\ddot{x}$.  Then 
+$\dot{z}-4z-10x=0$.
+
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c12.2.d}
+$\frac{d^4x}{dt^4}+2\frac{d^2x}{dt^2}-3\frac{dx}{dt}-2x = 0$
+
+\begin{solution}
+\ans $\left\{\begin{array}{rcl} \dot{x} & = & y \\
+\dot{y} & = & z\\
+\dot{z} & = & u\\
+\dot{u} & = & 2x+3y-2z. \end{array}\right.$
+
+\soln  Let $y = \dot{x}$, $z=\dot{y}=\ddot{x}$ and $u=\dot{z}$.  Then 
+$\dot{u}+2z-3y-2x=0$.
+
+\end{solution}
+\end{exercise}
+\end{document}

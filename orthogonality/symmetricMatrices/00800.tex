@@ -1,0 +1,25 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c7.7.3}
+Perform the same computational experiment as described in
+Exercises~\ref{exer:powita} -- \ref{exer:powitc} using the matrix
+$A=\mattwo{0}{2}{2}{0}$
+and the program {\sf map}.  How do your results differ from the results
+in those exercises and why?
+
+\begin{solution}
+
+In this case, for any vector $v_0 = (x,y)$, the result of the iteration
+is $v_1 = Av_0 = 2(y,x)$.  That is, any vector multiplied by $A$ is
+reflected across the line $y = x$ and doubled in length.  The result
+is different from that in Exercises~\ref{exer:powita} -- \ref{exer:powitc}
+because the eigenvalues are $\lambda_1 = 2$ and $\lambda_2 = -2$, so
+$|\lambda_1| = |\lambda_2|$.
+
+
+
+
+\end{solution}
+\end{exercise}
+\end{document}

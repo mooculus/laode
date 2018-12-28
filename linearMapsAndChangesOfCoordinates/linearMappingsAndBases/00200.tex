@@ -1,0 +1,27 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c7.2.1}
+Use Theorem~\ref{L:linmapfrombasis} and \eqref{e:defA} to 
+construct matrix of a linear mapping $L$ from $\R^3$ to $\R^2$ with $L(v_i)=w_i$, $i=1,2,3$, where
+\[
+v_1=(1,0,2)\quad v_2=(2,-1,1) \quad v_3=(-2,1,0)
+\]
+and
+\[
+w_1=(-1,0) \quad w_2=(0,1) \quad w_3=(3,1).
+\]
+
+\begin{solution}
+
+\soln
+Compute $A$, the matrix of $L$, using Equation~\eqref{e:defA}:
+\[ A = (w_1^t|w_2^t|w_3^t)(v_1^t|v_2^t|v_3^t)^{-1} =
+\left(\begin{array}{rrr} -1 & 0 & 3 \\ 0 & 1 & 1 \end{array}\right)
+\matthree{1}{2}{-2}{0}{-1}{1}{2}{1}{0}^{-1} =
+\left(\begin{array}{rrr} -7 & -11 & 3 \\ -4 & -7 & 2
+\end{array}\right). \]
+
+\end{solution}
+\end{exercise}
+\end{document}

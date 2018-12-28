@@ -1,0 +1,37 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c10.5.5C}
+Let $A$ be a $3\times 3$ matrix.  Use the Cayley-Hamilton theorem to show that
+$A\inv$ is a linear combination of $I_3,A,A^2$.  That is, there exist real 
+scalars $a,b,c$ such that 
+\[
+A\inv = aI_3 + bA + cA^2.
+\]
+
+\begin{solution}
+
+The characteristic polynomial of a $3\times 3$ matrix $A$ has the form 
+\[
+p_A(\lambda) = -\lambda^3 + b_2\lambda^2 + b_1\lambda + b_0.
+\]
+The Cayley-Hamilton theorem states that 
+\[
+p_A(A) = -A^3 + b_2A^2 + b_1A + b_0I_3 = 0.
+\]
+Therefore
+\[
+A(-A^2 +b_2A +b_1I_3) = -b_0I_3.
+\]
+Since $p_A(\lambda) =\det(A-\lambda I_3)$, it follows that $b_0=p_A(0)=\det(A)$.
+Since $A$ is invertible, $\det(A)\neq 0$; that is, $b_0\neq 0$.  Finally, 
+\[
+A\inv = -\frac{1}{b_0}(-A^2+b_2A+b_1I_3) = aI_3 + bA + cA^2,
+\]
+where $a = -b_1/b_0$, $b = -b_2/b_0$, and $c=1/b_0$.
+
+
+
+\end{solution}
+\end{exercise}
+\end{document}

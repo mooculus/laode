@@ -1,0 +1,18 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c10.3.6A}
+Let $A$ be an $n\times n$ matrix with a real eigenvalue $\lambda$ and 
+associated eigenvector $v$.  Assume that all other eigenvalues of $A$ are
+different from $\lambda$.  Let $B$ be an $n\times n$ matrix that commutes
+with $A$; that is, $AB=BA$.  Show that $v$ is also an eigenvector for $B$.
+
+\begin{solution}
+We assume that $Av=\lambda v$ and that $AB=BA$.  It follows that 
+$ABv=BAv=\lambda Bv$.  Therefore $Bv$ is an eigenvector of $A$ with eigenvalue
+$\lambda$.  Since $\lambda$ has only one independent eigenvector, it follows that 
+$v$ is a multiple of $v$; that is, there is a scalar $\mu$ such that $Bv=\mu v$.
+
+\end{solution}
+\end{exercise}
+\end{document}

@@ -1,0 +1,45 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\TEXER
+
+\noindent In Exercises~\ref{c14.6.2} -- \ref{c14.6.3} determine whether or 
+not the given differential equations is exact.
+\begin{exercise} \label{c14.6.2}
+$\dps \frac{dx}{dt} = \frac{\cos x}{t\sin x}$.
+
+\begin{solution}
+\ans The differential equation is exact.
+
+\soln We can write the differential equation as $\dps\frac{dx}{dt} =
+\frac{G(t,x)}{H(t,x)}$, where $G(t,x) = \cos x$ and $H(t,x) = t\sin x$. 
+Then we can compute
+\[
+-\frac{\partial G}{\partial x} = \sin x \AND
+\frac{\partial H}{\partial t} = \sin x.
+\]
+By Proposition~\ref{prop:exact}, since the
+two sides of \eqref{eq:Gy=Hs} are equal, the differential equation is exact.
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c14.6.3}
+$\dps \frac{dx}{dt} = \frac{\cos t}{x\sin t}$.
+
+\begin{solution}
+\ans The differential equation is not exact.
+
+\soln We can write the differential equation as $\dps\frac{dx}{dt} =
+\frac{G(t,x)}{H(t,x)}$, where $G(t,x) = \cos t$ and $H(t,x) = x\sin t$. 
+Then we can compute
+\[
+-\frac{\partial G}{\partial x} = 0 \AND
+\frac{\partial H}{\partial t} = x\cos t.
+\]
+By Proposition~\ref{prop:exact}, the differential equation is exact only
+if the two sides of \eqref{eq:Gy=Hs} are equal.
+
+\end{solution}
+\end{exercise}
+\end{document}

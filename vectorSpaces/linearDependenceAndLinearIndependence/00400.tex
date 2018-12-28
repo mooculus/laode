@@ -1,0 +1,35 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c5.4.3}
+Let
+\[
+u_1=(1,-1,1) \quad u_2=(2,1,-2) \quad u_3 = (10,2,-6).
+\]
+Is the set $\{u_1,u_2,u_3\}$ linearly dependent or linearly independent?
+
+\begin{solution}
+
+\ans The set is linearly dependent.
+
+\soln Let $A$ be the matrix whose columns are $u_1$, $u_2$, and $u_3$. 
+The set $\{u_1,u_2,u_3\}$ is linearly dependent if there exists
+a nonzero vector $r = (r_1,r_2,r_3)$ such that $r_1u_1 + r_2u_2 +
+r_3u_3 = 0$, that is, if the homogeneous system $Ar = 0$ has a
+nonzero solution.  Row reduce:
+\[
+\matthree{1}{2}{10}{-1}{1}{2}{1}{-2}{-6} \longrightarrow
+\matthree{1}{0}{2}{0}{1}{4}{0}{0}{0}.
+\]
+So, $Ar = 0$ when $r = r_3(-2,-4,1)$.
+The value of $r$ is nonzero for $r_3 \neq 0$, so the set is indeed
+linearly dependent.
+As an example, let $r_3 = 1$.  Then,
+\[
+-4u_1 - 2u_2 + u_3 = -2(1,-1,1) - 4(2,1,-2) + (10,2,-6) =
+(0,0,0) = 0.
+\]
+
+\end{solution}
+\end{exercise}
+\end{document}

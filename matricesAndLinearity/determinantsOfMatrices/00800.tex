@@ -1,0 +1,46 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c7.8.4A}
+Cramer's rule \index{Cramer's rule} provides a method based on determinants 
+for finding the unique solution to the linear equation $Ax=b$ when $A$ is 
+an invertible matrix.  More precisely, let $A$ be an invertible $2\times 2$ 
+matrix and let $b\in\R^2$ be a column vector. Let $B_j$ be the $2\times 2$ 
+matrix obtained from $A$ by replacing the $j^{th}$ column of $A$ by the vector 
+$b$.  Let $x=(x_1,x_2)^t$ be the unique solution to $Ax=b$. Then Cramer's rule
+states that 
+\begin{equation}  \label{E:cramer}
+x_j = \frac{\det(B_j)}{\det(A)}.
+\end{equation}
+Prove Cramer's rule.  {\bf Hint:}  Write the general system of two equations in 
+two unknowns as
+\begin{eqnarray*}
+a_{11}x_1+a_{12}x_2 & = & b_1\\
+a_{21}x_1+a_{22}x_2 & = & b_2.
+\end{eqnarray*}
+Subtract $a_{11}$ times the second equation from $a_{21}$ times the first 
+equation to eliminate $x_1$; then solve for $x_2$, and verify \eqref{E:cramer}.  
+Use a similar calculation to solve for $x_1$. 
+
+\begin{solution}
+
+The general system of linear equations in two unknowns is:
+\begin{eqnarray*}
+a_{11}x_1+a_{12}x_2 & = & b_1\\
+a_{21}x_1+a_{22}x_2 & = & b_2.
+\end{eqnarray*}
+Subtract $a_{11}$ times the $2^{nd}$ equation from $a_{21}$ times the $1^{st}$ 
+equation to eliminate $x_1$ and obtain
+\[
+(a_{21}a_{12}-a_{11}a_{22})x_2 = (a_{21}b_1-a_{11}b_2).
+\]
+Therefore
+\[
+x_2 =  \frac{a_{21}b_1-a_{11}b_2}{a_{21}a_{12}-a_{11}a_{22}}
+= \frac{\det(B_2)}{\det(A)}.
+\]
+A similar argument works for $x_1$.
+
+\end{solution}
+\end{exercise}
+\end{document}

@@ -1,0 +1,33 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c7.1.5}
+Let
+\[
+w_1 = (0.23,0.56) \AND w_2 = (0.17,-0.71)
+\]
+and
+\[
+z_1 = (-1.4,0.3) \AND z_2 = (0.1,-0.2)
+\]
+be two bases of $\R^2$ and let $v=(0.6,0.1)$.  Find $[v]_{\cal
+W}$, $[v]_{\cal Z}$, and $C_{\cal WZ}$.
+
+\begin{solution}
+
+\ans \Matlab gives the values for $[v]_{\cal W}$, $[v]_{\cal Z}$, and
+$C_{\cal WZ}$ as:
+\begin{verbatim}
+vW =               vZ =                   CWZ =
+    1.7137            -0.5200                -3.6480   0.1431
+    1.2108            -1.2800                -3.2998   0.3946
+\end{verbatim}
+
+\soln In \Matlabp, find $[v]_{\cal W}$ by row reducing
+the matrix $(w_1^t|w_2^t | v^t)$.  Row reduce 
+$(z_1^t|z_2^t | v^t)$ to solve for $[v]_{\cal Z}$.  To find
+$C_{\cal WZ}$, compute $(w_1^t|w_2^t)^{-1}(z_1^t|z_2^t)$.
+
+\end{solution}
+\end{exercise}
+\end{document}

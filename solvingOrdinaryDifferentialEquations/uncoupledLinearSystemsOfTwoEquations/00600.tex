@@ -1,0 +1,41 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c3.4.4}
+For the three choices of $a$ and $d$ in the uncoupled system of
+linear differential equations in Exercises~\ref{E:uncoupleda} -- 
+\ref{E:uncoupledc}, use {\pplane}
+to compute phase portraits.  Use {\sf Keyboard input} to look at
+solutions with initial conditions on the $x$ and $y$ axes.  As time
+$t$ increases, do solutions with these initial conditions tend towards 
+or away from the origin?
+
+\begin{solution}
+
+(a) Solutions with initial points on the $y$-axis approach the
+origin as $t$ increases.  Solutions with initial points on the
+$x$-axis go away from the origin as $t$ increases.  Initial points
+on the $x$ and $y$-axes are shown in Figure~\ref{c3.4.4}a.
+
+(b) Solutions with initial points on either axis approach the
+origin as $t$ increases.  However, points on the $x$-axis
+approach slowly because the value of $A$ is small, so the \Matlab
+graph, shown in Figure~\ref{c3.4.4}b, is incomplete.
+
+(c) Solutions on the $y$-axis approach the origin as $t$
+increases.  Solutions on the $x$-axis do not move, since
+$\frac{dx}{dt} = 0$.  Initial conditions for this system are shown
+in Figure~\ref{c3.4.4}c.
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/3-4-4a.eps,width=1.8in}
+                       \psfig{file=exfigure/3-4-4b.eps,width=1.8in}
+                       \psfig{file=exfigure/3-4-4c.eps,width=1.8in}}
+	\centerline{$a = 1\hbox{; }d = -1$\hspace{0.7in}$a = -0.01\hbox{; }d = -2.4$\hspace{0.7in}$a = 0\hbox{; }d = -2.3$}
+	\exercapthree{c3.4.4}
+\end{figure}
+
+\end{solution}
+\end{exercise}
+\end{document}

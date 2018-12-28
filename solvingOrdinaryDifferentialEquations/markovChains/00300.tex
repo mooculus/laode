@@ -1,0 +1,37 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\noindent In Exercises~\ref{c4.10.2a} -- \ref{c4.10.2c} which of the
+matrices are Markov matrices, and why?
+\begin{exercise} \label{c4.10.2a}
+$P = \mattwo{0.8}{0.2}{0.2}{0.8}$.
+
+\begin{solution}
+\ans Matrix $P$ is a Markov matrix.
+
+\soln The entries in each row of $P$ sum to $1$, and all the entries of
+$P$ are positive.  Thus, $P$ satisfies Definition~\ref{D:Markov} of Markov
+matrices.
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c4.10.2b}
+$Q = \mattwo{0.8}{0.2}{0}{1}$.
+
+\begin{solution}
+Matrix $Q$ is not a Markov matrix, since there is no
+positive integer $k$ for which $Q^k(2,1) > 0$.
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c4.10.2c}
+$R = \mattwo{0.8}{0.2}{-0.2}{1.2}$.
+
+\begin{solution}
+Matrix $R$ is not a Markov matrix, since $R(2,1)$ is
+negative.
+
+\end{solution}
+\end{exercise}
+\end{document}

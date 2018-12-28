@@ -1,0 +1,53 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\TEXER
+
+\noindent In Exercises~\ref{c3.5.1A} -- \ref{c3.5.1B} find all equilibria of
+the given system of nonlinear autonomous differential equations.
+\begin{exercise}  \label{c3.5.1A}
+\begin{eqnarray*}
+\dot{x} & = & x - y\\
+\dot{y} & = & x^2 - y.
+\end{eqnarray*}
+
+\begin{solution}
+\ans There are two equilibria at $(0,0)$ and $(1,1)$.
+
+\soln Find the equilibria by solving the equations
+\begin{eqnarray*}
+\dot{x} & = & x-y\\
+\dot{y} & = & x^2-y.
+\end{eqnarray*}
+Substituting $x=y$ from the $1^{st}$ equation into the $2^{nd}$ equation
+yields $y^2-y = y(y-1)=0$.  Therefore, $y=0$ or $y=1$.
+
+
+
+\end{solution}
+\end{exercise}
+\begin{exercise}  \label{c3.5.1B}
+\begin{eqnarray*}
+\dot{x} & = & x^2 - xy\\
+\dot{y} & = & x^2 + y^2 - 4.
+\end{eqnarray*}
+
+\begin{solution}
+\ans There are four equilibria at $(0,2)$, $0,-2)$, 
+$(\sqrt{2},\sqrt{2})$, and $(-\sqrt{2},-\sqrt{2})$.
+
+\soln Find the equilibria by solving the equations
+\begin{eqnarray*}
+\dot{x} & = & x^2-xy\\
+\dot{y} & = & x^2+y^2-4.
+\end{eqnarray*}
+The $1^{st}$ equation implies that either $x=0$ or $x=y$.  Substituting
+$x=0$ into the $2^{nd}$ equation yields $y^2=4$.  Therefore, $y=2$ or $y=-2$.
+Substituting $x=y$ into the $2^{nd}$ equation yields $2y^2=4$. Therefore, 
+$y = \sqrt{2}$ or $y = -\sqrt{2}$.
+
+
+\end{solution}
+\end{exercise}
+\end{document}

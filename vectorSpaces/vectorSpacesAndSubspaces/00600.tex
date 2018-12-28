@@ -1,0 +1,70 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\noindent In Exercises~\ref{c5.1.5a} -- \ref{c5.1.5e} which of the
+sets $S$ are subspaces?
+\begin{exercise} \label{c5.1.5a}
+$S = \{(a,b,c)\in\R^3 : a\ge 0, \; b\ge 0,\; c\ge 0\}$.
+
+\begin{solution}
+\ans The set $S$ is not a subspace.
+
+\soln The set $S$ is closed under addition but not under scalar
+multiplication.  To demonstrate, let $x = (1,4,2)$ be an element of $S$. 
+Then
+\[
+-2x = -2(1,4,2) = (-2,-8,-4)
+\]
+which is not an element of $S$.
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c5.1.5b}
+$S = \{(x_1,x_2,x_3)\in\R^3 : a_1x_1+a_2x_2+a_3x_3=0
+\mbox{ where } a_1,a_2,a_3\in\R \mbox{ are fixed}\}$.
+
+\begin{solution}
+The set $S$ is a subspace, since it is closed under
+addition and scalar multiplication.
+
+ 
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c5.1.5c}
+$S = \{(x,y)\in\R^2: (x,y) \mbox{ is on the line through }
+(1,1) \mbox{ with slope } 1\}$.
+
+\begin{solution}
+The set $S$ is a subspace, since it is closed under
+addition and scalar multiplication.
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c5.1.5d}
+$S = \{x\in\R^2: Ax=0\}$ where $A$ is a $3\times 2$ matrix.
+
+\begin{solution}
+The set $S$ is a subspace, since it is closed under
+addition and scalar multiplication.
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c5.1.5e}
+$S = \{x\in\R^2: Ax=b\}$ where $A$ is a $3\times 2$ matrix
+	and $b\in\R^3$ is a fixed nonzero vector.
+
+\begin{solution}
+\ans The set $S$ is not a subspace.
+
+\soln The set $S$ is closed under neither addition nor scalar
+multiplication.  For example, let $x_1$ and $x_2$ be solutions to the
+equation $Ax = b$.  Then,
+\[
+A(x_1 + x_2) = Ax_1 + Ax_2 = b + b = 2b,
+\]
+so $(x_1 + x_2)$ is not an element of $S$.
+
+\end{solution}
+\end{exercise}
+\end{document}

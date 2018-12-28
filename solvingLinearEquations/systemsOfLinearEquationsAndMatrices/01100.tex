@@ -1,0 +1,35 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c2.1.5}
+Enter the following matrix and vector into \Matlab
+\begin{verbatim}
+ A = [ 1 0 -1 ; 2 5 3 ; 5 -1 0];
+ b = [ 1; 1; -2];
+\end{verbatim}
+and solve the corresponding system of linear equations by typing
+\begin{verbatim}
+x = A\b
+\end{verbatim}
+Your answer should be
+\begin{verbatim}
+x =
+   -0.2000
+    1.0000
+   -1.2000
+\end{verbatim}
+Find an integer for the entry in the $2^{nd}$ row, $2^{nd}$ column
+of $A$ so that the solution
+\begin{verbatim}
+x = A\b
+\end{verbatim}
+is not defined.  {\bf Hint:} The answer is an integer between
+$-4$ and $4$.
+
+\begin{solution}
+
+{\tt A}$\backslash${\tt b} is not defined when $A(2,2) = -1$.
+
+\end{solution}
+\end{exercise}
+\end{document}

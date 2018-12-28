@@ -1,0 +1,89 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c9.1.8}
+Foxes (the predators) and rabbits (the prey) coexist in an isolated area.
+In equilibrium, there are 200 foxes and 10,000 rabbits.  When isolated from
+the foxes, the rabbit population doubles every year.  When isolated from 
+the rabbits, the fox population decreases at the rate of 10\% per year. 
+Supposing that the fox-rabbit populations are modeled by the predator-prey
+equations \eqref{e:PP}, answer the following questions.
+\begin{itemize}
+\item[(a)]  	What are the values of $\mu_1,\mu_2,\sigma_1,\sigma_2$ in 
+\eqref{e:PP}.
+\item[(b)]	After a storm 1,200 rabbits and 110 foxes remain in the area.
+According to this model, what will the fox population be after three years?  
+{\bf Hint:}  Use the {\sf Specify a computation interval} on the 
+{\sf PPLANE8 Keyboard input} menu.
+\item[(c)]	After the storm, what is the maximum number of rabbits that 
+this model predicts will inhabit the area.
+\item[(d)]	How many years will it take the rabbit population to reach 
+this maximum number for the first time?
+\end{itemize}
+
+\begin{solution}
+
+\ans (a) $\mu_1=\ln(2)$, $\mu_2=\ln(0.9)$, $\sigma_1 = -\frac{\ln(2)}{200}$,
+and $\sigma_2 = -\frac{\ln(0.9)}{10000}$; (b) $86$ foxes; (c) 48,000 rabbits; 
+(d) $10.5$ years.
+
+\soln In the predator-prey equations $x$ denotes the prey population --- 
+the rabbits --- and $y$ denotes the predator population --- the foxes.
+
+\noindent (a) When $y=0$, the $\dot{x}$ equation can be solved for 
+$x(t)=e^{\mu_1t}x_0$.  Thus when there are no foxes, the rabbit population 
+doubles each year if $e^{\mu_1}=2$, that is, $\mu_1=\ln(2)$.  Similarly, when
+$x=0$ the $\dot{y}$ equation can be solved for $y(t)=e^{\mu_2 t}y_0$.  So the
+fox population decreases by 10\% each year in the absence of rabbits if 
+$e^{\mu_2}=0.9$, that is, $\mu_2=\ln(0.9)$.
+
+Next observe that there is just one equilibrium $(x_1,y_1)$ for the 
+predator-prey equations when both populations are nonzero and that 
+equilibrium is 
+\[
+(x_1,y_1) = \left(-\frac{\mu_2}{\sigma_2},-\frac{\mu_1}{\sigma_1}\right) = 
+\left(-\frac{\ln(0.9)}{\sigma_2},-\frac{\ln(2)}{\sigma_1}\right) = 
+(10000,200).
+\]
+So
+\[
+\sigma_1 = -\frac{\ln(2)}{200}<0 \quad \mbox{and} \quad
+\sigma_2 = -\frac{\ln(0.9)}{10000}>0.
+\]
+Thus, under these conditions, the predator-prey model is:
+\begin{equation}  \label{E:PPspec}
+\begin{array}{rcl}
+\dot{x} & = & x(\ln(2) - \ln(0.9)y/10000) \\
+\dot{y} & = & y(\ln(0.9) - \ln(2)x/200),
+\end{array}
+\end{equation}
+
+\noindent (b) Using the {\sf Keyboard input} button and the {\sf Specify a
+computation interval} in that menu, we can compute the solution with initial
+condition $(x_0,y_0)=(1200,110)$ until time $t=3$ years.  The result is that
+the number of foxes is $86$ as can be seen from the time series in 
+Figure~\ref{c9.1.8}a.
+
+\noindent (c)  Using the {\sf Keyboard input} button, we can start
+integrating the differential equation with initial condition
+$(x_0,y_0)=(1200,110)$.  Graphing the $x$ time series (the rabbit population)
+we get the result shown in Figure~\ref{c9.1.8}b.  Specifically, the 
+maximum is approximately 48,000 rabbits. 
+
+\noindent (d)  The maximum rabbit population occurs for the first time about 
+$10.5$ years after the storm.
+
+\begin{figure}[htb]
+     \centerline{%
+     \psfig{file=exfigure/PPinit2.eps,width=2.75in}
+     \psfig{file=exfigure/PPinit.eps,width=2.75in}}
+     \caption{(Left) Time series $y$ vs. $t$ of (\protect\ref{E:PPspec}) 
+	showing population of foxes after three years. (Right) Time series $x$ 
+	vs. $t$ of (\protect\ref{E:PPspec}) showing maximum rabbit population.}
+     \exercaptwo{c9.1.8}
+\end{figure}
+
+
+\end{solution}
+\end{exercise}
+\end{document}

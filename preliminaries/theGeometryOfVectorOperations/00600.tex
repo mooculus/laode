@@ -1,0 +1,35 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise}  \label{c1.4.9A}
+Using the definition of length, verify that formula \eqref{E:lengths} 
+is valid.
+\begin{prompt}
+\begin{align*}
+||rx|| & = ||\answer{r}(x_1,\dots,x_n)|| \\
+& = ||(\answer{r}x_1,\dots,\answer{r}x_n)|| \\
+& = \sqrt{(rx_1)^2 + \cdots + (rx_n)^2} \\
+& = \sqrt{ \answer{r^2} (x_1^2 + \cdots + x_n^2)} \\
+& = |\answer{r}|\sqrt{x_1^2 + \cdots + x_n^2} \\
+& = |\answer{r}| ||x||.
+\end{align*}
+\end{prompt}
+
+\begin{solution}
+Using the definition $||x|| = \sqrt{x_1^2 + \cdots + x_n^2}$,
+we can compute
+\[
+\begin{array}{rcl}
+||rx|| & = & ||r(x_1,\dots,x_n)|| \\
+& = & ||(rx_1,\dots,rx_n)|| \\
+& = & \sqrt{(rx_1)^2 + \cdots + (rx_n)^2} \\
+& = & \sqrt{r^2(x_1^2 + \cdots + x_n^2)} \\
+& = & |r|\sqrt{x_1^2 + \cdots + x_n^2} \\
+& = & |r| ||x||.
+\end{array}
+\]
+
+
+\end{solution}
+\end{exercise}
+\end{document}

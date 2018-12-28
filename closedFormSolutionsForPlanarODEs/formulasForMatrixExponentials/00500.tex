@@ -1,0 +1,27 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise}  \label{c6.CH}
+Let $A$ be a $2\times 2$ matrix.  Show that
+\[
+A^2 = \trace(A)A-\det(A)I_2.
+\]
+
+\begin{solution}
+For any $2 \times 2$ matrix $A$, the characteristic
+polynomial is
+\[
+p_A(\lambda) = \lambda^2 - \trace(A)\lambda + \det(A).
+\]
+By the Cayley-Hamilton Theorem (Theorem~\ref{T:CH2}), a $2 \times 2$
+matrix satisfies its own characteristic polynomial.  Thus,
+\[
+p_A(A) = A^2 - \trace(A)A + \det(A)I_2 = 0,
+\]
+or $A^2 = \trace(A)A - \det(A)I_2$.
+
+
+
+\end{solution}
+\end{exercise}
+\end{document}

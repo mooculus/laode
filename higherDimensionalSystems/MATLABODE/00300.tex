@@ -1,0 +1,73 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise}  \label{c11.3.2B}
+Verify that $x(t) = e^{(1-\cos t)}$ is a solution to the initial value problem
+\[
+\begin{array}{rcl}
+\dot{x} & = & x\sin t \\
+x(0) & = & 1.
+\end{array}
+\]
+Use {\tt ode45} to compute the solution to this initial value problem on the
+interval $[0,15]$ to within an accuracy $10^{-4}$ and graphically compare 
+this answer with the graph of the exact solution.  Find the values $x(2)$ 
+and $x(3)$. 
+
+\begin{solution}
+
+To show that $y(t)=e^{(1-\cos t)}$ is a solution to the differential equation
+$\dot{x}=x\sin t$ with initial value $x(0)=1$, evaluate $y(0)=e^0=1$ and
+differentiate
+\[
+\frac{dy}{dt} = e^{(1-\cos t)}\frac{d}{dt}(1-\cos t) = 
+e^{(1-\cos t)}\sin t = y\sin t.
+\]
+
+To establish the accuracy of {\tt ode45} numerically, begin by creating the 
+m-file to evaluate $f(t,x)=x\sin t)$:
+\begin{verbatim}
+function f = ftsin(t,x)
+f = sin(t)*x;
+\end{verbatim}
+Then set the options in {\sf ode45} so that the absolute and relative
+tolerances are at $10^{-4}$:
+\begin{verbatim}
+options = odeset('RelTol',1e-4,'AbsTol',1e-4);
+\end{verbatim}
+Then integrate the differential equation with the commands:
+\begin{verbatim}
+tspan = 0:0.05:15;
+[t,x] = ode45('ftsin',tspan,[1],options);
+\end{verbatim}
+The graph of $x(t)$ obtained by typing {\tt plot(t,x)} is shown in
+Figure~\ref{c11.3.2B}a.  The plot of the theoretically exact solution
+is shown in Figure~\ref{c11.3.2B}b and is obtained by typing
+\begin{verbatim}
+clf
+y = exp(1-cos(t));
+plot(t,y)
+\end{verbatim}
+Note that the two figures are identical.  To evaluate $x(2)$ and $x(3)$,
+note that {\tt t(41) = 2} and {\tt t(61) = 3}.  Using {\tt format long}, we
+evaluate {\tt x(41)}, {\tt y(41)}, {\tt x(61)}, {\tt y(61)} obtaining
+\begin{verbatim}
+x(41) = 4.12161877406571  and  y(41) = 4.12121011120502
+x(61) = 7.31537683869234  and  y(61) = 7.31547887114273
+\end{verbatim}
+Note that the two function values are equal to an error of less than 
+$10^{-3}$.
+
+\begin{figure}[htb]
+     \centerline{%
+     \psfig{file=exfigure/fig3_9a.eps,width=2.75in}
+     \psfig{file=exfigure/fig3_9b.eps,width=2.75in}}
+	\exercaptwo{c11.3.2B}
+\end{figure} 
+
+
+
+
+\end{solution}
+\end{exercise}
+\end{document}

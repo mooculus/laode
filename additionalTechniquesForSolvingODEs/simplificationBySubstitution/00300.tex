@@ -1,0 +1,35 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c14.5.10}
+We set $v(t) = x(t)^{1-p}$ to transform the Bernoulli equation 
+\eqref{eq:bern1} into the equation
+\[
+\frac{dv}{dt} = (1-p) r(t) v + (1-p) s(t).
+\]
+Now set $w(t) = v(\beta t)$ and show that $\beta$ can be chosen so that 
+$w(t)$ is a solution to the linear differential equation
+\[
+\frac{dw}{dt} = r\left(\frac{t}{1-p}\right) w + s\left(\frac{t}{1-p}\right).
+\]
+
+\begin{solution}
+\ans $\beta = 1/(1-p)$.
+
+\soln Let $w(t) = v(\beta t)$ and compute
+\[
+\frac{dw}{dt}(t) = \beta \frac{dv}{dt}(\beta t).
+\]
+Using the linear differential equation for $v$, we obtain
+\[
+\frac{dw}{dt}(t) = \beta ((1-p) r(\beta t) v(\beta t) + (1-p) s(\beta t))
+=  \beta (1-p) r(\beta t) w(t) + \beta (1-p) s(\beta t).
+\]
+Now choose $\beta = 1/(1-p)$.
+
+
+
+
+\end{solution}
+\end{exercise}
+\end{document}

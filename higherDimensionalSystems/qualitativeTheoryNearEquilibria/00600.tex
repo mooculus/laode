@@ -1,0 +1,62 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\CEXER
+
+\noindent In Exercises~\ref{c11.2.1a} -- \ref{c11.2.1c} determine whether 
+the origin is an asymptotically stable equilibrium for the system of 
+differential equations $\dot{x}=Cx$.
+\begin{exercise} \label{c11.2.1a}
+\[
+C=\mattwo{1}{-3}{2}{-5}.
+\]
+
+\begin{solution}
+
+\ans The origin is an asymptotically stable equilibrium.
+
+\soln Using \Matlabp, find that the eigenvalues of $C$ are $\lambda_1
+\approx -0.2679$ and $\lambda_2 \approx -3.7321$.  Both eigenvalues
+have negative real part, so the origin is asymptotically stable.
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c11.2.1b}
+\begin{matlabEquation}\label{MATLAB:49}
+C=\left(\begin{array}{rrr} 
+94 & 174 & 132 \\ 
+-37 & -68 & -53 \\
+-16 & -29 & -24 \end{array}\right).
+\end{matlabEquation}
+
+\begin{solution}
+
+\ans The origin is not an asymptotically stable equilibrium.
+
+\soln The eigenvalues of $C$ are $-2$ and $2 \pm i$.  The complex
+eigenvalues have positive real part, so the origin is not stable.
+
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c11.2.1c}
+\begin{matlabEquation}\label{MATLAB:50}
+C=\left(\begin{array}{rrrr} 
+-0.28 & -0.04 & -0.22 & -0.42 \\ 
+0.16 & -0.62 & 0.14 & 0.04 \\ 
+0.06 & -0.12 & -0.06 & 0.14 \\ 
+0.04 & -0.28 & 0.06 & -0.34 \end{array}\right).
+\end{matlabEquation}
+
+\begin{solution}
+
+\ans The origin is an asymptotically stable equilibrium.
+
+\soln The eigenvalues of $C$ are $-0.5 \pm 0.2i$, $-0.2$, and $-0.1$, all
+of which have negative real part.
+
+
+\end{solution}
+\end{exercise}
+\end{document}

@@ -1,0 +1,63 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c4.5.2}
+Find a solution to
+\[
+\dot{X}(t)=CX(t)
+\]
+where
+\[
+C=\mattwo{1}{-1}{-1}{1}
+\]
+and
+\[
+X(0)=\vectwo{2}{1}.
+\]
+{\bf Hint:} Observe that
+\[
+\vectwo{1}{1} \AND \vectwo{1}{-1}
+\]
+are eigenvectors of $C$.
+
+\begin{solution}
+
+\ans 
+\[
+X(t) = \frac{3}{2}\vectwo{1}{1} + \frac{1}{2}e^{2t}\vectwo{1}{-1}.
+\]
+
+\soln Note that if $Cv = \lambda v$, then $X(t) = e^{\lambda t}v$ is a
+solution to $\dot{X}(t) = CX(t)$.  Let
+\[
+v_1 = \vectwo{1}{1} \AND v_2 = \vectwo{1}{-1}.
+\]
+The eigenvalues corresponding to $v_1$ and $v_2$ are
+$\lambda_1 = 0$ and $\lambda_2 = 2$.  This can be verified
+by calculating $Cv_1 = 0$ and $Cv_2 = 2v_2$.
+So,
+\[
+X(t) = \vectwo{1}{1} \AND X(t) = e^{2t}\vectwo{1}{-1}
+\]
+are both solutions to $\dot{X}(t) = CX$.  By the principle of
+superposition,
+\[
+X(t) = \alpha\vectwo{1}{1} + \beta e^{2t}\vectwo{1}{-1}
+\]
+is also a solution.
+Substitute the given the initial condition into the equation to obtain
+\[
+\vectwo{2}{1} = X(0) = \alpha\vectwo{1}{1} + \beta\vectwo{1}{-1}.
+\]
+Now, solve the linear system
+\[
+\begin{array}{rrrrr}
+2 & = & \alpha & + & \beta \\
+1 & = & \alpha & - & \beta \end{array}
+\]
+to find that $\alpha = \frac{3}{2}$ and $\beta = \frac{1}{2}$.
+
+
+\end{solution}
+\end{exercise}
+\end{document}

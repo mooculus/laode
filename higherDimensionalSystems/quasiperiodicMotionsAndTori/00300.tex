@@ -1,0 +1,118 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\noindent In Exercises~\ref{c14.5.2a} -- \ref{c14.5.2d} use \Matlab to find
+out whether the system of differential equations $\dot X= AX$ for
+the given matrix $A$ has quasiperiodic solutions.
+\begin{exercise} \label{c14.5.2a}
+\begin{matlabEquation}\label{MATLAB:57}
+A=\left(\begin{array}{rrrr}
+    4.9666  &  2.2833  &  0.8000  &  5.3666\\
+   -0.9889  & -0.0944  & -1.6000  & -1.7889\\
+    2.9889  &  4.0944  & -0.4000  &  1.7889\\
+   -8.9443  & -4.4721  &       0  & -4.4721
+\end{array}\right).
+\end{matlabEquation}
+
+\begin{solution}
+\ans Yes.
+
+\soln The eigenvalues of $A$ are 
+\begin{verbatim}
+   0.0000 + 4.4722i
+   0.0000 - 4.4722i
+   0.0000 + 2.0000i
+   0.0000 - 2.0000i
+\end{verbatim}
+Having two pairs of purely imaginary complex conjugate eigenvalues leads to
+two-frequency motions.  These motions will be periodic if the quotient of the 
+frequencies is irrational.  That question cannot be decided by numerical
+computation.
+
+
+\end{solution}
+\end{exercise}
+
+\begin{exercise} \label{c14.5.2b}
+\begin{matlabEquation}\label{MATLAB:58}
+A=\left(\begin{array}{rrrr}
+    2.7666  &  0.2833  &  1.4000  &  4.5666\\
+    2.4111  &  1.9056  & -1.8000  & -0.1889\\
+   -0.4111  &  2.0944  & -0.2000  &  0.1889\\
+   -7.9443  & -2.4721  & -1.0000  & -4.4721
+\end{array}\right).
+\end{matlabEquation}
+
+\begin{solution}
+\ans No.
+
+\soln The eigenvalues of $A$ are 
+\begin{verbatim}
+  -0.5104 + 4.5851i
+  -0.5104 - 4.5851i
+   0.5104 + 1.8703i
+   0.5104 - 1.8703i
+\end{verbatim}
+The eigenvalues are not purely imaginary.
+
+\end{solution}
+\end{exercise}
+
+\begin{exercise} \label{c14.5.2c}
+\begin{matlabEquation}\label{MATLAB:59}
+A=\left(\begin{array}{rrrrr}
+    0.7130  & 24.8184  & 32.0740  &  2.8959  & 15.3610\\
+    0.0552  & 17.0732  & 21.1395  &  6.6120  & 11.0843\\
+   -0.6168  &-12.0764  &-16.0165  & -1.6151  & -7.3997\\
+    1.0410  & -3.3312  & -2.0820  & -3.3312  & -3.1230\\
+   -0.5205  &  1.6656  &  1.0410  &  1.6656  &  1.5615
+\end{array}\right).
+\end{matlabEquation}
+
+\begin{solution}
+\ans No.
+
+\soln The eigenvalues of $A$ are 
+\begin{verbatim}
+   0.0003 + 3.1233i
+   0.0003 - 3.1233i
+  -0.0003 + 1.0005i
+  -0.0003 - 1.0005i
+        0          
+\end{verbatim}
+The eigenvalues are not purely imaginary.
+
+\end{solution}
+\end{exercise}
+
+\begin{exercise} \label{c14.5.2d}
+\begin{matlabEquation}\label{MATLAB:60}
+A=\left(\begin{array}{rrrrr}
+  -10.2870 &  40.8184 &  30.0740 &  19.8959 &  38.3610\\
+   -7.4448 &  25.0732 &  16.1395 &  15.8620 &  26.0843\\
+    6.8833 & -20.0764 & -11.0165 & -10.3652 & -21.3998\\
+    1.0410 &  -3.3312 &  -2.0820 &  -3.3312 &  -3.1230\\
+   -0.5205 &   1.6656 &   1.0410 &   1.1656 &   0.5615
+\end{array}\right).
+\end{matlabEquation}
+
+\begin{solution}
+\ans No.
+
+\soln The eigenvalues of $A$ are 
+\begin{verbatim}
+  -0.9999 + 2.9587i
+  -0.9999 - 2.9587i
+   0.2677          
+   3.7321          
+  -1.0000          
+\end{verbatim}
+The eigenvalues are not purely imaginary.
+
+
+
+
+\end{solution}
+\end{exercise}
+\end{document}

@@ -1,0 +1,28 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c5.2.9}
+Let $W=\Span\{w_1,\ldots,w_k\}$ be a subspace of the vector
+space $V$ and let $w_{k+1}\in W$ be another vector.  Prove that
+$W=\Span\{w_1,\ldots,w_{k+1}\}$.
+
+\begin{solution}
+
+Since $W = \Span\{w_1,\dots ,w_k\}$, every vector $x \in W$ can be
+written as the linear combination
+\[ x = a_1w_1 + \cdots + a_kw_k \]
+for some choice of $a_1 \dots a_k$.  Since $w_{k + 1}$ is a vector in
+$W$, it can therefore be written as
+\[ w_{k + 1} = b_1w_1 + \cdots + b_kw_k \]
+and any vector $x \in W$ can be written as
+\[ \begin{array}{rcl}
+x & = &
+a_1w_1 + \cdots + a_kw_k + a_{k+1}w_{k+1} \\
+& = & a_1w_1 + \cdots + a_kw_k + a_{k+1}b_1w_1 + \cdots + a_{k+1}b_kw_k
+\\ & = & (a_1 + a_{k+1}b_1)w_1 + \cdots + (a_k + a_{k+1}b_k)w_k.
+\end{array} \]
+So, $W = \Span\{w_1,\dots ,w_{k+1}\}$.
+
+\end{solution}
+\end{exercise}
+\end{document}

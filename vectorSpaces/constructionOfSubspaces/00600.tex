@@ -1,0 +1,70 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\noindent In Exercises~\ref{c5.2.6a} -- \ref{c5.2.6d} let $W\subset\CCone$
+be the subspace spanned by the two polynomials $x_1(t) = 1$ and
+$x_2(t)=t^2$.  For the given function $y(t)$ decide whether or not $y(t)$
+is an element of $W$.  Furthermore, if $y(t)\in W$, determine whether the set
+$\{y(t),x_2(t)\}$ is a spanning set for $W$.
+\begin{exercise} \label{c5.2.6a}
+$y(t) = 1-t^2$,
+
+\begin{solution}
+
+\ans The function $y(t) = 1 - t^2$ is an element of $W$ and the set
+$\{y(t),x_2(t)\}$ is a spanning set for $W$.
+
+
+
+\soln The space $W$ equals $\Span\{x_1(t),x_2(t)\}$ where $x_1(t)=1$ and 
+$x_2(t)=t^2$.  To show that $y(t)$ is an element of $W$, let
+$a = 1$ and $b = -1$, and compute
+\[
+ax_1(t) + bx_2(t) = x_1(t) - x_2(t) = 1 - t^2 = y(t). 
+\]
+To show that $\{y(t),x_2(t)\}$ is a spanning set for $W$, rewrite every
+linear combination of $x_1(t)$ and $x_2(t)$ in terms of $y(t)$ and $x_2(t)$, 
+as follows:
+\[ 
+ax_1(t) + bx_2(t) = a + bt^2 = a(1 - t^2) + (a + b)t^2
+= ay(t) + (a + b)x_2(t). 
+\]
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c5.2.6b}
+$y(t) = t^4$,
+
+\begin{solution}
+The function $y(t) = t^4$ is not in $W$.
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c5.2.6c}
+$y(t) = \sin t$,
+
+\begin{solution}
+The function $y(t) = \sin(t)$ is not in $W$.
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c5.2.6d}
+$y(t) = 0.5 t^2$
+
+\begin{solution}
+
+\ans The function $y(t) = 0.5t^2$ is an element of $W$, but the set
+$\{y(t),x_2(t)\}$ does not span $W$.
+
+\soln When $a = 0$ and $b = 0.5$,
+\[ 
+ax_1(t) + bx_2(t) = 0.5x_2(t) = 0.5t^2 = y(t). 
+\]
+In this case, there exist functions in $W$ that are not in 
+$\Span\{y(t),x_2(t)\}$.  For example, the function $x_1(t) = 1$ cannot
+be written as a linear combination of $x_2(t)$ and $y(t)$.
+
+\end{solution}
+\end{exercise}
+\end{document}

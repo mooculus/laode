@@ -1,0 +1,37 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c11.1.7}
+Find $e^{tJ}$ where 
+\[
+J = \left(\begin{array}{rrrrr} 
+-1 &  1 &  0 &  0 & 0 \\ 
+ 0 & -1 &  1 &  0 & 0 \\
+ 0 &  0 & -1 &  0 & 0 \\
+ 0 &  0 &  0 &  2 & 1 \\
+ 0 &  0 &  0 &  0 & 2
+\end{array}\right).
+\]
+
+\begin{solution}
+
+\ans $e^{tJ}= \cmattwo{e^{-t}\left(\begin{array}{rrr} 
+ 1 & t & \frac{1}{2}t^2\\ 0 & 1 & t\\ 0 & 0 & 1\end{array}\right)}{0}{0}
+{e^{2t}\mattwo{1}{t}{0}{1}}$.
+
+\soln Since $J$ is a block form
+\[
+J = \left(\begin{array}{rrr|rr} 
+-1 &  1 &  0 &  0 & 0 \\ 
+ 0 & -1 &  1 &  0 & 0 \\
+ 0 &  0 & -1 &  0 & 0 \\
+\hline
+ 0 &  0 &  0 &  2 & 1 \\
+ 0 &  0 &  0 &  0 & 2
+\end{array}\right)
+\]
+Jordan form matrix, we can exponentiate the diagonal blocks separately.
+
+\end{solution}
+\end{exercise}
+\end{document}

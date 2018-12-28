@@ -1,0 +1,23 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c9.1.3}
+Choose values for the constants in the predator-prey equations 
+\eqref{e:PP} and verify numerically that there is a unique 
+equilibrium surrounded by periodic solutions in the first 
+quadrant of the phase portrait for these equations.
+
+\begin{solution}
+
+Solve \eqref{e:PP} for $\dot{x} = \dot{y} = 0$ to find that there are
+two equilibrium points, at $(0,0)$ and $(-\frac{\mu_2}{\sigma_2},
+-\frac{\mu_1}{\sigma_1})$.  The second equilibrium is in the first
+quadrant for any values of the constants that conform to the assumed
+restrictions: $\mu_1 > 0$, $\mu_2 < 0$, $\sigma_1 < 0$, and
+$\sigma_2 > 0$.  Load the system into {\tt pplane5} and graph with
+several values for the constants to confirm that the nonzero
+equilibrium is surrounded by periodic solutions.
+
+\end{solution}
+\end{exercise}
+\end{document}

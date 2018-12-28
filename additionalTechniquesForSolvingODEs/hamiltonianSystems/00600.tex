@@ -1,0 +1,38 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c14.7.9}
+Determine the equilibria in the pendulum equations \eqref{e:pendulum}.
+Refer to the phase portrait of the ideal pendulum in Figure~\ref{F:ppen}
+and describe in words the motion of the pendulum corresponding to a periodic 
+solution surrounding one of the centers.  Describe the motion of the 
+pendulum corresponding to the initial condition $(x(0),y(0))=(0,2)$.
+
+\begin{solution}
+\ans The equilibria of \eqref{e:pendulum} are
+$(x,y)=(k\pi,0)$ where $k$ is an integer.
+
+\soln Physically there are two different types of equilibria corresponding
+to the two situations that the pendulum is in a steady straight down
+position or in a steady straight up position.  The straight down
+positions correspond to the equilibria for $k$ even and the straight
+up positions to the equilibria with $k$ odd.  The straight down
+states are centers whereas the straight up states are saddles.
+
+The periodic solutions surrounding the centers (i.e.\ $k$ even) correspond to 
+motions where the pendulum is hanging down and swinging back and forth.
+Indeed, from Figure~\ref{F:ppen} we can see that the periodic solutions
+cross the $x$-axis vertically, and these points correspond to the turning
+points of the swinging motion of the pendulum where its velocity vanishes.
+
+The orbits that do not intersect the $x$-axis -- for instance the
+solution with initial condition $(0,2)$ -- correspond to motions where
+the velocity of the pendulum never vanishes.  Thus, the pendulum is
+in a spinning motion going in a clockwise ($y>0$) or counterclockwise
+($y<0$) direction.
+
+
+
+\end{solution}
+\end{exercise}
+\end{document}

@@ -1,0 +1,32 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c5.4.7}
+Suppose that the three vectors $u_1,u_2,u_3\in\R^n$ are linearly
+independent.  Show that the set
+\[
+\{u_1+u_2, u_2+u_3,u_3+u_1\}
+\]
+is also linearly independent.
+
+\begin{solution}
+
+To show that the vectors $u_1 + u_2$, $u_2 + u_3$ and $u_3 + u_1$
+are linearly independent, we assume that there exist scalars $r_1$,
+$r_2$, $r_3$ such that
+\[ r_1(u_1 + u_2) + r_2(u_2 + u_3) + r_3(u_3 + u_1) = 0. \]
+We then prove that $r_1 = r_2 = r_3 = 0$, as follows.
+Use distribution to obtain
+\[ (r_1 + r_3)u_1 + (r_1 + r_2)u_2 + (r_2 + r_3)u_3 = 0. \]
+Since the set $\{u_1,u_2,u_3\}$ is linearly independent,
+\[ \begin{array}{rrrrrcl}
+r_1 & & & + & r_3 & = & 0 \\
+r_1 & + & r_2 & & & = & 0 \\
+& & r_2 & + & r_3 & = & 0. \end{array} \]
+Solving this system yields $r_1 = r_2 = r_3 = 0$,
+so the set $\{u_1 + u_2,u_2 + u_3,u_3 + u_1\}$ is linearly
+independent.
+
+\end{solution}
+\end{exercise}
+\end{document}

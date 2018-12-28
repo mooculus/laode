@@ -1,0 +1,46 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise}  \label{Ex:cont}
+Consider the function
+\[
+z(t) = H_1(t)(1-\cos(2(t-1))) = \left\{
+\begin{array}{cl} 0 & t \leq 1 \\ 1-\cos(2(t-1)) & t > 1. \end{array}\right.
+\]
+Show that $z(t)$ is continuous at $t=1$ by verifying that 
+\[
+\lim_{t\to 1^+}z(t) = \lim_{t\to 1^-}z(t).
+\]
+Show that $z(t)$ is differentiable and that $\dot{z}(1)=0$ by verifying that 
+\[
+\lim_{h\to 0^+} \frac{z(1+h)-z(1)}{h} = 0 = 
+\lim_{h\to 0^-} \frac{z(1+h)-z(1)}{h}
+\]
+
+\begin{solution}
+Verify that the equality holds by substituting $z(t)$ into
+both sides:
+\[
+\begin{array}{rcl}
+\dps \lim_{t \rightarrow 1^{+}}z(t) & = &
+\dps \lim_{t \rightarrow 1^{+}}(1 - \cos(2(t - 1))) = 1 - \cos(0) = 0. \\
+\dps \lim_{t \rightarrow 1^{-}}z(t) & = &
+\dps \lim_{t \rightarrow 1^{-}}(0) = 0.
+\end{array}
+\]
+So $z(t)$ is continuous.  Similarly, verify that $z(t)$ is differentiable
+by substituting $z(t)$ into both sides of the equation, then using
+L'H\^{o}spital's rule:
+\[
+\begin{array}{rcl}
+\dps \lim_{h \rightarrow 0^{+}}\frac{z(1 + h) - z(1)}{h}
+& = & \dps \lim_{h \rightarrow 0^{+}}\frac{(1 - \cos(2h)) - 0}{h}
+= \dps \lim_{h \rightarrow 0^{+}}2\sin(2h) = 0. \\
+\dps \lim_{h \rightarrow 0^{-}}\frac{z(1 + h) - z(1)}{h}
+& = & \dps \lim_{h \rightarrow 0^{-}}\frac{0}{h} = 0.
+\end{array}
+\]
+
+\end{solution}
+\end{exercise}
+\end{document}

@@ -1,0 +1,49 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c2.1.1}
+Using \Matlab type the commands {\tt e2\_1\_8} and {\tt e2\_1\_9}
+to load the matrices:
+\begin{matlabEquation}\label{MATLAB:15}
+A = \left(
+\begin{array}{rrrrrr}
+   -5.6 &  0.4 & -9.8 &  8.6 &  4.0 & -3.4\\
+   -9.1 &  6.6 & -2.3 &  6.9 &  8.2 &  2.7\\
+    3.6 & -9.3 & -8.7 &  0.5 &  5.2 &  5.1\\
+    3.6 & -8.9 & -1.7 & -8.2 & -4.8 &  9.8\\
+    8.7 &  0.6 &  3.7 &  3.1 & -9.1 & -2.7\\
+   -2.3 &  3.4 &  1.8 & -1.7 &  4.7 & -5.1
+\end{array}
+\right)
+\end{matlabEquation}
+and the {\em vector\/}
+\begin{matlabEquation}\label{MATLAB:16}
+b = \left(
+\begin{array}{r}
+    9.7\\
+    4.5\\
+    5.1\\
+    3.0\\
+   -8.5\\
+    2.6
+\end{array}
+\right)
+\end{matlabEquation}
+Solve the corresponding system of linear equations.
+
+\begin{solution}
+
+Type {\tt A}$\backslash${\tt b}, to get
+\begin{verbatim}
+ans =
+    0.7060
+    2.4963
+   -2.9778
+   -1.7627
+   -0.1163
+    0.2654
+\end{verbatim}
+
+\end{solution}
+\end{exercise}
+\end{document}

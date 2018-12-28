@@ -1,0 +1,67 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c15.1.7}
+Use \Matlab to solve the initial value problem
+\[
+\frac{dx}{dt} = x,\quad x(0)=1
+\]
+(a) by the implicit Euler method, and (b) by the implicit trapezoidal 
+rule on the interval $[0,2]$.  In each case use the step size $h=0.1$.
+{\bf Hint:} Before working with \Matlabp, use this specific differential
+equation to solve explicitly for $x_{k+1}$ in \eqref{eq:impleulit} and 
+\eqref{eq:imtrap}.
+
+\begin{solution}
+
+(a) The implicit Euler method applied to the given initial
+value problem takes the form
+\[
+t_{k+1} = t_k + h\AND x_{k+1} = x_k + h x_{k+1}.
+\]
+We can solve the second equation  for $x_{k+1}$ and obtain
+\[
+x_{k+1} = \frac{x_k}{1-h}.
+\]
+The approximate solution is now obtained by the \Matlab commands
+\begin{verbatim}
+h    = 0.1;
+t(1) = 0;
+x(1) = 1;
+K    = 20;
+for k = 1:K
+   t(k+1) = t(k)+h;
+   x(k+1) = x(k)/(1-h);
+end
+plot(t,x,'o')
+hold on
+plot(t,x,'--')
+\end{verbatim}
+
+(b) The implicit trapezoidal rule applied to the given initial
+value problem takes the form
+\[
+t_{k+1} = t_k + h\AND x_{k+1} = x_k + \frac{h}{2}(x_k+x_{k+1}).
+\]
+We can solve the second equation for $x_{k+1}$ and obtain
+\[
+x_{k+1} = \frac{1+\frac{h}{2}}{1-\frac{h}{2}}x_k.
+\]
+The approximate solution is now obtained by the \Matlab commands
+\begin{verbatim}
+h    = 0.1;
+t(1) = 0;
+x(1) = 1;
+K    = 20;
+for k = 1:K
+   t(k+1) = t(k)+h;
+   x(k+1) = (1+h/2)/(1-h/2)*x(k);
+end
+plot(t,x,'o')
+hold on
+plot(t,x,'--')
+\end{verbatim}
+
+\end{solution}
+\end{exercise}
+\end{document}

@@ -1,0 +1,48 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c11.4.1}
+Compute the three equilibria of the Lorenz system \eqref{e:Lorenz}
+\index{Lorenz system!equilibria}
+and use {\tt ode45} to decide whether or not these are stable.
+
+\begin{solution}
+\ans The system has unstable equilibria $X_1 = (0,0,0)$, 
+$X_2 = (6\sqrt{2},6\sqrt{2},27)$, and $X_3 = (-6\sqrt{2},-6\sqrt{2},27)$.
+
+\soln The equilibria of the system occur when $\dot{x_1} = 0$, $\dot{x_2}
+= 0$, and $\dot{x_3} = 0$.  According to the first equation of the Lorenz
+system, $\dot{x_1} = 0$ when $x_1 = x_2$.  Thus, at the equilibria, the
+other two equations can be rewritten
+\[
+\begin{array}{rcl}
+0 & = & \dot{x_2} = \rho x_1 - x_1 - x_1x_3 = x_1(\rho - 1 - x_3). \\
+0 & = & \dot{x_3} = -\beta x_3 + x_1^2. \\
+\end{array}
+\]
+So, the system is in equilibrium either at the origin, $X =
+(\sqrt{\beta (\rho - 1)}, \sqrt{\beta (\rho - 1)}, \rho 1)$, or
+$X = (-\sqrt{\beta (\rho - 1)}, -\sqrt{\beta (\rho - 1)}, \rho - 1)$.
+To compute the stabilities at the equilibria, first find the general
+Jacobian matrix for the system:
+\[
+dJ = \cmatthree{-\sigma}{\sigma}{0}{\rho - x_3}{-1}{-x_1}{x_2}{x_1}{-\beta}.
+\]
+Substitute in the values $\beta = -\frac{8}{3}$, $\rho = 28$, and $\sigma
+= 10$ to obtain
+\[
+dJ = \cmatthree{-10}{10}{0}{28 - x_3}{-1}{-x_1}{x_2}{x_1}{-\frac{8}{3}}
+\]
+and $X_1 = (0,0,0)$, $X_2 = (6\sqrt{2},6\sqrt{2},27)$, and
+$X_3 = (-6\sqrt{2},-6\sqrt{2},27)$.  Then compute the eigenvalues at the
+equilibria.  At $X_1$, there are two negative real eigenvalues and one 
+positive real eigenvalue, so $X_1$ cannot be stable.  At $X_2$ and $X_3$,
+there is one negative real eigenvalue and a pair of complex conjugate
+eigenvalues with positive real part.  Determine numerically that most
+initial conditions do not converge on either $X_2$ or $X_3$ in forward time,
+so $X_2$ and $X_3$ are not stable.
+
+
+\end{solution}
+\end{exercise}
+\end{document}

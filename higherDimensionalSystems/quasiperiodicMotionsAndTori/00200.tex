@@ -1,0 +1,48 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise}  \label{EX:tor4}
+Let A be the $4\times 4$ torus example given in \eqref{e:tor4}.  Choose three 
+different initial conditions to the system of ODEs $\dot{X}=AX$ and use 
+{\tt ode45} compute solutions with these initial conditions.  (To decrease 
+the length of time needed by the computer to do these calculations, shorten 
+the time period to say $[0,30]$.)  
+\begin{itemize}
+\item[(a)]  Based on these calculations, verify that most initial conditions 
+lead to quasiperiodic toroidal motions.  Display both time series and 
+three dimensional phase portraits of your solutions. 
+\item[(b)]  Take as initial condition the real part of one of the complex
+eigenvectors of $A$.  (You will need to use \Matlab to find the eigenvalues
+and eigenvectors of $A$.)  What kind of phase space motion do you see now? 
+How does this solution differ from the toroidal motions obtained in (a)? 
+Use Jordan normal forms to explain why your numerical answer is correct.
+\end{itemize}
+
+\begin{solution}
+
+(a) Let {\tt X0} be an initial condition of your choice, written as a
+column vector.  Then the command {\tt [t,x]=ode45('ftor4',0,100,X0)}
+will find solutions to the system $\dot{X} = AX$ with initial condition
+$X_0$.  For most choices of $X_0$, the graphs are similar to those shown
+in Figures~\ref{F:ftor4ts} and \ref{F:ftorphase} in the text.
+
+(b) Load matrix $A$ into \Matlabp.  Then, use the command
+{\tt [S,D] = eig(A)} to find that $\lambda = 4.7958i$ is an eigenvalue of
+$A$ with corresponding eigenvector $v = (-0.3447 + 0.7587i, 0.0139 +
+0.3724i, 0.0800 + 0.1462i, 0.0139 + 0.03724i)$.  Using {\tt ode45}, find
+the solutions to the system with initial condition $X_0 = (-0.3447, 0.0139,
+0.0800, 0.0139)^t$.  The time series of this system are shown in
+Figure~\ref{EX:tor4}a, and three phase portraits are shown in
+Figure~\ref{EX:tor4}b.
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/tor4a.eps,width=2.0in}
+			\hspace{1.0in}
+                       \psfig{file=exfigure/tor4b.eps,width=2.0in}}
+                \exercaptwo{EX:tor4}
+\end{figure}
+
+\end{solution}
+\end{exercise} 
+\end{document}

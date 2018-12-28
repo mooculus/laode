@@ -1,0 +1,33 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c6.7.2}
+By direct integration solve the differential equation \eqref{e:pointpart}
+for a point particle moving only under the influence of gravity.  Show
+that the solution is
+\[
+x(t) = -\frac{1}{2}gt^2 + v_0t + x_0
+\]
+where $x_0$ is the initial position of the particle and $v_0$ is the initial
+velocity.
+
+\begin{solution}
+
+By \eqref{e:pointpart}, a point particle moving only under the influence of
+gravity has a position $x(t)$ governed by
+\[
+\frac{d^2x}{dt^2} + g = 0, \quad \mbox{ or } \frac{d^2x}{dt^2} = -g.
+\]
+Integrate this formula to obtain $\frac{dx}{dt} = -gt + C_1$.  In this case
+$\frac{dx}{dt}(t)$ is the velocity of the particle at time $t$, so the
+constant $C_1 = v_0$, the initial velocity of the particle.  Integrate
+$\frac{dx}{dt} = -gt + v_0$ to obtain
+$x = -\frac{1}{2}gt^2 + v_0t + C_2$.  In this case, $C_2 = x_0$ the position
+of the particle at time $t_0$.  Thus,
+\[
+x = -\frac{1}{2}gt^2 + v_0t + x_0.
+\]
+
+\end{solution}
+\end{exercise}
+\end{document}

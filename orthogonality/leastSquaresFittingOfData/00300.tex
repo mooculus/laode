@@ -1,0 +1,39 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c7.6.2}
+Find the best sinusoidal approximation to the monthly average low temperatures
+in Paris and Rio de Janeiro.  How does the variation of these temperatures
+about the mean compare to the high temperature calculations?  Was this the
+result you expected?
+
+\begin{solution}
+
+\ans A good sinusoidal approximation for the low temperatures in Paris
+is 
+\[ \hbox{temp}(t) = 51.4167 - 9.4908\cos(\frac{2\pi t}{12}) -
+8.4745\sin(\frac{2\pi t}{12}). \]
+An approximation for the low temperatures in Rio is
+\[ \hbox{temp}(t) = 67.8333 + 3.3987\cos(\frac{2\pi t}{12}) +
+3.5654\sin(\frac{2\pi t}{12}). \]
+
+\soln Use a set of \Matlab commands similar to those shown in
+Section~\ref{S:7.6} to graph the low temperatures in Paris
+(Figure~\ref{c7.6.2}a) and Rio (Figure~\ref{c7.6.2}b).  The
+variations about the mean temperature are $d_P = 12.7237$ and
+$d_R = 4.9258$.  (These values can be computed for each set of data
+by typing {\tt d = sqrt(b(2)\^{}2 + b(3)\^{}2)} in \Matlabp.) 
+The low temperatures in Paris vary more depending on the time of
+year than do the temperatures in Rio, which is consistent with
+the graphs and with the values of $d$ for the high temperatures.
+
+\begin{figure}[htb]
+		\centerline{%
+		\psfig{file=exfigure/7-6-2a.eps,width=2.75in}
+		\psfig{file=exfigure/7-6-2b.eps,width=2.75in}}
+	\exercaptwo{c7.6.2}
+\end{figure}
+
+\end{solution}
+\end{exercise}
+\end{document}

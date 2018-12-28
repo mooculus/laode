@@ -1,0 +1,69 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+
+\CEXER
+
+\noindent In Exercises~\ref{exer:powita} -- \ref{exer:powitc}
+compute the eigenvalues and the eigenvectors of the 
+$2\times 2$ matrix.  Then load the matrix into the program {\sf map}
+\index{\computer!map} in \Matlab and iterate.  That is, choose an initial
+vector $v_0$ and use {\sf map} to compute $v_1=Av_0$, $v_2=Av_1$, \ldots.
+How does the result of iteration compare with the eigenvectors and
+eigenvalues that you have found?
+{\bf Hint:} You may find it convenient to use the feature {\sf Rescale} in
+the {\sf MAP Options}.  Then the norm of the vectors is rescaled to $1$
+after each use of the command {\sf Map} and the vectors $v_j$ will not
+escape from the viewing screen.
+\begin{exercise}  \label{exer:powita}
+$A=\mattwo{1}{3}{3}{1}$
+
+\begin{solution}
+
+\ans The eigenvectors of $A$ are $w_1 = (1,1)$ and
+$w_2 = (1,-1)$ with eigenvalues $\lambda_1 = 4$ and $\lambda_2 = -2$.  
+
+\soln Note that any matrix of the form $\mattwo{a}{b}{b}{a}$
+has eigenvectors $w_1$ and $w_2$ with eigenvalues
+$\lambda_1 = a + b$ and $\lambda_2 = a - b$.
+By iterating using {\tt map}, we see that $v_j$ approaches a multiple
+of $(1,1)$ as $j$ increases for $v_0 \neq (1,-1)$.  If $v_0$ is a
+multiple of $(1,-1)$, then $v_j$ is a multiple of $(1,-1)$ for all $j$.
+
+\para In Exercises~\ref{exer:powita} -- \ref{exer:powitc} let $u_1$ be the
+eigenvector of matrix associated to the eigenvalue $\lambda_1$ where
+$|\lambda_1| > |\lambda_2|$. These exercises demonstrate that $v_j$ 
+approaches the direction of $u_1$ as $j$ increases when $v_0$ is
+not a scalar multiple of $u_2$.
+
+\end{solution}
+\end{exercise}
+\begin{exercise}  \label{exer:powitb}
+$B=\mattwo{11}{9}{9}{11}$
+
+\begin{solution}
+
+\ans The eigenvectors of $B$ are $w_1 = (1,1)$ and $w_2 = (1,-1)$ with  
+eigenvalues $\lambda_1 = 20$ and $\lambda_2 = 2$.  
+
+\soln See solution to Exercise~\ref{exer:powita}.
+
+\end{solution}
+\end{exercise}
+\begin{exercise}  \label{exer:powitc}
+$C=\mattwo{0.005}{-2.005}{-2.005}{0.005}$
+
+\begin{solution}
+
+\ans The eigenvectors of $C$ are $w_1 = (1,1)$ and $w_2 = (1,-1)$ with 
+eigenvalues $\lambda_1 = -2$ and $\lambda_2 = 2.01$.  
+
+\soln See comment after the solution to Exercise~\ref{exer:powita}.
+By iterating using {\tt map}, we see that $v_j$ approaches a multiple
+of $(1,-1)$ as $j$ increases for $v_0 \neq (1,1)$.  If $v_0$ is a
+multiple of $(1,1)$, then $v_j$ is a multiple of $(1,1)$ for all $j$.
+
+\end{solution}
+\end{exercise}
+\end{document}

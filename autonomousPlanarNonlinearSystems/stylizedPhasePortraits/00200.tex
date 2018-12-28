@@ -1,0 +1,34 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c8.4.1}
+Use {\pplane} to determine the stylized phase portrait for 
+the system
+\begin{matlabEquation}\label{phaseportrait1}
+\begin{array}{rcl}
+\dot{x} & = &  2x-y+3\cos(x+y)  \\
+\dot{y} & = &  x -3y -2xy
+\end{array}
+\end{matlabEquation}
+on the square $-10 \leq x,y \leq 10$.  Indicate all equilibria
+(and their types) and all periodic solutions.
+
+\begin{solution}
+
+Graph the system using {\tt pplane5}.  Then, find a saddle point at
+$(-0.7426,-0.4902)$.  Plot the unstable and stable orbits.  The unstable
+orbits and one stable orbit leave the graph window.  The other stable
+orbit limits on a periodic solution around another equilibrium, the
+spiral sink at $(-1.298,-3.209)$.  These are the only equilibria of
+the system in this region.  The phase portrait is shown in
+Figure~\ref{c8.4.1}.
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/8-4-1.eps,width=3.0in}}
+                \exercap{c8.4.1}
+\end{figure}
+
+\end{solution}
+\end{exercise}  
+\end{document}

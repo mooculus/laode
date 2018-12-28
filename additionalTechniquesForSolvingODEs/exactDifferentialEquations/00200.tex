@@ -1,0 +1,46 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c14.6.4}
+Verify that the differential equation 
+\[
+\dps\frac{dx}{dt} = \dps \frac{2t-x}{t+1} 
+\]
+is exact and find a solution with initial value $x(0) = 3$.
+
+\begin{solution}
+\ans A solution to the initial value problem is
+$x(t) = \dps\frac{3 + t^2}{1 + t}$.
+
+\soln Write the differential equation as $\dps\frac{dx}{dt} =
+\frac{G(t,x)}{H(t,x)}$, where $G(t,x) = 2t - x$ and $H(t,x) = t + 1$.  Then,
+since
+\[
+-\frac{\partial G}{\partial x} = 1 = \frac{\partial H}{\partial t},
+\]
+the differential equation is exact, by
+Proposition~\ref{prop:exact}.  Next, we must find a function $F(t,x)$
+satisfying \eqref{eq:excond}.  By integration, obtain
+\[
+\Omega(t,x) = \int H(t,x)dy = \int (t + 1)dx = (t + 1)x.
+\]
+Then, find the function $h(t)$ such that
+\[
+h'(t) = -\frac{\partial}{\partial t}\Omega(t,x) - G(t,x)
+= -2t.
+\]
+In this case, $h(t) = -t^2$.  Finally, compute
+\[
+F(t,x) = \Omega(t,x) + h(t) = tx + x - t^2,
+\]
+the function satisfying \eqref{eq:excond}.  Now, substitute the initial
+condition $(t,x) = (0,3)$ into $F(t,x)$, obtaining $F(0,3) = 3$.  Thus,
+$x(t)$ satisfies
+\[
+tx + x - t^2 = 3.
+\]
+Solve for $x$ to find the solution to the initial value problem.
+
+\end{solution}
+\end{exercise}
+\end{document}

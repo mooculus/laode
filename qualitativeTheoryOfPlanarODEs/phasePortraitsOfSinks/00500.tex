@@ -1,0 +1,102 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\noindent In Exercises~\ref{c6.8.2a} -- \ref{c6.8.2d}, find a $2\times 2$
+matrix $C$ so that the given statement is satisfied.
+\begin{exercise} \label{c6.8.2a}
+The differential equation $\dot{X}=CX$ has a saddle at the origin with
+unstable orbit in the direction $(2,3)$.
+
+\begin{solution}
+
+\ans One possible solution is $C = \mattwo{1}{0}{3}{-1}$.
+
+\soln Since the system has an invariant manifold in the direction $(2,3)$,
+$v_1 = (2,3)$.  Let $\lambda_1$ be the eigenvalue associated to $v_1$.
+Since the manifold is unstable, $\lambda_1 > 0$.  The requirement
+that the system has a saddle at the origin implies that $C$ has a second
+eigenvalue $\lambda_2 < 0$.  Choose a second eigenvector $v_2$ independent
+of $v_1$, such as $v_2 = (0,1)$ and choose eigenvalues, for example:
+$\lambda_1 = 1$ and $\lambda_2 = -1$.
+
+\para The matrix $C$ has two real eigenvalues.  Thus, by
+Theorem~\ref{T:putinform}, $C$ is similar
+to the diagonal matrix $D$ which has $\lambda_1$ and $\lambda_2$ as
+entries along the main diagonal.  Therefore, $C = PDP^{-1}$, where $P$
+is the matrix whose columns are the eigenvectors of $C$.  Thus,
+\[
+C = \mattwo{2}{0}{3}{1}\mattwo{1}{0}{0}{-1}\mattwo{\frac{1}{2}}{0}
+{-\frac{3}{2}}{1} = \mattwo{1}{0}{3}{-1}. \]
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c6.8.2b}
+The differential equation $\dot{X}=CX$ has a spiral sink at the origin
+where solutions decay to the origin at rate $\sigma=-0.5$.
+
+\begin{solution}
+
+\ans One possible matrix is $C = \mattwo{-0.5}{-1}{1}{-0.5}$.
+
+\soln Since the origin is a spiral, the eigenvalues of $C$ are a complex
+conjugate pair, $lambda_1 = \sigma + \tau i$ and $lambda_2 = \sigma -
+\tau i$.  Since the origin is a sink, $\sigma$ is negative, and determines
+the rate at which solutions decay to the origin, so $\sigma = -0.5$.
+From Section~\ref{S:evchp}, we know that the matrix
+\[ \mattwo{\sigma}{-\tau}{\tau}{\sigma} \]
+has complex conjugate eigenvalues $\sigma \pm \tau$ if $\tau \neq 0$.
+Thus, this matrix is a solution for any nonzero $\tau$.  For example,
+let $\tau = 1$.
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c6.8.2c}
+The differential equation $\dot{X}=CX$ has an improper nodal source at the
+origin with trajectories approaching the origin tangent to the $y$ axis.
+
+\begin{solution}
+
+\ans One possible matrix is $C = \mattwo{1}{0}{1}{1}$.
+
+\soln Since the system has an improper nodal source at the origin, there
+are two real equal positive eigenvalues, $\lambda_1 = \lambda_2 > 0$,
+associated to a single eigenvector, $v$.  Let $\lambda = 1$ be an
+eigenvalue.  The trajectories of an improper nodal system approach the
+origin tangent to the eigenvector, so, since trajectories approach
+tangent to the $y$-axis, the eigenvector is $v = (0,1)$.  By
+Theorem~\ref{T:putinform}, if $C$ has one
+real eigenvector, then $C = PDP^1$, where
+\[ D = \mattwo{\lambda}{1}{0}{\lambda} \AND P = (v|w) \]
+such that $Cv = v + \lambda w$.  We can assign an arbitrary value to
+$w$.  For example, let $w = (1,0)$.  Then,
+\[ C = \mattwo{0}{1}{1}{0}\mattwo{1}{1}{0}{1}\mattwo{0}{1}{1}{0} =
+\mattwo{1}{0}{1}{1}. \]
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c6.8.2d}
+The differential equation $\dot{X}=CX$ has a nodal sink at the origin with
+trajectories approaching the origin tangent to the line $y=x$.
+
+\begin{solution}
+
+\ans One possible matrix is $C = \mattwo{-1}{0}{1}{-2}$.
+
+\soln Since the system has a nodal sink, the eigenvalues are real, unequal
+and negative.  That is, $\lambda_2 < \lambda_1 < 0$.  The trajectories
+of a nodal system approach the origin tangent to the eigenvector
+associated to the eigenvalue with smaller absolute value.  Thus, for
+this system, $v_1 = (1,1)$ is an eigenvalue associated to $\lambda_1$.
+Arbitrarily assign values to $\lambda_1$, $\lambda_2$ and $v_2$, with
+the given restrictions.  For example, let $\lambda_1 = -1$, $\lambda_2
+= -2$ and $v_2 = (0,1)$.  Therefore, by
+Theorem~\ref{T:putinform}, $C = PDP^{-1}$, where
+\[ D = \mattwo{-1}{0}{0}{-2} \AND P = (v_1|v_2). \]
+Thus,
+\[ C = \mattwo{1}{0}{1}{1}\mattwo{-1}{0}{0}{-2}\mattwo{1}{0}{-1}{1} =
+\mattwo{-1}{0}{1}{-2}. \]
+
+\end{solution}
+\end{exercise}
+\end{document}

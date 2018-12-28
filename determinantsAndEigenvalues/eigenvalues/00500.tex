@@ -1,0 +1,27 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c10.2.5}
+Find the characteristic polynomial and the eigenvalues of 
+\[
+A = \left(\begin{array}{rrr} -1 & 2 & 2 \\ 2 & 2 & 2 \\ -3 & -6 & -6 
+\end{array}\right).
+\]
+Find eigenvectors corresponding to each of the three eigenvalues.
+
+\begin{solution}
+
+\ans The characteristic polynomial of $A$ is $p_A(\lambda) = -(\lambda^3
++ 5\lambda^2 + 6\lambda) = -\lambda(\lambda + 2)(\lambda + 3)$. 
+The eigenvalues are $\lambda_1 = 0$, $\lambda_2 = -2$, and $\lambda_3 = -3$,
+with eigenvectors $v_1 = (0,1,-1)^t$, $v_2 = (2,-1,0)^t$, and 
+$v_3 = (1,0,-1)^t$, respectively.
+
+\soln The eigenvalues are the roots of the characteristic polynomial
+$p_A(\lambda) = \det(A - \lambda I_3)$.  The eigenvectors are vectors
+$v$ such that $Av = \lambda v$, where $\lambda$ is an eigenvalue of
+$A$.  Find them by solving the system $(A - \lambda I_3)v = 0$.
+
+\end{solution}
+\end{exercise}
+\end{document}

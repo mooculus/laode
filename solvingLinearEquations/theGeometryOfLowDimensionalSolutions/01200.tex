@@ -1,0 +1,38 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c2.2.4}
+Use \Matlab to determine graphically the geometry of the set of
+solutions to the system of equations:
+\[
+\begin{array}{rcrcrcr}
+  x & + & 3y & + & 4z  & = & 5\\
+ 2x & + &  y & + &  z  & = & 1\\
+-4x & + & 3y & + & 5z  & = & 7.
+\end{array}
+\]
+Attempt to use \Matlab to find an exact solution to this system
+and discuss the implications of your calculations.
+
+{\bf Hint:} After setting up the graphics display in \Matlabp,
+you can use the command {\tt view([0,1,0])} \index{\computer!view} to get
+a better view of the solution point.
+
+\begin{solution}
+
+\ans The solution set is a line because the three planes intersect in a line.
+
+\soln If the left-hand side of the system is entered into \Matlab as
+matrix {\tt A}, and the solution vector is entered as {\tt b}, then
+typing {\tt A}$\backslash${\tt b} yields
+\begin{verbatim}
+Warning: Matrix is singular to working precision.
+ans =
+   Inf
+   Inf
+   Inf
+\end{verbatim}
+
+\end{solution}
+\end{exercise}
+\end{document}

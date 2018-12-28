@@ -1,0 +1,38 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise}	\label{c4.2.3a}
+Show that every matrix of the form $\mattwo{a}{-b}{b}{a}$ corresponds to
+rotating the plane through the angle $\theta$ followed by a dilatation 
+$cI_2$ where
+\begin{eqnarray*}
+c & = & \sqrt{a^2+b^2}\\
+\cos\theta & = & \frac{a}{c} \\
+\sin\theta & = & \frac{b}{c}.
+\end{eqnarray*}
+
+\begin{solution}
+The matrix which is a rotation of the plane 
+through angle $\theta$ followed by a dilatation $cI_2$ is
+\[
+cR_\theta =
+\mattwo{c\cos\theta}{-c\sin\theta}{c\sin\theta}{c\cos\theta}.
+\]
+In order for the given matrix to equal $cR_\theta$, we need
+\[
+\mattwo{a}{-b}{b}{a} =
+\mattwo{c\cos\theta}{-c\sin\theta}{c\sin\theta}{c\cos\theta}.
+\]
+Thus, we have $a = c\cos\theta$ and $b = c\sin\theta$.  We can then write
+\[
+c^2 = c^2(cos^2\theta + \sin^2\theta) = c^2\cos^2\theta + c^2\sin^2\theta
+= a^2 + b^2,
+\]
+or
+\[
+c = \sqrt{a^2 + b^2}.
+\]
+
+\end{solution}
+\end{exercise}
+\end{document}

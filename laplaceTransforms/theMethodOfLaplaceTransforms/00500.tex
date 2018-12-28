@@ -1,0 +1,32 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\noindent In Exercises \ref{c13.1.0A} -- \ref{c13.1.0B} use partial fractions
+to find a function $x(t)$ whose Laplace transform is the given function
+$Y(s)$.  {\bf Hint:}  In your calculations, you may use the result of 
+Exercise~\ref{Ex:pf}.
+\begin{exercise} \label{c13.1.0A}
+$Y(s) = \dps\frac{1}{s^2-4s+3}$.
+
+\begin{solution}
+\ans $\dps x(t) = \frac{1}{2}(e^{3t}-e^t)$.
+
+\soln $\dps\frac{1}{s^2-4s+3} = \frac{1}{(s-3)(s-1)} =
+\frac{1}{2}\left(\frac{1}{s-3} - \frac{1}{s-1}\right)$.
+
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c13.1.0B}
+$Y(s) = \dps\frac{s-1}{s^2+5s+6}$.
+
+\begin{solution}
+\ans $\dps x(t) = 4e^{-3t}-3e^{-2t}$.
+
+\soln $\dps\frac{s-1}{s^2+5s+6} = \frac{s-1}{(s+3)(s+2)} =
+\frac{4}{s+3} - \frac{3}{s+2}$.
+
+\end{solution}
+\end{exercise}
+\end{document}

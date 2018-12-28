@@ -1,0 +1,30 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c5.4.5}
+Show that the polynomials $p_1(t) = 2+t$, $p_2(t) = 1+t^2$, and
+$p_3(t) = t-t^2$ are linearly independent vectors in the vector
+space $\CCone$.
+
+\begin{solution}
+
+\ans The polynomials $p_1(t) = 2 + t$, $p_2(t) = 1 + t^2$, and $p_3(t) =
+t - t^2$ are linearly independent in $\CCone$.  
+
+\soln We can determine this
+by noting that the polynomials are linearly dependent if there exists
+a nonzero vector $r = (r_1,r_2,r_3)$ such that $r_1p_1 + r_2p_2 +
+r_3p_3 = 0$.  It is convenient to represent each polynomial as a
+vector $(a,b,c) = p(t) = a + bt + ct^2$.  Thus, $p_1(t) = (2,1,0)$, 
+$p_2(t) = (1,0,1)$, and $p_3(t) = (0,1,-1)$.  Solve the homogeneous
+system $Ar = 0$, where $A$ is the matrix whose columns are $p_1$,
+$p_2$, and $p_3$, by row reduction.
+\[ \matthree{2}{1}{0}{1}{0}{1}{0}{1}{-1} \longrightarrow
+\matthree{1}{0}{0}{0}{1}{0}{0}{0}{1}. \]
+Therefore, there are no nonzero values of $r$ for which $r_1p_1 + 
+r_2p_2 + r_3p_3 = 0$, and the polynomials are linearly independent.
+
+
+\end{solution}
+\end{exercise}
+\end{document}

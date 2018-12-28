@@ -1,0 +1,50 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c8.2.6}
+Consider the planar nonlinear system of ODEs
+\begin{eqnarray*}
+\frac{dx}{dt} & = & 1 - 2x + y + x^2 - xy \\
+\frac{dy}{dt} & = & y - y^2
+\end{eqnarray*}
+\begin{itemize}
+\item[(a)] Find all equilibria of this system.
+\item[(b)] Are the equilibria asymptotically stable or not?
+\item[(c)] Determine the type of each equilibrium.
+\end{itemize}
+
+\begin{solution}
+
+(a) \ans Equilibria occur at the points $(1,0)$, $(1,1)$, and $(2,1)$.
+
+\soln Solve $0 = y - y^2$ to obtain $y = 1$ and $y = 0$, then substitute
+these values for $y$ into $0 = 1 - 2x + y + x^2 - xy$ to find the points
+at which $\frac{dx}{dt} = \frac{dy}{dt} = 0$.
+
+(b) \ans The equilibria at $(1,0)$ and $(2,1)$ are not asymptotically
+stable.  The equilibrium at $(1,1)$ is stable.
+
+\soln Compute the Jacobian matrix of the system:
+\[
+(dJ)_{(x,y)} = \cmattwo{-2 + 2x - y}{1 - x}{0}{1 - 2y}
+\]
+Specifically, at the equilibrium points, the Jacobian matrices are
+\[
+(dJ)_{(1,0)} = \mattwo{0}{0}{0}{1} \qquad (dJ)_{(1,1)} =
+\mattwo{-1}{0}{0}{-1} \qquad (dJ)_{(2,1)} = \mattwo{1}{-1}{0}{-1}.
+\]
+An equilibrium is asymptotically stable if both eigenvalues are
+negative.  The eigenvalues of $(1,0)$ are $0$ and $1 > 0$.
+The point $(1,1)$ has a double eigenvalue at $-1 < 0$.
+The eigenvalues of $(1,1)$ are $-1 < 0$ and $1 > 0$.
+
+(c) The equilibrium at $(1,0)$ is a saddle node, since the Jacobian
+has one zero eigenvalue and one nonzero eigenvalue.  The equilibrium
+at $(1,1)$ is a focus sink, since the Jacobian is a multiple of $I_2$
+with negative real eigenvalue.  The equilibrium at $(2,1)$ is a
+saddle point, since the Jacobian has one negative and one positive
+eigenvalue.
+
+\end{solution}
+\end{exercise}
+\end{document}

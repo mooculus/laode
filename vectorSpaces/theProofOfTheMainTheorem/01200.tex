@@ -1,0 +1,32 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{A5.6.1}
+Let $V$ be the subspace of $\R^4$ defined by the equations
+\begin{align*}
+x_1-x_3-x_4&=0\\
+x_2-2x_3+x_4&=0
+\end{align*}
+Consider the vectors
+\[
+v_1=\Matrix{-1\\1\\0\\-1} \quad 
+v_2=\Matrix{2\\5\\3\\-1} \quad  
+v_3=\Matrix{2\\1\\1\\1} \quad  
+v_4=\Matrix{2\\-2\\0\\2}
+\]
+Find all bases of $V$ of the form $\left\{v_i,v_j\right\}$ with $1\leq i< j\leq 4.$ (Hint: use Corollary~\ref{C:dim=n}.)
+
+\begin{solution}
+\ans The sets $\{v_1,v_3\}$ and $\{v_3,v_4\}$ are bases. 
+
+\soln The vector $v_2$ does not satisfy the second equation, so they are not elements of $V$.  
+The subspace $V$ is two-dimensional, so any two linearly independent vectors contained in it form a basis. 
+The possibilities are 
+\[
+\{v_1,v_3\} \qquad  \{v_1,v_4\} \qquad \{v_3,v_4\}
+\]
+The set $\{v_1,v_4\}$ is not a basis because $v_4= -2v_1$. The sets $\{v_1,v_3\}$ and $\{v_3,v_4\}$ are 
+linearly independent sets of two vectors in $V$; so they are bases. 
+\end{solution}
+\end{exercise}
+\end{document}

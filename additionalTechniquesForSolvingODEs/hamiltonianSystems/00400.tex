@@ -1,0 +1,67 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\noindent In Exercises~\ref{c14.7.5} -- \ref{c14.7.7} decide whether or not  
+the given planar systems of differential equations is Hamiltonian:
+\begin{exercise} \label{c14.7.5}
+$\begin{array}{rcl}
+\dot{x} & = & 0 \\
+\dot{y} & = & -1.
+\end{array}$
+
+\begin{solution}
+\ans Yes.
+
+\soln If the equation is Hamiltonian, then $H_y=0$ and $H_x=1$.  Since 
+$H_{yx}=0=H_{xy}$, equality of mixed partials shows that the equation is
+Hamiltonian.
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c14.7.6}
+$\begin{array}{rcl}
+\dot{x} & = & x\\
+\dot{y} & = & y.
+\end{array}$
+
+\begin{solution}
+\ans No.
+
+\soln If the equation were Hamiltonian, then $H_y=x$ and $H_x=-y$.  Since 
+then $H_{yx}=1$ and $H_{xy}=-1$, if follows that there is no Hamiltonian $H$. 
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c14.7.6a}
+$\begin{array}{rcl}
+\dot{x} & = & x - y^2\\
+\dot{y} & = & -y - x^2.
+\end{array}$
+
+\begin{solution}
+\ans Yes
+
+\soln  If the equation is Hamiltonian, then $H_y=x-y^2$ and $H_x=y+x^2$.  
+Since $H_{yx}=1=H_{xy}$, equality of mixed partials shows that the equation 
+is Hamiltonian.
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c14.7.7}
+$\begin{array}{rcl}
+\dot{x} & = & x\cos y\\
+\dot{y} & = & -\sin y.
+\end{array}$
+
+\begin{solution}
+\ans Yes
+
+\soln  If the equation is Hamiltonian, then $H_y=x\cos y$ and $H_x=\sin y$.  
+Since $H_{yx}=\cos y =H_{xy}$, equality of mixed partials shows that the 
+equation is Hamiltonian.
+
+
+\end{solution}
+\end{exercise}
+\end{document}

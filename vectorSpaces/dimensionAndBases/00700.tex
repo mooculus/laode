@@ -1,0 +1,43 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c5.5.6}
+Let ${\cal P}_3$ be the vector space of polynomials of degree at
+most three in one variable $t$.  Let $p(t)=t^3+a_2t^2+a_1t+a_0$ where
+$a_0,a_1,a_2\in\R$ are fixed constants.  Show that
+\[
+\left\{ p, \frac{dp}{dt}, \frac{d^2p}{dt^2}, \frac{d^3p}{dt^3}\right\}
+\]
+is a basis for ${\cal P}_3$.
+
+\begin{solution}
+
+First, note that the dimension of ${\cal P}^3$ is $4$.  We can show
+this by noting that the $4$ polynomials $b_1(t) = t^3$, $b_2(t) =
+t^2$, $b_3(t) = t$, and $b_4(t) = 1$ are linearly independent and
+span ${\cal P}^3$.  The dimension of a space is equal to the number of
+linearly independent vectors in a spanning set for that space.
+Therefore, $\{p, \frac{dp}{dt}, \frac{d^2p}{dt^2}, \frac{d^3p}{dt^3}\}$
+is a basis if the polynomials are linearly independent.
+
+\para The general polynomial of degree $3$ has the form $q(t) =
+a_3t^3 + a_2t^2 + a_1t + a_0$.  We can identify $q(t)$ by the vector 
+$(a_3,a_2,a_1,a_0)$.  Thus, the set
+\[
+\begin{array}{rcl}
+\dps p(t) & = & t^3 + a_2t^2 + a_1t + a_0 \\
+\dps \frac{dp}{dt}(t) & = & 3t^2 + 2a_2t + a_1 \\
+\dps \frac{d^2p}{dt^2}(t) & = & 6t + 2a_2 \\
+\dps \frac{d^3p}{dt^3}(t) & = & 6 \end{array}
+\]
+is identified with the matrix $A$, whose columns are 
+$\frac{dp}{dt}$, $\frac{d^2p}{dt^2}$, and $\frac{d^3p}{dt^3}$:
+\[ A = \left(\begin{array}{cccc} 1 & 0 & 0 & 0 \\
+a_2 & 3 & 0 & 0 \\ a_1 & 2a_2 & 6 & 0 \\ a_0 & a_1 & 2a_2 & 6
+\end{array}\right). \]
+The matrix is lower triangular and therefore row reduces to $I_4$.  So
+this set of polynomials is linearly independent and spans ${\cal P}^3$.
+
+\end{solution}
+\end{exercise}
+\end{document}

@@ -1,0 +1,73 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c9.3.4}
+Let $X=(x,y)$ and 
+\[
+F(X,\rho) = \rho q + \mattwo{1}{0}{0}{0} X + Q(X)
+\]
+where
+\[
+q=\vectwo{q_1}{q_2} \AND Q(X) = \vectwo{\alpha x^2+\beta xy+\gamma y^2}
+{\delta x^2 +\epsilon xy+\varphi y^2}.
+\]
+Show that $F$ has a saddle-node bifurcation at $X=0$ and $\rho=0$ precisely 
+when $q_2\neq 0$ and $\varphi\neq 0$. 
+
+\begin{solution}
+
+To show that the origin is a bifurcation point of $F$ when $\rho = 0$, we
+must show the following:
+
+(a) $F(0,0) = 0$.
+
+(b) Let $J = dF_{(0,0)}$.  Then $\det(J) = 0$ and $\trace(J) \neq 0$.
+
+(c) There exist nonzero vectors $v$ and $w$ such that $Jv = 0$ and
+$J^tw = 0$.
+
+\soln Let
+\[
+\vectwo{g(X,\rho)}{h(X,\rho)} = F(X,\rho) = 
+\cvectwo{\rho q_1 + x + \alpha x^2 + \beta xy + \gamma y^2}
+{\rho q_2 + \delta x^2 + \epsilon xy + \varphi y^2}.
+\]
+
+(a) Indeed, $g(0,0) = 0 = h(0,0)$, so $F(0,0)$ is an equilibrium point.
+
+(b) Find the Jacobian
+\[
+J = \left.\cmattwo{1 + 2\alpha x + \beta y}{\beta x + 2\gamma y}
+{2\delta x + \epsilon y}{\epsilon x + 2\varphi y}\right|_{(0,0)} =
+\mattwo{1}{0}{0}{0}.
+\]
+Since $\det(J) = 0$ and $\trace(J) = 1 \neq 0$, there
+is a bifurcation point at the origin with $\rho = 0$.
+
+(c)  To verify that the nondegeneracy conditions are satisfied, find $v$
+and $w$.  In this case $v = w = (0,1)^t$.  Then verify
+\[
+w \cdot F_\rho(X_0,\rho_0) = \vectwo{0}{1} \cdot \vectwo{q_1}{q_2}
+= q_2.
+\]
+So, condition \eqref{e:2deig} is satisfied when $q_2 \neq 0$.  To
+verify \eqref{e:2dbifur}, compute the vector
+\[
+F_0 = 0\vectwo{g_{xx}}{h_{xx}} + 0\vectwo{g_{xy}}{h_{xy}} +
+\vectwo{g_{yy}}{h_{yy}} = \vectwo{2\gamma}{2\varphi}
+\]
+and calculate
+\[
+w \cdot F_0 = \vectwo{0}{1} \cdot \vectwo{2\gamma}{2\varphi}
+= 2\varphi.
+\]
+So, the origin is a saddle node of $F$ with $\rho = 0$ when
+$q_2 \neq 0$ and $\varphi \neq 0$.
+
+
+
+
+
+\end{solution}
+\end{exercise}
+\end{document}

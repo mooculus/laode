@@ -1,0 +1,43 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c4.6.1}
+Determine all the $2\times 2$ matrices $B$ such that $AB=BA$
+where $A$ is the matrix
+\[
+A=\left(\begin{array}{rr} 2 & 0 \\ 0 & -1 \end{array}\right).
+\]
+
+\begin{solution}
+
+\ans For any matrix $B$ of the form
+\[
+\mattwo{b_{11}}{0}{0}{b_{22}}
+\]
+the equation $AB = BA$ is valid.
+
+\soln Let
+\[
+B = \mattwo{b_{11}}{b_{12}}{b_{21}}{b_{22}}.
+\]
+Then compute the matrix $B$ for which
+\[
+\begin{array}{rcl}
+AB & = & BA \\
+\mattwo{2}{0}{0}{-1}\mattwo{b_{11}}{b_{12}}{b_{21}}{b_{22}} &
+= & \mattwo{b_{11}}{b_{12}}{b_{21}}{b_{22}}\mattwo{2}{0}{0}{-1} \\
+\mattwo{2b_{11}}{2b_{12}}{-b_{21}}{-b_{22}} & = &
+\mattwo{2b_{11}}{-b_{12}}{2b_{21}}{-b_{22}} \end{array}
+\]
+which is equivalent to the linear system
+\[
+\begin{array}{l}
+2b_{11} = 2b_{11} \\
+2b_{12} = -b_{12} \\
+-b_{21} = 2b_{21} \\
+-b_{22} = -b_{22}. \end{array}
+\]
+
+\end{solution}
+\end{exercise}
+\end{document}

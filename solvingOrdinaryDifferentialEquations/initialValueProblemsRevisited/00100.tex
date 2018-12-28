@@ -1,0 +1,216 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\TEXER
+
+\noindent In Exercises~\ref{c4.10A.1a} -- \ref{c4.10A.1d} find the solution
+to the system of differential equations $\dot{X} = CX$ satisfying $X(0)=X_0$.
+\begin{exercise}  \label{c4.10A.1a}
+$C = \mattwo{1}{1}{0}{2}$ \AND $X_0 = \vectwo{1}{4}$.
+
+\begin{solution}
+\ans The solution to $\dot{X} = CX$ satisfying this
+initial condition is
+\[
+X(t) = 4e^{2t}\vectwo{1}{1} - 3e^t\vectwo{1}{0}
+= \cvectwo{4e^{2t} - 3e^t}{4e^{2t}}.
+\]
+
+\soln First, find the eigenvalues of $C$, which are the roots of the
+characteristic polynomial
+\[
+p_C(\lambda) = \lambda^2 - \trace(C)\lambda + \det(C) =
+\lambda^2 - 3\lambda + 2 = (\lambda - 2)(\lambda - 1).
+\]
+So the eigenvalues are: $\lambda_1 = 2$ and $\lambda_2 = 1$.
+To find the eigenvector associated to each eigenvalue, solve
+the equation $(C - \lambda_jI_2)v_j = 0$ for $j = 1$ and $j = 2$.  Solve
+\[
+\left(\mattwo{1}{1}{0}{2} - \mattwo{2}{0}{0}{2}\right)v_1 =
+\mattwo{-1}{1}{0}{0}v_1 = 0
+\]
+to obtain $v_1 = (1,1)^t$ and solve
+\[
+\left(\mattwo{1}{1}{0}{2} - \mattwo{1}{0}{0}{1}\right)v_2 =
+\mattwo{0}{1}{0}{1}v_2 = 0
+\]
+to obtain $v_2 = (1,0)^t$.  We can then write the general solution
+\[
+X(t) = \alpha_1e^{\lambda_1 t}v_1 + \alpha_2e^{\lambda_2 t}v_2
+= \alpha_1e^{2t}\vectwo{1}{1} + \alpha_2e^t\vectwo{1}{0}.
+\]
+From this formula, find $\alpha_1$ and $\alpha_2$ by solving
+\[
+\vectwo{4}{-3} = X(0) = \alpha_1\vectwo{1}{1} + \alpha_2\vectwo{1}{0} =
+\cvectwo{\alpha_1 + \alpha_2}{\alpha_1}.
+\]
+Solving the linear system
+\[
+\begin{array}{rrrrr}
+\alpha_1 & + & \alpha_2 & = & 4 \\
+\alpha_1 & & & = & -3
+\end{array}
+\]
+we obtain $\alpha_1 = 4$ and $\alpha_2 = -3$ and find the
+solution to the differential equation.
+
+
+\end{solution}
+\end{exercise}
+\begin{exercise}  \label{c4.10A.1b}
+$C = \mattwo{2}{-3}{0}{-1}$ \AND $X_0 = \vectwo{1}{-2}$.
+
+\begin{solution}
+\ans The solution to $\dot{X} = CX$ satisfying this
+initial condition is
+\[
+X(t) = 3e^{2t}\vectwo{1}{0} - 2e^{-t}\vectwo{1}{1}
+= \cvectwo{3e^{2t} - 2e^{-t}}{-2e^{-t}}.
+\]
+
+\soln First, find the eigenvalues of $C$, which are the roots of the
+characteristic polynomial
+\[
+p_C(\lambda) = \lambda^2 - \trace(C)\lambda + \det(C) =
+\lambda^2 - \lambda - 2 = (\lambda - 2)(\lambda + 1).
+\]
+So the eigenvalues are: $\lambda_1 = 2$ and $\lambda_2 = -1$.
+To find the eigenvector associated to each eigenvalue, solve
+the equation $(C - \lambda_jI_2)v_j = 0$ for $j = 1$ and $j = 2$.  Solve
+\[
+\left(\mattwo{2}{-3}{0}{-1} - \mattwo{2}{0}{0}{2}\right)v_1 =
+\mattwo{0}{-3}{0}{-3}v_1 = 0
+\]
+to obtain $v_1 = (1,0)^t$ and solve
+\[
+\left(\mattwo{2}{-3}{0}{-1} + \mattwo{1}{0}{0}{1}\right)v_2 =
+\mattwo{3}{-3}{0}{0}v_2 = 0
+\]
+to obtain $v_2 = (1,1)^t$.  We can then write the general solution
+\[
+X(t) = \alpha_1e^{\lambda_1 t}v_1 + \alpha_2e^{\lambda_2 t}v_2
+= \alpha_1e^{2t}\vectwo{1}{0} + \alpha_2e^{-t}\vectwo{1}{1}.
+\]
+From this formula, find $\alpha_1$ and $\alpha_2$ by solving
+\[
+\vectwo{1}{-2} = X(0) = \alpha_1\vectwo{1}{0} + \alpha_2\vectwo{1}{1} =
+\cvectwo{\alpha_1 + \alpha_2}{\alpha_2}.
+\]
+Solving the linear system
+\[
+\begin{array}{rrrrr}
+\alpha_1 & + & \alpha_2 & = & 1 \\
+& & \alpha_2 & = & -2
+\end{array}
+\]
+we obtain $\alpha_1 = 3$ and $\alpha_2 = -2$ and find the
+solution to the differential equation.
+
+
+\end{solution}
+\end{exercise}
+\begin{exercise}  \label{c4.10A.1c}
+$C = \mattwo{-3}{2}{-2}{2}$ \AND $X_0 = \vectwo{-1}{3}$.
+
+\begin{solution}
+\ans The solution to $\dot{X} = CX$ satisfying this
+initial condition is
+\[
+X(t) = \frac{8}{3}e^t\vectwo{1}{2} - \frac{5}{3}e^{-2t}\vectwo{2}{1}
+= \frac{1}{3}\cvectwo{8e^t - 10e^{-2t}}{16e^t - 5e^{-2t}}.
+\]
+
+\soln First, find the eigenvalues of $C$, which are the roots of the
+characteristic polynomial
+\[
+p_C(\lambda) = \lambda^2 - \trace(C)\lambda + \det(C) =
+\lambda^2 + \lambda - 2 = (\lambda - 1)(\lambda + 2).
+\]
+So the eigenvalues are: $\lambda_1 = 1$ and $\lambda_2 = -2$.
+To find the eigenvector associated to each eigenvalue, solve
+the equation $(C - \lambda_jI_2)v_j = 0$ for $j = 1$ and $j = 2$.  Solve
+\[
+\left(\mattwo{-3}{2}{-2}{2} - \mattwo{1}{0}{0}{1}\right)v_1 =
+\mattwo{-4}{2}{-2}{1}v_1 = 0
+\]
+to obtain $v_1 = (1,2)^t$ and solve
+\[
+\left(\mattwo{-3}{2}{-2}{2} + \mattwo{2}{0}{0}{2}\right)v_2 =
+\mattwo{-1}{2}{-2}{4}v_2 = 0
+\]
+to obtain $v_2 = (2,1)^t$.  We can then write the general solution
+\[
+X(t) = \alpha_1e^{\lambda_1 t}v_1 + \alpha_2e^{\lambda_2 t}v_2
+= \alpha_1e^t\vectwo{1}{2} + \alpha_2e^{-2t}\vectwo{2}{1}.
+\]
+From this formula, find $\alpha_1$ and $\alpha_2$ by solving
+\[
+\vectwo{-1}{3} = X(0) = \alpha_1\vectwo{1}{2} + \alpha_2\vectwo{2}{1} =
+\cvectwo{\alpha_1 + 2\alpha_2}{2\alpha_1 + \alpha_2}.
+\]
+Solving the linear system
+\[
+\begin{array}{rrrrr}
+\alpha_1 & + & 2\alpha_2 & = & -1 \\
+2\alpha_1 & + & \alpha_2 & = & 3
+\end{array}
+\]
+we obtain $\alpha_1 = \frac{8}{3}$ and $\alpha_2 = -\frac{5}{3}$
+and find the solution to the differential equation.
+
+
+\end{solution}
+\end{exercise}
+\begin{exercise}  \label{c4.10A.1d}
+$C = \mattwo{2}{1}{1}{2}$ \AND $X_0 = \vectwo{1}{2}$.
+
+\begin{solution}
+\ans The solution to $\dot{X} = CX$ satisfying this
+initial condition is
+\[
+X(t) = \frac{3}{2}e^{3t}\vectwo{1}{1} - \frac{1}{2}e^t\vectwo{1}{-1}
+= \frac{1}{2}\cvectwo{3e^{3t} - e^t}{3e^{3t} + e^t}.
+\]
+
+\soln First, find the eigenvalues of $C$, which are the roots of the
+characteristic polynomial
+\[
+p_C(\lambda) = \lambda^2 - \trace(C)\lambda + \det(C) =
+\lambda^2 - 4\lambda + 3 = (\lambda - 3)(\lambda - 1).
+\]
+So the eigenvalues are: $\lambda_1 = 3$ and $\lambda_2 = 1$.
+To find the eigenvector associated to each eigenvalue, solve
+the equation $(C - \lambda_jI_2)v_j = 0$ for $j = 1$ and $j = 2$.  Solve
+\[
+\left(\mattwo{2}{1}{1}{2} - \mattwo{3}{0}{0}{3}\right)v_1 =
+\mattwo{-1}{1}{1}{-1}v_1 = 0
+\]
+to obtain $v_1 = (1,1)^t$ and solve
+\[
+\left(\mattwo{2}{1}{1}{2} - \mattwo{1}{0}{0}{1}\right)v_2 =
+\mattwo{1}{1}{1}{1}v_2 = 0
+\]
+to obtain $v_2 = (1,-1)^t$.  We can then write the general solution
+\[
+X(t) = \alpha_1e^{\lambda_1 t}v_1 + \alpha_2e^{\lambda_2 t}v_2
+= \alpha_1e^{3t}\vectwo{1}{1} + \alpha_2e^t\vectwo{1}{-1}.
+\]
+From this formula, find $\alpha_1$ and $\alpha_2$ by solving
+\[
+\vectwo{1}{2} = X(0) = \alpha_1\vectwo{1}{1} + \alpha_2\vectwo{1}{-1} =
+\cvectwo{\alpha_1 + 2\alpha_2}{\alpha_1 - \alpha_2}.
+\]
+Solving the linear system
+\[
+\begin{array}{rrrrr}
+\alpha_1 & + & 2\alpha_2 & = & 1 \\
+\alpha_1 & - & \alpha_2 & = & 2
+\end{array}
+\]
+we obtain $\alpha_1 = \frac{3}{2}$ and $\alpha_2 = -\frac{1}{2}$
+and find the solution to the differential equation.
+
+\end{solution}
+\end{exercise}
+\end{document}

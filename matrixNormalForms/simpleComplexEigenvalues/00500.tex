@@ -1,0 +1,33 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c10.4.rotate}
+Use {\sf map}\index{\computer!map} to verify that 
+the normal form matrices \eqref{E:normalfm2} are 
+just rotations followed by dilatations.  In particular, use {\sf map} to 
+study the normal form matrix
+\[
+A = \mattwo{1}{-1}{1}{1}.
+\]
+Then compare your results with the similar matrix
+\[
+B = \mattwo{2}{1}{-2}{0}.
+\]
+
+\begin{solution}
+
+Matrix $A$ rotates a vector by $45^{\circ}$ counterclockwise, then expands
+the vector by a factor of $\sqrt{2}$.  Let $v_1 = Av_0$, $v_2 =
+Av_1$, and so on.  Note that $v_8 = 16v_0$.  That is, after eight
+iterations, the vector points in its original direction and has length
+$16|v_0|$.
+
+\para Let $w_1 = Bv_0$ and $w_2 = Bw_1$.  Then, $w_8 = 16v_0
+= v_8$.  The rotation and dilatation caused by matrix $B$ coincides
+with that of matrix $A$ every 8 iterations, or $360^\circ$.  However,
+$B$ does not cause a single constant rotation or dilatation on each
+iteration, as does $A$.
+
+\end{solution}
+\end{exercise}
+\end{document}

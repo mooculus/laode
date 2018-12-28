@@ -1,0 +1,23 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c5.4.6}
+Show that the functions $f_1(t) = \sin t$, $f_2(t)=\cos t$, and
+$f_3(t)=\cos\left(t+\frac{\pi}{3}\right)$ are linearly dependent
+vectors in $\CCone$.
+
+\begin{solution}
+
+The three functions are linearly dependent vectors in $\CCone$ since
+there exists a nonzero vector $r = (r_1,r_2,r_3)$ such that
+$r_1f_1(t) + r_2f_2(t) + r_3f_3(t) = 0$.  We can find this vector $r$
+using trigonometric identities:
+\[ f_3(t) = \cos\left(t + \frac{\pi}{3}\right) =
+\cos\left(\frac{\pi}{3}\right)\cos t + \sin\left(\frac{\pi}{3}\right)\sin t
+= \frac{1}{2}\cos t - \frac{\sqrt{3}}{2}\sin t =
+\frac{1}{2}f_1(t) - \frac{\sqrt{3}}{2}f_2(t). \]
+That is, $\frac{1}{2}f_1(t) + \frac{\sqrt{3}}{2}f_2(t) - f_3(t) = 0$.
+
+\end{solution}
+\end{exercise}
+\end{document}

@@ -1,0 +1,39 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c4.6.2}
+Let
+\[
+A=\mattwo{2}{5}{1}{4} \AND B=\mattwo{a}{3}{b}{2}.
+\]
+For which values of $a$ and $b$ does $AB=BA$?
+
+\begin{solution}
+
+\ans 
+\[
+B = \mattwo{\frac{4}{5}}{3}{\frac{3}{5}}{2}.
+\]
+
+\soln Compute
+\[
+\begin{array}{rcl}
+AB & = & BA \\
+\mattwo{2}{5}{1}{4}\mattwo{a}{3}{b}{2} & = &
+\mattwo{a}{3}{b}{2}\mattwo{2}{5}{1}{4} \\
+\mattwo{2a+5b}{16}{a+4b}{11} & = & \mattwo{2a+3}{5a+12}{2b+2}{5b+8}.
+\end{array}
+\]
+This equation can be rewritten as the system
+\[
+\begin{array}{rcl}
+2a + 5b & = & 2a + 3 \\
+16 & = & 5a + 12 \\
+a + 4b & = & 2b + 2 \\
+11 & = & 5b + 8 \end{array}
+\]
+which yields the solution $a = 4/5$ and $b = 3/5$.
+
+\end{solution}
+\end{exercise}
+\end{document}

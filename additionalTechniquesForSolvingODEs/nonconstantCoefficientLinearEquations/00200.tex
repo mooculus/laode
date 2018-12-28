@@ -1,0 +1,117 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\noindent In Exercises~\ref{c14.2.6a} -- \ref{c14.2.6d} solve the given 
+initial value problems by variation of parameters.
+\begin{exercise}   \label{c14.2.6a}
+$\dps \frac{dx}{dt} = t^2 x + t^2, \quad x(1)=1$.
+
+\begin{solution}
+\ans The solution to the initial value problem is
+$x(t) = 2e^{\frac{1}{3}(t^3 - 1)} - 1$.
+
+\soln By inspection $x(t) = -1$ is a solution to the inhomogeneous
+equation.  The solution to the homogeneous equation $\dot{x}(t) = t^2x$ is
+$x(t) = Ke^{H(t)}$, where
+\[
+H(t) = \int t^2dt = \frac{1}{3}t^3.
+\]
+So the general solution to the inhomogeneous equation is
+\[
+x(t) = Ke^{\frac{1}{3}t^3} - 1.
+\]
+Substitute the initial condition $x(1) = 1$ into this equation and
+solve for $K = 2e^{-\frac{1}{3}}$.
+
+
+\end{solution}
+\end{exercise}
+\begin{exercise}   \label{c14.2.6b}
+$\dps \frac{dx}{dt} = x+2t, \quad x(0)=-1$.
+
+\begin{solution}
+\ans The solution to the initial value problem is
+$x(t) = e^t - 2t - 2$.
+
+\soln The solution to the homogeneous equation $\dot{x}=x$ is $x(t)=ce^t$
+for some constant $c$.  The method of variation of parameters looks for 
+solutions to the inhomogeneous equation of the form $x(t)=c(t)e^t$.  If this 
+$x(t)$ is a solution to the inhomogeneous equation $\dot{x}=x+2t$, then
+\[
+x+2t=\dot{x}=\dot{c}e^t+ce^t = \dot{c}e^t+x.
+\]
+Therefore,
+\[
+\dot{c} = 2te^{-t}.
+\]
+Integrating by parts yields
+\[
+c(t) = 2\int te^{-t}dt = -2(t+1)e^{-t} + K.
+\]
+Thus the general solution to the inhomogeneous equation is:
+\[
+x(t) = -2(t+1) + Ke^t.
+\]
+Using the initial condition $x(0)=-1$ yields $K=1$. 
+
+\end{solution}
+\end{exercise}
+\begin{exercise}   \label{c14.2.6c}
+$\dps \frac{dx}{dt} = 
+\frac{t}{t^2+1}x+\sin(t)\sqrt{t^2+1},\quad x(0)=2$.
+
+\begin{solution}
+\ans The solution to the initial value problem is
+$x(t) = (3 - \cos t)\sqrt{t^2 + 1}$.
+
+\soln By Theorem~\ref{thm:varpar}, the
+solution to the initial value problem is $x(t) = c(t)e^{H(t)}$, where
+$\frac{dx}{dt} = a(t)x + g(t)$.  So
+\[
+H(t) = \int_{t_0}^t a(\tau)d\tau = \int_0^t\frac{\tau}{\tau^2 + 1}d\tau
+= \ln\sqrt{t^2 + 1}.
+\]
+\[
+c(t) = \int_{t_0}^t g(\tau)e^{-H(\tau)}d\tau + x_0
+= \int_0^t \sin(\tau)d\tau + 2
+= 3 - \cos t.
+\]
+
+\end{solution}
+\end{exercise}
+\begin{exercise}   \label{c14.2.6d}
+$\dps \frac{dx}{dt} = 2x+\frac{1}{t}e^{2t}, \quad x(1)=4$.
+
+\begin{solution}
+\ans The solution to the initial value problem is
+\[
+x(t) = e^{2t}(4e^{-2}+\ln t).
+\]
+
+\soln The solution to the homogeneous equation $\dot{x}=2x$ is $x(t)=e^{2t}$.
+ Using variation of parameters we look for a solution to the inhomogeneous
+equation $\dot{x}=2x+\frac{1}{t}e^{2t}$ of the form $x(t)=c(t)e^{2t}$.  If
+$x(t)$ is a solution to the inhomogeneous equation, then
+\[
+2x+\frac{1}{t}e^{2t} =\dot{x}=\dot{c}e^{2t}+2ce^{2t} = \dot{c}e^{2t}+2x.
+\]
+Therefore, 
+\[
+\dot{c} = \frac{1}{t},
+\]
+and 
+\[
+c(t) = \ln|t| + K.
+\]
+The general solution to the inhomogeneous equation is:
+\[
+x(t) = (\ln|t| + K)e^{2t}.
+\]
+Using the initial condition $x(1)=4$, we find that $K=4e^{-2}$.
+
+
+
+\end{solution}
+\end{exercise}
+\end{document}

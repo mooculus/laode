@@ -1,0 +1,68 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\CEXER
+
+\noindent In Exercises~\ref{c5.3.1a} -- \ref{c5.3.1c} use the {\tt null}
+command in \Matlab to find all the solutions of the linear system of
+equations $Ax=0$.  \index{\computer!null}
+\begin{exercise} \label{c5.3.1a}
+\begin{matlabEquation} \label{e:BCDa}
+          A=    \left(\begin{array}{cccc}
+                -4 & 0 & -4 & 3\\
+                -4 & 1 & -1 & 1
+                \end{array}\right) \quad
+\end{matlabEquation}
+
+\begin{solution}
+
+Type {\tt null(A)} in \Matlab to find that the set of solutions to
+$Ax = 0$ is spanned by the vectors
+\[
+\left(\begin{array}{r} 0.3225 \\ 0.8931 \\ -0.0992 \\ 0.2977
+\end{array}\right) \AND \left(\begin{array}{r} 0 \\ -0.1961 \\
+0.5883 \\ 0.7845 \end{array}\right).
+\]
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c5.3.1b}
+\begin{matlabEquation} \label{e:BCDb}
+           A=    \left(\begin{array}{rr}
+                1 & 2 \\
+                1 & 0 \\
+                3 & -2
+                \end{array}\right) \quad
+\end{matlabEquation}
+
+\begin{solution}
+\ans The solution to $Ax = 0$ is the vector $(0,0).$
+
+\soln This can be demonstrated by typing {\tt null(A)} in \Matlab, which
+yields
+\begin{verbatim}
+ans =
+   Empty matrix: 2-by-0
+\end{verbatim}
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c5.3.1c}
+\begin{matlabEquation} \label{e:BCDc}
+          A=      \left(\begin{array}{rrr}
+               1  &  1  &  2\\
+              -1  &  2  & -1
+                \end{array}\right).
+\end{matlabEquation}
+
+\begin{solution}
+The set of solutions to $Ax = 0$ is spanned by the vector
+\[
+\vecthree{-0.8452}{-0.1690}{0.5071}.
+\]
+
+
+\end{solution}
+\end{exercise}
+\end{document}

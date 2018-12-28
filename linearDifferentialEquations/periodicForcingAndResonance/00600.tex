@@ -1,0 +1,35 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise}  \label{c12.5.4}
+Recall the sinusoidally forced second order equation \eqref{eq:uspf}
+\[
+\ddot x + x = \cos(\omega t).
+\]
+The second order differential operator that annihilates $\cos(\omega t)$ is
+$q(D)=D^2+\omega^2$.  It follows that any solution to \eqref{eq:uspf} must
+satisfy the fourth order equation 
+\begin{equation} \label{E:ann=res}
+q(D)(\ddot x + x)=0.
+\end{equation}
+Compute the characteristic polynomial of \eqref{E:ann=res} and its roots. Since
+the roots typically form two complex conjugate pairs, observe that there is a
+connection between the quasiperiodic solutions of this section and those of
+Section~\ref{S:NLD}.  What is the special property of these roots that leads
+to resonance and why?
+
+\begin{solution}
+
+The characteristic polynomial is $p(\lambda)=(\lambda^2+1)(\lambda^2+\omega^2)$. 
+The roots of $p$ are $\pm i$ and $\pm\omega i$.  Therefore, solutions to the
+inhomogeneous second order equations are linear combinations of sines and cosines with
+two frequencies, that is, solutions are two-frequency motions.  Resonance occurs
+when the eigenvalues are multiple, that is, when $\omega=\pm 1$.  Solutions to the
+fourth order equation whose characteristic polynomial is $p$ are then linear
+combinations of $\cos t$, $\sin t$, $t\cos t$, and $t\sin t$.  These factors of $t$ 
+lead to resonant unbounded growth.
+
+
+\end{solution}
+\end{exercise}
+\end{document}

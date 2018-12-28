@@ -1,0 +1,48 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c9.2.2}
+Use {\pplane} to explore the CSTR equations \eqref{e:CSTR} with
+parameters:
+\[
+h=2, \quad Z=0.5, \quad \eta=-0.5, \quad \gamma=5,
+\]
+for various values of the parameter $\rho$ between $0.46$ and 
+$0.51$.  Describe all equilibria and all periodic solutions that 
+you find, and how they change as $\rho$ is varied.
+
+\begin{solution}
+
+With these parameter values and $0.46 \leq \rho \leq 0.51$, the system
+has one equilibrium near $(-0.4,-0.1)$.  There are two values of $\rho$
+at which Hopf bifurcation occurs: $\rho \approx 0.46735$ and
+$\rho = 0.5$.  At these values of $\rho$, there is a periodic solution
+around the equilibrium.  For $0.46 \leq \rho < 0.46735$ or $0.5 < \rho
+\leq 0.51$, the equilibrium is a spiral sink.  Between the two
+bifurcations, the equilibrium is a spiral source.  Figure~\ref{c9.2.2}a
+shows the {\tt pplane5} graph of the system with $\rho = 4.6$. 
+Figure~\ref{c9.2.2}b shows a graph of the system with $\rho = 0.49$,
+between the two bifurcation points.  Figure~\ref{c9.2.2}c shows a graph
+of the system with $\rho = 0.5$, at one of the Hopf bifurcation points.
+The bifurcation diagram of the system is shown in Figure~\ref{c9.2.2}d.
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/9-2-2a.eps,width=1.8in}
+                       \psfig{file=exfigure/9-2-2b.eps,width=1.8in}
+                       \psfig{file=exfigure/9-2-2c.eps,width=1.8in}}
+                \exercapthree{c9.2.2}
+\end{figure}
+
+\begin{figure}[htb]
+			\centerline{%
+			\psfig{file=exfigure/9-2-2d.eps,width=3.0in}}
+		\centerline{Figure~\ref{c9.2.2}d}
+\end{figure}
+
+
+
+
+\end{solution}
+\end{exercise}
+\end{document}

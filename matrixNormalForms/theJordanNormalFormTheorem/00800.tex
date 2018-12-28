@@ -1,0 +1,34 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise}  \label{c10.5.5B}
+Compute $e^{tJ}$ where $J=\left(\begin{array}{rrrrr} 2 & 1 & 0 & 0 & 0\\  
+0 & 2 & 0 & 0 & 0 \\ 0 & 0 & 3 & 1 & 0\\ 0 & 0 & 0 & 3 & 1\\
+0 & 0 & 0 & 0 & 3 \end{array}\right)$.
+
+\begin{solution}
+\ans $e^J = 
+\cmattwo{e^{2t}\mattwo{1}{t}{0}{1}}{0}{0}{e^{3t}\cmatthree{1}{t}{\frac{1}{2}t^2}{0}{1}{t}{0}{0}{1}}$.
+
+\soln  The matrix $J$ has block diagonal form 
+\[
+J = \mattwo{L}{0}{0}{M}
+\]
+where
+\[
+L = \mattwo{2}{1}{0}{2} \AND M = \matthree{3}{1}{0}{0}{3}{1}{0}{0}{3}.
+\]
+Therefore,
+\[
+e^{tJ} = \cmattwo{e^L}{0}{0}{e^M}
+\]
+where
+\[
+e^L = e^{2t}\mattwo{1}{t}{0}{1} \AND 
+e^M = e^{3t}\cmatthree{1}{t}{\frac{1}{2}t^2}{0}{1}{t}{0}{0}{1}.
+\]
+
+
+\end{solution}
+\end{exercise}
+\end{document}

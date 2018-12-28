@@ -1,0 +1,38 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\noindent In Exercises~\ref{c7.8.4B} -- \ref{c7.8.4C} use Cramer's 
+rule~\eqref{E:cramer} to solve the given system of linear 
+equations.
+\begin{exercise} \label{c7.8.4B}
+Solve \qquad $\begin{array}{rcl} 2x+3y & = & 2 \\ 3x - 5y & = & 1 \end{array}$ 
+\qquad for $x$.
+
+\begin{solution}
+\ans  $x=\frac{13}{19}$.
+
+\soln By Cramer's rule (see \eqref{E:cramer}),
+\[
+x = \det\mattwo{2}{3}{1}{-5}\left/\det\mattwo{2}{3}{3}{-5}=\frac{-13}{-19}\right..
+\]
+ 
+
+\end{solution}
+\end{exercise} 
+\begin{exercise} \label{c7.8.4C}
+Solve \qquad
+$\begin{array}{rcl} 4x-3y & = & -1 \\ x + 2y & = & 7 \end{array}$ 
+\qquad for $y$.
+
+\begin{solution}
+\ans  $y=\frac{29}{11}$.
+
+\soln By Cramer's rule (see \eqref{E:cramer}),
+\[
+y = \det\mattwo{4}{-1}{1}{7}\left/\det\mattwo{4}{-3}{1}{2}=\frac{29}{11}\right..
+\]
+
+\end{solution}
+\end{exercise}
+\end{document}

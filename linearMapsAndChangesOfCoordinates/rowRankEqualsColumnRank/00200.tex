@@ -1,0 +1,34 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c5.8.1}
+The $3\times 3$ matrix
+\[
+A = \left(\begin{array}{rrr} 1 & 2 & 5\\ 2 & -1 & 1\\ 3 & 1 & 6
+\end{array}\right)
+\]
+has rank two.  Let $r_1,r_2,r_3$ be the rows of $A$ and
+$c_1,c_2,c_3$ be the columns of $A$. Find scalars $\alpha_j$ and
+$\beta_j$ such that
+\begin{eqnarray*}
+\alpha_1r_1+\alpha_2r_2+\alpha_3r_3 & = & 0 \\
+\beta_1c_1+\beta_2c_2+\beta_3c_3 & = & 0.
+\end{eqnarray*}
+
+\begin{solution}
+
+\ans The possible choices for the scalars $\alpha_j$ are
+$\alpha = (\alpha_1,\alpha_2,\alpha_3) = \alpha_3(-1,-1,1)$ and
+the possible choices for the scalars $\beta_j$ are $\beta = 
+(\beta_1,\beta_2,\beta_3) = \beta_3(-\frac{7}{5},-\frac{9}{5},1)$.
+
+\soln Find $A^t$ and solve by row reduction the equation
+$A^t\alpha = 0$.  To find the scalars $\beta_j$, solve $A\beta =
+0$.  These equations yield
+\[
+-r_1 - r_2 + r_3 = 0 \AND -7c_1 - 9c_2 + 5c_3 = 0.
+\]
+
+\end{solution}
+\end{exercise}
+\end{document}

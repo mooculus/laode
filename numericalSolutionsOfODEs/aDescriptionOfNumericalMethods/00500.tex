@@ -1,0 +1,45 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c15.1.4}
+Consider the initial value problem
+\[
+\begin{array}{rcl}
+\dps\frac{dx}{dt}(t) & = & 1 \\
+x(t_0) & = & 0.
+\end{array}
+\]
+\begin{itemize}
+\item[(a)] Suppose that a Runge-Kutta method leads to exact
+results for all step sizes $h$, that is $x_k=x(t_k)$.  What 
+does this imply for the numbers $b_1,\ldots,b_s$?
+\item[(b)] Verify that the relation on the numbers $b_1,\ldots,b_s$
+derived in part (a) is satisfied
+for Euler's method, for the modified Euler method and for the
+fourth order Runge-Kutta method.
+\end{itemize}
+
+\begin{solution}
+
+(a) \ans $\dps\sum_{i=1}^s b_i = 1$.
+
+\soln For the given initial value problem we have $f(t,x)=1$.
+Therefore the general Runge-Kutta method takes the form
+\[
+t_{k+1} = t_k + h\AND x_{k+1} = x_k + h\sum_{i=1}^s b_i.
+\]
+On the other hand the solution to the initial value problem is
+given by $x(t) = t-t_0$ and $x_1=x(t_1)$ implies
+\[
+h = x(t_1) = x_1 = 0+h\sum_{i=1}^s b_i.
+\]
+Division by $h$ leads to the desired result.
+
+(b) For Euler's method we have $b_1=1$, for the modified Euler
+method we have $b_1=b_2=\frac{1}{2}$, and for the fourth order
+Runge-Kutta method $b_1=b_4 = \frac{1}{6}$,
+$b_2 = b_3 = \frac{2}{6}$.  Hence in each case $\sum_{i=1}^s b_i=1$.
+
+\end{solution}
+\end{exercise}
+\end{document}

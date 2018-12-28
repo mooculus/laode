@@ -1,0 +1,29 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c6.2.3}
+For the scalar exponential function $e^{t}$ it is well known
+that for any pair of real numbers $t_1,t_2$ the following
+equality holds:
+\[
+     e^{t_1+t_2} = e^{t_1}e^{t_2}.
+\]
+Use \Matlab to find two $2\times 2$ matrices $C_1$ and $C_2$ such that
+\[
+     e^{C_1+C_2} \not= e^{C_1}e^{C_2}.
+\]
+
+\begin{solution}
+
+One example of matrices for which $e^{C_1 + C_2} \neq e^{C_1}e^{C_2}$ is
+\[ C_1 = \mattwo{1}{-2}{3}{1} \AND C_2 = \mattwo{-2}{3}{-1}{-2}. \]
+For this case, using \Matlabp,
+\begin{verbatim}
+expm(C1+C2) =                        expm(C1)*expm(C2) =
+    0.8013    0.5034                     0.1547   -0.4534
+    1.0067    0.8013                     0.1152    0.5370
+\end{verbatim}
+
+\end{solution}
+\end{exercise}
+\end{document}

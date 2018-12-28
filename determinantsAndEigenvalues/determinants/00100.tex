@@ -1,0 +1,86 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\TEXER
+
+
+\noindent  In Exercises~\ref{c10.1.1a} -- \ref{c10.1.1c} compute the 
+determinants of the given matrix.
+\begin{exercise} \label{c10.1.1a}
+$A = \left(\begin{array}{rrr} -2 & 1 & 0 \\ 4 & 5& 0 \\ 1 & 0 & 2
+\end{array} \right)$.
+
+\begin{solution}
+
+\ans The determinant of the matrix is $-28$.
+
+\soln Expand along the third column, obtaining:
+\[
+\det\matthree{-2}{1}{0}{4}{5}{0}{1}{0}{2} = 2\det\mattwo{-2}{1}{4}{5}
+= 2(-14) = -28.
+\]
+
+\end{solution}
+\end{exercise} 
+\begin{exercise} \label{c10.1.1b}
+$B = \left(\begin{array}{rrrr} 1 & 0 & 2 & 3 \\ -1 & -2 & 3 & 2
+\\ 4 & -2 & 0 & 3 \\ 1 & 2 & 0 & -3 \end{array} \right)$.
+
+\begin{solution}
+
+\ans The determinant of the matrix is $-110$.
+
+\soln First row reduce:
+\[
+\det\left(\begin{array}{rrrr}
+1 & 0 & 2 & 3 \\ 
+-1 & -2 & 3 & 2 \\
+4 & -2 & 0 & 3 \\
+1 & 2 & 0 & -3 \end{array}\right) =
+\det\left(\begin{array}{rrrr}
+1 & 0 & 2 & 3 \\ 
+0 & -2 & 5 & 5 \\
+0 & -2 & -8 & -9 \\
+0 & 2 & -2 & -6 \end{array}\right).
+\]
+Then, use formula \eqref{e:inductdet}:
+\[ \begin{array}{rcl}
+\det\matthree{-2}{5}{5}{-2}{-8}{-9}{2}{-2}{-6} & = &
+\begin{array}{l}
+(-2)(-8)(-6) + 5(-9)2 + 5(-2)(-2) - 5(-8)2 \\
+- 5(-2)(-6) - (-2)(-9)(-2) \end{array} \\
+& = & -96 - 90 + 20 + 80 - 60 + 36 \\
+& = & -110.
+\end{array}
+\]
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c10.1.1c}
+$C = \left(\begin{array}{rrrrr} 2 & 1 & -1 & 0 & 0 \\ 1 & -2 & 3
+& 0 & 0 \\ -3 & 2 & -2 & 0 & 0 \\ 1 & 1 & -1 & 2 & 4 \\ 0 & 2 &
+3 & -1 & -3 \end{array} \right)$.
+
+\begin{solution}
+
+\ans The determinant of the matrix is $14$.
+
+\soln Using Lemma~\ref{L:detblockdiag}, compute
+\[ 
+\begin{array}{rcl}
+\det(A) & = & 
+\det\matthree{2}{1}{-1}{1}{-2}{3}{-3}{2}{-2}
+\det\mattwo{2}{4}{-1}{-3} \\
+& = & \big(2(-2)(-2) + 1 \cdot 3(-3) + (-1)1 \cdot 2
+- (-1)(-2)(-3) - 1 \cdot 1(-2) \\
+& & - 2 \cdot 3 \cdot 2\big)
+(-2) \\
+& = & (-7)(-2) \\
+& = & 14.
+\end{array}
+\]
+
+\end{solution}
+\end{exercise}
+\end{document}

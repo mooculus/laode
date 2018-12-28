@@ -1,0 +1,21 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c6.5.1}
+Suppose that the matrices $A$ and $B$ are similar and the matrices
+$B$ and $C$ are similar.  Show that $A$ and $C$ are also similar
+matrices.
+
+\begin{solution}
+
+Since $A$ and $B$ are similar and $B$ and $C$ are similar,
+$A = P^{-1}BP$ for some matrix $P$, and $B = Q^{-1}BQ$
+for some matrix $Q$.  Therefore,
+\[ A = P^{-1}BP = P^{-1}Q^{-1}CQP. \]
+By Proposition~\ref{P:invprod}, $(QP)^{-1} = P^{-1}Q^{-1}$, so
+\[ A = (QP)^{-1}C(QP) \]
+thus, $A$ and $C$ are similar.
+
+\end{solution}
+\end{exercise}
+\end{document}

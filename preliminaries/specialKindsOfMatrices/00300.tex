@@ -1,0 +1,70 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+
+\noindent A general $2\times 2$ diagonal matrix has the form
+$\mattwo{a}{0}{0}{b}$.  Thus the two unknown real numbers $a$ and $b$ are
+needed to specify each $2\times 2$ diagonal matrix.  In
+Exercises~\ref{c1.3.1a} -- \ref{c1.3.3c}, how many unknown real numbers
+are needed to specify each of the given matrices:
+\begin{exercise}  \label{c1.3.1a}
+An upper triangular $2\times 2$ matrix? \begin{prompt}$\answer{3}$\end{prompt}
+
+\begin{solution}
+A $2\times 2$ upper triangular matrix $A$ has the form $A = \left( \begin{array}{cc}
+            a_{11} & a_{12} \\
+            0 & a_{22} \end{array} \right)$.  Thus the number of entries needed to define $A$ is $3$.  
+
+\end{solution}
+\end{exercise}
+\begin{exercise}  \label{c1.3.1b}
+A symmetric $2\times 2$ matrix? \begin{prompt}$\answer{3}$\end{prompt}
+
+\begin{solution}
+$3$.
+
+\end{solution}
+\end{exercise}
+\begin{exercise}  \label{c1.3.2}
+An $m\times n$ matrix? \begin{prompt}$\answer{mn}$\end{prompt}
+
+\begin{solution}
+Each row of the matrix has $n$ entries and there are $m$ rows.  Hence the number of unknown entries is $mn$.
+
+\end{solution}
+\end{exercise}
+\begin{exercise}  \label{c1.3.3a}
+A diagonal $n\times n$ matrix? \begin{prompt}$\answer{n}$\end{prompt}
+
+\begin{solution}
+$n$.
+
+\end{solution}
+\end{exercise}
+\begin{exercise}  \label{c1.3.3b}
+  An upper triangular $n\times n$ matrix? \begin{prompt}$\answer{n(n+1)/2}$\end{prompt}
+  \begin{hint}Recall the
+    summation formula:
+    \[
+      1 + 2 + \cdots + k = \frac{k(k+1)}{2}.
+    \]
+  \end{hint}
+
+\begin{solution}
+$1 + 2 + \cdots + (n-1) + n = \frac{n(n + 1)}{2}$.
+
+\end{solution}
+\end{exercise}
+\begin{exercise}  \label{c1.3.3c}
+A symmetric $n\times n$ matrix?   
+\begin{prompt}$\answer{n(n+1)/2}$\end{prompt}
+
+\begin{solution}
+The number of independent entries in row $k$ of an $n\times n$ symmetric matrix is $n-k+1$.  Thus the number of independent entries in the matrix is 
+\[
+n + (n-1) + \cdots + 1 = 1 + 2 + \cdots + n = \sum_{k=1}^n k = \frac{n(n + 1)}{2}.
+\]
+\end{solution}
+\end{exercise}
+\end{document}

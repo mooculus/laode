@@ -1,0 +1,36 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c2.2.a5}
+Use \Matlab to graph the function $y = 2 - x\sin(x^2-1)$ on the interval
+$[-2,3]$.  How many relative maxima does this function have on this interval?
+
+\begin{solution}
+
+\ans The function has three relative maxima on this interval.
+
+\soln Graph the function in \Matlab using the commands:
+\begin{verbatim}
+x = linspace(-2,3);
+y = 2 - x.*sin(x.^2 - 1);
+plot(x,y)
+\end{verbatim}
+Determine the number of relative maxima numerically from the graph, which
+is shown in Figure~\ref{c2.2.a5}.
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/2-2-a5.eps,width=3.0in}}
+		\exercap{c2.2.a5}
+\end{figure}
+
+
+
+
+
+
+
+
+\end{solution}
+\end{exercise}
+\end{document}

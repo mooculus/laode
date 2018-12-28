@@ -1,0 +1,47 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c5.5.7}
+Let $u\in\R^n$ be a nonzero row vector.
+\begin{itemize}
+\item[(a)] Show that the $n\times n$ matrix $A=u^tu$ is symmetric and
+  that $\rank(A)=1$.  {\bf Hint:} Begin by showing that $Av^t=0$ for
+  every row vector $v\in\R^n$ that is perpendicular to $u$ and that
+  $Au^t$ is a nonzero multiple of $u^t$.
+\item[(b)]  Show that the matrix $P=I_n+u^tu$ is invertible.  {\bf Hint:}
+Show that $\rank(P)=n$.
+\end{itemize}
+
+\begin{solution}
+
+(a) The matrix $A$ is symmetric because, by \eqref{e:transposeprod},
+\[
+A^t = (u^tu)^t = u^tu = A.
+\]
+To show that $\rank(A) = 1$, let $v$ be a vector such that $u \cdot
+v = 0$.  This implies $uv^t = 0$, and thus $Av^t = u^t(uv^t) = 0$
+for all vectors $v$.  The span of vectors perpendicular to $u$ has
+dimension $n - 1$, so $\null(A) \geq n - 1$.  We know that $uu^t
+= u \cdot u = ||u||$.  Thus, $Au^t = u^tuu^t = ||u||u^t$.  Since
+$u$ is a nonzero vector, $||u|| \neq 0$, so $Au^t$ is a nonzero
+multiple of $u^t$.  Therefore, $A$ is not the zero matrix, so
+$\null(A) = n - 1$, and therefore $\rank(A) = 1$.
+
+(b) The matrix $P$ is invertible if $P$ is row equivalent to $I_n$,
+that is, if $\rank(P) = n$.  To show that this is true, again let $v$
+be any vector perpendicular to $u$.  Then:
+\[
+Pv^t = (I_n + u^tu)v^t = v^t + 0 = v^t.
+\]
+Thus, $\rank(P) \geq n - 1$.  In addition
+\[
+Pu^t = (I_n + u^tu)u^t = u^t + ||u||u^t = (1 + ||u||)u^t
+\]
+which, since $||u|| > 0$, is a nonzero multiple of $u^t$.  Therefore,
+$\rank(P) = n$ and $P$ is invertible.
+
+
+
+\end{solution}
+\end{exercise}
+\end{document}

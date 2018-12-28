@@ -1,0 +1,125 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c9.1.1}
+Consider the Volterra-Lotka equations when $\mu_1,\mu_2>0$, 
+$\rho_1,\rho_2 < 0$, and $\sigma_1<0,\sigma_2>0$. Scaling these 
+equations leads to the system
+\begin{matlabEquation}\label{MATLAB:22}
+\begin{array}{rcl}
+\dot{x} & = & x(\mu + \rho x -         y)  \\
+\dot{y} & = & y(  1 +        x +  \eta y),
+\end{array}
+\end{matlabEquation}
+where $\mu>0$ and $\rho,\eta<0$.  
+\begin{itemize}
+\item[(a)]  There are four possible equilibria depending on whether $x$ and 
+$y$ vanish or not.  Find these equilibria and their type (saddle, sink, 
+source or nonhyperbolic).  {\bf Hint:} Use the equations for the equilibrium 
+where both coordinates are nonzero 
+\[
+\mu + \rho x - y = 0 \AND  1 + x +  \eta y = 0
+\]
+to show that the Jacobian matrix at that equilibrium is:
+\[
+(df) =\mattwoc{\rho x}{-x}{y}{\eta y}.
+\]
+\item[(b)]  Set $\rho=-1.5$ and $\eta=-1$ and discuss the phase portraits 
+of these equations for different values of $\mu$.  Verify your answer 
+using {\pplane}. 
+\end{itemize}
+
+\begin{solution}
+
+(a) \ans See Table~\ref{c9.1.1}
+\begin{table}[htb]
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+& Exists in $1^{st}$ & Jacobian & equilibrium \\
+& Quadrant & & type \\
+\hline
+$e_1 = (0,0)$ & always & $\mattwo{\mu}{0}{0}{1}$ & nodal source \\
+\hline
+$e_2 = \left(-\frac{\mu}{\rho},0\right)$ & always &
+$\cmattwo{-\mu}{\frac{\mu}{\rho}}{0}{1 - \frac{\mu}{\rho}}$ &
+saddle point \\
+\hline
+$e_3 = \left(0,-\frac{1}{\eta}\right)$ & always &
+$\cmattwo{\mu + \frac{1}{\eta}}{0}{-\frac{1}{\eta}}{-1}$ &
+$\begin{array}{c} \hbox{nodal sink if } \mu < -\frac{1}{\eta} \\
+\hbox{saddle node if } \mu = -\frac{1}{\eta} \\
+\hbox{saddle if } \mu > -\frac{1}{\eta} \end{array}$ \\
+\hline
+$\begin{array}{rl} e_4 = & (x_4,y_4) \\
+ = & \dps\frac{1}{1 + \rho\eta}(-1 - \mu\eta, \mu - \rho) \end{array}$ 
+& $\mu > -\frac{1}{\eta}$ &
+$\cmattwo{\rho x_4}{-x_4}{y_4}{\eta y_4}$ & sink \\
+\hline
+\end{tabular}
+
+\vspace{0.2in}
+Table~\ref{c9.1.1}
+\end{center}
+\end{table}
+
+\soln
+Solve
+\[
+\begin{array}{rcccl}
+\dot{x} & = & x(\mu + \rho x - y) & = & 0 \\
+\dot{y} & = & y(1 + x + \eta y) & = & 0 \end{array}
+\]
+There are four solutions:
+\[
+\begin{array}{lr}
+x = y = 0 & (e_1) \\
+x \neq 0, y = 0 & (e_2) \\
+x = 0, y \neq 0 & (e_3) \\
+x \neq 0, y \neq 0 & (e_4) \end{array}
+\]
+
+Find the Jacobian matrices at these equilibria, which are shown in
+Table~\ref{c9.1.1}.  To find the Jacobian at $e_4$, note that
+$\mu + \rho x_4 - y_4 = 0$ and $1 + x_4 + \eta y_4 = 0$.  Therefore,
+\[
+(dJ)_{e_4} = \cmattwo{\mu + 2\rho x_4 - y_4}{-x_4}{y_4}{1 + x_4 +
+2\eta y_4} = \cmattwo{\rho x_4}{-x_4}{y_4}{\eta y_4}.
+\]
+
+Use the Jacobian to find the type of each equilibrium.  Since $\mu > 0$,
+both eigenvalues of $(dJ)_{e_1}$ are positive, so $e_1$ is a nodal source. 
+Since $\det(dJ)_{e_2} < 0$, $e_2$ is a saddle point.  The trace of the
+Jacobian at $e_3$ is always negative, so the equilibrium is a saddle if the
+determinant is negative, a nodal sink if the determinant is positive, and
+a saddle node if the determinant is zero.
+For any valid $\rho$ and $\eta$, $\trace(dJ)_{e_4} = \rho x_4 +
+\eta y_4 < 0$ and $\det(dJ)_{e_4} = x_4y_4(\rho\eta + 1) > 0$.
+Define
+\[
+D = (\trace(dJ)_{e_4})^2 - 4\det(dJ)_{e_4} =
+(\rho x_4 - \eta y_4)^2 - 4x_4y_4.
+\]
+Therefore, if $D > 0$, then $e_4$ is a spiral sink.  If $D = 0$, then
+$e_4$ is an improper nodal sink, and if $D < 0$, then $e_4$ is a nodal
+sink.
+
+(b) If $e_4$ exists in the first quadrant, then all initial
+populations such that $x > 0$ and $y > 0$ limit on $e_4$ in forward time. 
+If $e_4$ does not exist in the first quadrant, then the population limits on
+$e_3$, that is, the prey become extinct, and the population of predators
+stabilizes at $-\frac{1}{\eta}$.  Figure~\ref{c9.1.1}a shows trajectories
+of the system with $\mu = 2$, and Figure~\ref{c9.1.1}b shows trajectories
+of the system with $\mu = 0.5$, so that $e_4$ no longer exists in the first
+quadrant.
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/9-1-1a.eps,width=2.75in}
+                       \psfig{file=exfigure/9-1-1b.eps,width=2.75in}}
+                \exercaptwo{c9.1.1}
+\end{figure}
+
+\end{solution}
+\end{exercise}
+\end{document}

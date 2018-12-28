@@ -1,0 +1,20 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c6.2.5}
+Let $\alpha,\beta$ be real numbers and let $\alpha I$ and $\beta
+I$ be corresponding $n\times n$ diagonal matrices.  Use
+properties of the scalar exponential function to show that
+\[
+     e^{(\alpha + \beta)I} = e^{\alpha I}e^{\beta I}.
+\]
+
+\begin{solution}
+
+By equation~\eqref{ex:expm}, $e^{\alpha I} = e^\alpha I$.  Therefore,
+\[ e^{(\alpha + \beta)I} = e^{\alpha + \beta}I = e^\alpha e^\beta I
+= e^\alpha I e^\beta I = e^{\alpha I}e^{\beta I}. \]
+
+\end{solution}
+\end{exercise}
+\end{document}

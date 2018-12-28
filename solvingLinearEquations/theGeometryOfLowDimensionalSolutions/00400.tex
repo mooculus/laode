@@ -1,0 +1,46 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c2.2.7}
+Write the equation of the plane through the origin containing the
+vectors $(1,0,1)$ and $(2,-1,2)$.
+\begin{prompt}
+  The equation for the plane is $z = \answer{x}$.
+\end{prompt}
+\begin{hint}
+  Note that the plane goes through the origin and contains the
+vectors $(1,0,1)$ and $(2,-1,2)$, and therefore contains the points
+$(0,0,0)$, $(1,0,1)$, and $(2,-1,2)$.  The general equation for a plane
+is $ax + by + cz = d$.  We can substitute the coordinates of the three
+points into this equation to get the linear system
+\[
+\begin{array}{rrrrrrr}
+ & & & & 0 & = & d \\
+a & & & + & c & = & d \\
+2a & - & b & + & 2c & = & d\end{array}
+\]
+We can solve the system by substitution to get $b = d = 0$ and $a = -c$,
+which yields the equation of the plane.
+\end{hint}
+
+\begin{solution}
+
+\ans The equation for the plane is $z = x$.
+
+\soln Note that the plane goes through the origin and contains the
+vectors $(1,0,1)$ and $(2,-1,2)$, and therefore contains the points
+$(0,0,0)$, $(1,0,1)$, and $(2,-1,2)$.  The general equation for a plane
+is $ax + by + cz = d$.  We can substitute the coordinates of the three
+points into this equation to get the linear system
+\[
+\begin{array}{rrrrrrr}
+ & & & & 0 & = & d \\
+a & & & + & c & = & d \\
+2a & - & b & + & 2c & = & d\end{array}
+\]
+We can solve the system by substitution to get $b = d = 0$ and $a = -c$,
+which yields the equation of the plane.
+
+\end{solution}
+\end{exercise}
+\end{document}

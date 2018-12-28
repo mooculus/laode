@@ -1,0 +1,60 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c14.6.7A}
+Use the result of Exercise~\ref{c14.6.7} to find an integrating factor for 
+the differential equation
+\[
+\frac{dx}{dt} = -\frac{8x+5t}{4t},
+\]
+and then determine all solutions of this differential equation.
+
+\begin{solution}
+\ans $x(t) = \dps\frac{C}{4t^2} - \frac{5}{12}t$.
+
+\soln  For the given differential equation $G(x,t)=-8x-5t$ and $H(x,t)=4t$. 
+Since $-G_x=8$ and $H_t=4$, it follows that the differential equation is not
+exact.  We solve (\ref{EX:if}) for an integrating factor $\rho(t)$.  That is,
+we solve
+\[
+\rho_t = -\rho\frac{-8+4}{4t} = \frac{1}{t}\rho.
+\]
+We can use separation of variable to solve this equation.  That is,
+\[
+\frac{\rho_t}{\rho} =  \frac{1}{t}.
+\]
+On integration we find that $\rho=t$ is a solution.
+
+To verify that $\rho(t)=t$ is an integrating factor, let $G(x,t)=-8xt-5t^2$
+and $H(x,t)=4t^2$.  Then 
+\[
+-G_x = 8t \AND H_t = 8t,
+\]
+so that this equation is exact.
+
+Next, we must find a function $F(t,x)$ satisfying \eqref{eq:excond}.  By
+integration, obtain
+\[
+\Omega(t,x) = \int H(t,x)dx = \int 4t^2dx = 4t^2x.
+\]
+Then, find the function $h(t)$ such that
+\[
+h'(t) = -\frac{\partial}{\partial t}\Omega(t,x) - G(t,x) = 5t^2.
+\]
+In this case, we can choose 
+\[
+h(t) =  \frac{5}{3}t^3.  
+\]
+Finally, compute
+\[
+F(t,x) = \Omega(t,x) + h(t) = 4t^2x + \frac{5}{3}t^3,
+\]
+the function satisfying \eqref{eq:excond}.  The general solution is found by 
+solving $F=C$ for $x$; that is, solving
+\[
+4t^2x + \frac{5}{3}t^3 = C.
+\]
+
+\end{solution}
+\end{exercise}
+\end{document}

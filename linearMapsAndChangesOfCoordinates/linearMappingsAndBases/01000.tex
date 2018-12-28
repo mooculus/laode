@@ -1,0 +1,28 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c7.2.6}
+Let ${\cal P}$ be the vector space of polynomials in one variable
+$x$.  Define $L:{\cal P}\to {\cal P}$ by $L(p)(x)=\int_0^x(t-1)p(t)dt$.
+Verify that $L$ is a linear mapping.
+
+\begin{solution}
+
+Let $p$ and $q$ be elements of ${\cal P}$.  Then,
+\[ \begin{array}{rcl}
+L(p + q)(x) & = & \int_0^x(t - 1)(p(t) + q(t))dt \\
+& = & \int_0^x((t - 1)p(t)dt + (t - 1)q(t)dt) \\
+& = & \int_0^x(t - 1)p(t)dt + \int_0^x(t - 1)q(t)dt \\
+& = & L(p(x)) + L(q(x)). \end{array} \]
+For any real scalar $c$,
+\[ L(cp(x)) = \int_0^x(t - 1)cp(t)dt = c\int_0^x(t - 1)p(t)dt
+= cL(p(x)). \]
+Therefore, $L$ is a linear mapping.
+
+
+
+
+
+\end{solution}
+\end{exercise}
+\end{document}

@@ -1,0 +1,35 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise}  \label{e:uHopf}
+Change the sign of the $y^3$ term in the $\dot{y}$ equation in 
+\eqref{E:Hopfbif} and obtain the system of differential equations:
+\[
+\begin{array}{rcl}
+\dot{x} & = & y \\
+\dot{y} & = & -x + \rho y + y^3.  \end{array}
+\]
+Use {\pplane}\index{\computer!pplane8}
+to plot the phase portraits of this system when 
+$\rho=-1$ and $\rho=1$.  Describe the differences between these phase portraits
+and those in Figure~\ref{F:Hopfbif}. Draw the bifurcation diagram.
+
+\begin{solution}
+
+The system is shown in Figure~\ref{e:uHopf}a with $\rho = -1$, and in
+Figure~\ref{e:uHopf}b with $\rho = 1$.  In this system, a limit cycle
+exists before the bifurcation point, whereas, in \eqref{E:Hopfbif}, the
+limit cycle exists after the bifurcation point and vanishes at
+$\rho = 0$.  Also, in this system, the limit cycle is unstable, while
+the limit cycle of \eqref{E:Hopfbif} is stable.
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/uHopfa.eps,width=2.75in}
+                       \psfig{file=exfigure/uHopfb.eps,width=2.75in}}
+                \exercaptwo{e:uHopf}
+\end{figure}
+
+\end{solution}
+\end{exercise}
+\end{document}

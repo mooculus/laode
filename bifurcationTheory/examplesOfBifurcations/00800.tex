@@ -1,0 +1,51 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{e:source}
+Change the sign of the $\dot{y}$ equation in \eqref{E:ssys}, obtaining the 
+system of differential equations:  
+\[
+\begin{array}{rcl}
+\dot{x} & = & x^2 - \rho + y \\
+\dot{y} & = & y(x^2+1).  \end{array}
+\]
+Show that a saddle-node bifurcation occurs at $\rho=0$ in this system by 
+plotting phase portraits for $\rho=-1$ and $\rho=1$.  How do the 
+phase portraits of this system differ from those of \eqref{E:ssys} 
+given in Figure~\ref{F:ssys}.
+
+\begin{solution}
+
+\ans When $\rho < 0$, neither system has an equilibrium.  All solutions of
+this system limit on the negative $x$-axis in backwards time, while all
+solutions of \eqref{E:ssys} limit on the positive $x$-axis in forward time.
+When $\rho > 0$, each system has two equilibria along the $x$-axis.  This
+system has a saddle at $x < 0$ and a source at $x > 0$, while \eqref{E:ssys}
+has a saddle at $x > 0$ and a sink at $x < 0$.
+
+\soln
+A saddle node bifurcation can occur only when the Jacobian of a system
+at an equilibrium has a zero eigenvalue.  The only equilibrium for this
+system occurs at the point $(x,y) = (\pm\sqrt{\rho},0)$.  The Jacobian
+at the point $(x,y) = (\sqrt{\rho},0)$ is
+\[
+J = \cmattwo{2\sqrt{\rho}}{1}{0}{\rho + 1}.
+\]
+The determinant of $J$ is zero only if $2\sqrt{\rho}(\rho + 1) = 0$, which
+occurs when $\rho = 0$.  Thus, $\rho = 0$ is the only point at which a
+saddle node bifurcation can occur.  The system is shown in
+Figure~\ref{e:source}a with $\rho = -0.1$, and in Figure~\ref{e:source}b
+with $\rho = 0.1$.  There are no equilibria when $\rho = -0.1$, and two
+when $\rho = 0.1$, so there is indeed a saddle node bifurcation when
+$\rho = 0$.
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/sourcea.eps,width=2.75in}
+                       \psfig{file=exfigure/sourceb.eps,width=2.75in}}
+                \exercaptwo{e:source}
+\end{figure}
+
+\end{solution}
+\end{exercise}
+\end{document}

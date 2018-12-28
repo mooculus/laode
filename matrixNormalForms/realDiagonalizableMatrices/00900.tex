@@ -1,0 +1,21 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c10.3.6B}
+Let $A$ be an $n\times n$ matrix with distinct real eigenvalues and let $B$ 
+be an $n\times n$ matrix that commutes with $A$.  Using the result of
+Exercise~\ref{c10.3.6A}, show that there is a matrix $S$ that simultaneously
+diagonalizes $A$ and $B$; that is, $S\inv AS$ and $S\inv BS$ are both
+diagonal matrices.
+
+\begin{solution}
+Suppose that $BA=AB$ and that the eigenvalues of $A$ are distinct. 
+By Theorem~\ref{T:diagsimple} and Lemma~\ref{L:eigenv-diag}, 
+there is a basis $v_1,\ldots,v_n$ of $\R^n$ consisting of eigenvectors of $A$.  By 
+Exercise~\ref{c10.3.6A}, these vectors are also eigenvectors of $B$.  Let 
+$S=(v_1|\cdots|v_n)$.  Then both matrices $S\inv AS$ and $S\inv BS$ are diagonal 
+matrices.
+
+\end{solution}
+\end{exercise}
+\end{document}

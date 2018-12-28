@@ -1,0 +1,26 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c7.9.2}
+Let $Q$ be an orthogonal $n\times n$ matrix.
+Show that $Q$ preserves the length of vectors, that is
+\[
+\|Qv\| = \|v\|\quad \mbox{for all $v\in\R^n$.}
+\]
+
+\begin{solution}
+
+For this proof, we use the fact that, if $C$ is a complex matrix, then
+$(Cv) \cdot w = v \cdot (\overline{C}^tw)$.  This was shown in the discussion
+of Hermitian inner products in Section~\ref{S:symmetric}.  In particular,
+since $Q$ is a real matrix, $(Qv) \cdot w = v \cdot (Q^tw)$.  Therefore,
+since $Q$ is orthogonal:
+\[
+||Qv||^2 = (Qv) \cdot (Qv) = (Q^tQv) \cdot v = (I_nv) \cdot v
+= v \cdot v = ||v||^2.
+\]
+
+
+\end{solution}
+\end{exercise}
+\end{document}

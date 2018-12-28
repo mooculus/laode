@@ -1,0 +1,36 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c4.3.4}
+Can the vector $z=(2,3,-1)$ be written as
+\[
+z=\alpha x+ \beta y
+\]
+where $x=(2,3,0)$ and $y=(1,-1,1)$?
+
+\begin{solution}
+
+\ans The vector $z = (2,3,-1)$ cannot be written as
+\[
+z = \alpha(2,3,0) + \beta(1,-1,1).
+\]
+
+\soln Write the equation
+\[ (2,3,-1) = \alpha(2,3,0) + \beta(1,-1,1) = 
+(2\alpha + \beta, 3\alpha - \beta, \beta) \]
+as a linear system of two unknowns in three equations:
+\[ \begin{array}{rrrrr}
+2 & = & 2\alpha & + & \beta \\
+3 & = & 3\alpha & - & \beta \\
+-1 & = & \beta \end{array}. \]
+Substituting $\beta = -1$ into the first and second equations
+yields
+\[ \begin{array}{rcl}
+\frac{3}{2} & = & \alpha \\
+\frac{2}{3} & = & \alpha. \end{array} \]
+The system is inconsistent, so there is no solution to the desired
+equation.
+
+\end{solution}
+\end{exercise}
+\end{document}

@@ -1,0 +1,17 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c6.3.14}
+When the eigenvalues $\lambda_1$ and $\lambda_2$ of the $2\times 2$ 
+matrix $C$ are real and distinct, $e^{tC}$ can be computed without determining 
+the associated eigenvectors.  To see this, prove that
+\begin{equation}  \label{E:exdist}
+e^{tC} = \frac{1}{\lambda_2-\lambda_1}\left(e^{\lambda_1 t}(C-\lambda_2I_2) -
+e^{\lambda_2 t}(C-\lambda_1I_2)\right).
+\end{equation}
+Hint:  The left and right hand sides of \eqref{E:exdist} are linear maps.  Two 
+linear maps are identical if they have the same values on a basis of vectors 
+$v_1$ and $v_2$.  Verify that the maps in \eqref{E:exdist} are equal when 
+applied to the linearly independent eigenvectors of $C$.
+\end{exercise}
+\end{document}

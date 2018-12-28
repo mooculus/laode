@@ -1,0 +1,48 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c4.4.1}
+Consider the homogeneous linear equation
+\[
+x+y+z = 0
+\]
+\begin{enumerate}
+\item[(a)]  Write all solutions to this equation as a general
+superposition of a pair of vectors $v_1$ and $v_2$.
+\item[(b)]  Write all solutions as a general superposition of
+a second pair of vectors $w_1$ and $w_2$.
+\end{enumerate}
+
+\begin{solution}
+
+(a) \ans All solutions can be written as a superposition of the vectors
+\[
+v_1 = \vecthree{-1}{1}{0} \AND v_2 = \vecthree{-1}{0}{1}.
+\]
+
+\soln The equation $x + y + z = 0$ is a linear system of three variables
+in one equation.  If we consider $y$ and $z$ to be free variables, then
+every solution to the system has the form
+\[
+\vecthree{x}{y}{z} = \left(\begin{array}{c} -y - z \\ y \\
+z \end{array}\right) = y\vecthree{-1}{1}{0} +
+z\vecthree{-1}{0}{1}.
+\]
+
+(b) \ans All solutions can be written as a superposition
+of the second pair of vectors
+\[
+w_1 = \vecthree{1}{0}{-1} \AND w_2 = \vecthree{0}{1}{-1}.
+\]
+
+\soln Write the same linear system, but this time consider $x$ and $y$
+to be free variables.  In this case, every solution has the form:
+\[
+\vecthree{x}{y}{z} = \left(\begin{array}{c} x \\ y \\
+-x - y \end{array}\right) = x\vecthree{1}{0}{-1} +
+z\vecthree{0}{1}{-1}.
+\]
+
+\end{solution}
+\end{exercise}
+\end{document}

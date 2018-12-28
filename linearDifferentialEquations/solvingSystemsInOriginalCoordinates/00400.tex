@@ -1,0 +1,149 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\noindent  In Exercises~\ref{c12.1.8a} -- \ref{c12.1.8d} use
+Theorem~\ref{T:etA} and \Matlab to compute $e^{tA}$ for the given matrix.
+\begin{exercise} \label{c12.1.8a}
+$A = \mattwo{0}{1}{0}{0}$.
+
+\begin{solution}
+\ans $e^{tA} = \mattwo{1}{t}{0}{1}$.
+
+\soln The matrix $A = \mattwo{0}{1}{0}{0}$ has an eigenvalue $0$ with
+multiplicity two.  Theorem~\ref{T:etA} states that 
+\[
+e^{tA} = a_1(A)P_1(A)\sum_{j=0}^1t^jA^j= a_1(A)P_1(A)(I_2+tA).
+\]
+In this case $P_1(\lambda)=1=a_1(\lambda)$.   Therefore,
+\[
+e^{tA} = I_2+tA = \mattwo{1}{t}{0}{1}.
+\]
+
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c12.1.8b}
+$A = \mattwo{-1}{2}{0}{-1}$.
+
+\begin{solution}
+\ans $e^{tA} = e^{-t}\mattwo{1}{2t}{0}{1}$.
+
+\soln The matrix $A = \mattwo{-1}{2}{0}{-1}$ has an eigenvalue $-1$ with
+multiplicity two.  Theorem~\ref{T:etA} states that 
+\[
+e^{tA} = a_1(A)P_1(A)\sum_{j=0}^1e^{-t}t^j(A+I_2)^j=
+a_1(A)P_1(A)e^{-t}(I_2+t(A+I_2)).
+\]
+In this case $P_1(\lambda)=1=a_1(\lambda)$.   Therefore,
+\[
+e^{tA} = e^{-t}(I_2+t(A+I_2)) = e^{-t}\mattwo{1}{2t}{0}{1}.
+\]
+
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c12.1.8c}
+$A = \left(\begin{array}{rrr} 1 & 1 & 2\\ 1 & 1 & 0 \\ 0 & 0 & 0
+\end{array}\right)$.
+
+\begin{solution}
+\ans $e^{tA}= \dps\frac{1}{4}\left(\begin{array}{rrc} 
+1 & -1 & -2+2t\\ -1 & 1 & -2t \\ 0 & 0 & 2\end{array}\right) +e^{2t}\left(\begin{array}{rrr} 2 & 2 & 2\\  2 & 2 & 2 \\ 0 & 0 & 0 
+\end{array}\right)$.
+
+\soln The matrix 
+$A = \left(\begin{array}{rrr} 1 & 1 & 2\\ 1 & 1 & 0 \\ 0 & 0 & 0
+\end{array}\right)$ has eigenvalues $0$ with multiplicity two and $2$ 
+with multiplicity one. Theorem~\ref{T:etA} states that 
+\begin{eqnarray*}
+e^{tA} & = & a_1(A)P_1(A)\sum_{j=0}^1t^jA^j + e^{2t}a_2(A)P_2(A)\\
+ & = & a_1(A)P_1(A)(I_3+tA) + e^{2t}a_2(A)P_2(A).
+\end{eqnarray*}
+The characteristic polynomial of $A$ is $p_A(\lambda) =(2-\lambda)\lambda^2$.
+From \eqref{e:Pj} we see that
+\[
+P_1(\lambda) = 2-\lambda \AND P_2(\lambda) = \lambda^2.
+\]
+We recall from \eqref{e:1/p} that 
+\[
+\frac{1}{p_A(\lambda)} = \frac{a_1(\lambda)}{2-\lambda} + 
+\frac{a_2(\lambda)}{\lambda^2} = \frac{\frac{1}{4}}{2-\lambda}
++ \frac{\frac{1}{2}+\frac{1}{4}\lambda}{\lambda^2}.
+\]
+Therefore
+\[
+a_1(\lambda) = \frac{1}{4} \AND a_2(\lambda) = \frac{1}{2}+\frac{1}{4}\lambda,
+\]
+and
+\begin{eqnarray*}
+e^{tA} & = & \frac{1}{4}(2I_3-A)(I_3+tA) + 
+e^{2t}\left(\frac{1}{2}I_3+\frac{1}{4}A\right)A^2\\
+& = & \frac{1}{4}\left((2I_3-A)+t(2A-A^2)+e^{2t}(2A^2+A^3)\right).
+\end{eqnarray*}
+Hence
+\[
+e^{tA}= \frac{1}{4}\left(\left(\begin{array}{rrr} 1 & -1 & -2\\ -1 & 1 & 0 
+\\ 0 & 0 & 2\end{array}\right)+t\left(\begin{array}{rrr} 0 & 0 & 2\\ 0 & 0 & -2
+\\ 0 & 0 & 0 \end{array}\right)+e^{2t}\left(\begin{array}{rrr} 8 & 8 & 8\\ 
+8 & 8 & 8 \\ 0 & 0 & 0\end{array}\right)\right).
+\]
+
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c12.1.8d}
+$A = \left(\begin{array}{rrr} -1 & 2 & -6\\ 0 & 2 & 0 \\ 0 & -1 & 2
+\end{array}\right)$.
+
+\begin{solution}
+\ans $e^{tA}= \dps\frac{1}{9}e^{2t}\left(\begin{array}{rcr} 
+0 & -2-6t & 6\\ 0 & -3 & 0\\ 0 & 1+3t & -3\end{array}\right) 
++e^{-t}\left(\begin{array}{rrr} -6 & 0 & -12\\  0 & 0 & 0 \\ 0 & 0 & 0 
+\end{array}\right)$.
+
+
+\soln The matrix 
+$A = \left(\begin{array}{rrr} -1 & 2 & -6\\ 0 & 2 & 0 \\ 0 & -1 & 2
+\end{array}\right)$ has eigenvalues $2$ with multiplicity two and $-1$ 
+with multiplicity one. Theorem~\ref{T:etA} states that 
+\begin{eqnarray*}
+e^{tA} & = & a_1(A)P_1(A)e^{2t}\sum_{j=0}^1t^j(A-2I_3)^j+e^{-t}a_2(A)P_2(A)\\
+ & = & a_1(A)P_1(A)e^{2t}(I_3+t(A-2I_3)) + e^{-t}a_2(A)P_2(A).
+\end{eqnarray*}
+The characteristic polynomial of $A$ is 
+$p_A(\lambda) =(2-\lambda)^2(-1-\lambda)$.  From \eqref{e:Pj} we see that
+\[
+P_1(\lambda) = -1-\lambda \AND P_2(\lambda) = (2-\lambda)^2.
+\]
+We recall from \eqref{e:1/p} that 
+\[
+\frac{1}{p_A(\lambda)} = \frac{a_1(\lambda)}{-1-\lambda} + 
+\frac{a_2(\lambda)}{(\lambda-2)^2} = \frac{\frac{1}{9}}{-1-\lambda}
++ \frac{-\frac{5}{9}+\frac{1}{9}\lambda}{(\lambda-2)^2}.
+\]
+Therefore
+\[
+a_1(\lambda) = \frac{1}{9} \AND a_2(\lambda) = -\frac{5}{9}+\frac{1}{9}\lambda,
+\]
+and
+\begin{eqnarray*}
+e^{tA} & = & \frac{1}{9}\left((-I_3-A)e^{2t}(I_3+t(A-2I_3)) + 
+e^{-t}(A-5I_3)(A-2I_3)^2\right)\\
+& = & 
+\frac{1}{9}\left(e^{2t}((-I_3-A)+t(-A^2+A+2I_3)+e^{-t}(A-5I_3)(A-2I_3)^2\right).
+\end{eqnarray*}
+Hence
+\[
+e^{tA}= \frac{1}{9}\left(e^{2t}\left(\left(\begin{array}{rrr} 0 & -2 & 6\\ 
+0 & -3 & 0\\ 0 & 1 & -3\end{array}\right)+t\left(\begin{array}{rrr} 0& -6 & 0\\ 
+0 & 0 & 0\\ 0 & 3 & 0 \end{array}\right)\right)+e^{-t}\left(\begin{array}{rrr} 
+-54 & 0 & -108\\ 0 & 0 & 0 \\ 0 & 0 & 0\end{array}\right)\right).
+\]
+
+
+
+
+\end{solution}
+\end{exercise} 
+\end{document}

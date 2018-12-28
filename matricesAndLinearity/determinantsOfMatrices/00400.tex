@@ -1,0 +1,32 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c4.9.4}
+Show that the $2\times 2$ matrix $A=\mattwo{a}{b}{c}{d}$ is row
+equivalent to $I_2$ if and only if $ad-bc\neq 0$.  {\bf Hint:}
+Prove this result separately in the two cases $a\neq 0$ and
+$a=0$.
+
+\begin{solution}
+
+Case: $a \neq 0$.  $A$ can be row reduced as follows:
+\[ \mattwo{a}{b}{c}{d} \rightarrow
+\mattwo{1}{\frac{b}{a}}{c}{d} \rightarrow
+\cmattwo{1}{\frac{b}{a}}{0}{\frac{ad - bc}{a}}. \]
+If $ad - bc \neq 0$, then the matrix can be row reduced to $I_2$, whereas
+if $ad - bc = 0$, the row reduced matrix is:
+\[ \mattwo{1}{\frac{b}{a}}{0}{0} \]
+which cannot be reduced further and is not row equivalent to $I_2$.
+
+Case: $a = 0$.  If either $c = 0$ or $b = 0$, then the resulting matrices,
+\[ \mattwo{0}{b}{0}{d} \AND \mattwo{0}{0}{c}{d} \]
+respectively, are not row equivalent to $I_2$, and $ad - bc = 0 - 0 = 0$.
+If $c \neq 0$ and $b \neq 0$, then the matrix can be row reduced:
+\[ \mattwo{0}{b}{c}{d} \rightarrow
+\mattwo{c}{d}{0}{b} \rightarrow \mattwo{1}{\frac{d}{c}}{0}{b} \]
+which is row equivalent to $I_2$.  So $A$ is indeed row equivalent
+to $I_2$ if and only if $ad - bc \neq 0$.
+
+\end{solution}
+\end{exercise}
+\end{document}

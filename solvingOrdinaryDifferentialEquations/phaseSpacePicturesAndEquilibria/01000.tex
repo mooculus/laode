@@ -1,0 +1,29 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c3.3.8}
+Sketch the time series for the solution to the differential
+equation pictured in Figure~\ref{pitch3}(b) with initial condition
+$x(0)=\frac{1}{2}$.  Use only the phase space plot given in this
+figure.  Use {\dfield} to verify your answer.
+
+\begin{solution}
+
+Figure \ref{pitch3}(b) is a schematic
+phase line diagram of the equation $x' = x(1 - x^2)$.  According
+to that figure, the initial point $x(0) = \frac{1}{2}$ is between
+the stable equilibrium $x = 1$ and the unstable equilibrium
+$x = 0$.  Therefore, as $t$ increases from $t = 0$, $x(t)$
+approaches $1$; and as $t$ decreases from $t = 0$, $x(t)$
+approaches $0$.  Specifically, your time series should resemble
+the {\tt dfield5} diagram in Figure \ref{c3.3.8}.
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/3-3-8.eps,width=3.0in}}
+		\exercap{c3.3.8}
+\end{figure}
+
+\end{solution}
+\end{exercise}
+\end{document}

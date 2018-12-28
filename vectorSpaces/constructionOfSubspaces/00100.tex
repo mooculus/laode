@@ -1,0 +1,73 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\TEXER
+
+\noindent In Exercises~\ref{c5.2.1a} -- \ref{c5.2.1d} a single equation in
+three variables is given.  For each equation write the subspace of solutions
+in $\R^3$ as the span of two vectors in $\R^3$.
+\begin{exercise} \label{c5.2.1a}
+$4x - 2y + z = 0$.
+
+\begin{solution}
+\ans The subspace of solutions can be spanned by the vectors 
+$(1,0,-4)^t$ and $(0,1,2)^t$.
+
+\soln All solutions to $4x - 2y + z = 0$ can be written in the form
+\[
+\vecthree{x}{y}{z} = \cvecthree{x}{y}{2y - 4x}
+= x\vecthree{1}{0}{-4} + y\vecthree{0}{1}{2}.
+\]
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c5.2.1b}
+$x - y + 3z = 0$.
+
+\begin{solution}
+\ans The subspace of solutions can be spanned by the vectors 
+$(1,1,0)^t$ and $(-3,0,1)^t$.
+
+\soln All solutions to $x - y + 3z = 0$ can be written in the form
+\[
+\vecthree{x}{y}{z} = \cvecthree{y-3z}{y}{z}
+= y\vecthree{1}{1}{0} + z\vecthree{-3}{0}{1}.
+\]
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c5.2.1c}
+$x + y + z = 0$.
+
+\begin{solution}
+\ans The subspace of solutions can be spanned by the vectors 
+$(1,0,-1)^t$ and $(0,1,-1)^t$.
+
+\soln All solutions to $x + y + z = 0$ can be written in the form
+\[
+\vecthree{x}{y}{z} = \cvecthree{x}{y}{-x-y}
+= x\vecthree{1}{0}{-1} + z\vecthree{0}{1}{-1}.
+\]
+
+
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c5.2.1d}
+$y=z$.
+
+\begin{solution}
+\ans The subspace of solutions can be spanned by the vectors 
+$(1,0,0)^t$ and $(0,1,1)^t$.
+
+\soln All solutions to $y = z$ can be written in the form
+\[
+\vecthree{x}{y}{z} = \cvecthree{x}{y}{y}
+= x\vecthree{1}{0}{0} + z\vecthree{0}{1}{1}.
+\]
+
+
+\end{solution}
+\end{exercise}
+\end{document}

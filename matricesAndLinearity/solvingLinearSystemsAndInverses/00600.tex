@@ -1,0 +1,44 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\noindent In Exercises~\ref{c4.9.3a} -- \ref{c4.9.3b} use row reduction
+to find the inverse of the given matrix.
+\begin{exercise} \label{c4.9.3a}
+$\left(\begin{array}{rrr} 1 & 4 & 5\\ 0 & 1 & -1\\ -2 & 0 & -8
+\end{array}\right)$.
+
+\begin{solution}
+\ans
+$A^{-1} = \dps\frac{1}{10}\matthree{-8}{32}{-9}{2}{2}{1}{2}
+{-8}{1}$.
+
+\soln Let
+\[
+M = (A|I_3) = \left(\begin{array}{rrr|rrr} 1 & 4 & 5 & 1 & 0 & 0 \\
+0 & 1 & -1 & 0 & 1 & 0 \\
+-2 & 0 & -8 & 0 & 0 & 1 \end{array}\right).
+\]
+Then, row reduce $M$ to obtain the augmented matrix $(I_3|A^{-1})$.
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c4.9.3b}
+$\left(\begin{array}{rrr} 1 & -1 & -1\\ 0 & 2 & 0\\ 2 & 0 & -1
+\end{array}\right)$.
+
+\begin{solution}
+\ans
+$B^{-1} = \matthree{-1}{-\frac{1}{2}}{1}{0}{\frac{1}{2}}{0}
+{-2}{-1}{1}$.
+
+\soln Let
+\[
+N = (B|I_3) = \left(\begin{array}{rrr|rrr} 1 & -1 & -1 & 1 & 0 & 0 \\
+0 & 2 & 0 & 0 & 1 & 0 \\ 2 & 0 & -1 & 0 & 0 & 1 \end{array}\right).
+\]
+Row reduce $N$ to obtain the augmented matrix $(I_3|B^{-1})$.
+
+\end{solution}
+\end{exercise}
+\end{document}

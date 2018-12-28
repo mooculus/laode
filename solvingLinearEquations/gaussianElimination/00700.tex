@@ -1,0 +1,58 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\noindent In Exercises~\ref{c2.3.10a} -- \ref{c2.3.10b} determine the
+augmented matrix and all solutions for each system of linear equations
+\begin{exercise} \label{c2.3.10a}
+$\begin{array}{rcl}
+x-y+z & = & 1 \\
+4x+y+z & = & 5 \\
+   2x+3y-z & = & 2 \end{array}$.
+ %BADBAD
+
+\begin{solution}
+The augmented matrix for this system is
+\[
+\left(\begin{array}{rrr|r} 1 & -1 & 1 & 1 \\ 4 & 1 & 1 & 5 \\
+2 & 3 & -1 & 2\end{array}\right)
+\]
+We can row reduce this matrix to reduced echelon form, obtaining
+\[
+\left(\begin{array}{rrr|r} 1 & 0 & \frac{2}{5} & \frac{6}{5} \\
+0 & 1 & -\frac{3}{5} & \frac{1}{5} \\ 0 & 0 & 0 & 1\end{array}\right)
+\]
+The last row of the reduced system implies that $0 = 1$, so the system
+is inconsistent and has no solutions.
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c2.3.10b}
+$\begin{array}{rcl}
+2x-y+z+w & = & 1\\
+   x+2y-z+w & = & 7 \end{array}$.
+  %BADBAD
+
+\begin{solution}
+The augmented matrix for this system is
+\[
+\left(\begin{array}{rrrr|r} 2 & -1 & 1 & 1 & 1 \\ 1 & 2 & -1 & 1 & 7
+\end{array}\right)
+\]
+which can be row reduced to
+\[
+\left(\begin{array}{rrrr|r} 1 & 0 & \frac{1}{5} & \frac{3}{5} &
+\frac{9}{5} \\ 0 & 1 & -\frac{3}{5} & \frac{1}{5} & \frac{13}{5}
+\end{array}\right).
+\]
+The solution set is therefore
+\[
+\left(\begin{array}{c} x_1 \\ x_2 \\ x_3 \\ x_4\end{array}\right) =
+\left(\begin{array}{c} \frac{9}{5} - \frac{1}{5}x_3 - \frac{3}{5}x_4
+\\ \frac{13}{5} + \frac{3}{5}x_3 - \frac{1}{5}x_4 \\ x_3 \\ x_4
+\end{array}\right).
+\]
+
+\end{solution}
+\end{exercise}
+\end{document}

@@ -1,0 +1,170 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\noindent  In Exercises~\ref{c12.1.6a} -- \ref{c12.1.6d} use Corollary~\ref{T:etA0} to compute $e^{tA}$ for the given matrix.
+\begin{exercise} \label{c12.1.6a}
+$A = \mattwo{0}{1}{1}{0}$.
+
+\begin{solution}
+\ans
+\[
+e^{tA} = -e^t\frac{1}{2}\mattwo{1}{1}{1}{1} +
+e^{-t}\frac{1}{2}\mattwo{-1}{1}{1}{-1}
+= -\frac{1}{2}\cmattwo{e^{t} + e^{-t}}{e^t - e^{-t}}{e^t - e^{-t}}
+{e^t + e^{-t}}.
+\]
+
+\soln First find the eigenvalues of $A$, which are $\lambda_1 = 1$ and
+$\lambda_2 = -1$.  By Corollary~\ref{T:etA0},
+\[
+e^{tA} = \sum_{\ell = 1}^2 e^{\lambda_\ell t}a_\ell(A)P_\ell(A).
+\]
+The characteristic polynomial of $A$ is $p_A(\lambda) = (\lambda -
+1)(\lambda + 1)$, so $P_1(\lambda) = \lambda + 1$ and $P_2(\lambda) =
+\lambda - 1$.  Use partial fractions to find that
+\[
+\frac{1}{p_A(\lambda)} = \frac{-\frac{1}{2}}{1 - \lambda} + \frac{\frac{1}{2}}
+{-1 - \lambda}.
+\]
+Thus, $a_1(\lambda) = -\frac{1}{2}$ and $a_2(\lambda) = \frac{1}{2}$.  So
+\[
+\begin{array}{rcl}
+e^{tA} & = & e^ta_1(A)P_1(A) + e^{-t}a_2(A)P_2(A) \\
+& = & \dps e^t\left(-\frac{1}{2}\right)\left(\mattwo{0}{1}{1}{0} +
+\mattwo{1}{0}{0}{1}\right) + e^{-t}\left(\frac{1}{2}\right)
+\left(\mattwo{0}{1}{1}{0} - \mattwo{1}{0}{0}{1}\right).
+\end{array}
+\]
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c12.1.6b}
+$A = \mattwo{2}{1}{1}{2}$.
+
+\begin{solution}
+\ans
+\[
+e^{tA} = -e^{3t}\frac{1}{2}\mattwo{1}{1}{1}{1} +
+e^t\frac{1}{2}\mattwo{-1}{1}{1}{-1}
+= -\frac{1}{2}\cmattwo{e^{3t} + e^{t}}{e^{3t} - e^{t}}{e^{3t} - e^{t}}
+{e^{3t} + e^{t}}.
+\]
+
+\soln First find the eigenvalues of $A$, which are $\lambda_1 = 3$ and
+$\lambda_2 = 1$.  By Corollary~\ref{T:etA0},
+\[
+e^{tA} = \sum_{\ell = 1}^2 e^{\lambda_\ell t}a_\ell(A)P_\ell(A).
+\]
+The characteristic polynomial of $A$ is $p_A(\lambda) = (\lambda -
+1)(\lambda - 3)$, so $P_1(\lambda) = \lambda - 1$ and $P_2(\lambda) =
+\lambda - 3$.  Use partial fractions to find that
+\[
+\frac{1}{p_A(\lambda)} = \frac{-\frac{1}{2}}{3 - \lambda} + \frac{\frac{1}{2}}
+{1 - \lambda}.
+\]
+Thus, $a_1(\lambda) = -\frac{1}{2}$ and $a_2(\lambda) = \frac{1}{2}$.  So
+\[
+\begin{array}{rcl}
+e^{tA} & = & e^ta_1(A)P_1(A) + e^{-t}a_2(A)P_2(A) \\
+& = & \dps e^{3t}\left(-\frac{1}{2}\right)\left(\mattwo{2}{1}{1}{2} -
+\mattwo{1}{0}{0}{1}\right) + e^{t}\left(\frac{1}{2}\right)
+\left(\mattwo{2}{1}{1}{2} - \mattwo{3}{0}{0}{3}\right).
+\end{array}
+\]
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c12.1.6c}
+$A = \mattwo{3}{2}{0}{1}$.
+
+\begin{solution}
+\ans
+\[
+e^{tA} = -e^{3t}\frac{1}{2}\mattwo{2}{2}{0}{0} +
+e^t\frac{1}{2}\mattwo{0}{2}{0}{-2}
+= -\cmattwo{e^{3t}}{e^{3t} - e^{t}}{0}{e^{t}}.
+\]
+
+\soln First find the eigenvalues of $A$, which are $\lambda_1 = 3$ and
+$\lambda_2 = 1$.  By Corollary~\ref{T:etA0},
+\[
+e^{tA} = \sum_{\ell = 1}^2 e^{\lambda_\ell t}a_\ell(A)P_\ell(A).
+\]
+The characteristic polynomial of $A$ is $p_A(\lambda) = (\lambda -
+1)(\lambda - 3)$, so $P_1(\lambda) = \lambda - 1$ and $P_2(\lambda) =
+\lambda - 3$.  Use partial fractions to find that
+\[
+\frac{1}{p_A(\lambda)} = \frac{-\frac{1}{2}}{3 - \lambda} + \frac{\frac{1}{2}}
+{1 - \lambda}.
+\]
+Thus, $a_1(\lambda) = -\frac{1}{2}$ and $a_2(\lambda) = \frac{1}{2}$.  So
+\[
+\begin{array}{rcl}
+e^{tA} & = & e^ta_1(A)P_1(A) + e^{-t}a_2(A)P_2(A) \\
+& = & \dps e^{3t}\left(-\frac{1}{2}\right)\left(\mattwo{3}{2}{0}{1} -
+\mattwo{1}{0}{0}{1}\right) + e^{t}\left(\frac{1}{2}\right)
+\left(\mattwo{3}{2}{0}{1} - \mattwo{3}{0}{0}{3}\right).
+\end{array}
+\]
+
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c12.1.6d}
+$A = \left(\begin{array}{rrr} 1 & -3 & 1\\ 0 & -2 & -5 \\ 0 & 0 & 3
+\end{array}\right)$.
+
+\begin{solution}
+\ans
+\[
+e^{tA} =
+\cmatthree{e^t}{-e^t + e^{-2t}}{2e^{3t} - e^t + e^{-2t}}
+{0}{e^{-2t}}{-e^{3t} + e^{-2t}}
+{0}{0}{e^{3t}}.
+\]
+
+\soln The characteristic polynomial of $A$ is
+$p_A(\lambda) = (\lambda - 3)(\lambda - 1)(\lambda + 2)$, so the
+eigenvalues are $\lambda_1 = 3$, $\lambda_2 = 1$, and $\lambda_3 = -2$.
+By Corollary~\ref{T:etA0},
+\[
+e^{tA} = \sum_{\ell = 3}^2 e^{\lambda_\ell t}a_\ell(A)P_\ell(A).
+\]
+From the characteristic polynomial $p_A(\lambda)$, compute
+\[
+P_1(\lambda) = \lambda^2 + \lambda - 2, \quad
+P_2(\lambda) = \lambda^2 - \lambda - 6, \AND
+P_3(\lambda) = \lambda^2 - 4\lambda + 3.
+\]
+Use partial fractions to find that
+\[
+\frac{1}{p_A(\lambda)} =
+\frac{\frac{1}{5}\lambda - \frac{1}{2}}{P_1(\lambda)}
++ \frac{-\frac{1}{6}\lambda}{P_2(\lambda)}
++ \frac{-\frac{1}{30}\lambda}{P_3(\lambda)}.
+\]
+Thus
+\[
+a_1(\lambda) = \frac{1}{5}\lambda - \frac{1}{2}, \quad
+a_2(\lambda) = -\frac{1}{6}\lambda, \AND
+a_3(\lambda) = -\frac{1}{30}\lambda.
+\]
+So,
+\[
+\begin{array}{rcl}
+e^{tA} & = & e^{\lambda_1 t}a_1(A)P_1(A) + e^{\lambda_2 t}a_2(A)P_2(A)
++ e^{\lambda_3 t}a_3(A)P_3(A) \\
+& = &
+\begin{array}{l} e^{3t}(\frac{1}{5}A - \frac{1}{2})(A^2 + A - 2I_3)
++ e^t(-\frac{1}{6}A)(A^2 - A - 6I_3) \\
++\; e^{-2t}(-\frac{1}{30}A)(A^2 - 4A + 3I_2) \end{array} \\
+& = & e^{3t}\matthree{0}{0}{2}{0}{0}{-1}{0}{0}{1}
++ e^t\matthree{1}{-1}{-3}{0}{0}{0}{0}{0}{0}
++ e^{-2t}\matthree{0}{1}{1}{0}{1}{1}{0}{0}{0}.
+\end{array}
+\]
+
+\end{solution}
+\end{exercise}
+\end{document}

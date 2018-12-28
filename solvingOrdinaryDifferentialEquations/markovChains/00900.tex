@@ -1,0 +1,51 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c4.10.7}
+Let
+\begin{matlabEquation}\label{MATLAB:12}
+P = \left(\begin{array}{ccccc}
+ 0.10 & 0.20 & 0.30 & 0.15 & 0.25\\
+ 0.05 & 0.35 & 0.10 & 0.40 & 0.10\\
+   0  &   0  & 0.35 & 0.55 & 0.10\\
+ 0.25 & 0.25 & 0.25 & 0.25 &   0\\
+ 0.33 & 0.32 &   0  &   0  & 0.35
+\end{array}\right)
+\end{matlabEquation}
+be the transition matrix of a Markov chain.
+\begin{itemize}
+\item[(a)]  What is the probability that an individual at site~2 will move to
+site~5 in three steps?
+\item[(b)]  What is the probability that an individual at site~4 will move to
+site~1 in seven steps?
+\item[(c)]  Suppose that 100 individuals are initially uniformly distributed
+at the five sites.  How will the individuals be distributed after four steps?
+\item[(d)]  Find an eigenvector of $P^t$ with eigenvalue $1$.
+\end{itemize}
+
+\begin{solution}
+
+(a) The probability that an individual at site 2 will move to site 5 in
+three steps is $11.62\%$, that is, element $(2,5)$ of $P^3$.
+
+(b) The probability that an individual at site 4 will move to site 1 in
+seven steps is $14.07\%$, that is, element $(4,1)$ of $P^7$.
+
+(c) After four steps, the distribution will be
+\[ (P^t)^4\left(\begin{array}{r} 20 \\ 20 \\ 20 \\ 20 \\ 20
+\end{array}\right) = \left(\begin{array}{r} 14.1466 \\ 22.1620 \\
+21.2874 \\ 30.0624 \\ 12.3417 \end{array}\right). \]
+
+(d) \ans Let $V$ be an eigenvector of $P^t$ with eigenvalue 1.
+\[
+V = \left(\begin{array}{r} 0.1408 \\ 0.2195 \\ 0.2154 \\ 0.3032
+\\ 0.1211 \end{array}\right).
+\]
+
+\soln \Matlab can be used to verify that $P^tV = V$.  To find this
+eigenvector, evaluate the matrix $(P^t)^k$ for large values of $k$.
+The vector $V$ is any column of this matrix.
+
+\end{solution}
+\end{exercise}
+\end{document}

@@ -1,0 +1,29 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise}  \label{c10.5.2C}
+An $8\times 8$ real matrix $A$ has three eigenvalues equal to $2$, two 
+eigenvalues equal to $1+i$, and one zero eigenvalue.  List the possible 
+Jordan normal forms for $A$ (up to similarity).  Suppose that you can ask 
+your computer to compute the nullity of precisely two matrices.  Can you 
+devise a strategy for determining the Jordan normal form of $A$?  Explain 
+your answer.
+
+\begin{solution}
+\ans There are $6$ possible Jordan normal form matrices which are
+determined by computing nullity$(A-2I_8)$ and nullity$(A-(1+i)I_8)$.
+
+\soln  Since $A$ is real, the eigenvalues of $A$ are $2$ with multiplicity three; 
+$1+i$ with multiplicity two; $1-i$ with multiplicity two; and $0$ with multiplicity 
+$1$.  There are three possible Jordan blocks associated with the eigenvalues $2$
+determined by the geometric multiplicity of the eigenvalue $2$ and two possible Jordan
+blocks associated with the eigenvalues $1\pm i$ determined by the geometric
+multiplicity of the eigenvalue $1+i$.  The geometric multiplicity of the
+eigenvalue $\lambda$ is the dimension of the null space of $A-\lambda I_8$.  Thus 
+there are six possible Jordan normal forms and they are determined by computing the
+dimensions of $\nulls(A-2I_8)$ and $\nulls(A-(1+i)I_8)$.
+
+
+\end{solution}
+\end{exercise}
+\end{document}

@@ -1,0 +1,21 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c10.3.5}
+Let $A$ and $B$ be $n\times n$ matrices.  Suppose that $A$ is real 
+diagonalizable and that $B$ is similar to $A$.  Show that $B$ is 
+real diagonalizable.
+
+\begin{solution}
+
+Let $A = P^{-1}BP$ for some invertible matrix $P$, and let
+$D = S^{-1}AS$, where $D$ is a diagonal matrix.  Then
+\[
+D = S^{-1}AS = S^{-1}(P^{-1}BP)S = (S^{-1}P^{-1})B(PS) = 
+(PS)^{-1}B(PS).
+\]
+Therefore, $B$ is also similar to $D$, so $B$ is real diagonalizable.
+
+\end{solution}
+\end{exercise}
+\end{document}

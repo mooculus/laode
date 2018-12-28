@@ -1,0 +1,28 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise}  \label{c7.2.2}
+Let ${\cal P}_n$ be the vector space of polynomials $p(t)$ of
+degree less than or equal to $n$.  Show that $\{1,t,t^2,\ldots,t^n\}$ is a
+basis for ${\cal P}_n$.
+
+\begin{solution}
+
+To show that the set $\{1,t,t^2,\dots,t^n\}$ is a basis for
+${\cal P}_n$, we must show that the $n + 1$ polynomials are
+linearly independent and span ${\cal P}_n$.  The polynomials are
+independent because the general polynomial of degree $n$:
+\[
+\alpha_1 + \alpha_2t + \alpha_3t^2 + \cdots + \alpha_{n+1}t^n
+\]
+is identically $0$ for all values of $t$ only when $\alpha_1 =
+\alpha_2 = \cdots = \alpha_{n + 1} = 0$.  The polynomials span
+${\cal P}_n$ because every polynomial $p(t)$ of degree $n$ has
+the form
+\[ p(t) = \beta_1 + \beta_2t + \cdots + \beta_{n + 1}t^n \]
+which is a linear combination of the polynomials
+$\{1,t,t^2,\dots,t^n\}$ for any $p(t)$ in ${\cal P}_n$.
+
+\end{solution}
+\end{exercise}
+\end{document}

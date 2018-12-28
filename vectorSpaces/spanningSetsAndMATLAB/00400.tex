@@ -1,0 +1,81 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\noindent In Exercises~\ref{c5.3.4a} -- \ref{c5.3.4c} let $W\subset\R^5$
+be the subspace spanned by the vectors
+\begin{matlabEquation}\label{MATLAB:65}
+     w_1=(2,0,-1,3,4),\quad w_2=(1,0,0,-1,2),\quad w_3=(0,1,0,0,-1).
+\end{matlabEquation}
+Use \Matlab to decide whether the given vectors are elements of $W$.
+\begin{exercise} \label{c5.3.4a}
+$v_1=(2,1,-2,8,3)$.
+
+\begin{solution}
+\ans Vector $v_1$ is an element of $W$.
+
+\soln The vector $v_1$ is an element of $W$ if there exist scalars $a$,
+$b$, and $c$ such that
+\[
+aw_1 + bw_2 + cw_3 = v_1.
+\]
+Using \Matlab, create the matrix {\tt A = [w1' w2' w3']}, which has
+$w_1$, $w_2$, and $w_3$ as its columns.  Then create the augmented
+matrix {\tt aug1 = [A v1']}.  The command {\tt rref(aug1)} yields
+\begin{verbatim}
+ans =
+     1     0     0     2
+     0     1     0    -2
+     0     0     1     1
+     0     0     0     0
+     0     0     0     0
+\end{verbatim}
+Since there is no pivot point in the last column, the linear system
+$aw_1 + bw_2 + cw_3 = v_1$ is consistent, and $v_1 = 2w_1 - 2w_2 + w_3$.
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c5.3.4b}
+$v_2=(-1,12,3,-14,-1)$.
+
+\begin{solution}
+\ans Vector $v_2$ is not an element of $W$.
+
+\soln Create the augmented matrix {\tt aug2 = [A v2']}.  Row reducing
+{\tt aug2} yields
+\begin{verbatim}
+ans =
+     1     0     0     0
+     0     1     0     0
+     0     0     1     0
+     0     0     0     1
+     0     0     0     0
+\end{verbatim}
+There is a pivot point in the last column, so the linear system
+$aw_1 + bw_2 + cw_3 = v_2$ is inconsistent.
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c5.3.4c}
+$v_3=(-1,12,3,-14,-14)$.
+
+\begin{solution}
+\ans Vector $v_3$ is an element of $W$.
+
+\soln Row reduce the augmented matrix {\tt aug3 = [A v3']} to obtain
+\begin{verbatim}
+ans =
+     1     0     0    -3
+     0     1     0     5
+     0     0     1    12
+     0     0     0     0
+     0     0     0     0
+\end{verbatim}
+which is the matrix of a consistent linear system.  Therefore,
+$v_3 = -3w_1 + 5w_2 + 12w_3$.
+
+
+
+\end{solution}
+\end{exercise}
+\end{document}

@@ -1,0 +1,166 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\CEXER
+
+\noindent In Exercises~\ref{c14.3.7a} -- \ref{c14.3.7d} use \Matlab
+to find solutions for the electrical circuit\index{electrical circuit} 
+\eqref{E:RCLMcir}.  In each exercise, set $R=0$ and $C=L=1$ in addition to 
+the specified information, and use the first order system \eqref{E:ECsy}.
+
+\begin{exercise} \label{c14.3.7a}
+Parameters for the circuit: $R_{mic}(t) = 1+\cos(5t)$ and $V(t) = 1$;\\
+initial conditions and time interval: $x(0) = 1$, $\dot{x}(0) = 0.9$ and  
+$t\in[0,20]$.
+
+\begin{solution}
+\ans The numerically computed solution is displayed in 
+Figure~\ref{c14.3.7a}.
+
+\soln  Using the system \eqref{E:ECsy} derived in 
+Exercise~\ref{c14.3.4A}, the first order system is:
+\begin{eqnarray*}
+\dot{x} & = & y \\
+\dot{y} & = & -x - (1+\cos(5t))y + 1
+\end{eqnarray*}
+with initial conditions $x(0)=1$ and $y(0)=0.9$.   To solve this system numerically 
+using {\tt ode45}, write the m-file
+\begin{verbatim}
+function f = ex17_4_6(t,x)
+A = [0  1; -1  -(1+cos(5*t))];
+f = A*x + [0; 1];
+\end{verbatim}
+Now solve the differential equation using the command
+\begin{verbatim}
+[t,x] = ode45('ex17_4_6',[0 20],[1;0.9]);
+\end{verbatim}
+The solution $x(t)$ may be plotted using the command {\tt plot(t,x(:,1))}; the 
+result is displayed in Figure~\ref{c14.3.7a}.
+\begin{figure}[htb]
+     \centerline{%
+     \psfig{file=exfigure/fig17-4-6.eps,width=3.0in}}
+        \exercap{c14.3.7a}
+\end{figure} 
+
+
+\end{solution}
+\end{exercise}
+
+\begin{exercise} \label{c14.3.7b}
+Parameters for the circuit: $R_{mic}(t) = 1+\sin t$ and $V(t) = \sin(2t)$;\\
+initial conditions and time interval: $x(0) = 2$, $\dot{x}(0) = 1$ and $t\in[0,40]$.
+
+\begin{solution}
+\ans The numerically computed solution is displayed in 
+Figure~\ref{c14.3.7b}.
+
+\soln  Using the system \eqref{E:ECsy} derived in 
+Exercise~\ref{c14.3.4A}, the first order system is:
+\begin{eqnarray*}
+\dot{x} & = & y \\
+\dot{y} & = & -x - (1+\sin t)y + \sin(2t)
+\end{eqnarray*}
+with initial conditions $x(0)=2$ and $y(0)=1$.  To solve this system numerically 
+using {\tt ode45}, write the m-file
+\begin{verbatim}
+function f = ex17_4_7(t,x)
+A = [0  1; -1  -(1+sin(t))];
+f = A*x + [0; sin(2*t)];
+\end{verbatim}
+Now solve the differential equation using the command
+\begin{verbatim}
+[t,x] = ode45('ex17_4_7',[0 40],[2;1]);
+\end{verbatim}
+The solution $x(t)$ may be plotted using the command {\tt plot(t,x(:,1))}; the 
+result is displayed in Figure~\ref{c14.3.7b}.
+\begin{figure}[htb]
+     \centerline{%
+     \psfig{file=exfigure/fig17-4-7.eps,width=3.0in}}
+        \exercap{c14.3.7b}
+\end{figure} 
+
+
+\end{solution}
+\end{exercise}
+
+\begin{exercise} \label{c14.3.7c}
+Parameters for the circuit: $R_{mic}(t) = 1+\cos t$ and $V(t) = 0.4+e^{-t}\sin(3t)$;\\
+initial conditions and time interval: $x(0) = 1$, $\dot{x}(0) = -1.5$ and 
+$t\in[0,30]$.
+
+\begin{solution}
+\ans The numerically computed solution is displayed in 
+Figure~\ref{c14.3.7c}.
+
+\soln  Using the system \eqref{E:ECsy} derived in 
+Exercise~\ref{c14.3.4A}, the first order system is:
+\begin{eqnarray*}
+\dot{x} & = & y \\
+\dot{y} & = & -x - (1+\cos t)y + 0.4 + e^{-t}\sin t
+\end{eqnarray*}
+with initial conditions $x(0)=1$ and $y(0)=-1.5$. To solve this system numerically 
+using {\tt ode45}, write the m-file
+\begin{verbatim}
+function f = ex17_4_8(t,x)
+A = [0  1; -1  -(1+cos(t))];
+f = A*x + [0; 0.4+exp(-t)*sin(t)];
+\end{verbatim}
+Now solve the differential equation using the command
+\begin{verbatim}
+[t,x] = ode45('ex17_4_8',[0 30],[1;-1.5]);
+\end{verbatim}
+The solution $x(t)$ may be plotted using the command {\tt plot(t,x(:,1))}; the 
+result is displayed in Figure~\ref{c14.3.7c}.
+\begin{figure}[htb]
+     \centerline{%
+     \psfig{file=exfigure/fig17-4-8.eps,width=3.0in}}
+        \exercap{c14.3.7c}
+\end{figure} 
+
+
+
+\end{solution}
+\end{exercise}
+
+\begin{exercise} \label{c14.3.7d}
+Parameters for the circuit: $R_{mic}(t) = 0.02+\sin t$ and $V(t) = 1$;\\
+initial conditions and time interval: $x(0) = 1.2$, $\dot{x}(0) = 1.1$ and 
+$t\in[0,60]$.
+
+\begin{solution}
+\ans The numerically computed solution is displayed in 
+Figure~\ref{c14.3.7d}.
+
+\soln  Using the system \eqref{E:ECsy} derived in 
+Exercise~\ref{c14.3.4A}, the first order system is:
+\begin{eqnarray*}
+\dot{x} & = & y \\
+\dot{y} & = & -x - (0.02+\sin t)y + 1
+\end{eqnarray*}
+with initial conditions $x(0)=1.2$ and $y(0)=1.1$.   To solve this system numerically 
+using {\tt ode45}, write the m-file
+\begin{verbatim}
+function f = ex17_4_9(t,x)
+A = [0  1; -1  -(0.02+sin(t))];
+f = A*x + [0; 1];
+\end{verbatim}
+Now solve the differential equation using the command
+\begin{verbatim}
+[t,x] = ode45('ex17_4_9',[0 60],[1.2;1.1]);
+\end{verbatim}
+The solution $x(t)$ may be plotted using the command {\tt plot(t,x(:,1))}; the 
+result is displayed in Figure~\ref{c14.3.7d}.
+\begin{figure}[htb]
+     \centerline{%
+     \psfig{file=exfigure/fig17-4-9.eps,width=3.0in}}
+        \exercap{c14.3.7d}
+\end{figure} 
+
+
+
+
+
+\end{solution}
+\end{exercise}
+\end{document}

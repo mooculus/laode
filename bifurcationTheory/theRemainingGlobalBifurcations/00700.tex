@@ -1,0 +1,57 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\noindent In Exercises~\ref{c9.6.5a} -- \ref{c9.6.5c}, consider the system 
+of differential equations \eqref{E:saddleconn}.
+\begin{matlabEquation}  \label{E:saddleconn}
+\begin{array}{rcl}
+\dot{x} & = & y  \\
+\dot{y} & = & -x - 0.1y + x^3 + \rho x^2.
+\end{array}
+\end{matlabEquation}
+\begin{exercise} \label{c9.6.5a}
+How many equilibria does \eqref{E:saddleconn} have for each value of 
+$\rho$ and of what type are they?  
+
+\begin{solution}
+
+\ans For any values of $\rho$, the system has saddle points at
+\[
+(x,y) = (-\rho + \sqrt{\rho^2 + 4},0) \AND
+(x,y) = (-\rho - \sqrt{\rho^2 + 4},0)
+\]
+and a spiral sink at the origin.
+
+\soln Set $\dot{x} = \dot{y} = 0$.  Then $y = 0$, and
+$0 = x^3 + \rho x^2 - x$, so there are equilibria at the origin, and at
+the roots of $x^2 + \rho x - x$.
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c9.6.5b}
+How many bifurcations occur in \eqref{E:saddleconn} as $\rho$ is 
+varied from $\rho=0.1$ to $\rho=0.2$?
+
+\begin{solution}
+
+One bifurcation occurs as $\rho$ is varied from $\rho = 0.1$ to $\rho = 0.2$.
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c9.6.5c}
+What types of bifurcation occur in \eqref{E:saddleconn} as $\rho$ is 
+varied from $\rho=0.1$ to $\rho=0.2$?
+
+\begin{solution}
+
+A heteroclinic bifurcation occurs at $\rho \approx 0.141$.  At this
+point, an unstable orbit of the leftmost saddle point coincides with a
+stable orbit of the rightmost saddle point.
+
+
+
+
+\end{solution}
+\end{exercise}
+\end{document}

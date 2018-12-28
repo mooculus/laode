@@ -1,0 +1,42 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c2.2.3}
+Use \Matlab to find an approximate graphical solution to the
+three dimensional system of linear equations
+\[
+\begin{array}{rcrcrcr}
+ 3x & - & 4y & + & 2z  & = & -11\\
+ 2x & + & 2y & + &  z  & = &   7\\
+ -x & + &  y & - & 5z  & = &   7.
+\end{array}
+\]
+Then use \Matlab to find an exact solution.
+
+\begin{solution}
+
+\ans $(x,y,z) = (1,3,-1)$.
+
+\soln The commands to instruct \Matlab to graph this three dimensional
+system are:
+\begin{verbatim}
+[x,y] = meshgrid(-10:0.5:10);
+z = (-11 - 3*x + 4*y)/2;
+surf(x,y,z)
+hold on 
+z = 7 - 2*x - 2*y;
+surf(x,y,z)
+hold on
+z = (7 + x - y)/(-5);
+surf(x,y,z)
+\end{verbatim}
+It is hard to determine a solution for the system from this graph.
+The command {\tt axis([xmin xmax ymin ymax zmin zmax])} can make the
+graph clearer by zooming in on a specific range of points, but a
+numerically accurate solution is difficult to obtain graphically in
+three dimensions.  Obtain an accurate solution using the command
+{\tt A}$\backslash${\tt b} in \Matlabp.
+
+\end{solution}
+\end{exercise}
+\end{document}

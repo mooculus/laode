@@ -1,0 +1,32 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c10.1.c7}
+Find values of $\lambda$ where the determinant of the matrix
+\[
+A_\lambda = \left( \begin{array}{ccr}
+ \lambda -1 & 0 & -1\\
+ 0 & \lambda -1 & 1\\
+-1 & 1 & \lambda 
+\end{array} \right)
+\]
+vanishes.  
+
+\begin{solution}
+
+\ans The determinant of $A_\lambda$ vanishes at $\lambda = -1$,
+$\lambda = 1$, and $\lambda = 2$.
+
+\soln Compute $\det(A_\lambda)$ by expanding along the first column
+to obtain:
+\[
+\begin{array}{rcl}
+\det(A_\lambda) & = &
+(\lambda - 1)((\lambda - 1)\lambda - 1) - 1(\lambda - 1) \\
+& = & (\lambda - 1)(\lambda - 2)(\lambda + 1).
+\end{array}
+\]
+
+\end{solution}
+\end{exercise}
+\end{document}

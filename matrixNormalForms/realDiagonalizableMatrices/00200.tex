@@ -1,0 +1,26 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c10.3.1}
+Let $A=\mattwo{0}{3}{3}{0}$.  
+\begin{itemize}
+\item[(a)]  Find the eigenvalues and eigenvectors of $A$.
+\item[(b)]  Find an invertible matrix $S$ such that $S\inv AS$ is a 
+diagonal matrix $D$.  What is $D$?
+\end{itemize}
+
+\begin{solution}
+
+(a) The eigenvalues of $A$ are $\lambda_1 = 3$ and $\lambda_2 = -3$,
+with corresponding eigenvectors $v_1 = (1,1)^t$ and $v_2 = (1,-1)^t$,
+respectively.
+
+(b) Let
+\[
+S = (v_1|v_2) = \mattwo{1}{1}{1}{-1}.
+\]
+Then $D = S^{-1}AS = \mattwo{3}{0}{0}{-3}$ is a diagonal matrix.
+
+\end{solution}
+\end{exercise}
+\end{document}

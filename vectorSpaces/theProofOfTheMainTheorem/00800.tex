@@ -1,0 +1,49 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c5.6.4}
+Consider the following set of vectors
+\begin{align*}
+w_1 &= (2, -2, 1), \\
+w_2 &= (-1, 2, 0), \\
+w_3 &= (3, -2, \lambda), \\
+w_4 &= (-5, 6, -2),
+\end{align*}
+where $\lambda$ is a real number.
+\begin{itemize}
+\item[(a)] Find a value for $\lambda$ such that the
+dimension of $\Span\{w_1,w_2,w_3,w_4\}$ is three. Then decide
+whether $\{w_1,w_2,w_3\}$ or $\{w_1,w_2,w_4\}$ is a basis for
+$\R^3$.
+\item[(b)] Find a value for $\lambda$ such that the
+dimension of $\Span\{w_1,w_2,w_3,w_4\}$ is two.
+\end{itemize}
+
+\begin{solution}
+
+(a) \ans The span has dimension $3$ for $\lambda \neq 2$, and 
+the set $\{w_1,w_2,w_3\}$ is a basis for $\R^3$.
+
+\soln Find the dimension of the span by creating a matrix with rows
+$w_1$, $w_2$, $w_3$, and $w_4$, then row reducing:
+\begin{equation} \label{exeq:5.6.4}
+\left(\begin{array}{rrr} 2 & -2 & 1 \\ -1 & 2 & 0 \\ 3 & -2 &
+\lambda \\ -5 & 6 & -2 \end{array}\right) \longrightarrow
+\left(\begin{array}{rrc} 1 & -1 & \frac{1}{2} \\ 0 & 1 & \frac{1}{2}
+\\ 0 & 0 & \lambda - 2 \\ 0 & 0 & 0 \end{array}\right).
+\end{equation}
+If $\lambda = 2$, then the dimension of the span will
+be $2$ and if $\lambda \neq 2$, then the dimension of the span
+will be $3$.  For example, let $\lambda = -1$.
+
+\para Verify by row reduction that the set $\{w_1,w_2,w_3\}$ is a basis
+for $\R^3$ and that the set $\{w_1,w_2,w_4\}$ is not a basis for $R^3$. 
+
+(b) If $\lambda = 2$, then the dimension of span$\{w_1,w_2,w_3,w_4\}$
+is $2$, as shown by equation~\eqref{exeq:5.6.4}.
+
+
+
+\end{solution}
+\end{exercise}
+\end{document}

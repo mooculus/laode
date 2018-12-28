@@ -1,0 +1,25 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c4.1.5}
+Write the system of linear ordinary differential equations
+\begin{eqnarray*}
+\frac{dx_1}{dt}(t) & = & 4x_1(t) + 5x_2(t) \\
+\frac{dx_2}{dt}(t) & = & 2x_1(t) - 3x_2(t)
+\end{eqnarray*}
+in matrix form.
+
+\begin{solution}
+\ans
+\arraystart
+\[
+\left(\begin{array}{r} \dps\frac{dx_1}{dt}(t) \\ 
+\dps\frac{dx_2}{dt}(t)\end{array}\right) =
+\left(\begin{array}{rr} 4 & 5 \\ 2 & -3\end{array}\right)
+\left(\begin{array}{r} x_1(t) \\ x_2(t)\end{array}\right)
+\]
+\arrayfinish
+
+\end{solution}
+\end{exercise}
+\end{document}

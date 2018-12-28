@@ -1,0 +1,16 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c4.7.2.2}
+Let $A$ be an $m\times n$ matrix.  Show that the matrices $A A^t$ and
+$A^t A$ are symmetric.
+
+\begin{solution}
+Let $B = AA^t$, where $A$ is an $m \times n$ matrix.
+Then $B^t = (AA^t)^t = (A^t)^tA^t$ by \eqref{e:transposeprod}.  Since
+$(A^t)^t=A$, $B^t=AA^t=B$ and $B$ is symmetric.  Similarly, $C = A^tA$
+is symmetric.
+
+\end{solution}
+\end{exercise}
+\end{document}

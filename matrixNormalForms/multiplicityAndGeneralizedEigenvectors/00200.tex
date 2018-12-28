@@ -1,0 +1,83 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\noindent In Exercises~\ref{c10.5.2a} -- \ref{c10.5.2d} find a basis 
+consisting of the eigenvectors for the given matrix supplemented by 
+generalized eigenvectors.  Choose the generalized eigenvectors with 
+lowest index possible.
+\begin{exercise}  \label{c10.5.2a}
+$A=\mattwo{1}{-1}{1}{3}$.
+
+\begin{solution}
+\ans $v_1=(-1,1)$ and $v_2 = (0,1)$ is a basis.
+
+\soln  The characteristic polynomial of $A$ is $\lambda^2-4\lambda+4=(\lambda-2)^2$.
+Therefore, the eigenvalues of $A$ both equal $2$.  Find the eigenvectors of $A$ by 
+solving $(A-2I_2)v=0$.  That is, solve
+\[
+\mattwo{-1}{-1}{1}{1}v = 0.
+\]
+$v_1=(-1,1)$ is the only independent solution.  Choose any vector for $v_2$ that is
+independent of $v_1$.
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c10.5.2b}
+$B=\left(\begin{array}{rrr} -2 & 0 & -2 \\-1 & 1 & -2 \\ 0 & 1 & -1 \end{array}
+\right)$.
+
+\begin{solution}
+\ans $v_1=(1,-1,-1)$, $v_2=(-2,0,1)$, $v_3=(0,1,1)$ is a basis.
+
+\soln  Determine either by direct calculation of the characteristic polyomial of $B$ 
+or by using \Matlab that the eiegenvalues of $B$ are $0,-1,-1$.  Let $v_1$ be the
+eigenvector with $0$ eigenvalue; so $v_1=(1,-1,-1)$.  There is only one independent 
+eigenvector associated with the eigenvalue $-1$ and that eigenvector is
+$v_2=(-2,0,1)$.  Let $v_3$ be any generalized eigenvector associated with the
+eigenvalue $-1$; one choice is $v_3=(0,1,1)$.  These eigenvectors can be found by
+direct calculation or by using \Matlab.  When using \Matlab find $v_1$ by typing {\tt
+null(B)}, $v_2$ by typing {\tt null(B+eye(3))}, and $v_3$ by typing 
+{\tt null((B+eye(3))\^{}2)}
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c10.5.2c}
+$C=\left(\begin{array}{rrr} -6 & 31 & -14 \\-1 & 6 & -2 \\ 0 & 2 & 1\end{array}
+\right)$.
+
+\begin{solution}
+\ans $v_1=(9,1,-1)$, $v_2=(-2,0,1)$, $v_3=(9,1,-2)$ is a basis.
+
+\soln  Determine either by direct calculation of the characteristic polyomial of $C$ 
+or by using \Matlab that the eiegenvalues of $C$ are $-1,1,1$.  Let $v_1$ be the
+eigenvector with $-1$ eigenvalue; so $v_1=(9,1,-1)$.  There is only one independent 
+eigenvector associated with the eigenvalue $1$ and that eigenvector is
+$v_2=(-2,0,1)$.  Let $v_3$ be any generalized eigenvector associated with the
+eigenvalue $1$; one choice is $v_3=(9,1,-2)$.  These eigenvectors can be found by
+direct calculation or by using \Matlab.  When using \Matlab find $v_1$ by typing {\tt
+null(C+eye(3))}, $v_2$ by typing {\tt null(D-eye(3))}, and $v_3$ by typing 
+{\tt null((C-eye(3))\^{}2)}
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c10.5.2d}
+$D=\left(\begin{array}{rrr} 5 & 1 & 0 \\-3 & 1 & 1 \\ -12 & -4 & 0\end{array}
+\right)$.
+
+\begin{solution}
+\ans $v_1=(1,-3,0)$, $v_2=(0,1,-2)$, $v_3=(1,0,0)$ is a basis.
+
+\soln  Determine either by direct calculation of the characteristic polyomial of $D$ 
+or by using \Matlab that the eiegenvalues of $C$ are $2,2,2$.  Let $v_1$ be the
+eigenvector with eigenvalue $2$; so $v_1=(1,-3,0)$.  There is only one independent 
+generalized eigenvector of index $2$ associated with the eigenvalue $2$ and that 
+generalized eigenvector is $v_2=(0,1,-2)$.  Let $v_3$ be any generalized eigenvector 
+of index $3$ associated with the eigenvalue $2$; one choice is $v_3=(1,0,0)$.  These 
+eigenvectors can be found by direct calculation or by using \Matlab.  When using 
+\Matlab find $v_1$ by typing {\tt null(C-2*eye(3))} and $v_2$ by typing 
+{\tt null((D-eye(3))\^{}2)}.
+
+\end{solution}
+\end{exercise}
+\end{document}

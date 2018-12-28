@@ -1,0 +1,33 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c13.3.4b}
+Use the command {\tt residue} as in Exercise~\ref{c13.3.4} to compute an 
+expansion into partial fractions for
+\[
+\frac{s^3-4s^2+s+6}{s^2-3s+2}.
+\]
+
+\begin{solution}
+
+\ans
+\[
+\frac{s^3 - 4s^2 + s + 6}{s^2 - 3s + 2}
+= \frac{-4}{s - 1} + s - 1.
+\]
+\soln To find the expansion into partial fractions using \Matlabp, type
+\begin{verbatim}
+p = [1 -4 1 6];
+q = [1 -3 2];
+[c,r,k] = residue(p,q)
+\end{verbatim}
+\Matlab returns the roots of the expansion as $r = (2,1)^t$, the
+corresponding scalars as $c = (0,-4)^t$, and the coefficients of the
+polynomial term as $k = (1,-1)$.
+
+
+
+
+\end{solution}
+\end{exercise}
+\end{document}

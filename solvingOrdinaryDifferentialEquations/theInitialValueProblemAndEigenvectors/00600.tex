@@ -1,0 +1,31 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c4.5.3}
+Let
+\[
+C=\mattwo{a}{b}{b}{a}.
+\]
+Show that
+\[
+\vectwo{1}{1} \AND \vectwo{1}{-1}
+\]
+are eigenvectors of $C$.  What are the corresponding eigenvalues?
+
+\begin{solution}
+
+\ans Let
+\[ v_1 = \vectwo{1}{1} \AND v_2 = \vectwo{1}{-1}. \]
+The vector $v_1$ is an eigenvector of $C$ with corresponding
+eigenvalue $a + b$, and $v_2$ is an eigenvector with eigenvalue $a - b$.
+
+\soln Calculate
+\[ Cv_1 = \mattwo{a}{b}{b}{a}\vectwo{1}{1} = \vectwo{a + b}{a + b} =
+(a + b)\vectwo{1}{1}. \]
+\[ Cv_2 = \mattwo{a}{b}{b}{a}\vectwo{1}{-1} = \vectwo{a - b}{b - a} =
+(a - b)\vectwo{1}{-1}. \]
+
+
+\end{solution}
+\end{exercise}
+\end{document}

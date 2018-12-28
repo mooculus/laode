@@ -1,0 +1,62 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+In Exercises~\ref{A5.6.4}-\ref{A5.6.9} decide whether the statement is true or false, and explain your answer.
+
+\begin{exercise}  \label{A5.6.4}
+Every set of three vectors in $\R^3$ is a basis for $\R^3$.
+\begin{solution}
+\ans False  
+
+\soln
+The vectors could be linearly independent. For example $\{e_1,e_2,e_1+e_2\}$ is not a basis for $\R^3$.
+\end{solution}
+\end{exercise}
+
+\begin{exercise}  \label{A5.6.5}
+Every set of four vectors in $\R^3$ is linearly dependent.
+\begin{solution}
+\ans True
+
+\soln
+The dimension of $\R^3$ is three, so any set of more than three vectors in $R^3$ is necessarily linearly dependent.
+\end{solution}
+\end{exercise}
+
+\begin{exercise}  \label{A5.6.6}
+If $\{v_1,v_2\}$ is a basis for the plane $z = 0$ in $\R^3$, then $\{v_1,v_2,e_3\}$ is a basis for $\R^3$.
+\begin{solution}
+\ans True
+\soln
+The vector $e_3$ is not contained in the plane $z=0$, so Lemma~\ref{extendindep} implies that $\{v_1,v_2,e_3\}$  is linearly independent. Therefore, $\{v_1,v_2,e_3\}$  is a basis for $\R^3$, because any set of three linearly independent vectors in a vector space of dimension three is a basis for that vector space. 
+
+Alternatively, $\{e_1,e_2,e_3\}$ is a basis for $\R^3$, so if $w\in \R^3$, then $w = a_1 e_1 +a_2 e_2 +a_3 e_3$ for some scalars $a_1$ and $a_2$. It follows that $a_1 e_1 + a_2 e_2$ is a vector in the plane $z=0$, so there exist scalars $b_1$ and $b_2$ so $a_1 e_1+ a_2 e_2 = b_1 v_1 +b_2 v_2$. Therefore, $w = b_1 v_1 + b_2 v_2 + a_3 e_3$, so $w\in \text{span}\{v_1,v_2,e_3\}$. Therefore, $\{v_1,v_2,e_3\}$ spans $\R^3$, and is a basis for $\R^3$ because any set of three linearly independent vectors in a vector space of dimension three is a basis for that vector space. 
+\end{solution}
+\end{exercise}
+
+\begin{exercise}  \label{A5.6.7}
+If $\{v_1,v_2,v_3\}$ is a basis for $\R^3$, the only subspaces of $R^3$ of dimension one are $\text{span}\{v_1\}, \text{span}\{v_2\}$, and $\text{span}\{v_3\}$. 
+\begin{solution}
+\ans False 
+\soln For example, $\{e_1,e_2,e_3\}$ is a basis for $\R^3$ and $\text{span}\{e_1+e_2\}$ does not equal the $x$, $y$, or $z$-axes.
+\end{solution}
+\end{exercise}
+
+\begin{exercise}  \label{A5.6.8}
+The only subspace of $\R^3$ that contains finitely many vectors is $\{ 0 \}$.
+\begin{solution}
+\ans True
+\soln If a subspace of $\R^3$ contains a nonzero vector, it must contain all scalar multiples of that vector.
+\end{solution}
+\end{exercise}
+
+\begin{exercise}  \label{A5.6.9}
+If $U$ is a subspace of $\R^3$ of dimension 1 and $V$ is a subspace of $\R^3$ of dimension 2, then $U\cap V=\{0\}$.
+\begin{solution}
+\ans False 
+\soln $U\cap V$ is always subspace of $\mathbb{R}^3,$ but its dimension could be one. For example, if $U$ is the $x$-axis ( $U=\text{span}\{e_1\}$) and $V$ is the $xy$-plane ($V=\text{span}\{e_1,e_2\}$) then $U\cap V=U.$
+$U\cap V$ is always subspace of $\R^3$, but its dimension could be one. For example, if $U$ is the $x$-axis ($U=\text{span}\{e_1\}$) and $V$ is the $xy$-plane ($V=\text{span}\{e_1,e_2\}$), then $U\cap V=U$.
+\end{solution}
+\end{exercise}
+\end{document}

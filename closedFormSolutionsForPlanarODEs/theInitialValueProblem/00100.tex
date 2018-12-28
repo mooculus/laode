@@ -1,0 +1,92 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\TEXER
+
+\noindent In Exercises~\ref{c6.1.03a} -- \ref{c6.1.03d}, consider the system of
+differential equations
+\begin{equation} \label{Ex.1.03}
+\begin{array}{rcr}
+\frac{dx}{dt}  & = & 65x+42y \\
+\frac{dy}{dt}  & = & -99x-64y.
+\end{array}
+\end{equation}
+\begin{exercise} \label{c6.1.03a}
+Verify that
+\[
+v_1 = \vectwo{2}{-3} \AND v_2 = \vectwo{-7}{11}
+\]
+are eigenvectors of the coefficient matrix of \eqref{Ex.1.03} and find
+the associated eigenvalues.
+
+\begin{solution}
+
+\ans The vector $v_1 = (2,-3)^t$ is an eigenvector with associated
+eigenvalue $\lambda_1 = 2$.  The vector $v_2 = (-7,11)^t$ is an
+eigenvector with associated eigenvalue $\lambda_2 = -1$.
+
+\soln Calculate:
+\[
+\begin{array}{rcl}
+\mattwo{65}{42}{-99}{-64}\vectwo{2}{-3} & = & \vectwo{4}{-6} =
+2\vectwo{2}{-3}. \\
+\mattwo{65}{42}{-99}{-64}\vectwo{-7}{11} & = & \vectwo{7}{-11} =
+-1\vectwo{-7}{11}.
+\end{array}
+\]
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c6.1.03b}
+Find the solution to \eqref{Ex.1.03} satisfying initial conditions $X(0) =
+(-14,22)^t$.
+
+\begin{solution}
+\ans The solution to \eqref{Ex.1.03} with initial
+condition $X(0) = (-14,22)^t$ is
+\[
+X(t) = 2e^{-t}\vectwo{-7}{11}.
+\]
+
+\soln We are given two linearly independent initial conditions: $v_1$
+and $v_2$.  Therefore, by Theorem~\ref{T:solvends}, 
+the general solution to \eqref{Ex.1.03} with initial condition $X(0)$ is
+\[
+X(t) = r_1e^{2t}\vectwo{2}{-3} + r_2e^{-t}\vectwo{-7}{11}.
+\]
+Find $r_1$ and $r_2$ by solving:
+\begin{equation}  \label{c6.1.03eq}
+X(0) = r_1\vectwo{2}{-3} + r_2\vectwo{-7}{11}.
+\end{equation}
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c6.1.03c}
+Find the solution to \eqref{Ex.1.03} satisfying initial conditions $X(0) =
+(-3,5)^t$.
+
+\begin{solution}
+The solution with initial condition $X(0) = (-3,5)^t$ is
+\[
+X(t) = 2e^{2t}\vectwo{2}{-3} + e^{-t}\vectwo{-7}{11}.
+\]
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c6.1.03d}
+Find the solution to \eqref{Ex.1.03} satisfying initial conditions $X(0) =
+(9,-14)^t$.
+
+\begin{solution}
+The solution with initial condition  $X(0) = (9,-14)^t$ is
+\[
+X(t) = e^{2t}\vectwo{2}{-3} - e^{-t}\vectwo{-7}{11}.
+\]
+
+
+
+
+\end{solution}
+\end{exercise}
+\end{document}

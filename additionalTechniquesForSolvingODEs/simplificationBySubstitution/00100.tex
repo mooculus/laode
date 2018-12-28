@@ -1,0 +1,65 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\TEXER
+
+\noindent In Exercises~\ref{c14.5.1} -- \ref{c14.5.5} decide whether the 
+given differential equation has homogeneous coefficients or is a Bernoulli 
+equation.
+\begin{exercise} \label{c14.5.1}
+$\dps \frac{dx}{dt} = \frac{x^2}{t^3}$.
+
+\begin{solution}
+\ans The system is a Bernoulli equation.
+
+\soln A Bernoulli equation has the form $\dot{x}=rx+sx^p$.  In this equation
+take $r(t)=0$, $s(t)= \frac{1}{t^3}$, and $p=2$.
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c14.5.2}
+$\dps \frac{dx}{dt} = t$.
+
+\begin{solution}
+\ans The system is a Bernoulli equation.
+
+\soln A Bernoulli equation has the form $\dot{x}=rx+sx^p$.  In this equation
+take $r(t)=0$, $s(t)=t$, and $p=0$.
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c14.5.4}
+$\dps \frac{dx}{dt} = \frac{\cos t}{x^4}\sqrt{t}+x^2$.
+
+\begin{solution}
+\ans The system is a Bernoulli equation.
+
+\soln A Bernoulli equation has the form $\dot{x}=rx+sx^p$.  In this equation
+take $r(t)=\sin t$, $s(t)=t^2$, and $p=-\frac{1}{2}$.
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c14.5.3}
+$\dps \frac{dx}{dt} = \frac{t^2}{\sqrt{x}}+x\sin t$.
+
+\begin{solution}
+\ans The system is neither.
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c14.5.5}
+$\dps \frac{dx}{dt} = \frac{x}{t} +\frac{\sqrt{t}}{\sqrt{x}}$.
+
+\begin{solution}
+\ans The system has homogeneous coefficients and is a
+Bernoulli equation.
+
+\soln A Bernoulli equation has the form $\dot{x}=rx+sx^p$.  In this equation
+take $r(t)=\frac{1}{t}$, $s(t)=\sqrt{t}$, and $p=-\frac{1}{2}$.  An equation
+with homogeneous equations has the form $\dot{x}=F(x/t)$.  For this equation
+$F(z) = z + \frac{1}{\sqrt{z}}$.
+
+\end{solution}
+\end{exercise}
+\end{document}

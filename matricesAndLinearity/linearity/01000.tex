@@ -1,0 +1,42 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c4.3.9}
+Argue geometrically that rotation of the plane counterclockwise
+through an angle of $45^\circ$ is a linear mapping.  Find a
+$2\times 2$ matrix $A$ such that $L_A$ rotates the plane
+counterclockwise by $45^\circ$.
+
+\begin{solution}
+
+To see that $L(X + Y) = L(X) + L(Y)$, consider $X$ and $Y$ as
+vectors.  These vectors are two sides of a parallelogram with
+diagonal $X + Y$, as shown in Figure~\ref{c4.3.9}a.  Rotating
+the plane $45^\circ$ counterclockwise has the effect of
+rotating the entire parallelogram, as in Figure~\ref{c4.3.9}b.
+Therefore, adding $X$ and $Y$ and then rotating the sum
+$X + Y$ is the same as rotating $X$ and $Y$ separately and
+then adding them.
+
+\para To see that $cL(X) = L(cX)$, note that multiplying a
+vector $X$ by a scalar $c$ affects only the length of the vector,
+and that rotating the plane affects only the orientation of
+the vector.  Therefore, the two operations can be performed in
+either order with the same effect.
+
+\para To find the matrix $A$ of this transformation, we can use
+\eqref{e:rotmat}:
+\[ A = \mattwo{\cos 45^\circ}{-\sin 45^\circ}{\sin 45^\circ}{\cos 45^\circ}
+= \mattwo{\frac{1}{\sqrt{2}}}{-\frac{1}{\sqrt{2}}}
+{\frac{1}{\sqrt{2}}}{\frac{1}{\sqrt{2}}} \]
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/4-3-9a.eps,width=2.75in}
+                       \psfig{file=exfigure/4-3-9b.eps,width=2.75in}}
+                \exercaptwo{c4.3.9}
+\end{figure}
+
+\end{solution}
+\end{exercise}
+\end{document}

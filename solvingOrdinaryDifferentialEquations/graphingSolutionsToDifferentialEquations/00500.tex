@@ -1,0 +1,55 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c3.2.1*}
+Compute $x(2)$, where $x(t)$ is the solution to the differential equation 
+$\dot{x} = 0.6x$ with initial condition $x(0)=0.5$, in two different ways, 
+as follows:
+\begin{itemize}
+\item[(a)] Use {\sf Keyboard input} in {\dfield} to compute the 
+solution with initial value $x(0)=0.5$.  Use the {\sf zoom in} feature in 
+the {\sf DFIELD8 Edit} menu to compute $x(2)$ to an accuracy of two decimal 
+places.  (Drag a rectangle around the point you are interested in.  Repeat 
+this several times until you can read off the value $x(2)$ of the solution.)  
+\item[(b)] Use \Matlab to compute the value of the exact solution
+of the form \eqref{soln1} with initial value $x(0)=0.5$.  
+\item[(c)] Is your answer obtained using {\dfield} in (a) accurate to 
+within two decimal places of the answer obtained using (b)?  If not, 
+which answer do you trust more, and why?
+\end{itemize}
+
+\begin{solution}
+
+(a) \ans Using {\tt dfield5}, find $x(2) \approx 1.66$.
+
+\soln In {\tt dfield5}, change the equation to {\tt x$'$ = 0.6*x}, then
+use keyboard input to enter the point $x(0) = 0.5$.  The graph should
+resemble Figure \ref{c3.2.1*}a.  Zoom in on the graph at $x = 2$ to get a
+picture similar to Figure \ref{c3.2.1*}b.
+
+(b) \ans \Matlabp's algebraic solution is $x(2) \approx 1.66$.
+
+\soln Use the initial value $x(0) = 0.5$ to find that the solution to
+$\frac{dx}{dt} = 0.6x$ is $x(t) = 0.5e^{0.6t}$.  In \Matlabp, find $x(2)$
+by typing {\tt x2 = 0.5 * exp(0.6*2)}.
+\Matlab responds with
+\begin{verbatim}
+x2 =
+    1.6601
+\end{verbatim}
+
+(c) To two decimal places, this answer is $x(2) = 1.66$, so the
+{\tt dfield5} answer of $x(2) = 1.70$ is not accurate to two decimal
+places.  The algebraic solution is more accurate, since $x(t) = 0.5e^{0.6t}$
+is an exact solution to the differential equation.
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/3-2-1a.eps,width=2.75in}
+                       \psfig{file=exfigure/3-2-1b.eps,width=2.75in}}
+		\exercaptwo{c3.2.1*}
+\end{figure}
+
+\end{solution}
+\end{exercise}
+\end{document}

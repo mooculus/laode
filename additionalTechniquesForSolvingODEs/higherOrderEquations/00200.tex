@@ -1,0 +1,52 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c14.3.3}
+Use reduction of order to find a solution to the equation
+\begin{equation}  \label{e:inhomex2}
+\ddot{x} + 3\dot{x}+2x = t.
+\end{equation}
+Compare the level of effort with the solution obtained using the
+method of undetermined coefficients.
+
+\begin{solution}
+\ans A particular solution to the equation is given by
+$x_p(t) = \frac{1}{2}(t-\frac{3}{2})$.
+
+\soln The roots of the characteristic polynomial of the homogeneous
+second order equation $\ddot x + 3\dot x + 2x = 0$
+are $\lambda_1 = -1 $ and $\lambda_2 = -2$.
+We choose $\lambda_1$ and $x_h(t)=e^{-t}$.  Then we find a solution
+$y(t)$ of \eqref{eq:redeqreal}, that is,
+\[
+\frac{dy}{dt} = -(2\lambda_1 +a_1) y + e^{-\lambda_1 t}g(t) =
+-y + te^t.
+\]
+This can be done by variation of parameters and we apply
+Theorem~\ref{thm:varpar}.  Using the notation of this theorem, we can
+choose
+\[
+H(t) = -t \AND c(t) = \int t e^{2t} dt = \frac{1}{2}e^{2t}(t-\frac{1}{2}),
+\]
+and obtain the solution
+\[
+y(t) = c(t)e^{H(t)} = \frac{1}{2}e^{t}(t-\frac{1}{2}).
+\]
+An integration of $y(t)$ now leads to the function $c(t)$ which is needed
+for an application of Theorem~\ref{thm:redord}.  We compute
+\[
+c(t) = \int y(t)dt = \frac{e^t}{2}(t-\frac{3}{2}).
+\]
+Hence a particular solution is given by
+\[
+x_p(t) = c(t) x_h(t) =  \frac{1}{2}(t-\frac{3}{2}).
+\]
+Obviously the level of effort is much greater here than when using the method
+of undetermined coefficients.  For a comparison, see the
+beginning of Section~\ref{sec:2norderinhom} where
+this problem is solved by undetermined coefficients.
+
+
+\end{solution}
+\end{exercise}
+\end{document}

@@ -1,0 +1,168 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\noindent In Exercises~\ref{c12.4.8}  -- \ref{c12.4.11} solve the given 
+initial value problems.
+\begin{exercise}  \label{c12.4.8}
+$\ddot{x}-x = 1$ where $x(0)=(Dx)(0)=0$.
+
+\begin{solution}
+\ans The solution to the initial value problem is
+\[
+x(t) = \frac{1}{2}e^t + \frac{1}{2}e^{-t} - 1.
+\]
+
+\soln Let $p(D) = D^2 - 1$ and let $g(t) = 1$.  To find the general solution
+to the inhomogeneous equation $p(D)x = g(t)$, first use the method of
+undetermined coefficients to find one solution to the equation, then
+add that solution to the general solution of the homogeneous system.
+
+\paragraph{Step 1.} Since $g(t)$ is a solution to any homogeneous system
+with an eigenvalue at $\mu = 0$, $q(D) = D$ is an annihilator for
+$g(t)$.
+
+\paragraph{Step 2.} The homogeneous equation $p(D)x = 0$ has eigenvalues
+$\lambda_1 = 1$ and $\lambda_2 = -1$.  These eigenvalues are distinct,
+so the trial space of solutions is the general solution to $q(D)x =
+0$, which is
+\[
+y(t) = c_1.
+\]
+\paragraph{Step 3.} Substitute $y(t)$ into $p(D)x = g(t)$, obtaining
+\[
+-c_1 = 1.
+\]
+Thus, $y(t)$ is a solution to the differential equation when $c_1 = -1$.
+
+\para The general solution to $p(D)x = 0$ is
+\[
+z(t) = \alpha_1e^t + \alpha_2e^{-t}.
+\]
+Thus, the general solution to the inhomogeneous system is
+\[
+x(t) = y(t) + z(t) = \alpha_1e^t + \alpha_2e^{-t} - 1.
+\]
+Now, substitute the initial conditions into $x(t)$, obtaining
+\[
+\begin{array}{rcl}
+0 & = & x(0) = \alpha_1 + \alpha_2 - 1 \\
+0 & = & (Dx)(0) = \alpha_1 - \alpha_2.
+\end{array}
+\]
+Solve this system for $\alpha_1$ and $\alpha_2$, obtaining
+$\alpha_1 = \frac{1}{2}$ and $\alpha_2 = \frac{1}{2}$.
+
+\end{solution}
+\end{exercise}
+\begin{exercise}  \label{c12.4.9}
+$(D^3-8)x = e^{2t}$ where $x(0)=(Dx)(0)=(D^2x)(0)=0$.
+
+\begin{solution}
+\ans The solution to the initial value problem is
+\[
+x(t) = \frac{1}{72}(-3e^{2t} + 6te^{2t} + 3e^{-t}\cos(\sqrt{3}t)
++ \sqrt{3}e^{-t}\sin(\sqrt{3}t)).
+\]
+
+\soln Let $p(D) = D^3 - 8$ and let $g(t) = e^{2t}$.  To find the general
+solution to the inhomogeneous equation $p(D)x = g(t)$, first use the
+method of undetermined coefficients to find one solution to the
+equation, then add that solution to the general solution of the
+homogeneous system.
+
+\paragraph{Step 1.} Since $g(t)$ is a solution to any homogeneous
+system with an eigenvalue at $\mu = 2$, $q(D) = D - 2$ is an annihilator
+for $g(t)$.
+
+\paragraph{Step 2.} The homogeneous equation $p(D)x = 0$ has eigenvalues
+$\lambda_1 = 2$ and $\lambda)2 = -1 \pm \sqrt{3}$.  Since $\lambda_1 =
+\mu$, we find the trial space by applying $q(D)$ to both sides of
+$p(D)x = g(t)$:
+\[
+q(D)(D^3 - 8) = D^4 - 2D^3 - 8D + 16 = 0.
+\]
+The general solution to this equation is
+\[
+x(t) = c_1e^{2t} + c_2te^{2t} + c_3e^{-t}\cos(\sqrt{3}t)
++ c_4e^{-t}\sin(\sqrt{3}t).
+\]
+Since any solution to the homogeneous equation is equal to zero, we can
+set $c_1 = c_3 = c_4 = 0$.  Thus, the trial space is
+\[
+y(t) = c_2te^{2t}.
+\]
+\paragraph{Step 3.} Substitute $y(t)$ into $p(D)x = g(t)$, obtaining
+\[
+12c_2e^{2t} = e^2t.
+\]
+So $y(t)$ is a solution to the differential equation when $c_2 = \frac{1}{12}$.
+
+\para The general solution to $p(D)x = 0$ is
+\[
+z(t) = c_1e^{2t} + c_3e^{-t}\cos(\sqrt{3}t) + c_4e^{-t}\sin(\sqrt{3}t).
+\]
+Thus the general solution to the inhomogeneous system is
+\[
+x(t) = y(t) + z(t) = c_1e^{2t} + \frac{1}{12}te^{2t}
++ c_3e^{-t}\cos(\sqrt{3}t) + c_4e^{-t}\sin(\sqrt{3}t).
+\]
+Substitute the initial conditions into $x(t)$, obtaining
+\[
+\begin{array}{rcl}
+0 & = & x(0) = c_1 + c_3 \\
+0 & = & (Dx)(0) = 2c_1 + \frac{1}{12} - c_3 + \sqrt{3}c_4 \\
+0 & = & (D^2x)(0) = 4c_1 + \frac{1}{3} - 2c_3 - 2\sqrt{3}c_4.
+\end{array}
+\]
+Solve this system to obtain $c_1 = -\frac{1}{24}$, $c_3 = \frac{1}{24}$,
+and $c_4 = \frac{\sqrt{3}}{72}$.
+
+\end{solution}
+\end{exercise}
+\begin{exercise}  \label{c12.4.10}
+$(D^2+D-6)x = 0$ where $x(0)=(Dx)(0)=0$.
+
+\begin{solution}
+\ans The solution to the initial value problem is
+\[
+x(t) = 0.
+\]
+\soln Let $p(D) = D^2 + D - 6$.  Then $p(D)x = 0$, $x(0) = 0$, and
+$(Dx)(0) = 0$.  So, by observation, $x(t) = 0$ is a solution to the
+initial value problem.
+
+
+\end{solution}
+\end{exercise}
+\begin{exercise}  \label{c12.4.11}
+$(D^2-1)x = 1$ where $x(1)=(Dx)(1)=0$.
+
+\begin{solution}
+\ans
+\[
+x(t) = \frac{1}{2}e^{t - 1} + \frac{1}{2}e^{-t + 1} - 1.
+\]
+
+\soln The inhomogeneous system is identical to the system in
+Exercise~\ref{c12.4.8}.  By the same procedure used in that exercise,
+the general solution is
+\[
+x(t) = \alpha_1e^t + \alpha_2e^{-t} - 1.
+\]
+Substitute the initial conditions into $x(t)$, obtaining
+\[
+\begin{array}{rcl}
+0 & = & x(1) = e\alpha_1 + e^{-1}\alpha_2 - 1 \\
+0 & = & (Dx)(1) = e\alpha_1 - e^{-1}\alpha_2.
+\end{array}
+\]
+Solve this system to find $\alpha_1 = \frac{1}{2}e^{-1}$ and
+$\alpha_2 = \frac{1}{2}e$.
+
+
+
+
+\end{solution}
+\end{exercise}
+\end{document}

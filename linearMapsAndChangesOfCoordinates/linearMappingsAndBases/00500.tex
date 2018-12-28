@@ -1,0 +1,26 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise}  \label{c7.2.2b}
+Show that
+\[
+L(p) = \int_0^tp(s)ds
+\]
+is a linear mapping of ${\cal P}_2\to{\cal P}_3$.
+
+\begin{solution}
+
+Let $p(t) = p_1 + p_2t + p_3t^2$.  Then the transformation $L$
+maps $p(t) \mapsto L(p(t)) = p_1t + \frac{1}{2}p_2t^2 +
+\frac{1}{3}p_3t^3$, so $L$ is indeed a mapping ${\cal P}_2
+\rightarrow {\cal P}_3$.  We know from calculus that, for any
+functions $f$ and $g$:
+\[ \int_0^t(f + g)(t) = \int_0^tf(t) + \int_0^tg(t) \]
+And, for any scalar $c \in \R$,
+\[ \int_0^t(cf)(t) = c\int_0^tf(t). \]
+Let $f$ and $g$ be elements of ${\cal P}_2$.  Then $L$ is a linear
+mapping.
+
+\end{solution}
+\end{exercise}
+\end{document}

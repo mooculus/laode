@@ -1,0 +1,42 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise}  \label{c10.4.3}
+Consider the $2\times 2$ matrix 
+\[
+A = \mattwo{3}{1}{-2}{1},
+\]
+whose eigenvalues are $2\pm i$ and whose associated eigenvectors are:
+\[
+\vectwoc{1-i}{2i} \AND \vectwoc{1+i}{-2i}
+\]
+Find a complex $2\times 2$ matrix $T$ such that $C=T\inv AT$ is complex
+diagonal and a real $2\times 2$ matrix $S$ so that $B=S\inv AS$ is in real
+block diagonal form.
+
+\begin{solution}
+
+\ans
+\[
+T = \cmattwo{1 - i}{1 + i}{2i}{-2i}
+\AND S = \mattwo{1}{-1}{0}{2}.
+\]
+
+\soln $T$ is the matrix whose columns are the complex eigenvectors
+of $A$.  Multiplying $T^{-1}AT$ yields
+\[
+\cmattwo{2 + i}{0}{0}{2 - i},
+\]
+the matrix with the eigenvalues of $A$ along the main diagonal.  The
+first column of the matrix $S$ contains the real part of the eigenvector
+$(1 + i, -2i)^t$, and the second column contains the imaginary part of
+this eigenvector. Multiplying $S^{-1}AS$ yields
+\[
+\cmattwo{2}{-1}{1}{2} = \mattwo{\sigma}{-\tau}{\tau}{\sigma}
+\]
+where $\sigma - i\tau$ is the eigenvalue $2 - i$ associated to
+eigenvector $(1 + i, -2i)^t$.
+
+\end{solution}
+\end{exercise}
+\end{document}

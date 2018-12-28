@@ -1,0 +1,32 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c6.7.1}
+By direct integration solve the differential equation \eqref{e:pointpart}
+for a point particle moving only under the influence of gravity.  Find the
+solution for a particle starting at a height of $10$ feet above ground with
+an upward velocity of $20$ feet/sec.  At what time will the particle hit
+the ground?  (Recall that acceleration due to gravity is $32$ feet/sec$^2$.)
+
+\begin{solution}
+
+\ans The particle will hit the ground at $t \approx 1.63$ seconds.
+
+\soln Let $g(t) = 32$.  Then integrate:
+\[
+\begin{array}{rcl}
+\frac{d^2x}{dt^2} & = & -g \\
+\frac{dx}{dt} & = & \int (-g)dt \\
+\frac{dx}{dt} & = & -32t + v_0 \\
+x & = & \int (-32t + C_1)dt \\
+x & = & -16t^2 + C_1t + C_2.
+\end{array}
+\]
+Then let $C_1 = v_0$, the initial velocity, and let $C_2 = x_0$, the initial
+position of the particle, to obtain $x(t) = -16t^2 + v_0t + x_0$.  In this
+case, $x(t) = -16t^2 + 20t + 10$.  Solve for $x(t) = 0$ to find
+$t = \frac{10 + \sqrt{260}}{16} \approx 1.63$.
+
+\end{solution}
+\end{exercise}
+\end{document}

@@ -1,0 +1,66 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+
+\noindent In Exercises~\ref{c13.1.1} -- \ref{c13.1.1a}, use Laplace transforms 
+to compute the solution to the given initial value problem.
+\begin{exercise} \label{c13.1.1}
+$\ddot{x} + 3\dot{x} + 2x = 0, \quad x(0) = 1, \quad \dot{x}(0) = -1$. 
+
+\begin{solution}
+\ans The solution to the initial value problem is
+$x(t) = e^{-t}$.
+
+\soln Using properties~\eqref{Tprops}(a,c), compute:
+\[
+\begin{array}{rcl}
+0 & = & {\cal L}[\ddot{x} + 3\dot{x} + 2x] \\
+& = & (s^2{\cal L}[x] - sx(0) - \dot{x}(0)) + 3(s{\cal L}[x] - x(0))
++ 2{\cal L}[x] \\
+& = & (s^2 + 3s + 2){\cal L}[x] - (3 + s)x(0) - \dot{x}(0) \\
+& = & (s^2 + 3s + 2){\cal L}[x] - (s + 2).
+\end{array}
+\]
+Simplify to obtain
+\[
+{\cal L}[x] = \frac{s + 2}{(s + 2)(s + 1)} = \frac{1}{s + 1}.
+\]
+So, using \eqref{eq:Lexp},
+${\cal L}[x] = {\cal L}[e^{-t}]$.  By property \eqref{Tprops}(b),
+${\cal L}^{-1}$ exists, so we can compute $x(t) = e^{-t}$.
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c13.1.1a}
+$\ddot{x} - 3\dot{x} - 4x = 0, \quad x(0) = 2, \quad \dot{x}(0) = -1$. 
+
+\begin{solution}
+\ans The solution to the initial value problem is
+$\dps x(t) = -\frac{1}{5}(e^{4t}+9e^{-t})$.
+
+\soln Using properties~\eqref{Tprops}(a,c), compute:
+\[
+\begin{array}{rcl}
+0 & = & {\cal L}[\ddot{x} - 3\dot{x} - 4x] \\
+& = & (s^2{\cal L}[x] - sx(0) - \dot{x}(0)) - 3(s{\cal L}[x] - x(0))
+- 4{\cal L}[x] \\
+& = & (s^2 - 3s - 4){\cal L}[x] + (3 - s)x(0) - \dot{x}(0) \\
+& = & (s^2 - 3s - 4){\cal L}[x] + 7 - 2s.
+\end{array}
+\]
+Simplify to obtain
+\[
+{\cal L}[x] = \frac{7-2s}{(s-4)(s+1)} = 
+-\frac{1}{5}\left(\frac{1}{s-4} + \frac{9}{s+1}\right).
+\]
+So, using \eqref{eq:Lexp},
+${\cal L}[x] = {\cal L}[-\frac{1}{5}(e^{4t}+9e^{-t})]$.  By property 
+\eqref{Tprops}(b), ${\cal L}^{-1}$ exists, so we can compute 
+$x(t) = -\frac{1}{5}(e^{4t}+9e^{-t})$.
+
+
+
+\end{solution}
+\end{exercise}
+\end{document}

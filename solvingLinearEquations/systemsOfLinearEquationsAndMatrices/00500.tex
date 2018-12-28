@@ -1,0 +1,103 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c2.1.11}
+\begin{itemize}
+\item[(a)] Find a quadratic polynomial $p(x) = ax^2 + bx + c$
+  satisfying $p(0) = 1$, $p(1) = 5$, and $p(-1) = -5$.
+  \begin{prompt}
+    The quadratic $p(x) = \answer{-x^2 + 5x + 1}$ satisfies these conditions.
+  \end{prompt}
+  \begin{hint}
+    Since $p(x) = ax^2 + bx + c$ for any quadratic equation, we find
+this solution by evaluating $p(0) = 1$, $p(1) = 5$, and $p(-1) = -5$,
+which yields the system of equations
+\[
+\begin{array}{lrrrrrrrr}
+p(0) & = & & & & & c & = & 1 \\
+p(1) & = & a & + & b & + & c & = & 5 \\
+p(-1) & = & a & - & b & + & c & = & -5\end{array}
+\]
+We solve this system to obtain $(a,b,c) = (-1,5,1)$, then substitute
+these coefficients into the general quadratic.
+  \end{hint}
+\item[(b)] Prove that for every triple of real numbers $L$, $M$,
+and $N$, there is a quadratic polynomial satisfying $p(0) = L$,
+$p(1) = M$, and $p(-1) = N$.
+\begin{hint}
+   Let $p(x) = ax^2 + bx + c$ be a quadratic equation.  Then, the
+assumptions $p(0) = L$, $p(1) = M$, and $p(-1) = N$ imply:
+\[
+\begin{array}{lrrrrrrrr}
+p(0) & = & & & & & c & = & L \\
+p(1) & = & a & + & b & + & c & = & M \\
+p(-1) & = & a & - & b & + & c & = & N\end{array}
+\]
+The unique solution to this system is $(a,b,c) =
+(\frac{M + N - 2L}{2},\frac{M - N}{2},L)$.
+\end{hint}
+\item[(c)] Let $x_1,x_2,x_3$ be three unequal real
+numbers and let $A_1,A_2,A_3$ be three real numbers.  Show
+that finding a quadratic polynomial $q(x)$ that satisfies
+$q(x_i) = A_i$ is equivalent to solving a system of three
+linear equations.
+\begin{hint}
+   Substituting $q(x_i) = A_i$, for $i = 1,2,3$, into the standard
+quadratic equation $q(x) = ax^2 + bx + c$ yields
+\[
+\begin{array}{ccccccc}
+ax_1^2 & + & bx_1 & + & c & = & A_1 \\
+ax_2^2 & + & bx_2 & + & c & = & A_2 \\
+ax_3^2 & + & bx_3 & + & c & = & A_3\end{array}
+\]
+Finding the appropriate quadratic polynomial would be equivalent to
+solving this system of linear equations for $a$, $b$, and $c$ in
+terms of $A_1$, $A_2$, and $A_3$.
+\end{hint}
+\end{itemize}
+
+\begin{solution}
+
+(a) \ans The quadratic $p(x) = -x^2 + 5x + 1$ satisfies these conditions.
+
+\soln Since $p(x) = ax^2 + bx + c$ for any quadratic equation, we find
+this solution by evaluating $p(0) = 1$, $p(1) = 5$, and $p(-1) = -5$,
+which yields the system of equations
+\[
+\begin{array}{lrrrrrrrr}
+p(0) & = & & & & & c & = & 1 \\
+p(1) & = & a & + & b & + & c & = & 5 \\
+p(-1) & = & a & - & b & + & c & = & -5\end{array}
+\]
+We solve this system to obtain $(a,b,c) = (-1,5,1)$, then substitute
+these coefficients into the general quadratic.
+
+(b) Let $p(x) = ax^2 + bx + c$ be a quadratic equation.  Then, the
+assumptions $p(0) = L$, $p(1) = M$, and $p(-1) = N$ imply:
+\[
+\begin{array}{lrrrrrrrr}
+p(0) & = & & & & & c & = & L \\
+p(1) & = & a & + & b & + & c & = & M \\
+p(-1) & = & a & - & b & + & c & = & N\end{array}
+\]
+The unique solution to this system is $(a,b,c) =
+(\frac{M + N - 2L}{2},\frac{M - N}{2},L)$.
+
+(c) Substituting $q(x_i) = A_i$, for $i = 1,2,3$, into the standard
+quadratic equation $q(x) = ax^2 + bx + c$ yields
+\[
+\begin{array}{ccccccc}
+ax_1^2 & + & bx_1 & + & c & = & A_1 \\
+ax_2^2 & + & bx_2 & + & c & = & A_2 \\
+ax_3^2 & + & bx_3 & + & c & = & A_3\end{array}
+\]
+Finding the appropriate quadratic polynomial would be equivalent to
+solving this system of linear equations for $a$, $b$, and $c$ in
+terms of $A_1$, $A_2$, and $A_3$.
+
+
+
+
+\end{solution}
+\end{exercise}
+\end{document}

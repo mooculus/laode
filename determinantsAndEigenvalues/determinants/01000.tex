@@ -1,0 +1,22 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise}  \label{c10.1.c8} 
+Suppose that two $n\times p$ matrices $A$ and $B$ are row
+equivalent. \index{row!equivalent} Show that there is an invertible
+$n\times n$ matrix $P$ such that $B = PA$.
+
+\begin{solution}
+
+By Proposition~\ref{P:ERO}, every
+elementary row operation on $A$ can be represented by an invertible $n
+\times n$ matrix $E$.  That is, the matrix $EA$ is row equivalent to
+$A$.  If $A$ and $B$ are row equivalent, then there exist matrices
+$E_j$ such that $B = E_k\ldots E_1A$.  The product of invertible $n
+\times n$ matrices is an invertible $n \times n$ matrix.  Thus $P =
+E_k\ldots E_1$ is an invertible $n \times n$ matrix such that $B =
+PA$.
+
+\end{solution}
+\end{exercise}
+\end{document}

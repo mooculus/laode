@@ -1,0 +1,51 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c4.1.8}
+Let $A$ be a $2\times 2$ matrix.  Find $A$ so that
+\begin{eqnarray*}
+A\left(\begin{array}{r} 1 \\ 1 \end{array}\right) =
+\left(\begin{array}{r} 2 \\ -1 \end{array}\right) \\
+A\left(\begin{array}{r} 1 \\ -1 \end{array}\right) =
+\left(\begin{array}{r} 4 \\ 3 \end{array}\right).
+\end{eqnarray*}
+
+\begin{solution}
+
+\ans The equations are valid when
+\[ A = \left(\begin{array}{rr} 3 & -1 \\ 1 & -2\end{array}\right). \]
+\soln Let
+\[ A = \left(\begin{array}{rr} a_{11} & a_{12} \\ a_{21} & 
+a_{22}\end{array}\right) \]
+Then
+\[ \left(\begin{array}{rr} a_{11} & a_{12} \\ a_{21} & a_{22}\end{array}\right)
+\left(\begin{array}{r} 1 \\ 1\end{array}\right) =
+\left(\begin{array}{r} 2 \\ -1\end{array}\right) \AND
+\left(\begin{array}{rr} a_{11} & a_{12} \\ a_{21} & a_{22}\end{array}\right)
+\left(\begin{array}{r} 1 \\ -1\end{array}\right) =
+\left(\begin{array}{r} 4 \\ 3.\end{array}\right) \]
+These matrix equations yield the linear system
+\[ \begin{array}{rrrrrrrrr}
+a_{11} & + & a_{12} & & & & & = & 2 \\
+& & & & a_{21} & + & a_{22} & = & -1 \\
+a_{11} & - & a_{12} & & & & & = & 4 \\
+& & & & a_{21} & - & a_{22} & = & 3, \end{array} \]
+which can be written as an augmented matrix and row-reduced to yield
+the values $a_{ij}$:
+\[ \left(\begin{array}{rrrr|r}
+1 & 1 & 0 & 0 & 2 \\
+0 & 0 & 1 & 1 & -1 \\
+1 & -1 & 0 & 0 & 4 \\
+0 & 0 & 1 & -1 & 3\end{array}\right)
+\longrightarrow
+\left(\begin{array}{rrrr|r}
+1 & 0 & 0 & 0 & 3 \\
+0 & 1 & 0 & 0 & -1 \\
+0 & 0 & 1 & 0 & 1 \\
+0 & 0 & 0 & 1 & 2\end{array}\right). \]
+
+
+
+\end{solution}
+\end{exercise}
+\end{document}

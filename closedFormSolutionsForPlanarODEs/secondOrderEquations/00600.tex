@@ -1,0 +1,46 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c6.7.4}
+Let $r>0$ and $w>0$ be constants, and let $x(t)$ be a solution to the
+differential equation
+\[
+\ddot{x} + r\dot{x} + wx = 0.
+\]
+Show that $\dps\lim_{t\to\infty} x(t) = 0$.
+
+\begin{solution}
+
+This differential equation can be rewritten as $\dot{X} = QX$, where
+$y = \dot{x}$,
+\[
+X = \vectwo{x}{y}, \AND Q = \mattwo{0}{1}{-w}{-r}.
+\]
+Then we can solve for $x(t)$ in closed form, obtaining
+\[
+x(t) = \alpha e^{\lambda_1 t} + \beta e^{\lambda_2 t}
+\]
+where $\lambda_1$ and $\lambda_2$ are the roots of the characteristic
+polynomial $p_q(\lambda) = \lambda^2 + r\lambda + w$.  By the quadratic
+formula, the eigenvalues are
+\[
+\lambda = \frac{-r \pm \sqrt{r^2 - 4w}}{2}.
+\]
+We know that $-r < 0$.  If $r^2 - 4w < 0$, then $\lambda_1$ and $\lambda_2$
+are complex conjugates with negative real part.  Otherwise, $\lambda_1$
+and $\lambda_2$ are negative real numbers, since $r > \sqrt{r^2 - 4w}$
+for any choice of $r$ and $w$.  For any $\lambda$ with negative real part
+\[
+\lim_{t \rightarrow \infty} e^{\lambda t} = 0.
+\]
+Thus,
+\[
+\lim_{t \rightarrow \infty} x(t) =
+\lim_{t \rightarrow \infty} (\alpha e^{\lambda_1 t} +
+\beta e^{\lambda_2 t}) = 0.
+\]
+
+
+\end{solution}
+\end{exercise}
+\end{document}

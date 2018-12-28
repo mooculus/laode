@@ -1,0 +1,39 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c15.2.2}
+Apply the implicit Euler method to the initial value problem
+\eqref{eq:simplest}.  Then determine a formula for the local 
+discretization error that is analogous to \eqref{eq:locerrdef}.
+{\bf Hint:} Before proceeding as for Euler's method solve
+for $x_{k+1}$ in \eqref{eq:impleulit} in this specific case.
+
+\begin{solution}
+\ans Local discretization error:
+\[
+\delta(k+1) = e^{t_{k+1}} - \frac{1}{1-h} e^{t_k}.
+\]
+
+\soln The implicit Euler method applied to the initial value problem
+\eqref{eq:simplest} takes the form
+\[
+\begin{array}{rclc}
+t_{k+1} & = & t_k+h & \\
+x_{k+1} & = & x_k + h x_{k+1} &
+\end{array}
+\]
+where $k=0,1,\ldots,K-1$.  Solving for $x_{k+1}$ yields
+\[
+x_{k+1} = \frac{1}{1-h}x_k.
+\]
+We assume that the numerical solution is exact up to step $k$, that is,
+we start in $x(t_k)=e^{t_k}$.  Then the local discretization error
+$\delta(k+1)$ is given by
+\[
+\delta(k+1) = x(t_{k+1}) - \frac{1}{1-h}x(t_k)=
+e^{t_{k+1}} - \frac{1}{1-h}e^{t_k}.
+\]
+
+\end{solution}
+\end{exercise}
+\end{document}

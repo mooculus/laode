@@ -1,0 +1,52 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c14.6.6}
+Verify that the differential equation 
+\[
+\frac{dx}{dt} = \frac{x}{x-t}
+\]
+is exact and find a solution with initial value $x(2)=3$.   Compare your 
+answer with Exercise~\ref{exer:at} in Section~\ref{S:3.2}.
+
+\begin{solution}
+\ans A solution to the initial value problem is
+\[
+x(t) = t + \sqrt{t^2-3}.
+\]
+
+\soln Write the differential equation as $\dps\frac{dx}{dt} =
+\frac{G(t,x)}{H(t,x)}$, where $G(t,x) = x$ and $H(t,x) = x - t$.  Then,
+since
+\[
+-\frac{\partial G}{\partial x} = -1 = \frac{\partial H}{\partial t},
+\]
+the differential equation is exact by Proposition~\ref{prop:exact}.  Next,
+we must find a function $F(t,x)$ satisfying \eqref{eq:excond}.  By integration,
+obtain
+\[
+\Omega(t,x) = \int H(t,x)dy = \int (x - t)dx = \frac{1}{2}x^2 -tx.
+\]
+Then, find the function $h(t)$ such that
+\[
+h'(t) = -\frac{\partial}{\partial t}\Omega(t,x) - G(t,x)
+= x - x = 0 .
+\]
+In this case, we can choose $h(t) = 0$.  Finally, compute
+\[
+F(t,x) = \Omega(t,x) + h(t) =  \frac{1}{2}x^2 -tx,
+\]
+the function satisfying \eqref{eq:excond}.  Now, substitute the initial
+condition $(t,x) = (2,3)$ into $F(t,x)$, obtaining $F(2,3) = -\frac{3}{2}$.  Thus,
+$x(t)$ satisfies
+\[
+ \frac{1}{2}x^2 -tx = -\frac{3}{2}.
+\]
+Solve for $x$ to find the solution to the initial value problem.  The
+solution is exactly the one given in Exercise~\ref{exer:at} from
+Section~\ref{S:3.2}.
+
+
+\end{solution}
+\end{exercise} 
+\end{document}

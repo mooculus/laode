@@ -1,0 +1,75 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\noindent In Exercises~\ref{c11.4.1a} -- \ref{c11.4.1d} investigate
+numerically the behavior of solutions of the ODEs in a neighborhood
+of the given equilibrium $X_0$.  Based on your observations decide
+whether or not the equilibrium is asymptotically stable.
+
+\begin{exercise} \label{c11.4.1a}
+Explore the system \eqref{e11.4.1a} near the equilibrium $X_0 = (0,0,0)$:
+\begin{matlabEquation}  \label{e11.4.1a}
+\begin{array}{rcl}
+\dot{x}_1 & = & -x_1 - x_2 + x_2 x_3\\
+\dot{x}_2 & = & x_1 - x_2 +x_1^2\\
+\dot{x}_3 & = & -x_3 + x_1 x_2
+\end{array}.
+\end{matlabEquation}
+
+\begin{solution}
+The origin is asymptotically stable. 
+
+
+\end{solution}
+\end{exercise}
+
+\begin{exercise} \label{c11.4.1b}
+Explore the system \eqref{e11.4.1b} near the equilibrium $X_0 = (0,0,0)$:
+\begin{matlabEquation}  \label{e11.4.1b}
+\begin{array}{rcl}
+\dot{x}_1 & = & 10(x_2-x_1)\\
+\dot{x}_2 & = & 28 x_1 - x_2 - x_1x_3\\
+\dot{x}_3 & = & -\frac{8}{3} x_3 + x_1x_2,
+\end{array}.
+\end{matlabEquation}
+
+\begin{solution}
+The origin is not asymptotically stable. 
+
+\end{solution}
+\end{exercise}
+
+\begin{exercise} \label{c11.4.1c}
+Explore the system \eqref{e11.4.1c} near the equilibrium $X_0 = (1,0,2)$:
+\begin{matlabEquation}  \label{e11.4.1c}
+\begin{array}{rcl}
+\dot{x}_1 & = & 3x_1+x_3-3-x_1x_3\\
+\dot{x}_2 & = & x_1 - 1 + x_2x_3\\
+\dot{x}_3 & = & x_2 + x_3 -2 + x_1 x_2 - x_2 x_3
+\end{array}.
+\end{matlabEquation}
+
+\begin{solution}
+The equilibrium $(1,0,2)$ is not asymptotically stable. 
+
+\end{solution}
+\end{exercise}
+
+\begin{exercise} \label{c11.4.1d}
+Explore the system \eqref{e11.4.1d} near the equilibrium $X_0 = (0,0,2)$:
+\begin{matlabEquation}  \label{e11.4.1d}
+\begin{array}{rcl}
+\dot{x}_1 & = & -x_1-x_3+3-\cos(x_1)\\
+\dot{x}_2 & = & 1-\cos(x_1) - x_3\sin(x_2)\\
+\dot{x}_3 & = & 2-x_3 - \sin(x_2)\cos(x_1)
+\end{array}.
+\end{matlabEquation}
+
+\begin{solution}
+The equilibrium $(0,0,2)$ is not asymptotically stable. 
+
+
+\end{solution}
+\end{exercise}
+\end{document}

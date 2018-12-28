@@ -1,0 +1,75 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+
+
+\CEXER
+
+
+
+\noindent In Exercises~\ref{c13.3.3a} -- \ref{c13.3.3c} use the \Matlab 
+command {\tt residue}\index{\computer!residue}
+to compute the expansion into partial fractions of 
+$p(s)/q(s)$ for the given polynomials $p$ and $q$.
+\begin{exercise} \label{c13.3.3a}
+$p(s)=2(s-1)$ and $q(s)=s^2-3s+2$
+
+\begin{solution}
+\ans
+\[
+\frac{2(s - 1)}{s^2 - 3s + 2} = \frac{2}{s - 2}.
+\]
+\soln To find the expansion into partial fractions using \Matlabp, type
+\begin{verbatim}
+p = [2 -2];
+q = [1 -3 2];
+[c,r] = residue(p,q)
+\end{verbatim}
+\Matlab returns the roots of the expansion as $r = (2,1)^t$ and
+the corresponding scalars as $c = (2,0)^t$.
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c13.3.3b}
+$p(s)=s^3-6s^2-45s+50$ and $q(s)=s^4-8s^3-21s^2+8s+20$.
+
+\begin{solution}
+\ans
+\[
+\frac{s^3 - 6s^2 - 45s + 50}{s^4 - 8s^3 - 21s^2 + 8s + 20}
+= -\frac{3}{s + 2} + \frac{4}{s + 1}.
+\]
+\soln To find the expansion into partial fractions using \Matlabp, type
+\begin{verbatim}
+p = [1 -6 -45 50];
+q = [1 -8 -21 8 20];
+[c,r] = residue(p,q)
+\end{verbatim}
+\Matlab returns the roots of the expansion as $r = (10,-2,-1,1)^t$ and
+the corresponding scalars as $c = (0,-3,4,0)^t$.
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c13.3.3c}
+$p(s)=3(s-1)$ and $q(s)=s^3-s^2+4s-4$.
+
+\begin{solution}
+\ans
+\[
+\frac{3(s - 1)}{s^3 - s^1 + 4s - 4} = \frac{-\frac{3}{4}i}{s - 2i}
++ \frac{\frac{3}{4}i}{s + 2i}.
+\]
+\soln To find the expansion into partial fractions using \Matlabp, type
+\begin{verbatim}
+p = [3 -3];
+q = [1 -1 4 -4];
+[c,r] = residue(p,q)
+\end{verbatim}
+
+\Matlab returns the roots of the expansion as $r = (2i,-2i,1)^t$ and
+the corresponding scalars as $c = (-\frac{3}{4}i,\frac{3}{4}i,0)^t$.
+
+\end{solution}
+\end{exercise}
+\end{document}

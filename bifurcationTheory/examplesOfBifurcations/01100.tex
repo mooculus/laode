@@ -1,0 +1,69 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c9.7.5}
+Consider the differential equation:
+\begin{matlabEquation} \label{e:homo}
+\begin{array}{rcl}
+\dot{x} & = &  y \\
+\dot{y} & = &  -\rho + y + x^2 + xy
+\end{array}
+\end{matlabEquation}
+\begin{itemize}
+\item[(a)]  Show analytically that \eqref{e:homo} has two equilibria at 
+$(\pm\sqrt{\rho},0)$ when $\rho>0$. 
+\item[(b)]  Show analytically that the equilibrium at $(\sqrt{\rho},0)$ is 
+always a saddle, while the equilibrium at $(-\sqrt{\rho},0)$ is a spiral sink 
+when $1<\rho<97$.  
+\item[(c)]  Use {\pplane} to show that the phase portrait of \eqref{e:homo} 
+has a homoclinic trajectory between $\rho=1.7$ and $\rho=1.8$.  
+\end{itemize}
+
+\begin{solution}
+\soln
+(a) The differential equation \eqref{e:homo} is:
+\[
+\begin{array}{rcl}
+\dot{x} & = &  y \\
+\dot{y} & = &  -\rho + y + x^2 + xy
+\end{array}
+\]
+Solve the system for $\dot{x} = 0 = \dot{y}$ to find that the equilibria
+occur at $y = 0$ and $x^2 = \rho$, which is $(\pm\sqrt{\rho},0)$
+for $\rho > 0$.
+
+(b)  The Jacobian matrix of these equations is:
+\[
+J_{(x,y)} = \cmattwo{0}{1}{2x+y}{1+x}.
+\]
+At the equilibria $(\pm\sqrt{\rho},0)$ the Jacobians are
+\[
+J_{(\sqrt{\rho},0)}= \cmattwo{0}{1}{2\sqrt{\rho}}{1+\sqrt{\rho}} 
+\AND
+J_{(-\sqrt{\rho},0)}= \cmattwo{0}{1}{-2\sqrt{\rho}}{1-\sqrt{\rho}}
+\]
+The first Jacobian has determinant equal to $-2\sqrt{\rho}<0$; so the
+first equilibrium is always a saddle.  The second Jacobian has determinant
+equal to $2\sqrt{\rho}>0$ and trace equal to $1-\sqrt{\rho}$.  Since the
+trace is negative when $\rho>1$, the second equilibrium is a sink.  The
+discriminant of the second Jacobian is 
+\[
+(1-\sqrt{\rho})^2-8\sqrt{\rho}=1-10\sqrt{\rho}+\rho.
+\]
+The second equilibrium is a spiral when the discriminant is negative, which
+it is when $1<\rho<97$.
+
+(c)  Figures~\ref{c9.7.5}a and \ref{c9.7.5}b show that a homoclinic 
+bifurcation has occurred between parameter values $\rho=1.7$ (a) and 
+$\rho=1.8$ (b) with its characteristic loss of a limit cycle. 
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/9-7-5a.eps,width=2.75in}
+                       \psfig{file=exfigure/9-7-5b.eps,width=2.75in}}
+                \exercaptwo{c9.7.5}
+\end{figure}
+
+\end{solution}
+\end{exercise}
+\end{document}

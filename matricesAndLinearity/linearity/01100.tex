@@ -1,0 +1,28 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c4.3.10}
+Let $\sigma$ permute coordinates cyclically in $\R^3$; that is,
+\[
+\sigma(x_1,x_2,x_3) = (x_2,x_3,x_1).
+\]
+Find a $3\times 3$ matrix $A$ such that $\sigma = L_A$.
+
+\begin{solution}
+
+\ans The matrix of linear mapping $L_A$ is
+\[ A = \matthree{0}{1}{0}{0}{0}{1}{1}{0}{0}. \]
+
+\soln Note that if $\sigma = L_A$, then $\sigma(e_j) = Ae_j$ is the
+$j^{th}$ column of matrix $A$.  Thus $A$ is determined by
+\[
+\begin{array}{l}
+\sigma(e_1) = \sigma(1,0,0) = (0,0,1) \\
+\sigma(e_2) = \sigma(0,1,0) = (1,0,0) \\
+\sigma(e_3) = \sigma(0,0,1) = (0,1,0). \end{array}
+\]
+
+
+\end{solution}
+\end{exercise}
+\end{document}

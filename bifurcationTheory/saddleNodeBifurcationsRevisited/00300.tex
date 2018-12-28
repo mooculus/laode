@@ -1,0 +1,49 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c9.3.5}
+Find all saddle-node bifurcations in the 
+family of differential equations
+\begin{equation}
+\dot{x} = x^3 -5x^2 + 3x + \rho
+\end{equation}
+analytically.  Draw the bifurcation diagram.
+
+\begin{solution}
+
+\ans Saddle-node bifurcations occur at $(x,\rho)=(3,9)$ and 
+$(x,\rho)=(1/3,-13/27)$.
+
+\soln A saddle-node bifurcation can occur only at points where
+\[ 
+f(x,\rho)=0 \quad \mbox{and}\quad f_x(x,\rho)=0,
+\]
+that is, 
+\[
+x^3 -5x^2 + 3x + \rho = 0 \AND 3x^2 -10x +3 = (3x-1)(x-3)=0.
+\]
+From these equations we see that saddle-nodes can occur only at 
+$(x,\rho)=(3,9)$ and at $(x,\rho)=(1/3,-13/27)$. Such points are saddle-nodes 
+if, in addition, 
+\[
+f_\rho(x,\rho)\neq 0 \AND  f_{xx}(x,\rho)\neq 0.
+\]
+Note that
+\[
+f_\rho(x,\rho) = 1  \AND  f_{xx}(x,\rho) = 6x - 10.
+\]
+So $f_\rho$ is never zero and $f_{xx}$ is nonzero when $x=3$ and $x=1/3$.
+So there are two saddle-node bifurcations.  The 
+bifurcation diagram is shown in Figure~\ref{c9.3.5}.
+\begin{figure}[htb]
+     \centerline{%
+     \psfig{file=exfigure/bifdiagex.eps,width=3.0in}}
+     \exercap{c9.3.5}
+\end{figure}
+
+
+
+
+\end{solution}
+\end{exercise}
+\end{document}

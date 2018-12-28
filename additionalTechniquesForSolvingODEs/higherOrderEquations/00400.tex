@@ -1,0 +1,28 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c14.3.4A}
+Set $R=0$ and $C=L=1$ in the electrical circuit equation \eqref{E:RCLMcir}. 
+Show that this equation may be rewritten as the first order system
+\begin{equation} \label{E:ECsy}
+\begin{array}{rcl}
+\dot{x} & = & y \\
+\dot{y} & = & -x -R_{mic}(t)y + V(t).
+\end{array} 
+\end{equation}
+
+\begin{solution}
+
+With $R=0$ and $C=L=1$, equation \eqref{E:RCLMcir} becomes
+\[
+\ddot{x} + R_{mic}(t)\dot{x} + x = V(t).
+\]
+Set $y=\dot{x}$.  Then this equation is
+\[
+\dot{y} + R_{mic}(t)y + x = V(t).
+\]
+Solving for $\dot{x}$ and $\dot{y}$ yields the answer. 
+
+\end{solution}
+\end{exercise}
+\end{document}

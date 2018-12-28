@@ -1,0 +1,33 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c9.3.2}
+Let 
+\[
+f(x,\rho) = x^4 - 6x^3 +8x^2 + 6(x-\rho) - 3.
+\]
+Show that $f$ has a saddle-node bifurcation at $x=3$ when $\rho=1$. 
+Are there two equilibria near $x=3$ when $\rho<1$ or when $\rho>1$?
+
+\begin{solution}
+
+\ans There are two equilibria near $x = 3$ when $\rho > 1$.
+
+\soln Calculate
+\[
+f(3,1) = 0, \quad
+f_x(3,1) = 0, \quad
+f_\rho(3,1) = -6 \neq 0, \AND
+f_{xx}(3,1) = 16 \neq 0.
+\]
+Therefore, $f$ has a saddle-node bifurcation at $x = 3$ when $\rho =
+1$.  Note that Theorem~\ref{T:saddlenode} states
+that if $a < 0$, then there are two equilibria near $x_0$ for $\rho >
+\rho_0$.  In this case,
+\[
+a = \frac{f_{xx}(x_0,\rho_0)}{f_p(x_0,\rho_0)} = -\frac{8}{3} < 0.
+\]
+
+\end{solution}
+\end{exercise}
+\end{document}

@@ -1,0 +1,41 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c8.4.2}
+Use {\pplane} to determine the number of equilibria and their
+types for the system
+\begin{matlabEquation}\label{MATLAB:2}
+\begin{array}{rcl}
+\dot{x} & = &  2x-y+3\cos(x+y)  \\
+\dot{y} & = &  x -y -2\sin(x-y)
+\end{array}
+\end{matlabEquation}
+in the rectangle $-2 \leq x \leq 4$, $-3 \leq y \leq 6$.  
+
+\begin{solution}
+
+Use {\tt pplane5} to graph the system and find equilibria.  The
+command {\tt List computed equilibrium points} yields:
+\begin{verbatim}
+(-0.6724, -0.6724)      Nodal source.
+(1.4782, 3.3737)        Saddle point.
+(1.9929, 1.9929)        Nodal source.
+(-0.6778, 1.2177)       Spiral sink.
+(-1.0464, 0.8491)       Saddle point.
+(-0.1485, -2.0440)      Saddle point.
+(4.1299, 6.0254)        Saddle point.
+(3.2051, 5.1006)        Spiral sink.
+(-2.8222, -4.7177)      Saddle point.
+(-1.3103, -3.2058)      Spiral sink.
+\end{verbatim}
+Figure~\ref{c8.4.2} shows a {\tt pplane5} graph of the system.
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/8-4-2.eps,width=3.0in}}
+                \exercap{c8.4.2}
+\end{figure}
+
+\end{solution}
+\end{exercise}  
+\end{document}

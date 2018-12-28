@@ -1,0 +1,35 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c9.7.1}
+Show that the differential equation 
+\[
+\dot{x} = \rho + x^2
+\]
+undergoes a saddle-node bifurcation at $\rho=0$ where two equilibria 
+disappear as $\rho$ increases through $0$.  Draw the bifurcation diagram 
+for this differential equation.
+
+\begin{solution}
+
+\ans The bifurcation diagram (Figure~\ref{c9.7.1}) shows two equilibria
+vanishing as $\rho$ increases through $0$.
+
+\soln The equilibria of the equation occur when $0 = \frac{dx}{dt} =
+\rho + x^2$; that is, when $\rho = -x^2$.  Thus, when $\rho < 0$, there
+are two equilibria, at $x = \pm\sqrt{-\rho}$.  When $\rho = 0$, there is
+one equilibrium at $x = 0$; and when $\rho > 0$, there are no real
+equilibria.  Let $f(x,\rho) = \rho + x^2$.  If $\rho < 0$, 
+then $f_x(\sqrt{-\rho},\rho) > 0$ and $f_x(-\sqrt{-\rho},\rho) < 0$. 
+Thus, the equilibrium at $x = \sqrt{-\rho}$ is unstable, and the
+equilibrium at $x = -\sqrt{-\rho}$ is stable.
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/9-7-1.eps,width=3.0in}}
+                \exercap{c9.7.1}
+\end{figure}
+
+\end{solution}
+\end{exercise}
+\end{document}

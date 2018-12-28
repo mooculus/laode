@@ -1,0 +1,61 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c10.1.c9}
+Let $A$ be an invertible $n\times n$ matrix and let $b\in\R^n$ be a column 
+vector. Let $B_j$ be the $n\times n$ matrix obtained from $A$ by replacing the 
+$j^{th}$ column of $A$ by the vector $b$.  Let $x=(x_1,\ldots,x_n)^t$ be the 
+unique solution to $Ax=b$. Then Cramer's rule \index{Cramer's rule} states that
+\begin{equation}  \label{E:cramer2}
+x_j = \frac{\det(B_j)}{\det(A)}.
+\end{equation}
+Prove Cramer's rule.  {\bf Hint}: Let $A_j$ be the $j^{th}$ column of $A$ so
+that $A_j = Ae_j$.  Show that 
+\[
+B_j = A (e_1|\cdots|e_{j-1}|x|e_{j+1}|\cdots|e_n).
+\]
+Using this product, compute the determinant of $B_j$ and verify \eqref{E:cramer2}.
+
+\begin{solution}
+
+Let $A$ be an invertible $n\times n$ matrix and let $b\in\R^n$ be a column 
+vector. Let $B_j$ be the $n\times n$ matrix obtained from $A$ by replacing 
+the $j^{th}$ column of $A$ by the vector $b$.  Let $x=(x_1,\ldots,x_n)^t$ be 
+the unique solution to $Ax=b$.  We claim that
+\[
+x_j = \frac{\det(B_j)}{\det(A)}.
+\]
+Let $A_j$ be the $j^{th}$ column of $A$ so that $Ae_j=A_j$.  It follows that 
+\begin{eqnarray*}
+A (e_1|\cdots|e_{j-1}|x|e_{j+1}|\cdots|e_n) & = & 
+(A e_1|\cdots|A e_{j-1}|A x|A e_{j+1}|\cdots|A e_n)\\
+& = & (A_1|\cdots|A_{j-1}|b|A_{j+1}|\cdots|A_n) \\
+& = & B_j.
+\end{eqnarray*}
+Therefore,
+\[
+\det(B_j) = \det(A)\det(e_1|\cdots|e_{j-1}|x|e_{j+1}|\cdots|e_n).
+\]
+We claim that 
+\[
+\det(e_1|\cdots|e_{j-1}|x|e_{j+1}|\cdots|e_n)=x_j,
+\]
+from which Cramer's rule follows.  Since $\det(C)=\det(C^t)$, we can perform
+elementary column operations on $C$ while computing determinants.  In
+particular, we can subtract $x_ke_k$ (for $k>j$) from the $j^{th}$ column of
+\[
+(e_1|\cdots|e_{j-1}|x|e_{j+1}|\cdots|e_n)
+\]
+without changing its determinant.  The end result is that 
+\[
+\det(e_1|\cdots|e_{j-1}|x|e_{j+1}|\cdots|e_n)=
+\det(e_1|\cdots|e_{j-1}|y|e_{j+1}|\cdots|e_n),
+\]
+where $y=(x_1,\ldots,x_j,0,\ldots,0)^t$.  Since this last matrix is upper
+triangular, its determinant is the product of its diagonal elements ---
+which equals $x_j$. 
+
+
+\end{solution}
+\end{exercise}
+\end{document}

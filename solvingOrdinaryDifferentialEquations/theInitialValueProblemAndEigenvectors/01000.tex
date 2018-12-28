@@ -1,0 +1,51 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c4.5.6}
+Consider the matrix $A$ and vector $X_0$ given by
+\[
+A=\mattwo{2}{1}{0}{1}\AND X_0=\vectwo{1}{1}.
+\]
+Use {\sf map} to compute $X_1 = AX_0$, $X_2 = AX_1$, $X_3=AX_2$ etc.\ by a
+repeated use of the {\sf Map} button in the {\sf MAP Display} window.  What
+do you observe?  What happens if you start the iteration process with a
+different choice for $X_0$, and, in particular, for an $X_0$ that is close
+to $\vectwo{-1}{1}$?
+
+\begin{solution}
+
+For each iteration, the $y$-coordinate of the solution is $1$.  After a
+number of iterations, the $x$-coordinate approaches infinity, so the
+direction of the solution vector approaches $(1,0)$, which, as shown
+in Exercise~\ref{c4.5.5a}, is an eigenvector of $A$.  For any $X_0
+\neq (-1,1)$, the solution vector approaches the direction
+$(1,0)$.  If $X_0 = (-1,1)$ or some multiple thereof, then the solution
+vectors remains on the line $y = -x$, since $(-1,1)$ is also an
+eigenvector of $A$.
+
+\end{solution}
+\end{exercise}
+
+\noindent In Exercises~\ref{c4.5.5a} -- \ref{c4.5.5b} use {\sf map} to find
+an (approximate) eigenvector for the given matrix.  {\bf Hint:} Choose a
+vector in {\sf map} and repeatedly click on the button {\sf Map} until the
+vector maps to a multiple of itself.  You may wish to use the {\sf Rescale} 
+feature in the {\sf MAP Options}.  Then the length of the vector is rescaled 
+to one after each use of the command {\sf Map}. In this way, you can avoid
+overflows in the computations while still being able to see the
+directions where the vectors are moved by the matrix mapping.  The coordinates 
+of the new vector obtained by applying {\sf map} can be viewed in the 
+{\sf Vector input} window.
+
+\begin{exercise} \label{c4.5.5a}
+$B=\mattwo{2}{-2}{2}{7}$.
+
+\begin{solution}
+The vector $(-1,2)^t$ is an eigenvector of $B$ with
+corresponding eigenvalue $6$, and $(-2,1)^t$ is an eigenvector with
+corresponding eigenvalue $3$.
+
+
+\end{solution}
+\end{exercise}
+\end{document}

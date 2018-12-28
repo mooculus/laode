@@ -1,0 +1,26 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c5.1.8}
+Show that the set of all solutions to the differential equation
+$\dot{x}=2x$ is a subspace of $\CCone$.
+
+\begin{solution}
+
+The set of all solutions to the differential equation $\dot{x} = 2x$ is
+indeed a subspace of $\CCone$.  To demonstrate, let $x_1$ and $x_2$
+be elements of this set.  The set is closed under addition since
+\[
+\frac{d}{dt}(x_1 + x_2) = \frac{d}{dt}(x_1) + \frac{d}{dt}(x_2)
+= 2x_1 + 2x_2 = 2(x_1 + x_2)
+\]
+and closed under scalar multiplication since, for any real scalar $r$,
+\[
+\frac{d}{dt}(rx_1) = r\frac{d}{dt}(x_1) = 2(rx_1).
+\]
+Note that this problem provides another example of the principle of
+superposition.
+
+\end{solution}
+\end{exercise}
+\end{document}

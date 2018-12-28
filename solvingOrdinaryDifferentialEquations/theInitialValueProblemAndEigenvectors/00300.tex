@@ -1,0 +1,33 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c4.4.4}
+Show that all solutions to the system of linear differential equations
+\begin{eqnarray*}
+\frac{dx}{dt} & = & 3x \\
+\frac{dy}{dt} & = & -2y
+\end{eqnarray*}
+are linear combinations of the two solutions
+\[
+U(t) = e^{3t}\vectwo{1}{0} \AND V(t) = e^{-2t}\vectwo{0}{1}.
+\]
+
+\begin{solution}
+
+The system is uncoupled, so we can solve each equation
+independently, using the initial value problem to obtain:
+\[ \begin{array}{rcl}
+x(t) & = & x_0e^{3t} \\
+y(t) & = & y_0e^{-2t}. \end{array} \]
+All solutions are of the form
+\[ \vectwo{x(t)}{y(t)} = \vectwo{x_0e^{3t}}{y_0e^{-2t}}
+= x_0\left(e^{3t}\vectwo{1}{0}\right) +
+y_0\left(e^{-2t}\vectwo{0}{1}\right). \]
+So all solutions are linear combinations of
+\[ 
+U(t) = e^{3t}\vectwo{1}{0} \AND V(t) = e^{-2t}\vectwo{0}{1}. 
+\]
+
+\end{solution}
+\end{exercise}
+\end{document}

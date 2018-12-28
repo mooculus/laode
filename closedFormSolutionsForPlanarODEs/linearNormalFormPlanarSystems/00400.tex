@@ -1,0 +1,24 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c6.3.25}
+Let $A$ be an $n\times n$ matrix such that $A^3=0$.  Compute $e^{tC}$
+where $C=2I_n+A$.
+
+\begin{solution}
+
+\ans $e^{tC} = e^{2t}(I_n + tA + \frac{t^2}{2}A^2)$.
+
+\soln Since $(2I)A = A(2I)$, we can use Proposition~\ref{P:expAB} to
+show that
+\[
+e^{tC} = e^{t(2I_n + A)} = e^{2tI_n}e^{tA}.
+\]
+Then, since $A^3 = 0$,
+\[
+e^{2tI_n}e^{tA} = e^{2t}I_n(I_n + tA + \frac{t^2}{2}A^2).
+\]
+
+\end{solution}
+\end{exercise}
+\end{document}

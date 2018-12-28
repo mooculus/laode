@@ -1,0 +1,25 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c5.1.1}
+Verify that the set $V_1$ consisting of all scalar multiples of
+$(1,-1,-2)$ is a subspace of $\R^3$.
+
+\begin{solution}
+
+The set $V_1 \subset \R^3$ is a subspace.
+The set $V_1$ contains all vectors $(a,-a,-2a)$,
+where $a \in \R$.  We can show that it is closed under
+vector addition, since
+\[
+a(1,-1,-2) + b(1,-1,-2) = (a + b)(1,-1,-2) \in V_1
+\]
+where $a$ and $b$ are scalars.  The set $V_1$ is closed under scalar
+multiplication since
+\[
+b(a(1,-1,-2) = (ba)(1,-1,-2) \in V_1.
+\]
+
+\end{solution}
+\end{exercise}
+\end{document}

@@ -1,0 +1,65 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise}  \label{ex:if2}
+Show that the differential equation
+\begin{equation} \label{Ex:nexact2}
+\frac{dx}{dt} = -\frac{3x}{2t}
+\end{equation}
+is not exact.  Now multiply both the numerator and denominator of the 
+right side of \eqref{Ex:nexact2} by $t^2x$ and show that this `new' differential
+equation 
+\[
+\frac{dx}{dt} = -\frac{3t^2x^2}{2t^3x}
+\]
+is exact.  Now find all solutions to \eqref{Ex:nexact2}.
+
+\begin{solution}
+\ans The general solution is $x = \dps\pm\sqrt{\frac{C}{3t^3}}$ 
+for some constant $C$.
+
+\soln We can write the differential equation as $\dps\frac{dx}{dt} =
+\frac{G(t,x)}{H(t,x)}$, where $G(t,x) = -3x$ and $H(t,x) = 2t$. 
+Then we compute
+\[
+-\frac{\partial G}{\partial x} = 3 \AND
+\frac{\partial H}{\partial t} = 2.
+\]
+By Proposition~\ref{prop:exact}, the differential equation is exact only
+if the two sides of \eqref{eq:Gy=Hs} are equal.
+On multiplying numerator and denominator by $t^2x$ we obtain
+where $G(t,x) = -3t^2x^2$ and $H(t,x) = 2t^3x$. 
+Then we compute
+\[
+-\frac{\partial G}{\partial x} = 6t^2x \AND
+\frac{\partial H}{\partial t} = 6t^2x.
+\]
+So the new form of the differential equation is exact.
+
+Next, we must find a function $F(t,x)$ satisfying \eqref{eq:excond}.  By
+integration, obtain
+\[
+\Omega(t,x) = \int H(t,x)dx = \int 2t^3xdx = t^3x^2.
+\]
+Then, find the function $h(t)$ such that
+\[
+h'(t) = -\frac{\partial}{\partial t}\Omega(t,x) - G(t,x)
+= 6t^2x^2.
+\]
+In this case, we can choose 
+\[
+h(t) =  2t^3x^2.  
+\]
+Finally, compute
+\[
+F(t,x) = \Omega(t,x) + h(t) = 3t^3x^2,
+\]
+the function satisfying \eqref{eq:excond}.  The general solution is found by 
+solving $F=C$ for $x$; that is, solving
+\[
+3t^3x^2 = C.
+\]
+
+\end{solution}
+\end{exercise}
+\end{document}

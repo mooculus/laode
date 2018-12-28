@@ -1,0 +1,24 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c4.10.1}
+Let $P$ be a Markov matrix and let $w=(1,\ldots,1)^t$.  Show that
+the vector $w$ is an eigenvector of $P$ with eigenvalue $1$.
+
+\begin{solution}
+
+Let
+\[ P = \left(\begin{array}{ccc} p_{11} & \cdots & p_{1n} \\
+\vdots & \ddots & \vdots \\ p_{n1} & \cdots & p_{nn}
+\end{array}\right). \]
+Then,
+\[ Pw = \left(\begin{array}{ccc} p_{11} & \cdots & p_{1n} \\
+\vdots & \ddots & \vdots \\ p_{n1} & \cdots & p_{nn}
+\end{array}\right) \cvecthree{1}{\vdots}{1} = 
+\cvecthree{p_{11} + \cdots + p_{1n}}{\vdots}{p_{n1} + \cdots +
+p_{nn}} = \cvecthree{1}{\vdots}{1} \]
+since the sum of the entries in each row of a Markov matrix is $1$.
+
+\end{solution}
+\end{exercise}
+\end{document}

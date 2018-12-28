@@ -1,0 +1,48 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c4.2.3}
+Find a $2\times 3$ matrix $P$ that projects three dimensional $xyz$ space onto
+the $xy$ plane.  {\bf Hint:} Such a matrix will satisfy
+\[
+P\left(\begin{array}{c} 0 \\ 0 \\ z \end{array}\right) = \vectwo{0}{0}
+\AND
+P\left(\begin{array}{c} x \\ y \\ 0 \end{array}\right) = \vectwo{x}{y}.
+\]
+
+\begin{solution}
+
+\ans The matrix is
+\[ P = \left(\begin{array}{rrr} 1 & 0 & 0 \\ 0 & 1 & 0\end{array}\right). \]
+
+\soln Let
+\[ P = \left(\begin{array}{rrr} p_{11} & p_{12} & p_{13} \\
+p_{21} & p_{22} & p_{23}\end{array}\right). \]
+Note that a matrix that projects $xyz$ space onto the $xy$ plane
+satisfies the vector equations:
+\[ \begin{array}{c} \left(\begin{array}{rrr} p_{11} & p_{12} &
+p_{13} \\ p_{21} & p_{22} & p_{23} \end{array}\right)
+\vecthree{1}{0}{0} = \vectwo{1}{0} \\
+\left(\begin{array}{rrr} p_{11} & p_{12} & p_{13} \\ p_{21} &
+p_{22} & p_{23} \end{array}\right) \vecthree{0}{1}{0} = \vectwo{0}{1} \\
+\left(\begin{array}{rrr} p_{11} & p_{12} & p_{13} \\ p_{21} & p_{22}
+& p_{23} \end{array}\right) \vecthree{0}{0}{1} = \vectwo{0}{0} \end{array} 
+\]
+from which we get the equations
+\[ \begin{array}{rrrrrrr}
+p_{11} & = & 1 \\
+p_{21} & = & 0 \end{array},
+\quad
+\begin{array}{rrrrrrr}
+p_{12} & = & 0 \\
+p_{22} & = & 1 \end{array}
+\AND
+\begin{array}{rrrrrrr}
+p_{13} & = & 0 \\
+p_{23} & = & 0 \end{array}. 
+\]
+Substitute these values back into $P$ to obtain the solution.
+
+\end{solution}
+\end{exercise}
+\end{document}

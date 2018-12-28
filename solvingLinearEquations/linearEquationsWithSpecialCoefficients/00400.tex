@@ -1,0 +1,116 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\CEXER
+
+\noindent In Exercises~\ref{c2.5.2a} -- \ref{c2.5.2c} use \Matlab to
+solve the given system of linear equations to four significant decimal places.
+\begin{exercise} \label{c2.5.2a}
+\[
+\begin{array}{rcrcrcr}
+     0.1 x_1 & + & \sqrt{5}x_2 & - &   2 x_3 & = & 1 \\
+-\sqrt{3}x_1 & + &     \pi x_2 & - & 2.6 x_3 & = & 14.3 \\
+         x_1 & - &       7 x_2 & + & \frac{\pi}{2}x_3 & = & \sqrt{2}
+\end{array}.
+\]
+
+\begin{solution}
+
+Enter the left-hand side of each system as matrix {\tt A} 
+and the right-hand side as vector {\tt b}:
+
+\begin{verbatim}
+A =                           
+    0.1000    2.2361   -2.0000
+   -1.7321    3.1416   -2.6000
+    1.0000   -7.0000    1.5708
+
+b =                              A\b =
+   1.0000                          -7.2216
+  14.3000                          -1.9048
+   1.4142                          -2.9907
+\end{verbatim}
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c2.5.2b}
+\[
+\begin{array}{rcrcr}
+(4-i)x_1 & + & (2+3i)x_2 & = &  -i \\
+   i x_1 & - &     4 x_2 & = & 2.2
+\end{array}.
+\]
+
+\begin{solution}
+
+Enter the left-hand side of each system as matrix {\tt A} 
+and the right-hand side as vector {\tt b}:
+
+\begin{verbatim}
+A =
+   4.0000 - 1.0000i    2.0000 + 3.0000i
+        0 + 1.0000i   -4.0000          
+
+b =                              A\b =
+        0 - 1.0000i                 0.3006+ 0.2462i
+   2.2000                          -0.6116+ 0.0751i
+\end{verbatim}
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c2.5.2c}
+\[
+\begin{array}{rcrcrcr}
+ (2+i) x_1 & + & (\sqrt{2}-3i)x_2 & - &    10.66 x_3 & = &     4.23 \\
+    14 x_1 & - &    \sqrt{5}i x_2 & + & (10.2-i) x_3 & = &    3-1.6i \\
+-4.276 x_1 & + &            2 x_2 & - &   (4-2i) x_3 & = & \sqrt{2}i
+\end{array}.
+\]
+
+\noindent {\bf Hint:}  When entering $\sqrt{2}i$ in \Matlab you must type
+{\tt sqrt(2)*i}, even though when you enter $2i$, you can just type
+{\tt 2i}.
+
+\begin{solution}
+
+Enter the left-hand side of each system as matrix {\tt A} 
+and the right-hand side as vector {\tt b}
+
+\begin{verbatim}
+A =
+   2.0000 + 1.0000i    1.4142 - 3.0000i  -10.6600
+  14.0000                   0 - 2.2361i   10.2000 - 1.0000i
+  -4.2760              2.0000             -4.0000 + 2.0000i
+
+b =                              A\b =
+   4.2300                           0.2060- 0.1139i
+   3.0000 - 1.6000i                 0.1982+ 0.6586i
+        0 + 1.4142i                -0.1358+ 0.0296i
+\end{verbatim}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{solution}
+\end{exercise}
+\end{document}

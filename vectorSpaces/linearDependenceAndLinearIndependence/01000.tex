@@ -1,0 +1,45 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c5.4.9}
+Perform the following experiments.
+\begin{itemize}
+\item[(a)]   Use \Matlab to choose randomly three column vectors in
+$\R^3$.  The \Matlab commands to choose these vectors are:
+\begin{verbatim}
+y1 = rand(3,1)
+y2 = rand(3,1)
+y3 = rand(3,1)
+\end{verbatim}\index{\computer!rand}
+Use the methods of this section to determine whether these vectors
+are linearly independent or linearly dependent.
+\item[(b)]  Now perform this exercise five times and record the number
+of times a linearly independent set of vectors is chosen and the
+number of times a linearly dependent set is chosen.
+\item[(c)]  Repeat the experiment in (b) --- but this time randomly
+choose four vectors in $\R^3$ to be in your set.
+\end{itemize}
+
+\begin{solution}
+
+(a) The set of commands to perform this experiment is:
+\begin{verbatim}
+y1 = rand(3,1);
+y2 = rand(3,1);
+y3 = rand(3,1);
+A = [y1 y2 y3];
+rref(A)
+\end{verbatim}
+If the resulting matrix is $I_3$, then the set is linearly
+independent.
+
+(b) The most likely outcome is that all five trials result in
+linearly independent sets.
+
+(c) Every trial yields a linearly dependent set of vectors.
+
+
+
+\end{solution}
+\end{exercise}
+\end{document}

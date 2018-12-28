@@ -1,0 +1,53 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\TEXER
+
+\noindent In Exercises~\ref{c7.9.3a} -- \ref{c7.9.3d}, compute the
+Householder matrix $H$ corresponding to the given vector $u$.
+\begin{exercise} \label{c7.9.3a}
+$u = \left(\begin{array}{r} 1\\ 1 \end{array}\right)$.
+
+\begin{solution}
+
+$H = I_2 - \dps\frac{2}{2}\vectwo{1}{1}\left(\begin{array}{rr} 1 & 1
+\end{array}\right) = \mattwo{1}{0}{0}{1} - \mattwo{1}{1}{1}{1}
+= \mattwo{0}{-1}{-1}{0}.$
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c7.9.3b}
+$u = \left(\begin{array}{r} 0\\ -2 \end{array}\right)$.
+
+\begin{solution}
+
+$H = I_2 - \dps\frac{2}{4}\mattwo{0}{0}{0}{4} =
+\mattwo{1}{0}{0}{-1}$.
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c7.9.3c}
+$u = \left(\begin{array}{r} -1\\ 1 \\5\end{array}\right)$.
+
+\begin{solution}
+
+$H = I_3 - \dps\frac{2}{27}\matthree{1}{-1}{-5}{-1}{1}{5}{-5}{5}{25}
+= \frac{1}{27}\matthree{25}{2}{10}{2}{25}{-10}{10}{-10}{-50}$.
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c7.9.3d}
+$u = \left(\begin{array}{r} 1\\ 0 \\ 4\\ -2\end{array}\right)$.
+
+\begin{solution}
+
+$H = I_4 - \dps\frac{2}{21}\left(\begin{array}{rrrr} 1 & 0 & 4 & -2 \\
+0 & 0 & 0 & 0 \\ 4 & 0 & 16 & -8 \\ -2 & 0 & -8 & 4 \end{array}\right)
+= \frac{1}{21}\left(\begin{array}{rrrr} 19 & 0 & -8 & 4 \\
+0 & 21 & 0 & 0 \\ -8 & 0 & -9 & 16 \\ 4 & 0 & 16 & 13
+\end{array}\right)$.
+
+\end{solution}
+\end{exercise}
+\end{document}

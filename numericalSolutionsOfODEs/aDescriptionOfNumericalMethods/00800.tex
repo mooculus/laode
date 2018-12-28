@@ -1,0 +1,29 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c15.1.6}
+Use \Matlab to reproduce the result displayed in Figure~\ref{fig:eulimpr}.
+
+\begin{solution}
+The following \Matlab commands reproduce
+Figure~\ref{fig:eulimpr}:
+\begin{verbatim}
+h    = 0.05;
+t(1) = 1;
+x(1) = 2;
+K    = 40;
+for k = 1:K
+   t(k+1) = t(k)+h;
+   x(k+1) = x(k)+h*(x(k)+t(k));
+end
+plot(t,x,'o')
+hold on
+plot(t,x,'--')
+s = 1 : 0.01 : 3;
+y = 4*exp(s-1)-s-1;
+plot(s,y)
+\end{verbatim}
+
+\end{solution}
+\end{exercise}
+\end{document}

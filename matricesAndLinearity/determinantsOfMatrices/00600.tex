@@ -1,0 +1,21 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c6.4.4}
+Let $A$ be a $2\times 2$ matrix and assume that $\det(A)\neq 0$.
+Then use the explicit form for $A\inv$ given in \eqref{e:formAinv}
+to verify that
+\[
+\det(A\inv) = \frac{1}{\det(A)}.
+\]
+
+\begin{solution}
+
+Verify by computation:
+\[ \det(A^{-1}) = \frac{a}{\det(A)}\frac{d}{\det(A)} -
+\frac{-b}{\det(A)}\frac{-c}{\det(A)} = \frac{ad - bc}{(\det(A))^2} =
+\frac{1}{\det(A)}. \]
+
+\end{solution}
+\end{exercise}
+\end{document}

@@ -1,0 +1,79 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\TEXER
+
+\noindent In Exercises~\ref{c12.4.1a} -- \ref{c12.4.1d} find annihilators 
+for each of the given functions.
+\begin{exercise}  \label{c12.4.1a}
+$g(t) = e^{4t}\cos(5t)$.
+
+\begin{solution}
+\ans The equation
+\[
+\frac{d^2x}{dt^2} - 8\frac{dx}{dt} + 41x = 0
+\]
+is an annihilator for $g(t)$.
+
+\soln The function $g(t) = e^{4t}\cos(5t)$ is a solution to any differential
+equation which has $\lambda_1 = 4 \pm 5i$ as an eigenvalue.  The
+simplest characteristic polynomial with $\lambda_1$ as a root is
+$\lambda^2 - 8\lambda + 41$.
+
+\end{solution}
+\end{exercise}
+\begin{exercise}  \label{c12.4.1b}
+$g(t) = e^t-1$.
+
+\begin{solution}
+\ans The equation
+\[
+\frac{d^2x}{dt^2} - \frac{dx}{dt} = 0
+\]
+is an annihilator for $g(t)$.
+
+\soln The function $g(t) = e^t - 1$ is a solution to any differential equation
+which has $\lambda_1 = 1$ and $\lambda_2 = 0$ as eigenvalues.  The
+simplest characteristic polynomial with $\lambda_1$ and $\lambda_2$ as
+roots is $\lambda^2 - \lambda$.
+
+\end{solution}
+\end{exercise}
+\begin{exercise}  \label{c12.4.1c}
+$g(t) = t^2e^{2t}$.
+
+\begin{solution}
+\ans The equation
+\[
+\frac{d^3x}{dt^3} - 6\frac{d^2x}{dt^2} + 12\frac{dx}{dt} - 8x = 0
+\]
+is an annihilator for $g(t)$.
+
+\soln The function $g(t) = t^2e^{2t}$ is a solution to any differential
+equation which has $\lambda_1 = 2$ as a triple eigenvalue.  The simplest
+characteristic polynomial with $\lambda_1$ as a triple root is
+$(\lambda - 2)^3 = \lambda^3 - 6\lambda^2 + 12\lambda - 8$.
+
+\end{solution}
+\end{exercise}
+\begin{exercise}  \label{c12.4.1d}
+$g(t) = t\cos(5t)+5\cos(t)$.
+
+\begin{solution}
+\ans The equation
+\[
+\frac{d^6x}{dt^6} + 51\frac{d^4x}{dt^4} + 675\frac{d^2x}{dt^2} + 625x = 0
+\]
+is an annihilator for $g(t)$.
+
+\soln The function $g(t) = t\cos(5t) + 5\cos t$ is a solution to any
+differential equation which has $\lambda_1 = \pm i$ as an eigenvalue and
+$\lambda_2 = \pm 5i$ as a double eigenvalue.  The simplest characteristic
+polynomial with these roots is
+$(\lambda^2 + 1)(\lambda^2 + 25)^2 = \lambda^6 + 51\lambda^4 + 675\lambda^2
++ 625$.
+
+\end{solution}
+\end{exercise}
+\end{document}

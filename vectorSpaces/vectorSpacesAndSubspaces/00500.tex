@@ -1,0 +1,100 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\noindent In Exercises~\ref{c5.1.4a} -- \ref{c5.1.4f} you are given a
+vector space $V$ and a subset $W$.  For each pair, decide whether or
+not $W$ is a subspace of $V$, and explain why.
+\begin{exercise} \label{c5.1.4a}
+$V=\R^3$ and $W$ consists of vectors in $\R^3$
+     that have a $0$ in their first component.
+
+\begin{solution}
+$W$ is a subspace of $V$, since $W$ is closed under
+addition and scalar multiplication.
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c5.1.4b}
+$V=\R^3$ and $W$ consists of vectors in $\R^3$
+     that have a $1$ in their first component.
+
+\begin{solution}
+\ans $W$ is not a subspace of $V$.
+
+\soln The subset $W$ is closed neither under addition nor under scalar
+multiplication.  For example, let $w_1 = (1,4,2)$ and $w_2 = (1,-1,3)$
+be elements of $W$.  Then,
+\[
+w_1 + w_2 = (1,4,2) + (1,-1,3) = (2,3,5)
+\]
+which is not an element of $W$.
+
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c5.1.4d}
+$V=\R^2$ and $W$ consists of vectors in $\R^2$
+     for which the sum of the components is $1$.
+
+\begin{solution}
+\ans $W$ is not a subspace of $V$.
+
+\soln The subset $W$ is closed neither under addition nor under scalar
+multiplication.  For example, let $w_1 = (3,-2)$ and $w_2 = (0,1)$ be
+elements of $W$.  Then,
+\[
+w_1 + w_2 = (3,-2) + (0,1) = (3,-3).
+\]
+The sum of the elements $3 - 3 = 0 \neq 1$.
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c5.1.4c}
+$V=\R^2$ and $W$ consists of vectors in $\R^2$
+     for which the sum of the components is $0$.
+
+\begin{solution}
+$W$ is a subspace of $V$, since $W$ is closed under
+addition and scalar multiplication.
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c5.1.4g}
+$V=\CCone$ and $W$ consists of functions
+     $x(t)\in\CCone$ satisfying $\int_{-2}^4x(t)dt =0$.
+
+\begin{solution}
+$W$ is a subspace of $V$, since $W$ is closed under
+addition and scalar multiplication.
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c5.1.4e}
+$V=\CCone$ and $W$ consists of functions
+     $x(t)\in\CCone$ satisfying $x(1)=0$.
+
+\begin{solution}
+$W$ is a subspace of $V$, since $W$ is closed under
+addition and scalar multiplication.
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c5.1.4f}
+$V=\CCone$ and $W$ consists of functions
+     $x(t)\in\CCone$ satisfying $x(1)=1$.
+
+\begin{solution}
+\ans $W$ is not a subspace of $V$.
+
+\soln The subset $W$ is closed neither under addition nor under scalar
+multiplication.  For example, let $w_1(t) = t$ and let $w_2(t) = t^2$.
+\[
+(w_1 + w_2)(1) = w_1(1) + w_2(1) = 1 + 1 = 2,
+\]
+so $(w_1 + w_2)(t)$ is not an element of $W$.
+
+
+\end{solution}
+\end{exercise}
+\end{document}

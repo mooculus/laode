@@ -1,0 +1,86 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c5.1.2}
+Let $V_2$ be the set of all $2\times 3$ matrices.   Verify that
+$V_2$ is a vector space.
+
+\begin{solution}
+
+The set $V_2$ is a vector space.
+Let $A$ and $B$ be matrices in $V_2$:
+\[
+A = \left(\begin{array}{rrr} a_{11} & a_{12} & a_{13} \\
+a_{21} & a_{22} & a_{23} \end{array}\right) \AND
+B = \left(\begin{array}{rrr} b_{11} & b_{12} & b_{13} \\
+b_{21} & b_{22} & b_{23} \end{array}\right).
+\]
+The set $V_2$ is closed under vector addition because
+\[
+A + B
+= \left(\begin{array}{rrr} a_{11} + b_{11} & a_{12} + b_{12} &
+a_{13} + b_{13} \\ a_{21} + b_{21} & a_{22} + b_{22} &
+a_{23} + b_{23} \end{array}\right) \in V_2,
+\]
+and is closed under scalar multiplication because, for $r \in \R$,
+\[
+rA = \left(\begin{array}{rrr} ra_{11} & ra_{12} & ra_{13} \\
+ra_{21} & ra_{22} & ra_{23} \end{array}\right) \in V_2.
+\]
+Next, verify that $V_2$ satisfies the eight properties of vector
+spaces, shown in Table~\ref{vectorspacelist}.
+
+\begin{itemize}
+\item[(A1)] Addition is commutative in $V_2$, since
+\[
+A + B  = \left(\begin{array}{rrr} a_{11} + b_{11} & a_{12} + b_{12} &
+a_{13} + b_{13} \\ a_{21} + b_{21} & a_{22} + b_{22} &
+a_{23} + b_{23} \end{array}\right) = B + A.
+\]
+\item[(A2)] Given a third matrix $C \in V_2$,
+\[
+(A + B) + C = \left(\begin{array}{rrr} a_{11} + b_{11} + c_{11}
+& a_{12} + b_{12} + c_{12} & a_{13} + b_{13} + c_{13} \\ a_{21} + b_{21}
++ c_{21} & a_{22} + b_{22} + c_{22} & a_{23} + b_{23} + c_{23}
+\end{array}\right) = A + (B + C).
+\]
+Thus, addition is associative.
+\item[(A3)] The additive identity is the matrix
+\[
+0 = \left(\begin{array}{rrr} 0 & 0 & 0 \\ 0 & 0 & 0 \end{array}\right).
+\]
+\item[(A4)] For each matrix $A \in V_2$, there exists an element $-A$ such
+that $A + (-A) = 0$, where
+\[
+-A = \left(\begin{array}{rrr} -a_{11} & -a_{12} & -a_{13} \\ -a_{21} &
+-a_{22} & -a_{23} \end{array}\right).
+\]
+\item[(M1)] Scalar multiplication is associative in $V_2$ since, for any
+$r$, $s \in \R$ and $A \in V_2$,
+\[
+(rs)A = \left(\begin{array}{rrr} rsa_{11} & rsa_{12} & rsa_{13} \\
+rsa_{21} & rsa_{22} & rsa_{23} \end{array}\right) = r(sA).
+\]
+\item[(M2)] There exists a multiplicative identity in $V_2$, since $1A = A$
+for any $A \in V_2$.
+\item[(D1)] For any scalars $r$, $s \in \R$, and any matrix $A \in V_2$,
+\[
+(r + s)A = \left(\begin{array}{rrr}
+ra_{11} + sa_{11} & ra_{12} + sa_{12} & ra_{13} + sa_{13} \\
+ra_{21} + sa_{21} & ra_{22} + sa_{22} & ra_{23} + sa_{23} \end{array}\right)
+= rA + sA.
+\]
+\item[(D2)] For any scalar $r \in \R$ and any matrices $A, B \in V_2$,
+\[
+r(A + B) = \left(\begin{array}{rrr} ra_{11} + rb_{11} & ra_{12} + rb_{12} &
+ra_{13} + rb_{13} \\ ra_{21} + rb_{21} & ra_{22} + rb_{22} &
+ra_{23} + rb_{23} \end{array}\right)
+= rA + rB.
+\]
+\end{itemize}
+Thus, $V_2$ is a vector space, since it is closed under addition
+and scalar multiplication and satisfies the eight properties of vector spaces.
+
+\end{solution}
+\end{exercise}
+\end{document}

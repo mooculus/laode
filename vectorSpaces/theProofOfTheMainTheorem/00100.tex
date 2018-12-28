@@ -1,0 +1,72 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\TEXER
+
+
+
+\noindent In Exercises~\ref{c5.7.1a} -- \ref{c5.7.1c} you are
+given a pair of vectors $v_1,v_2$ spanning a subspace of $\R^3$.
+Decide whether that subspace is a line or a plane through the
+origin.  If it is a plane, then compute a vector $N$ that is
+perpendicular to that plane.
+\begin{exercise} \label{c5.7.1a}
+$v_1=(2,1,2) \AND v_2=(0,-1,1)$.
+
+\begin{solution}
+
+\ans The span of $v_1$ and $v_2$ is a plane with normal vector
+$N = n_3(-\frac{3}{2}, 1, 1)$, where $n_3$ is a nonzero scalar.
+
+\soln If $v_1$ and $v_2$ are linearly independent, then they span a plane
+in $\R^3$.  If they are linearly dependent, that is, if $v_1 =
+\alpha v_2$ for some scalar $\alpha$, then they span a line in $\R^3$.
+In this case, there is no scalar $\alpha$ such that $(2,1,2) =
+\alpha(0,-1,1)$, so the span of $v_1$ and $v_2$ has dimension two.
+The vector $N = (n_1,n_2,n_3)$ is found by observing that:
+\[
+\begin{array}{rrrrrcl}
+2n_1 & + & n_2 & + & 2n_3 & = & 0 \\
+& & -n_2 & + & n_3 & = & 0 \end{array}
+\]
+which is a linear system in two equations.  Solve for $N$ by row
+reducing the corresponding matrix:
+\[
+\left(\begin{array}{rrr} 2 & 1 & 2 \\ 0 & -1 & 1 \end{array}\right)
+\longrightarrow \left(\begin{array}{rrr} 1 & 0 & \frac{3}{2} \\ 0 &
+1 & -1 \end{array}\right).
+\]
+
+\end{solution}
+\end{exercise}
+
+\begin{exercise} \label{c5.7.1b}
+$v_1=(2,1,-1) \AND v_2=(-4,-2,2)$.
+
+\begin{solution}
+\ans The subspace spanned by $v_1$ and $v_2$ is a line,
+since, if $\alpha = -\frac{1}{2}$, then $(2,1,-1) = \alpha(-4,-2,2)$.
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c5.7.1c}
+$v_1=(0,1,0) \AND v_2=(4,1,0)$.
+
+\begin{solution}
+\ans The span of $v_1$ and $v_2$ is a plane with normal
+vector $N = n_3(0,0,1)$, where $n_3$ is a nonzero scalar.
+
+\soln There is no scalar $\alpha$ such that $(0,1,0) = \alpha(4,1,0)$. 
+Let $N = (n_1,n_2,n_3)$ be the vector perpendicular to the plane.  Then:
+\[
+\begin{array}{rrrrrcl}
+& & n_2 & & & = & 0 \\
+4n_1 & + & n_2 & & & = & 0 \end{array}
+\]
+Solve for $N$ by substitution to find that $n_1 = n_2 = 0$, and
+$n_3$ can be any nonzero real scalar.
+
+\end{solution}
+\end{exercise}
+\end{document}

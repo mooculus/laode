@@ -1,0 +1,40 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c3.4.2}
+Let $(x(t),y(t))$ be the solution \eqref{e:explicitsoln} of \eqref{lin2}
+with initial condition $(x(0),y(0))=(x_0,y_0)$, where $x_0\neq 0 \neq y_0$.
+\begin{itemize}
+\item[(a)] Show that the points $(x(t),y(t))$ lie on the curve whose 
+equation is:
+\[
+y_0^ax^d - x_0^dy^a = 0.
+\]
+\item[(b)] Verify that if $a=1$ and $d=2$, then the solution lies
+on a parabola tangent to the $x$-axis.
+\end{itemize}
+
+\begin{solution}
+
+The solutions $x(t)$ and $y(t)$ are:
+\[
+\begin{array}{rcl}
+x(t) & = & x_0e^{At} \\
+y(t) & = & y_0e^{Dt}\end{array}.
+\]
+We show that the point $(x(t),y(t))$ lies on the curve
+$y_0^Ax^D - x_0^Dy^A = 0$ as follows.  Substitute the formulas for
+$x(t)$ and $y(t)$ into the equation to obtain
+\[
+y_0^A\left(x_0e^{At}\right)^D - x_0^D\left(y_0e^{Dt}\right)^A =
+x_0^Dy_0^Ae^{ADt} - x_o^Dy_0^Ae^{ADt} = 0.
+\]
+If $A = 1$ and $D = 2$, then the solutions lie on the curve
+$0 = y_0x^2 - x_0^2y$, which can be rewritten as
+$y = \dps \frac{y_0}{x_0^2}x^2$.
+Since $x_0$ and $y_0$ are constants, this curve is a parabola
+tangent to the $x$-axis.
+
+\end{solution}
+\end{exercise}
+\end{document}

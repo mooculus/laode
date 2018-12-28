@@ -1,0 +1,85 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\noindent In Exercises~\ref{c9.6.4a} -- \ref{c9.6.4c}, consider the system 
+of differential equations \eqref{E:twoeq}
+\begin{matlabEquation}  \label{E:twoeq}
+\begin{array}{rcl}
+\dot{x} & = & y - x + (x-\rho)^2 \\
+\dot{y} & = & y - x^3 +3x
+\end{array}
+\end{matlabEquation}
+in the square $-5 \leq x,y \leq 5$.
+\begin{exercise} \label{c9.6.4a}
+How many equilibria does \eqref{E:twoeq} have in this square when 
+$\rho=1.7$ and of what type are they?  This question can be answered either 
+numerically using {\pplane} (easy) or analytically (more difficult, but 
+possible).
+
+\begin{solution}
+
+\ans The system has a saddle at $(x,y) \approx (0.4,-1.2)$, and a 
+spiral source at $(x,y) \approx (2.0,1.9)$.
+
+\soln Either determine the equilibria numerically from the {\tt pplane5}
+graph of the system (Figure~\ref{c9.6.4b}a), or compute analytically.  To
+do this, solve $\dot{y} = 0$ to find that $y = x^3 - 3x$ at all equilibria.
+Then, substitute this value for $y$ into $\dot{x}$ and solve $\dot{x} = 0$
+to obtain $0 = x^3 + x^2 - 7.4x + 2.89$.  Find the roots of this equation
+to confirm that $(x,y) \approx (0.4,-1.2)$ and $(x,y) \approx (2.0,1.9)$
+are equilibria.  There is a third equilibrium at $(x,y) \approx
+(-3.4,-29)$ which is not in the graph range.
+
+\para The general Jacobian for the system is
+\[
+J = \cmattwo{-1 + 2(x - \rho)}{1}{-3x^2 + 3}{1}.
+\]
+Thus, when $\rho = 1.7$, $\trace(J) = 2(x - 1.7)$ and
+$\det(J) = 3x^2 + 2(x - 1.7) - 4$.  At $(x,y) \approx (0.4,-1.2)$,
+$\det(J) \approx -6.1 < 0$, so the equilibrium is a saddle.  At
+$(x,y) \approx (2.0,1.9)$, $\det(J) \approx 8.6 > 0$, $\trace(J) \approx
+0.6 > 0$, and $D = (\trace(J))^2 - t\det(J) \approx -34 < 0$.  Therefore,
+this equilibrium is a spiral source.
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c9.6.4b}
+What type of bifurcation occurs in \eqref{E:twoeq} as $\rho$ is varied
+from $\rho=1.7$ to $\rho=1.85$?
+
+\begin{solution}
+A homoclinic bifurcation occurs between $\rho = 1.7$ and
+$\rho = 1.85$.  As $\rho$ increases from $\rho = 1.7$, an unstable
+orbit of the saddle point crosses a stable orbit of the saddle.  After
+this point, there is a periodic solution around the spiral source.
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c9.6.4c}
+What type of bifurcation occurs in \eqref{E:twoeq} as $\rho$ is varied
+from $\rho=1.85$ to $\rho=2.1$?
+
+\begin{solution}
+A Hopf bifurcation occurs between $\rho = 1.85$ and
+$\rho = 2.1$.  The spiral source passes through a center and becomes a
+spiral sink.  At this point, the periodic solution disappears.
+
+Figure~\ref{c9.6.4b}a shows the system with $\rho = 1.7$.
+Figure~\ref{c9.6.4b}b shows the system with $\rho = 1.85$.
+Figure~\ref{c9.6.4b}c shows the system with $\rho = 2.1$.
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/9-6-4a.eps,width=1.8in}
+                       \psfig{file=exfigure/9-6-4b.eps,width=1.8in}
+                       \psfig{file=exfigure/9-6-4c.eps,width=1.8in}}
+		\centerline{$\rho = 1.7$\hspace{1.3in}$\rho = 1.85$
+\hspace{1.3in}$\rho = 2.1$}
+                \exercapthree{c9.6.4b}
+\end{figure}
+
+
+\end{solution}
+\end{exercise}
+\end{document}

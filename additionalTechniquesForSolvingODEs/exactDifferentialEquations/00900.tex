@@ -1,0 +1,46 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c14.6.8}
+Consider the differential equation
+\[
+\frac{dx}{dt} = -\frac{2tx+\cos x}{t(t-\sin x)}.
+\]
+Show that this differential equation is 
+exact.  Then use the command {\tt contour}\index{\computer!contour} in \Matlab 
+to find solutions.  For the display, 
+use the rectangle $[-2,2]\times [-2,2]$ in the $(t,x)$-plane and show contour
+lines for the different levels $c=-4,-3,-2,-1,0,1,2,3,4$.  Mark the solution
+which satisfies the initial condition $x(1)=0$ by a circle.
+{\bf Hint:} Use the same procedure that was used to create 
+Figure~\ref{Fig:contour3}.
+
+\begin{solution}
+The equation is exact, since it is of the form
+$\dps\frac{dx}{dt} = \frac{G(t,x)}{H(t,x)}$ with
+$-G=\dps\frac{\partial F}{\partial t}$ and
+$H=\dps\frac{\partial F}{\partial x}$ for $F(t,x) = t^2 x + t\cos(x)$.
+Now type the commands
+\begin{verbatim}
+[t,x] = meshgrid(-2:0.05:2,-2:0.05:2);
+F = t.^2.*x + t.*cos(x);
+cs = contour(t,x,F,[-4,-3,-2,-1,0,1,2,3,4]);
+clabel(cs)
+hold on
+plot(1,0,'o')
+xlabel('t')
+ylabel('x')
+\end{verbatim}
+The result is given in Figure~\ref{c14.6.8}.
+\begin{figure}[htb]
+     \centerline{%
+     \psfig{file=exfigure/fig17-6-9.eps,width=3.0in}}
+        \exercap{c14.6.8}
+\end{figure} 
+
+
+
+
+\end{solution}
+\end{exercise}
+\end{document}

@@ -1,0 +1,29 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c4.7.5}
+Let
+\[
+I = \mattwo{1}{0}{0}{1} \AND J =\mattwo{0}{-1}{1}{0}.
+\]
+\begin{itemize}
+\item[(a)] Show that $J^2=-I$.
+\item[(b)] Evaluate $(aI+bJ)(cI+dJ)$ in terms of $I$ and $J$.
+\end{itemize}
+
+\begin{solution}
+
+(a) Verify $J^2 = -I$ by computation:
+\[ J^2 = \mattwo{0}{-1}{1}{0}\mattwo{0}{-1}{1}{0} =
+\mattwo{-1}{0}{0}{-1} = -I. \]
+
+(b) \ans $(aI + bJ)(cI + dJ) = (ac - bd)I + (ad + bc)J$.
+
+\soln Evaluate $(aI + bJ)(cI + dJ)$, yielding
+$acI^2 + adIJ + bcJI + bdJ^2$.  Then, use the identities $IJ = JI = J$,
+$I^2 = I$, and $J^2 = -I$ to rewrite the expression in terms of $I$
+and $J$.
+
+\end{solution}
+\end{exercise}
+\end{document}

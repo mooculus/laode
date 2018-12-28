@@ -1,0 +1,28 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c11.1.4}
+Use calculus to compute the maximum value of the function $x_1(t)$ 
+defined in \eqref{E:x1examp} and graphed in Figure~\ref{F:Jordan}.
+
+\begin{solution}
+\ans The maximum value of $x_1$ is $3.1383$.
+
+\soln The function whose maximum we want is 
+\[
+x_1(t)  =  e^{-0.5t}(0.5 + 1.5t + t^2)
+\]
+for $t>0$.  Differentiation with respect to $t$ yields 
+\[
+\dot{x}_1(t) = e^{-0.5t}(1.25 + 1.25t - 0.5t^2).
+\]
+Setting $\dot{x}_1(t) = 0$ is equivalent to solving 
+\[
+t^2 - 2.5t - 2.5 = 0.
+\]
+The only positive root is $t=3.2656$.  The corresponding value of $x_1$ is
+$x_1(3.2656) = 3.1383$, which is the maximum value of $x_1$.
+
+\end{solution}
+\end{exercise}
+\end{document}

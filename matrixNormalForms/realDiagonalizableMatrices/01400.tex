@@ -1,0 +1,53 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\noindent In Exercises~\ref{c10.3.8a} -- \ref{c10.3.8b} use \Matlab 
+to decide whether or not the given matrix is real diagonalizable.
+\begin{exercise} \label{c10.3.8a}
+\begin{matlabEquation}\label{diagonalization-exercise}
+A=\left(
+\begin{array}{rrrr}
+      -2.2 & 4.1&-1.5&-0.2\\
+      -3.4 & 4.8&-1.0& 0.2\\
+      -1.0 & 0.4& 1.9& 0.2\\
+     -14.5 &17.8&-6.7& 0.6
+\end{array}
+\right).
+\end{matlabEquation}
+
+\begin{solution}
+
+\ans Matrix $A$ is real diagonalizable.
+
+\soln Compute the eigenvalues of $A$ using \Matlabp.  By
+Theorem~\ref{T:diagsimple}, a matrix is real diagonalizable if it has
+real distinct eigenvalues.  Thus, $A$ is real diagonalizable.
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c10.3.8b}
+\begin{matlabEquation}\label{diagonalization-exercise-2}
+B=\left(
+\begin{array}{rrrrr}
+      1.9 & 2.2 & 1.5 & -1.6 & -2.8\\
+      0.8 & 2.6 & 1.5 & -1.8 & -2.0\\
+      2.6 & 2.8 & 1.6 & -2.1 & -3.8\\
+      4.8 & 3.6 & 1.5 & -3.1 & -5.2\\
+     -2.1 & 1.2 & 1.7 & -0.2 &  0.0
+\end{array} \right).
+\end{matlabEquation}
+
+\begin{solution}
+
+\ans Matrix $B$ is not real diagonalizable.
+
+\soln Compute the eigenvalues of $B$ using \Matlabp.  If a matrix is
+real diagonalizable, it has real eigenvalues.  Matrix $B$ has complex
+eigenvectors, and is therefore not real diagonalizable.
+
+
+
+\end{solution}
+\end{exercise}
+\end{document}

@@ -1,0 +1,77 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c13.4.5}
+Use the \Matlab command {\tt ode45} to compute the solution of the grand 
+finale initial value problem \eqref{eq:lapendexam}.  
+More precisely, write \eqref{eq:lapendexam} as a nonautonomous first order 
+system of ODEs by setting $y=\dot{x}$ and obtaining
+\begin{matlabEquation}\label{MATLAB:8}
+\begin{array}{rcl}
+\dot{x} & = & y \\
+\dot{y} & = & -5x-4y+\delta_1(t)+2H_3(t).
+\end{array}
+\end{matlabEquation}
+
+There is a numerical difficulty when attempting to compute delta functions. 
+A standard way around this difficulty is to approximate the Dirac delta 
+function $\delta_1(t)$ using \eqref{eq:deltah} with $h=0.01$.  We use the 
+\Matlab m-file {\tt f16\_4\_5.m} for the numerical computations:
+\begin{verbatim}
+function y = f16_4_5(t,x)
+   h = 0.01;
+y(1) = x(2);
+y(2) = -4*x(2)-5*x(1);
+if (abs(t-(1-h/2)) <= h/2)
+        y(2) = y(2) + 1/h;
+end
+if (t >= 3)
+        y(2) = y(2) + 2;
+end
+y = [y(1) y(2)]';
+\end{verbatim}\index{\computer!abs}
+
+Using {\tt ode45}\index{\computer!ode45} compute the solution on the 
+time interval $[0,8]$ using the command
+\begin{verbatim}
+[t,x] = ode45('f16_4_5',[0 8],[0,1]); 
+\end{verbatim}
+Plot the first component of {\tt x} by typing {\tt plot(t,x(:,1))} and observe 
+the difference between the numerically computed solution and the exact 
+solution, whose graph is plotted in Figure~\ref{fig:lapallsol}.
+
+Next, set the relative error tolerance {\tt 1e-8} using the command
+\begin{verbatim}
+options = odeset('RelTol',1e-8);
+\end{verbatim}
+and compute the solution using the command
+\begin{verbatim}
+[t,x] = ode45('f16_4_5',[0 8],[0,1],options); 
+\end{verbatim}
+Compare the results of this numerical integration with the theoretically exact 
+result in Figure~\ref{fig:lapallsol}.  Try to explain why the results differ 
+for different tolerances.
+
+\begin{solution}
+\ans Figures~\ref{c13.4.5} show the {\tt ode45} solution
+to \eqref{eq:lapendexam} with different tolerances.  When the system is
+evaluated with higher tolerance, the Dirac delta function is evaluated
+more accurately, since it is actually an impulse function.  Thus,
+Figure~\ref{c13.4.5}c shows a behavioral change at $t = 1$, while the
+other two figures do not.
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/13-4-5a.eps,width=1.8in}
+                       \psfig{file=exfigure/13-4-5b.eps,width=1.8in}
+                       \psfig{file=exfigure/13-4-5c.eps,width=1.8in}}
+                \centerline{{\tt eps = 1e-6}\hspace{1.2in}{\tt eps = 1e-8}
+\hspace{1.2in}{\tt eps = 1e-10}}
+		\exercapthree{c13.4.5}
+\end{figure}
+
+
+
+\end{solution}
+\end{exercise}
+\end{document}

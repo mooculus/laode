@@ -1,0 +1,108 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c4.5.1}
+Consider
+\begin{equation}  \label{e:Ceqn}
+\frac{dX}{dt}(t) = CX(t)
+\end{equation}
+where
+\[
+C=\left(\begin{array}{cr} 2 & 3\\0& -1 \end{array}\right).
+\]
+Let
+\[
+v_1=\left(\begin{array}{c} 1\\0\end{array}\right)\AND
+v_2=\left(\begin{array}{r} 1\\-1\end{array}\right),
+\]
+and let
+\[
+Y(t)=e^{2t} v_1 \AND Z(t)=e^{-t}v_2.
+\]
+\begin{enumeratea}
+\item Show that $Y(t)$ and $Z(t)$ are solutions to \eqref{e:Ceqn}.
+\item Show that $X(t)=2Y(t)-14Z(t)$ is a solution to \eqref{e:Ceqn}.
+\item Use the principle of superposition to verify that
+$X(t)=\alpha Y(t) + \beta Z(t)$ is a solution to \eqref{e:Ceqn}.
+\item Using the general solution found in part (c), find a solution
+$X(t)$ to \eqref{e:Ceqn} such that
+\[
+X(0) = \left(\begin{array}{r} 3\\-1\end{array}\right).
+\]
+\end{enumeratea}
+
+\begin{solution}
+\soln
+\begin{enumeratea}
+\item In order to determine that $Y(t)$ is a solution
+to \eqref{e:Ceqn}, substitute $Y(t)$ into both sides of the 
+equation $\frac{dX}{dt} = CX$:
+\[
+\frac{dY}{dt}
+= \frac{d}{dt}\left(e^{2t}\vectwo{1}{0}\right)
+= \frac{d}{dt}\cvectwo{e^{2t}}{0}
+= \cvectwo{2e^{2t}}{0};
+\]
+\[
+CY(t)
+= \mattwo{2}{3}{0}{-1}\cvectwo{e^{2t}}{0}
+= \cvectwo{2e^{2t}}{0}.
+\]
+Similarly, show that $Z(t)$ is a solution:
+\[
+\frac{dZ}{dt}
+= \frac{d}{dt}\left(e^{-t}\vectwo{1}{-1}\right)
+= \frac{d}{dt}\cvectwo{e^{-t}}{-e^{-t}}
+= \cvectwo{-e^{-t}}{e^{-t}};
+\]
+\[
+CZ(t)
+= \mattwo{2}{3}{0}{-1}\cvectwo{e^{-t}}{-e^{-t}}
+= \cvectwo{-e^{-t}}{e^{-t}}.
+\]
+
+\item Again, verify that $X(t) = 2Y(t) - 14Z(t)$ is a solution to
+\eqref{e:Ceqn} by substituting into both sides of the equation and
+noting that the values are equal:
+\[
+\frac{dX}{dt}
+= \frac{d}{dt}\left(2e^{2t}\vectwo{1}{0} - 14e^{-t}\vectwo{1}{-1}\right)
+= \frac{d}{dt}\cvectwo{2e^{2t} - 14e^{-t}}{14e^{-t}} 
+= \cvectwo{4e^{2t} + 14e^{-t}}{-14e^{-t}};
+\]
+\[
+CX(t) = C\left(2Y(t) - 14Z(t)\right)
+= C\left(\cvectwo{2e^{2t}}{0} - \cvectwo{14e^{-t}}{-14e^{-t}}\right)
+= \cvectwo{4e^{2t} + 14e^{-t}}{-14e^{-t}}.
+\]
+
+\item As demonstrated in Section~\ref{S:Superposition}, if
+$Y(t)$ and $Z(t)$ are both solutions to
+\eqref{e:Ceqn}, then $X(t) = \alpha Y(t) + \beta Z(t)$ is also
+a solution to \eqref{e:Ceqn}.
+
+\item  \ans 
+\[
+X(t) = 2e^{2t}\vectwo{1}{0} + e^{-t}\vectwo{1}{-1}.
+\]
+
+\soln Note that
+\[ X(t) = \alpha Y(t) + \beta Z(t) = \alpha e^{2t}\vectwo{1}{0}
++ \beta e^{-t}\vectwo{1}{-1} \]
+is a solution to \eqref{e:Ceqn}.  Substitute the value
+$X(0) = (3,-1)^t$  into the equation to find a solution with that
+initial condition:
+\[
+\vectwo{3}{-1} = X(0) = \alpha\vectwo{1}{0} +
+\beta\vectwo{1}{-1}.
+\]
+We now have the linear system:
+\[ \begin{array}{rrrrr}
+3 & = & \alpha & + & \beta \\
+-1 & = & & & -\beta \end{array} \]
+which we can solve to find $\alpha = 2$ and $\beta = 1$.
+\end{enumeratea}
+
+\end{solution}
+\end{exercise}
+\end{document}

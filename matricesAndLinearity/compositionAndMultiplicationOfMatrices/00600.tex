@@ -1,0 +1,76 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\CEXER
+
+\noindent In Exercises~\ref{c4.7.1a} -- \ref{c4.7.1c} decide for the
+given pair of matrices $A$ and $B$ whether or not the products $AB$ or
+$BA$ are defined and compute the products when possible.
+\begin{exercise} \label{c4.7.1a}
+\begin{matlabEquation}\label{MATLAB:26}
+A=\left(\begin{array}{rrr} 2  &  2  & -2 \\ -4  &  4  &  0
+\end{array}\right) \AND
+B=\left(\begin{array}{rrr} 3 &  -2  &  0\\ 0 &  -1 &   4\\ -2 &  -3
+&   5
+\end{array}\right)
+\end{matlabEquation}
+
+\begin{solution}
+
+Load the system into \Matlabp.  The matrix $AB$ is defined,
+and typing {\tt A*B} yields:
+\begin{verbatim}
+ans =
+    10     0    -2
+   -12     4    16
+\end{verbatim}
+The matrix $BA$ is not defined, since $B$ has 3 columns while $A$
+has 2 rows.  Typing {\tt B*A} generates an error message.
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c4.7.1b}
+\begin{matlabEquation}\label{MATLAB:27}
+A=\left(\begin{array}{rrrrr}  -4  &  1  &  0  &  5  & -1\\
+5  & -1  & -2  & -4  & -2\\ 1  &  5 &  -4   & 1  &  5
+\end{array}\right) \AND
+B=\left(\begin{array}{rrrrrr} 1  &  3  & -4  &  3  & -2  &  1\\
+0  &  3  &  2  &  3  & -1  &  4\\ 5  &  4  &  4  &  5  & -1  &  0\\
+-4  & -3  &  2  &  4  &  1  &  4
+\end{array}\right)
+\end{matlabEquation}
+
+\begin{solution}
+The matrix $AB$ is not defined because $A$ has 5 columns
+while $B$ has four rows.  The matrix $BA$ is also not defined
+because $B$ has 6 columns and $A$ has 3 rows.
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c4.7.1c}
+\begin{matlabEquation}\label{MATLAB:28}
+A=\left(\begin{array}{rrrr}  -2  & -2  &  4  &  5\\
+ 0  & -3  & -4  &  3\\ 1  & -3  &  1  &  1\\ 0  &  1  &  0  &  4
+\end{array}\right) \AND
+B=\left(\begin{array}{rrrr} 2  &  3  & -4  &  5\\
+4  & -3  &  0  & -2\\ -3 &  -4  & -4 &  -3\\ -2  & -2  &  3  & -1
+\end{array}\right)
+\end{matlabEquation}
+
+\begin{solution}
+Both $AB$ and $BA$ are defined and can be computed using
+\Matlabp :
+\begin{verbatim}
+A*B                                     B*A
+ans =                                   ans =   
+   -34   -26     7   -23                    -8     4    -8    35
+    -6    19    25    15                    -8    -1    28     3
+   -15     6    -5     7                     2    27     0   -43
+    -4   -11    12    -6                     7     0     3   -17
+\end{verbatim}
+
+
+\end{solution}
+\end{exercise}
+\end{document}

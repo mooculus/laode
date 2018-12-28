@@ -1,0 +1,98 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\CEXER
+
+\noindent In Exercises~\ref{c4.10A.3a} -- \ref{c4.10A.3b}, with \Matlab
+assistance, find the solution to the system of differential equations
+$\dot{X} = CX$ satisfying $X(0)=X_0$.
+\begin{exercise}  \label{c4.10A.3a}
+$C = \mattwo{1.76}{4.65}{0.23}{1.11}$ \AND $X_0 = \vectwo{0.34}{-0.50}$.
+
+\begin{solution}
+\ans The solution to the differential equation $\dot{X}
+= CX$ with the given initial condition is
+\[
+X(t) \approx 0.8627e^{2.5190t}\vectwo{-0.9869}{-0.1611}
+- 1.2449e^{0.3510t}\vectwo{-0.9570}{0.2900}.
+\]
+\soln In \Matlabp, enter the matrix {\tt C} and the vector {\tt X0}.  Then,
+type
+\begin{verbatim}
+lambda = eig(C)
+\end{verbatim}
+to obtain the eigenvalues of $C$, which are
+$\lambda_1 \approx 2.5190$ and $\lambda_2 \approx 0.3510$.  Find the
+eigenvectors $v_1$ and $v_2$ associated to $\lambda_1$ and $\lambda_2$
+by typing
+\begin{verbatim}
+v1 = null(C - lambda(1)*eye(2))
+v2 = null(C - lambda(2)*eye(2))
+\end{verbatim}
+Thus, the general solution is
+\[
+X(t) = \alpha_1e^{\lambda_1 t}v_1 + \alpha_2e^{\lambda_2 t}v_2
+\approx \alpha_1e^{2.5190t}\vectwo{-0.9869}{-0.1611} +
+\alpha_2e^{0.3510t}\vectwo{-0.9570}{0.2900}.
+\]
+The initial condition is
+\[
+X_0 = X(0) = \alpha_1v_1 + \alpha_2v_2.
+\]
+We can solve this linear system by creating the matrix $A = (v_1|v_2)$, and
+computing $A^{-1}X_0$.  In \Matlabp, type
+\begin{verbatim}
+A = [v1 v2]
+alpha = inv(A)*X0
+\end{verbatim}
+obtaining $\alpha_1 \approx 0.8627$ and $\alpha_2 \approx -1.2449$.
+
+
+\end{solution}
+\end{exercise}
+\begin{exercise}  \label{c4.10A.3b}
+$C = \mattwo{1.23}{2\pi}{\pi/2}{1.45}$ \AND $X_0 = \vectwo{1.2}{1.6}$.
+
+\begin{solution}
+\ans The solution to the differential equation $\dot{X}
+= CX$ with the given initial condition is
+\[
+X(t) \approx 1.0860e^{-1.8035t}\vectwo{-0.9005}{ 0.4348}
+- 2.4527e^{4.4835t}\vectwo{-0.8880}{-0.4598}.
+\]
+
+\soln In \Matlabp, enter the matrix {\tt C} and the vector {\tt X0}.  Then,
+type
+\begin{verbatim}
+lambda = eig(C)
+\end{verbatim}
+to obtain the eigenvalues of $C$, which are
+$\lambda_1 \approx -1.0835$ and $\lambda_2 \approx 4.4835$.  Find the
+eigenvectors $v_1$ and $v_2$ associated to $\lambda_1$ and $\lambda_2$
+by typing
+\begin{verbatim}
+v1 = null(C - lambda(1)*eye(2))
+v2 = null(C - lambda(2)*eye(2))
+\end{verbatim}
+Thus, the general solution is
+\[
+X(t) = \alpha_1e^{\lambda_1 t}v_1 + \alpha_2e^{\lambda_2 t}v_2
+\approx \alpha_1e^{-1.8035t}\vectwo{-0.9005}{ 0.4348} +
+\alpha_2e^{4.4835t}\vectwo{-0.8880}{-0.4598}.
+\]
+The initial condition is
+\[
+X_0 = X(0) = \alpha_1v_1 + \alpha_2v_2.
+\]
+We can solve this linear system by creating the matrix $A = (v_1|v_2)$, and
+computing $A^{-1}X_0$.  In \Matlabp, type
+\begin{verbatim}
+A = [v1 v2]
+alpha = inv(A)*X0
+\end{verbatim}
+obtaining $\alpha_1 \approx 1.0860$ and $\alpha_2 \approx -2.4527$.
+
+\end{solution}
+\end{exercise}
+\end{document}

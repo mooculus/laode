@@ -1,0 +1,44 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c2.1.4}
+This problem illustrates some of the different ways that \Matlab
+displays numbers using the {\tt format long}, the {\tt format short} and
+the {\tt format rational} commands.
+
+Use \Matlab to solve the following system of equations
+\[
+\arraycolsep 2pt
+\begin{array}{rcrcrcrl}
+ 2x_1 & - & 4.5x_2 & + & 3.1x_3 & = &   4.2  & \\
+  x_1 & + &  x_2 & + &  x_3 & = &  -5.1  & \\
+  x_1 & - & 6.2x_2 & + &  x_3 & = &  1.3  & \! .
+\end{array}
+\]
+You may change the format of your answer in \Matlabp.  For
+example, to print your result with an accuracy of $15$ digits
+type {\tt format long} \index{\computer!format!long} and redisplay the
+answer.  Similarly, to print your result as fractions type {\tt
+format rational} \index{\computer!format!rational} and redisplay your
+answer.
+
+\begin{solution}
+\ans According to \Matlabp,
+\begin{verbatim}
+ans =
+  -12.0495
+   -0.8889
+    7.8384
+\end{verbatim}
+\soln Write the system as $Ax = b$, where:
+\begin{verbatim}
+A =                                             b = 
+    2.0000   -4.5000    3.1000                     4.2000
+    1.0000    1.0000    1.0000                    -5.1000
+    1.0000   -6.2000    1.0000                     1.3000
+\end{verbatim}
+then type {\tt A}$\backslash${\tt b} to solve.
+
+\end{solution}
+\end{exercise}
+\end{document}

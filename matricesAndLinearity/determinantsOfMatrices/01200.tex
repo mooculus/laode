@@ -1,0 +1,64 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\noindent  In Exercises~\ref{c3.8.AA} -- \ref{c3.8.AD} use the {\sf unit 
+square} icon in the program {\sf map} to test Proposition~\ref{P:det&area}, as 
+follows. Enter the given matrix $A$ into {\sf map} and map the {\sf unit 
+square} icon.  Compute $\det(A)$ by estimating the area of $A(S)$ --- given 
+that $S$ has unit area.  For each matrix, use this numerical experiment to 
+decide whether or not the matrix is invertible.
+\begin{exercise}  \label{c3.8.AA}
+$A=\mattwo{0}{-2}{2}{0}$.
+
+\begin{solution}
+\ans The matrix $A$ is invertible and $\det(A) = 4$.
+
+\soln Figure~\ref{c3.8.AA} shows the {\tt map} output for this matrix.
+The area of the square resulting from the map is $4$, so $|\det(A)| = 4$.
+
+\end{solution}
+\end{exercise}
+\begin{exercise}  \label{c3.8.AB}
+$A=\mattwo{-0.5}{-0.5}{0.7}{0.7}$.
+
+\begin{solution}
+\ans The matrix $A$ is not invertible and $\det(A) = 0$.
+
+\soln Figure~\ref{c3.8.AB} shows the {\tt map} output for this matrix.
+The square is mapped to a line, whose area is $0$, so $|\det(A)| = 0$.
+
+\ans The matrix $A$ is invertible and $\det(A) = 1$.
+
+\soln Figure~\ref{c3.8.AD} shows the {\tt map} output for this matrix.
+The result of the map is another square of area $1$, so $|\det(A)| = 1$.
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \includegraphics[width=1.35in]{exfigure/3-8-AA.eps}
+                       \includegraphics[width=1.35in]{exfigure/3-8-AB.eps}
+                       \includegraphics[width=1.35in]{exfigure/3-8-AC.eps}
+                       \includegraphics[width=1.35in]{exfigure/3-8-AD.eps}}
+        \centerline{Figure~\ref{c3.8.AA}\hspace{0.8in}
+        Figure~\ref{c3.8.AB}\hspace{0.8in}Figure~\ref{c3.8.AC}
+        \hspace{0.8in}Figure~\ref{c3.8.AD}}
+
+\end{solution}
+\end{exercise}
+
+\begin{exercise}  \label{c3.8.AC}
+$A=\mattwo{-1}{-0.5}{-2}{-1}$.
+
+\begin{solution}
+\ans The matrix $A$ is not invertible and $\det(A) = 0$.
+
+\soln Figure~\ref{c3.8.AC} shows the {\tt map} output for this matrix.
+The square is mapped to a line, whose area is $0$, so $|\det(A)| = 0$.
+
+
+\end{solution}
+\end{exercise}
+\begin{exercise}  \label{c3.8.AD}
+$A=\mattwo{0.7071}{0.7071}{-0.7071}{0.7071}$.
+\end{exercise}
+\end{document}

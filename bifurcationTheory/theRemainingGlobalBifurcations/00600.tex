@@ -1,0 +1,65 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c9.6.6}
+Embed system \eqref{c8.4.5a} of Chapter~\ref{C:NPS} in the family of systems of 
+differential equations 
+\begin{equation} \label{E:eqn2}
+\begin{array}{rcl}
+\dot{x} & = & \rho x-y-3y^2+2.5xy\\
+\dot{y} & = & x-3x^2+2x^2y.
+\end{array}
+\end{equation}
+Find seven bifurcations that occur in \eqref{E:eqn2} as $\rho$ varies from 
+$-0.1$ to $\rho=0.3$. 
+
+\begin{solution}
+
+\soln In the family of systems of differential equations  
+\[
+\begin{array}{rcl}
+\dot{x} & = & \rho x-y-3y^2+2.5xy\\
+\dot{y} & = & x-3x^2+2x^2y.
+\end{array}
+\]
+there are seven bifurcations as $\rho$ varies from $\rho=-0.1$ to $\rho=0.3$:  
+\begin{enumerate}
+\item	a saddle-node bifurcation between $\rho=-0.1$ and $\rho=-0.002$,
+\item	a Hopf bifurcation between $\rho=-0.002$ and $\rho=0.008$,
+\item	a Hopf bifurcation between $\rho=0.008$ and $\rho=0.05$,
+\item	a homoclinic bifurcation between $\rho=0.05$ and $\rho=0.08$,
+\item	a homoclinic bifurcation between $\rho=0.08$ and $\rho=0.1$,
+\item	a heteroclinic bifurcation between $\rho=0.1$ and $\rho=0.2$,
+\item	a heteroclinic bifurcation between $\rho=0.2$ and $\rho=0.3$.
+\end{enumerate}
+The following eight phase portraits bracket the seven bifurcations.
+\begin{figure}[htb]
+     \centerline{%
+     \psfig{file=exfigure/pr3-M1.eps,width=2.75in}     
+     \psfig{file=exfigure/pr3-M002.eps,width=2.75in}}
+     \centerline{Figure~\ref{c9.6.6}a ($\rho = -0.1$)\hspace{1.3in} Figure~\ref{c9.6.6}b ($\rho = -0.002$)}
+\end{figure}
+\begin{figure}[htb]
+     \centerline{%
+     \psfig{file=exfigure/pr3-008.eps,width=2.75in}
+     \psfig{file=exfigure/pr3-05.eps,width=2.75in}}
+     \centerline{Figure~\ref{c9.6.6}c ($\rho = 0.008$)\hspace{1.3in} Figure~\ref{c9.6.6}d ($\rho = 0.05$)}
+\end{figure}
+\begin{figure}[htb]
+     \centerline{%
+     \psfig{file=exfigure/pr3-08.eps,width=2.75in}   
+     \psfig{file=exfigure/pr3-1.eps,width=2.75in}}
+     \centerline{Figure~\ref{c9.6.6}e ($\rho = 0.08$)\hspace{1.3in} Figure~\ref{c9.6.6}f ($\rho = 0.1$)}
+\end{figure}
+\begin{figure}[htb]
+     \centerline{%
+     \psfig{file=exfigure/pr3-2.eps,width=2.75in}     
+     \psfig{file=exfigure/pr3-3.eps,width=2.75in}}
+     \centerline{Figure~\ref{c9.6.6}g ($\rho = 0.2$)\hspace{1.3in} Figure~\ref{c9.6.6}h ($\rho = 0.3$)}
+\end{figure}
+
+\clearpage
+
+\end{solution}
+\end{exercise}
+\end{document}

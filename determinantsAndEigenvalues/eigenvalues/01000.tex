@@ -1,0 +1,38 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c10.2.10}
+Use \Matlab to compute the characteristic polynomial of the following
+matrix:
+\[
+A = \left( \begin{array}{rrr}
+ 4 & -6 & 7\\
+ 2 & 0 & 5\\
+-10 & 2 & 5
+\end{array} \right)
+\]
+Denote this polynomial by $p_A(\lambda) = 
+-(\lambda^3 + p_2 \lambda^2 + p_1 \lambda + p_0)$.  Then compute
+the matrix
+\[
+B = -(A^3 + p_2 A^2 + p_1 A + p_0 I).
+\]
+What do you observe?  In symbols $B=p_A(A)$.  Compute the matrix $B$ for
+examples of other square matrices $A$ and determine whether or not 
+your observation was an accident.
+
+\begin{solution}
+
+\ans The matrix $B$ is the zero matrix.
+
+\soln First use \Matlab to compute
+$p_A(\lambda) = \lambda^3 - 9\lambda^2 + 9\lambda - 348$.  Then
+$B = p_A(A) = A^3 - 9A^2 + 9A - 348I_3$ is the zero matrix.  To
+see why this is true, see the Cayley-Hamilton Theorem
+(Theorem~\ref{T:CH}).
+
+
+
+\end{solution}
+\end{exercise}
+\end{document}

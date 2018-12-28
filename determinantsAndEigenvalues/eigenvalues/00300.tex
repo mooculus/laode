@@ -1,0 +1,63 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c10.2.3}
+Consider the matrix  
+\[
+A = \left(\begin{array}{rrr} -1 & 1 & 1 \\ 1 & -1 & 1 \\ 1 & 1 & -1 
+\end{array}\right).
+\]
+\begin{itemize}
+\item[(a)] Verify that the characteristic polynomial of $A$ is
+ $p_\lambda(A)=(\lambda-1)(\lambda+2)^2$.
+\item[(b)] Show that $(1,1,1)$ is an eigenvector of $A$ corresponding to 
+$\lambda=1$.
+\item[(c)] Show that $(1,1,1)$ is orthogonal to every eigenvector 
+of $A$ corresponding to the eigenvalue $\lambda=-2$.
+\end{itemize}
+
+\begin{solution}
+
+(a) Find the characteristic polynomial by solving
+\[
+\begin{array}{rcl}
+p_A(\lambda) & = & \det(A - \lambda I_3) \\
+& = & \cmatthree{-1 - \lambda}{1}{1}{1}{-1 - \lambda}{1}
+{1}{1}{-1 - \lambda} \\
+& = & (-1 - \lambda)\det\cmattwo{-1 - \lambda}{1}{1}{-1 - \lambda}
+- \det\cmattwo{1}{1}{1}{-1 - \lambda} + \\
+& & \det\cmattwo{1}{1}{-1 - \lambda}{1} \\
+& = & -(\lambda^3 + 3\lambda - 4) \\
+& = & -(\lambda - 1)(\lambda + 2)^2. \end{array}
+\]
+
+(b) Verify by computation:
+\[
+\matthree{-1}{1}{1}{1}{-1}{1}{1}{1}{-1}\vecthree{1}{1}{1} =
+\vecthree{1}{1}{1}.
+\]
+
+(c) Find the space of eigenvectors $v = (v_1,v_2,v_3)$ corresponding
+to $\lambda = -2$ by solving $(A - \lambda I_3)v = 0$ for $\lambda = -2$.
+That is, solve
+\[
+\matthree{1}{1}{1}{1}{1}{1}{1}{1}{1}\vecthree{v_1}{v_2}{v_3} = 0
+\]
+to obtain
+\[
+v = v_2\vecthree{-1}{1}{0} + v_3\vecthree{-1}{0}{1}.
+\]
+Then compute
+\[
+\vecthree{1}{1}{1} \cdot \vecthree{-1}{1}{0} = 0 \AND
+\vecthree{1}{1}{1} \cdot \vecthree{-1}{0}{1} = 0.
+\]
+Since $(-1,1,0)^t$ and $(-1,0,1)^t$ form a basis for the space of
+eigenvectors of $A$ corresponding to $\lambda = -2$ and since
+$(1,1,1)^t$ is orthogonal to these vectors, $(1,1,1)^t$ is
+orthogonal to every eigenvector of $A$ corresponding to
+$\lambda = -2$.
+
+\end{solution}
+\end{exercise}
+\end{document}

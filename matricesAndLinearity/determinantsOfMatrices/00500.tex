@@ -1,0 +1,24 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c4.9.5}
+Let $A$ be a $2\times 2$ matrix having integer entries.  Find a
+condition on the entries of $A$ that guarantees that $A\inv$ has
+integer entries.
+
+\begin{solution}
+
+\ans The matrix $A^{-1}$ has integer entries when $|ad - bc| = 1$.
+
+\soln By \eqref{e:formAinv},
+\[
+A^{-1} = \frac{1}{ad-bc}\mattwo{d}{-b}{-c}{a}.
+\]
+So, in order for $A^{-1}$ to have integer entries, $\frac{1}{ad-bc}$
+must be an integer.  Since $a$, $b$, $c$, and $d$ are integers,
+$\frac{1}{ad - bc}$ is an integer only if $|ad - bc| = 1$.
+
+
+\end{solution}
+\end{exercise}
+\end{document}

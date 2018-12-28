@@ -1,0 +1,65 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\TEXER
+
+\noindent In Exercises~\ref{c6.2.4a} -- \ref{c6.2.4c} compute the matrix
+exponential $e^{tC}$ for the matrix.
+\begin{exercise} \label{c6.2.4a}
+                $\mattwo{0}{1}{0}{0}$.
+
+\begin{solution}
+\ans $e^{tC} = \mattwo{1}{t}{0}{1}$.
+
+\soln In general,
+\[
+e^{tC} = I + tC + \frac{t^2}{2!}C^2 + \frac{t^3}{3!}C^3 + \cdots
+\]
+Note that $C^2 = 0$, so $C^k = 0$, for $k \geq 2$, so we need only
+calculate the first two terms:
+\[
+e^{tC} = I_2 + tC = \mattwo{1}{0}{0}{1} + t\mattwo{0}{1}{0}{0} =
+\mattwo{1}{t}{0}{1}.
+\]
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c6.2.4b}
+                $\left(\begin{array}{ccc}
+                0 & 1 & 0\\
+                0 & 0 & 1\\
+                0 & 0 & 0 \end{array}\right)$.
+
+\begin{solution}
+\ans $e^{tC} =
+\cmatthree{1}{t}{\frac{t^2}{2}}{0}{1}{t}{0}{0}{1}$.
+
+\soln Since $D^3 = 0$,
+\[
+e^{tD} = I_3 + tD + \frac{t^2}{2}D^2 =
+\matthree{1}{0}{0}{0}{1}{0}{0}{0}{1} +
+\matthree{0}{t}{0}{0}{0}{t}{0}{0}{0} +
+\cmatthree{0}{0}{\frac{t^2}{2}}{0}{0}{0}{0}{0}{0} =
+\cmatthree{1}{t}{\frac{t^2}{2}}{0}{1}{t}{0}{0}{1}.
+\]
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c6.2.4c}
+                $\mattwo{0}{-2}{2}{0}$.
+
+\begin{solution}
+\ans $e^{tC} =
+\mattwo{\cos 2t}{-\sin 2t}{\sin 2t}{\cos 2t}$.
+
+\soln 
+First, write $C$ as
+\[
+\mattwo{0}{-2}{2}{0} = 2E, \hbox{ where } E = \mattwo{0}{-1}{1}{0}.
+\]
+Then find $e^{2tE}$ by equation~\eqref{e:exprotate}.
+
+\end{solution}
+\end{exercise}
+\end{document}

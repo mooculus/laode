@@ -1,0 +1,26 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise}  \label{Ex:pf}
+Given distinct roots $r_1$ and $r_2$, the method of partial fractions states 
+that 
+\begin{equation} \label{E:pfquad}
+\frac{1}{(s-r_1)(s-r_2)} = \frac{a_1}{s-r_1} + \frac{a_2}{s-r_2}
+\end{equation}
+for some scalars $a_1$ and $a_2$.  By putting the right side of \eqref{E:pfquad}
+over a common denominator, verify that $a_1$ and $a_2$ are found by solving 
+the system of linear equations
+\begin{eqnarray*}
+a_1 + a_2 & = & 0\\
+r_2a_1 + r_1a_2 & = & -1.
+\end{eqnarray*}
+
+\begin{solution}
+$\dps\frac{a_1}{s-r_1} + \frac{a_2}{s-r_2} = 
+\frac{a_1(s-r_2)+a_2(s-r_1)}{(s-r_1)(s-r_2)} =
+\frac{(a_1+a_2)s - (a_1r_2+a_2r_1)}{(s-r_1)(s-r_2)}$.
+
+
+\end{solution}
+\end{exercise}
+\end{document}

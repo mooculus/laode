@@ -1,0 +1,22 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c10.3.6}
+Let $A$ be an $n\times n$ real diagonalizable matrix. Show that $A+\alpha I_n$
+is also real diagonalizable.
+
+\begin{solution}
+
+Let $S$ be a matrix such that $D = S^{-1}AS$ is a diagonal matrix.
+Then
+\[
+S^{-1}(A + \alpha I_n)S = S^{-1}AS + S^{-1}(\alpha I_n)S =
+D + \alpha I_n.
+\]
+The matrices $D$ and $\alpha I_n$ are both diagonal; so $D + \alpha I_n$
+is also diagonal.  Therefore, $A + \alpha I_n$ is diagonalizable.
+
+
+\end{solution}
+\end{exercise}
+\end{document}

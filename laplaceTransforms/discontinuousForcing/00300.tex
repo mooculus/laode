@@ -1,0 +1,116 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c13.4.2}
+Reconfirm that the solution of the initial value problem
+\[
+\ddot x + 4 x=H_1(t),\quad x(0)=1,\quad \dot x(0)=0
+\]
+is given by
+\[
+x(t)=\frac{1}{4}H_1(t)(1-\cos(2(t-1))) + \cos(2t).
+\]
+Use the methods of Chapter \ref{C:LDE} and proceed as follows:
+\begin{itemize}
+\item[(a)] Find the solution $x_1(t)$ of the initial value problem
+\[
+\ddot x + 4 x=0,\quad x(0)=1,\quad \dot x(0)=0
+\]
+on the time interval $t\in[0,1]$.
+\item[(b)] Find the general solution $x_2(t)$ of the second order
+differential equation $\ddot x + 4 x=1$.
+\item[(c)] Adjust the parameters in $x_2(t)$ such that the function
+\[
+x(t)=\left\{ \begin{array}{l} x_1(t)\quad t\in[0,1]\\
+x_2(t) \quad t>1 \end{array}\right.
+\]
+is differentiable at $t=1$.
+\end{itemize}
+
+\begin{solution}
+
+(a) Let $p(D) = D^2 + 4$.  Then the characteristic polynomial of
+$p(D)$ has eigenvalues $\lambda = \pm 2i$, and the general solution to
+$p(D)x = 0$ is
+\[
+x(t) = \alpha_1\cos(2t) + \alpha_2\sin(2t).
+\]
+Substitute the initial conditions into $x(t)$, obtaining
+\[
+1 = x(0) = \alpha_1 \AND
+0 = \dot{x}(0) = \alpha_2.
+\]
+Thus,
+\[
+x_1(t) = \cos(2t).
+\]
+
+(b) Let $g(t) = 1$ and use the method of undetermined coefficients.
+\paragraph{Step 1.} An annihilator for $g(t)$ is $q(D) = D$, since
+the characteristic polynomial of $q(D)$ has eigenvalue $\lambda = 0$.
+
+\paragraph{Step 2.} The eigenvalues of $p(D)$ are distinct from that
+of $q(D)$, so the trial space is simply the solution space of $q(D)$,
+which is $y(t) = c_1$.
+
+\paragraph{Step 3.} Substitute $y(t)$ into $p(D)x = g(t)$, obtaining
+\[
+4c_1 = 1.
+\]
+So, the general solution to $\ddot{x} + 4x = 1$ is
+\[
+x_2(t) = \alpha_1\cos(2t) + \alpha_2\sin(2t) + \frac{1}{4}.
+\]
+
+(c) In order for $x(t)$ to be continuous at $t = 1$,
+\[
+\dps\lim_{t \rightarrow 1^{-}} x(t) = x_1(1) = \cos(2)
+\]
+must equal
+\[
+\dps\lim_{t \rightarrow 1^{+}} x(t) = x_2(1) =
+\alpha_1\cos(2) + \alpha_2\sin(2) + \frac{1}{4}.
+\]
+So
+\begin{equation} \label{ex:13.4.2a}
+\cos(2)\alpha_1 + \sin(2)\alpha_2 = \cos(2) - \frac{1}{4}.
+\end{equation}
+In order for $x(t)$ to be differentiable at $t = 1$,
+\[
+\dps\lim_{h \rightarrow 0^{-}} \frac{x(1 + h) - x(1)}{h} =
+\frac{dx_1}{dt}(1) = -2\sin(2)
+\]
+must equal
+\[
+\dps\lim_{h \rightarrow 0^{+}} \frac{x(1 + h) - x(1)}{h} =
+\frac{dx_2}{dt}(1) = -2\alpha_1\sin(2) + 2\alpha_2\cos(2).
+\]
+So
+\begin{equation} \label{ex:13.4.2b}
+-2\sin(2)\alpha_1 + 2\cos(2)\alpha_2 = -2\sin(2).
+\end{equation}
+Solve \eqref{ex:13.4.2a} and \eqref{ex:13.4.2b} to find that $x(t)$ is
+differentiable when $\alpha_1 = 1 - \frac{1}{4}\cos(2)$ and $\alpha_2
+= -\frac{1}{4}\sin(2)$.  Substituting these values into $x_2(t)$ and
+using trigonometric identities, we obtain
+\[
+\begin{array}{rcl}
+x_1(t) & = & \cos(2t) \\
+x_2(t) & = & \frac{1}{4}(1 - \cos(2(t - 1))) + \cos(2t)
+\end{array}
+\]
+confirming the given solution to the initial value problem.
+
+
+
+
+
+
+
+
+
+
+
+\end{solution}
+\end{exercise}
+\end{document}

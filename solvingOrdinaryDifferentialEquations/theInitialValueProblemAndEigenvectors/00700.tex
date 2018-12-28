@@ -1,0 +1,33 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c4.5.4}
+Let
+\[
+C=\mattwo{1}{2}{-3}{-1}.
+\]
+Show that $C$ has no real eigenvectors.
+
+\begin{solution}
+
+A vector $(x,y)$ is an eigenvector of $C$ if
+\[ C\vectwo{x}{y} = \lambda\vectwo{x}{y} \]
+that is, if
+\[ (C - \lambda I_2)\vectwo{x}{y} = 0. \]
+In this case,
+\[ \cmattwo{1 - \lambda}{2}{-3}{-1 - \lambda}
+\vectwo{x}{y} = 0. \]
+This equation will have a nonzero solution $(x,y)$ only if
+\[ \cmattwo{1 - \lambda}{2}{-3}{-1 - \lambda}\vectwo{x}{y} \]
+is not row equivalent to the identity matrix.
+Row reducing the matrix yields
+\[ \cmattwo{1}{\frac{2}{1 - \lambda}}{0}
+{-1 - \lambda + \frac{6}{1-\lambda}} \]
+so $C$ has an eigenvector when
+\[ -1 - \lambda + \frac{6}{1-\lambda} = 0, \]
+that is, when $\lambda^2 = -5$.  Therefore, $C$ has no real 
+eigenvectors.
+
+\end{solution}
+\end{exercise}
+\end{document}

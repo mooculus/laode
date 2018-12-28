@@ -1,0 +1,41 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c14.3.4}
+Consider the second order differential equation
+\begin{equation}  \label{ex:at1}
+\frac{d^2x}{dt^2} + p(t)\frac{dx}{dt} + q(t)x = g(t).
+\end{equation}
+Suppose that
+\[
+x_1(t) = 1, \quad  x_2(t) = 1+t, \AND x_3(t) = 1+t+t^2
+\]
+are all solutions to \eqref{ex:at1}.  Then determine $p(t)$, $q(t)$, and
+$g(t)$.
+
+\begin{solution}
+\ans $q(t) = \frac{2}{t^2} = g(t)$ and  
+$p(t) = -\frac{2}{t}$.
+
+\soln  The three solutions $x_1$, $x_2$, $x_3$ yield three equations
+\begin{eqnarray*}
+q(t) & = & g(t)\\
+p(t) +(1+t)q(t) & = & g(t)\\
+2 + (1+2t)p(t) + (1+t+t^2)q(t) & = & g(t).
+\end{eqnarray*}
+Substituting the $1^{st}$ equation into the $2^{nd}$ equation yields
+\[
+p(t) + tq(t) = 0.
+\]
+Therefore, the $3^{rd}$ equation is:
+\[
+2 - (1+2t)tq(t) + (1+t+t^2)q(t) = 2 + (1-t^2)q(t) = q(t).
+\]
+Hence 
+\[
+q(t) = \frac{2}{t^2} = g(t) \AND  p(t) = -\frac{2}{t}.
+\]
+
+\end{solution}
+\end{exercise}
+\end{document}

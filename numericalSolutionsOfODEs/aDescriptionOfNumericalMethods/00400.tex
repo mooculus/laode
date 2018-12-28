@@ -1,0 +1,47 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\noindent In Exercises~\ref{c15.1.3a} -- \ref{c15.1.3c}
+decide whether or not the following numerical schemes are Runge-Kutta methods.
+\begin{exercise} \label{c15.1.3a}
+$x_{k+1} = x_k + hf(t_k+\frac{h}{2},x_k+\frac{h}{2}f(t_k,x_k))$.
+
+\begin{solution}
+\ans Yes.
+
+\soln Set
+\[
+s=2,\quad b_1=0,\quad b_2=1,\quad c_1=0,\quad c_2=\frac{1}{2},\quad
+a_{21}=\frac{1}{2}.
+\]
+
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c15.1.3b}
+$x_{k+1} = x_k + hf(t_k,x_k+t_k)$.
+
+\begin{solution}
+\ans No.
+
+\soln $x_k+t_k$ is not allowed in the second argument of $f$.
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c15.1.3c}
+$x_{k+1} = x_k + 
+\frac{h}{4}(f(t_k,x_k)+3f(t_k+\frac{2h}{3},x_k+\frac{2h}{3}f(t_k,x_k))$.
+
+\begin{solution}
+\ans Yes.
+
+\soln Set
+\[
+s=2,\quad b_1=\frac{1}{4},\quad b_2=\frac{3}{4},\quad
+c_1=0,\quad c_2=\frac{2}{3},\quad a_{21}=\frac{2}{3}.
+\]
+
+\end{solution}
+\end{exercise}
+\end{document}

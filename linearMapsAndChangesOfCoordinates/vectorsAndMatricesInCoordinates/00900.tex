@@ -1,0 +1,29 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c7.3.4}
+Find a basis ${\cal W}=\{w_1,w_2\}$ such that $[L_A]_{\cal W}$ is
+a diagonal matrix, where $L_A$ is the linear map associated with the
+matrix
+\[
+A = \mattwo{-10}{-6}{18}{11}.
+\]
+
+\begin{solution}
+
+\ans The matrix $[L]_{\cal W}$ is diagonal in the basis:
+\[
+{\cal W} = \left\{\vectwo{1}{2},\vectwo{2}{3}\right\}
+\]
+
+\soln Theorem~\ref{T:putinform2} states
+that the matrix $[L]_{\cal W}$ is diagonal if ${\cal W}$ consists of
+eigenvectors of $L$ corresponding to real eigenvalues.  By
+computation, we find that $\lambda_1 = 2$ and $\lambda_2 = -1$ are
+the eigenvalues of $L$.  We then find that $Lw_1 = 2w_1$ when
+$w_1 = (1,2)^t$ and $Lw_2 = -w_2$ when $w_2 = (2,3)^t$, so $w_1$ and
+$w_2$ are the eigenvectors of $L$.
+
+\end{solution}
+\end{exercise}
+\end{document}

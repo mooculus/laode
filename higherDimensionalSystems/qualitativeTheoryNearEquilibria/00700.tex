@@ -1,0 +1,100 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\noindent In Exercises~\ref{c11.2.2a} -- \ref{c11.2.2c} determine the number
+of stable, unstable, and center directions for the system of differential 
+equations $\dot{x}=Cx$.
+\begin{exercise} \label{c11.2.2a}
+\begin{matlabEquation}\label{MATLAB:51}
+C=\left(\begin{array}{rrrr}
+     1  &   2   &  3   &  4 \\
+     5  &   4   &  3   &  2\\
+     9  &   8   &  7   &  6\\
+     1  &   2    & 6   &  7
+\end{array}\right).
+\end{matlabEquation}
+
+\begin{solution}
+\ans There are two unstable and two center directions.
+
+\soln In \Matlabp, load the matrix $C$.  Find the eigenvalues of $C$ by
+typing {\tt eig(C)} obtaining
+\begin{verbatim}
+ans =
+   18.0000
+    1.0000
+    0.0000
+   -0.0000
+\end{verbatim}
+Therefore, there are two unstable and two center directions.
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c11.2.2b}
+\begin{matlabEquation}\label{MATLAB:52}
+C=\left(\begin{array}{rrrrr}
+     1   &  3  &   6   &  9   & 11 \\
+    -2   &  4  &   6   & -8   & 0 \\
+     1   &  3  &   5   &  7   & 9 \\
+     0   &  2  &   5   &  8   &  0 \\
+     1   &  4  &  -2   &  4   & 10
+\end{array}\right).
+\end{matlabEquation}
+
+\begin{solution}
+\ans There are four unstable directions and one stable 
+direction.
+
+\soln In \Matlabp, load the matrix $C$.  Find the eigenvalues of $C$ by
+typing {\tt eig(C)} obtaining
+\begin{verbatim}
+ans =
+  -0.4516          
+   2.2585 + 4.3244i
+   2.2585 - 4.3244i
+  13.7788          
+  10.1559   
+\end{verbatim}
+Therefore, there are four unstable directions and one stable direction.
+
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c11.2.2c}
+\begin{matlabEquation}\label{MATLAB:53}
+C=\left(\begin{array}{rrrrrr}
+    1  &  3  &  5  & -11 &  20  &   5 \\
+   -5  & -13 & -11 &  23 & -49  & -12 \\
+   13  &  47 &  41 & -82 & 167  &  41 \\
+    4  &  35 &  27 & -48 &  94  &  23 \\
+    8  &  10 &   6 & -16 &  45  &  11 \\
+  -30  &  -8 &  -2 &  28 &-110  & -27
+\end{array}\right).
+\end{matlabEquation}
+
+\begin{solution}
+\ans There are two unstable, one stable, and three center 
+directions.
+
+
+\soln In \Matlabp, load the matrix $C$.  Find the eigenvalues of $C$ by
+typing {\tt eig(C)} obtaining
+\begin{verbatim}
+ans =
+   0.0000 + 1.0000i
+   0.0000 - 1.0000i
+   0.0000          
+   1.0000          
+  -1.0000          
+  -1.0000  
+\end{verbatim}
+Therefore, there are two unstable, one stable, and three center directions.
+
+
+
+
+
+\end{solution}
+\end{exercise}
+\end{document}

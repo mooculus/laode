@@ -1,0 +1,59 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c8.2.5}
+Consider the planar nonlinear system of ODEs
+\begin{eqnarray*}
+\frac{dx}{dt} & = & 1 - x - y \\
+\frac{dy}{dt} & = & 2xy. 
+\end{eqnarray*}
+\begin{itemize}
+\item[(a)] Find all equilibria of this system.
+\item[(b)] Determine the behavior of trajectories in a small
+neighborhood of each equilibrium.
+\item[(c)] Sketch the phase portrait of this system.  {\bf Hint}: Check
+for invariant axes.
+\item[(d)] Use {\pplane} to verify your sketch.
+\end{itemize}
+
+\begin{solution}
+
+(a) \ans The equilibria occur at $(x,y) = (1,0)$ and $(x,y) = (0,1)$.
+
+\soln Solve $\frac{dx}{dt} = \frac{dy}{dt} = 0$.
+
+(b) \ans The point $(x,y) = (1,0)$ is a saddle.  The point $(x,y) = (0,1)$
+is a spiral sink.
+
+\soln Let $f(x,y) = 1 - x - y$, $g(x,y) = 2xy$,
+and $F = (f,g)$.  Then the Jacobian matrix is
+\[
+(dF)_{(x,y)} = \mattwo{f_x(x,y)}{f_y(x,y)}{g_x(x,y)}{g_y(x,y)}
+= \mattwo{-1}{-1}{2y}{2x}.
+\]
+Specifically, at the equilibrium points:
+\[
+(dF)_{(1,0)} = \mattwo{-1}{-1}{0}{2} \qquad
+(dF)_{(0,1)} = \mattwo{-1}{-1}{2}{0}.
+\]
+The eigenvalues of $(dF)_{(1,0)}$ are $\lambda_1 = 2$ and $\lambda_2 = -1$;
+so the point is like a saddle in a small neighborhood.  The trace of
+$(dF)_{(0,1)}$ is $-1 < 0$ and the determinant is $2 > 0$, so the
+discriminant is negative and, within a small neighborhood, the point
+is like a spiral sink.
+
+(c) Compute the eigenvectors of the Jacobian of the saddle point $(1,0)$.
+The invariant axes of $(1,0)$ are the eigendirections $(1,-3)$ and
+$(1,0)$.  Use these vectors to graph the system.  Your sketch should
+resemble the {\tt pplane5} graph in Figure~\ref{c8.2.5}.
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/8-2-5.eps,width=3.0in}}
+                \exercap{c8.2.5}
+\end{figure}
+
+
+\end{solution}
+\end{exercise}
+\end{document}

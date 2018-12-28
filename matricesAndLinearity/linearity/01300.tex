@@ -1,0 +1,44 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise}  \label{c4.3.12}
+Let $P:\R^n\to\R^m$ and $Q:\R^n\to\R^m$ be linear mappings. Prove
+that $S:\R^n\to\R^m$ defined by
+\[
+S(x) = P(x) + Q(x)
+\]
+is also a linear mapping.  Theorem~\ref{lin-matrices} states that there
+are matrices $A$, $B$ and $C$ such that
+\[
+P = L_A \AND Q = L_B \AND S = L_C .
+\]
+What is the relationship between the matrices $A$, $B$, and $C$?
+
+\begin{solution}
+
+The mapping $L(x)$ is linear if $L(x + y) = L(x) + L(y)$ and
+if $cL(x) = L(cx)$.  We can use the assumption that $L_1(x)$
+and $L_2(x)$ are linear mappings to show:
+\[ \begin{array}{rcl}
+L(x + y) & = & L_1(x + y) + L_2(x + y) \\
+& = & L_1(x) + L_1(y) + L_2(x) + L_2(y) \\
+& = & [L_1(x) + L_2(x)] + [L_1(y) + L_2(y)] \\
+& = & L(x) + L(y) \end{array} \]
+and
+\[ \begin{array}{rcl}
+cL(x) & = & cL_1(x) + cL_2(x) \\
+& = & L_1(cx) + L_2(cx) \\
+& = & L(cx). \end{array} \]
+
+Assume that $L = L_A$, $L_1 = L_{A_1}$ and $L_2 = L_{A_2}$ for
+$m \times n$ matrices $A$, $A_1$, $A_2$.  We claim that
+$A = A_1 + A_2$, where $A_1 + A_2$ is the matrix obtained by
+adding corresponding entries of $A_1$ and $A_2$.  By
+definition, $L(e_j) = L_1(e_j) + L_2(e_j)$.  Lemma~\ref{columnsA}
+implies that the $j^{th}$ column of $A$ is the sum of the
+$j^{th}$ columns of $A_1$ and $A_2$ for all columns {j}, so
+$A = A_1 + A_2$.
+
+\end{solution}
+\end{exercise}
+\end{document}

@@ -1,0 +1,121 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\noindent  In Exercises~\ref{c6.6.hoa} -- \ref{c6.6.hoc} find the general
+solution to the given differential equation.
+\begin{exercise} \label{c6.6.hoa}
+$\ddot{x} + 2\dot{x} - 3x = 0$.
+
+\begin{solution}
+
+\ans The general solution is
+\[
+x(t) = \alpha e^t + \beta e^{-3t}
+\]
+for $\alpha, \beta \in \R$.
+
+\soln Let $y = \dot{x}$, and rewrite the differential equation as
+$\dot{y} + 2y - 3x = 0$.  Write the first order system in two equations:
+\[
+\begin{array}{rrrrr}
+\dot{x} & = & & & y \\
+\dot{y} & = & 3x & - & 2y.
+\end{array}
+\]
+This system can be represented by the matrix $Q$, where
+\[
+Q = \mattwo{0}{1}{3}{-2}.
+\]
+The characteristic polynomial of $Q$ is $p_Q(\lambda) = \lambda^2
++ 2\lambda - 3$, and the eigenvalues are $\lambda_1 = 1$ and
+$\lambda_2 = 2$.  Thus, the general solution is
+\[
+x(t) = \alpha e^{\lambda_1t} + \beta e^{\lambda_2t} =
+\alpha e^t + \beta e^{-3t}.
+\]
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c6.6.hob}
+$\ddot{x} - 6\dot{x} + 9x = 0$.
+In addition, find the solution to this equation satisfying
+initial values $x(1)=1$ and $\dot{x}(1)=0$.
+
+\begin{solution}
+
+\ans The general solution is
+\[
+x(t) = \alpha e^{(3 + 3\sqrt{2})t} + \beta e^{(3 - 3\sqrt{2})t}.
+\]
+When $x(1) = 1$ and $\dot{x}(1) = 0$,
+\[
+x(t) \approx 0.0001e^{(3 + 3\sqrt{2})t} +
+2.9573e^{(3 - 3\sqrt{2})t}.
+\]
+
+\soln Let $y = \dot{x}$, and rewrite the differential equation as
+$\dot{y} - 6y + 9x = 0$.  Then the system can be rewritten as the first
+order system in two equations associated to the matrix
+\[
+Q = \mattwo{0}{1}{9}{6}.
+\]
+The characteristic polynomial of $Q$ is $p_q(\lambda) = \lambda^2 
+- 6\lambda - 9$, and the eigenvalues of $Q$ are $\lambda_1 = 3 +
+3\sqrt{2}$ and $\lambda_2 = 3 - 3\sqrt{2}$.  Thus,
+\[
+x(t) = \alpha e^{(3 + 3\sqrt{2})t} + \beta e^{(3 - 3\sqrt{2})t}.
+\]
+To find the solution with the given initial conditions, substitute $x(1)
+= 1$ into the formula for $x(t)$, then find $\dot{x}(t)$ and substitute
+$\dot{x}(1) = 0$ into its formula to obtain the system:
+\[
+\begin{array}{rcccl}
+x(t) & = & 1 & = & \alpha e^{(3 + 3\sqrt{2})} + \beta e^{(3 - 3\sqrt{2})} \\
+\dot{x}(t) & = & 0 & = & (3 + 3\sqrt{2})\alpha e^{(3 + 3\sqrt{2})}
++ (3 - 3\sqrt{2})\beta e^{(3 - 3\sqrt{2})}.
+\end{array}
+\]
+Using \Matlab or a calculator, solve this system to obtain $\alpha \approx
+0.0001$ and $\beta \approx 2.9573$.
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c6.6.hoc}
+$\ddot{x} + 2\dot{x} + 2x = 0$.
+
+\begin{solution}
+
+\ans The general solution is
+\[
+x(t) = e^{-t}(\alpha \cos{t} + \beta \sin{t}).
+\]
+
+\soln Let $y \dot{x}$ and rewrite the system as $\dot{y} + 2y + 2x = 0$,
+or $\dot{X} = QX$, where
+\[
+X = \vectwo{x}{y} \AND Q = \mattwo{0}{1}{-2}{-2}.
+\]
+The characteristic polynomial of $Q$ is $p_q(\lambda) = \lambda^2 
++ 2\lambda + 2$, and the eigenvalues of $Q$ are $\lambda_1 = -1 + i$ and
+$\lambda_2 = -1 - i$.  Thus, the general solution is
+\[
+x(t) = c_1e^{(-1 + i)t} + c_2e^{(-1 - i)t}
+\]
+for some $c_1, c_2 \in \C$.  Using Euler's formula $e^{i\theta} =
+\cos\theta + i\sin\theta$, we can write
+\[
+\begin{array}{rcl}
+x(t) & = & c_1e^{-t}e^{it} + c_2e^{-t}e^{-it} \\
+& = & e^{-t}(c_1(\cos{t} + i\sin{t}) + c_2(\cos{t} - i\sin{t})) \\
+& = & e^{-t}((c_1 + c_2)\cos{t} + i(c_1 - c_2)\sin{t}).
+\end{array}
+\]
+We know that $x(t) \in \R$ for all $t$.  Thus, $(c_1 + c_2) \in \R$, and
+$(c_1 - c_2)$ is purely imaginary, so $c_2 = \overline{c_1}$.  Let
+$c_1 = \frac{1}{2}(\alpha + i\beta)$ for $\alpha, \beta \in \R$. 
+Then $x(t) = e^{-t}(\alpha\cos{t} + \beta\sin{t})$.
+
+\end{solution}
+\end{exercise}
+\end{document}

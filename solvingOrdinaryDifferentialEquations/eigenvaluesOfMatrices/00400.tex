@@ -1,0 +1,45 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\noindent In Exercises~\ref{c6.4.2a} -- \ref{c6.4.2c} compute the
+eigenvalues for the given $2\times 2$ matrix.
+\begin{exercise} \label{c6.4.2a}
+$\mattwo{1}{2}{0}{-5}$.
+
+\begin{solution}
+\ans The eigenvalues of the matrix are $\lambda_1 = -5$ and
+$\lambda_2 = 1$.
+
+\soln For any $2 \times 2$ matrix $A$, the eigenvalues are the roots
+of the characteristic polynomials, which can be found by solving the
+equation $\lambda^2 - \trace(A)\lambda + \det(A) = 0$.  In this case, the
+characteristic polynomial of the matrix is $\lambda^2 + 4\lambda - 5$.
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c6.4.2b}
+$\mattwo{-3}{2}{1}{0}$.
+
+\begin{solution}
+\ans The eigenvalues of the matrix are
+$\lambda_1 = \frac{-3 + \sqrt{17}}{2}$ and $\lambda_2 =
+\frac{-3 - \sqrt{17}}{2}$.
+
+\soln The eigenvalues are the roots of the characteristic polynomial, which
+is $\lambda^2 + 3\lambda - 2$.
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c6.4.2c}
+$\mattwo{3}{-2}{2}{-1}$.
+
+\begin{solution}
+\ans The matrix has a double eigenvalue at $\lambda = 1$.
+
+\soln The characteristic polynomial of the matrix is $\lambda^2 - 2\lambda
++ 1$.  The eigenvalues are the roots of this polynomial.
+
+\end{solution}
+\end{exercise}
+\end{document}

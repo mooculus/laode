@@ -1,0 +1,21 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c7.8.1}
+The matrix
+\[
+A=\mattwo{1}{K}{0}{1}
+\]
+is a {\em shear}\index{shear}.  Describe the action of $A$ on the plane
+for different values of $K$.
+
+\begin{solution}
+
+For any point $(x,y)$ in the plane, $A(x,y)^t = (x + Ky,y)^t$.  Therefore,
+if $K > 0$, then $(x,y)$ is shifted to the right by a factor of $Ky$.  If
+$K < 0$, then $(x,y)$ is shifted to the left by a factor of $|K|y$.  If
+$K = 0$, then $(x,y)$ is mapped to itself.
+
+\end{solution}
+\end{exercise}
+\end{document}

@@ -1,0 +1,305 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\TEXER
+
+\noindent In Exercises~\ref{c15.2.1a} -- \ref{c15.2.1c} compute
+bounds on the local and global error for Euler's method applied
+to the given initial value problem.  Perform the same steps as in
+the treatment of the initial value problem \eqref{eq:simplest} in
+the text.
+\begin{exercise} \label{c15.2.1a}
+$\frac{\dps dx}{\dps dt} = 3x,\quad x(0)=1$.
+
+\begin{solution}
+\ans Local discretization error:
+\[
+\delta(k+1) \le
+e^{3T}\frac{(3h)^2}{2} \quad \mbox{for all $h\ge 0$.}
+\]
+Global discretization error:
+\[
+|\epsilon(k)| \le e^{3T}(e^{3T}-1)\frac{3h}{2}.
+\]
+
+\soln Euler's method applied to the initial value problem takes the form
+\[
+\begin{array}{rclcl}
+t_{k+1} & = & t_k+h & & \\
+x_{k+1} & = & x_k + h 3 x_k & = & (1+3h)x_k
+\end{array}
+\]
+where $k=0,1,\ldots,K-1$.
+
+{\em Local error:} we assume that the
+numerical solution is exact up to step $k$, that is,
+we start in $x(t_k)=e^{3t_k}$.  Then the local discretization error
+$\delta(k+1)$ is given by
+\[
+\delta(k+1) = x(t_{k+1}) - (x(t_k) + h 3x(t_k))=
+e^{3t_{k+1}} - (1+3h)e^{t_k}.
+\]
+Since $t_k = kh$ we obtain
+\[
+\delta(k+1) = e^{3t_{k+1}} - (1+3h)e^{t_k} =
+e^{3(k+1)h} - (1+3h)e^{3kh} = e^{3kh}(e^{3h}-(1+3h)).
+\]
+By definition of the exponential function
+\[
+e^{3h}-(1+3h) = \frac{(3h)^2}{2}+\frac{(3h)^3}{6}+\cdots =
+\frac{(3h)^2}{2}\left[ 1+\frac{(3h)}{3}+\frac{(3h)^2}{12}+\cdots\right]
+\le \frac{(3h)^2}{2}e^{3h}.
+\]
+Since $(k+1)h=(k+1)/K\le T$ for $k=0,1,\ldots,K-1$ we finally have the
+desired bound on the local discretization error:
+\[
+\delta(k+1) = e^{3kh}(e^{3h}-(1+3h)) \le
+e^{3(k+1)h}\left(\frac{(3h)^2}{2}\right)\le
+e^{3T}\frac{(3h)^2}{2} \quad \mbox{for all $h\ge 0$.}
+\]
+
+{\em Global error:} we have for $k=1,2,\ldots,K$
+\[
+x(t_k)=(1+3h)x(t_{k-1})+\delta(k),
+\]
+and subtracting
+\[
+x_k = (1+3h)x_{k-1}
+\]
+leads to
+\[
+x(t_k) - x_k = (1+3h)(x(t_{k-1})-x_{k-1})+\delta(k).
+\]
+Therefore
+\begin{eqnarray*}
+|\epsilon(k)| & = & |x(t_k) - x_k| =
+|(1+3h)(x(t_{k-1})-x_{k-1})+\delta(k)|\\
+& \le & (1+3h)|\epsilon(k-1)|+\delta_h
+\end{eqnarray*}
+since
+\[
+\delta(k)\le \delta_h = e^{3T}\frac{(3h)^2}{2}.
+\]
+Apply this formula repeatedly until $k$ is zero,
+\[
+\begin{array}{rcl}
+|\epsilon(k)|&\le&(1+3h)|\epsilon(k-1)|+\delta_h\\
+&\le& (1+3h)[(1+3h)|\epsilon(k-2)|+\delta_h]+\delta_h\\
+&=& (1+3h)^2|\epsilon(k-2)| + ((1+3h) + 1)\delta_h\\
+&\le& (1+3h)^2[(1+3h)|\epsilon(k-3)|+\delta_h] + ((1+3h) + 1)\delta_h\\
+&=& (1+3h)^3|\epsilon(k-3)| + ((1+3h)^2 + (1+3h) + 1)\delta_h\\
+&\vdots& \\
+&\le & (1+3h)^k|\epsilon(0)| + ((1+3h)^{k-1} +\cdots + (1+3h) + 1)\delta_h.
+\end{array}
+\]
+Since $\epsilon(0)=x(t_0) - x_0=0$
+\[
+|\epsilon(k)| \le \frac{(1+3h)^k -1}{3h}\delta_h.
+\]
+With $1+3h\le e^{3h}$ we have the bound on the global discretization error:
+\[
+|\epsilon(k)| \le \frac{1}{3h} (e^{3kh}-1)\delta_h=
+\frac{1}{3h}(e^{3kh}-1)e^{3T}\frac{(3h)^2}{2} =
+e^{3T}(e^{3kh}-1)\frac{3h}{2}
+\le e^{3T}(e^{3T}-1)\frac{3h}{2}.
+\]
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c15.2.1b}
+$\frac{\dps dx}{\dps dt} = x,\quad x(0)=2$.
+
+\begin{solution}
+\ans Local discretization error:
+\[
+\delta(k+1) \le
+2e^{T}\frac{h^2}{2} \quad \mbox{for all $h\ge 0$.}
+\]
+Global discretization error:
+\[
+|\epsilon(k)| \le 2e^{T}(e^{T}-1)\frac{h}{2}.
+\]
+
+\soln Euler's method applied to the initial value problem takes the form
+\[
+\begin{array}{rclcl}
+t_{k+1} & = & t_k+h & & \\
+x_{k+1} & = & x_k + h x_k & = & (1+h)x_k
+\end{array}
+\]
+where $k=0,1,\ldots,K-1$.
+
+{\em Local error:} we assume that the
+numerical solution is exact up to step $k$, that is,
+we start in $x(t_k)=2e^{t_k}$.  Then the local discretization error
+$\delta(k+1)$ is given by
+\[
+\delta(k+1) = x(t_{k+1}) - (x(t_k) + h x(t_k))=
+2e^{t_{k+1}} - (1+h)2e^{t_k}.
+\]
+Since $t_k = kh$ we obtain
+\[
+\delta(k+1) = 2e^{t_{k+1}} - (1+h)2e^{t_k} =
+2e^{(k+1)h} - (1+h)2e^{kh} = 2e^{kh}(e^{h}-(1+h)).
+\]
+By definition of the exponential function
+\[
+e^{h}-(1+h) \le \frac{h^2}{2}e^{h}.
+\]
+Since $(k+1)h=(k+1)/K\le T$ for $k=0,1,\ldots,K-1$ we finally have the
+desired bound on the local discretization error:
+\[
+\delta(k+1) = 2e^{kh}(e^{h}-(1+h)) \le
+2e^{(k+1)h}\left(\frac{h^2}{2}\right)\le
+2e^{T}\frac{h^2}{2} \quad \mbox{for all $h\ge 0$.}
+\]
+
+{\em Global error:} we have for $k=1,2,\ldots,K$
+\[
+x(t_k)=(1+h)x(t_{k-1})+\delta(k),
+\]
+and subtracting
+\[
+x_k = (1+h)x_{k-1}
+\]
+leads to
+\[
+x(t_k) - x_k = (1+h)(x(t_{k-1})-x_{k-1})+\delta(k).
+\]
+Therefore
+\begin{eqnarray*}
+|\epsilon(k)| & = & |x(t_k) - x_k| =
+|(1+h)(x(t_{k-1})-x_{k-1})+\delta(k)|\\
+& \le & (1+h)|\epsilon(k-1)|+\delta_h
+\end{eqnarray*}
+since
+\[
+\delta(k)\le \delta_h = 2e^{T}\frac{h^2}{2}.
+\]
+Apply this formula repeatedly until $k$ is zero,
+\[
+\begin{array}{rcl}
+|\epsilon(k)|&\le&(1+h)|\epsilon(k-1)|+\delta_h\\
+&\le& (1+h)[(1+h)|\epsilon(k-2)|+\delta_h]+\delta_h\\
+&=& (1+h)^2|\epsilon(k-2)| + ((1+h) + 1)\delta_h\\
+&\le& (1+h)^2[(1+h)|\epsilon(k-3)|+\delta_h] + ((1+h) + 1)\delta_h\\
+&=& (1+h)^3|\epsilon(k-3)| + ((1+h)^2 + (1+h) + 1)\delta_h\\
+&\vdots& \\
+&\le & (1+h)^k|\epsilon(0)| + ((1+h)^{k-1} +\cdots + (1+h) + 1)\delta_h.
+\end{array}
+\]
+Since $\epsilon(0)=x(t_0) - x_0=0$
+\[
+|\epsilon(k)| \le \frac{(1+h)^k -1}{h}\delta_h.
+\]
+With $1+h\le e^{h}$ we have the bound on the global discretization error:
+\[
+|\epsilon(k)| \le \frac{1}{h} (e^{kh}-1)\delta_h=
+\frac{1}{h}(e^{kh}-1)2e^{T}\frac{h^2}{2} =
+2e^{T}(e^{kh}-1)\frac{h}{2}
+\le 2e^{T}(e^{T}-1)\frac{h}{2}.
+\]
+
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c15.2.1c}
+$\frac{\dps dx}{\dps dt} = 3x,\quad x(0)=2$.
+
+\begin{solution}
+\ans Local discretization error:
+\[
+\delta(k+1) \le
+2e^{3T}\frac{(3h)^2}{2} \quad \mbox{for all $h\ge 0$.}
+\]
+Global discretization error:
+\[
+|\epsilon(k)| \le 2e^{3T}(e^{3T}-1)\frac{3h}{2}.
+\]
+
+\soln Euler's method applied to the initial value problem takes the form
+\[
+\begin{array}{rclcl}
+t_{k+1} & = & t_k+h & & \\
+x_{k+1} & = & x_k + h 3x_k & = & (1+3h)x_k
+\end{array}
+\]
+where $k=0,1,\ldots,K-1$.
+
+{\em Local error:} we assume that the
+numerical solution is exact up to step $k$, that is,
+we start in $x(t_k)=2e^{3t_k}$.  Then the local discretization error
+$\delta(k+1)$ is given by
+\[
+\delta(k+1) = x(t_{k+1}) - (x(t_k) + h 3 x(t_k))=
+2e^{3t_{k+1}} - (1+3h)2e^{3t_k}.
+\]
+Since $t_k = kh$ we obtain
+\[
+\delta(k+1) = 2e^{3t_{k+1}} - (1+3h)2e^{3t_k} =
+2e^{3(k+1)h} - (1+3h)2e^{3kh} = 2e^{3kh}(e^{3h}-(1+3h)).
+\]
+By definition of the exponential function
+\[
+e^{3h}-(1+3h) = \frac{(3h)^2}{2}+\frac{(3h)^3}{6}+\cdots =
+\frac{(3h)^2}{2}\left[ 1+\frac{(3h)}{3}+\frac{(3h)^2}{12}+\cdots\right]
+\le \frac{(3h)^2}{2}e^{3h}.
+\]
+Since $(k+1)h=(k+1)/K\le T$ for $k=0,1,\ldots,K-1$ we finally have the
+desired bound on the local discretization error:
+\[
+\delta(k+1) = 2e^{3kh}(e^{3h}-(1+3h)) \le
+2e^{3(k+1)h}\left(\frac{(3h)^2}{2}\right)\le
+2e^{3T}\frac{(3h)^2}{2} \quad \mbox{for all $h\ge 0$.}
+\]
+
+{\em Global error:} we have for $k=1,2,\ldots,K$
+\[
+x(t_k)=(1+3h)x(t_{k-1})+\delta(k),
+\]
+and subtracting
+\[
+x_k = (1+3h)x_{k-1}
+\]
+leads to
+\[
+x(t_k) - x_k = (1+3h)(x(t_{k-1})-x_{k-1})+\delta(k).
+\]
+Therefore
+\begin{eqnarray*}
+|\epsilon(k)| & = & |x(t_k) - x_k| =
+|(1+3h)(x(t_{k-1})-x_{k-1})+\delta(k)|\\
+& \le & (1+3h)|\epsilon(k-1)|+\delta_h
+\end{eqnarray*}
+since
+\[
+\delta(k)\le \delta_h = 2e^{3T}\frac{(3h)^2}{2}.
+\]
+Apply this formula repeatedly until $k$ is zero,
+\[
+\begin{array}{rcl}
+|\epsilon(k)|&\le&(1+3h)|\epsilon(k-1)|+\delta_h\\
+&\le& (1+3h)[(1+3h)|\epsilon(k-2)|+\delta_h]+\delta_h\\
+&=& (1+3h)^2|\epsilon(k-2)| + ((1+3h) + 1)\delta_h\\
+&\le& (1+3h)^2[(1+3h)|\epsilon(k-3)|+\delta_h] + ((1+3h) + 1)\delta_h\\
+&=& (1+3h)^3|\epsilon(k-3)| + ((1+3h)^2 + (1+3h) + 1)\delta_h\\
+&\vdots& \\
+&\le & (1+3h)^k|\epsilon(0)| + ((1+3h)^{k-1} +\cdots + (1+3h) + 1)\delta_h.
+\end{array}
+\]
+Since $\epsilon(0)=x(t_0) - x_0=0$
+\[
+|\epsilon(k)| \le \frac{(1+3h)^k -1}{3h}\delta_h.
+\]
+With $1+3h\le e^{3h}$ we have the bound on the global discretization error:
+\[
+|\epsilon(k)| \le \frac{1}{3h} (e^{3kh}-1)\delta_h=
+\frac{1}{3h}(e^{3kh}-1)2e^{3T}\frac{(3h)^2}{2} =
+2e^{3T}(e^{3kh}-1)\frac{3h}{2}
+\le 2e^{3T}(e^{3T}-1)\frac{3h}{2}.
+\]
+
+\end{solution}
+\end{exercise}
+\end{document}

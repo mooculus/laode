@@ -1,0 +1,48 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c8.2.1}
+\begin{enumerate}
+\item[(a)] Draw the phase line picture of the differential
+equation 
+\begin{equation}  \label{E:quad}
+\frac{dx}{dt} = -x^2 +3x -2.
+\end{equation}
+\item[(b)] Let $x(t)$ be the solution to \eqref{E:quad} satisfying
+$x(0)=-1$.  Determine $\dps\lim_{t\to\infty} x(t)$. 
+\item[(c)] Let $y(t)$ be a solution to \eqref{E:quad} satisfying
+$y(0)=0.5$. Sketch the time series of this solution.
+\end{enumerate}
+
+\begin{solution}
+
+(a) \ans Figure~\ref{c8.2.1}a shows a phase line picture
+of this system.
+
+\soln There is a stable equilibrium at $x = 2$, and an unstable
+equilibrium at $x = 1$, since $f(x) = -x^2 + 3x - 2 = (x - 1)(2 - x)$,
+and since $f'(1) = 1 > 0$ and $f'(2) = -1 < 0$.
+
+(b) \ans $\dps\lim_{t \to \infty} x(t) = -\infty$.
+
+\soln The closest equilibrium to $x(0) = -1$ is $x = 1$, which is
+unstable. 
+
+(c) \ans Figure~\ref{c8.2.1}b shows the {\tt dfield5} graph of $y$.
+
+\soln The trajectory of $y(t)$ with initial condition $y(0) = 0.5$ goes
+to negative infinity in forward time, and limits on $y = 1$ in
+backward time.
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/8-2-1a.eps,width=2.75in}
+                       \psfig{file=exfigure/8-2-1b.eps,width=2.75in}}
+                \exercaptwo{c8.2.1}
+\end{figure}
+
+
+
+\end{solution}
+\end{exercise}
+\end{document}

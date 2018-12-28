@@ -1,0 +1,44 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c10.3.7}
+Consider the $4\times 4$ matrix
+\begin{matlabEquation}\label{four-by-four-diagonalization}
+C =\left(\begin{array}{rrrr}  12 & 48 & 68 & 88 \\ -19 & -54 & -57 & -68\\
+22 & 52 & 66 & 96 \\ -11 & -26 & -41 & -64 \end{array}\right).
+\end{matlabEquation}
+Use \Matlab to show that the eigenvalues of $C$ are real and distinct.
+Find a matrix $S$ so that $S\inv CS$ is diagonal.  
+
+\begin{solution}
+
+Verify that the eigenvalues of $C$ are real and distinct using the
+\Matlab command {\tt eig(C)}, which yields:
+\begin{verbatim}
+ans =
+   -4.0000
+  -12.0000
+   -8.0000
+  -16.0000
+\end{verbatim}
+In order to find the matrix $S$, either use the {\tt null} command to
+find the eigenvectors of $C$ individually, or type
+{\tt [S,D] = eig(C)} to obtain the matrix $S$ and the diagonal matrix
+$D = S^{-1}CS$:
+\begin{verbatim}
+S =
+    0.5314   -0.5547    0.0000    0.4082
+   -0.4871    0.5547   -0.4082   -0.8165
+    0.6199   -0.5547    0.8165    0.4082
+   -0.3100    0.2774   -0.4082    0.0000
+
+D =
+   -4.0000         0         0         0
+         0  -12.0000         0         0
+         0         0   -8.0000         0
+         0         0         0  -16.0000
+\end{verbatim}
+
+\end{solution}
+\end{exercise}
+\end{document}

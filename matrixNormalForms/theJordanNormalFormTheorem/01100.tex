@@ -1,0 +1,212 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\CEXER
+
+\noindent In Exercises~\ref{E:jnfma} -- \ref{E:jnfme}, (a) determine the real
+Jordan normal form for the given matrix $A$, and (b) find the matrix $S$ so 
+that $S\inv AS$ is in real Jordan normal form.  
+\begin{exercise}  \label{E:jnfma}
+\begin{matlabEquation}\label{jordan-form-exercise}
+A = \left(\begin{array}{rrrr} -3 & -4 & -2 & 0\\
+-9 & -39 & -16 & -7\\ 18 & 64 & 27 & 10 \\ 15 & 86 & 34 & 18
+\end{array}\right). 
+\end{matlabEquation}
+
+\begin{solution}
+
+(a) \ans The Jordan normal form of $A$ is
+\[
+J = \left(\begin{array}{rrrr}
+3 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & -1 \end{array}\right).
+\]
+
+\soln
+To find the Jordan normal form of matrix $A$, type {\tt eig(A)} to find
+the eigenvalues.  Matrix $A$ has four distinct eigenvalues, so the
+Jordan normal form is the diagonal matrix with these eigenvalues along
+its diagonal.  
+
+(b)\ans   The diagonalizing matrix is
+\begin{verbatim}
+S =
+   -0.1387   -0.1543   -0.0000   -0.5774
+    0.1387   -0.3086   -0.4082    0.0000
+    0.1387    0.9258    0.8165    0.5774
+   -0.9707   -0.1543    0.4082   -0.5774
+\end{verbatim}
+
+\soln The columns of matrix $S$ consist of the eigenvectors of $A$.
+
+
+\end{solution}
+\end{exercise}
+\begin{exercise}  \label{E:jnfmb}
+\begin{matlabEquation}\label{jordan-form-exercise-2}
+A =\left(\begin{array}{rrrr} 9 & 45 & 18 & 8\\
+0 & -4 & -1 & -1\\ -16 & -69 & -29 & -12 \\ 25 & 123 & 49 & 23
+\end{array}\right). 
+\end{matlabEquation}
+
+\begin{solution}
+
+(a) \ans The Jordan normal form of $A$ is
+\[
+J = \left(\begin{array}{rrrr}
+2 & 0 & 0 & 0 \\
+0 & -1 & 1 & 0 \\
+0 & 0 & -1 & 1 \\
+0 & 0 & 0 & -1 \end{array}\right).
+\]
+
+\soln Type {\tt eig(A)} to find the eigenvalues of matrix $A$.  Not all
+eigenvalues are simple, so type {\tt null(A - lambda*eye(4))} for each
+eigenvalue $\lambda$ to find the number of linearly independent eigenvectors
+associated to it.  Matrix $A$ has a simple eigenvalue at $2$, and
+an eigenvalue at $-1$ with algebraic multiplicity 3 and one linearly
+independent eigenvector.
+
+(b) \ans   The diagonalizing matrix is
+\begin{verbatim}
+S =
+   -0.1387   -0.5902   -1.0165   -0.9837
+    0.1387    0.0000   -0.5902    0.1640
+    0.1387    0.5902    2.1970    0.0656
+   -0.9707   -0.5902   -0.4263    0.0328
+\end{verbatim}
+
+\soln The first column of $S$ is $v_1$, the eigenvector associated with
+eigenvalue $2$.  To find the other columns, note that the nullity of
+$(A + I_4)$ is 1, the nullity of $(A + I_4)^2$ is 2, and the nullity of
+$(A + I_4)^3$ is 3.  Then, select one vector from $\null((A + I_4)^3)$
+and label it $v_{23}$.  Set $v_{22} = (A + I_4)v_{23}$ and
+$v_{21} = (A + I_4)^2v_{23}$.  Then, $S = (v_1|v_{21}|v_{22}|v_{23})$.
+
+\end{solution}
+\end{exercise}
+\begin{exercise}  \label{E:jnfmc}
+\begin{matlabEquation}\label{jordan-form-exercise-3}
+A = \left(\begin{array}{rrrr} -5 & -13 & 17 & 42\\
+-10 & -57 & 66 & 187\\ -4 & -23 & 26 & 77 \\ -1 & -9 & 9 & 32
+\end{array}\right).  
+\end{matlabEquation}
+
+\begin{solution}
+
+(a) \ans The Jordan normal form of $A$ is
+\[
+J = \left(\begin{array}{rrrr}
+ 0 & 2 &  0 &  0 \\
+-2 & 0 &  0 &  0 \\
+ 0 & 0 & -2 &  1 \\
+ 0 & 0 & -1 & -2 \end{array}\right).
+\]
+
+\soln Type {\tt eig(A)} to find that matrix $A$ has distinct eigenvalues
+at $\pm 2i$ and $2 \pm i$.
+
+(b) \ans   The diagonalizing matrix is
+\begin{verbatim}
+T =
+   -0.2118   -0.0456    0.2211    0.0060
+   -0.8548   -0.2507    0.8762    0.1803
+   -0.3555   -0.0988    0.3529    0.0669
+   -0.1437   -0.0531    0.1440    0.0344
+\end{verbatim}
+
+\soln The columns of matrix $S$ consist of the eigenvectors of $A$.
+
+
+\end{solution}
+\end{exercise}
+\begin{exercise}  \label{E:jnfmd}
+\begin{matlabEquation}\label{jordan-form-exercise-4}
+A = \left(\begin{array}{rrrr} 1 & 0 & -9 & 18 \\
+12 & -7 & -26 & 77\\ 5 & -2 & -13 & 32 \\ 2 & -1 & -4 & 11
+\end{array}\right). 
+\end{matlabEquation}
+
+\begin{solution}
+
+(a) \ans The Jordan normal form of $A$ is
+\[
+J = \left(\begin{array}{rrrr}
+-2 & 1 & 0 & 0 \\
+0 & -2 & 0 & 0 \\
+0 & 0 & -2 & 1 \\
+0 & 0 & 0 & -2 \end{array}\right).
+\]
+
+\soln
+Type {\tt eig(A)} to find that $-2$ is the only eigenvalues of $A$.  Then 
+type {\tt null(A + 2*eye(4))} to find the number of linearly
+independent eigenvectors associated to eigenvalue $\lambda = -2$.  
+The eigenvalue has algebraic multiplicity $4$ and geometric multiplicity
+$2$.  We then find that the nullity of $(A + 2I_4)^2$ is $4$. 
+Therefore, all generalized eigenvectors $v$ of $D$ are in the null space
+of $A + 2I_4$.
+
+(b) \ans   The diagonalizing matrix is
+\begin{verbatim}
+S =
+     3     1     0     0
+    12     0    -5     1
+     5     0    -2     0
+     2     0    -1     0
+\end{verbatim}
+
+\soln To find $S$, find that $A$ has two linearly independent
+eigenvectors associated to $-2$, and that the null space
+of $(A + 2I_4)$ is $\R^4$.  Then, select two vectors in $\R^4$, in this
+case $v_{12} = (1,0,0,0)^t$ and $v_{22} = (0,1,0,0)^t$, and set
+$v_{11} = (A + 2I_4)v_{12}$ and $v_{21} = (A + 2I_4)v_{22}$.  Then,
+$S = (v_{11}|v_{12}|v_{21}|v_{22})$.
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{E:jnfme}
+\begin{matlabEquation}\label{jordan-form-exercise-5}
+A = \left(\begin{array}{rrrr} 
+    -1  &  -1  &   1   &  0\\
+    -3  &   1  &   1   &  0\\
+    -3  &   2  &  -1   &  1\\
+    -3  &   2  &   0   &  0
+ \end{array}\right). 
+\end{matlabEquation}
+
+\begin{solution}
+
+(a) \ans The Jordan normal form of $A$ is
+\[
+J = \left(\begin{array}{rrrr}
+-1 &  1 &  0 & 0 \\
+0  & -1 &  1 & 0 \\
+0  &  0 & -1 & 0 \\
+0  &  0 &  0 & 1 \end{array}\right).
+\]
+
+(b) \ans  The diagonalizing matrix is
+\begin{verbatim}
+S =
+    -1     1     0     0
+    -1     1     0     1
+    -1     0     1     1
+    -1     0     0     1
+\end{verbatim}
+
+\soln To find $S$, use \Matlab to see that $A$ has two eigenvalues: $-1$ of
+algebraic multiplicity three and $2$ of multiplicity one.  The geometric 
+multiplicity of $-1$ is one.  Just type {\tt null(A+eye(4))} to see that 
+$(1,1,1,1)$ is the only eigenvector corresponding to this eigenvalue.  Choose 
+{\tt v3} in the null space of $(A+I_4)^3$ but not in the null space of 
+$(A+I_4)^2$.  For example let {\tt v3 = [0 0 1 0]'}.  Then set 
+{\tt v2 = (A+eye(4))*v3} and {\tt v1 = (A+eye(4))*v2}.  Finally, set 
+{\tt v4 = null(A-2*eye(4))} and {\tt S = [v1 v2 v3 v4]}.
+
+\end{solution}
+\end{exercise}
+\end{document}

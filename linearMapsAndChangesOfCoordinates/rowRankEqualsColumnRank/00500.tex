@@ -1,0 +1,30 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c5.8.4}
+Let $A$ be a nonzero $3\times 3$ matrix such that $A^2=0$.  Show that
+$\rank(A)=1$.
+
+\begin{solution}
+
+Since $A$ is a nonzero $3 \times 3$ matrix, $\rank(A)$ can equal $1$,
+$2$, or $3$.  If $\rank(A) = 3$, then $A$ is invertible, so there
+exists a matrix $B$ such that $AB = I_3$.  Then $A^2B^2 = AABB = I_3$,
+so $\rank(A^2) = 3$, which contradicts the assumption that $A^2 = 0$.
+Therefore, $\rank(A) \neq 3$.
+
+\para Let $\rank(A) = 2$ and let $v_1$ and $v_2$ be linearly independent
+vectors such that $Av_1 \neq 0$ and $Av_2 \neq 0$.  By
+Theorem~\ref{T:dimsoln}, the nullity of $A$ is $1$.  However,
+$A^2v = 0$ for all vectors $v$.  In particular,
+\[
+A^2v_1 = A(Av_1) = 0 \AND A^2v_2 = A(Av_2) = 0.
+\]
+Since there are linearly independent vectors $Av_1$ and $Av_2$ such
+that $A(Av_1) = A(Av_2) = 0$, $\null(A) \geq 2$, contradicting
+Theorem~\ref{T:dimsoln}.  Thus, $\rank(A) \neq 2$, so, by elimination
+$\rank(A) = 1$.
+
+\end{solution}
+\end{exercise}
+\end{document}

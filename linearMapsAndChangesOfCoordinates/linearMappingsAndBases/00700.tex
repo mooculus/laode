@@ -1,0 +1,30 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c7.2.3}
+Let $\C$ denote the set of complex numbers.  Verify that
+$\C$ is a two-dimensional vector space.  Show that $L:\C\to\C$
+defined by
+\[
+L(z) = \lambda z,
+\]
+where $\lambda=\sigma+i\tau$ is a linear mapping.
+
+\begin{solution}
+
+The space $\C$ is a two dimensional real vector space since every
+element of $\C$ can be written as $c = \sigma + \tau i$, a linear
+combination of the linearly independent two dimensional set $\{1,i\}$.
+
+\para Let $z_1$ and $z_2$ be elements of $\R$.  Then,
+\[ L(z_1 + z_2) = \lambda(z_1 + z_2) =
+\lambda z_1 + \lambda z_2 = L(z_1) + L(z_2). \]
+For any real scalar $c$,
+\[ L(cz_1) = \lambda(cz_1) = 
+c\lambda z_1 = cL(z_1). \]
+Therefore, $L(z) = \lambda z$ is a linear mapping.
+
+
+\end{solution}
+\end{exercise}
+\end{document}

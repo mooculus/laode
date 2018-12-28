@@ -1,0 +1,31 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise}  \label{c4.2.5}
+The matrix 
+\[
+A = \mattwo{0}{-1}{-1}{0}
+\]
+reflects the $xy$-plane across the diagonal line $y=-x$ while the matrix
+\[
+B=\mattwo{-1}{0}{0}{-1}
+\]
+rotates the plane through an angle of $180^\circ$. Using the program 
+{\sf map} verify that both matrices map the vector $(1,1)$ to its negative
+$(-1,-1)$.  Now perform two experiments.  First, choose the {\sf dog} icon 
+and move that dog by the matrix $A$.  Second, move that dog using the 
+matrix $B$.  Describe the difference in the result.
+
+\begin{solution}
+Both matrices map the dog to near the point $(-1,-1)$ but the
+orientation of the dog is different in the two cases.  See 
+Figure~\ref{c4.2.5}.
+\begin{figure}[htb]
+     \centerline{%
+     \psfig{file=exfigure/fig3-2-26a.eps,width=2.5in}\hspace*{-0.6in}
+     \psfig{file=exfigure/fig3-2-26b.eps,width=2.5in}}
+        \exercaptwo{c4.2.5}
+\end{figure} 
+\end{solution}
+\end{exercise}   
+\end{document}

@@ -1,0 +1,36 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c12.2.a6}
+Find a solution to the differential equation 
+\[
+\ddot{x} -3\dot{x} + 2x = 0
+\]
+satisfying $x(0)=0$ and $x(\ln 2) = 4$.
+
+\begin{solution}
+\ans The solution to the given initial value problem is
+\[
+x(t) = 2e^{2t} - 2e^t.
+\]
+\soln Find the roots of the characteristic polynomial
+\[
+p(\lambda) = \lambda^2 - 3\lambda + 2 = (\lambda - 2)(\lambda - 1).
+\]
+So the eigenvalues are $\lambda_1 = 2$ and $\lambda_2 = 1$.  Each eigenvalue
+has multiplicity 1, so the general solution is
+\[
+x(t) = \alpha_1e^{2t} + \alpha_2e^t.
+\]
+Substitute the given initial conditions into $x(t)$:
+\[
+\begin{array}{rcl}
+0 & = & x(0) = \alpha_1 + \alpha_2 \\
+4 & = & x(\ln 2) = 4\alpha_1 + 2\alpha_2.
+\end{array}
+\]
+Solve this system to obtain $\alpha_1 = 2$ and $\alpha_2 = -2$.
+
+\end{solution}
+\end{exercise}
+\end{document}

@@ -1,0 +1,59 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+
+\CEXER
+
+\noindent In Exercises~\ref{c3.1.a78a} -- \ref{c3.1.a78d} use \Matlab
+to graph the given function $f$ on the specified interval.
+\begin{exercise} \label{c3.1.a78a}
+$f(t) = t^2$ on the interval $t\in [0,2]$.
+
+\begin{solution}
+
+\ans The graph is shown in Figure~\ref{c3.1.a78a}.
+
+\soln Graph the function $f(t) = t^2$ using the following \Matlab commands:
+\begin{verbatim}
+t = linspace(0,2,100); x = t.*t; plot(t,x)
+\end{verbatim}
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c3.1.a78b}
+$f(t) = e^t-t$ on the interval $t\in [0,3]$.
+
+\begin{solution}
+The graph is shown in Figure~\ref{c3.1.a78b}.
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c3.1.a78c}
+$f(t) = \cos(2t)-t$ on the interval $t\in [2,8]$.
+
+\begin{solution}
+The graph is shown in Figure~\ref{c3.1.a78c}.
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c3.1.a78d}
+$f(t) = \sin(5t)$ on the interval $t\in [0,6.5]$.
+
+\begin{solution}
+The graph is shown in Figure~\ref{c3.1.a78d}.
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/3-1-a78a.eps,width=1.35in}
+                       \psfig{file=exfigure/3-1-a78b.eps,width=1.35in}
+                       \psfig{file=exfigure/3-1-a78c.eps,width=1.35in}
+                       \psfig{file=exfigure/3-1-a78d.eps,width=1.35in}}
+	\centerline{Figure~\ref{c3.1.a78a}\hspace{0.8in}
+	Figure~\ref{c3.1.a78b}\hspace{0.8in}Figure~\ref{c3.1.a78c}
+	\hspace{0.8in}Figure~\ref{c3.1.a78d}}
+\end{figure}
+
+\end{solution}
+\end{exercise}
+\end{document}

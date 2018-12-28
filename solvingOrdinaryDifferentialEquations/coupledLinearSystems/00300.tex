@@ -1,0 +1,35 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c3.5.2}
+Choose the {\sf linear system} in {\pplane} and set
+$a=-1$, $c=3$, and $d=-1$.
+Then find a value for $b$ such that the behavior of the
+solutions of the system is ``qualitatively'' the same as for a
+diagonal system where $a$ and $d$ are negative.  In particular,
+the origin should be an asymptotically stable equilibrium and
+the solutions should approach that equilibrium along a
+distinguished line.
+
+\begin{solution}
+
+\ans The solutions are similar to those for a diagonal system when
+$B = 0$.
+
+\soln At this value of $B$, the origin is a stable equilibrium, and the
+solutions approach the origin tangent to the line $x = 0$.  When $B < 0$,
+the graph is a spiral, so the solutions do not approach the origin along
+a distinguished line.  When $B > 0$, the origin is a saddle rather
+than a sink; that is, the origin is not an asymptotically stable
+equilibrium.  Figure \ref{c3.5.2} shows five sample trajectories
+for the system, two of which begin on the $y$-axis.
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/3-5-2.eps,width=3.0in}}
+			\exercap{c3.5.2}	
+\end{figure}
+
+\end{solution}
+\end{exercise}
+\end{document}

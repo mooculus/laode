@@ -1,0 +1,67 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c12.5.2}
+The following equation describes the behavior of a damped 
+spring\index{spring!damped} that is 
+forced periodically\index{forcing!periodic}:
+\[
+\ddot x + 2\dot x + 2x = \sin(2t).
+\]
+Find real constants $\gamma$ and $\delta$ so that
+\[
+x_p(t) = \gamma \cos(2t)+ \delta \sin(2t),
+\]
+is a particular solution of this second order equation.  Write down the
+general solution and discuss the behavior of solutions if time $t$
+is going to infinity.
+
+\begin{solution}
+\ans When $\gamma = -\frac{1}{5}$ and $\delta = -\frac{1}{10}$,
+$x_p(t)$ is a solution to the second order equation.  The general solution
+is
+\[
+x(t) = \alpha_1e^{-t}\cos t + \alpha_2e^{-t}\sin t
+- \frac{1}{5}\cos(2t) - \frac{1}{10}\sin(2t).
+\]
+As $t \rightarrow \infty$, $x(t)$ approaches the periodic solution
+\[
+- \frac{1}{5}\cos(2t) - \frac{1}{10}\sin(2t).
+\]
+Figure~\ref{c12.5.2} shows $x(t)$ for $0 \leq t \leq 15$ with scalars
+$\alpha_1 = 5$ and $\alpha_2 = -2$.
+
+\soln Let $p(D) = D^2 + 2D + 2$ and let $g(t) = \sin(2t)$.  An annihilator
+of $g(t)$ is $q(D) = D^2 + 4$.  The eigenvalue $\mu = \pm 2i$ of
+$q(D)x = 0q$ is distinct from the eigenvalue $\lambda = -1 \pm i$ of
+$p(D)x = 0$.  Thus, the trial space of solutions to $p(D)x = g(t)$ is
+\[
+y(t) = \gamma\cos(2t) + \delta\sin(2t).
+\]
+Substitute $y(t)$ into $p(D)x = g(t)$, obtaining
+\[
+\gamma(-2\cos(2t) - 4\sin(2t)) + \delta(-2\sin(2t) + 4\cos(2t)) = \sin(2t).
+\]
+Solve this system to obtain $\gamma = -\frac{1}{5}$ and
+$\delta = -\frac{1}{10}$.  Obtain the general solution to the inhomogeneous
+equation by adding this solution to the general solution to $p(D)x = 0$,
+which is
+\[
+z(t) = \alpha_1e^{-t}\cos t + \alpha_2e^{-t}\sin t.
+\]
+To find the long term behavior of $x(t)$, note that
+\[
+\lim_{t \rightarrow \infty}e^{-t} = 0.
+\]
+Thus, as $t$ increases, the homogeneous solution damps to zero. 
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/12-5-2.eps,width=3.0in}}
+                \exercap{c12.5.2}
+\end{figure}
+
+
+\end{solution}
+\end{exercise}
+\end{document}

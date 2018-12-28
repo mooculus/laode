@@ -1,0 +1,39 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c10.2.4}
+Consider the matrix $A=\mattwo{8}{5}{-10}{-7}$.
+\begin{itemize}
+\item[(a)] Find the eigenvalues and eigenvectors of $A$.
+\item[(b)] Show that the eigenvectors found in (a) form a basis for $\R^2$.
+\item[(c)] Find the coordinates of the vector $(x_1,x_2)$ relative to the 
+basis in part (b).
+\end{itemize}
+
+\begin{solution}
+
+(a) \ans The eigenvalues of $A$ are $\lambda_1 = 3$ and $\lambda_2 = -2$,
+with corresponding eigenvectors $v_1 = (1,-1)^t$ and
+$v_2 = (1,-2)^t$, respectively.
+
+\soln The characteristic polynomial is $p_A(\lambda) =
+\lambda^2 - \lambda - 6 = (\lambda - 3)(\lambda + 2)$.  Then, solve
+$Av = \lambda v$ for each eigenvalue to find the corresponding eigenvectors.
+
+(b) Two linearly independent vectors in $\R^2$ form a basis for $\R^2$.
+Note that $v_1 \neq \alpha v_2$ for any scalar $\alpha$.  Therefore,
+$v_1$ and $v_2$ form a basis for $\R^2$.
+
+(c) \ans The coordinates of $(x_1,x_2)$ in the basis $\{v_1,v_2\}$ are
+$(2x_1 + x_2, -x_1 - x_2)$. 
+
+\soln Find $\alpha_1$ and $\alpha_2$ such that $\alpha_1v_1 +
+\alpha_2v_2 = (x_1,x_2)^t$.  That is, solve:
+\[
+\mattwo{1}{1}{-1}{-2}\vectwo{\alpha_1}{\alpha_2} = \vectwo{x_1}{x_2}
+\]
+to obtain $\alpha_1 = 2x_1 + x_2$ and $\alpha_2 = -x_1 - x_2$.
+
+\end{solution}
+\end{exercise}
+\end{document}

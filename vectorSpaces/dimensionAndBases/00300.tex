@@ -1,0 +1,29 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c5.5.2}
+Let $S=\Span\{v_1,v_2,v_3\}$ where
+\[
+v_1=(1,0,-1,0) \quad v_2=(0,1,1,1) \quad v_3=(5,4,-1,4).
+\]
+Find the dimension of $S$ and find a basis for $S$.
+
+\begin{solution}
+
+\ans The dimension of $S$ is 2, and vectors $v_1$ and $v_2$ form a
+basis for $S$.
+
+\soln Row reduce the matrix $A$ whose rows are $v_1$, $v_2$, and $v_3$. 
+By Lemma~\ref{extendindep}, the number
+of nonzero rows in the reduced matrix is the dimension of $S$ and these
+rows form a basis for $S$.  So:
+\[
+\left(\begin{array}{rrrr} 1 & 0 & -1 & 0 \\ 0 & 1 & 1 & 1 \\ 5
+& 4 & -1 & 4 \end{array}\right) \longrightarrow \left(\begin{array}
+{rrrr} 1& 0 & -1 & 0 \\ 0 & 1 & 1 & 1 \\ 0 & 0 & 0 & 0
+\end{array}\right).
+\]
+
+\end{solution}
+\end{exercise}
+\end{document}

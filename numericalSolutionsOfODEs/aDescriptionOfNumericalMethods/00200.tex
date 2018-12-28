@@ -1,0 +1,44 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c15.1.1}
+Consider the initial value problem
+\[
+\begin{array}{rcl}
+\dps\frac{dx}{dt}(t) & = & -2 \\
+x(t_0) & = & 0.
+\end{array}
+\]
+Show that in this case an application of Euler's method 
+leads to exact results for all step sizes $h$,
+that is $x_k=x(t_k)$ for all $k$.
+
+\begin{solution}
+The solution to the initial value problem is
+$x(t)=-2(t-t_0)$.  On the other hand, an application of Euler's method
+with step size $h$ leads to
+\[
+\begin{array}{rcl}
+x_0 & = & 0 \\
+x_{k+1} & = & x_k + h (-2) = x_k - 2h\\
+t_k & = & t_0 + kh.
+\end{array}
+\]
+Hence
+\[
+\begin{array}{rcl}
+x_0 & = & 0\\
+x_1 & = & -2h\\
+x_2 & = & -4h\\
+ & \vdots & \\
+x_k & = & -2kh,
+\end{array}
+\]
+and
+\[
+x(t_k) = -2(t_k-t_0) = -2kh = x_k.
+\]
+
+\end{solution}
+\end{exercise}
+\end{document}

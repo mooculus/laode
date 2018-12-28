@@ -1,0 +1,30 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c4.1.3}
+Let
+\[
+C = \mattwo{1}{1}{2}{-1} \AND b = \vectwo{1}{1}.
+\]
+Find a $2$-vector $z$ such that $Cz=b$.
+
+\begin{solution}
+
+\ans The equation $Cz = b$ is valid for $z = (\frac{2}{3},\frac{1}{3})^t$.
+
+\soln Let $z = (z_1,z_2)^t$.  Then $Cz = b$ implies
+\[
+\left(\begin{array}{rr} 1 & 1 \\ 2 & -1\end{array}\right)
+\left(\begin{array}{r} z_1 \\ z_2\end{array}\right) =
+\left(\begin{array}{r} 1 \\ 1\end{array}\right)
+\]
+which can be multiplied out, yielding the linear system
+\[\begin{array}{rrrrl}
+z_1 & + & z_2 & = & 1 \\
+2z_1 & - & z_2 & = & 1.\end{array} \]
+This system can be solved by substitution to obtain $z_1 =
+\frac{2}{3}$ and $z_2 = \frac{1}{3}$.
+
+\end{solution}
+\end{exercise}
+\end{document}

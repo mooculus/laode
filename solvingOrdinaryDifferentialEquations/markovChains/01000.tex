@@ -1,0 +1,36 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c4.10.8}
+Suppose that the probability that it will rain in the morning in $p=0.3$ and
+the probability that it will rain in the afternoon is $q=0.25$.  In the man
+with umbrellas example, what is the probability that the man will be at home
+with no umbrellas while it is raining?
+
+\begin{solution}
+
+\ans The probability that the man will be at home in the morning with
+no umbrella while it is raining is $7.19\%$. 
+
+\soln Create the matrix $P$ which relates the number of umbrellas in the
+house in the morning to the number in the house in the afternoon and the
+matrix $Q$ which relates the number of umbrellas in the house in the
+afternoon to the number there the next morning, then compute {\tt R = P*Q}:
+\begin{verbatim}
+R =
+    0.7500    0.2500         0         0         0
+    0.2250    0.6000    0.1750         0         0
+         0    0.2250    0.6000    0.1750         0
+         0         0    0.2250    0.6000    0.1750
+         0         0         0    0.2250    0.7750
+\end{verbatim}
+Find the eigenvector $V$ of $R$ by computing $(R^t)^k$ for large values
+of $k$.  The first element of $V$ is $0.2398$, the probability that there
+will be no umbrella in the house on a given morning.  Multiply this
+value by the probability that it will rain on any given morning to get
+the probability that the man will have no umbrella on a rainy morning.
+
+
+\end{solution}
+\end{exercise}
+\end{document}

@@ -1,0 +1,76 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c11.3.2A}
+Verify that $x(t) = e^{\frac{1}{2}(t^2-4)}$ is a solution to the initial 
+value problem
+\[
+\begin{array}{rcl}
+\dot{x} & = & tx \\
+x(2) & = & 1.
+\end{array}
+\]
+Use {\tt ode45} to compute the solution to this initial value problem on the
+interval $[2,3]$ to within an accuracy $10^{-6}$ and graphically compare this 
+answer with the graph of the exact solution.  Find the values $x(2.5)$ and
+$x(2.75)$.  {\bf Hint}: Set the exact times $t$ where the ODE solver 
+evaluates time by the command {\tt tspan = 2:0.01:3;} and insert {\tt tspan}
+instead of the interval {\tt [2,3]} in {\tt ode45}.  Use {\tt help ode45} in 
+\Matlab for additional information. 
+
+\begin{solution}
+
+To show that $y(t)=e^{(t^2-4)/2}$ is a solution to the differential equation
+$\dot{x}=tx$ with initial value $x(2)=1$, evaluate $y(2)=e^0=1$ and
+differentiate
+\[
+\frac{dy}{dt} = e^{(t^2-4)/2}\frac{d}{dt}((t^2-4)/2) = 
+e^{(t^2-4)/2}t = ty.
+\]
+
+To establish the accuracy of {\tt ode45} numerically, begin by creating the 
+m-file to evaluate $f(t,x)=tx)$:
+\begin{verbatim}
+function f = ftx(t,x)
+f = t*x;
+\end{verbatim}
+Then set the options in {\sf ode45} so that the absolute and relative
+tolerances are at $10^{-6}$:
+\begin{verbatim}
+options = odeset('RelTol',1e-6,'AbsTol',1e-6);
+\end{verbatim}
+Then integrate the differential equation with the commands:
+\begin{verbatim}
+tspan = 2:0.01:3;
+[t,x] = ode45('ftx',tspan,[1],options);
+\end{verbatim}
+The graph of $x(t)$ obtained by typing {\tt plot(t,x)} is shown in
+Figure~\ref{c11.3.2A}a.  The plot of the theoretically exact solution
+is shown in Figure~\ref{c11.3.2A}b and is obtained by typing
+\begin{verbatim}
+clf
+y = exp((t.^2-4)/2);
+plot(t,y)
+\end{verbatim}
+Note that the two figures are identical.  To evaluate $x(2.5)$ and $x(2.75)$,
+note that {\tt t(51) = 2.5} and {\tt t(76) = 2.75}.  Using {\tt format long}, 
+we evaluate {\tt x(51)}, {\tt y(51)}, {\tt x(76)}, {\tt y(76)} obtaining
+
+\begin{verbatim}
+x(51) = 3.08021795611640  and  y(51) = 3.08021684891803
+x(76) = 5.93727630788575  and  y(76) = 5.93727337374561
+\end{verbatim}
+Note that the two function values are equal to an error of less than 
+$10^{-5}$.
+
+\begin{figure}[htb]
+     \centerline{%
+     \psfig{file=exfigure/fig3_8a.eps,width=2.75in}
+     \psfig{file=exfigure/fig3_8b.eps,width=2.75in}}
+	\exercaptwo{c11.3.2A}
+\end{figure} 
+
+
+\end{solution}
+\end{exercise}
+\end{document}

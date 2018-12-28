@@ -1,0 +1,24 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise}  \label{c7.9.45}
+Prove that the rows of an $n\times n$ orthogonal matrix form an orthonormal
+basis for $\R^n$.
+
+\begin{solution}
+
+Let $A$ be an orthogonal matrix.  By
+Definition~\ref{def:orthmat}, the columns of $A$ form an orthonormal
+basis for $\R^n$.  We must show that the rows of $A$ also form an
+orthonormal basis for $\R^n$.  By Lemma~\ref{lem:orthprop}(b), $A^t =
+A^{-1}$.  From this, we can show
+\[
+I_n = AA^{-1} = AA^t = (A^t)^t(A^t).
+\]
+Thus, by Lemma~\ref{lem:orthprop}(a), $A^t$ is an orthogonal matrix;
+so the columns of $A^t$, which are the rows of $A$, form an orthonormal
+basis for $\R^n$.
+
+\end{solution}
+\end{exercise}
+\end{document}

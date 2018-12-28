@@ -1,0 +1,25 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c6.2.2}
+Use \Matlab to compute the matrix exponential $e^{tC}$ for
+\[
+     C =\mattwo{1}{1}{2}{-1}
+\]
+by choosing for $t$ the values $1.0,1.5$ and $2.5$.  Does $e^{C}
+e^{1.5C}=e^{2.5C}$?
+
+\begin{solution}
+
+Enter {\tt C} into \Matlab, then use {\tt expm} to obtain
+\begin{verbatim}
+expm(C) =                 expm(1.5*C) =              expm(2.5*C) =
+    4.4952    1.5806          10.6138    3.8577          59.9058   21.9222
+    3.1612    1.3340           7.7154    2.8984          43.8444   16.0613
+\end{verbatim}
+Typing {\tt expm(C)*expm(1.5*C)} confirms that $e^Ce^{1.5C} =
+e^{2.5C}$ is indeed valid.
+
+\end{solution}
+\end{exercise}
+\end{document}

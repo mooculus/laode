@@ -1,0 +1,30 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c10.3.4}
+Let $A$ and $B$ be similar $n\times n$ matrices.
+\begin{itemize}
+\item[(a)]  Show that if $A$ is invertible, then $B$ is invertible.
+\item[(b)]  Show that $A+A\inv$ is similar to $B+B\inv$.
+\end{itemize}
+
+\begin{solution}
+
+(a) Let $B = P^{-1}AP$ be a matrix similar to some invertible matrix $A$.
+Then 
+\[
+B^{-1} = (P^{-1}AP)^{-1} = P^{-1}A^{-1}(P^{-1})^{-1} = P^{-1}A^{-1}P.
+\]
+Since $A^{-1}$ exists, $B^{-1}$ exists also.
+
+(b) If $B = P^{-1}AP$, then $B^{-1} = (P^{-1}AP)^{-1} = P^{-1}A^{-1}P$.
+Therefore,
+\[
+B + B^{-1} = P^{-1}AP + P^{-1}A^{-1}P = P^{-1}(A + A^{-1})P
+\]
+since matrix multiplication is associative.  Therefore, $A + A^{-1}$ is
+similar to $B + B^{-1}$.
+
+\end{solution}
+\end{exercise}
+\end{document}

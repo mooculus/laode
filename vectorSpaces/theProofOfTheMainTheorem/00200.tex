@@ -1,0 +1,37 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c5.7.2}
+The pairs of vectors
+\[
+     v_1=(-1,1,0) \AND v_2=(1,0,1)
+\]
+span a plane $P$ in $\R^3$.  The pairs of vectors
+\[
+        w_1=(0,1,0) \AND w_2=(1,1,0)
+\]
+span a plane $Q$ in $\R^3$.  Show that $P$ and $Q$
+are different and compute the subspace of $\R^3$ that
+is given by the intersection $P\cap Q$.
+
+\begin{solution}
+
+\ans The intersection of the planes is $P \cap Q = s(1,-1,0)$ for any
+real scalar $s$.
+
+\soln The planes $P$ and $Q$ are not equal if the normal vectors $P_N$
+and $Q_N$ point in different directions.  Solving by row reduction
+yields $P_N = (-1,-1,1)$ and $Q_N = (0,0,1)$, so $P \neq Q$.
+
+\para Since $P$ and $Q$ are not the same plane and also are not
+parallel, they intersect in a line.  The intersection $P \cap Q$ is
+the simultaneous solutions to the equations for planes $P$ and $Q$,
+that is:
+\[ \begin{array}{rrrrrrl}
+-x & - & y & + & z & = & 0 \\
+& & & & z & = & 0. \end{array} \]
+Solve by row reduction or substitution to obtain $x = -y$ and $z = 0$.
+
+\end{solution}
+\end{exercise}
+\end{document}

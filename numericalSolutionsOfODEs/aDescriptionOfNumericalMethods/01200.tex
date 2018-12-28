@@ -1,0 +1,98 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c15.1.9}
+Use \Matlab to solve the initial value problem
+\arraystart
+\[
+\begin{array}{rcl}
+\dps \frac{dx}{dt} & = & -y\\
+\dps \frac{dy}{dt} & = & x,
+\end{array}
+\]
+\arrayfinish
+where $(x(1),y(1))= (1,0)$.  Find an approximation 
+on the interval $[0,12]$ with a step size $h=0.1$ using 
+\begin{itemize}
+\item[(a)] Euler's method;
+\item[(b)] the implicit Euler method.
+\end{itemize}
+Write down the explicit solution of the initial
+value problem and compare this with the numerical
+results.  
+
+\begin{solution}
+The exact solution of the initial value problem
+is given by $x(t) = \cos(t)$ and $y(t)=\sin(t)$.  Therefore the
+solution describes a circle in the phase plane.
+
+(a) Euler's method applied to the given initial value problem
+takes the form
+\[
+\begin{array}{rcl}
+\vectwo{x_{k+1}}{y_{k+1}} & = &
+\vectwo{x_k}{y_k} + h \vectwo{-y_k}{x_k}\\
+t_{k+1} & = & t_k + h.
+\end{array}
+\]
+Hence we can use the following \Matlab commands
+\begin{verbatim}
+h    = 0.1;
+t(1) = 0;
+x(1) = 1;
+y(1) = 0;
+K    = 120;
+for k = 1:K
+   t(k+1) = t(k)+h;
+   x(k+1) = x(k)-h*y(k);
+   y(k+1) = y(k)+h*x(k);
+end
+plot(x,y,'o')
+hold on
+plot(x,y,'--')
+\end{verbatim}
+to approximate the solution in the phase plane.  It can be observed
+that the approximation obtained by Euler's method is spiraling out
+rather than reproducing the circle.
+
+(b)  The implicit Euler method applied to the given initial value
+problem takes the form
+\[
+\begin{array}{rcl}
+\vectwo{x_{k+1}}{y_{k+1}} & = &
+\vectwo{x_k}{y_k} + h \vectwo{-y_{k+1}}{x_{k+1}}\\
+t_{k+1} & = & t_k + h.
+\end{array}
+\]
+We can solve these linear equations for $x_{k+1}$ and $y_{k+1}$ to obtain
+\[
+x_{k+1} = \frac{x_k-hy_k}{1+h^2} \AND
+y_{k+1} = \frac{y_k+hx_k}{1+h^2}.
+\]
+Hence we can use the following \Matlab commands
+\begin{verbatim}
+h    = 0.1;
+t(1) = 0;
+x(1) = 1;
+y(1) = 0;
+K    = 120;
+for k = 1:K
+   t(k+1) = t(k)+h;
+   x(k+1) = (x(k)-h*y(k))/(1+h*h);
+   y(k+1) = (y(k)+h*x(k))/(1+h*h);
+end
+plot(x,y,'o')
+hold on
+plot(x,y,'--')
+\end{verbatim}
+to approximate the solution in the phase plane.  It can be observed
+that the approximation obtained by the implicit Euler method is
+spiraling in rather than reproducing the circle.
+
+
+
+
+
+\end{solution}
+\end{exercise}
+\end{document}

@@ -1,0 +1,56 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c2.2.1}
+Use \Matlab to solve graphically the planar system of linear
+equations
+\[
+\arraycolsep 2pt
+\begin{array}{rcrcr}
+ x & + & 4y & = & -4 \\
+4x & + & 3y & = &  4
+\end{array}
+\]
+to an accuracy of two decimal points.
+
+{\bf Hint:} The \Matlab command {\tt zoom on}\index{\computer!zoom}
+allows us to
+view the plot in a window whose axes are one-half those of
+original.  Each time you click with the mouse on a point,
+the axes' limits are halved and centered at the designated
+point. Coupling {\tt zoom on} with {\tt grid on} allows you
+to determine approximate numerical values for the intersection
+point.
+
+\begin{solution}
+
+\ans $(x,y) \approx (2.15,-1.54)$.
+
+\soln In \Matlab, graph the system by typing:
+\begin{verbatim}
+x = linspace(-5,5,100);
+y = -1 - x/4;
+plot(x,y)
+xlabel('x')
+ylabel('y')
+hold on
+y = 4/3 - 4*x/3;
+plot(x,y)
+axis('equal')
+grid
+\end{verbatim}
+
+Using the {\tt zoom} command, we can zoom in on the graph of
+Figure~\ref{c2.2.1} until the intersection of the lines is
+visible at an accuracy of two decimal places.  
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/2-2-1a.eps,width=2.75in}
+                       \psfig{file=exfigure/2-2-1b.eps,width=2.75in}}
+		\exercaptwo{c2.2.1}
+\end{figure}
+
+\end{solution}
+\end{exercise}
+\end{document}

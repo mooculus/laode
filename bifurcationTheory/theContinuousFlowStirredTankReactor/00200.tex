@@ -1,0 +1,29 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise}  \label{E:CSTR5}
+Consider the CSTR equations \eqref{e:CSTR} with parameters 
+\eqref{e:CSTRparam}. Set $\rho=0.5$ and use 
+{\pplane}\index{\computer!pplane8} to verify 
+that there are two equilibria --- a low temperature nodal sink 
+and a middle temperature saddle-node equilibrium.  Then change 
+$\rho$ to $0.505$ and verify that the saddle-node has split 
+into two equilibria --- a saddle and a spiral source.
+
+\begin{solution}
+
+The system is shown in Figure~\ref{E:CSTR5}a with $\rho = 0.5$, and in
+Figure~\ref{E:CSTR5}b with $\rho = 0.505$.  Note that, due to rounding
+error, {\tt pplane5} may calculate the middle temperature equilibrium of
+the first system as a saddle rather than a saddle node.  
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/CSTR5a.eps,width=2.75in}
+                       \psfig{file=exfigure/CSTR5b.eps,width=2.75in}}
+                \exercaptwo{E:CSTR5}
+\end{figure}
+
+\end{solution}
+\end{exercise}
+\end{document}

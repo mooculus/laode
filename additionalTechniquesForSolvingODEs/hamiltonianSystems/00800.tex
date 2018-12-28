@@ -1,0 +1,46 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c14.7.11} 
+Consider the Hamiltonian  $H(x,y) = -\frac{1}{4}x^4 + \frac{1}{2}x^2 + y^2$.  
+Show that the associated Hamiltonian system has saddle points at $(\pm 1,0)$ 
+and heteroclinic trajectories connecting these saddle points.  {\bf Hint:} 
+Consider the level curve $H(x,y) = \frac{1}{4}$.\index{heteroclinic}
+
+\begin{solution}
+
+Note that this Hamiltonian system
+\begin{eqnarray*}
+\dot{x}& = & 2y\\
+\dot{y} &  =&  x^3 -x
+\end{eqnarray*}
+has three equilibria at $(\pm 1,0)$ and $(0,0)$.  The first two equilibria
+are on the level set $H= \frac{1}{4}$.  At these equilibria, the Jacobian
+matrix is
+\[
+J = \left.\cmattwo{0}{2}{3x^2-1}{0}\right|_{x^2=1} = 
+\cmattwo{0}{2}{2}{0}.
+\]
+Since $\det(J)=-4$, these equilibria are saddles.
+The equation for this level contour is: 
+\[
+y^2=\frac{1}{4}(x^2-1)=\frac{1}{4}(x-1)^2(x+1)^2.
+\]
+Therefore,
+\[
+y = \pm\frac{1}{2}|x-1||x+1|.
+\]
+Thus, two curves connect the saddle at $(-1,0)$ with the saddle at $(1,0)$.
+These are the heteroclinic trajectories. See
+Figure~\ref{c14.7.11} for the graph of this level set.
+
+\begin{figure}[htb]
+     \centerline{%
+      \psfig{file=exfigure/fig14-7-11.eps,width=3.0in}}
+         \exercap{c14.7.11}
+\end{figure} 
+ 
+
+\end{solution}
+\end{exercise}
+\end{document}

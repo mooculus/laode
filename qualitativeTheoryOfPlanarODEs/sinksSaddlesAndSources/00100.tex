@@ -1,0 +1,52 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\TEXER
+
+
+\noindent In Exercises~\ref{E:stabmata} -- \ref{E:stabmatc} determine
+whether or not the equilibrium at the origin in the system of differential
+equations $\dot{X}=CX$ is asymptotically stable.
+\begin{exercise} \label{E:stabmata}
+$C=\mattwo{1}{2}{4}{1}$.
+
+\begin{solution}
+\ans The origin is not asymptotically stable.
+
+\soln Theorem~\ref{C:asympstlin} states that the origin is a stable
+equilibrium only if all eigenvectors have negative real part.  The
+characteristic polynomial of $C$ is $p_C(\lambda) = \lambda^2 - 2\lambda
+- 5$.  Thus, the eigenvalues are $\lambda_1 = 1 + \sqrt{6}$ and
+$\lambda_2 = 1 - \sqrt{6}$. Since $\lambda_1 > 0$, the origin
+is not stable.
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{E:stabmatb}
+$C=\mattwo{-1}{2}{-4}{-1}$.
+
+\begin{solution}
+\ans The origin is asymptotically stable.
+
+\soln The characteristic polynomial of the matrix is $p_C(\lambda) =
+\lambda^2 + 2\lambda + 7$.  Thus, the eigenvalues are $\lambda_1 =
+-1 + 2\sqrt{2}i$ and $\lambda_2 = -1 - 2\sqrt{2}i$.  Both of these
+have negative real part, so the origin is stable.
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{E:stabmatc}
+$C=\mattwo{2}{1}{1}{-5}$.
+
+\begin{solution}
+\ans The origin is not asymptotically stable.
+
+\soln The characteristic polynomial of the matrix is $p_C(\lambda) =
+\lambda^2 - 3\lambda - 11$.  Thus, the eigenvalues are $\lambda_1 =
+\frac{3}{2} + \sqrt{53}$ and $\lambda_2 = \frac{3}{2} - \sqrt{53}$.
+Since $\lambda_1 > 0$, the origin is not stable.
+
+\end{solution}
+\end{exercise}
+\end{document}

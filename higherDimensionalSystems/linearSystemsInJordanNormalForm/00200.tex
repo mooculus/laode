@@ -1,0 +1,77 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c11.1.1}
+Find the solution to the system
+\begin{eqnarray*}
+\dot{x}_1 & = & 2x_1+x_2 \\
+\dot{x}_2 & = & 2x_2 \\
+\dot{x}_3 & = & x_3-x_4 \\
+\dot{x}_4 & = & x_3+x_4
+\end{eqnarray*}
+satisfying $X_0=(-1,1,2,-3)^t$.
+
+\begin{solution}
+\ans 
+\[
+X(t) =
+\left(\begin{array}{c}
+e^{2t}(t - 1) \\
+e^{2t} \\
+e^t(2\cos{t} + 3\sin{t}) \\
+e^t(2\sin{t} - 3\cos{t})
+\end{array}\right).
+\]
+
+\soln Write the system as the equation $\dot{X} = AX$, where
+\[
+A =
+\left(\begin{array}{rrrr}
+2 & 1 & 0 & 0 \\
+0 & 2 & 0 & 0 \\
+0 & 0 & 1 & -1 \\
+0 & 0 & 1 & 1
+\end{array}\right).
+\]
+Note that the matrix $A$ is in Jordan normal form, and has a double
+eigenvalue at $\lambda = 2$ and a pair of complex conjugate eigenvalues
+at $\lambda = 1 \pm i$.  Thus, we can compute the closed form solution
+$X(t) = e^{At}X_0$ by computing the exponential of each Jordan block.  Let
+\[
+B = \mattwo{2}{1}{0}{2} \AND C = \mattwo{1}{-1}{1}{1}.
+\]
+Then, $B = 2I_2 + N$, where $N$ is the $2 \times 2$ matrix with an entry $1$
+on the superdiagonal.  Since $I_2$ and $N$ commute,
+\[
+e^{Bt} = e^{2t}e^{tN} = e^{2t}(I_2 + tN) =
+e^{2t}\mattwo{1}{t}{0}{1}.
+\]
+Since $C$ is a $2 \times 2$ block with complex eigenvalues, we can
+compute its exponential as we have done in previous chapters, using
+$\sigma = 1$ and $\tau = 1$:
+\[
+e^{Ct} = e^{\sigma t}\mattwo{\cos{(\tau t)}}{-\sin{(\tau t)}}
+{\sin{(\tau t)}}{\cos{(\tau t)}}
+= e^{t}\mattwo{\cos{t}}{-\sin{t}}{\sin{t}}{\cos{t}}.
+\]
+Thus,
+\[
+X(t) = e^{At}X_0 =
+\left(\begin{array}{cccc}
+e^{2t} & te^{2t} & 0 & 0 \\
+0 & e^{2t} & 0 & 0 \\
+0 & 0 & e^t\cos{t} & -e^t\sin{t} \\
+0 & 0 & e^t\sin{t} & e^t\cos{t}
+\end{array}\right)
+\left(\begin{array}{r} -1 \\ 1 \\ 2 \\ -3 \end{array}\right)
+= \left(\begin{array}{c}
+e^{2t}(t - 1) \\
+e^{2t} \\
+e^t(2\cos{t} + 3\sin{t}) \\
+e^t(2\sin{t} - 3\cos{t})
+\end{array}\right).
+\]
+
+\end{solution}
+\end{exercise}
+\end{document}

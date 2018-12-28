@@ -1,0 +1,18 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c7.3.3}
+Let $L:V\to W$ and $M:W\to V$ be linear mappings, and assume $\dim V > \dim W$.
+Show that $M\compose L:V\to V$ is not invertible.
+
+\begin{solution}
+
+If there exists a nonzero vector $v$ such that $M\circ L(v) = 0$,
+then the nullity of $M \circ L$ is nonzero, so $M \circ L$ is not
+invertible.  If $L(v) = 0$, then $M \circ L(v) = 0$.  We know that
+$\rm{nullity}(L) = \dim V - \dim W > 0$.  Therefore, $M\circ L(v)$
+is not invertible
+
+\end{solution}
+\end{exercise}
+\end{document}

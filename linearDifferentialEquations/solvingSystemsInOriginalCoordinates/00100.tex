@@ -1,0 +1,129 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+
+\TEXER
+
+\noindent  In Exercises~\ref{c12.1.2a} -- \ref{c12.1.2d} consider the system 
+of differential equations $\dot X = AX$ corresponding to the given matrix 
+$A$ and construct a complete set of linearly independent solutions.
+\begin{exercise} \label{c12.1.2a}
+$A=\mattwo{2}{1}{0}{2}$.
+
+\begin{solution}
+\ans
+\[
+X_1(t) = e^{2t}\vectwo{1}{0} \AND
+X_2(t) = e^{2t}\vectwo{t}{1}
+\]
+are linearly independent solutions to $\dot{X} = AX$.
+
+\soln First find the eigenvalues of $A$.  Since $A$ is upper triangular,
+the eigenvalues are the diagonal entries.  Therefore $\lambda_1 = 2$
+is a double eigenvalue.  Then solve $(A - \lambda_1 I_2)w_1 = 0$ to
+find that $w_1 = (1,0)^t$ is an eigenvector of $A$.  Find a
+generalized eigenvector $w_2$ such that $(A - \lambda_1 I_2)w_2 =
+w_1$, in this case, $w_2 = (0,1)^t$.  Now, by \eqref{E:Xj},
+there are linearly independent solutions $X_1(t)$ and $X_2(t)$ such that
+\[
+\begin{array}{rcl}
+X_1(t) & = & e^{\lambda_1 t}w_1 = e^{2t}\vectwo{1}{0} \\ X_2(t) & = &
+e^{\lambda_1 t}(tw_1 + w_2) = e^{2t}\left(\vectwo{t}{0} +
+\vectwo{0}{1}\right).
+\end{array}
+\]
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c12.1.2b}
+$A=\left(\begin{array}{rrr} 1 & 0 & 0\\ 0 & -1 & 2 \\ 0 & 0 & -1
+\end{array}\right)$.
+
+\begin{solution}
+\ans
+\[
+X_1(t) = \cvecthree{e^t}{0}{0}, \quad
+X_2(t) = \cvecthree{0}{e^{-t}}{0}, \AND
+X_3(t) = e^{-t}\cvecthree{0}{t + 1}{\frac{1}{2}}
+\]
+are linearly independent solutions to $\dot{X} = AX$.
+
+\soln The eigenvalues of $A$ are the diagonal entries, since $A$ is upper
+triangular.  For each eigenvalue, solve $(A - \lambda_j I_2)w_j = 0$
+to find that $\lambda_1 = 1$ is an eigenvalue with eigenvector $w_1 =
+(1,0,0)^t$, and that $\lambda_2 = -1$ is a double eigenvalue with
+single eigenvector $w_2 = (0,1,0)^t$.  Find $w_3$, the generalized
+eigenvector for $\lambda_2$, by solving $(A - \lambda_2 I_3)w_3 = w_2$
+to obtain $w_3 = (0,1,\frac{1}{2})^t$.  Now, by \eqref{E:Xj},
+there are linearly independent solutions $X_j(t)$ such that
+\[
+\begin{array}{rcl}
+X_1(t) & = & e^{\lambda_1 t}w_1 = e^t\vecthree{1}{0}{0} \\
+X_2(t) & = & e^{\lambda_2 t}w_2 = e^{-t}\vecthree{0}{1}{0} \\
+X_3(t) & = & e^{\lambda_2 t}(tw_2 + w_3) = e^{-t}\left(\vecthree{0}{t}{0}
++ \vecthree{0}{1}{\frac{1}{2}}\right).
+\end{array}
+\]
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c12.1.2c}
+$A=\mattwo{1}{-1}{1}{3}$.
+
+\begin{solution}
+\ans
+\[
+X_1(t) = e^{2t}\vectwo{1}{-1} \AND
+X_2(t) = e^{2t}\cvectwo{t - 1}{-t}
+\]
+are linearly independent solutions to $\dot{X} = AX$.
+
+\soln First find the eigenvalues of $A$.  In this case, $\lambda_1 = 2$
+is a double eigenvalue.  Then solve $(A - \lambda_1 I_2)w_1 = 0$ to
+find that $w_1 = (1,-1)^t$ is an eigenvector of $A$.  Find a
+generalized eigenvector $w_2$ such that $(A - \lambda_1 I_2)w_2 =
+w_1$, in this case, $w_2 = (-1,0)^t$.  Now, by \eqref{E:Xj},
+there are linearly independent solutions $X_1(t)$ and $X_2(t)$ such that
+\[
+\begin{array}{rcl}
+X_1(t) & = & e^{\lambda_1 t}w_1 = e^{2t}\vectwo{1}{-1} \\
+X_2(t) & = & e^{\lambda_1 t}(tw_1 + w_2) = e^{2t}\left(\vectwo{t}{-t} +
+\vectwo{-1}{0}\right).
+\end{array}
+\]
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c12.1.2d}
+$A=\left(\begin{array}{rrr} -4 & -9 & 0\\ 0 & 5 & 0 \\ -9 & -8 & 5
+\end{array}\right)$.
+
+\begin{solution}
+\ans
+\[
+X_1(t) = e^{-4t}\vecthree{1}{0}{1}, \quad
+X_2(t) = e^{5t}\vecthree{0}{0}{1}, \AND
+X_3(t) = e^{5t}\vecthree{-1}{1}{t}
+\]
+are linearly independent solutions to $\dot{X} = AX$.
+
+\soln First find the eigenvalues and eigenvectors of $A$.  In this case,
+$A$ has an eigenvalue at $\lambda_1 = -4$ with eigenvector $w_1 =
+(1,0,1)^t$, and a double eigenvalue at $\lambda_2 = 5$ with single
+eigenvector $w_2 = (0,0,1)^t$.  Find $w_3$, the generalized
+eigenvector for $\lambda_2$, by solving $(A - \lambda_2 I_3)w_3 = w_2$
+to obtain $w_3 = (-1,1,0)^t$.  Now, by \eqref{E:Xj},
+there are linearly independent solutions $X_j(t)$ such that
+\[
+\begin{array}{rcl}
+X_1(t) & = & e^{\lambda_1 t}w_1 = e^{-4t}\vecthree{1}{0}{1} \\
+X_2(t) & = & e^{\lambda_2 t}w_2 = e^{5t}\vecthree{0}{0}{1} \\
+X_3(t) & = & e^{\lambda_2 t}(tw_2 + w_3) = e^{5t}\left(\vecthree{0}{0}{t}
++ \vecthree{-1}{1}{0}\right).
+\end{array}
+\]
+
+\end{solution}
+\end{exercise}
+\end{document}

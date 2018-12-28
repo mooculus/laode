@@ -1,0 +1,157 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\noindent In Exercises~\ref{c4.10A.4a} -- \ref{c4.10A.4b}, find the solution 
+to $\dot{X} = CX$ satisfying $X(0)=X_0$ in two different ways, as follows.  
+\begin{itemize}
+\item[(a)]  Use {\pplane} to find $X(0.5)$.  {\bf Hint}: Use the 
+{\sf Specify a computation interval} option in the {\sf PPLANE9 Keyboard input} 
+window to compute the solution to $t=0.5$. Then use the {\sf zoom in square} 
+feature to determine an answer to three decimal places.  
+\item[(b)]  Next use \Matlab to find the eigenvalues and eigenvectors of $C$ 
+and to find a closed form solution $X(t)$.  Use this formula to evaluate 
+$X(0.5)$ to three decimal places.    
+\item[(c)]  Do the two answers agree?
+\end{itemize}
+\begin{exercise}  \label{c4.10A.4a}  
+$C = \mattwo{2.65}{-2.34}{-1.5}{-1.2} \AND X_0=\vectwo{0.5}{0.1}$.
+
+\begin{solution}
+\ans $X(0.5) = (0.155,0.386)^t$ and the two methods agree to three 
+decimal places.
+
+\soln (a) The result of the {\sf pplane5} integration is given in 
+Figure~\ref{c4.10A.4a}a. After zooming several times we arrive at
+Figure~\ref{c4.10A.4a}b.  By inspection $X(0.5)=(0.155,0.386)$.
+
+(b)  Enter the matrix $C$ into \Matlab by typing
+\begin{verbatim}
+C = [2.65 -2.34; -1.5 -1.2];
+\end{verbatim}
+Find the eigenvalues and eigenvectors of this matrix by typing {\tt [V,D] = eig(C)}
+and obtaining
+\begin{verbatim}
+V =
+    0.9510    0.4525
+   -0.3093    0.8918
+D =
+    3.4112         0
+         0   -1.9612
+\end{verbatim}
+Therefore the general solution to this differential equation is:
+\[
+X(t) = \alpha e^{3.4112 t}\vectwo{0.9510}{-0.3093} +
+\beta e^{-1.9612 t}\vectwo{0.4525}{0.8918}.
+\]
+It follows that 
+\[
+X(0) = V \vectwo{\alpha}{\beta}
+\]
+Therefore,
+\[
+\vectwo{\alpha}{\beta} = V\inv X_0 = 
+\mattwo{0.9510}{0.4525}{-0.3093}{0.8918}\vectwo{0.5}{1.0} = \vectwo{-0.0067}{1.1191}
+\]
+The last calculation is done by typing {\tt coeff = inv(V)*[0.5;1.0]}. 
+Therefore, the solution to the initial value problem is:
+\[
+X(t) = -0.0067e^{3.4112 t}\vectwo{0.9510}{-0.3093} +
+1.1191e^{-1.9612 t}\vectwo{0.4525}{0.8918}.
+\]
+We can evaluate $X(0.5)$ in \Matlab by typing
+\begin{verbatim}
+X5 = coeff(1)*exp(D(1,1)*0.5)*V(:,1) + coeff(2)*exp(D(2,2)*0.5)*V(:,2)
+\end{verbatim}
+and obtaining
+\begin{verbatim}
+X5 =
+    0.1547
+    0.3858
+\end{verbatim}
+
+
+(c)  The two answers agree to three decimal places.
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/4-9-8a.eps,width=2.75in}
+                       \psfig{file=exfigure/4-9-8b.eps,width=2.75in}}
+                \exercaptwo{c4.10A.4a}
+\end{figure}
+
+
+
+\end{solution}
+\end{exercise}
+\begin{exercise}  \label{c4.10A.4b}  
+$C = \mattwo{1.2}{2.4}{0.6}{-3.5} \AND X_0=\vectwo{0.5}{0.7}$.
+
+\begin{solution}
+\ans $X(0.5) = (1.621,0.291)^t$ and the two methods agree to three 
+decimal places.
+
+\soln (a) The result of the {\sf pplane5} integration is given in 
+Figure~\ref{c4.10A.4b}a. After zooming several times we arrive at
+Figure~\ref{c4.10A.4b}b.  By inspection $X(0.5)=(1.621,0.291)$.
+
+(b) (b)  Enter the matrix $C$ into \Matlab by typing
+\begin{verbatim}
+C = [1.2 2.4; 0.6 -3.5];
+\end{verbatim}
+Find the eigenvalues and eigenvectors of this matrix by typing {\tt [V,D] = eig(C)}
+and obtaining
+\begin{verbatim}
+V =
+    0.9928   -0.4335
+    0.1194    0.9011
+D =
+    1.4887         0
+         0   -3.7887
+\end{verbatim}
+Therefore the general solution to this differential equation is:
+\[
+X(t) = \alpha e^{1.4887 t}\vectwo{0.9928}{0.1194} +
+\beta e^{-3.7887 t}\vectwo{-0.4335}{0.9011}.
+\]
+It follows that 
+\[
+X(0) = V \vectwo{\alpha}{\beta}
+\]
+Therefore,
+\[
+\vectwo{\alpha}{\beta} = V\inv X_0 = 
+\mattwo{0.9928}{-0.4335}{0.1194}{0.9011}\vectwo{0.5}{0.7} = \vectwo{0.7967}{0.6712}
+\]
+The last calculation is done by typing {\tt coeff = inv(V)*[0.5;0.7]}. 
+Therefore, the solution to the initial value problem is:
+\[
+X(t) = 0.7967e^{1.4887 t}\vectwo{0.9928}{0.1194} +
+0.6712e^{-3.7887 t}\vectwo{-0.4335}{0.9011}.
+\]
+We can evaluate $X(0.5)$ in \Matlab by typing
+\begin{verbatim}
+X5 = coeff(1)*exp(D(1,1)*0.5)*V(:,1) + coeff(2)*exp(D(2,2)*0.5)*V(:,2)
+\end{verbatim}
+and obtaining
+\begin{verbatim}
+X5 =
+    1.6213
+    0.2912
+\end{verbatim}
+
+(c)  The two answers agree to three decimal places.
+
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/4-9-9a.eps,width=2.75in}
+                       \psfig{file=exfigure/4-9-9b.eps,width=2.75in}}
+                \exercaptwo{c4.10A.4b}
+\end{figure}
+
+
+
+\end{solution}
+\end{exercise}
+\end{document}

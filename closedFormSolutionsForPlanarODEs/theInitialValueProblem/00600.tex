@@ -1,0 +1,33 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise}  \label{c6.1.4A}
+Show that for some nonzero $a$ the function $x(t)=at^5$ is a solution to the
+differential equation $\dot{x}=x^{4/5}$.  Then show that there are at least
+two solutions to the initial value problem $x(0)=0$ for this differential
+equation.
+
+\begin{solution}
+\ans If $a = \frac{1}{3125}$, then $x(t) = at^5$ is a solution
+to the differential equation.  The zero function $x(t) = 0$ is also a
+solution.
+
+\soln To find out whether $x(t) = at^5$ is a solution to
+$\dot{x} = x^{4/5}$, first substitute $x(t)$ into the left hand side of
+the differential equation:
+\[
+\frac{dx}{dt} = \frac{d}{dt}(at^5) = 5at^4.
+\]
+Then substitute $x(t)$ into the right hand side of the equation
+\[
+x^{4/5} = (at^5)^{4/5} = a^{4/5}t^4.
+\]
+Thus, $x(t)$ is a solution when $5at^4 = a^{4/5}t^4$.  Solve the equation
+$5a = a^{4/5}$ for $a$ to find that $x(t)$ is a solution when $a = 5^{-5}
+= \frac{1}{3125}$ or when $a = 0$.  Thus, there are at least two solutions
+to the differential equation: $x(t) = \frac{1}{3125}t^4$ and $x(t) = 0$.
+
+
+\end{solution}
+\end{exercise}
+\end{document}

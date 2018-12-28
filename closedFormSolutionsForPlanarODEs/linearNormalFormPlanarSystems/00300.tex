@@ -1,0 +1,36 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c6.3.2}
+Solve the initial value problem
+\[
+\begin{array}{rcr}
+\dot{x} & = & -2x + y \\
+\dot{y} & = & -2y
+\end{array}
+\]
+where $x(0) = 4  \AND y(0) = -1$.
+
+\begin{solution}
+
+\ans The solution for the initial value problem $x(0) = 4$ and
+$y(0) = -1$ for this system is:
+\[
+\vectwo{x(t)}{y(t)} = \cvectwo{e^{-2t}(4 - t)}{-e^{-2t}}.
+\]
+
+\soln Let $\lambda = -2$.  Then, by Table~\ref{T:3sys}
+\[
+\begin{array}{rrr}
+\dot{x} & = & \lambda x + y \\
+\dot{y} & = & \lambda y \end{array}
+\]
+so, 
+\[
+\vectwo{x(t)}{y(t)} = \cvectwo{e^{\lambda t}(x_0 + y_0t)}{e^{\lambda t}y_0}
+= \cvectwo{e^{-2t}(x_0 + y_0t)}{e^{-2t}y_0}.
+\]
+
+\end{solution}
+\end{exercise}
+\end{document}

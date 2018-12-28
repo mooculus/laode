@@ -1,0 +1,44 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c9.1.2}
+Consider the following special case of the Volterra-Lotka equations 
+\begin{eqnarray*}
+\dot{x} & = & x(\mu + 2x -     y)  \\
+\dot{y} & = & y(  1 +  x - 0.25y).
+\end{eqnarray*}
+For what value of $\mu$ is there an equilibrium whose linearization is a 
+center?   
+
+\begin{solution}
+
+\ans For $\mu = 6$, there is a center at $e_4 = (1,8)$.
+
+\soln First compute the equilibria for general $\mu$ by solving
+$\dot{x} = \dot{y} = 0$.  The equilibria of the system occur at
+$e_1 = (0,0)$, $e_2 = (0,4)$, $e_3 = (-\frac{\mu}{2},0)$, and
+$e_4 = (\frac{\mu}{2} - 2, 2\mu - 4)$.  A center occurs at an equilibrium
+where the Jacobian has purely imaginary eigenvalues; that is, where
+$\trace{(dJ)} = 0$ and $\det{(dJ)} > 0$.  The general Jacobian of this
+system is
+\[
+(dJ)_{(x,y)} = \cmattwo{\mu + 4x - y}{-x}{y}{1 + x - 0.5y}.
+\]
+At the equilibria,
+\[
+(dJ)_{e_1} = \mattwo{\mu}{0}{0}{1}, \quad
+(dJ)_{e_2} = \cmattwo{\mu - 4}{0}{4}{-1}, \quad
+\]
+\[
+(dJ)_{e_3} = \cmattwo{-\mu}{\frac{\mu}{2}}{0}{1 - \frac{\mu}{2}}, \quad
+(dJ)_{e_4} = \cmattwo{\mu - 4}{2 - \frac{\mu}{2}}{2\mu - 4}{1 -
+\frac{\mu}{2}}.
+\]
+For each of these matrices, find $\mu$ such that $\trace{(dJ)} = 0$.  At
+$e_1$, $e_2$, and $e_3$, when $\trace{(dJ)} = 0$, $\det{(dJ)} < 0$.
+At $e_4$, solve $\trace(dJ) = 0$ to obtain $\mu = 6$.  Then $\det{(dJ)}
+= 4 > 0$; so the point $(1,8)$ is a center when $\mu = 6$.
+
+\end{solution}
+\end{exercise}
+\end{document}

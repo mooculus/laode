@@ -1,0 +1,23 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c7.3.1}
+Let $w_1=(1,2)$ and $w_2=(0,1)$ be a basis for $\R^2$.  Let
+$L_A:\R^2\to\R^2$ be the linear map given by the matrix
+\[
+A=\mattwo{2}{1}{-1}{0}
+\]
+in standard coordinates.  Find the matrix $[L]_{\cal W}$.
+
+\begin{solution}
+
+\soln From Section~\ref{S:coordinates},
+\[
+[L]_{\cal W} = (w_1^t|w_2^t)^{-1}L(w_1^t|w_2^t) =
+\mattwo{1}{0}{-2}{1}\mattwo{2}{1}{-1}{0}\mattwo{1}{0}{2}{1} =
+\mattwo{4}{1}{-9}{-2}.
+\]
+
+\end{solution}
+\end{exercise}
+\end{document}

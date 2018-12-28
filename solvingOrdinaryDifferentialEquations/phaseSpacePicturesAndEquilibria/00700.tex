@@ -1,0 +1,101 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+
+\noindent In Exercises~\ref{c3.3.6A} -- \ref{c3.3.6D} compute the equilibria 
+of the given differential equation, determine whether these equilibria are 
+asymptotically stable or unstable, and draw a sche\-ma\-tic of the dynamics 
+of this equation like the ones in Figure~\ref{pitch3}.  
+\begin{exercise} \label{c3.3.6A}
+$\dot{x} = x^2 + 2x - 3$.
+
+\begin{solution}
+
+\ans The point $x = 1$ is an unstable equilibrium and $x = -3$ is a stable
+equilibrium.
+
+\soln Note that the equilibria for the differential equation
+$x' = x^2 + 2x - 3$ occur at any points where
+$g(x) = x^2 + 2x - 3 = (x - 1)(x + 3) = 0$.
+So, the equilibria occur at $x = 1$ and $x = -3$.  Take the
+derivative of $g(x)$ at these points, obtaining
+\[
+\begin{array}{rcccl}
+g'(x) & = & 2x + 2 \\
+g'(1) & = & 4 & > & 0 \\
+g'(-3) & = & -4 & < & 0.\end{array}
+\]
+
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c3.3.6B}
+$\dot{x} = x^3 - 2x^2 - 8x$.
+
+\begin{solution}
+
+\ans The points $x=4$ and $x = -2$ are unstable equilibria and the point 
+$x = 0$ is a stable equilibrium.
+
+\soln Note that the equilibria for the differential equation
+$x' = x^3 - 2x^2 - 8x$ occur at any points where
+$g(x) = x^3 - 2x^2 - 8x = x(x - 4)(x + 2) = 0$.
+So, the equilibria occur at $x=0$, $x = 4$ and $x = -2$.  Take the
+derivative of $g(x)$ at these points, obtaining
+\[
+\begin{array}{rcccl}
+g'(x) & = & 3x^2-4x-8 \\
+g'(4) & = & 24 & > & 0 \\
+g'(0) & = & -8 & < & 0\\
+g'(-2) & = & 12 & > & 0.\end{array}
+\]
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c3.3.6C}
+$\dot{x} = x^3 + 2x^2 - 3x$.
+
+\begin{solution}
+
+\ans The points $x=1$ and $x = -3$ are unstable equilibrium and the point 
+$x = 0$ is a stable equilibrium.
+
+\soln Note that the equilibria for the differential equation
+$x' = x^3 + 2x^2 - 3x$ occur at any points where
+$g(x) = x^3 + 2x^2 - 3x = x(x - 1)(x + 3) = 0$.
+So, the equilibria occur at $x=0$, $x = 1$ and $x = -3$.  Take the
+derivative of $g(x)$ at these points, obtaining
+\[
+\begin{array}{rcccl}
+g'(x) & = & 3x^2+4x-3 \\
+g'(1) & = & 4 & > & 0 \\
+g'(0) & = & -3 & < & 0\\
+g'(-3) & = & 12 & > & 0.\end{array}
+\]
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c3.3.6D}
+$\dot{x} = x^2 + 6x + 1$.
+
+\begin{solution}
+
+\ans The point $x = -3+2\sqrt{2}$ is an unstable equilibrium and 
+$x = -3-2\sqrt{2}$ is a stable equilibrium.
+
+\soln Note that the equilibria for the differential equation
+$x' = x^2 + 6x + 1$ occur at any points where
+$g(x) = x^2 + 6x + 1 = 0$.  So, the equilibria occur at $x =
+-3-2\sqrt{2}\approx -5.8284$ and $x = -3+2\sqrt{2}\approx -0.1716$.  Take the
+derivative of $g(x)$ at these points, obtaining
+\[
+\begin{array}{rcccl}
+g'(x) & = & 2x + 6 \\
+g'(-5.8284) & = & -5.6569 & < & 0 \\
+g'(-0.1716) & = & 5.6568 & > & 0.\end{array}
+\]
+
+\end{solution}
+\end{exercise}
+\end{document}

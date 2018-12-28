@@ -1,0 +1,27 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c4.9.2}
+For which values of $\lambda$ is the matrix
+\[
+\left(\begin{array}{cc} 1-\lambda & 4\\  2 & 3-\lambda
+\end{array}\right)
+\]
+{\em not\/} invertible?  {\bf Note:} These values of $\lambda$
+are just the eigenvalues of the matrix $\mattwo{1}{4}{2}{3}$.
+
+\begin{solution}
+
+\ans The matrix is not invertible when $\lambda = 5$ or $\lambda = -1$.
+
+\soln Corollary~\ref{C:2x2invert} states that a matrix is not invertible
+if and only if the determinant is zero; in this case, if
+\[
+(1 - \lambda)(3 - \lambda) - (2)(4) = \lambda^2 - 4\lambda - 5 = 0.
+\]
+
+
+
+\end{solution}
+\end{exercise}
+\end{document}

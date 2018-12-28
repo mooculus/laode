@@ -1,0 +1,65 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c9.3.1}
+Let 
+\begin{eqnarray*}
+f_1(x,\rho) & = & \rho - x^3 \\
+f_2(x,\rho) & = & \rho x - x^2.
+\end{eqnarray*}
+\begin{itemize}
+\item[(a)] Verify that both $f_1$ and $f_2$ satisfy the bifurcation conditions 
+\eqref{e:1dbifcond} at $x=0$ when $\rho=0$.
+\item[(b)] Show that neither $f_1$ nor $f_2$ has a saddle-node bifurcation
+at $x=0$ when $\rho=0$. 
+\item[(c)] Draw the bifurcation diagrams $f_1(x,\rho)=0$ and 
+$f_2(x,\rho)=0$ and explain why the conclusion of 
+Theorem~\ref{T:saddlenode} is not satisfied for either $f_1$ 
+or $f_2$.
+\end{itemize}
+
+\begin{solution}
+
+(a) A steady-state bifurcation occurs on a function $f(x,\rho)$ at a
+point $(x,\rho) = (x_0,\rho_0)$ if $f(x_0,\rho_0) = 0$ and
+$f_x(x_0,\rho_0) = 0$.  In this case, let $(x_0,\rho_0) = (0,0)$.
+Then
+\[ \begin{array}{rcccl}
+f_1(x_0,\rho_0) & = & \rho_0 - x_0^3 & = & 0 \\
+f_{1x}(x_0,\rho_0) & = & -3x_0^2 & = & 0 \end{array}
+\qquad
+\begin{array}{rcccl}
+f_2(x_0,\rho_0) & = & \rho_0x_0 - x_0^2 & = & 0 \\
+f_{2x}(x_0,\rho_0) & = & \rho_0 - 2x_0 & = & 0. \end{array}
+\]
+Therefore, $f_1$ and $f_2$ have steady-state bifurcations at $(x,\rho)
+= (0,0)$.
+
+(b) A saddle-node bifurcation occurs on a function $f(x,\rho)$ at a point
+$(x,\rho) = (x_0,\rho_0)$ if $f$ has a steady-state bifurcation at this
+point, and if $f_\rho(x_0,\rho_0) \neq 0$ and $f_{xx}(x_0,\rho_0) \neq 0$.
+Let $(x_0,\rho_0) = (0,0)$.  Then
+\[
+f_{1xx}(x_0,\rho_0) = -6x = 0 \AND
+f_{2p}(x_0,\rho_0) = x = 0,
+\]
+so neither $f_1$ nor $f_2$ has a saddle-node bifurcation at $x = 0$.
+
+(c) The bifurcation diagram for $f_1$ is shown in Figure~\ref{c9.3.1}a, and
+the diagram for $f_2$ is shown in Figure~\ref{c9.3.1}b.  Saddle-node
+bifurcations occur only when equilibria appear or disappear.
+Figure~\ref{c9.3.1}a shows that $f_1$ has one equilibrium for all $\rho$,
+and Figure~\ref{c9.3.1}b shows that $f_2$ has two equilibria for all
+$\rho$.  Thus, neither function has a saddle-node bifurcation at the origin.
+
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/9-3-1a.eps,width=2.75in}
+                       \psfig{file=exfigure/9-3-1b.eps,width=2.75in}}
+                \exercaptwo{c9.3.1}
+\end{figure}
+
+\end{solution}
+\end{exercise}
+\end{document}

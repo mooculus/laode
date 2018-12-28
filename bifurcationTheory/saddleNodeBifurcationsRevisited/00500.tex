@@ -1,0 +1,53 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c9.3.3}
+Let 
+\begin{eqnarray*}
+g(x,y,\rho) & = &  \rho - 2x +  y + 2x^2 - y^3 \\
+h(x,y,\rho) & = & 2\rho + 4x - 2y -  xy  + y^2
+\end{eqnarray*}
+Show that $F=(g,h)$ has a saddle-node bifurcation at $(x,y)=0$ and 
+$\rho=0$.
+
+\begin{solution}
+
+The function $F$ has a bifurcation point at the origin when $\rho = 0$
+if $F$ is in equilibrium at $(x,y,\rho) = (0,0,0)$ and $\det(F) = 0$ at
+this point.  Since $g(0,0,0) = 0$ and $h(0,0,0) = 0$, the origin is an
+equilibrium for $F$ when $\rho = 0$.  Then, calculate the Jacobian at
+this point:
+\[
+J = \mattwo{-2}{1}{4}{-2}.
+\]
+The determinant of the Jacobian is zero so the origin is indeed a
+bifurcation point when $\rho = 0$.  In order to demonstrate the
+two-dimensional nondegeneracy conditions, find nonzero vectors $v$ and
+$w$ such that $Jv = 0$ and $J^tw = 0$.  In this case, $v = (1,2)^t$ and
+$w = (2,1)^t$.  Then, compute
+\[
+w \cdot F_\rho(0,0,0) = \vectwo{2}{1} \cdot \vectwo{1}{2} =
+4 \neq 0,
+\]
+so \eqref{e:2deig} is satisfied.  In order to satisfy \eqref{e:2dbifur},
+compute
+\[
+g_{xx} = 4, \quad
+g_{xy} = 0, \quad
+g_{yy} = -6y, \quad
+h_{xx} = 0, \quad
+h_{xy} = -1, \quad
+h_{yy} = 2.
+\]
+and evaluate
+\[
+F_0 = \vectwo{4}{0} + 4\vectwo{0}{-1} + 4\vectwo{0}{2} =
+\vectwo{4}{1}.
+\]
+Then, since $w \cdot F_0 = 9 \neq 0$, the second nondegeneracy condition
+is satisfied, and the origin is indeed a saddle node bifurcation for $F$
+when $\rho = 0$.
+
+\end{solution}
+\end{exercise}
+\end{document}

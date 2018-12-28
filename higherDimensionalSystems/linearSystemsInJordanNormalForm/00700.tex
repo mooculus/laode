@@ -1,0 +1,44 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c11.1.3C}
+Find $e^J$ where 
+\[
+J = \left(\begin{array}{rrrr} 
+1 & -2 & 1 &  0 \\ 
+2 &  1 & 0 &  1 \\
+0 &  0 & 1 & -2 \\
+0 &  0 & 2 &  1
+\end{array}\right).
+\]
+
+\begin{solution}
+\ans $e^J = e\left(\begin{array}{rrrr}
+  \cos 2 & -\sin 2 & \cos 2 & -\sin 2\\
+  \sin 2 &  \cos 2 & \sin 2 &  \cos 2\\
+     0   &    0    &  \cos 2 &  -\sin 2\\
+     0   &    0    &  \sin 2 &   \cos 2  
+\end{array}\right)$
+
+\soln Write the matrix $J$ in block form as:
+\[
+J = \mattwo{B}{0}{0}{B} + \mattwo{0}{I_2}{0}{0}
+\]
+where 
+\[
+B = \mattwo{1}{-2}{2}{1}.
+\]
+Since the two summands in $J$ commute, 
+\[
+e^J = \mattwo{e^B}{0}{0}{e^B}\left(I_4 + \mattwo{0}{I_2}{0}{0}\right)
+= \mattwo{e^B}{e^B}{0}{e^B}.
+\]
+The answer is obtained by noting that 
+\[
+e^B = e\mattwo{\cos 2}{-\sin 2}{\sin 2}{\cos 2}.
+\]
+
+
+\end{solution}
+\end{exercise}
+\end{document}

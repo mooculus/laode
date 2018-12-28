@@ -1,0 +1,43 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c8.3.3}
+Verify that the system of differential equations
+\begin{matlabEquation} \label{8.3.3eq} 
+\begin{array}{rcl}
+\dot{x} & = & x-2y + (x^2+y^2)^2x - 4x^3\\
+\dot{y} & = & 2x+y + (x^2+y^2)^2y - 7(y^2-x^2)y
+\end{array}
+\end{matlabEquation}
+has a single limit cycle in the square $-2.5\leq x,y \leq 2.5$.  How many 
+equilibria does \eqref{8.3.3eq} have in this square?  
+
+\begin{solution}
+
+\ans There are nine equilibria in this square.
+
+\soln  The equilibria found using {\sf pplane5} are:
+\begin{verbatim}
+(-0.7575, 0.3180)       Saddle point.            
+(-1.9192, 0.0951)       Nodal source.            
+(0.0000, 0.0000)        Spiral source.           
+(1.9192, -0.0951)       Nodal source.            
+(-0.7650, -1.2495)      Saddle point.            
+(0.7650, 1.2495)        Saddle point.            
+(0.7575, -0.3180)       Saddle point.            
+(-0.1100, -2.6084)      Nodal source.            
+(0.1100, 2.6084)        Nodal source.            
+\end{verbatim}
+See Figure~\ref{c8.3.3}.
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/8-3-3.eps,width=3.0in}}
+                \exercap{c8.3.3}
+\end{figure}
+
+
+
+\end{solution}
+\end{exercise}
+\end{document}

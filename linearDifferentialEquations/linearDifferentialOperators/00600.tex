@@ -1,0 +1,75 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\CEXER
+
+\noindent In Exercises~\ref{c12.3.1c} -- \ref{c12.3.1e} write the 
+homogeneous differential equation $p(D)x=0$ using $d/dt$ notation,
+use \Matlab to find the roots of the characteristic polynomial, and 
+then find the general solution.
+\begin{exercise}  \label{c12.3.1c}
+$p(D) = 8D^2 - 4D +8$.
+
+\begin{solution}
+\ans The equation $p(D)x = 0$ can be written as
+\[
+8\frac{d^2x}{dt^2} - 4\frac{dx}{dt} + 8 = 0.
+\]  
+The roots of the characteristic polynomial are $\lambda \approx 0.25
+\pm 0.9682i$ and the general solution is
+\[
+x(t) = \alpha_1e^{0.25t}\cos(0.8682t) +
+\alpha_2e^{0.25t}\sin(0.8682t).
+\]
+
+\soln Use \Matlab to find the roots of the characteristic polynomial
+$8\lambda^2 - 4\lambda + 8$.
+
+\end{solution}
+\end{exercise}
+\begin{exercise}  \label{c12.3.1d}
+$p(D) = D^4 + 4D^2 - 6D$.
+
+\begin{solution}
+\ans The equation $p(D)x = 0$ can be written as
+\[
+\frac{d^4x}{dt^4} + 4\frac{d^2x}{dt^2} - 6\frac{dx}{dt} = 0.
+\]
+The roots of the characteristic polynomial are $\lambda_1 = 0$,
+$\lambda_2 \approx 1.1347$ and $\lambda_3 \approx -0.5674 \pm 2.2284i$.
+The general solution is
+\[
+x(t) = \alpha_1 + \alpha_2e^{1.1347t} + \alpha_3e^{-0.5674t}\cos(2.2284t) +
+\alpha_4e^{-0.5674t}\sin(2.2284t).
+\]
+
+\soln Use \Matlab to find the roots of the characteristic polynomial
+$\lambda^4 + 4\lambda^2 - 6\lambda$.
+
+\end{solution}
+\end{exercise}
+\begin{exercise}  \label{c12.3.1e}
+$p(D) = D^3 -6$.
+
+\begin{solution}
+\ans The equation $p(D)x = 0$ can be written as
+\[
+\frac{d^3x}{dt^3} - 6x = 0.
+\]
+The roots of the characteristic polynomial are $\lambda_1 \approx
+1.8171$ and $\lambda_2 \approx -0.9086 \pm 1.5737i$.  The general
+solution is
+\[
+x(t) = \alpha_1e^{1.8171t} + \alpha_2e^{-0.9086t}\cos(1.5737t) +
+\alpha_3e^{-0.9086t}\sin(1.5737t).
+\]
+\soln Use \Matlab to find the roots of the characteristic polynomial
+$\lambda^3 - 6$.
+
+
+
+
+\end{solution}
+\end{exercise}
+\end{document}

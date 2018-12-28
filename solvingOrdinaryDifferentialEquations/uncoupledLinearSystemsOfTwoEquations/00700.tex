@@ -1,0 +1,32 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c3.4.5}
+Suppose that $a$ and $d$ are both negative, so that the origin
+is asymptotically stable.  Make several choices of $a<d<0$ and
+observe that solution trajectories tend to approach the origin
+tangent to one of the axes.  Determine which one.  Try to prove
+that your experimental guess is always correct?
+
+\begin{solution}
+
+\ans Trajectories approach the origin tangent to the $y$-axis if
+$A < D < 0$. 
+
+\soln We can prove this fact by showing that, as $t \rightarrow \infty$,
+the tangent direction of the trajectory limits on the $y$-axis.  The
+tangent vector of the trajectory $(x(t),y(t))$ at any point is:
+\[ \left(\frac{dx}{dt}(t), \frac{dy}{dt}(t)\right) = \left(Ax(t),
+Dy(t)\right) = \left(Ax_0e^{At}, Dy_0e^{Dt}\right) =
+e^{Dt}\left(Ax_0e^{(A - D)t}, Dy_0\right) \]
+The value of $e^{Dt}$ is relevant only to the length of the
+tangent and does not affect the direction.  As $t$ approaches
+infinity, $e^{(A - D)t}$ approaches $0$, since $A - D < 0$.
+Therefore, the limiting tangent direction is
+\[ \lim_{t \rightarrow \infty} \left(Ax_0e^{(A - D)t}, Dy_0\right)
+= (0, Dy_0), \]
+which is on the $y$-axis.  So our conjecture is indeed true.
+
+\end{solution}
+\end{exercise}
+\end{document}

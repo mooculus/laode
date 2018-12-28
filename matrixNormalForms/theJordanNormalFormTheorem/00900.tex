@@ -1,0 +1,50 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c10.5.5}
+An $n\times n$ matrix $N$ is 
+{\em nilpotent\/}\index{nilpotent}\index{matrix!nilpotent} 
+if $N^k=0$ for some positive integer $k$.
+\begin{itemize}
+\item[(a)]  Show that the matrix $N$ defined in \eqref{e:Ndef} is nilpotent.
+\item[(b)]  Show that all eigenvalues of a nilpotent matrix equal zero.
+\item[(c)]  Show that any matrix similar to a nilpotent matrix is also 
+	nilpotent.
+\item[(d)]  Let $N$ be a matrix all of whose eigenvalues are zero.  Use 
+	the Jordan normal form theorem to show that $N$ is nilpotent.
+\end{itemize}
+
+\begin{solution}
+
+(a) The linear map $N^2$ satisfies
+\[
+N^2e_1 = N^2e_2 = 0, \AND N^2e_j = e_{j - 2}
+\mbox{ for } j = 3,\ldots,n.
+\]
+The linear map $N^3$ satisfies
+\[
+N^3e_1 = N^3e_2 = N^3e_3 = 0, \AND N^3e_j = e_{j - 3} \mbox{ for }
+j = 4,\ldots,n.
+\]
+By induction, $N^ne_j = 0$ for $j = 1,\dots,n$.  So $N^n = 0$, and $N$
+is nilpotent.
+
+(b) Let $\lambda$ be an eigenvalue of matrix $N$.  Then, there
+exists a nonzero vector $v$ such that $Nv = \lambda v$.  Therefore,
+$N^nv = \lambda^nv$.  If $N$ is nilpotent, then $\lambda^nv = 0$.  Since
+$v$ is nonzero, $\lambda^n = 0$, which implies $\lambda = 0$.
+
+(c) Let $M = P^{-1}NP$ be a matrix similar to nilpotent $n \times n$
+matrix $N$.  Then $M^n = (P^{-1}NP)^n = P^{-1}N^nP$.  Since $N$ is
+nilpotent, $N^n = 0$.  So $M^n = 0$, and $M$ is also nilpotent.
+
+(d) By the Jordan normal form theorem, $N$ is similar to some matrix $W$ which
+is block diagonal and has the matrices $N_j$ along the diagonal, where each
+$N_j$ is a Jordan block.  By (a) of this problem, $N_j^n = 0$ for each
+$j$.  $W^n$ is block diagonal with blocks $N_j^n$.  Since $N_j^n = 0$ for all
+$j$, $W^n = 0$.  Thus, $W$ is nilpotent, and, by (c) of this problem, $N$
+is also nilpotent.
+
+\end{solution}
+\end{exercise}
+\end{document}

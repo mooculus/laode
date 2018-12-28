@@ -1,0 +1,37 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c14.1.17}
+Recall that the differential equation \eqref{E:ncf} $\dot{x}=x/(x-1)$ cannot be 
+solved in closed form.  
+\begin{itemize}
+\item[(a)]	Use {\dfield}\index{\computer!dfield8} 
+to solve this differential 
+equation numerically on the interval $0.8\leq t\leq 1.2$ with initial 
+condition $x(1)=2$.  (Set the $x$ interval to be $[0,4]$.)  
+\item[(b)]	Using this result estimate the value of $x(1.15)$ to two 
+decimal places.
+\item[(c)]	Next change the time interval to be $0.5\leq t\leq 1.2$.
+The numerically computed solution $x(t)$ behaves strangely when $t\leq 0.7$. 
+What is the approximate value of $x$ in this range of $t$?  Use this 
+observed value to explain why the numerical integration for this differential 
+equation is badly behaved.
+\end{itemize}
+
+\begin{solution}
+Figure~\ref{c14.1.17}a shows the graph of the initial
+value problem with $0.8 \leq t \leq 1.2$.  Figure~\ref{c14.1.17}b shows
+the same initial value problem with $0.5 \leq t \leq 1.2$.  In
+backward time, $x(t)$ limits on the origin at $t \approx 0.7$, at
+which point the trajectory ends.
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/14-1-17a.eps,width=2.75in}
+                       \psfig{file=exfigure/14-1-17b.eps,width=2.75in}}
+                \exercaptwo{c14.1.17}
+\end{figure}
+
+\end{solution}
+\end{exercise}
+\end{document}

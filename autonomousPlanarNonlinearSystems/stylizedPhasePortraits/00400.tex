@@ -1,0 +1,56 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c8.4.3}
+Use {\pplane} to determine the number of equilibria and their types, the
+number of limit cycles, and the connecting trajectories for the system
+\begin{matlabEquation}\label{MATLAB:3}
+\begin{array}{rcl}
+\dot{x} & = & 2-y^2-((x^2-2)^2+(y^2-2)^2-1)(x^2-2)-0.2x  \\
+\dot{y} & = & x^2-2-((x^2-2)^2+(y^2-2)^2-1)(y^2-2)
+\end{array}
+\end{matlabEquation}
+in the square $-3 \leq x,y \leq 3$.   
+\begin{itemize}
+\item[(a)] Draw a qualitative phase portrait for this system.  
+\item[(b)] Characterize all solutions to this differential equation that 
+stay within the square $-3 \leq x,y \leq 3$ for all forward and backward time 
+$t$.
+\item[(c)] Draw the time series in $x$ versus $t$ for the trajectory whose
+initial condition is $(0,0)$.
+\end{itemize}
+
+\begin{solution}
+
+The equilibria and their types are:
+\begin{verbatim}
+(1.4650, 1.3590)        Spiral source.           
+(-1.3651, -1.4635)      Spiral sink.             
+(1.4650, -1.3590)       Saddle point.            
+(-1.3651, 1.4635)       Saddle point. 
+\end{verbatim}
+There are two limit cycles: one surrounding the spiral source at
+$(1.4650, 1.3590)$ and one surrounding the spiral sink at $(-1.3651, -1.4635)$.
+
+(a) A graph of the system is shown in Figure~\ref{c8.4.3}a.
+
+(b) The four equilibria surround a roughly rectangular region.  As shown
+by the connecting trajectories in the graph, all trajectories with
+initial points inside this region remain in this region.  Note that this
+includes trajectories with initial conditions inside the limit cycles.
+All trajectories outside this region leave the window
+$-3 \leq x,y \leq 3$ in forward or backward time.
+
+(c) The {\tt pplane5} time series for the solution starting at $(0,0)$ is
+shown in Figure~\ref{c8.4.3}b.
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/8-4-3a.eps,width=2.75in}
+                       \psfig{file=exfigure/8-4-3b.eps,width=2.75in}}
+                \exercaptwo{c8.4.3}
+\end{figure}
+
+\end{solution}
+\end{exercise}  
+\end{document}

@@ -1,0 +1,89 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\noindent In Exercises~\ref{c9.4.3a} -- \ref{c9.4.3c}, 
+consider the system of differential equations \eqref{E:duff}
+\begin{matlabEquation}  \label{E:duff}
+\begin{array}{rcl}
+\dot{x} & = & y - \mu x - x^2   \\
+\dot{y} & = & -x - \mu y + x^2.
+\end{array}
+\end{matlabEquation}
+\begin{exercise} \label{c9.4.3a}
+Show that \eqref{E:duff} undergoes a Hopf bifurcation near the origin when 
+$\mu=0$.  Sketch the qualitative phase portraits on either 
+side of the Hopf bifurcation.
+
+\begin{solution}
+
+The Jacobian of \eqref{E:duff} at the origin is
+\[
+J_{(0,0,\mu)} = \cmattwo{-\mu}{1}{-1}{-\mu}.
+\]
+Let $\mu = 0$.  Then $\trace(J_{(0,0,0)}) = -2\mu = 0$ and
+$\det(J_{(0,0,0)}) = \mu^2 + 1 = 1 > 0$.  The trace moves through $0$ with
+nonzero speed since
+\[
+\frac{d}{d\mu}\trace(J_{(0,0,0)}) = \frac{d}{d\mu}(-2\mu) = -2 \neq 0.
+\]
+Thus, \eqref{E:duff} undergoes a Hopf bifurcation near the origin when
+$\mu = 0$.  Figure~\ref{c9.4.3a} shows the system with $\mu = 0.05$.  At
+this point, the origin is a source.  Figure~\ref{c9.4.3b} shows the
+system with $\mu = -0.05$.  At this point, the origin is a sink, and there
+is a periodic solution.
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c9.4.3b}
+Show that another bifurcation takes place in \eqref{E:duff} near 
+$\mu\approx -0.1$.  Sketch the new phase portrait that appears near this 
+bifurcation.    
+
+\begin{solution}
+
+There is a homoclinic bifurcation at $\mu \approx -0.1$.  To show this,
+compare Figure~\ref{c9.4.3b} with Figure~\ref{c9.4.3c}, which shows the
+system with $\mu = -0.15$.  At $\mu = -0.15$, there is no longer a periodic
+solution around the origin.  The bifurcation point occurs when the stable
+and unstable orbits of the saddle point in the first quadrant coincide.
+
+\end{solution}
+\end{exercise}
+\begin{exercise} \label{c9.4.3c}
+For each of the three different phase portraits examined in 
+Exercises~\ref{c9.4.3a} and \ref{c9.4.3b} identify the region of initial 
+conditions in the square $-4\leq x,y \leq 4$ where solutions stay within the 
+square in forward time and the region where solutions stay within the square 
+in both forward and backward time.
+
+\begin{solution}
+
+When $\mu > 0$, all solutions with initial conditions between the
+stable orbits of the saddle point stay within the square $-2 \leq
+x,y \leq 2$ in forward time, and no solutions stay within this region
+for all time.
+
+\para When $-0.1 < \mu < 0$, all solutions with initial
+conditions between the stable orbits of the saddle point stay within the
+region in forward time.  Solutions with initial conditions inside the
+periodic orbit stay within the region in backward time also.
+
+\para When $\mu < -0.1$, only solutions with initial conditions along the
+stable orbits of the saddle point stay within the region in forward time,
+and no solutions stay within the region for all time.
+
+\begin{figure}[htb]
+                       \centerline{%
+                       \psfig{file=exfigure/9-4-3a.eps,width=1.8in}
+                       \psfig{file=exfigure/9-4-3b.eps,width=1.8in}
+                       \psfig{file=exfigure/9-4-3c.eps,width=1.8in}}
+		\centerline{$\mu > 0$\hspace{1.2in}$-0.1 < \mu < 0$
+\hspace{1.2in}$\mu < -0.1$}
+		\centerline{Figure~\ref{c9.4.3a}\hspace{1.2in}
+Figure~\ref{c9.4.3b}\hspace{1.2in}Figure~\ref{c9.4.3c}}
+\end{figure}
+
+\end{solution}
+\end{exercise}
+\end{document}
