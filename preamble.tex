@@ -15,7 +15,7 @@
 \let\input\otherinput}
 \makeatother
 
-\newcommand{\includeexercises}{\directlua{dofile("/home/jim/linearAlgebra/laode/exercises.lua")}}
+\newcommand{\includeexercises}{\directlua{kpse.find_file("exercises","lua")}}
 
 %\newcounter{ccounter}
 %\setcounter{ccounter}{1}
