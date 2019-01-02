@@ -1,0 +1,33 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c3.1.6}
+\index{population dynamics}
+Let $p(t)$ be the population of group Grk at time $t$ measured in years.
+Let $r$ be the growth rate of the group Grk.  Suppose that the population
+of Grks changes according to the differential equation \eqref{pop_model}.
+Find $r$ so that the population of Grks doubles every $50$ years.  How
+large must $r$ be so that the population doubles every $25$ years?
+
+\begin{solution}
+
+\ans If the population doubles every $50$ years, then
+$r = \frac{1}{50}(\ln 2)$.  If the population doubles every $25$
+years, then $r = \frac{1}{25}(\ln 2)$.
+
+\soln Use the given equation $\frac{dp}{dt}(t) = rp(t)$,
+from which we can infer $p(t) = p_0e^{rt}$.
+The population doubles every $50$ years, so $p(50) = 2p_0$.  We
+can substitute this value for $p(50)$ into the population formula
+and solve for $r$.  That is,
+\[
+2p_0 = p(50) = p_0e^{50r}.
+\]
+
+In the same way, we can solve for the rate of growth if the population
+doubles every $25$ years, by substituting $p(25) = 2p_0$ into the
+population formula.
+
+\end{solution}
+\end{exercise}
+\end{document}
