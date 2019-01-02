@@ -2,14 +2,14 @@
 \input{../../preamble.tex}
 \begin{document}
 
-\CEXER
+
 
 \noindent In Exercises~\ref{c11.3.1a} -- \ref{c11.3.1b} use linear algebra to 
 decide whether or not the origin is an asymptotically stable equilibrium for 
 each system of ODEs $\dot{X}=AX$. If the origin is unstable, find an initial 
 condition such that the corresponding solution approaches the origin as $t$ 
 tends to infinity.  Verify these calculations using {\tt ode45}.
-\begin{exercise} \label{c11.3.1a}
+\begin{computerExercise} \label{c11.3.1a}
 \begin{matlabEquation}\label{MATLAB:55}
 A =  \left(\begin{array}{rrrr}
     -5  &  1  & -3  &  0\\
@@ -54,8 +54,8 @@ The trajectories of the components of $x$ are shown in Figure~\ref{c11.3.1a}.
 \end{figure}
 
 \end{solution}
-\end{exercise}
-\begin{exercise} \label{c11.3.1b}
+\end{computerExercise}
+\begin{computerExercise} \label{c11.3.1b}
 \begin{matlabEquation}\label{MATLAB:56}
 A =  \left(\begin{array}{rrrr}
      0  &  1  & -3  &  0\\
@@ -102,5 +102,5 @@ time with $X_0 = v$.  All solutions approach the origin.
 \end{figure}
 
 \end{solution}
-\end{exercise}
+\end{computerExercise}
 \end{document}

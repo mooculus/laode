@@ -15,7 +15,10 @@
 \let\input\otherinput}
 \makeatother
 
-\newcommand{\includeexercises}{\directlua{dofile(kpse.find_file("exercises","lua"))}}
+\newcommand{\EXER}{}
+\newcommand{\includeexercises}{\EXER\directlua{dofile(kpse.find_file("exercises","lua"))}}
+
+\newenvironment{computerExercise}{\begin{exercise}}{\end{exercise}}
 
 %\newcounter{ccounter}
 %\setcounter{ccounter}{1}
@@ -42,11 +45,6 @@
 
 \newcommand{\dfield}{{\sf dfield9}}
 \newcommand{\pplane}{{\sf pplane9}}
-
-\newcommand{\EXER}{}
-\newcommand{\CEXER}{}
-\newcommand{\TEXER}{}
-\newcommand{\AEXER}{}
 
 % BADBAD: \newcommand{\Bbb}{\bf}
 
@@ -112,15 +110,13 @@
 
 
 
-\renewcommand{\labelenumi}{\theenumi)}
+\renewcommand{\labelenumi}{\theenumi}
 \newenvironment{enumeratea}%
 {\begingroup
  \renewcommand{\theenumi}{\alph{enumi}}
  \renewcommand{\labelenumi}{(\theenumi)}
  \begin{enumerate}}
  {\end{enumerate}\endgroup}
-
-
 
 \newcounter{help}
 \renewcommand{\thehelp}{\thesection.\arabic{equation}}
