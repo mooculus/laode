@@ -2,12 +2,12 @@
 \input{../../preamble.tex}
 \begin{document}
 
-\CEXER
+
 
 \noindent For each function specified in Exercises~\ref{c11.3.2a} -- 
 \ref{c11.3.2f}, write an m-file that makes that function available in 
 \Matlabp.
-\begin{exercise} \label{c11.3.2a}
+\begin{computerExercise} \label{c11.3.2a}
 $f1:\R\to\R$ where $f1(t)=\sin(t) - t^3$.
 
 \begin{solution}
@@ -19,8 +19,8 @@ f1 = sin(t) - t^3;
 \end{verbatim}
 
 \end{solution}
-\end{exercise}
-\begin{exercise} \label{c11.3.2b}
+\end{computerExercise}
+\begin{computerExercise} \label{c11.3.2b}
 $f2:\R^2\to\R$ where $f2(x,y)=x(1-y)$.
 
 \begin{solution}
@@ -32,8 +32,8 @@ f2 = x*(1 - y);
 \end{verbatim}
 
 \end{solution}
-\end{exercise}
-\begin{exercise} \label{c11.3.2c}
+\end{computerExercise}
+\begin{computerExercise} \label{c11.3.2c}
 $f3:\R^2\to\R^2$ where  
 $f3(x,y)=\left(\begin{array}{c} xy-1\\x+2y\end{array}\right)$.
 
@@ -46,8 +46,8 @@ f3 = [x*y - 1, x + 2*y];
 \end{verbatim}
 
 \end{solution}
-\end{exercise}
-\begin{exercise} \label{c11.3.2d}
+\end{computerExercise}
+\begin{computerExercise} \label{c11.3.2d}
 $f4:\R^3\to\R$ where $f4(u)=u_1-u_2^2 + u_3$ and $u=(u_1,u_2,u_3)^t$.
 
 \begin{solution}
@@ -59,8 +59,8 @@ f4 = u(1) - u(2)^2 + u(3);
 \end{verbatim}
 
 \end{solution}
-\end{exercise}
-\begin{exercise} \label{c11.3.2e}
+\end{computerExercise}
+\begin{computerExercise} \label{c11.3.2e}
 $f5:\R^3\to\R^2$ where $f5(u)=\left(\begin{array}{c} u_1 -2u_3\\u_1 u_2 u_3\end{array}\right)$ and $u=(u_1,u_2,u_3)^t$.
 
 \begin{solution}
@@ -72,8 +72,8 @@ f5 = [u(1) - 2*u(3); u(1)*u(2)*u(3)];
 \end{verbatim}
 
 \end{solution}
-\end{exercise}
-\begin{exercise} \label{c11.3.2f}
+\end{computerExercise}
+\begin{computerExercise} \label{c11.3.2f}
 $f6:\R^3\to\R^3$ where $f6(u)=\left(\begin{array}{c} u_3\\u_1 u_3\\ 
 \sin u_2\end{array}\right)$ and $u=(u_1,u_2,u_3)^t$.
 
@@ -87,5 +87,5 @@ f6 = [u(3); u(1)*u(3); sin(u(2))];
 
 
 \end{solution}
-\end{exercise}
+\end{computerExercise}
 \end{document}

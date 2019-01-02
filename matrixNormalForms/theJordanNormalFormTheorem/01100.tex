@@ -2,12 +2,12 @@
 \input{../../preamble.tex}
 \begin{document}
 
-\CEXER
+
 
 \noindent In Exercises~\ref{E:jnfma} -- \ref{E:jnfme}, (a) determine the real
 Jordan normal form for the given matrix $A$, and (b) find the matrix $S$ so 
 that $S\inv AS$ is in real Jordan normal form.  
-\begin{exercise}  \label{E:jnfma}
+\begin{computerExercise}  \label{E:jnfma}
 \begin{matlabEquation}\label{jordan-form-exercise}
 A = \left(\begin{array}{rrrr} -3 & -4 & -2 & 0\\
 -9 & -39 & -16 & -7\\ 18 & 64 & 27 & 10 \\ 15 & 86 & 34 & 18
@@ -44,8 +44,8 @@ S =
 
 
 \end{solution}
-\end{exercise}
-\begin{exercise}  \label{E:jnfmb}
+\end{computerExercise}
+\begin{computerExercise}  \label{E:jnfmb}
 \begin{matlabEquation}\label{jordan-form-exercise-2}
 A =\left(\begin{array}{rrrr} 9 & 45 & 18 & 8\\
 0 & -4 & -1 & -1\\ -16 & -69 & -29 & -12 \\ 25 & 123 & 49 & 23
@@ -87,8 +87,8 @@ and label it $v_{23}$.  Set $v_{22} = (A + I_4)v_{23}$ and
 $v_{21} = (A + I_4)^2v_{23}$.  Then, $S = (v_1|v_{21}|v_{22}|v_{23})$.
 
 \end{solution}
-\end{exercise}
-\begin{exercise}  \label{E:jnfmc}
+\end{computerExercise}
+\begin{computerExercise}  \label{E:jnfmc}
 \begin{matlabEquation}\label{jordan-form-exercise-3}
 A = \left(\begin{array}{rrrr} -5 & -13 & 17 & 42\\
 -10 & -57 & 66 & 187\\ -4 & -23 & 26 & 77 \\ -1 & -9 & 9 & 32
@@ -122,8 +122,8 @@ T =
 
 
 \end{solution}
-\end{exercise}
-\begin{exercise}  \label{E:jnfmd}
+\end{computerExercise}
+\begin{computerExercise}  \label{E:jnfmd}
 \begin{matlabEquation}\label{jordan-form-exercise-4}
 A = \left(\begin{array}{rrrr} 1 & 0 & -9 & 18 \\
 12 & -7 & -26 & 77\\ 5 & -2 & -13 & 32 \\ 2 & -1 & -4 & 11
@@ -167,8 +167,8 @@ $v_{11} = (A + 2I_4)v_{12}$ and $v_{21} = (A + 2I_4)v_{22}$.  Then,
 $S = (v_{11}|v_{12}|v_{21}|v_{22})$.
 
 \end{solution}
-\end{exercise}
-\begin{exercise} \label{E:jnfme}
+\end{computerExercise}
+\begin{computerExercise} \label{E:jnfme}
 \begin{matlabEquation}\label{jordan-form-exercise-5}
 A = \left(\begin{array}{rrrr} 
     -1  &  -1  &   1   &  0\\
@@ -208,5 +208,5 @@ $(A+I_4)^2$.  For example let {\tt v3 = [0 0 1 0]'}.  Then set
 {\tt v4 = null(A-2*eye(4))} and {\tt S = [v1 v2 v3 v4]}.
 
 \end{solution}
-\end{exercise}
+\end{computerExercise}
 \end{document}

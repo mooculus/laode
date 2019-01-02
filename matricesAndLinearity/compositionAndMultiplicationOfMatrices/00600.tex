@@ -2,12 +2,12 @@
 \input{../../preamble.tex}
 \begin{document}
 
-\CEXER
+
 
 \noindent In Exercises~\ref{c4.7.1a} -- \ref{c4.7.1c} decide for the
 given pair of matrices $A$ and $B$ whether or not the products $AB$ or
 $BA$ are defined and compute the products when possible.
-\begin{exercise} \label{c4.7.1a}
+\begin{computerExercise} \label{c4.7.1a}
 \begin{matlabEquation}\label{MATLAB:26}
 A=\left(\begin{array}{rrr} 2  &  2  & -2 \\ -4  &  4  &  0
 \end{array}\right) \AND
@@ -29,8 +29,8 @@ The matrix $BA$ is not defined, since $B$ has 3 columns while $A$
 has 2 rows.  Typing {\tt B*A} generates an error message.
 
 \end{solution}
-\end{exercise}
-\begin{exercise} \label{c4.7.1b}
+\end{computerExercise}
+\begin{computerExercise} \label{c4.7.1b}
 \begin{matlabEquation}\label{MATLAB:27}
 A=\left(\begin{array}{rrrrr}  -4  &  1  &  0  &  5  & -1\\
 5  & -1  & -2  & -4  & -2\\ 1  &  5 &  -4   & 1  &  5
@@ -47,8 +47,8 @@ while $B$ has four rows.  The matrix $BA$ is also not defined
 because $B$ has 6 columns and $A$ has 3 rows.
 
 \end{solution}
-\end{exercise}
-\begin{exercise} \label{c4.7.1c}
+\end{computerExercise}
+\begin{computerExercise} \label{c4.7.1c}
 \begin{matlabEquation}\label{MATLAB:28}
 A=\left(\begin{array}{rrrr}  -2  & -2  &  4  &  5\\
  0  & -3  & -4  &  3\\ 1  & -3  &  1  &  1\\ 0  &  1  &  0  &  4
@@ -72,5 +72,5 @@ ans =                                   ans =
 
 
 \end{solution}
-\end{exercise}
+\end{computerExercise}
 \end{document}
