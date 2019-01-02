@@ -22,8 +22,15 @@ end
 
 local dirname = status.filename:gsub(".tex$","")
 
+filenames = {}
+
 for i in dirtree(dirname) do
    local filename = i:gsub(".*/([^/]+)$","%1")
-   
-  tex.sprint("\\subfile{" ..  dirname .. "/" .. filename .. "}")
+   table.insert( filenames, filename )
+end
+
+table.sort(filenames)
+
+for i, v in pairs(filenames) do
+  tex.sprint("\\subfile{" ..  dirname .. "/" .. v .. "}")
 end
