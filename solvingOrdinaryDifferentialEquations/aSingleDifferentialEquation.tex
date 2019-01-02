@@ -9,7 +9,7 @@
 \end{abstract}
 \maketitle
 
-  \label{S:growthmodels}
+  \label{S:singlelineareqn}
 
 Algebraic operations such as addition and multiplication are
 performed on numbers while the calculus operations of
@@ -28,7 +28,7 @@ for numbers
 \[
 x_1=3 \quad \mbox{ and } \quad x_2=-1,
 \]
-while in this chapter we discuss how to solve some systems of
+while in this chapter we discuss how to solve some linear systems of
 differential equations for functions.
 
 Solving a single linear equation in one unknown $x$ is a simple
@@ -98,6 +98,8 @@ Thus, the constant $C$ represents an {\em initial condition\/} for the
 differential equation.  We will return to the discussion of initial 
 conditions several times in this chapter.
 
+
+\ignore{
 See Exercise~\ref{c3.1.7} for a more interesting example of this type of
 differential equation.
 
@@ -135,6 +137,7 @@ Note that we have not discussed how we knew that the function $x_2(t)$
 is a solution to \eqref{E:verify}.  For the most part, the issue of how
 one finds solutions to a differential equation will be discussed in later
 chapters, though we do determine solutions to a very important equation next.
+}
 
 \subsubsection*{The Linear Differential Equation of Growth and Decay}
 
@@ -156,7 +159,7 @@ $x(t)=0$ is a solution.
 
 
 In words \eqref{lin1} asks: For which functions $x(t)$ is the
-derivative of $x(t)$ a scalar multiple of $x(t)$.  The function
+derivative of $x(t)$ equal to $\lambda x(t)$.  The function
 \[
 x(t)=e^{\lambda t}
 \]
@@ -258,10 +261,10 @@ lambda = -0.5;
 x = x0*exp(lambda*t);
 plot(t,x)
 \end{verbatim}
-The result of this calculation is shown in
+The result of this calculation is shown in 
 Figure~\ref{graph_labelfig}.  In this way we can actually see
 the difference between exponential growth ($\lambda=0.5$) and
-exponential decay ($\lambda=-0.5$), as discussed in
+exponential decay ($\lambda=-0.5$), as discussed in the limit in 
 \eqref{explimits}.
 
 \begin{figure}[htb]
@@ -336,181 +339,6 @@ $\lambda<0$.
 }
 
 
-\subsection*{Some Examples of \protect\eqref{ivp1}}
-
-Even though the differential equation \eqref{lin1} is one of the
-simplest differential equations, it still has some use in applications.
-We present two here: compound interest and population dynamics.
-
-\subsubsection*{Compound Interest} \index{compound interest}
-
-Banks pay interest on an account in the following way.  At the
-end of each day, the bank determines the interest rate $r_{day}$ for
-that day, checks the principal $P$ in the account, and then
-deposits an additional $r_{day}P$.  So the next day the principal in
-this account is $(1+r_{day})P$.  Note that if $r$ denotes the
-interest rate per year, then $r_{day} = r/365$.  Of course, a day
-is just a convenient measure for elapsed time.  Before computers
-were prevalent, banks paid interest yearly or quarterly or monthly
-or, in a few cases, even weekly, depending on the particular bank rules.
-
-Observe that the more frequently interest is paid, the more
-money is earned. For example, if interest is paid only once at
-the end of a year, then the money in the account at the end of
-the year is $(1+r)P$, and the amount $rP$ is called {\em simple
-interest\/}.  But if interest is paid twice a year, then the principal
-at the end of six months will be $(1+\frac{r}{2})P$, and the principal
-at the end of the year will be $(1+\frac{r}{2})^2P$.  Since
-\[
-\left(1+\frac{r}{2}\right)^2 = 1+r+\frac{1}{4}r^2 > 1+r,
-\]
-there is more money in the account at the end of the
-year if the interest is compounded semiannually rather than
-annually.  But how much is the difference and what is the
-maximum earning potential?
-
-While making the calculation in the previous paragraph, we
-implicitly made a number of simplifying assumptions.  In
-particular, we assumed
-\begin{itemize}
-\item	an initial principal $P_0$ is deposited in the bank on January 1,
-\item	the money is not withdrawn for one year,
-\item	no new money is deposited in that account during the year,
-\item	the yearly interest rate $r$ remains constant throughout
-	the year, and
-\item	interest is added to the account $N$ times during the year.
-\end{itemize}
-In this {\em model\/}, simple interest corresponds to $N=1$, compound monthly
-interest to $N=12$, and compound daily interest to $N=365$.
-
-We first answer the question: How much money is in this account after
-one year?  After one time unit of $\frac{1}{N}$ year, the amount of
-money in the account is
-\[
-Q_1 = \left(1+\frac{r}{N}\right)P_0.
-\]
-The interest rate in each time period is $\frac{r}{N}$,
-the yearly rate $r$ divided by the number of time periods $N$.  Here
-we have used the assumption that the interest rate remains constant
-throughout the year.  After two time units, the principal is:
-\[
-Q_2 = \left(1+\frac{r}{N}\right)Q_1 = \left(1+\frac{r}{N}\right)^2P_0,
-\]
-and at the end of the year (that is, after $N$ time periods)
-\begin{equation} \label{compint}
-Q_N = \left(1+\frac{r}{N}\right)^N P_0.
-\end{equation}
-Here we have used the assumption that money is neither deposited nor
-withdrawn from our account.   Note that $Q_N$ is the amount of money
-in the bank after {\bf one} year assuming that interest has been
-compounded $N$ (equally spaced) times during that year, and the effective
-interest rate when compounding $N$ times is:
-\[
-\left(1+\frac{r}{N}\right)^N - 1.
-\]
-
-For the curious, we can write a program in \Matlab to compute
-\eqref{compint}.  Suppose we assume that the initial deposit $P_0=\$1,000$,
-the simple interest rate is $6\%$ per year, and the interest payments
-are made monthly. In \Matlab type
-\begin{verbatim}
-N  = 12;
-P0 = 1000;
-r  = 0.06;
-QN = (1 + r/N)^N*P0
-\end{verbatim}
-The answer is $QN=\$1,061.68$, and the {\em effective\/}
-interest rate for monthly payments is $6.16778\%$.  For daily
-interest payments $N=365$, the answer is $QN=\$1,061.83$, and
-the effective interest rate is $6.18313\%$.
-
-To find the maximum effective interest, we ask the bank to compound interest
-continuously; that is, we ask the bank to compute
-\[
-\lim_{N\to\infty} \left(1 + \frac{r}{N}\right)^N.
-\]
-We compute this limit using differential equations.  The concept of
-continuous interest is rephrased as follows.  Let $P(t)$ be the
-principal at time $t$, where $t$ is measured in units of years.
-Suppose that we assume that interest is compounded $N$ times during
-the year.  The length of time in each compounding period is
-\[
-\Delta t = \frac{1}{N},
-\]
-and the change in principal during that time period is
-\[
-\Delta P = \frac{r}{N} P = rP\Delta t.
-\]
-It follows that
-\[
-\frac{\Delta P}{\Delta t} = rP,
-\]
-and, on taking the limit $\Delta t \to 0$, we have the differential equation
-\[
-\frac{dP}{dt}(t) = rP(t).
-\]
-
-Since $P(0)=P_0$ the solution of the initial value problem given
-in Theorem~\ref{T:singleeqn} shows that
-\[
-P(t) = P_0 e^{rt}.
-\]
-After one year ($t=1$) we find that
-\[
-P(1) =  e^r P_0.
-\]
-Note that
-\[
-P(1) = \lim_{N\to\infty} Q_N,
-\]
-and we have thus verified that
-\[
- \lim_{N\to\infty} \left(1 + \frac{r}{N}\right)^N = e^r.
-\]
-Thus the maximum effective interest rate is $e^r-1$.  When $r=6\%$
-the maximum effective interest rate is $6.18365\%$.
-
-
-\subsubsection*{An Example from Population Dynamics}
-\index{population dynamics}
-
-To provide a second interpretation of the constant $\lambda$ in
-\eqref{lin1}, we discuss a simplified model for population dynamics.
-Let $p(t)$ be the size of a population of a certain species at
-time $t$ and let $r$ be the rate at which the population $p$ is
-changing at time $t$.  In general, $r$ depends on the time $t$
-and is a complicated function of birth and death rates and of
-immigration and emigration, as well as of other factors.
-Indeed, the rate $r$ may well depend
-on the size of the population itself.  (Overcrowding can be
-modeled by assuming that the death rate increases with the size
-of the population.) These population models assume that the
-rate of change in the size of the population $dp/dt$ is given by
-\begin{equation}  \label{pop_model}
-        \frac{dp}{dt}(t) = r p(t),
-\end{equation}
-they just differ on the precise form of $r$.  In general, the
-rate $r$ will depend on the size of the population $p$ as well
-as the time $t$, that is, $r$ is a function $r(p,t)$.
-
-The simplest population model\index{population model} --- which
-we now assume --- is the
-one in which $r$ is assumed to be constant.  Then equation
-\eqref{pop_model} is identical to \eqref{lin1} after identifying $p$
-with $x$ and $r$ with $\lambda$.  Hence we may interpret $r$ as
-the growth rate for the population.  The form of the solution in
-\eqref{soln1} shows that the size of a population grows
-exponentially if $r>0$ and decays exponentially if $r<0$.
-
-The mathematical description of this simplest population model
-shows that the assumption of a constant growth rate leads to
-exponential growth (or exponential decay).  Is this realistic?
-Surely, no population will grow exponentially for all time, and
-other factors, such as limited living space, have to be taken
-into account.  On the other hand, exponential growth describes
-well the growth in human population during much of human
-history.  So this model, though surely oversimplified, gives
-some insight into population growth.
 
 
 

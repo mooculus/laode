@@ -102,50 +102,26 @@ infinity.  The phase portrait is shown in Figure~\ref{pp_dsp2}.
       \label{pp_dsp2}
 \end{figure}
 
-\subsubsection*{Second Order Differential Equations}
-\index{differential equation!second order}
+
+\subsubsection*{Nonexistence of Eigendirections}
 
 We now show analytically that certain linear systems of
 differential equations have no invariant lines in their phase portrait.
-
-We do this by showing that second order differential equations can be
-reduced to first order systems by a simple but important trick.  Indeed,
-sometimes it is easier to solve a single second order equation, and
-sometimes it is easier to solve the first order system.  At this stage
-we introduce this connection by considering the differential equation
-\begin{equation}  \label{E:2ndordera}
-\frac{d^2x}{dt^2} + x = 0.
-\end{equation}
-This differential equation states that we are looking for a function
-$x(t)$ whose second derivative is $-x(t)$.  From calculus, we know
-that $x(t)=\cos t$ is such a function.
-
-Let $y(t)=\dot{x}(t)$.  Then
-\eqref{E:2ndordera} may be rewritten as a first order coupled system
-in $x(t)$ and $y(t)$ as follows:
+Consider the system
 \begin{equation}  \label{E:2nd->1st}
 \begin{array}{rcl}
 \dot{x} & = & y \\
 \dot{y} & = & -x.
 \end{array}
 \end{equation}
-Observe that if $x(t)$ is a solution to \eqref{E:2ndordera}, then
+Observe that $(x(t),y(t))=(\sin t, \cos t)$ is a solution to \eqref{E:2nd->1st} by calculating
 \[
-0 = \frac{d^2x}{dt^2} + x = \frac{dy}{dt} + x.
+\begin{array}{rclcrcr}
+\dot x(t) & = & \frac{d}{dt} \sin t & = & \cos t & = & y(t)\\
+\dot y(t) & = & \frac{d}{dt} \cos t&  = & -\sin t & = & -x(t)
+\end{array}
 \]
-Hence,
-\[
-\dot{y} = -x
-\]
-Conversely, if $(x(t),y(t))$ is a solution to \eqref{E:2nd->1st}, then
-$x(t)$ is a solution to \eqref{E:2ndordera}.  That is,
-\[
-\frac{d^2x}{dt^2} + x = \frac{dy}{dt} + x = -x + x = 0.
-\]
-
-It follows from the discussion that $(x(t),y(t))=(\cos t,\sin t)$ is 
-a solution to the differential equation \eqref{E:2nd->1st}.  We have shown 
-analytically that the unit circle centered at the origin is a solution 
+We have shown analytically that the unit circle centered at the origin is a solution 
 trajectory for \eqref{E:2nd->1st}.  Hence \eqref{E:2nd->1st} has no 
 eigendirections.  It may be checked using \Matlab that all solution 
 trajectories for \eqref{E:2nd->1st} are just circles centered at the origin.
