@@ -15,7 +15,7 @@
 \let\input\otherinput}
 \makeatother
 
-\newcommand{\includeexercises}{\directlua{kpse.find_file("exercises","lua")}}
+\newcommand{\includeexercises}{\directlua{dofile(kpse.find_file("exercises","lua"))}}
 
 %\newcounter{ccounter}
 %\setcounter{ccounter}{1}
@@ -43,10 +43,10 @@
 \newcommand{\dfield}{{\sf dfield9}}
 \newcommand{\pplane}{{\sf pplane9}}
 
-\newcommand{\EXER}{\section*{Exercises}}%\vspace*{0.2in}\hrule\small\setcounter{exercise}{0}}
-\newcommand{\CEXER}{}%\vspace{0.08in}\begin{center}Computer Exercises\end{center}}
-\newcommand{\TEXER}{} %\vspace{0.08in}\begin{center}Hand Exercises\end{center}}
-\newcommand{\AEXER}{} %\vspace{0.08in}\begin{center}Hand Exercises\end{center}}
+\newcommand{\EXER}{}
+\newcommand{\CEXER}{}
+\newcommand{\TEXER}{}
+\newcommand{\AEXER}{}
 
 % BADBAD: \newcommand{\Bbb}{\bf}
 
