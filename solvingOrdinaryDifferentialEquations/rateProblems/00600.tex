@@ -1,0 +1,35 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c3.1.4}
+Suppose you deposit \$10,000 in a bank at an
+interest of $7.5\%$ compounded continuously.
+How much money will be in your account a year and a half later?
+How much would you have if the interest were compounded monthly?
+
+\begin{solution}
+
+\ans After a year and a half, given instantaneously compounded
+interest, you would have
+$P_{instant}(1.5) = \mbox{\$}11\mbox{,}190.72$.
+Alternatively, if interest is compounded monthly, you would have
+$P_{monthly}(1.5) = \mbox{\$}11\mbox{,}186.81$.
+
+\soln Use the formula for compound interest.  In the case of interest
+compounded instantaneously, the formula is:
+$P_{instant}(t) = P_0e^{rt}$.  The interest rate is given as 7.5\%, so
+$r = 0.075$.  Thus,
+$P_{instant}(t) = \mbox{\$}10\mbox{,}000e^{0.075t}$.
+We then compute the amount of money in the account after a year
+and a half by setting $t = 1.5$.
+
+\para If interest is compounded monthly, then
+\[
+P_{monthly}(t) = P_0\left(1 + \frac{r}{12}\right)^{12t} =
+\mbox{\$}10\mbox{,}000\left(1 + \frac{0.075}{12}\right)^{12t}
+\]
+Again, set $t = 1.5$ to find the principal after a year and a half.
+
+\end{solution}
+\end{exercise}
+\end{document}

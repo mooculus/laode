@@ -1,0 +1,52 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c3.1.9}
+There are two banks in town --- Intrastate and Statewide.  You plan
+to deposit \$5,000 in one of these banks for two years.  Statewide Bank's
+best savings account pays $8\%$ interest per year compounded quarterly
+and charges \$10 to open an account.  Intrastate Bank's best savings
+account pays $7.75\%$ interest compounded daily.  Which bank will
+pay you the most money when you withdraw your money?  Would your
+answer change if you had planned to keep your money in the bank
+for only one year?
+
+\begin{solution}
+
+\ans After two years, an account at Statewide returns more interest than
+the Intrastate account.  However, after only one year, the Intrastate
+account returns more.
+
+\soln To find the return from each account, use the formula for
+compound interest:
+\[
+P(t) = P_0\left(1 + \frac{r}{N}\right)^{Nt}
+\]
+If you deposit your money at Statewide, $P_0 = \$4\mbox{,}990$ because of the
+fine.  Interest is compounded four times a year, so $N = 4$.  The interest
+rate is 8\%, so $r = 0.08$.
+After two years, an account at Statewide returns
+\[
+P_{S}(2) = \$4\mbox{,}990\left(1 + \frac{0.08}{4}\right)^{2(4)} = 
+\$5\mbox{,}846.58
+\]
+If you deposit your money at Intrastate, $r = 0.0775$.  Interest is
+compounded daily, so $N = 365$.  So, after two years, the account returns
+\[
+P_{I}(2) = \$5\mbox{,}000\left(1 + \frac{0.0775}{365}\right)^{2(365)} = 
+\$5\mbox{,}838.19.
+\]
+After only 1 year, however,
+\[
+P_{S}(1) = \$4\mbox{,}900\left(1 + \frac{0.08}{4}\right)^{4} = \$5\mbox{,}401.37
+\]
+at Statewide, and
+\[
+P_{I}(1) = \$5\mbox{,}000\left(1 + \frac{0.0775}{365}\right)^{365} = 
+\$5\mbox{,}402.87
+\]
+at Intrastate.
+
+\end{solution}
+\end{exercise}
+\end{document}

@@ -1,0 +1,50 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c6.5.6}
+Compute $e^A$ where
+\[
+A = \mattwo{3}{-1}{1}{1}.
+\]
+Check your answer using \Matlabp.
+
+\begin{solution}
+
+\ans $\dps e^A = e^2\mattwo{2}{-1}{1}{0}$.
+
+\soln We cannot compute $e^A$ directly by hand.  By Lemma~\ref{L:similarexp},
+if $B = P^{-1}AP$, then $e^B = P^{-1}e^AP$.  Therefore, we solve by
+finding a matrix similar to $A$ whose exponential can be computed.  
+We first find the eigenvalues of $A$ and associated eigenvectors.
+If $\lambda$ is an eigenvalue of $A$, then $\det(A - \lambda I_2) =
+0$, or, since $A$ is a $2 \times 2$ matrix,
+\[ 0 = \lambda^2 - \trace(A)\lambda + det(A) = \lambda^2 - 4\lambda +
+4 = (\lambda - 2)^2. \]
+Thus, $A$ has one eigenvalue, $\lambda = 2$.  To find the associated
+eigenvector, solve $(A - \lambda I_2)v = 0$ by row reduction:
+\[ A - 2I_2 = \mattwo{1}{-1}{1}{-1} \longrightarrow
+\mattwo{1}{-1}{0}{0}. \]
+So, $v = (1,1)$ is an eigenvector of $A$ associated to $\lambda$.
+By Theorem~\ref{T:putinform}, since $A$
+has one real eigenvector, 
+\[ B = \mattwo{\lambda}{1}{0}{\lambda} = \mattwo{2}{1}{0}{2} \]
+is a matrix similar to $A$.  We can then compute $P = (v|w)$, where
+$Aw = v + \lambda w$, that is, $(A - \lambda I_2)w = v$.  We can solve
+by row reducing the augmented matrix $(A - \lambda I_2|v)$:
+\[ \left(\begin{array}{rr|r} 1 & -1 & 1 \\ 1 & -1 & 1 \end{array}
+\right) \longrightarrow \left(\begin{array}{rr|r} 1 & -1 & 1 \\
+0 & 0 & 0 \end{array}\right). \]
+Thus, $w = (2,1)$, so
+\[ P = \mattwo{1}{2}{1}{1} \]
+and $A$ and $B$ are similar.
+We now compute $e^A = Pe^BP^{-1}$.  Using \eqref{e:expshear},
+\[ e^B = e^2\mattwo{1}{1}{0}{1}. \]
+So we calculate 
+\[ e^A = Pe^BP^{-1} = \mattwo{1}{2}{1}{1}e^2\mattwo{1}{1}{0}{1}
+\mattwo{-1}{2}{1}{-1} = e^2\mattwo{2}{-1}{1}{0}. \]
+
+
+
+\end{solution}
+\end{exercise}
+\end{document}

@@ -1,0 +1,26 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c3.1.10}
+In the beginning of the year 1990 the population of the United States was
+approximately 250,000,000 people and the growth rate was estimated at $3\%$
+per year.  Assuming that the growth rate does not change, during what year
+will the population of the United States reach 400,000,000?
+
+\begin{solution}
+
+\ans According to this population model, the population of the United States
+reaches 400,000,000 in the year 2005.
+
+\soln Note that the population model represents a continuous growth
+function $p(t) = p_0e^{rt}$.  Let $t$ be time in years, starting in 1990. 
+So $p_0 = 250$ million.  The growth rate $r$ is $0.03$.  Thus, the
+population at time $t$ (in millions) is $P(t) = 250e^{0.03t}$.
+The population will reach 400,000,000 when $400 = 250e^{0.03t}$.
+Solving for $t$ yields $t \approx 15.67$, that is, in the year 2005.
+
+
+
+\end{solution}
+\end{exercise}
+\end{document}
