@@ -38,6 +38,8 @@ lualatex linearAlgebra
 lualatex linearAlgebra
 ```
 
+You can [view a PDF of the textbook](https://osu.box.com/v/laode-labels) which includes the labels that you can use in the `\exercise` command below.
+
 ### Try it
 
 Now you are ready to try building a worksheet.
