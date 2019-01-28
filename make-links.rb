@@ -32,5 +32,3 @@ for k in files.keys
   File.symlink "../" + files[k], "./by-number/#{k}.tex"
   File.symlink "../" + files[k].gsub(/.tex/,''), "./by-number/#{k}"  
 end
-
-
