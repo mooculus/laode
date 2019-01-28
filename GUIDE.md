@@ -34,8 +34,8 @@ gem install optparse-pathname
 Compile the book.  This step is needed because various `aux` files are created which will be read by the worksheet builder.
 ```
 cd ~/linear-algebra/laode
-lualatex linearAlgebra
-lualatex linearAlgebra
+lualatex --shell-escape linearAlgebra
+lualatex --shell-escape linearAlgebra
 ```
 
 You can [view a PDF of the textbook](https://osu.box.com/v/laode-labels) which includes the labels that you can use in the `\exercise` command below.
