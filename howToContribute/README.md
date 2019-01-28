@@ -6,11 +6,6 @@ Let's learn how to add a new exercise to the textbook.
 
 Go to https://github.com/mooculus/laode and click `Fork`
 
-## Write your exercise
-
-Open [template.tex](template.tex).  You will find a sample
-template for creating a new exercise.
-
 ## Locate the appropriate section of the textbook
 
 Let's suppose you would like to add an exercise to Section 2.2, The
@@ -18,7 +13,15 @@ Geoemtry of Low-Dimensional Solutions.
 
 You will find the text for that section in [../solvingLinearEquations/theGeometryOfLowDimensionalSolutions.tex](../solvingLinearEquations/theGeometryOfLowDimensionalSolutions.tex), and a subdirectory of the same name ([../solvingLinearEquations/theGeometryOfLowDimensionalSolutions](../solvingLinearEquations/theGeometryOfLowDimensionalSolutions)) houses the exercise files.
 
-Pick a new, unused number, and add place your exercise file in that directory.
+## Write your exercise
+
+Open [template.tex](template.tex).  You will find a sample
+template for creating a new exercise.
+
+## Save your exercise
+
+Pick a new, unused number, and add place your exercise file in the
+appropriate directory with the other exercises for that section.
 
 ## Submit a pull request
 
