@@ -34,6 +34,12 @@ Geoemtry of Low-Dimensional Solutions.
 
 You will find the text for that section in [../solvingLinearEquations/theGeometryOfLowDimensionalSolutions.tex](../solvingLinearEquations/theGeometryOfLowDimensionalSolutions.tex), and a subdirectory of the same name ([../solvingLinearEquations/theGeometryOfLowDimensionalSolutions](../solvingLinearEquations/theGeometryOfLowDimensionalSolutions)) houses the exercise files.
 
+To look at the existing exercises, run
+```
+cd ../by-number/SECTION.NUMBER
+```
+Here, `SECTION.NUMBER` is the desired textbook section.
+
 ## Copy the template to the appropriate location
 
 Pick a new, unused number, and copy [template.tex](template.tex) to
@@ -41,10 +47,9 @@ the appropriate directory with the other exercises for that section.
 
 To do this, copy the file to a new number with
 ```
-cd ../by-number/SECTION.NUMBER
 cp ~/linear-algebra/laode/howToContribute/template.tex 9999.tex
 ```
-Here, `SECTION.NUMBER` is the desired textbook section, and `9999` is your chosen unused number.
+Here, `9999` is your chosen unused number.
 
 ## Write and save your exercise
 
