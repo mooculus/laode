@@ -46,7 +46,7 @@ Go to the worksheet builder directory.
 ```
 cd ~/linear-algebra/worksheet-builder
 ```
-Then create a file called `sample.tex` with the following content:
+Then create a file called `homework0.tex` with the following content:
 
 ```
 \documentclass{article}
@@ -69,4 +69,7 @@ Now if you run
 ```
 ./build-both.sh --root=$HOME/linear-algebra/laode sample.tex
 ```
-two files will be created: one with solutions, and one without.
+two files will be created:
+* one with solutions called `homework0s.pdf` and
+* one without solutions called `homework0e.pdf`.
+
