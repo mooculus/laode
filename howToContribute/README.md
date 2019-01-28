@@ -8,7 +8,7 @@ Go to https://github.com/mooculus/laode and click `Fork`
 
 ## Write your exercise
 
-Open `[template.tex](./template.tex)`.  You will find a sample
+Open `[template.tex](template.tex)`.  You will find a sample
 template for creating a new exercise.
 
 ## Locate the appropriate section of the textbook
