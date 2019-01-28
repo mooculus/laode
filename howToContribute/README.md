@@ -45,7 +45,8 @@ cd ~/linear-algebra/laode/howToContribute
 ```
 and copy the file to a new number with
 ```
-cp template.tex ../by-number/SECTION.NUMBER/9999.tex
+cd ../by-number/SECTION.NUMBER
+cp ~/linear-algebra/laode/howToContribute/template.tex .
 ```
 Here, `SECTION.NUMBER` is the desired textbook section, and `9999` is your chosen unused number.
 
@@ -54,7 +55,18 @@ Here, `SECTION.NUMBER` is the desired textbook section, and `9999` is your chose
 Open the template you have copied to the appropriate directory and add
 your content.
 
+## Commit your changes
+
+Commit your new exercise with
+```
+git add 9999.tex
+git commit -m 'Description of my new exercise'
+git push master origin
+```
+
 ## Submit a pull request
 
 In order for your exercise to appear in the master copy of the
-textbook, submit a pull request.
+textbook, submit a pull request.  You can do this by going to
+https://github.com/YOUR-GITHUB-USERNAME/laode and clicking on `New Pull
+Request`.
