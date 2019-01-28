@@ -39,14 +39,10 @@ You will find the text for that section in [../solvingLinearEquations/theGeometr
 Pick a new, unused number, and copy [template.tex](template.tex) to
 the appropriate directory with the other exercises for that section.
 
-To do this, go to the template directory
-```
-cd ~/linear-algebra/laode/howToContribute
-```
-and copy the file to a new number with
+To do this, copy the file to a new number with
 ```
 cd ../by-number/SECTION.NUMBER
-cp ~/linear-algebra/laode/howToContribute/template.tex .
+cp ~/linear-algebra/laode/howToContribute/template.tex 9999.tex
 ```
 Here, `SECTION.NUMBER` is the desired textbook section, and `9999` is your chosen unused number.
 
