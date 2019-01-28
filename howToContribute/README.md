@@ -13,15 +13,15 @@ Geoemtry of Low-Dimensional Solutions.
 
 You will find the text for that section in [../solvingLinearEquations/theGeometryOfLowDimensionalSolutions.tex](../solvingLinearEquations/theGeometryOfLowDimensionalSolutions.tex), and a subdirectory of the same name ([../solvingLinearEquations/theGeometryOfLowDimensionalSolutions](../solvingLinearEquations/theGeometryOfLowDimensionalSolutions)) houses the exercise files.
 
-## Write your exercise
+## Copy the template to the appropriate location
 
-Open [template.tex](template.tex).  You will find a sample
-template for creating a new exercise.
+Pick a new, unused number, and copy [template.tex](template.tex) to
+the appropriate directory with the other exercises for that section.
 
-## Save your exercise
+## Write and save your exercise
 
-Pick a new, unused number, and add place your exercise file in the
-appropriate directory with the other exercises for that section.
+Open the template you have copied to the appropriate directory and add
+your content.
 
 ## Submit a pull request
 
