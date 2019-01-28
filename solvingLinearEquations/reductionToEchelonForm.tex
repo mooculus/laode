@@ -21,7 +21,7 @@ an algorithm for determining whether a system of linear
 equations is consistent or inconsistent, and for determining all
 solutions to a consistent system.
 
-\begin{definition}
+\begin{definition} \label{D:echelon}
 A matrix $E$ is in (row) {\em echelon form\/} \index{echelon
 form} if two conditions hold.
 \begin{enumerate}
@@ -31,6 +31,10 @@ to $1$.  This leading entry $1$ is called a {\em pivot\/}. \index{pivot}
 the right of the column where the pivot in the $i^{th}$ row occurs.
 \end{enumerate}
 \end{definition}
+
+Note: A consequence of Definition~\ref{D:echelon} is that all rows in 
+an echelon form matrix that are identically zero occur at the bottom 
+of the matrix.
 
 Here are three examples of matrices that are in echelon form.
 The pivot in each row (which is always equal to $1$) is preceded
