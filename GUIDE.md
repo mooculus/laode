@@ -28,6 +28,11 @@ And install the other software needed to run the worksheet builder.
 ```
 gem install optparse-pathname
 ```
+If you lack permissions to run `gem`, try
+```
+gem install --user-install optparse-pathname
+```
+to install it locally.
 
 ### Build the book
 
