@@ -77,9 +77,13 @@ Now if you run
 ```
 ./build-both.sh --root=$HOME/linear-algebra/laode sample.tex
 ```
-two files will be created:
+two PDF files will be created:
 * one with solutions called `homework0s.pdf` and
-* one without solutions called `homework0e.pdf`.
+* one without solutions called `homework0e.pdf`
+and two TeX files will be created
+* one with solutions called `homework0s.tex` and
+* one without solutions called `homework0e.tex`
+and you may edit the TeX files by hand if you wish.
 
 ## Installing MATLAB
 
