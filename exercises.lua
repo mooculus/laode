@@ -26,7 +26,9 @@ filenames = {}
 
 for i in dirtree(dirname) do
    local filename = i:gsub(".*/([^/]+)$","%1")
-   table.insert( filenames, filename )
+   if filename:match(".tex$") then
+      table.insert( filenames, filename )
+   end
 end
 
 table.sort(filenames)
