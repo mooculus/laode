@@ -312,6 +312,9 @@ improvement at \texttt{ximera@math.osu.edu}
 \renewenvironment{hint}{\suppress}{\endsuppress}
 \renewenvironment{solution}{}{}
 
+\ifcsname displaysolutions\endcsname%
+\else
 \excludecomment{solution}
+\fi
 
 \endinput

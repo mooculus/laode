@@ -136,7 +136,7 @@
 %   {\end{equation}\renewcommand\endequation{\eqno \@eqnnum
 % $$\global\@ignoretrue}}
 
-\newcommand{\soln}{\textbf{Solution:} }
+\newcommand{\soln}{\textbf{Answer:} }
 \newcommand{\exercap}[1]{\centerline{Figure~\ref{#1}}}
 \newcommand{\exercaptwo}[1]{\centerline{Figure~\ref{#1}a\hspace{2.1in}
 Figure~\ref{#1}b}}
@@ -146,7 +146,10 @@ Figure~\ref{#1}b\hspace{1.2in}Figure~\ref{#1}c}}
 
 \usepackage{ifluatex}
 \ifluatex
+\ifcsname displaysolutions\endcsname%
+\else
 \renewenvironment{solution}{\suppress}{\endsuppress}
+\fi
 \fi
 
 \ifxake
