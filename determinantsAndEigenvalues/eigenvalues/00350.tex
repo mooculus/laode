@@ -1,0 +1,45 @@
+\documentclass{ximera}
+
+\author{Marty Golubitsky}
+
+\input{../../preamble.tex}
+
+\begin{document}
+
+
+\begin{exercise} \label{c10.2.25}
+\rm Let
+\[
+A=\matthree{ 0}{ -3}{ -2}{ 1}{ -4}{ -2}{ -3}{ 4}{  1}
+\]
+One of the eigenvalues of $A$ is $-1$.  Find the other eigenvalues of $A$.
+
+\ans The other two eigenvalues of $A$ are $-1\pm \sqrt{2}$.
+
+\soln The characteristic polynomial of $A$ is 
+\begin{eqnarray*}
+\det(A - \lambda I_3) & = & 
+\begin{pmatrix}
+-\lambda & -3 & -2 \\ \ \ 1 & -4 - \lambda & -2 \\ -3 & \ \ 4 & \ \ 1-\lambda
+\end{pmatrix} \\ 
+& = &  - \lambda^3 - 3\lambda^2 - \lambda +1
+\end{eqnarray*}
+Since $-1$ is an eigenvalue of $A$, $\lambda + 1$ is a factor of the characteristic polynomial.  We can solve the equation 
+\begin{eqnarray*}
+- \lambda^3 - 3\lambda^2 - \lambda +1 & = &  -(\lambda+1)(\lambda^2 + a\lambda + b) \\
+& = & -\lambda^3 - (a+1)\lambda^2 - (a+b)\lambda + b 
+\end{eqnarray*}
+for
+\[
+- \lambda^3 - 3\lambda^2 - \lambda +1 = -(\lambda+1)(\lambda^2 +2 \lambda -1).
+\]
+Using the quadratic formula, the roots of $\lambda^2 +2 \lambda -1$ are $ -1 \pm \sqrt{2} $. Therefore, the eigenvalues are $-1, -1 + \sqrt{2}, -1 - \sqrt{2}$.
+
+
+  
+
+\end{exercise}
+
+\end{document}
+
+
