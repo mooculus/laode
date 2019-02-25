@@ -1,0 +1,52 @@
+\documentclass{ximera}
+
+\author{Marty Golubitsky}
+
+\input{../../preamble.tex}
+
+\begin{document}
+
+\begin{exercise} \label{a5.5.900}
+Let 
+\[
+\{v_1,v_2,v_3\}
+\]
+ be a basis for $\R^3$.  Find all $k$ so that 
+\[
+\{v_1,kv_2,v_2+(1-k)v_3\}
+\]
+is also a basis for $\R^3$.  Justify your answer.
+
+\begin{solution}
+
+\ans The set $\{v_1,kv_2,v_2+(1-k)v_3\}$ is a basis for each $k\neq 0,1$.
+
+\soln 
+Vectors in the space spanned by $\{v_1,kv_2,v_2+(1-k)v_3\}$ have the form
+\begin{eqnarray*}
+x & = & a_1 v_1 + a_2 kv_2 +a_3 (v_2+(1-k)v_3)\\
+& = & a_1 v_1 + (a_2 k + a_3)v_2 + a_3 (1-k) v_3
+\end{eqnarray*}
+where $a_1,a_2,a_3$ are scalars in $\R$.
+Since the set $\{v_1,v_2,v_3\}$ is a basis for $\R^3$, it is linearly independent and the coefficients must satisfy:
+\begin{eqnarray*}
+a_1 & = & 0\\
+a_2 k + a_3 & = & 0\\
+a_3 (1-k) & = & 0
+\end{eqnarray*}
+
+\begin{itemize}
+\item[$k=1$]  Choose any nonzero value for $a_3$ and the set is linearly dependent.
+
+\item[$k=0$] Choose any nonzero value for $a_2$, and the set is linearly dependent.
+
+\item[$k\neq 0,1$] The only possible solution is $a_1=a_2=a_3=0$ and the set is linearly independent.
+\end{itemize}
+Thus, $\{v_1, kv_2, v_2+(1-k)v_3\}$ is a basis for $\R^3$ for each $k\neq 0,1$.
+
+
+\end{solution}
+\end{exercise}
+
+\end{document}
+
