@@ -90,7 +90,7 @@
 \newcommand{\arrayfinish}{\renewcommand{\arraystretch}{1.2}}
 \newcommand{\Start}[1]{\vspace{0.08in}\noindent {\bf Section~\ref{#1}}}
 \newcommand{\exer}[1]{\noindent {\bf \ref{#1}}}
-\newcommand{\ans}{}
+\newcommand{\ans}{\textbf{Answer:} }
 \newcommand{\matthree}[9]{\left(\begin{array}{rrr} #1 & #2 & #3 \\ #4 & #5 & #6
 \\ #7 & #8 & #9\end{array}\right)}
 \newcommand{\cvectwo}[2]{\left(\begin{array}{c} #1 \\ #2\end{array}\right)}
@@ -136,7 +136,7 @@
 %   {\end{equation}\renewcommand\endequation{\eqno \@eqnnum
 % $$\global\@ignoretrue}}
 
-\newcommand{\soln}{\textbf{Answer:} }
+\newcommand{\soln}{\textbf{Solution:} }
 \newcommand{\exercap}[1]{\centerline{Figure~\ref{#1}}}
 \newcommand{\exercaptwo}[1]{\centerline{Figure~\ref{#1}a\hspace{2.1in}
 Figure~\ref{#1}b}}
@@ -150,6 +150,8 @@ Figure~\ref{#1}b\hspace{1.2in}Figure~\ref{#1}c}}
 \else
 \renewenvironment{solution}{\suppress}{\endsuppress}
 \fi
+\else
+\renewenvironment{solution}{}{}
 \fi
 
 \ifxake
