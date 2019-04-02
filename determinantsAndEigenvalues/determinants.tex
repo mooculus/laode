@@ -237,30 +237,45 @@ adds $5$ times the $2^{nd}$ row to the $1^{st}$ row.   \end{proof}
 
 \begin{lemma}  \label{L:detelemrowmat}
 \begin{itemize}
-\item[(a)] The determinant of a swap matrix is $-1$.
-\item[(b)] The determinant of the matrix that adds a multiple
+\item[(a)] The determinant of the matrix that adds a multiple
 of one row to another is $1$.
-\item[(c)] The determinant of the matrix that multiplies one
+\item[(b)] The determinant of the matrix that multiplies one
 row by $c$ is $c$.
+\item[(c)] The determinant of a swap matrix is $-1$.
 \end{itemize}
 \end{lemma}  \index{determinant}
  
-\begin{proof} The matrix that swaps the $i^{th}$ row with the $j^{th}$
-row is the matrix whose nonzero elements are $a_{kk}=1$ where
-$k\neq i,j$ and $a_{ij}=1=a_{ji}$.  Using a similar argument as
-in \eqref{e:detswap} we see that the determinants of these
-matrices are equal to $-1$.
- 
-The matrix that adds a multiple of one row to another is
+\begin{proof} 
+(a) The matrix that adds a multiple of one row to another is
 triangular (either upper or lower) and has $1$'s on the
 diagonal.  Thus property (a) in Definition~\ref{D:determinants}
-implies that the determinants of
-these matrices are equal to $1$.
+implies that the determinants of these matrices are equal to $1$.
  
-Finally, the matrix that multiplies the $i^{th}$ row by $c\neq
-0$ is a diagonal matrix all of whose diagonal entries are $1$
+(b) The matrix that multiplies the $i^{th}$ row by $c\neq 0$ is a 
+diagonal matrix all of whose diagonal entries are $1$
 except for $a_{ii}=c$.  Again property (a) implies that the
-determinant of this matrix is $c\neq 0$. \end{proof}
+determinant of this matrix is $c\neq 0$. 
+
+(c) The matrix that swaps the $i^{th}$ row with the $j^{th}$ row is 
+the product of four matrices of types (a) and (b).  To see this 
+let $A$ be an $n\times n$ matrix whose $i^{th}$ row vector is 
+$a_i$.  Then perform the following four operations in order:
+
+\begin{center}
+\begin{tabular}{lllc}
+Operation & \multicolumn{2}{c}{Result} & Matrix\\
+\hline
+Add row $i$ to row $j$ & row $i = a_i$ & row $j = a_i + a_j$ & $B_1$ \\
+Multiply row $i$ by $-1$  & row $i = -a_i$ & row $j = a_i + a_j$ & $B_2$\\
+Add row $j$ to row $i$  &    row $i =  a_j$ &  row $j = a_i + a_j$ &  $B_3$ \\
+Subtract row $i$ from row $j$ & row $i = a_j$ &  row $j = a_i$ & $B_4$\\ 
+\end{tabular}
+\end{center}
+It follows that the swap matrix equals $B_4 B_3 B_2 B_1$.  Therefore 
+\[
+\det(\mbox{swap}) = \det(B_4) \det(B_3) \det(B_2) \det(B_1) = (1)(-1)(1)(1) = -1.
+\]
+\end{proof}
 
 
 \subsection*{Computation of Determinants}
