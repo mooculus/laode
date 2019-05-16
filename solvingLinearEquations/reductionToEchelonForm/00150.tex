@@ -1,0 +1,42 @@
+\documentclass{ximera}
+
+\author{Marty Golubitsky}
+
+\input{../../preamble.tex}
+
+\begin{document}
+
+\begin{exercise}\label{C2S4_1c}
+
+How many solutions does the equation
+\[
+A \Matrix{x_1 \\ x_2 \\ x_3} = \Matrix{2 \\ 1 \\ 2}  
+\]
+have for the following choices of $A$.  Explain your reasoning.
+\begin{enumeratea}
+\item $A = \Matrix{1 & 0 & 1\\ 0 & 1 & 0 \\ 0 & 0 & 0}$
+
+\item $A = \Matrix{1 & 3 & 1\\ 2 & 1 & 0 \\ 0 & 0 & 1}$
+
+\item $A = \Matrix{1 & 1 & 1\\ 1 & 2 & 1 \\ 1 & 1 & 1}$
+\end{enumeratea}
+
+
+  
+\begin{solution}
+
+\ans (a) no solutions; (b) 1 solution; (c) infinitely many solutions
+
+\soln 
+\begin{enumeratea}
+\item The third equation in this system is $0 = 1$ and that is inconsistent.
+
+\item $A$ is invertible; so there is 1 solution
+
+\item Reduce the augmented matrix to echelon form. The rank of $A$ is $2$ as is the rank of the augmented matrix.  Therefore, there exists a one-parameter set of solutions.
+\end{enumeratea}
+
+\end{solution}
+\end{exercise}
+
+\end{document}

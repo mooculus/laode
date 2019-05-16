@@ -1,0 +1,51 @@
+\documentclass{ximera}
+
+\author{Marty Golubitsky}
+
+\input{../../preamble.tex}
+
+\begin{document}
+
+\begin{exercise}\label{C5.4.10}
+ Let 
+ \[
+ u = \Matrix{3\\2\\-5} \quad v = \Matrix{-6\\1\\7} \quad w = \Matrix{0\\5\\-3}
+ \]
+\begin{enumeratea}
+\item Determine whether the sets $\{u,v\}, \{u,w\}, \{v,w\}$ are linearly independent.
+\item Is the set $\{u,v,w\}$ linearly independent? 
+\end{enumeratea}
+
+  
+\begin{solution}
+
+\ans %THE SHORT ANSWER GOES HERE (if relevant)
+\begin{enumeratea}
+\item yes, yes, yes.
+\item no
+\end{enumeratea}
+
+\soln %A LONGER SOLUTION, EXPLAINING HOW THE ANSWER WAS FOUND, GOES HERE (if relevant)
+
+\begin{enumeratea}
+\item A set of two vectors is linearly dependent if and only if one is a scalar multiple of the other.  None of the vectors is a scalar multiple of another. Thus, $\{u,v\}, \{u,w\}, \{v,w\}$ are linearly independent.
+\item To tell whether $\{u,v,w\}$ is linearly independent, we solve the equation $au + bv + cw = 0$:
+\[ 
+a \Matrix{3 \\ 2 \\ -5} + b\Matrix{-6\\1\\7} + c\Matrix{0\\5\\-3} = \Matrix{0\\0\\0}
+\]
+We row reduce the coefficient matrix of this system: 
+\[ 
+\Matrix{ 3 & -6 & 0 \\ 2 & 1 & 5 \\ -5 & 7 & -3 } \to \Matrix{ 1 & -2 & 0 \\ 2 & 1 & 5 \\ -5 & 7 & -3 }  \to \Matrix{ 1 & -2 & 0 \\ 0 & 5 & 5 \\ 0 & -3 & -3 } \to\Matrix{ 1 & -2 & 0 \\ 0 & 1 & 1 \\ -5 & 1 & -1 } \] \[ \to \Matrix{ 1 & -2 & 0 \\ 0 & 1 & 1 \\ 0 & 0 & 0 } \to  \Matrix{ 1 & 0 & 2 \\ 0 & 1 & 1 \\ 0 & 0 & 0 } 
+\]
+Therefore, there are infinitely many solutions to this linearly system and $\{u,v,w\}$ is linearly dependent.
+
+\end{enumeratea}
+
+
+
+\end{solution}
+\end{exercise}
+
+\end{document}
+
+

@@ -1,0 +1,49 @@
+\documentclass{ximera}
+
+\author{Marty Golubitsky}
+
+\input{../../preamble.tex}
+
+\begin{document}
+
+\begin{exercise}\label{c4.3.6A}
+
+Determine which of the following maps are linear maps.  If the map is linear give the matrix associated to the linear map. Explain your reasoning.
+\begin{enumeratea}
+
+\item $L_1:\R^2\to\R^2$ where $L_1\Matrix{x\\y} = \Matrixc{x + y+ 3\\ 2y +1}$
+
+\item $L_2:\R^2\to\R^3$ where $L_2\Matrix{x\\y} = \Matrixc{\sin x\\ x + y\\ 2y}$
+ 
+\item $L_3:\R^2\to\R$ where $L_3\Matrix{x\\y} = x + y $
+  
+\end{enumeratea}
+  
+\begin{solution}
+
+\ans (a) Not linear; (b) not linear; (c) linear with $1\times 2$ matrix $A= \Matrix{1 & 1}$.
+
+\soln 
+\begin{enumeratea}
+
+\item Linear maps map the origin to the origin.  $L_1\Matrix{0\\0} = \Matrix{3\\1} \neq 0$. So $L_1$ is not linear.
+
+\item Linear maps $L$ satisfy $L(cX) = cL(X)$.  In this case 
+\[
+cL_2\Matrix{x\\y} =  \Matrixc{c\sin x\\ cx + cy\\ 2cy} \AND
+L_2\left(\Matrix{cx\\cy}\right) =  \Matrixc{\sin(cx)\\ cx + cy\\ 2cy}
+\]
+Since $\sin(cx)\neq c\sin(x)$, $L_3$ is not linear.
+
+\item All matrix mappings are linear.  Since we can write
+\[
+L_3 \Matrix{x\\y} = x+ y = \Matrix{1 &1} \Matrix{x\\y}  
+\]
+it follows that $L_3$ is linear with $1\times 2$ matrix $A =  \Matrix{1 &1}$.
+\end{enumeratea}
+
+
+\end{solution}
+\end{exercise}
+
+\end{document}

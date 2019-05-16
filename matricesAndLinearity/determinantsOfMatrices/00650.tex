@@ -1,0 +1,55 @@
+\documentclass{ximera}
+
+\author{Martin Golubitsky}
+
+\input{../../preamble.tex}
+
+\begin{document}
+
+\begin{exercise}\label{c3_8.00650a}
+
+Suppose a $2\times 2$ matrix $A$ satisfies the following equation:
+\begin{equation} \label{e:c3_8.00650}
+A \Matrix{ 0 & 2\\1 & 2} = \Matrix{ -1 & 2\\ 1 & 4}
+\end{equation}
+Without calculating the entries of $A$, find $\det(A)$.
+  
+\begin{solution}
+
+\ans $\det(A) = 3$  
+
+\soln 
+Use the product rule for determinants to compute
+\[
+\det \left(A \Matrix{ 0 & 2\\1 & 2}\right) = \det(A)\det \Matrix{ 0 & 2\\1 & 2} = -2\det(A) =
+\det \Matrix{ -1 & 2\\ 1 & 4} = -6.
+\]
+Hence  $\det(A) = 3$. 
+\end{solution}
+\end{exercise}
+
+\begin{exercise}\label{c3_8.00650b}
+
+Find the entries of $A$ defined in \eqref{e:c3_8.00650} and verify your determinant calculation from Exercise~\ref{c3_8.00650a}. 
+
+  
+\begin{solution}
+
+\ans $A = \Matrix{2 & -1 \\ 1 & 1}$ 
+
+\soln 
+Use invertibility to compute
+\[
+A =  \Matrix{ -1 & 2\\ 1 & 4}\Matrix{ 0 & 2\\1 & 2}^{-1} 
+= \Matrix{ -1 & 2\\ 1 & 4}\frac{1}{2}\Matrix{ -2 & 2\\1 & 0}
+= \Matrix{2 & -1 \\ 1 & 1}
+\]
+Hence $\det(A) = 3$.
+\end{solution}
+\end{exercise}
+
+
+
+
+
+\end{document}
