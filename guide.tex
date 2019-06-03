@@ -97,12 +97,14 @@ cd ~/linear-algebra/worksheet-builder
 Then create a file with a name like \texttt{homework1.tex} with the
 following content:
 
+\vspace{2ex}\hrule
+
 \begin{verbnobox}[\vbdelim]
 \documentclass{article}
 
 \input{preamble}
 
-\title{<Homework 1>}\author{<Author Name>}\date{<Jan 1, 2078>}
+\title{<Homework 1>}\author{<Author Name>}\date{Due: <Jan 1, 2078>}
 
 \begin{document}
 \maketitle
@@ -113,6 +115,8 @@ following content:
 
 \end{document}
 \end{verbnobox}
+
+\hrule\vspace{2ex}
 
 Now if you run
 
@@ -127,12 +131,12 @@ two PDF files will be created:
   files will be created.
 \end{enumerate}
 
-Two \TeX\ files are also created:
+Two \LaTeX\ files are also created:
 \begin{enumerate}
 \item one with solutions called \texttt{homework0s.tex} and
 \item one without solutions called \texttt{homework0e.tex}.
 \end{enumerate}
- You may edit the \TeX\ files by hand if you wish.
+ You may edit the \LaTeX\ files by hand if you wish.
  
 \section{Installing MATLAB}\label{installing-matlab}
 
