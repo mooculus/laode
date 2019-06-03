@@ -1,0 +1,21 @@
+sudo: require
+dist: xenial
+language: bash
+
+before_install:
+  - sudo apt-get -qq update
+  - sudo apt-get install -y build-essential
+  - sudo apt-get install -y texlive-base texlive-latex-base texlive-generic-recommended texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra
+  - mkdir -p ~/texmf/tex/latex
+  - git clone https://github.com/XimeraProject/ximeraLatex ~/texmf/tex/latex/ximeraLatex
+
+script:
+  - make && make install
+  
+deploy:
+  provider: pages
+  skip_cleanup: true
+  local_dir: build
+  github_token: $GITHUB_TOKEN
+  on:
+    branch: master
