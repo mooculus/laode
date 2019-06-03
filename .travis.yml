@@ -5,7 +5,7 @@ language: bash
 before_install:
   - sudo apt-get -qq update
   - sudo apt-get install -y build-essential
-  - sudo apt-get install -y texlive-base texlive-latex-base texlive-generic-recommended texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra
+  - sudo apt-get install -y texlive-base texlive-latex-base texlive-generic-recommended texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra texlive-luatex
   - mkdir -p ~/texmf/tex/latex
   - git clone https://github.com/XimeraProject/ximeraLatex ~/texmf/tex/latex/ximeraLatex
 
