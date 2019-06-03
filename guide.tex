@@ -2,6 +2,10 @@
 \usepackage{hyperref}
 \usepackage{fullpage}
 
+\setlength{\parindent}{0in}
+\setlength{\parskip}{1ex}
+
+
 \title{Instructor guide}
 \author{LAODE}
 
@@ -95,6 +99,15 @@ cd ~/linear-algebra/worksheet-builder
 
 There is a sample at
 \verb|~/linear-algebra/worksheet-builder/homework-sample.tex|.
+Let's try building the sample worksheet.  Run the command
+\begin{verbatim}
+./build-both.sh --root=$HOME/linear-algebra/laode homework-sample.tex
+\end{verbatim}
+Among many files, you should see two PDF files
+\begin{enumerate}
+\item one with solutions called \texttt{homework-samples.pdf} and
+\item one without solutions called \texttt{homework-samplee.pdf}.
+\end{enumerate}
 
 You can create your own file with a name like \texttt{homework1.tex}
 with the following content:
@@ -141,8 +154,8 @@ Two \LaTeX\ files are also created:
 \end{enumerate}
 You may edit the \LaTeX\ files by hand if you wish.  For example, you
 may wish to insert \verb|\clearpage| to provide more logical
-page-breaks, but be warned that these auto-generated \LaTeX\ files may
-be challenging to read.
+page-breaks.  Be warned that these auto-generated \LaTeX\ files may be
+challenging to read.
 
 \section{Installing MATLAB}\label{installing-matlab}
 
