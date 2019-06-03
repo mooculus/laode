@@ -83,10 +83,6 @@ lualatex --shell-escape linearAlgebra
 lualatex --shell-escape linearAlgebra
 \end{verbatim}
 
-You can \href{https://osu.box.com/v/laode-labels}{view a PDF of the
-textbook} which includes the labels that you can use in the
-\texttt{\textbackslash{}exercise} command below.
-
 \subsection{Try it}\label{try-it}
 
 Now you are ready to try building a worksheet.
@@ -97,8 +93,11 @@ Go to the worksheet builder directory.
 cd ~/linear-algebra/worksheet-builder
 \end{verbatim}
 
-Then create a file with a name like \texttt{homework1.tex} with the
-following content:
+There is a sample at
+\verb|~/linear-algebra/worksheet-builder/homework-sample.tex|.
+
+You can create your own file with a name like \texttt{homework1.tex}
+with the following content:
 
 \vspace{2ex}\hrule
 
@@ -126,20 +125,20 @@ following content:
 Now if you run
 
 \begin{verbatim}
-./build-both.sh --root=$HOME/linear-algebra/laode sample.tex
+./build-both.sh --root=$HOME/linear-algebra/laode homework1.tex
 \end{verbatim}
 
 two PDF files will be created:
 \begin{enumerate}
-\item one with solutions called \texttt{homework0s.pdf} and
-\item one without solutions called \texttt{homework0e.pdf} and two TeX
+\item one with solutions called \texttt{homework1s.pdf} and
+\item one without solutions called \texttt{homework1e.pdf} and two TeX
   files will be created.
 \end{enumerate}
 
 Two \LaTeX\ files are also created:
 \begin{enumerate}
-\item one with solutions called \texttt{homework0s.tex} and
-\item one without solutions called \texttt{homework0e.tex}.
+\item one with solutions called \texttt{homework1s.tex} and
+\item one without solutions called \texttt{homework1e.tex}.
 \end{enumerate}
 You may edit the \LaTeX\ files by hand if you wish.  For example, you
 may wish to insert \verb|\clearpage| to provide more logical
