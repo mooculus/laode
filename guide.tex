@@ -2,17 +2,36 @@
 \usepackage{hyperref}
 \usepackage{fullpage}
 
+\title{Instructor guide}
+\author{LAODE}
+
+\usepackage{xcolor,verbatimbox}
+\catcode`>=\active %
+\catcode`<=\active %
+\def\openesc{\color{red}}
+\def\closeesc{\color{black}}
+\def\vbdelim{\catcode`<=\active\catcode`>=\active%
+\def<{\openesc}
+\def>{\closeesc}}
+\catcode`>=12 %
+\catcode`<=12 %
+
 \begin{document}
 
+\maketitle
 \tableofcontents
 
-\section{Instructor guide}\label{instructor-guide}
+\section{How to create worksheets}\label{how-to-create-worksheets}
 
-\subsection{How to create worksheets}\label{how-to-create-worksheets}
+In order to create worksheets, you will need access to the exercise
+files (which include the answers and solutions).  To access these, you
+will need to know the \verb|\label| attached to the exercise.  At
+\url{BROKEN LINK}, you will find a copy of the textbook with the
+exercise \verb|\label|s displayed in the margin.
 
 The following instructions assume you are using a Mac.
 
-\subsubsection{Get the .cls files.}\label{get-the-.cls-files.}
+\subsection{Get the .cls files.}\label{get-the-.cls-files.}
 
 In the Terminal, run
 
@@ -21,7 +40,7 @@ mkdir -p ~/Library/texmf/tex/latex
 git clone https://github.com/XimeraProject/ximeraLatex ~/Library/texmf/tex/latex/ximeraLatex
 \end{verbatim}
 
-\subsubsection{Download resources}\label{download-resources}
+\subsection{Download resources}\label{download-resources}
 
 First, download the book.
 
@@ -50,7 +69,7 @@ gem install --user-install optparse-pathname
 
 to install it locally.
 
-\subsubsection{Build the book}\label{build-the-book}
+\subsection{Build the book}\label{build-the-book}
 
 Compile the book. This step is needed because various \texttt{aux} files
 are created which will be read by the worksheet builder.
@@ -65,7 +84,7 @@ You can \href{https://osu.box.com/v/laode-labels}{view a PDF of the
 textbook} which includes the labels that you can use in the
 \texttt{\textbackslash{}exercise} command below.
 
-\subsubsection{Try it}\label{try-it}
+\subsection{Try it}\label{try-it}
 
 Now you are ready to try building a worksheet.
 
@@ -75,25 +94,25 @@ Go to the worksheet builder directory.
 cd ~/linear-algebra/worksheet-builder
 \end{verbatim}
 
-Then create a file called \texttt{homework0.tex} with the following
-content:
+Then create a file with a name like \texttt{homework1.tex} with the
+following content:
 
-\begin{verbatim}
+\begin{verbnobox}[\vbdelim]
 \documentclass{article}
 
 \input{preamble}
 
-\title{Homework 0}\author{Author Name}\date{Jan 1, 2019}
+\title{<Homework 1>}\author{<Author Name>}\date{<Jan 1, 2078>}
 
 \begin{document}
 \maketitle
 
-\exercise{c5.1.4g}
+\exercise{<label.for.problem.1>}
 
-\exercise{c5.1.7b}
+\exercise{<label.for.problem.2>}
 
 \end{document}
-\end{verbatim}
+\end{verbnobox}
 
 Now if you run
 
@@ -111,9 +130,9 @@ two PDF files will be created:
   edit the TeX files by hand if you wish.
 \end{enumerate}
 
-\subsection{Installing MATLAB}\label{installing-matlab}
+\section{Installing MATLAB}\label{installing-matlab}
 
-\subsubsection{For Ohio State faculty and
+\subsection{For Ohio State faculty and
 students}\label{for-ohio-state-faculty-and-students}
 
 Computers not only enable the completion of complicated calculations,
@@ -151,7 +170,7 @@ The rest of the instructions for installing MATLAB will automatically be
 emailed to your Ohio State email account. Instructions will vary as to
 whether you are on Windows, Mac OS, or Linux.
 
-\subsubsection{Getting the m\_files}\label{getting-the-m_files}
+\subsection{Getting the m\_files}\label{getting-the-m_files}
 
 To produce m\_files with filenames coming from the numeric labels in the
 textbook, run
@@ -168,12 +187,12 @@ cd ~/linear-algebra/laode/m_files/linearAlgebra
 ls
 \end{verbatim}
 
-\subsection{Set up canvas}\label{set-up-canvas}
+\section{Set up canvas}\label{set-up-canvas}
 
 To set up a course shell in Canvas (``Carmen'') populated with linear
 algebra content, email fowler@math.osu.edu.
 
-\subsection{Syllabus}\label{syllabus}
+\section{Syllabus}\label{syllabus}
 
 To receive a sample syllabus and calendar, email fowler@math.osu.edu.
 
