@@ -42,14 +42,17 @@ git clone https://github.com/XimeraProject/ximeraLatex ~/Library/texmf/tex/latex
 
 \subsection{Download resources}\label{download-resources}
 
-First, download the book.
+First, download the \LaTeX\ files for the textbook.
 
 \begin{verbatim}
 mkdir ~/linear-algebra
 git clone https://github.com/mooculus/laode ~/linear-algebra/laode
 \end{verbatim}
 
-Then, download the worksheet builder.
+Then, download the worksheet builder.  The result will be a directory
+\verb|~/linear-algebra/worksheet-builder| populated with scripts like
+\verb|build-worksheet.rb| which read and rearrange the \LaTeX\ source
+of the textbook to provide worksheets.
 
 \begin{verbatim}
 git clone https://github.com/kisonecat/worksheet-builder ~/linear-algebra/worksheet-builder
