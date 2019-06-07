@@ -92,18 +92,13 @@ lualatex --shell-escape linearAlgebra
 
 \subsection{Build a worksheet}\label{try-it}
 
-Now you are ready to try building a worksheet.
-
-Go to the worksheet builder directory.
-
-\begin{verbatim}
-cd ~/linear-algebra/worksheet-builder
-\end{verbatim}
+Now you are ready to build a worksheet.
 
 There is a sample at
 \verb|~/linear-algebra/worksheet-builder/homework-sample.tex|.
 Let's try building the sample worksheet.  Run the command
 \begin{verbatim}
+cd ~/linear-algebra/worksheet-builder
 ./build-both.sh --root=$HOME/linear-algebra/laode homework-sample.tex
 \end{verbatim}
 Among many files, you should see two PDF files
