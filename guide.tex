@@ -1,6 +1,7 @@
 \documentclass{article}
 \usepackage{hyperref}
 \usepackage{fullpage}
+\usepackage{enumerate}
 
 \setlength{\parindent}{0in}
 \setlength{\parskip}{1ex}
@@ -47,7 +48,7 @@ git clone https://github.com/XimeraProject/ximeraLatex ~/Library/texmf/tex/latex
 \subsection{Download resources}\label{download-resources}
 
 There are three steps:
-\begin{itemize}
+\begin{enumerate}[\bfseries(a)]
 \item First, download the \LaTeX\ files for the textbook.
 
 \begin{verbatim}
@@ -77,7 +78,7 @@ gem install --user-install optparse-pathname
 \end{verbatim}
 
 to install it locally.
-\end{itemize}
+\end{enumerate}
 
 \subsection{Build the book}\label{build-the-book}
 
@@ -94,7 +95,7 @@ lualatex --shell-escape linearAlgebra
 
 Now you are ready to build a worksheet.
 
-\begin{itemize}
+\begin{enumerate}[\bfseries(a)]
 \item \textbf{Preliminaries.}
 Go to the worksheet builder directory.
 
@@ -170,7 +171,7 @@ You may edit the \LaTeX\ files by hand if you wish.  For example, you
 may wish to insert \verb|\clearpage| to provide more logical
 page-breaks.  Be warned that these auto-generated \LaTeX\ files may be
 challenging to read.
-\end{itemize}
+\end{enumerate}
 
 \subsection{Send us new exercises}
 
