@@ -120,8 +120,8 @@ Here is a helpful mnemonic: the filename
 both to the grader and to the students after the due date.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\item[Creating your own worksheet.] You can create your own file with
-  a name like \texttt{homework1.tex} with the following content:
+\item[Creating the worksheet source.] You can create your own file
+  with a name like \texttt{homework1.tex} with the following content:
 
 \vspace{2ex}\hrule
 
@@ -146,13 +146,15 @@ both to the grader and to the students after the due date.
 
 \hrule\vspace{2ex}
 
-Now if you run
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item[Creating the worksheet.]
+Now run
 
 \begin{verbatim}
 ./build-both.sh --root=$HOME/linear-algebra/laode homework1.tex
 \end{verbatim}
 
-two PDF files will be created:
+Two PDF files will be created:
 \begin{enumerate}
 \item one with solutions called \texttt{homework1s.pdf} and
 \item one without solutions called \texttt{homework1e.pdf}.
