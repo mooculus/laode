@@ -46,23 +46,25 @@ git clone https://github.com/XimeraProject/ximeraLatex ~/Library/texmf/tex/latex
 
 \subsection{Download resources}\label{download-resources}
 
-First, download the \LaTeX\ files for the textbook.
+There are three steps:
+\begin{itemize}
+\item First, download the \LaTeX\ files for the textbook.
 
 \begin{verbatim}
 mkdir ~/linear-algebra
 git clone https://github.com/mooculus/laode ~/linear-algebra/laode
 \end{verbatim}
 
-Then, download the worksheet builder.  The result will be a directory
+\item Then, download the worksheet builder using
+\begin{verbatim}
+git clone https://github.com/kisonecat/worksheet-builder ~/linear-algebra/worksheet-builder
+\end{verbatim}
+The result will be a directory
 \verb|~/linear-algebra/worksheet-builder| populated with scripts like
 \verb|build-worksheet.rb| which copy and rearrange the \LaTeX\ source
 of the textbook to provide worksheets.
 
-\begin{verbatim}
-git clone https://github.com/kisonecat/worksheet-builder ~/linear-algebra/worksheet-builder
-\end{verbatim}
-
-And install the other software needed to run the worksheet builder.
+\item Finally, install the other software needed to run the worksheet builder.
 
 \begin{verbatim}
 gem install optparse-pathname
@@ -75,6 +77,7 @@ gem install --user-install optparse-pathname
 \end{verbatim}
 
 to install it locally.
+\end{itemize}
 
 \subsection{Build the book}\label{build-the-book}
 
