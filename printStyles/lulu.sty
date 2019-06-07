@@ -41,6 +41,10 @@
 %% This is the code that will allow us to redefine the title with
 \makeatletter
 
+\usepackage{datetime}
+\newdateformat{monthyeardate}{%
+  \monthname[\THEMONTH] \THEYEAR}
+
 % no numbering on the initial preface pieces
 \renewcommand{\maketitle}{%
   \addtocounter{titlenumber}{1}
@@ -225,7 +229,8 @@
 \begin{center}
   {\scalebox{3}{\large\textsf{\textbf{\textcolor{black}{Linear Algebra}}}}} \\[1ex]
   {\scalebox{3}{\large\textsf{\textbf{\textcolor{black}{and Differential Equations}}}}} \\[1ex]
-  {\scalebox{3}{\large\textsf{\textbf{\textcolor{black}{using MATLAB}}}}}
+  {\scalebox{3}{\large\textsf{\textbf{\textcolor{black}{using MATLAB}}}}} \\[3ex]
+  {\scalebox{2}{\large\textsf{\monthyeardate\today}}}
 \end{center}
 
 \vfill

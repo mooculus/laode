@@ -1,4 +1,4 @@
-all: textbook.pdf
+all: linearAlgebra.pdf
 
 %.pdf: %.tex
 	lualatex --shell-escape $<
