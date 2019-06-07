@@ -94,11 +94,18 @@ lualatex --shell-escape linearAlgebra
 
 Now you are ready to build a worksheet.
 
-There is a sample at
-\verb|~/linear-algebra/worksheet-builder/homework-sample.tex|.
-Let's try building the sample worksheet.  Run the command
+\begin{description}
+\item[Preliminaries.]
+Go to the worksheet builder directory.
+
 \begin{verbatim}
 cd ~/linear-algebra/worksheet-builder
+\end{verbatim}
+
+There is a sample at
+\verb|homework-sample.tex|.
+Let's try building the sample worksheet.  Run the command
+\begin{verbatim}
 ./build-both.sh --root=$HOME/linear-algebra/laode homework-sample.tex
 \end{verbatim}
 Among many files, you should see two PDF files
@@ -161,6 +168,7 @@ You may edit the \LaTeX\ files by hand if you wish.  For example, you
 may wish to insert \verb|\clearpage| to provide more logical
 page-breaks.  Be warned that these auto-generated \LaTeX\ files may be
 challenging to read.
+\end{description}
 
 \subsection{Send us new exercises}
 
