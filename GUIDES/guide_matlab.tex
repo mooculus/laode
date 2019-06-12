@@ -63,11 +63,14 @@ your Ohio State email account. Instructions are OS dependent.
 
 The course \texttt{.m}-files can be downloaded with the textbook.
 
+One option is to store the \texttt{.m}-files in the folder that MATLAB
+starts in.  The following code will achieve this.
+
 \begin{verbatim}
 cd(userpath)
 websave('mfiles.zip','http://go.osu.edu/mfiles')
 unzip('mfiles.zip')
-addpath('m_files')
+movefile('m_files/*', userpath);
 \end{verbatim}
 
 \end{document}
