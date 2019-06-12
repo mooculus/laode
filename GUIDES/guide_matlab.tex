@@ -61,14 +61,14 @@ your Ohio State email account. Instructions are OS dependent.
 
 \section{Course \texttt{.m}-files}
 
-The course \texttt{.m}-files can be downloaded with the textbook.
+The course files~\verb|*.m| can be downloaded with the textbook.
 They will need to be stored in a directory that MATLAB searches.
 There are two options.
 
 Start MATLAB.  You will be in the MATLAB home directory.
 
 \begin{enumerate}[(a)]
-\item One option is to store the \texttt{.m}-files in the MATLAB home
+\item One option is to store these files in the MATLAB home
   directory.  To do this, enter the following commands in the MATLAB
   command window.
   
@@ -80,16 +80,16 @@ movefile('m_files/*', userpath)
 rmdir('m_files')
 \end{verbatim}
   
-\item Another option is to store the \texttt{.m}-files in a directory
-  of your choosing, e.g., a directory named \verb|m_files| To achieve
-  this, start MATLAB and enter the following commands.
+\item Another option is to store these files in a directory called
+  \verb|m_files| To achieve this, start MATLAB and enter the following
+  commands.
 \begin{verbatim}
 cd(userpath)
 websave('mfiles.zip','http://go.osu.edu/mfiles')
 unzip('mfiles.zip')
 \end{verbatim}
-  To access the \texttt{.m}-files in the future, navigate to the
-  \verb|m_files| directory with
+  To access the files in the future, navigate to the \verb|m_files|
+  directory with
 \begin{verbatim}
 cd(userpath)
 cd('m_files')
