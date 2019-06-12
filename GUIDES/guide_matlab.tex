@@ -76,7 +76,8 @@ Start MATLAB.  You will be in the MATLAB home directory.
 cd(userpath)
 websave('mfiles.zip','http://go.osu.edu/mfiles')
 unzip('mfiles.zip')
-movefile('m_files/*', userpath);
+movefile('m_files/*', userpath)
+rmdir('m_files')
 \end{verbatim}
   
 \item Another option is to store the \texttt{.m}-files in a directory
