@@ -75,7 +75,18 @@ unzip('mfiles.zip')
 movefile('m_files/*', userpath);
 \end{verbatim}
   
-\item Another option is
+\item Another option is to store the \texttt{.m}-files in a directory of your choosing, e.g., a directory named \verb|m_files|.  To achieve this,
+\begin{verbatim}
+cd(userpath)
+websave('mfiles.zip','http://go.osu.edu/mfiles')
+unzip('mfiles.zip')
+addpath('m_files')
+\end{verbatim}
+When you start MATLAB in the future, you can navigate to the \verb|m_files| directory with 
+\begin{verbatim}
+cd(fullfile(userpath, 'm_files'))
+\end{verbatim}
+
 \end{enumerate}
 
 \end{document}
