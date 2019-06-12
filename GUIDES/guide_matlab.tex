@@ -64,14 +64,18 @@ your Ohio State email account. Instructions are OS dependent.
 The course \texttt{.m}-files can be downloaded with the textbook.
 They will need to be stored in a directory that MATLAB searches.
 
-One option is to store the \texttt{.m}-files in the folder that MATLAB
-starts in.  The following code will achieve this.
-
+\begin{enumerate}[(a)]
+\item One option is to store the \texttt{.m}-files in the folder that MATLAB
+  starts in.  The following code will achieve this.
+  
 \begin{verbatim}
 cd(userpath)
 websave('mfiles.zip','http://go.osu.edu/mfiles')
 unzip('mfiles.zip')
 movefile('m_files/*', userpath);
 \end{verbatim}
+  
+\item Another option is
+\end{enumerate}
 
 \end{document}
