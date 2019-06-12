@@ -77,7 +77,7 @@ cd(userpath)
 websave('mfiles.zip','http://go.osu.edu/mfiles')
 unzip('mfiles.zip')
 movefile('m_files/*', userpath)
-rmdir('m_files')
+rmdir m_files
 \end{verbatim}
   
 \item Another option is to store these files in a directory called
@@ -92,7 +92,7 @@ unzip('mfiles.zip')
   directory with
 \begin{verbatim}
 cd(userpath)
-cd('m_files')
+cd m_files
 \end{verbatim}
 
 \end{enumerate}
