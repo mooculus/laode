@@ -1,0 +1,41 @@
+\documentclass{ximera}
+
+\author{YOUR NAME}
+
+\input{../../preamble.tex}
+
+\begin{document}
+
+% To which section does your exercise belong? 
+
+\begin{exercise}\label{c4.9.3b.2}
+
+True or false? If true, explain why; if false, give a counterexample.
+\begin{enumerate}
+\item If $A$ and $B$ are matrices such that $AB = I_2$, then $BA = I_2$.
+
+\item If $A, B, C$ are matrices such that $AB = I_n$ and $BC = I_n$, then $A = C$.
+
+\item Let $A$ be an $m\times n$ matrix and $b$ be a column $m$ vector.  If the system of linear equations  $Ax = b$ has a unique solution, then $A$ is invertible.
+\end{enumerate}
+
+  
+\begin{solution}
+
+\ans  (a) False; (b) True; (c) False
+
+\soln 
+\begin{enumerate}
+
+\item Let $A = \Matrix{1 & 0 & 0\\ 0 & 1 & 0}$ and $B = \Matrix{1 & 0 \\ 0 & 1 \\ 0 & 0 }$.  Then $AB = \Matrix{1 & 0 \\ 0 & 1}$ and $BA = \Matrix{1 & 0 & 0\\ 0 & 1 & 0 \\ 0 & 0 & 0}$.
+
+\item Calculate $(AB)C = I_nC = C$ and $A(BC) = AI_n = A$.  By associativity of matrix multiplication, $A=C$.
+
+\item Let $A = \Matrix{1\\0}$ and $b = \Matrix{1\\0}$, then the unique solution is the $1\times1$ matrix $x = 1$.  But $A$ is not square and therefore not invertible.
+
+\end{enumerate}
+
+\end{solution}
+\end{exercise}
+
+\end{document}
