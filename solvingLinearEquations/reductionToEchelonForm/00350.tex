@@ -1,0 +1,46 @@
+\documentclass{ximera}
+
+\author{YOUR NAME}
+
+\input{../../preamble.tex}
+
+\begin{document}
+
+% To which section does your exercise belong? 
+
+\begin{exercise}\label{c2.4.2b.2}
+
+Consider the system of equations
+\[
+\begin{array}{rcl}
+x_1 + 3x_3 & = & 1 \\
+-x_1+2x_2-3x_3 & = & 1\\
+2x_2 + ax_3 & = & b
+\end{array}
+\]
+For which real numbers $a$ and $b$ does the system have no solutions, a unique solution, or infinitely many solutions?  Your answer should subdivide the $ab$-plane into three disjoint sets.
+  
+\begin{solution}
+
+\ans Unique solutions occur when $a\neq 0$; no solution occurs when $a=0$ and $b\neq 2$; and infinitely many solutions exist when $a = 0$ and $b =2$.
+
+\soln 
+Use row reduction on the augmented matrix to obtain
+\[
+\Matrix{1 & 0 & 3 & 1\\ -1 & 2 & -3 & 1 \\ 0 & 2 & a & b} \to
+\Matrix{1 & 0 & 3 & 1\\  0 & 2 & 0 & 2 \\ 0 & 2 & a & b} \to
+\]
+\[
+\Matrix{1 & 0 & 3 & 1\\  0 & 2 & 0 & 2 \\ 0 & 0 & a & b - 2} \to
+\Matrix{1 & 0 & 3 & 1\\  0 & 1 & 0 & 1 \\ 0 & 0 & a & b - 2} 
+\]
+If $a\neq 0$ the system has a unique solution. If $a = 0$ we obtain the echelon form matrix
+\[
+\Matrix{1 & 0 & 3 & 1\\  0 & 1 & 0 & 1 \\ 0 & 0 & 0 & b - 2}
+\]  
+There are no solutions if $b\neq 2$ and infinitely many solutions if $b = 2$.
+
+\end{solution}
+\end{exercise}
+
+\end{document}

@@ -1,0 +1,125 @@
+\documentclass{ximera}
+
+\author{Marty Golubitsky}
+
+\input{../../preamble.tex}
+
+\begin{document}
+
+For each subset of a vector space given in Exercises~\eqref{C5.2.3A}-\eqref{C5.2.3D} determine whether the subset is a vector subspace and if it is a vector subspace, find its dimension.
+
+\begin{exercise}\label{C5.2.3A}
+
+$S = \{p(t)\in\mathcal{P}_5 : p(2) = 0 \quad\mbox{and}\quad p'(1) = 0 \}$
+
+\begin{solution}
+
+\ans $S$ is a subspace and $\dim(S)=4$.
+
+\soln
+Verify that $S$ is a subspace by showing that it is closed under addition and scalar multiplication.  Let $p,q$ be in the subset.  Then
+\[
+\begin{array}{rclclcl}
+(p+q)(2) & = & p(2)+q(2) & = & 0 + 0 & = & 0 \\
+(p+q)'(1) & = & p'(1)+q'(1) & = & 0 + 0 & = & 0
+\end{array}
+\]
+So the subset is closed under addition. Let $c\in\R$ and calculate
+\[
+(cp)(2) = cp(2) = c0 = 0  \quad\mbox{and} \quad (cp)'(1) = cp'(1) = c0 = 0
+\]
+Hence the subset is also closed under scalar multiplication, and the subset is a subspace.
+
+Next we compute the dimension of $S$.  A polynomial $p\in \mathcal{P}_5 $ has the form 
+\[
+p(t) = a_0 + a_1t + a_2t^2 + a_3 t^3 + a_4t^4 + a_5t^5
+\]
+where $a_0,a_1,a_2,a_3,a_4,a_5\in\R$.  It follows that $\dim\mathcal{P}_5 = 6$. 
+We calculate the conditions on the coefficients that are needed for $p(t)$ to be in the subspace.  First note that 
+\[
+\begin{array}{rcl}
+p'(t) & = & a_1 + 2a_2t + 3a_3 t^2 + 4a_4t^3 + 5a_5t^4\\
+p(2) & = & a_0 + 2a_1 + 4a_2 + 8a_3  + 16a_4 + 32a_5 = 0\\
+p'(1) & = & a_1 + 2a_2 + 3a_3 + 4a_4 + 5a_5 = 0
+\end{array}
+\]
+Thus $p(t)$ is in the subspace if and only if
+\begin{equation} \label{Cp5}
+\begin{array}{rcl}
+p(2) = a_0 + 2a_1 + 4a_2 + 8a_3  + 16a_4 + 32a_5 & = & 0\\
+p'(1)= a_1 + 2a_2 + 3a_3 + 4a_4 + 5a_5 & = & 0
+\end{array}
+\end{equation}
+It follows from \eqref{Cp5} that $p(t)$ is in the subspace if and only if $a_0$ and $a_1$ are determined by $a_2,a_3,a_4,a_5$.  Hence the subspace is $4$-dimensional.
+\end{solution}
+\end{exercise}
+
+\begin{exercise}\label{C5.2.3B}
+
+$T = $ symmetric $2\times 2$ matrices.  That is, $T$ is the set of $2\times 2$ matrices $A$ so that $A=A^T$).
+
+\begin{solution}
+
+\ans $T$ is a subspace and $\dim(T) = 3$.
+
+\soln
+Symmetric $n\times n$ matrices form a subspace of matrices.  Suppose $A= A^T$ and $B = B^T$ are $n\times n$ matrices.  Then
+\[
+(A+B)^T = A^T + B^T = A + B  \quad\mbox{and} \quad (cA)^T = cA^T = cA
+\]
+So the set of symmetric matrices is closed under addition and scalar multiplication, and is a subspace. Specifically $2\times 2$ symmetric matrices have the form  
+\[
+S = \begin{bmatrix}
+ a & b \\  b &c  
+\end{bmatrix}
+\]
+and this set is $3$ dimensional with basis
+\[
+\begin{bmatrix}
+ 1 & 0 \\  0 &0  
+\end{bmatrix} 
+\qquad
+\begin{bmatrix}
+ 0 & 1 \\  1 &0  
+\end{bmatrix}
+\qquad
+\begin{bmatrix}
+ 0 & 0 \\  0 & 1  
+\end{bmatrix}
+\]
+\end{solution}
+\end{exercise}
+
+\begin{exercise}\label{C5.2.3C}
+$U = 2\times 3$ matrices in reduced row-echelon form
+
+\begin{solution}
+
+\ans $U$ is not a subspace.
+
+\soln
+The reduced echelon form matrices $E$ do not form a subspace.  Suppose $E$ has a pivot is the $i,j$ position.  Then the $(i,j)^{th}$ entry of $E$ is 1.  But $2E$ does not have a 1 in the $(i,j)^{th}$ entry and the set is not closed under scalar multiplication.
+\end{solution}
+\end{exercise}
+
+\begin{exercise}\label{C5.2.3D}
+$V = \mbox{range}(L_A):\R^4\to\R^3$ where $A$ is a $3\times 4$ matrix of rank $2$ 
+
+\begin{solution}
+\ans $V$ is a subspace and $\dim(V) = 2$
+
+\soln
+The range of any linear map is a subspace.  The dimension of the range of $L_A$ equals the rank of $A$ because of the two theorems 
+\[
+nullity(A) + \dim(range(A)) = n  \quad\mbox{and} \quad nullity(A) + rank(A) = n 
+\]
+where $A$ is an $n\times m$ matrix.  In this case $rank(A)=2$; so $\dim(range(A)) = 2$. 
+\end{solution}
+\end{exercise}
+
+
+
+
+  
+
+\end{document}
