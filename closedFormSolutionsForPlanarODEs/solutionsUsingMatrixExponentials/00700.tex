@@ -25,6 +25,12 @@ x(0) & = & e^s
 \item[(c)]  Use Theorem~\ref{T:linODEsoln} to conclude that $y(t)=z(t)$ for
 every $s$.
 \end{itemize}
+In this exercise you will need to use the following theorem from analysis:
+\begin{theorem} \label{exist&unique}
+If $f(x)$ is differentiable near $x_0$, and if $\frac{df}{dx}$ is continuous,
+then there is a unique solution to the differential equation $\dot{x} = f(x)$
+with initial condition $x(0) = x_0$. 
+\end{theorem}
 
 \begin{solution}
 
@@ -61,12 +67,12 @@ z(0) = e^0e^s = e^s,
 \]
 it follows that $z(t)$ is also a solution to the initial value problem.
 
-(c) By Theorem~\ref{exist&unique}, if
+(c) Theorem~\ref{exist&unique} states that if
 $f(x)$ is differentiable near $x_0$, and if $\frac{df}{dx}$ is continuous,
 then there is a unique solution to the differential equation $\dot{x} = f(x)$
 with initial condition $x(0) = x_0$.  Let $f(x) = x$ and let $x(0) = e^s$.
 Then, as shown in (a) and (b) of this problem, $e^{t + s}$ and $e^te^s$ are
-both solutions.  However, by Theorem~\ref{exist&unique}, there is only one
+both solutions.  However, by the analysis theorem, there is only one
 solution, so $e^{t + s} = e^te^s$.
 
 \end{solution}
