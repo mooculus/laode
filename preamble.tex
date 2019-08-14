@@ -157,13 +157,13 @@ Figure~\ref{#1}b\hspace{1.2in}Figure~\ref{#1}c}}
 \renewenvironment{solution}{}{}
 \fi
 
-\ifxake
-\newenvironment{matlabEquation}{\begin{equation}}{\end{equation}}
-\else
+%\ifxake
+%\newenvironment{matlabEquation}{\begin{equation}}{\end{equation}}
+%\else
 \newenvironment{matlabEquation}%
 {\let\oldtheequation\theequation\renewcommand{\theequation}{\oldtheequation*}\begin{equation}}%
   {\end{equation}\let\theequation\oldtheequation}
-\fi
+%\fi
 
 \makeatother
 
