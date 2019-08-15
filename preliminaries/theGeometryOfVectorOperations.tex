@@ -164,29 +164,51 @@ where $a,b,c$ are the lengths of the sides of a triangle and $\theta$
 is the interior angle opposite the side of length $c$.   See Figure~\ref{F:cosines}.
 
 \begin{figure}[htb]
-     \centerline{%
-     \psfig{file=../figures/cosines.eps,height=1.5in}}
-     \caption{Triangle formed by sides $a,b,c$ with interior
+  \begin{center}
+    \begin{tikzpicture}
+      % position vertices
+      \coordinate (C) at (0,0);
+      \coordinate (A) at (3cm,3cm); % the angle below assumes this is 45 degrees
+      \coordinate (B) at (5cm,0);
+      
+      % label edges
+      \draw (C)
+      -- node [midway, left] {$a$} (A)
+      -- node [midway, right] {$c$} (B)
+      -- node [midway, below] {$b$} (C)
+      -- cycle;
+      
+      % label vertices
+      \node[label={below:$(0,0)$}] at (C) {};
+      \node[label={below:$(b,0)$}] at (B) {};
+      \node[label={right:$(a \cos \theta, a \sin \theta)$}] at (A) {};
+      
+      % label angle theta
+      \node[label={right:$\theta$}] at (0.35cm,0.25cm) {};
+      \draw (0.5cm,0) arc (0:45:0.5cm);
+    \end{tikzpicture}
+  \end{center}
+     \caption{Triangle formed by sides of length $a,b,c$ with interior
 	angle $\theta$ opposite side $c$.}
      \label{F:cosines}
 \end{figure}
 
-We use trigonometry 
-to verify the law of cosines.  First, translate the triangle so that  the vertex 
-opposite side $c$ is at the origin.  Second, rotate the triangle so that side 
-$b$ is horizontal.  Hence, the coordinates of the nonzero vertex on side 
-$b$ are $(b,0)$.  Finally, observe that the vertex opposite side $b$ has 
-coordinates $(a\cos\theta,a\sin\theta)$.  
-Then use the distance formula to observe that $c$ is the distance
-from vertex $(b,0)$ to vertex $(a\cos\theta,a\sin\theta)$.  That is,
+We use trigonometry to verify the law of cosines.  First, translate
+the triangle so that a vertex is at the origin.  Second, rotate the
+triangle placing a vertex on the $x$-axis and another vertex above the
+$x$-axis.  After translating and rotating, the coordinates of the
+nonzero vertex on the $x$-axis is $(b,0)$.  Observe that the vertex
+above the $x$-axis has coordinates $(a\cos\theta,a\sin\theta)$.  Then
+use the distance formula to observe that the length $c$ is the
+distance from the vertex at $(b,0)$ to the vertex at
+$(a\cos\theta,a\sin\theta)$.  That is,
 \[
 \begin{array}{rcl}
 c^2 & = & (a\cos\theta - b)^2 + (a\sin\theta)^2\\
 & = & a^2\cos^2\theta - 2ab\cos\theta + b^2 + a^2\sin^2\theta\\
-& = & a^2 + b^2 - 2ab\cos\theta
+& = & a^2 + b^2 - 2ab\cos\theta.
 \end{array}
 \]
-
 
 \noindent {\em Proof of Theorem~\ref{T:dotangle}} \quad 
 In vector notation we can form a triangle two of whose sides are
