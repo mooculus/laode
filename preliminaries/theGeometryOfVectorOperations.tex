@@ -155,14 +155,40 @@ and $y$.  Then
 It follows that $\cos \theta=0$
 if and only if $x\cdot y = 0$.  Thus \eqref{dotprod=0} is valid.
 
-\begin{proof}  Theorem~\ref{T:dotangle} is just a restatement of the
-{\em law of cosines\/}\index{law of cosines}.  Recall that the
-law of cosines states that
+We show that Theorem~\ref{T:dotangle} is just a restatement of the
+{\em law of cosines\/}\index{law of cosines}.  This law states 
 \[
-c^2 = a^2 + b^2 -2ab\cos\theta,
+c^2 = a^2 + b^2 - 2ab\cos\theta,
 \]
 where $a,b,c$ are the lengths of the sides of a triangle and $\theta$
-is the interior angle opposite the side of length $c$.
+is the interior angle opposite the side of length $c$.   See Figure~\ref{F:cosines}.
+
+\begin{figure}[htb]
+     \centerline{%
+     \psfig{file=../figures/cosines.eps,height=1.5in}}
+     \caption{Triangle formed by sides $a,b,c$ with interior
+	angle $\theta$ opposite side $c$.}
+     \label{F:cosines}
+\end{figure}
+
+We use trigonometry 
+to verify the law of cosines.  First, translate the triangle so that  the vertex 
+opposite side $c$ is at the origin.  Second, rotate the triangle so that side 
+$b$ is horizontal.  Hence, the coordinates of the nonzero vertex on side 
+$b$ are $(b,0)$.  Finally, observe that the vertex opposite side $b$ has 
+coordinates $(a\cos\theta,a\sin\theta)$.  
+Then use the distance formula to observe that $c$ is the distance
+from vertex $(b,0)$ to vertex $(a\cos\theta,a\sin\theta)$.  That is,
+\[
+\begin{array}{rcl}
+c^2 & = & (a\cos\theta - b)^2 + (a\sin\theta)^2\\
+& = & a^2\cos^2\theta - 2ab\cos\theta + b^2 + a^2\sin^2\theta\\
+& = & a^2 + b^2 - 2ab\cos\theta
+\end{array}
+\]
+
+
+\noindent {\em Proof of Theorem~\ref{T:dotangle}} \quad 
 In vector notation we can form a triangle two of whose sides are
 given by $x$ and $y$ in $\R^n$.  The third side is just $x-y$ as
 $x=y+(x-y)$, as in Figure~\ref{F:costri}.
@@ -194,7 +220,7 @@ which proves the theorem.  Finally, compute
 & = & (x_1^2+\cdots+x_n^2)-2(x_1y_1+\cdots+x_ny_n)+(y_1^2+\cdots+y_n^2)\\
 & = & ||x||^2 -2x\cdot y + ||y||^2
 \end{eqnarray*}
-to verify the claim.   \end{proof}
+to verify the claim.   \qed
 
 Theorem~\ref{T:dotangle} gives a numerically efficient method
 for computing the angle\index{angle between vectors} between
