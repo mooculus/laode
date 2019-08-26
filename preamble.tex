@@ -157,7 +157,9 @@ Figure~\ref{#1}b\hspace{1.2in}Figure~\ref{#1}c}}
 \renewenvironment{solution}{}{}
 \fi
 
+\ifcsname answer\endcsname
 \renewcommand{\answer}{}
+\fi
 
 %\ifxake
 %\newenvironment{matlabEquation}{\begin{equation}}{\end{equation}}
