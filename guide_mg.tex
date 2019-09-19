@@ -1,0 +1,280 @@
+\documentclass{article}
+\usepackage{hyperref}
+
+\title{Instructor Guide}
+\author{Jim Fowler \and Marty Golubitsky}
+\textwidth=6.0in
+\evensidemargin=-1.0in
+\oddsidemargin= 0.0in
+
+\begin{document}
+
+\maketitle
+
+
+\section{Set up book files to create worksheets}\label{instructor-guide}
+
+The following instructions assume you are using a Mac.
+
+\subsection{Get the .cls files.}\label{get-the-.cls-files.}
+
+In the Terminal, run
+
+\begin{verbatim}
+mkdir -p ~/Library/texmf/tex/latex
+git clone https://github.com/XimeraProject/ximeraLatex ~/Library/texmf/tex/latex/ximeraLatex
+\end{verbatim}
+
+\subsection{Download resources}\label{download-resources}
+
+First, download the book.
+
+\begin{verbatim}
+mkdir ~/linear-algebra
+git clone https://github.com/mooculus/laode ~/linear-algebra/laode
+\end{verbatim}
+
+Then, download the worksheet builder.
+
+\begin{verbatim}
+git clone https://github.com/kisonecat/worksheet-builder ~/linear-algebra/worksheet-builder
+\end{verbatim}
+
+And install the other software needed to run the worksheet builder.
+
+\begin{verbatim}
+gem install optparse-pathname
+\end{verbatim}
+
+If you lack permissions to run \texttt{gem}, try
+
+\begin{verbatim}
+gem install --user-install optparse-pathname
+\end{verbatim}
+
+to install it locally.
+
+\subsection{Build the book}\label{build-the-book}
+
+Compile the book. This step is needed because various \texttt{aux} files
+are created which will be read by the worksheet builder.
+
+\begin{verbatim}
+cd ~/linear-algebra/laode
+lualatex --shell-escape linearAlgebra
+lualatex --shell-escape linearAlgebra
+\end{verbatim}
+
+
+
+\section{Build a worksheet}
+
+You can \href{https://osu.box.com/v/laode-labels}{view a PDF of the
+textbook} which includes the labels that you can use in the
+\texttt{\textbackslash{}exercise} command below.
+
+\subsection{Try it}\label{try-it}
+
+Now you are ready to try building a worksheet.
+
+Go to the worksheet builder directory.
+
+\begin{verbatim}
+cd ~/linear-algebra/worksheet-builder
+\end{verbatim}
+
+Then create a file called \texttt{homework0.tex} with the following
+content:
+
+\begin{verbatim}
+\documentclass{article}
+
+\input{preamble}
+
+\title{Homework 0}\author{Author Name}\date{Jan 1, 2019}
+
+\begin{document}
+\maketitle
+
+\exercise{c5.1.4g}
+
+\exercise{c5.1.7b}
+
+\end{document}
+\end{verbatim}
+
+Now if you run
+
+\begin{verbatim}
+./build-both.sh --root=$HOME/linear-algebra/laode sample.tex
+\end{verbatim}
+
+two PDF files will be created: * one with solutions called
+\texttt{homework0s.pdf} and * one without solutions called
+\texttt{homework0e.pdf} and two TeX files will be created * one with
+solutions called \texttt{homework0s.tex} and * one without solutions
+called \texttt{homework0e.tex} and you may edit the TeX files by hand if
+you wish.
+
+\section{How to add exercises}\label{how-to-add-exercises}
+
+\subsection{If you are not github enabled}
+
+In this repository, there is a
+\href{https://github.com/mooculus/laode/blob/master/howToContribute/template.tex}{template.tex}
+file which can be used as a starting point for creating your own
+exercises.
+
+Once you have edited the template, please send the template to
+fowler@math.osu.edu so that it can be added to the textbook repository.
+
+\subsection{If you are github enabled}
+
+\subsubsection{Fork the repository}
+
+Go to https://github.com/mooculus/laode and click `Fork`
+
+You should have a copy of the repository at https://github.com/YOUR-GITHUB-USERNAME/laode where **YOUR-GITHUB-USERNAME** is your GitHub username.
+
+\subsubsection{Go to your local copy of the master repo}
+
+cd ~/linear-algebra/laode
+\\
+set up the remote to point to your personal copy of the repo by running
+\\
+git remote rm origin
+git remote add origin https://github.com/YOUR-GITHUB-USERNAME/laode
+git remote add upstream https://github.com/mooculus/laode 
+
+
+You will find it convenient to have symlinks to the numbered sections.  To create such symblinks, run
+\\
+ruby make-links.rb
+\\
+which will populate a subdirectory `by-number` with links to the sections of the textbook.
+
+\subsubsection{Locate the appropriate section of the textbook}
+
+Suppose you would like to add an exercise to Section 2.2, {\em The
+Geometry of Low-Dimensional Solutions}.
+\\
+You will find the text for that section in [../solvingLinearEquations/theGeometryOfLowDimensionalSolutions.tex](../solvingLinearEquations/theGeometryOfLowDimensionalSolutions.tex), and a subdirectory of the same name ([../solvingLinearEquations/theGeometryOfLowDimensionalSolutions](../solvingLinearEquations/theGeometryOfLowDimensionalSolutions)) houses the exercise files.
+\\
+To look at the existing exercises, run
+\\
+cd ../by-number/SECTION.NUMBER
+\\
+Here, `SECTION.NUMBER` is the desired textbook section.
+
+## Copy the template to the appropriate location
+
+Pick a new, unused number, and copy [template.tex](template.tex) to
+the appropriate directory with the other exercises for that section.
+
+To do this, copy the file to a new number with
+```
+cp ~/linear-algebra/laode/howToContribute/template.tex 9999.tex
+```
+Here, `9999` is your chosen unused number.
+
+## Write and save your exercise
+
+Open the template you have copied to the appropriate directory and add
+your content.
+
+## Commit your changes
+
+Commit your new exercise with
+```
+git add 9999.tex
+git commit -m 'Description of my new exercise'
+git push master origin
+```
+
+## Submit a pull request
+
+In order for your exercise to appear in the master copy of the
+textbook, submit a pull request.  You can do this by going to
+https://github.com/YOUR-GITHUB-USERNAME/laode and clicking on `New Pull
+Request`.
+
+
+
+
+
+
+
+
+
+\section{Installing MATLAB}\label{installing-matlab}
+
+\subsection{For Ohio State faculty and
+students}\label{for-ohio-state-faculty-and-students}
+
+Computers not only enable the completion of complicated calculations,
+but can also improve the conceptual understanding of mathematics. This
+course relies on MATLAB, a popular software package for matrix
+computations. MATLAB is available free-of-charge to Ohio State students.
+To download and activate your free copy of MATLAB, please follow the
+steps below.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\item
+  Launch Ohio State's IT Self-Service. Links to an external site. tool
+  and click Login at the upper right.
+\item
+  Click Order Services. It is marked with a shopping cart but MATLAB
+  will not cost you anything.
+\item
+  Click the Software Request link located under the ``Software
+  Services'' heading.
+\item
+  Complete the Software Request Form, choosing MATLAB. Agree to terms
+  and conditions.
+\item
+  Click Check Out.
+\item
+  Click Submit Order at the lower right.
+\item
+  Your order confirmation page lists your selections and their costs, as
+  well as provides a Request Number (i.e., REQ12345) for tracking
+  purposes.
+\end{enumerate}
+
+The rest of the instructions for installing MATLAB will automatically be
+emailed to your Ohio State email account. Instructions will vary as to
+whether you are on Windows, Mac OS, or Linux.
+
+\subsection{Getting the m\_files}\label{getting-the-m_files}
+
+To produce m\_files with filenames coming from the numeric labels in the
+textbook, run
+
+\begin{verbatim}
+cd ~/linear-algebra/laode/m_files
+ruby numeric-labels.rb
+\end{verbatim}
+
+Then to see the m\_files, run
+
+\begin{verbatim}
+cd ~/linear-algebra/laode/m_files/linearAlgebra
+ls
+\end{verbatim}
+
+\section{Set up canvas}\label{set-up-canvas}
+
+To set up a course shell in Canvas (``Carmen'') populated with linear
+algebra content, email fowler@math.osu.edu.
+
+\section{Syllabus}\label{syllabus}
+
+To receive a sample syllabus and calendar, email fowler@math.osu.edu.
+
+\section{Old exams}\label{old-exams}
+
+Contact Marty Golubitsky (golubitsky.4@osu.edu) for old Math 2568 exams.
+
+
+\end{document}
