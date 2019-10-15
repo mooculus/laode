@@ -7,16 +7,20 @@ and $y=(y_1,y_2,y_3)$ is the $3$-vector
 \[
 x\times y = (x_2y_3-x_3y_2,-(x_1y_3-x_3y_1),x_1y_2-x_2y_1).
 \]
-Let $K=(2,1,-1)$.  Show that the mapping $L:\R^3\to\R^3$ defined by
+Let $K=(2,1,-1)$.  
+\begin{enumeratea}
+\item Show that the mapping $L:\R^3\to\R^3$ defined by
 \[
 L(x) = x\times K
 \]
-is a linear mapping.  Find the $3\times 3$ matrix $A$ such that
+is a linear mapping.  
+\item
+Find the $3\times 3$ matrix $A$ such that
 \[
 L(x) = Ax,
 \]
 that is, $L=L_A$.
-
+\end{enumeratea}
 \begin{solution}
 
 \ans The matrix of linear mapping $L$ is
@@ -30,8 +34,8 @@ Since $K = (2,1,-1)$,
 L(X) = (x_1,x_2,x_3) \times K = 
 (-x_2 - x_3, x_1 + 2x_3, x_1 - 2x_2).
 \]
-
-To show that $L(X)$ is a linear mapping, first demonstrate that
+\begin{enumeratea}
+\item To show that $L(X)$ is a linear mapping, first demonstrate that
 \eqref{sum} is valid:
 \[
 \begin{array}{rcl}
@@ -52,13 +56,13 @@ cL(X) & = & cL(x_1,x_2,x_3) \\
 & = & L(cX). \end{array}
 \]
 
-Find $A$ by noting that $L(e_j) = Ae_j$ is the $j^{th}$ column of $A$,
+\item Find $A$ by noting that $L(e_j) = Ae_j$ is the $j^{th}$ column of $A$,
 and computing
 \[ \begin{array}{l}
 L(e_1) = L(1,0,0) = (0,1,1) \\
 L(e_2) = L(0,1,0) = (-1,0,-2) \\
 L(e_3) = L(0,0,1) = (-1,2,0). \end{array} \]
-
+\end{enumeratea}
 
 \end{solution}
 \end{exercise}

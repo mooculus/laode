@@ -19,8 +19,8 @@ The augmented matrix for this system is
 \]
 We can row reduce this matrix to reduced echelon form, obtaining
 \[
-\left(\begin{array}{rrr|r} 1 & 0 & \frac{2}{5} & \frac{6}{5} \\
-0 & 1 & -\frac{3}{5} & \frac{1}{5} \\ 0 & 0 & 0 & 1\end{array}\right)
+\left(\begin{array}{rrr|r} 1 & 0 & 2/5 & 6/5 \\
+0 & 1 & -3/5 & 1/5 \\ 0 & 0 & 0 & 1\end{array}\right)
 \]
 The last row of the reduced system implies that $0 = 1$, so the system
 is inconsistent and has no solutions.
@@ -41,16 +41,16 @@ The augmented matrix for this system is
 \]
 which can be row reduced to
 \[
-\left(\begin{array}{rrrr|r} 1 & 0 & \frac{1}{5} & \frac{3}{5} &
-\frac{9}{5} \\ 0 & 1 & -\frac{3}{5} & \frac{1}{5} & \frac{13}{5}
+\left(\begin{array}{rrrr|r} 1 & 0 & 1/5 & 3/5 &
+9/5 \\ 0 & 1 & -3/5 & 1/5 & 13/5
 \end{array}\right).
 \]
 The solution set is therefore
 \[
-\left(\begin{array}{c} x_1 \\ x_2 \\ x_3 \\ x_4\end{array}\right) =
-\left(\begin{array}{c} \frac{9}{5} - \frac{1}{5}x_3 - \frac{3}{5}x_4
-\\ \frac{13}{5} + \frac{3}{5}x_3 - \frac{1}{5}x_4 \\ x_3 \\ x_4
-\end{array}\right).
+\left(\begin{array}{c} x \\ y \\ z \\ w \end{array}\right) =
+\left(\begin{array}{c} 9/5 - 1/5\; z - 3/5\; w
+\\ 13/5 + 3/5\; z - 1/5 \; w \\ z \\ w \end{array}\right)=
+\Matrixc{9/5 \\ 13/5 \\ 0 \\ 0} + z\Matrixc{-1/5\\  3/5 \\ 1 \\ 0} + w\Matrixc{-3/5 \\ -1/5 \\ 0 \\ 1}.
 \]
 
 \end{solution}

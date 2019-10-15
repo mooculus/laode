@@ -1,0 +1,48 @@
+\documentclass{ximera}
+
+\author{Marty Golubitsky}
+
+\input{../../preamble.tex}
+
+\begin{document}
+
+% To which section does your exercise belong? 
+
+\begin{exercise}\label{c5.1.95}
+
+Let $V = \R^+ = \{x\in\R: x > 0\}$.  Show that $V$ is a vector space under the operations of `{\em addition}' ($\oplus$)
+\[
+v\oplus w = vw \quad  \mbox{for all $v,w\in V$}
+\]
+and `{\em scalar multiplication}' ($\otimes$)
+\[
+r\otimes v = v^r   \quad \mbox{for all $v\in V$ and $r\in\R$}
+\]
+{\bf Hints:} The {\em additive identity} is $v = 1$; the {\em additive inverse} is $\frac{1}{v}$; and the {\em multiplicative identity} is $r = 1$. 
+  
+\begin{solution}
+\begin{proof}
+We begin by verifying the hints.
+\[
+\begin{array}{ccclcl}
+(A3) & 1\oplus v & \equiv & 1 v & = & v \quad \mbox{where $1,v\in V$}\\
+(A4) & v\oplus \frac{1}{v} & \equiv & v\frac{1}{v} & = & 1 \quad \mbox{where $v\in V$}\\
+(M2) & 1\otimes v & \equiv & v^1 & = & v. \quad \mbox{where $1\in\R$ and $v\in V$} 
+\end{array}
+\]
+Next we verify the other five conditions of a vector space given in Table~\ref{vectorspacelist}.  Let $u,v,w$ be vectors in $V$ and $r,s$ be scalars in $\R$.
+\[
+\begin{array}{cl}
+(A1) & v\oplus w \equiv vw = wv \equiv w\oplus v\\
+(A2) & (u\oplus v)\oplus w \equiv (uv)w = u(vw) \equiv u\oplus(v\oplus w) \\ 
+(M1) & (rs)\otimes v \equiv v^{rs} = (v^r)^s \equiv s\otimes (r\otimes v)\\
+(D1) & (r + s)\otimes v \equiv v^{r+s} = v^r v^s \equiv (r\otimes v)\oplus (s\otimes v)\\
+(D2) & r\otimes(v\oplus w) \equiv r\otimes (vw) \equiv (vw)^r = v^r w^r \equiv (r\otimes v)\oplus (r\otimes w)
+\end{array}
+\]
+\end{proof} 
+
+\end{solution}
+\end{exercise}
+
+\end{document}
