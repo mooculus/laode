@@ -31,7 +31,7 @@ For example, consider the ten points
 The ten points $(x_i,y_i)$ are plotted in Figure~\ref{F:linreg} using the
 commands
 \begin{verbatim}
-e10_3_1
+e9_3_1
 plot(X,Y,'o')
 axis([-3,7,-8,8])
 xlabel('x')
@@ -177,7 +177,7 @@ where $A=(F_1|X|X^{(2)})$ is an $n\times 3$ matrix.
 Suppose that we try to fit the data in \eqref{E:scatterdata} with a quadratic
 polynomial rather than a linear one.   Use \Matlab as follows
 \begin{verbatim}
-e10_3_1
+e9_3_1
 A = [F1 X X.*X];
 b = inv(A'*A)*A'*Y;
 \end{verbatim}
