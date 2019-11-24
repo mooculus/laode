@@ -2,7 +2,7 @@
 
 \input{../preamble.tex}
 
-\title{Orthonormal Bases}
+\title{Orthonormal Bases and Orthogonal Matrices}
 
 \begin{document}
 \begin{abstract}
@@ -50,7 +50,7 @@ $v_i\cdot v_j = 0$ for $i\not= j$,
 \end{align*}
 Since $v_j\cdot v_j = ||v_j||^2> 0$, it follows that $\alpha_j=0$.  \end{proof}
 
-\begin{corollary}
+\begin{corollary} \label{C:symmetric_distinct}
 A set of $n$ nonzero orthogonal vectors in $\R^n$ is a basis.
 \end{corollary}
 
@@ -136,6 +136,42 @@ in the basis ${\cal V}$.  That is, compute
 \mattwo{Av_1\cdot v_1}{Av_2\cdot v_1}{Av_1\cdot v_2}{Av_2\cdot v_2}
 =\frac{1}{2}\mattwo{5}{-3}{1}{5}.
 \]
+
+\subsection*{Orthogonal Matrices}
+
+\begin{definition} \label{def:orthmat}
+\index{matrix!orthogonal}
+An $n\times n$ matrix $Q$ is {\em orthogonal\/} if its columns form an
+orthonormal basis\index{basis!orthonormal}
+of $\R^n$.
+\end{definition}
+
+
+
+The following lemma states elementary properties of orthogonal matrices.  Particularly, 
+an orthogonal matrix is invertible and it is straightforward to compute its inverse.
+\begin{lemma} \label{lem:orthprop}
+Let $Q$ be an $n\times n$ matrix.  Then
+\begin{itemize}
+\item[(a)] $Q$ is orthogonal if and only if $Q^tQ=I_n$;
+\item[(b)] $Q$ is orthogonal if and only if $Q^{-1} = Q^t$;
+\item[(c)] If $Q_1,Q_2$ are orthogonal matrices, then $Q_1Q_2$ is
+an orthogonal matrix.
+\end{itemize}
+\end{lemma}
+\begin{proof}  (a) Let $Q=(v_1|\cdots|v_n)$.  Since $Q$ is orthogonal, the $v_j$
+form an orthonormal basis.  By direct computation note that
+$Q^tQ=\{(v_i\cdot v_j)\}=I_n$, since the $v_j$ are orthonormal. Note that
+(b) is simply a restatement of (a).
+
+\noindent (c) Now let $Q_1,Q_2$ be orthogonal. Then (a) implies
+\[
+(Q_1Q_2)^t(Q_1Q_2) = Q_2^tQ_1^tQ_1Q_2 = Q_2^tQ_2 = I_n,
+\]
+thus proving (c).  \end{proof}
+
+
+
 
 \subsection*{Remarks Concerning \Matlab}
 

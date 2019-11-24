@@ -1,72 +1,24 @@
 \documentclass{ximera}
 \input{../../preamble.tex}
 \begin{document}
-
-\noindent In Exercises~\ref{c7.9.1a} -- \ref{c7.9.1e} decide whether or not
-the given matrix is orthogonal.
-\begin{exercise} \label{c7.9.1a}
-$\left(\begin{array}{rr} 2 & 0\\ 0 & 1\end{array}\right)$.
-
-\begin{solution}
-\ans The matrix is not orthogonal.
-
-\soln By Lemma~\ref{lem:orthprop}, a matrix
-$A$ is orthogonal if and only if $A^tA = I_n$.
+\begin{exercise} \label{c7.9.2}
+Let $Q$ be an orthogonal $n\times n$ matrix.
+Show that $Q$ preserves the length of vectors, that is
 \[
-\mattwo{2}{0}{0}{1}\mattwo{2}{0}{0}{1} = \mattwo{4}{0}{0}{1} \neq I_2.
+\|Qv\| = \|v\|\quad \mbox{for all $v\in\R^n$.}
 \]
 
-\end{solution}
-\end{exercise}
-\begin{exercise} \label{c7.9.1b}
-$\left(\begin{array}{rrr} 0 & 1 & 0\\ 0 & 0 & 1\\
-1 & 0 & 0\end{array}\right)$.
-
 \begin{solution}
-\ans The matrix is orthogonal, since
+
+\soln For this proof, we use the fact that, if $C$ is a complex matrix, then
+$(Cv) \cdot w = v \cdot (\overline{C}^tw)$.  See \eqref{e:hermite_matrix}.
+In particular, since $Q$ is a real matrix, $(Qv) \cdot w = v \cdot (Q^tw)$.  
+Therefore, since $Q$ is orthogonal:
 \[
-\matthree{0}{0}{1}{1}{0}{0}{0}{1}{0}
-\matthree{0}{1}{0}{0}{0}{1}{1}{0}{0} =
-I_3.
+||Qv||^2 = (Qv) \cdot (Qv) = (Q^tQv) \cdot v = (I_nv) \cdot v
+= v \cdot v = ||v||^2.
 \]
 
-\end{solution}
-\end{exercise}
-\begin{exercise} \label{c7.9.1c}
-$\left(\begin{array}{rrr} 0 & -1 & 0\\ 0 & 0 & 1\\
--1 & 0 & 0\end{array}\right)$.
-
-\begin{solution}
-The matrix is orthogonal, since
-\[
-\matthree{0}{0}{-1}{-1}{0}{0}{0}{1}{0}
-\matthree{0}{1}{0}{0}{0}{-1}{-1}{0}{0} =
-I_3.
-\]
-
-\end{solution}
-\end{exercise}
-\begin{exercise} \label{c7.9.1d}
-$\left(\begin{array}{rr} \cos(1) & -\sin(1)\\ \sin(1) & \cos(1)
-\end{array}\right)$.
-
-\begin{solution}
-The matrix is orthogonal, since
-\[
-\mattwo{\cos(1)}{\sin(1)}{-\sin(1)}{\cos(1)}
-\mattwo{\cos(1)}{-\sin(1)}{\sin(1)}{\cos(1)}
-= I_2.
-\]
-
-\end{solution}
-\end{exercise}
-\begin{exercise} \label{c7.9.1e}
-$\left(\begin{array}{rrr} 1 & 0 & 4\\ 0 & 1 & 0
-\end{array}\right)$.
-
-\begin{solution}
-The matrix is not orthogonal, since all orthogonal matrices
-are square.
 
 \end{solution}
 \end{exercise}

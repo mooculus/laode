@@ -2,7 +2,7 @@
 
 \input{../preamble.tex}
 
-\title{Symmetric and Orthogonal Matrices}
+\title{The Spectral Theory of Symmetric Matrices}
 
 \begin{document}
 \begin{abstract}
@@ -12,18 +12,23 @@
 
 \label{S:symmetric}
 
-Symmetric matrices have some remarkable properties that can be
-summarized by:
+Eigenvalues and eigenvectors of symmetric matrices have remarkable properties that can be
+summarized in three theorems.
+
 \begin{theorem}  \label{T:symmetricmat}
+Let $A$ be a symmetric matrix\index{matrix!symmetric}.
+Then every eigenvalue\index{eigenvalue!of symmetric matrix} of $A$ is real.
+\end{theorem}
+
+\begin{theorem}  \label{T:symmetricmatvector}
 Let $A$ be an $n\times n$ symmetric matrix\index{matrix!symmetric}.
-Then
-\begin{enumerate}
-\item[(a)] every eigenvalue\index{eigenvalue!of symmetric matrix}
-of $A$ is real, and
-\item[(b)] there is an orthonormal basis\index{basis!orthonormal}
-of $\R^n$ consisting of
-	eigenvectors of $A$.
-\end{enumerate}
+Then there is an orthonormal basis\index{basis!orthonormal}
+of $\R^n$ consisting of eigenvectors of $A$.
+\end{theorem}
+
+\begin{theorem}  \label{T:symmetricmatdiag}
+For each $n\times n$ symmetric matrix $A$, there exists an
+orthogonal matrix $P$ such that $P^tAP$ is a diagonal matrix.
 \end{theorem}
 
 \subsubsection*{Hermitian Inner Products}
@@ -60,9 +65,9 @@ formula.
 
 Let $C$ be a complex $n\times n$ matrix.  Then the main observation
 concerning Hermitian inner products that we shall use is:
-\[
+\begin{equation} \label{e:hermite_matrix}
 \langle Cv,w \rangle = \langle v,\overline{C}^tw \rangle.
-\]
+\end{equation}
 This fact is verified by calculating
 \[
 \langle Cv,w \rangle = (Cv)^t\overline{w} = (v^tC^t)\overline{w}
@@ -75,7 +80,7 @@ So if $A$ is a $n\times n$ real symmetric matrix, then
 \end{equation}
 since $\overline{A}^t= A^t = A$.
 
-\begin{proof}[Proof of Theorem~\ref{T:symmetricmat}(a)]  Let $\lambda$
+\begin{proof}[Proof of Theorem~\ref{T:symmetricmat}]  Let $\lambda$
 be an eigenvalue of $A$ and let $v$ be the associated eigenvector. Since
 $Av=\lambda v$ we can use \eqref{e:symminv} to compute
 \[
@@ -86,14 +91,19 @@ Since $\langle v,v \rangle = ||v||^2 > 0$, it follows that
 $\lambda=\overline{\lambda}$ and $\lambda$ is real.  \end{proof}
 
 
-\begin{proof}[Proof of Theorem~\ref{T:symmetricmat}(b)]
-Let $A$ be a real symmetric $n\times n$ matrix.  We want to show that there
-is an orthonormal basis of $\R^n$ consisting of eigenvectors of $A$.  The
-proof proceeds inductively on $n$.   The theorem is trivially valid for
-$n=1$; so we assume that it is valid for $n-1$.
+\begin{proof}[Proof of Theorem~\ref{T:symmetricmatvector}]
+Let $A$ be a real symmetric $n\times n$ matrix.  We show that there is an 
+orthonormal basis of $\R^n$ consisting of eigenvectors of $A$.  The proof
+follows directly from Corollary~\ref{C:symmetric_distinct} if the  
+eigenvalues are distinct.  
+
+If some of the eigenvalues are multiple, the proof is more complicated and 
+uses Gram-Schmidt orthonormalization.  The proof proceeds inductively on 
+$n$.   The theorem is trivially valid for $n=1$; so we assume that it is valid 
+for $n-1$.
 
 Theorem~\ref{T:eigens} of Chapter~\ref{C:D&E} implies that $A$ has an 
-eigenvalue $\lambda_1$ and Theorem~\ref{T:symmetricmat}(a) states that 
+eigenvalue $\lambda_1$ and Theorem~\ref{T:symmetricmat} states that 
 this eigenvalue is real.
 Let $v_1$ be a unit length eigenvector corresponding to the eigenvalue
 $\lambda_1$.  Extend $v_1$ to an orthonormal basis $v_1,w_2,\ldots,w_n$ of
@@ -104,7 +114,6 @@ implies that
 P^tP=I_n.
 \end{equation}
 Therefore $P$ is invertible; indeed $P\inv=P^t$.
-
 Next, let
 \[
 B= P\inv AP.
@@ -146,39 +155,11 @@ since $PP^t= I_n$.  Thus the vectors $v_j$ form an orthonormal basis since
 the vectors $z_j$ form an orthonormal basis.  \end{proof}
 
 
-\subsection*{Orthogonal Matrices}
 
-\begin{definition} \label{def:orthmat}
-\index{matrix!orthogonal}
-An $n\times n$ matrix $Q$ is {\em orthogonal\/} if its columns form an
-orthonormal basis\index{basis!orthonormal}
-of $\R^n$.
-\end{definition}
+%The previous lemma together with \eqref{e:orthosym} in the proof of Theorem~\ref{T:symmetricmat}(b) lead to the following result:
 
-
-
-The following lemma states elementary properties of orthogonal matrices:
-\begin{lemma} \label{lem:orthprop}
-Let $Q$ be an $n\times n$ matrix.  Then
-\begin{itemize}
-\item[(a)] $Q$ is orthogonal if and only if $Q^tQ=I_n$;
-\item[(b)] $Q$ is orthogonal if and only if $Q^{-1} = Q^t$;
-\item[(c)] If $Q_1,Q_2$ are orthogonal matrices, then $Q_1Q_2$ is
-an orthogonal matrix.
-\end{itemize}
-\end{lemma}
-\begin{proof}  (a) Let $Q=(v_1|\cdots|v_n)$.  Since $Q$ is orthogonal, the $v_j$
-form an orthonormal basis.  By direct computation note that
-$Q^tQ=\{(v_i\cdot v_j)\}=I_n$, since the $v_j$ are orthonormal. Note that
-(b) is simply a restatement of (a).
-
-\noindent (c) Now let $Q_1,Q_2$ be orthogonal. Then (a) implies
-\[
-(Q_1Q_2)^t(Q_1Q_2) = Q_2^tQ_1^tQ_1Q_2 = Q_2^tQ_2 = I_n,
-\]
-thus proving (c).  \end{proof}
-
-As a consequence of Theorem~\ref{T:symmetricmat}, let
+\begin{proof}[Proof of Theorem~\ref{T:symmetricmatdiag}]
+As a consequence of Theorem~\ref{T:symmetricmatvector}, let
 ${\cal V}=\{v_1,\ldots,v_n\}$ be an orthonormal basis for $\R^n$
 consisting of eigenvectors of $A$.  Indeed, suppose
 \[
@@ -194,15 +175,12 @@ It follows from \eqref{e:coordorthomat} that
 [A]_{\cal V}= \left(\begin{array}{ccc} \lambda_1 & & 0 \\  & \ddots & \\
 	0 &  & \lambda_n \end{array}\right)
 \]
-is a diagonal matrix.  So every symmetric matrix is similar to a diagonal
-matrix.  We have in fact proved:
+is a diagonal matrix.  So every symmetric matrix $A$ is similar by 
+an orthogonal matrix $P$ to a diagonal
+matrix where $P$ is the matrix whose columns are the eigenvectors of $A$; 
+namely, $P = [v_1|\cdots|v_n]$.  \end{proof}
 
 
-%The previous lemma together with \eqref{e:orthosym} in the proof of Theorem~\ref{T:symmetricmat}(b) lead to the following result:
-
-\begin{proposition}  For each symmetric $n\times n$ matrix $A$, there exists an
-orthogonal matrix $P$ such that $P^tAP$ is a diagonal matrix.
-\end{proposition}
 
 
 
