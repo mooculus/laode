@@ -31,11 +31,12 @@ For each $n\times n$ symmetric matrix $A$, there exists an
 orthogonal matrix $P$ such that $P^tAP$ is a diagonal matrix.
 \end{theorem}
 
-\subsubsection*{Hermitian Inner Products}
-
 The proof of Theorem~\ref{T:symmetricmat} uses the {\em Hermitian inner
 product}\index{Hermitian inner product} --- a generalization of
 dot product\index{dot product} to complex vectors\index{vector!complex}.
+
+\subsubsection*{Hermitian Inner Products}
+
 Let $v,w\in\C^n$ be two complex $n$-vectors.  Define
 \[
 \langle v,w \rangle = v_1\overline{w}_1 + \cdots + v_n\overline{w}_n.
@@ -45,7 +46,7 @@ with a complex conjugate.  However, if $v$ and $w$ are real vectors, then
 \[
 \langle v,w \rangle = v\cdot w.
 \]
-A more compact notation for the Hermitian inner product is given by
+An alternative notation for the Hermitian inner product is given by
 matrix multiplication\index{matrix!multiplication}.
 Suppose that $v$ and $w$ are column $n$-vectors.
 Then
@@ -63,7 +64,7 @@ product.  We note three.  Let $c\in\C$ be a complex scalar.  Then
 Note the complex conjugation of the complex scalar $c$ in the previous
 formula.
 
-Let $C$ be a complex $n\times n$ matrix.  Then the main observation
+Let $C$ be a complex $n\times n$ matrix.  Then the most important observation
 concerning Hermitian inner products that we shall use is:
 \begin{equation} \label{e:hermite_matrix}
 \langle Cv,w \rangle = \langle v,\overline{C}^tw \rangle.
@@ -135,7 +136,8 @@ It follows that
 \[
 B =\mattwo{\lambda_1}{0}{0}{C}
 \]
-where $C$ is a symmetric matrix.  By induction we can choose an orthonormal
+where $C$ is a symmetric matrix.  By induction we can use the Gram-Schmidt 
+orthonormalization process to choose an orthonormal
 basis $z_2,\ldots,z_n$ in $\{0\}\times\R^{n-1}$ consisting of eigenvectors
 of $C$.  It follows that $e_1,z_2,\ldots,z_n$ is an orthonormal basis for
 $\R^n$ consisting of eigenvectors of $B$.
