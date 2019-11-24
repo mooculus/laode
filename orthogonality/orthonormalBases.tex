@@ -113,7 +113,7 @@ in terms of dot product.  That matrix is:
 \begin{equation}  \label{e:coordorthomat}
 [L]_{\cal V} = L(v_j)\cdot v_i.
 \end{equation}
-To verify this claim, recall from Definition~\ref{D:matrixincoord} that 
+To verify \eqref{e:coordorthomat}, recall from Definition~\ref{D:matrixincoord} that 
 the $(i,j)^{th}$ entry of $[L]_{\cal V}$ is
 the $i^{th}$ entry in the vector $[L(v_j)]_{\cal V}$ which is
 $L(v_j)\cdot v_i$ by Theorem~\ref{T:orthocoord}.
@@ -166,7 +166,7 @@ $Q^tQ=\{(v_i\cdot v_j)\}=I_n$, since the $v_j$ are orthonormal. Note that
 
 \noindent (c) Now let $Q_1,Q_2$ be orthogonal. Then (a) implies
 \[
-(Q_1Q_2)^t(Q_1Q_2) = Q_2^tQ_1^tQ_1Q_2 = Q_2^tQ_2 = I_n,
+(Q_1Q_2)^t(Q_1Q_2) = Q_2^tQ_1^tQ_1Q_2 = Q_2^tI_nQ_2 = Q_2^tQ_2 = I_n,
 \]
 thus proving (c).  \end{proof}
 
@@ -200,8 +200,8 @@ B =
 The columns of $B$ form an orthonormal basis for the null space of $A$.
 This assertion can be checked by first typing
 \begin{verbatim}
-v1 = B(:,1);
-v2 = B(:,2);
+v1 = B(:, 1);
+v2 = B(:, 2);
 \end{verbatim}
 and then typing
 \begin{verbatim}
