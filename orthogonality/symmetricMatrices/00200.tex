@@ -8,18 +8,23 @@ A = \mattwo{a}{b}{b}{d}
 \]
 be the general real $2\times 2$ symmetric matrix.
 \begin{itemize}
-\item[(a)]  Prove directly using the discriminant of the characteristic
-polynomial that $A$ has real eigenvalues.
+\item[(a)]  The discriminant of the characteristic polynomial of a $2\times 2$ matrix is
+\[ 
+D = \trace(A)^2 - 4\det(A). 
+\]
+Use the discriminant to show that $A$ has real eigenvalues.
 \item[(b)]  Show that $A$ has equal eigenvalues only if $A$ is a scalar
 multiple of $I_2$.
 \end{itemize}
 
 \begin{solution}
-
+\soln
 (a) We can calculate the discriminant $D$ of matrix $A$ using
 \eqref{e:discriminant}:
-\[ D = \trace(A)^2 - 4\det(A) = (a + d)^2 - 4(ad - b^2) =
-a^2 + 2ad + b^2 - 4ad + 4b^2 = (a - d)^2 + 4b^2. \]
+\[ 
+D = \trace(A)^2 - 4\det(A) = (a + d)^2 - 4(ad - b^2) =
+a^2 + 2ad + b^2 - 4ad + 4b^2 = (a - d)^2 + 4b^2. 
+\]
 Therefore, $D \geq 0$ for all real symmetric matrices $A$.  The
 eigenvalues of $A$ are
 \[ \lambda_1 = \frac{(a + d) + \sqrt{D}}{2} \AND
