@@ -6,9 +6,11 @@
 \newcommand{\labelchapter}[1]{}
 \pdfOnly{\usepackage{printStyles/lulu}}
 
-%\usepackage{showlabels}
-%\renewcommand{\showlabelfont}{\color{red}}
-%\geometry{margin=1.5in,top=0.5in,bottom=0.5in}
+\ifcsname displaysolutions\endcsname%
+\usepackage{showlabels}
+\renewcommand{\showlabelfont}{\color{red}}
+\geometry{margin=1.5in,top=0.5in,bottom=0.5in}
+\fi
 
 \title{Linear Algebra}
 \author{Martin Golubitsky and Michael Dellnitz}
@@ -21,7 +23,6 @@
 \activity{preface.tex}
 
 \pdfOnly{\mainmatter}
-\onecolumn
 \chapterstyle
 \activity{preliminaries/preliminaries.tex} %DONE
 \labelchapter{chap:prelim}
