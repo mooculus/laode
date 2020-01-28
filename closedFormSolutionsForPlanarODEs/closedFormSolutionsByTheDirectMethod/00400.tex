@@ -118,43 +118,28 @@ $\dps\frac{dX}{dt} = \mattwo{5}{-1}{1}{3} X$.
 \begin{solution}
 \ans The general solution to the differential equation is
 \[
-X(t) = \alpha e^{4t}\vectwo{1}{1} + \beta e^{4t}\cvectwo{t + \frac{1}{2}}
-{t - \frac{1}{2}}.
+X(t) = e^{4t}\Matrixc{ 1+ t & -t \\ t & 1-t} X_0
 \]
+where $X_0$ is the initial condition.
 
 \soln First, find the eigenvalues of $C$, which are the roots of the
 characteristic polynomial
 \[
 p_C(\lambda) = \lambda^2 - 8\lambda + 16 = (\lambda - 4)^2.
 \]
-Thus, $C$ has a double eigenvalue at $\lambda_1 = 4$.  Since $C$ is not
-a multiple of $I_2$, $C$ has only one linearly independent eigenvector.
-Find this eigenvector by solving the equation
+Thus, $C$ has a double eigenvalue at $\lambda_1 = 4$.  Solve the system 
+by using formula \eqref{e:exp1eva}.  Compute 
 \[
-(C - \lambda_1I_2)v_1 = \left(\mattwo{5}{-1}{1}{3} - \mattwo{4}{0}{0}{4}
-\right)v_1 = \mattwo{1}{-1}{1}{-1}v_1 = 0,
+C - 4I_2 =  \Matrix{1 & -1 \\ 1 & -1}
 \]
-obtaining $v_1 = (1,1)^t$.  Find the generalized eigenvector $w_1$ by
-solving the equation $(C - \lambda_1 I_2)w_1 = v_1$, that is
+Hence 
 \[
-\mattwo{1}{-1}{1}{-1}w_1 = \vectwo{1}{1}.
+X(t) = e^{4t}\left(I_2 + t \Matrix{1 & -1 \\ 1 & -1}\right) = e^{4t}\Matrixc{ 1+t & -t \\ t & 1-t} X_0 
 \]
-So $w_1 = (\frac{1}{2},-\frac{1}{2})^t$ is the generalized eigenvector.
-Now, by \eqref{e:exp1eva}, we know that the
-general solution to $\dot{X} = CX$ when $C$ has equal eigenvalues and only
-one independent eigenvector is
-\[
-X(t) = e^{\lambda_1 t}(\alpha v_1 + \beta(w_1 + tv_1)).
-\]
-In this case,
-\[
-X(t) = e^{4t}\left(\alpha \vectwo{1}{1} + \beta\left(\vectwo{\frac{1}{2}}
-{-\frac{1}{2}} + t\vectwo{1}{1}\right)\right).
-\]
-
-
+where $X_0$ is the initial condition.
 \end{solution}
 \end{exercise}
+
 \begin{exercise}  \label{c6.6.2d}
 $\dps\frac{dX}{dt} = \mattwo{-4}{4}{-1}{0} X$.
 

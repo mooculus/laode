@@ -297,26 +297,27 @@ equal eigenvalues and is not a scalar multiple of the identity, as the next
 lemma shows.
 
 \begin{lemma}  \label{L:1indeig}
-Let $A$ be a $2\times 2$ matrix.  Suppose that $A$ has two linearly
+Let $C$ be a $2\times 2$ matrix.  Suppose that $C$ has two linearly
 independent eigenvectors both with eigenvalue $\lambda_1$.
-Then $A=\lambda_1 I_2$.
+Then $C = \lambda_1 I_2$.
 \end{lemma}\index{eigenvector!linearly independent}\index{eigenvector!real}
 
 \begin{proof}  Let $v_1$ and $v_2$ be two linearly independent
-eigenvectors of $A$, that is, $Av_j = \lambda_1 v_j$.  It follows
-from linearity that $Av=\lambda_1 v$ for any linear combination
-$v=\alpha_1v_1+\alpha_2v_2$.  Since $v_1$ and $v_2$ are linearly
+eigenvectors of $C$, that is, $Cv_j = \lambda_1 v_j$.  It follows
+from linearity that $Cv = \lambda_1 v$ for any linear combination
+$v = \alpha_1v_1+\alpha_2v_2$.  Since $v_1$ and $v_2$ are linearly
 independent and $\dim(\R^2)=2$, it follows that $\{v_1,v_2\}$ is
 a basis of $\R^2$.  Thus, every vector $v\in\R^2$ is a linear
-combination of $v_1$ and $v_2$.  Therefore, $A$ is $\lambda_1$ times
-the identity matrix.  \end{proof}
+combination of $v_1$ and $v_2$.  Therefore, $C$ is $\lambda_1$ times
+the identity matrix.  
+\end{proof}
 
 \subsubsection*{Generalized Eigenvectors}
 
-Suppose that $C$ has exactly one linearly independent real eigenvector $v_1$
-with real eigenvalue $\lambda_1$.  We call $w_1$ a {\em generalized
-eigenvector\/}\index{eigenvector!generalized} of $C$ it satisfies the
-system of linear equations
+Suppose that $C$ has exactly one linearly independent real eigenvector 
+$v_1$ with a double real eigenvalue $\lambda_1$.  We call $w_1$ a 
+{\em generalized eigenvector\/}\index{eigenvector!generalized} of $C$ 
+it satisfies the system of linear equations
 \begin{equation} \label{e:Cw=lw+va}
 (C-\lambda_1I_2)w_1 = v_1.
 \end{equation}
@@ -324,29 +325,29 @@ system of linear equations
 The matrix $A$ in \eqref{E:equalex} has a generalized eigenvector. To verify
 this point solve the linear system
 \[
-(A-\lambda_1I_2)w_1 = \mattwo{0}{1}{0}{0}w_1 = v_1 = \vectwo{1}{0}
+(C-\lambda_1I_2)w_1 = \mattwo{0}{1}{0}{0}w_1 = v_1 = \vectwo{1}{0}
 \]
-for $w_1=e_2$.   Note that for this matrix $A$, $v_1=e_1$ and $w_1=e_2$ are
-linearly independent.  The next lemma shows that this observation about
+for $w_1=e_2$.   Note that for this matrix $C$, $v_1 = e_1$ and $w_1 = e_2$ 
+are linearly independent.  The next lemma shows that this observation about
 generalized eigenvectors is always valid.
 
 \begin{lemma}  \label{L:geneig2}
 Let $C$ be a $2\times 2$ matrix with both eigenvalues equal to $\lambda_1$
 and with one linearly independent eigenvector $v_1$.  
-
-\noindent (a)  Let $w_1$ be a generalized eigenvector of $C$, then $v_1$ and 
+Let $w_1$ be a generalized eigenvector of $C$, then $v_1$ and 
 $w_1$ are linearly independent. 
 
+\ignore{
 \noindent (b)  Let $w$ be any vector such that $v_1$ and $w$ are linearly 
 independent.  Then $w$ is a nonzero scalar multiple of a generalized 
-eigenvector of $C$.
+eigenvector of $C$.}
 \end{lemma}
 
-\begin{proof}  (a) If $v_1$ and $w_1$ were linearly dependent, then $w_1$ would be 
+\begin{proof}  If $v_1$ and $w_1$ were linearly dependent, then $w_1$ would be 
 a multiple of $v_1$ and hence an eigenvector of $C$.  But $C-\lambda_1I_2$
 applied to an eigenvector is zero, which is a contradiction.  Therefore, 
 $v_1$ and $w_1$ are linearly independent.
-
+\ignore{
 (b) Let $w$ be any vector that is linearly independent of
 the eigenvector $v_1$.  It follows that  $\{v_1,w\}$ is a basis for
 $\R^2$; hence
@@ -375,15 +376,72 @@ It now follows from \eqref{E:Cw1} that
 (C-\lambda_1I_2)w = \alpha v_1.
 \]
 Therefore, $w_1=\frac{1}{\alpha}w$ is a generalized eigenvector
-of $C$.  \end{proof}
+of $C$.  }
+\end{proof}
 
+The Cayley Hamilton theorem (see Section~\ref{S:6.6}) coupled with matrix exponentials 
+(see Section~\ref{S:Matrixexp}) lead to a simple 
+method for finding solutions to differential equations in the multiple eigenvalue 
+case --- one that does not require solving for either the eigenvector $v_1$ 
+or the generalized eigenvector $w_1$.  We next prove the special case of
+Cayley-Hamilton that is needed.
 
+\begin{lemma} \label{L:specialCH}
+Let $C$ be a $2\times 2$ matrix with a double eigenvalue $\lambda_1\in\R$. Then
+\begin{equation} \label{e:specialCH}
+(C-\lambda_1 I_2)^2 = 0.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Suppose that $C$ has two linearly independent eigenvectors. Then Lemma~\ref{L:1indeig}
+implies that $C-\lambda_1 I_2 = 0$ and hence that $(C-\lambda_1 I_2)^2 = 0$. 
+
+Suppose that $C$ has one linearly independent eigenvector $v_1$ and a generalized 
+eigenvector $w_1$.  It follows from Lemma~\ref{L:geneig2}(a) that $\{v_1,w_1\}$ is a basis 
+of $\R^2$.  It also follows by definition of eigenvector and generalized eigenvector that 
+\[
+\begin{array}{rclcl}
+(C-\lambda_1 I_2)^2v_1 & = & (C-\lambda_1 I_2) 0  & = & 0 \\
+(C-\lambda_1 I_2)^2w_1 & = & (C-\lambda_1 I_2) v_1 & = & 0
+\end{array}
+\]
+Hence,  \eqref{e:specialCH} is valid.
+\end{proof}
 
 \subsubsection*{Independent Solutions to Differential Equations with
 Equal Eigenvalues}
 
-In the equal eigenvalue one eigenvector case, we
-claim that the general solution\index{general solution} to $\dot{X}=CX$ is:
+Suppose that the $2\times 2$ matric $C$ has a double eigenvalue $\lambda_1$.  
+Then the general solution\index{general solution} to the initial value problem 
+$\dot{X}=CX$ and $X(0) = X_0$ is:
+\begin{equation} \label{e:exp1eva}
+X(t) = e^{\lambda_1 t} [I_2 + t(C-\lambda_1I_2)]X_0.
+\end{equation}
+This is the form of the solution that is given by matrix exponentials.
+We verify \eqref{e:exp1eva} by observing that $X(0) = X_0$ and calculating  
+\[
+CX(t) =  e^{\lambda_1 t}[ C+ t(C^2-\lambda_1 C)]X_0 
+\]
+\[
+\dot{X}(t) = e^{\lambda_1 t}[ \lambda_1  (I_2 + t(C-\lambda_1 I_2)) + (C-\lambda_1I_2)]X_0.
+\]
+Therefore 
+\[
+CX - \dot{X} = e^{\lambda_1 t} M  X_0
+\]
+where \eqref{e:specialCH} implies
+\[
+\begin{array}{rcl}
+M & = & C+ t(C^2 - \lambda_1 C) - \lambda_1 (I_2 + t(C - \lambda_1 I_2)) \\
+& & - (C - \lambda_1I_2)\\
+& = & t(C - \lambda_1 I_2)^2 \\
+& = & 0.
+\end{array}
+\]
+on use of \eqref{e:specialCH}.  A remarkable feature of formula \eqref{e:exp1eva} is that it is not 
+necessary to compute either the eigenvector of $C$ or its generalized eigenvector.
+\ignore{
 \begin{equation}  \label{e:exp1eva}
 X(t) = e^{\lambda_1 t}\left(\alpha v_1 +\beta (w_1+tv_1)\right),
 \end{equation}
@@ -410,7 +468,7 @@ CX_2(t) = e^{\lambda_1 t}(Cw_1+tCv_1) = e^{\lambda_1 t}
 \]
 using \eqref{e:Cw=lw+va}.  Note that $X(0)=\alpha v_1 + \beta w_1$, so $\alpha$
 and $\beta$ are found by solving $X_0= \alpha v_1 + \beta w_1$.
-
+}
 \subsubsection*{An Example with Equal Eigenvalues}
 
 Consider the system of differential equations
@@ -421,11 +479,22 @@ with initial value
 \[
 X_0 = \vectwo{2}{3}.
 \]
-The characteristic polynomial for the matrix $C=\mattwo{1}{-1}{9}{-5}$ is
+The characteristic polynomial for the matrix $\mattwo{1}{-1}{9}{-5}$ is
 \[
 p_C(\lambda) = \lambda^2 + 4\lambda +4 = (\lambda + 2)^2.
 \]
-Thus $\lambda_1=-2$ is an eigenvalue of multiplicity two.  Since
+Thus $\lambda_1 = -2$ is an eigenvalue of multiplicity two.  
+It follows that 
+\[
+C - \lambda_1 I_2 =  \mattwo{3}{-1}{9}{-3} 
+\]
+and from \eqref{e:exp1eva} that 
+\[
+X(t) = e^{-2t}\mattwoc{1+3t}{-t}{9t}{1-3t} \vectwo{2}{3} = e^{-2t}\vectwoc{2+3t}{3+9t}.
+\]
+
+\ignore{
+Since
 $C$ is not a multiple of the identity matrix, it must have
 precisely one linearly independent eigenvector $v_1$.  This eigenvector is
 found by solving the equation
@@ -471,7 +540,7 @@ X(t) & = & e^{-2t}\left(-v_1 + 3(w_1+tv_1)\right)\\
 The Cayley Hamilton theorem leads to a third method for finding this solution 
 --- one that does not require solving for either the eigenvector $v_1$ or the 
 generalized eigenvector $w_1$.  See Section~\ref{S:6.6}.
-
+}
 
 
 \includeexercises
