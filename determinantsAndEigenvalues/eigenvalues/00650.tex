@@ -1,0 +1,26 @@
+\documentclass{ximera}
+
+\author{Marty Golubitsky}
+
+\input{../../preamble.tex}
+
+\begin{document}
+
+% To which section does your exercise belong? 
+
+\begin{exercise}\label{c10.2.6B}
+
+Let $A$ be an $n\times n$ matrix.  Explain why the eigenvalues of $A$ and $A^t$ are identical.
+  
+\begin{solution}
+
+\soln The eigenvalues of $A^t$ are the roots of the characteristic polynomial 
+\[
+\det(A^t - \lambda I_n) = \det((A-\lambda I_n)^t) = \det(A-\lambda I_n),
+\]
+which is equal to the characteristic polynomial of the matrix $A$.
+
+\end{solution}
+\end{exercise}
+
+\end{document}
