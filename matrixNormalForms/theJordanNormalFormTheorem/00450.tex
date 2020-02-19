@@ -1,0 +1,32 @@
+\documentclass{ximera}
+
+\author{Matthew Carr}
+
+\input{../../preamble.tex}
+
+\begin{document}
+
+% To which section does your exercise belong? 
+
+\begin{exercise}\label{mc11_3A}
+
+Find the Jordan Normal Form for each matrix 
+\[
+C_1 = \Matrix{ 1 & 4 \\ 1 & 1} \qquad C_2 = \Matrix{ 0 & -1 \\ 1 & -2 } \qquad C_3 = \Matrix{ -2 & 1 \\ -10 & 4}
+\]
+and for each $j$ determine whether $\dot{X} = C_jX$ is a saddle, sink, or source.
+  
+\begin{solution}
+
+
+\soln The characteristic polynomial of $C_1$ is $\lambda^2 -2\lambda -3 = (\lambda+1)(\lambda-3)$.  Hence, the eigenvalues of $C_1$ are $-1$ and $3$.  The JNF is $\Matrix{-1 & 0 \\ 0 & 3}$ and the differential equation is a saddle.
+
+The characteristic polynomial of $C_2$ is $\lambda^2 +2\lambda+ 1 = (\lambda+1)^2$.  Hence the eigenvalues of $A_2$ are both $-1$.  The JNF is $\Matrix{-1 & 1 \\ 0 & -1}$ and the differential equation is a sink.
+
+The characteristic polynomial of $C_3$ is $\lambda^2 - 2\lambda + 2$ and the eigenvalues of $C_3$ are $1 \pm i$.  Hence, the JNF is $\Matrix{1 & -1 \\ 1 & 1}$ and the differential equation is a source.
+
+
+\end{solution}
+\end{exercise}
+
+\end{document}
