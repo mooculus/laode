@@ -1,0 +1,51 @@
+\documentclass{ximera}
+
+\author{Matthew Carr}
+
+\input{../../preamble.tex}
+
+\begin{document}
+
+% To which section does your exercise belong? 
+
+\begin{exercise}\label{mc.exercise9}
+
+Which of the following mappings $T$ are linear?  Circle those maps that are linear and cross out those maps that are not linear.
+
+\begin{enumerate}
+\item $T:\R^2\to\R^3$ where $T(x_1,x_2) = (2x_1 - x_2, x_2 + x_1, x_1 + 2)$
+\item $T:P_k\to\R^2$ where $T(p(t)) = (p'(1), \int_2^5p(t)dt)$
+\item Fix $B\in M_{n,n}$. Then $T:M_{n,n}\to M_{n,n}$ where $T(A) = AB-BA$
+\end{enumerate}
+Recall that $P_k$ is the vector space of polynomials of degree $\leq k$ and $M_{n,n}$ is the vector space of $n\times n$ square matrices. 
+ 
+  
+\begin{solution}
+
+\ans \begin{enumerate}
+\item \sout{$T:\R^2\to\R^3$ where $T(x_1,x_2) = (2x_1 - x_2, x_2 + x_1, x_1 + 2)$}
+\item \fbox{$T:P_k\to\R^2$ where $T(p(t)) = (p'(1), \int_2^5p(t)dt)$}
+\item \fbox{Fix $B\in M_{n,n}$. Then $T:M_{n,n}\to M_{n,n}$ where $T(A) = AB-BA$}
+\end{enumerate}
+
+
+\soln  
+\begin{enumerate}
+\item If $T$ is linear then it takes the zero vector to the zero vector\textemdash that is, we must have $T(0,0)=(0,0,0)$. This follows from the definition of linearity, since for any vector $v\in\R^2$, if $T$ is linear then $T(0,0)=T(v-v)= Tv-Tv=(0,0,0)$. However, $T(0,0)=(0,0,2)\ne (0,0,0)$, so $T$ cannot be linear.
+\item First note that every polynomial is integrable and differentiable. Since $T(p(t))=\left(\left.\dfrac{d}{dt}p(t)\right|_{t=1},\int_{2}^{5}p(t)\,dt\right)$, it suffices to show that 
+\[
+p(t)\mapsto \left.\dfrac{d}{dt}p(t)\right|_{t=1}=p'(1)\qquad\text{and}\qquad p(t)\mapsto \int_{2}^{5}p(t)\,dt
+\]
+are both linear. This now follows from what you learned in calculus. 
+\item Let $c\in\R$. Then $T(cA)=(cA)B-B(cA)=c(AB)-c(BA)=c(AB-BA)$ from the properties of matrix multiplication. Let $A_1,A_2\in M_{n,n}$. Then 
+\begin{align*}
+T(A_1+A_2)&=(A_1+A_2)B-B(A_1+A_2)=A_1 B+A_2 B-B A_1-BA_2\\
+&=A_1 B-BA_1+A_2B-BA_2=T(A_1)+T(A_2)\ldotp
+\end{align*}
+This shows $T$ is linear.
+\end{enumerate}
+
+\end{solution}
+\end{exercise}
+
+\end{document}
