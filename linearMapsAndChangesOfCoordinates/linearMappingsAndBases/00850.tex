@@ -34,7 +34,17 @@ L(1,2,3) = (0,1) \AND L(2,4,6) = (1,1).
 \item \fbox{The only rank $0$ matrix is the zero matrix.}
 \end{enumerate}
 
-\soln A LONGER SOLUTION, EXPLAINING HOW THE ANSWER WAS FOUND, GOES HERE 
+\soln \begin{enumerate}
+
+\item The characteristic polynomial of $A$ is computed as the determinant $p(\lambda)=\det(A-\lambda I)$, so when $\lambda=0$, we recover $\det(A)$. It is always the case that $p(\lambda)$ has leading coefficient $(-1)^n$, so the fundamental theorem of algebra guarantees that the polynomial $\det(A-\lambda I)$ factors as $(-1)^n (\lambda-\lambda_1)\cdot \cdots\cdot (\lambda-\lambda_n)$ where the $\lambda_i$ are the roots of $c(\lambda)$. So when $\lambda=0$, we recover 
+\[
+\det(A)=(-1)^n (-\lambda_1)(-\lambda_2)\cdots(-\lambda_n)=(-1)^n\prod_{i=1}^{n}-\lambda_i =(-1)^n (-1)^n\prod_{i=1}^{n}\lambda_i=\prod_{i=1}^{n}\lambda_i\ldotp
+\]
+\item Suppose matrices $A$ and $B$ are similar. Then, by definition, there exists an invertible matrix $P$ such that $A=P^{-1}BP$. Let $B=\Matrix{ 0 & 1 \\ 1 & 0}$ and $P=\Matrix{ 1 & 1 \\ 0 & 1}$. Then $P^{-1}=\Matrix{ 1 & -1 \\ 0 & 1}$ and $A=P^{-1}BP=\Matrix{ -1 & 0 \\ 1 & 1}$. $B$ has eigenvectors $(1,1)$ and $(1,-1)$. $A$ has eigenvectors $(0,1)$ and $(2,-1)$. These are not the same. 
+\item This can be seen from low-dimensional examples. Another way to see this is to observe that the matrix $kA$ is the product of the matrices $kI$ and $A$. Hence, $\det(kA)=\det (kI\cdot A)=\det (kI)\det (A)=k^{n}\det A$ since the determinant of a product of two matrices is the product of their respective determinants.
+\item Since the vector $(2,4,6)=2(1,2,3)$, linearity forces $L(2,4,6)=2L(1,2,3)$. But $2L(1,2,3)=(0,2)\ne (1,1)$. So there exists no such function.
+\item The rank of matrix is the number of linearly independent rows. In other words, the number of nonzero rows when the matrix is in row echelon form. Hence, if any row of a matrix $E$ is non-zero, then the rank of the matrix must be greater than $0$, so the only matrix with rank $0$ is the zero matrix. 
+\end{enumerate}
 
 
 

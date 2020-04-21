@@ -1,0 +1,30 @@
+\documentclass{ximera}
+
+\author{Matthew Carr}
+
+\input{../../preamble.tex}
+
+\begin{document}
+
+% To which section does your exercise belong? 
+
+\begin{exercise}\label{mc.exercise8}
+
+Compute \quad $\det\Matrix{0 & 2 & 0 & 1\\ 1 & -1 & 0 & -1\\ 1 & 1 & 1& 3\\ 0 & 1 & 0 & 1}$.
+  
+\begin{solution}
+
+\ans \[\det\Matrix{0 & 2 & 0 & 1\\ 1 & -1 & 0 & -1\\ 1 & 1 & 1& 3\\ 0 & 1 & 0 & 1}=-1\]
+
+\soln Expanding along the third column, we are reduced to computing 
+\[
+\det\Matrix{0 & 2 & 1 \\ 1 & -1 & -1\\ 0 & 1 &  1}\ldotp
+\]
+Then, expanding along the first column, we are reduced to computing 
+\[
+(-1) \det \Matrix{2 & 1 \\ 1 & 1}=-(2-1)=-1\ldotp
+\]
+\end{solution}
+\end{exercise}
+
+\end{document}
