@@ -1,0 +1,68 @@
+\documentclass{ximera}
+
+\author{Matthew Carr \& Marty Golubitsky}
+
+\input{../../preamble.tex}
+
+\begin{document}
+
+
+\begin{exercise}\label{mc.exerciseErr3}
+Let $\mathcal{W} = \{v_1,v_2,v_3\}$ be the basis of $\R^3$ where
+\[
+v_1=\Matrix{-2 \\ 1 \\ 1} \quad v_2=\Matrix{0 \\ 0 \\ 2} \quad v_3=\Matrix{-1 \\ 1 \\ 0}.
+\]
+Let  $T\colon \R^3\rightarrow\R^3$ be a linear function so that
+\[
+T(v_1)=\Matrix{-1 \\ 1 \\ 0} \quad T(v_2)=\Matrix{-4 \\ 2 \\ 2}  \quad T(v_3)=\Matrix{1 \\ 0 \\ 0}.
+\]
+\begin{enumerate}[label=(\alph*)]
+\item Find the coordinates of $T(v_3)$ relative to the basis $\mathcal{W}$. That is, compute $[T(v_3)]_\mathcal{W}$.
+\item Find the  matrix $[T]_\mathcal{W}$ of $T$ relative to the basis $\mathcal{W}$.
+\item Find the standard matrix $[T]_{\mathcal{E}}$ of $T$. 
+%(Hint: use your answer to the previous part. It might be helpful to compute the inverse of a certain matrix.)
+\end{enumerate}
+
+\begin{solution}
+\ans
+\begin{enumerate}[label=(\alph*)]
+\item $[T(v_3)]_\mathcal{W} = \Matrixc{-1 \\ 1/2\\ 1}$.
+\item $[T]_{\mathcal{W}}=\Matrix{ 0& 2& -1\\ 0& 0& 1/2\\ 1& 0& 1}$.
+\item $[T]_{\mathcal{E}}=\Matrix{0&1&-2 \\ 0&0& 1\\ 1&1&1}$.
+\end{enumerate}
+\soln  
+\begin{enumerate}[label=(\alph*)]
+\item Express $T(v_3)$ as the linear combination 
+\[
+T(v_3) = a v_1 + bv_2 + cv_3.
+\]
+Solving the linear system yields $a=-1$, $b=1/2$ and $c=1$.  Then 
+\[
+[T(v_3)]_\mathcal{W} = \Matrix{a\\b\\c} = \Matrixc{-1 \\ 1/2\\ 1}\ldotp
+\]
+\item Repeating the procedure above, obtain
+\[
+[T(v_1)]_\mathcal{W} = \Matrix{0\\0\\1}
+\]
+and
+\[
+ [T(v_2)]_{\mathcal{W}} = \Matrix{2\\0\\0}\ldotp
+\]
+By Lemma~\ref{e:matrixofL} (see also Definition~\ref{D:matrixincoord}), the matrix of $T$ relative to the basis $\mathcal{W}$ as
+\[
+\Matrix{ 0& 2& -1\\ 0& 0& 1/2\\ 1& 0& 1}\ldotp
+\]
+\item It follows from Theorem~\ref{L:linmapfrombasis} and \eqref{e:defA} that $[T]_{\mathcal{E}}$ is given by 
+\[
+[T]_\mathcal{E}=(T(v_1)\mid T(v_2) \mid T(v_3))(v_1\mid v_2\mid v_3)^{-1}\ldotp
+\]
+One can compute $(v_1\mid v_2\mid v_3)^{-1}=\Matrix{ -1 & -1 & 0 \\ 1/2 & 1/2 & 1/2 \\
+ 1 & 2 & 0}$ and so 
+ \[
+ [T]_\mathcal{E}=\Matrix{ -1 & -4 & 1 \\ 1 & 2 & 0 \\ 0 & 2 & 0}\Matrix{ -1 & -1 & 0 \\ \1/2 & 1/2& 1/2 \\ 1 & 2 & 0}=\Matrix{0&1&-2 \\ 0&0& 1\\ 1&1&1}\ldotp
+ \]
+ This could also be done in the same fashion as part (b).
+ \end{enumerate}
+\end{solution}
+\end{exercise}
+\end{document}

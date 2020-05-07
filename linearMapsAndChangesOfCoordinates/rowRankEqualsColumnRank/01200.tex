@@ -1,0 +1,37 @@
+\documentclass{ximera}
+
+\author{Matthew Carr \& Martin Golubitsky}
+
+\input{../../preamble.tex}
+
+\begin{document}
+
+% 8.2 Row Rank Equals Column Rank 
+
+\begin{exercise}\label{mc.exercise15}
+
+Let 
+\[
+A = \Matrix{a_{11} & a_{12} & a_{13} & a_{14} & a_{15} \\ a_{21} & a_{22} & a_{23} & a_{24} & a_{25}}
+\]
+and suppose $a_{11}a_{22} - a_{12}a_{21} \neq 0$.  What is the nullity($A$)?  Explain your answer.
+
+  
+\begin{solution}
+
+\ans $\mathrm{nullity}(A)=3$.
+
+\soln Note that $a_{11}a_{22} - a_{12}a_{21}$ is the determinant of the $2\times 2$ submatrix  
+\[
+B=\Matrix{a_{11} & a_{12}\\ a_{21} & a_{22}}.
+\]
+Corollary~\ref{C:2x2invert} implies that $B$ is invertible and  Theorem~\ref{invertequiv} implies that $B$ is row equivalent to $I_2$.  Apply the same set of elementary row operations that transforms $B$ to $I_2$ to see that $A$ is row equivalent to 
+\[
+A'=\Matrix{1 & 0 & a_{13}' & a_{14}' & a_{15}'\\ 0 & 1 & a_{23}' & a_{24}' & a_{25}'}.
+\]
+It follows that the column ranks of $A'$ and $A$ equal $2$ and by Theorem~\ref{T:rowrank=columnrank} that the row ranks of $A$ and $A'$ are equal to $2$.  Hence the ranks of $A$ and $A'$ are equal to $2$. Finally,  Theorem~\ref{T:dimsoln} implies that the nullities of $A$ and $A'$ equal 3.  
+ 
+\end{solution}
+\end{exercise}
+
+\end{document}

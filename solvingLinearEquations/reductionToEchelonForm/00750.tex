@@ -1,0 +1,71 @@
+\documentclass{ximera}
+
+\author{Matthew Carr \& Martin Golubitsky}
+
+\input{../../preamble.tex}
+
+\begin{document}
+
+
+\begin{exercise}\label{mc.exerciseErr5}
+Consider the matrix
+\[
+A=\Matrix{1 & 0 & -1 \\ -2 & 0 & 2 \\ 0 & 1 & -2 \\ 0 & 0 & 0}
+\]
+\begin{enumerate}[label=(\alph*)]
+\item Describe the sets of vectors $b=\Matrix{b_1\\b_2\\b_3\\b_4}\in\mathbb{R}^4$ so that the system of equations $Ax=b$ has (i) no solution, (ii) one solution, and (iii) infinitely many solutions.
+\item Is the vector 
+\[ 
+y=\Matrix{2\\-4\\5 \\ 0}
+\]
+a linear combination of the columns of $A$? If so, express it as one.
+\end{enumerate}
+
+
+\begin{solution}
+
+
+\ans\begin{enumerate}[label=(\alph*)]
+\item (i) The set is empty when $b_2+2b_1\neq 0$ or $b_4\neq 0$. (ii) The set is empty.  (iii) the set consists of vectors for which $b_2+2b_1 = 0$ and $b_4 = 0$.
+\item No.
+\end{enumerate}
+
+\soln
+
+\begin{enumerate}[label=(\alph*)]
+\item Begin by row reducing the augmented matrix $\left(A\mid b\right)$ to reduced echelon form obtaining
+\[
+\left(\begin{array}{ccc|c} 
+1 & 0 & -1 & b_1 \\ 
+0 & 1 & -2 & b_3 \\ 
+0 & 0 & 0 & b_2+2b_1 \\ 
+0 & 0 & 0 & b_4
+\end{array}\right)\ldotp
+\]
+(i) The system is inconsistent if either $b_2+2b_1\neq 0$ or $b_4 \neq 0$. This is the set of vectors $b$ for which there is no solution to the equation $Ax=b$.
+
+(ii,iii)  Solutions can exist only if  $b_4 = 0$ and $b_2 + 2b_1 = 0$. Then the system $Ax = b$  simplifies to 
+\[
+\left(\begin{array}{ccc|c}
+1 & 0 & -1 & b_1\\  
+0 & 1 & -2 & b_3 \\ 
+0 & 0 & 0 & 0\\ 
+0 & 0 & 0 & 0
+\end{array}\right)\ldotp
+\]
+Solving, this system one finds that solutions have the form   
+\[
+x_1 = x_3 + b_1 \AND x_2 = 2x_3 + b_3.
+\] 
+Thus, when there are any solutions to $Ax=b$, there are infinitely many solutions (one for each value of $x_3$).  So (ii) is the empty set and (iii) is the set  $b_4=0$ and $b_2 + 2b_1 = 0$.
+
+\item Denote the first column of $A$ by $C_1$, the second by $C_2$ and the third by $C_3$. A linear combination of these columns can be written as
+\[
+x_1C_1 + x_2C_2 + x_3C_3 = (C_1\mid C_2\mid C_3)\left(\begin{array}{c} x_1\\x_2\\x_3 \end{array}\right) = Ax. 
+\]
+From (a) it follows that $y$ is a linear combination of the columns if and only if $y_4 = 0$ and $y_2 + 2y_1 = 0$. However, the second constraint does not hold and $y$ is not a linear combination of $C_1,C_2,C_3$.
+\end{enumerate}
+\end{solution}
+\end{exercise}
+
+\end{document}

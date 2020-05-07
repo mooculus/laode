@@ -1,0 +1,42 @@
+\documentclass{ximera}
+
+\author{Matthew Carr}
+
+\input{../../preamble.tex}
+
+\begin{document}
+
+% 4.5 The Initial Value Problem and Eigenvectors
+
+\begin{exercise}\label{mc.exercise8}
+
+Solve the initial value problem to the planar system of differential equations
+\[
+\frac{dX}{dt} = \Matrix{2 & -1 \\ -4 & 2} X = CX 
+\]
+where $X(0) = (0,4)^t$. 
+  
+\begin{solution}
+
+\ans $X(t) = \begin{pmatrix} 1 - e^{4t}\\ 2+2e^{4t} \end{pmatrix}\ldotp$
+
+\soln The characteristic polynomial of the matrix $C=\Matrix{2 & -1 \\ -4 & 2}$ is $p(\lambda)=\lambda^2 -4\lambda = \lambda(\lambda-4)$ and hence, the eigenvalues of $C$ are $\lambda_1 = 0$ and $\lambda_2 = 4$. Computing the eigenvectors, we must solve for $X$ in 
+\[
+CX =  \Matrix{2 & -1 \\ -4 & 2} X  = 0 \AND (C - 4I_2)  X =  \Matrix{-2 & -1 \\ -4 & -2} X  = 0\ldotp
+\]
+Call the solutions $v_1 = (1,2)^t$ and $v_2 = (-1, 2)^t$, respectively. The general solution is then of the form
+\[
+X(t) = \alpha_1 v_1 + \alpha_2 e^{4t} v_2
+\]
+with $\alpha_1$ and $\alpha_2$ variable. To obtain the specific solution subject to the initial condition, we solve 
+\[
+X(0) =  \alpha_1 v_1 + \alpha_2 v_2 = \Matrix{\alpha_1 -\alpha_2 \\ 2\alpha_1 + 2\alpha_2} = \Matrix{0\\4}\ldotp
+\]
+By inspection, $\alpha_1 = 1$ and $\alpha_2 = 1$. Hence, 
+\[
+X(t) = \begin{pmatrix} 1 - e^{4t}\\ 2+2e^{4t} \end{pmatrix}\ldotp
+\]
+\end{solution}
+\end{exercise}
+
+\end{document}
