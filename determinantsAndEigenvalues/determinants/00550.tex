@@ -1,0 +1,28 @@
+\documentclass{ximera}
+
+\author{Marty Golubitsky}
+
+\input{../../preamble.tex}
+
+\begin{document}
+
+% To which section does your exercise belong? 
+
+\begin{exercise}\label{c10.1.5c}
+
+Compute \quad $\det\Matrix{0 & 2 & 0 & 1\\ 1 & -1 & 0 & -1\\ 1 & 1 & 1& 3\\ 0 & 1 & 0 & 1}$.
+  
+\begin{solution}
+
+\ans $-1$
+
+\soln Use cofactor expansions to compute
+\[
+\det\Matrix{0 & 2 & 0 & 1\\ 1 & -1 & 0 & -1\\ 1 & 1 & 1& 3\\ 0 & 1 & 0 & 1} = 
+\det\Matrix{0 & 2 & 1\\ 1 & -1 &  -1\\  0& 1 & 1} = -\det\Matrix{2 & 1\\ 1 & 1} = -1
+\]
+
+\end{solution}
+\end{exercise}
+
+\end{document}

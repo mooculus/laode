@@ -1,0 +1,25 @@
+\documentclass{ximera}
+
+\author{Marty Golubitsky}
+
+\input{../../preamble.tex}
+
+\begin{document}
+
+\begin{exercise}\label{c7.4.3.B}
+
+Show that if $P$ is an $n\times n$ orthogonal matrix, then $\det(P) = \pm 1$.
+  
+\begin{solution}
+
+
+\soln $P$ is orthogonal if and only if $P^tP = I_n$. Hence
+\[
+1 = \det(I_n) = \det(P^tP) = \det(P^t)\det(P) = \det(P)^2
+\]
+since $\det(P^t) = \det(P)$.  It follows that $\det(P) = \pm1$. 
+
+\end{solution}
+\end{exercise}
+
+\end{document}

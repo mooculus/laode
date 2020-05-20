@@ -1,0 +1,34 @@
+\documentclass{ximera}
+
+\author{Marty Golubitsky}
+
+\input{../../preamble.tex}
+
+\begin{document}
+
+\begin{exercise}\label{c5.2.9B}
+
+Let $W\subset \R^n$ be a $k$-dimensional subspace where $k < n$.  Define
+\[
+V = \{v\in\R^n: v\cdot w = 0\quad \mbox{for all $w\in W$} \}
+\]
+Show that $V$ is a subspace of $\R^n$.
+
+  
+\begin{solution}
+
+
+
+\soln Let $v_1$ and $v_2$ be in $V$.  Then 
+\[
+(v_1+v_2)\cdot w = v_1\cdot w+ v_2\cdot w = 0 + 0 = 0
+\]
+for all $w\in W$.  Hence $v_1 + v_2\in V$.  Also
+\[
+(cv_1)\cdot w = c(v_1\cdot w) = c\cdot 0 = 0
+\]
+for all $c\in\R$ and $cv_1\in V$.  It follows that $V$ is closed under addition and scalar multiplication and is a subspace.
+\end{solution}
+\end{exercise}
+
+\end{document}
