@@ -6,9 +6,9 @@
 
 \begin{document}
 
-% To which section does your exercise belong? 
+% 8.1 Linear Mappings and Bases
 
-\begin{exercise}\label{mc.exercise9}
+\begin{exercise}\label{mc.exercise3}
 
 Which of the following mappings $T$ are linear?  Circle those maps that are linear and cross out those maps that are not linear.
 
@@ -31,13 +31,16 @@ Recall that $P_k$ is the vector space of polynomials of degree $\leq k$ and $M_{
 
 \soln  
 \begin{enumerate}
-\item If $T$ is linear then it takes the zero vector to the zero vector\textemdash that is, we must have $T(0,0)=(0,0,0)$. This follows from the definition of linearity, since for any vector $v\in\R^2$, if $T$ is linear then $T(0,0)=T(v-v)= Tv-Tv=(0,0,0)$. However, $T(0,0)=(0,0,2)\ne (0,0,0)$, so $T$ cannot be linear.
-\item First note that every polynomial is integrable and differentiable. Since $T(p(t))=\left(\left.\dfrac{d}{dt}p(t)\right|_{t=1},\int_{2}^{5}p(t)\,dt\right)$, it suffices to show that 
+\item If $T$ is linear, then $T$ maps the zero vector to the zero vector.  However, $T(0,0)=(0,0,2)\ne (0,0,0)$; so $T$ is not linear.
+\item Since $T(p(t))=\left(\left.\dfrac{d}{dt}p(t)\right|_{t=1},\int_{2}^{5}p(t)\,dt\right)$, it suffices to show that 
 \[
 p(t)\mapsto \left.\dfrac{d}{dt}p(t)\right|_{t=1}=p'(1)\qquad\text{and}\qquad p(t)\mapsto \int_{2}^{5}p(t)\,dt
 \]
-are both linear. This now follows from what you learned in calculus. 
-\item Let $c\in\R$. Then $T(cA)=(cA)B-B(cA)=c(AB)-c(BA)=c(AB-BA)$ from the properties of matrix multiplication. Let $A_1,A_2\in M_{n,n}$. Then 
+are each linear, and that follows from elementary calculus. 
+\item One needs to show that $T$ is closed under scalar multiplication and addition.  Let $c\in\R$ and $A_1,A_2\in M_{n,n}$. Then 
+\[
+T(cA)=(cA)B-B(cA)=c(AB)-c(BA)=c(AB-BA) = cT(A)\ldotp
+\] 
 \begin{align*}
 T(A_1+A_2)&=(A_1+A_2)B-B(A_1+A_2)=A_1 B+A_2 B-B A_1-BA_2\\
 &=A_1 B-BA_1+A_2B-BA_2=T(A_1)+T(A_2)\ldotp

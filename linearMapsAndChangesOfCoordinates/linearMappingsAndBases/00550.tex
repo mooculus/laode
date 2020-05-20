@@ -1,0 +1,64 @@
+\documentclass{ximera}
+
+\author{Matthew Carr \& Marty Golubitsky}
+
+\input{../../preamble.tex}
+
+\begin{document}
+
+
+\begin{exercise}\label{mc.exerciseErr1}
+
+Let $\mathcal{P}^3\subset C^1$ be the vector space of polynomials $p(t)$ of degree less than or equal to three; that is,
+\[
+\mathcal{P}^3=\left\{a_3 t^3 + a_2 t^2 + a_1 t + a_0 : a_0,a_1,a_2, a_3\in \R\right\}
+\]
+Let $T:\mathcal{P}_3\rightarrow \R$ be the function $T(p) = \frac{dp}{dt}(0)$, where $p\in\mathcal{P}$.
+\begin{enumerate}[label=(\alph*)]
+\item Show that $T$ is linear.
+\item  Find a basis for the null space of $T$.
+\item Let  $S:\mathcal{P}_3\rightarrow \mathbb{R}$ be the function $S(p)=p(0)^2$.  Show that $S$ is not linear.
+\end{enumerate}
+
+  
+\begin{solution}
+
+\soln  
+\begin{enumerate}[label=(\alph*)]
+\item Differentiation is linear; that is, 
+\[
+\dfrac{d(f+g)}{dt}(t) = \dfrac{df}{dt}(t)+\dfrac{dg}{dt}(t) \quad \mbox{and} \quad 
+\dfrac{d(cf)}{dt}(t) = c\dfrac{df}{dt}(t).
+\]
+On evaluation at $x=0$ we see that 
+\[
+\dfrac{d(f+g)}{dt}(0) = \dfrac{df}{dt}(0)+\dfrac{dg}{dt}(0) \quad \mbox{and} \quad 
+\dfrac{d(cf)}{dt}(0) = c\dfrac{df}{dt}(0)
+\]
+from which it follows that
+\[
+T(f+g) = T(f) + T(g)  \quad \mbox{and} \quad  T(cf) = cT(f)
+\]
+and hence that $T$ is linear.
+\item Let 
+\[
+p(t)=a_0+a_1t+a_2 t^2+a_3 t^3 \in \mathcal{P}^3.
+\]
+Then
+ \[
+ \dfrac{dp}{dt}(t)=3a_3t^2+2a_2 t+a_1.
+ \]
+So, $\dfrac{dp}{dt}(0)=a_1$. Hence, $\mathrm{null\ space}(T)$ consists of all polynomials in $\mathcal{P}^3$ with $a_1=0$, which are polynomials of the form $p(x)=a_0+a_2 t^2+a_3 t^3$. By inspection, a basis for this null space is $\{1,t^2,t^3\}$.
+\item To show that $S$ is not linear, it suffices to find polynomials $p(t),q(t)\in\mathcal{P}^3$ for which $S(p(t)+q(t))\ne S(p(t))+S(q(t))$. Take $p(t)=1$ and $q(t)=1$, the polynomials with constant value $1$.  Then 
+\[
+S(p(t)+q(t)) = S(2) =4,
+\]
+but
+\[
+S(p(t))+S(q(t)) = 1^2+1^2 = 2,
+\]
+which furnishes a counter-example to linearity.
+\end{enumerate}
+\end{solution}
+\end{exercise}
+\end{document}

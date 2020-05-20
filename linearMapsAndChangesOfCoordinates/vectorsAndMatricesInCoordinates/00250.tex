@@ -1,0 +1,44 @@
+\documentclass{ximera}
+
+\author{Matthew Carr \& Marty Golubitsky}
+
+\input{../../preamble.tex}
+
+
+\begin{document}
+
+
+\begin{exercise}\label{mc.exerciseErr4}
+%\RED{SECTION: VECTORS AND MATRICES IN COORDINATES.  Note that exercise 3 goes in this section too.}
+
+%\RED{Does this exercise use anything from the starred section: Matrices of Linear Maps on a
+%Vector Space?} NOT NEEDED
+
+%\RED{\bf Theorem 8.3.5 - which needs a label - is the result to use in (d).
+
+%The answer to (b) was incorrect.
+%}
+
+Let $\mathcal{W}=\left\{v_1,\ldots ,v_n\right\}$ be a basis of $\R^n$.
+\begin{enumerate}[label=(\alph*)]
+\item State the definition of the coordinates of a vector $x \in\R^n$ relative to $\mathcal{W}$, and describe how to find them given the standard coordinates of $x$.
+\item What vector $v\in \R^n$ satisfies
+\[
+[v]_{\mathcal{W}}= e_1 - e_2
+\]
+\item What is the definition of the matrix of a linear function $T:\mathbb{R}^n\rightarrow\mathbb{R}^n$ relative to $\mathcal{W}$?
+\item Let $T:\mathbb{R}^n\rightarrow\mathbb{R}^n$ be a linear transformation with standard matrix $A$ so that $[T]_{\mathcal{W}}=B$. What is the relationship between $A$ and $B$?
+\end{enumerate}
+
+
+\begin{solution}
+\ans
+\begin{enumerate}[label=(\alph*)]
+\item This is Definition~\ref{D:coordinates}. 
+\item $v = v_1 - v_2$.
+\item This is Definition~\ref{D:matrixincoord}.
+\item By Theorem~\ref{T:matrixcoord2},  $A$ and $B$ are similar matrices. 
+\end{enumerate}
+\end{solution}
+\end{exercise}
+\end{document}

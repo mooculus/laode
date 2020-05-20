@@ -1,0 +1,61 @@
+\documentclass{ximera}
+
+\author{Matthew Carr \& Marty Golubitsky}
+
+\input{../../preamble.tex}
+
+\begin{document}
+
+% 5.5 Dimension and Bases 
+
+\begin{exercise}\label{mc.exercise14}
+
+Determine whether each of the following statements is true or false and explain your answer.  
+\begin{enumerate}[label=(\alph*)]
+\item If $A$ is an $m\times n$ matrix and the equation $AX=b$ is consistent for some $b$, then the columns of $A$ span $\mathbb{R}^m$.
+\item Let $A$ and $B$ be $n\times n$ matrices. If $AB = BA$ and if $A$ is invertible, then $A^{-1} B= B A^{-1}$. 
+\item If $A$ and $B$ are $m\times$n matrices, then both $AB^t$ and $A^t B$ are defined.
+\item Similar matrices always have the same eigenvectors.
+\item If $u,v,w$ are vectors such that $\{u,v\},$ $\{u,w\},$ and $\{v,w\}$ are linearly independent sets, then $\{u,v,w\}$ is a linearly independent set.
+\item Let $\{v_1,v_2,v_3\}$ be a basis for a vector space $V$. If $U$ is a subspace of $V,$ then some subset of $\{v_1,v_2,v_3\}$ is a basis for $U$.
+\end{enumerate}
+\begin{solution}
+
+\ans 
+We strike out those statements that are false and circle those that are true.
+\begin{enumerate}[label=(\alph*)]
+\item \sout{If $A$ is an $m\times n$ matrix and the equation $AX=b$ is consistent for some $b$, then the columns of $A$ span $\mathbb{R}^m$.}
+\item \sout{Let $A$ and $B$ be $n\times n$ matrices. If $AB = BA$ and if $A$ is invertible, then $A^{-1} B= B A^{-1}$.}
+\item \fbox{If $A$ and $B$ are $m\times$n matrices, then both $AB^t$ and $A^t B$ are defined.}
+\item \sout{Similar matrices always have the same eigenvectors.}
+\item \sout{If $u,v,w$ are vectors such that $\{u,v\},$ $\{u,w\},$ and $\{v,w\}$ are linearly independent sets, then $\{u,v,w\}$ is a linearly independent set.}
+\item \sout{Let $\{v_1,v_2,v_3\}$ be a basis for a vector space $V$. If $U$ is a subspace of $V,$ then some subset of $\{v_1,v_2,v_3\}$ is a basis for $U$.}
+\end{enumerate}
+
+\soln \begin{enumerate}[label=(\alph*)]
+\item This is false. For example, let $A=\Matrix{1 & 0 \\ 0 & 0}$ and $b=\Matrix{1\\0}$. Then the system of equations $AX=b$ is consistent with solution $X=\Matrix{1\\0}$. 
+
+\item This is false. For example, let $A=\Matrix{1 & 1\\ 0 & 1}$ and $B=\Matrix{1 & 0\\ 0 & 2}$. Then $A^{-1}=\Matrix{1 & -1\\ 0 & 1}$ and 
+\[
+A^{-1}B = \Matrix{1 & -2\\ 0 & 2} \neq \Matrix{1 & -1\\ 0 & 2} = BA^{-1}.
+\]
+
+\item This is true.  The transpose of an $m\times n$ matrix is an $n\times m$ matrix. Therefore 
+\[
+AB^t \mbox{ is }  (m\times n)(n\times m) = m\times m
+\]
+and
+\[
+A^tB \mbox{ is }  (n\times m)(m\times n) = n\times n.
+\]
+
+\item This is false. Suppose $A$ and $B$ are similar matrices. Then, there exists an invertible matrix $P$ such that $A=P^{-1}BP$. Let $B=\Matrix{ 0 & 1 \\ 1 & 0}$ and $P=\Matrix{ 1 & 1 \\ 0 & 1}$. Then $P^{-1}=\Matrix{ 1 & -1 \\ 0 & 1}$ and $A=P^{-1}BP=\Matrix{ -1 & 0 \\ 1 & 1}$. $B$ has eigenvectors $(1,1)$ and $(1,-1)$. $A$ has eigenvectors $(0,1)$ and $(2,-1)$. These are not the same. 
+
+\item This is false. For example, let $V=\R^3$, $u=e_1$, $v=e_2$ and $w=e_1+e_2$. Then $\{u,v,w\}$ is a linearly dependent set, but $\{u,v\},$ $\{u,w\},$ and $\{v,w\}$ are all linearly independent sets.
+
+\item This is false. For example, let $V=\R^2$ and let $v_1=e_1$ and $v_2=e_2$ be the standard basis vectors. Let $U$ be the one-dimensional subspace with basis $\{e_1+e_2\}$. Then no subset of $\{e_1,e_2\}$ is a basis for $U$.
+\end{enumerate}
+\end{solution}
+\end{exercise}
+
+\end{document}
