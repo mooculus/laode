@@ -2,24 +2,20 @@
 \input{../../preamble.tex}
 \begin{document}
 \begin{exercise} \label{c10.2.2}
-Find a basis for the eigenspace of 
+Find a basis for the null space of $A-2I_3$ where  
 \[
 A = \left(\begin{array}{rrr} 3 & 1 & -1 \\ -1 & 1 & 1 \\ 2 & 2 & 0 
 \end{array}\right)
 \]
-corresponding to the eigenvalue $\lambda=2$.
 
 \begin{solution}
 
-\ans A basis for the eigenspace of $A$ corresponding to the eigenvalue
-$\lambda = 2$ is:
+\ans A basis for the null space of $A-2I_3$ is:
 \[
 \left\{\vecthree{-1}{1}{0}, \vecthree{1}{0}{1}\right\}.
 \]
 
-\soln First, find all eigenvectors of $A$ with eigenvalue
-$\lambda = 2$, that is, all vectors $v = (v_1,v_2,v_3)$ such
-that $(A - 2I_3)v = 0$.  Solve the system
+\soln Solve the system
 \[
 \matthree{1}{1}{-1}{-1}{-1}{1}{2}{2}{-2}\vecthree{v_1}{v_2}{v_3} =
 \vecthree{0}{0}{0}.
