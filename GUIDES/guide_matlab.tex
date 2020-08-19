@@ -2,13 +2,14 @@
 \usepackage{hyperref}
 \usepackage{fullpage}
 \usepackage{enumerate}
+\usepackage{upquote}
 
 \setlength{\parindent}{0in}
 \setlength{\parskip}{1ex}
 
 
-\title{Guide: Installing MATLAB and Course \texttt{.m}-files}
-\author{Jim Fowler \and Marty Golubitsky}
+\title{Guide: MATLAB and Course \texttt{.m}-files}
+\author{Jim Fowler, Marty Golubitsky, and Brad Findell}
 
 \usepackage{xcolor,verbatimbox}
 \catcode`>=\active %
@@ -33,6 +34,10 @@ mathematics. This course relies on MATLAB, a popular software package
 for matrix computations. MATLAB is available free-of-charge to Ohio
 State students and faculty.
 
+Choose at least one of the following \textbf{two options}:
+
+\subsection{Install the MATLAB Application on Your Computer}
+
 To download and activate your free copy of MATLAB, please follow the
 steps below.  For support, faculty should email
 \href{mailto:support@math.osu.edu}{\texttt{support@math.osu.edu}} and
@@ -42,11 +47,11 @@ students should email
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi})}
 \item Launch \href{https://osuitsm.service-now.com/selfservice/}{Ohio
-    State's IT Self-Service} and click Login at the upper right.
-\item Click Order Services. It is marked with a shopping cart but
-  MATLAB will be free.
-\item Click the Software Request link located under the ``Software
-  Services'' heading.
+    State's IT Self-Service} and click ``Sign into my account'' at the upper right.
+\item From the menu on the left, click Order Services. (Despite the shopping cart icon,
+  MATLAB will be free.)
+\item Press the ''Software Services'' button.  
+\item Click the link ``Site Licensed Software Request.''
 \item Complete the Software Request Form, choosing MATLAB. Agree to
   terms and conditions.
 \item Click Check Out.
@@ -59,47 +64,50 @@ students should email
 The remaining instructions for installing MATLAB will be emailed to
 your Ohio State email account. Instructions are OS dependent.
 
-\section{Course \texttt{.m}-files}
+\subsection{Register for the Cloud-Hosted Version of MATLAB}
+Anyone with an OSU e-mail account may use a cloud-hosted version of MATLAB, either in a Web browser on a computer or via the MATLAB Mobile app, if using a mobile device. 
 
-The course files~\verb|*.m| can be downloaded with the textbook.
-They will need to be stored in a directory that MATLAB searches.
-There are two options.
+Here is how to get started: 
 
-Start MATLAB.  You will be in the MATLAB home directory.
-
-\begin{enumerate}[(a)]
-\item One option is to store these files in the MATLAB home
-  directory.  To do this, enter the following commands in the MATLAB
-  command window.
-  
-\begin{verbatim}
-cd(userpath)
-websave('mfiles.zip','http://go.osu.edu/mfiles')
-unzip('mfiles.zip')
-movefile('m_files/*', userpath)
-rmdir m_files
-\end{verbatim}
-  
-\item Another option is to store these files in a directory called
-  \verb|m_files| To achieve this, start MATLAB and enter the following
-  commands.
-\begin{verbatim}
-cd(userpath)
-websave('mfiles.zip','http://go.osu.edu/mfiles')
-unzip('mfiles.zip')
-\end{verbatim}
-  To access the files in the future, navigate to the \verb|m_files|
-  directory with
-\begin{verbatim}
-cd(userpath)
-cd m_files
-\end{verbatim}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\item Go to  \verb|http://www.mathworks.com|.
+\item Click on the person icon in the upper right corner, for ``Sign in''.
+\item Click on ``Create Account''.
+\item Enter your OSU e-mail address, fill out the form, and press ``Create''.
+\item Respond to the e-mail to verify your e-mail address.
+\item For the Web browser version (on a computer): 
+\begin{enumerate}
+\item Go to \verb|https://matlab.mathworks.com/| and sign in.
+\item You will arrive at a webpage organized just like the MATLAB application.
+\end{enumerate}
+\item For MATLAB Mobile: 
+\begin{enumerate}
+\item Go to the App Store or Google Play, search for MATLAB Mobile, and install the app.  
+\item Open the app, sign in, and your screen will be organized like a simplified version of the MATLAB application.
+\end{enumerate}
 \end{enumerate}
 
-As with many large software systems, updating to the latest version
-may break compatibility with older software.  After you have installed
-MATLAB and loaded the course files, go to the directory containing the
-course files.  Enter \verb|pplane9| into the MATLAB command window and
+\section{Course \texttt{.m}-files}
+
+The course files~\verb|*.m| can be downloaded and installed either on your computer or in your cloud-hosted drived.
+  
+The MATLAB commands below store these files in a directory called
+  \verb|m_files| and then add that directory to those that MATLAB searches for commands.
+  
+  To achieve this, start MATLAB and enter the following
+  commands.
+
+\begin{verbatim}  
+cd(userpath)
+websave('mfiles.zip','http://go.osu.edu/mfiles')
+mkdir('m_files')
+unzip('mfiles.zip','m_files')
+addpath('m_files')
+delete('mfiles.zip')
+\end{verbatim}
+
+Enter \verb|pplane9| into the MATLAB command window and
 click on ``Proceed'' in the \verb|pplane9| setup window.  You should
 see a vector field.
 
