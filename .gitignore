@@ -7,6 +7,7 @@
 *.synctex.gz
 *.jax
 *.oc
+*.mw
 *.dvi
 *.idx
 *.ilg
