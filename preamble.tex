@@ -51,12 +51,13 @@
 \newcommand{\pplane}{{\sf pplane10}}
 \newcommand{\PPLANE}{{\sf PPLANE10}}
 
-% BADBAD: \newcommand{\Bbb}{\bf}
+% BADBAD: \newcommand{\Bbb}{\bf}. % Package amsfonts Warning: Obsolete command \Bbb; \mathbb should be used instead.
 
-\newcommand{\R}{\mbox{$\Bbb{R}$}}
-\newcommand{\C}{\mbox{$\Bbb{C}$}}
-\newcommand{\Z}{\mbox{$\Bbb{Z}$}}
-\newcommand{\N}{\mbox{$\Bbb{N}$}}
+\newcommand{\R}{\mbox{$\mathbb{R}$}}
+\let\C\relax
+\newcommand{\C}{\mbox{$\mathbb{C}$}}
+\newcommand{\Z}{\mbox{$\mathbb{Z}$}}
+\newcommand{\N}{\mbox{$\mathbb{N}$}}
 \newcommand{\D}{\mbox{{\bf D}}}
 \usepackage{amssymb}
 %\newcommand{\qed}{\hfill\mbox{\raggedright$\square$} \vspace{1ex}}
@@ -66,6 +67,7 @@
 \newcommand{\Matlab}{{M\small{AT\-LAB}} }
 \newcommand{\Matlabp}{{M\small{AT\-LAB}}}
 \newcommand{\computer}{\Matlab Instructions}
+\renewcommand{\computer}{M\small{ATLAB} Instructions}
 \newcommand{\half}{\mbox{$\frac{1}{2}$}}
 \newcommand{\compose}{\raisebox{.15ex}{\mbox{{\scriptsize$\circ$}}}}
 \newcommand{\AND}{\quad\mbox{and}\quad}
