@@ -9,57 +9,22 @@
 where $a,b,c\in\R$ and $a\neq 0$.  Show that \eqref{e:2x2}
 is row equivalent to the matrix
 \[
-\left(\begin{array}{cc} 1 & \frac{b}{a} \\ 0 & \frac{\answer[given]{a-bc}}{a}
+\left(\begin{array}{cc} 1 & \frac{b}{a} \\ 0 & \frac{a-bc}{a}
 \end{array} \right).
 \]
 (b)  Show that \eqref{e:2x2} is row equivalent to the
-identity matrix if and only if $a\neq \answer[given]{bc}$.
-
-\begin{hint}
-Two matrices are row equivalent if there is a sequence of row operations
-that leads from one to the other.  In this case: Divide the $1^{st}$ row of \eqref{e:2x2} by $a$.
-\end{hint}
-\begin{hint}
-Then subtract $c$ times the $1^{st}$ row from the $2^{nd}$ row.
-\end{hint}
-\begin{hint}
-The result is
-\[
-\left(\begin{array}{cc} 1 & \frac{b}{a} \\ 0 & \frac{a - bc}{a}\end{array}
-\right).
-\]
-\end{hint}
-\begin{hint}
-For (b), if $a \neq bc$, then we can row reduce \eqref{e:2x2} to $I_2$.  First
-perform the two row operations in part (a).
-\end{hint}
-\begin{hint}
-  Then multiply the $2^{nd}$ row by $\frac{a}{a - bc}$.
-\end{hint}
-\begin{hint}
-  Finally subtract $\frac{b}{a}$ times the second row from the first row.
-\end{hint}
-\begin{hint}
-This will give us the identity matrix $I_2$.
-\end{hint}
-\begin{hint}
-  If $a = bc$, then $\frac{a - bc}{a} = 0$, and the matrix is
-\[
-\left(\begin{array}{cc} 1 & \frac{b}{a} \\ 0 & 0\end{array} \right).
-\]
-which has only one pivot and cannot be row reduced to $I_2$.
-\end{hint}
+identity matrix if and only if $a\neq bc$.
 
 \begin{solution}
-
+\soln 
 (a)
 Two matrices are row equivalent if there is a sequence of row operations
 that leads from one to the other.  In this case:
+\begin{itemize}
+\item Divide the $1^{st}$ row of \eqref{e:2x2} by $a$.
 
-1. Divide the $1^{st}$ row of \eqref{e:2x2} by $a$.
-
-2. Subtract $c$ times the $1^{st}$ row from the $2^{nd}$ row.
-
+\item Subtract $c$ times the $1^{st}$ row from the $2^{nd}$ row.
+\end{itemize}
 The result is
 \[
 \left(\begin{array}{cc} 1 & \frac{b}{a} \\ 0 & \frac{a - bc}{a}\end{array}
@@ -69,15 +34,17 @@ The result is
 (b) If $a \neq bc$, then we can row reduce \eqref{e:2x2} to $I_2$ by
 performing the two row operations in part (a), followed by:
 
-3. Multiply the $2^{nd}$ row by $\frac{a}{a - bc}$.
+\begin{itemize}
+\item Multiply the $2^{nd}$ row by the nonzero number $\frac{a}{a - bc}$.
 
-4. Subtract $\frac{b}{a}$ times the second row from the first row.
+\item  Subtract $\frac{b}{a}$ times the second row from the first row.
+\end{itemize}
 
-This will give us the identity matrix $I_2$.
+This gives the identity matrix $I_2$.
 
-\para If $a = bc$, then $\frac{a - bc}{a} = 0$, and the matrix is
+\para If $a = bc$, then $\frac{a - bc}{a} = 0$ and the matrix is row equivalent to
 \[
-\left(\begin{array}{cc} 1 & \frac{b}{a} \\ 0 & 0\end{array} \right).
+\left(\begin{array}{cc} 1 & \frac{b}{a} \\ 0 & 0\end{array} \right),
 \]
 which has only one pivot and cannot be row reduced to $I_2$.
 

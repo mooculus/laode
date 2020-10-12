@@ -16,7 +16,7 @@ $\left(\begin{array}{rrr|r}
        \end{array}\right)$.
 
 \begin{solution}
-The $1^{st}$ and $3^{rd}$ columns of the matrix contain
+\ans The $1^{st}$ and $3^{rd}$ columns of the matrix contain
 pivots.  The solutions of the system are:
 
 \[
@@ -35,7 +35,7 @@ $\left(\begin{array}{rrrr|r}
        \end{array}\right)$.
 
 \begin{solution}
-The $1^{st}$, $3^{rd}$, and $5^{th}$ columns of the matrix
+\ans The $1^{st}$, $3^{rd}$, and $5^{th}$ columns of the matrix
 contain pivots.  Since the last row of the matrix translates to the linear
 equation $0 = 1$, the system is inconsistent, and there are no solutions.
 
@@ -44,10 +44,21 @@ equation $0 = 1$, the system is inconsistent, and there are no solutions.
 
 \begin{exercise} \label{c2.3.7c}
 $\left(\begin{array}{rrrr|r}
- 1  & -6 & 0 & 0 & 1\\
- 0  &  0 & 1 & 0 & 9 \\
+ 1  & -6 & 0 & -1 & 1\\
+ 0  &  0 & 1 & 2 & 9 \\
  0  &  0 & 0 & 0 & 0
        \end{array}\right)$.
+  
+   \begin{solution}
+\ans The $1^{st}$ and $3^{rd}$ columns of the matrix
+contain pivots.  The solutions of the system are:
+\[
+\left(\begin{array}{r} x_1 \\ x_2 \\ x_3\\ x_4\end{array} \right)
+= \left(\begin{array}{c} 1 + 6x_2 + x_4\\ x_2 \\ 9 - 2x_4 \\x_4. \end{array} \right)
+\]
+
+
+\end{solution}    
    \end{exercise}
    
 \end{document}

@@ -25,22 +25,15 @@ What is the  $2\times 3$ matrix $A$ such that $L = L_A$?
 A = \Matrix{1 & 3 & -1\\ 2 & -4 & 4}
 \]
 
-
 \soln 
+The first and third columns of $L$ are given by $L(1,0,0)$ and $L(0,0,1)$; that is,
 \[
-A = \Matrix{1 & 2 & -1\\ 2 & 0 & 4} \Matrix{1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 1 & 1}^{-1}
+\left(\begin{array}{c} 1 \\ 2  \end{array}\right) \AND \left(\begin{array}{r} -1 \\ 4 \end{array}\right)
 \]
-Use Gaussian elimination to compute 
+Since $(0,1,0) = (0,1,1) - (0,0,1)$ it follows by linearity that the second column is 
 \[
-\Matrix{1 & 0 & 0 & 1 & 0 & 0\\ 0 & 1 & 0 & 0 & 1 & 0\\ 0 & 1 & 1 & 0 & 0 & 1}\sim
-\Matrix{1 & 0 & 0 & 1 & 0 & 0\\ 0 & 1 & 0 & 0 & 1 & 0\\ 0 & 0 & 1 & 0 & -1 & 1}
+L \left(\begin{array}{c} 0 \\ 1\\ 0 \end{array}\right) = \left(\begin{array}{c} 2 \\ 0  \end{array}\right) - \left(\begin{array}{r} -1 \\ 4 \end{array}\right) = \left(\begin{array}{r} 3 \\ -4 \end{array}\right)
 \]
-Therefore
-\[
-A = \Matrix{1 & 2 & -1\\ 2 & 0 & 4} \Matrix{ 1 & 0 & 0\\   0 & 1 & 0\\  0 & -1 & 1} = 
- \Matrix{1 & 3 & -1\\ 2 & -4 & 4} 
-\]
-
 \end{solution}
 \end{exercise}
 

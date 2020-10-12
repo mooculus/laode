@@ -7,23 +7,24 @@ Let
 A = \left(\begin{array}{ccc} 0 & 1 & 0\\ 0 & 0 & 1 \\ 0 & 0 & 0 \end{array}
 \right).
 \]
-Compute $B=I+A+\frac{1}{2}A^2$ and $C=I+tA+\frac{1}{2}(tA)^2$.
+Compute $B=I_3 + A + \frac{1}{2}A^2$ and $C=I_3 + tA + \frac{1}{2}(tA)^2$ where $t$ is a real number.
 
 \begin{solution}
-
+\soln
 \[ 
 B = I + A + \frac{1}{2}A^2 =
  \matthree{1}{0}{0}{0}{1}{0}{0}{0}{1} +
 \matthree{0}{1}{0}{0}{0}{1}{0}{0}{0} +
 \matthree{0}{0}{\frac{1}{2}}{0}{0}{0}{0}{0}{0}
-= \matthree{1}{1}{\frac{1}{2}}{0}{1}{1}{0}{0}{1}. \]
+= \matthree{1}{1}{\frac{1}{2}}{0}{1}{1}{0}{0}{1}. 
+\]
 \[ 
 C = I + tA + \frac{1}{2}(tA)^2 
 = \matthree{1}{0}{0}{0}{1}{0}{0}{0}{1} +
 \matthree{0}{t}{0}{0}{0}{t}{0}{0}{0} +
 \cmatthree{0}{0}{\frac{t^2}{2}}{0}{0}{0}{0}{0}{0}
-= \cmatthree{1}{t}{\frac{t^2}{2}}{0}{1}{t}{0}{0}{1}. \]
-
+= \cmatthree{1}{t}{\frac{t^2}{2}}{0}{1}{t}{0}{0}{1}. 
+\]
 \end{solution}
 \end{exercise}
 \end{document}
