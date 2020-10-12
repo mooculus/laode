@@ -1,0 +1,30 @@
+\documentclass{ximera}
+
+\author{Marty Golubitsky}
+
+\input{../../preamble.tex}
+
+\begin{document}
+
+% To which section does your exercise belong? 
+
+\begin{exercise}\label{new_8_2_1}
+
+Let $V = \mbox{range}(L_A)$ where $A$ is a $n\times m$ matrix of rank $2$.  Is $V$ a subspace of $\R^n$ and, if so, what is $\dim(V)$? 
+  
+\begin{solution}
+
+\ans 
+$V\subset\R^n$ is a subspace whose dimension is $2$.
+
+\soln 
+The range of any linear map is a subspace.  The dimension of the range of $L_A$ equals the rank of $A$ because of the two theorems 
+\[
+nullity(A) + \dim(range(A)) = n  \quad\mbox{and} \quad nullity(A) + rank(A) = n 
+\]
+where $A$ is an $n\times m$ matrix.  In this case $rank(A) = 2$; so $\dim(range(L_A)) = 2$. 
+
+\end{solution}
+\end{exercise}
+
+\end{document}
