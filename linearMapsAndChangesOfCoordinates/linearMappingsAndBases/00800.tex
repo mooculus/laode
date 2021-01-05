@@ -7,30 +7,24 @@ matrices and let $A$ be an $n\times n$ matrix.  Let
 $L:{\cal M}(n)\to{\cal M}(n)$ be the mapping defined by
 $L(X)=AX-XA$ where $X\in{\cal M}(n)$.  Verify that $L$ is
 a linear mapping.  Show that the null space of $L$,
-$\{X\in{\cal M}:L(X)=0\}$, is a subspace consisting of all
-matrices that commute with $A$.
+$\{X\in{\cal M}(n):L(X)=0\}$, is a subspace consisting of all
+matrices $X$ that commute with $A$.
 
 \begin{solution}
 
-Let $X$ and $Y$ be elements of ${\cal M}(n)$.  Then,
-\[ L(X + Y) = A(X + Y) - (X + Y)A = (AX - XA)
-+ (AY - YA) = L(X) + L(Y). \]
+\soln Let $X$ and $Y$ be elements of ${\cal M}(n)$.  Then,
+\[ 
+L(X + Y) = A(X + Y) - (X + Y)A = (AX - XA) + (AY - YA) = L(X) + L(Y). 
+\]
 For any real scalar $c$,
-\[ L(cX) = A(cX) - (cX)A = c(AX) - c(XA) = c(AX - XA) = cL(X). \]
+\[
+L(cX) = A(cX) - (cX)A = c(AX) - c(XA) = c(AX - XA) = cL(X). 
+\]
 Therefore, $L$ is a linear mapping.
 
 \para The null space of $L$ consists of all matrices $X$ such that
 $AX - XA = 0$, or $AX = XA$.  By definition, these are the matrices
-such that $X$ commutes with $A$.  Let $X$ and $Y$ be elements of
-the null space of $L$.  Then show that $X + Y$ is in the null space
-by calculating:
-\[ L(X + Y) = A(X + Y) - (X + Y)A = AX + AY - XA - YA = AX + AY - AX
-- AY = 0. \]
-Show that, for any real scalar $c$, $cX$ is in the null space by
-calculating:
-\[ L(cX) = A(cX) - (cX)A = cAX - cXA = cAX - cAX = 0. \]
-Therefore, the null space of $L$ is a subspace consisting of all
-matrices that commute with $A$.
+such that $X$ commutes with $A$.  
 
 \end{solution}
 \end{exercise}

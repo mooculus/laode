@@ -3,24 +3,25 @@
 \begin{document}
 \begin{exercise} \label{c7.2.6}
 Let ${\cal P}$ be the vector space of polynomials in one variable
-$x$.  Define $L:{\cal P}\to {\cal P}$ by $L(p)(x)=\int_0^x(t-1)p(t)dt$.
+$t$.  Define $L:{\cal P}\to {\cal P}$ by $L(p)(t)=\int_0^t(s-1)p(s)ds$.
 Verify that $L$ is a linear mapping.
 
 \begin{solution}
 
 Let $p$ and $q$ be elements of ${\cal P}$.  Then,
-\[ \begin{array}{rcl}
-L(p + q)(x) & = & \int_0^x(t - 1)(p(t) + q(t))dt \\
-& = & \int_0^x((t - 1)p(t)dt + (t - 1)q(t)dt) \\
-& = & \int_0^x(t - 1)p(t)dt + \int_0^x(t - 1)q(t)dt \\
-& = & L(p(x)) + L(q(x)). \end{array} \]
+\[ 
+\begin{array}{rcl}
+L(p + q)(x) & = & \int_0^t(s - 1)(p(s) + q(s))ds \\
+& = & \int_0^t ((s - 1)p(t)ds + (s - 1)q(s)ds) \\
+& = & \int_0^t (s - 1)p(s)dt + \int_0^s (a - 1)q(s)ds \\
+& = & L(p(t)) + L(q(t)). 
+\end{array} 
+\]
 For any real scalar $c$,
-\[ L(cp(x)) = \int_0^x(t - 1)cp(t)dt = c\int_0^x(t - 1)p(t)dt
-= cL(p(x)). \]
+\[ 
+L(cp(t)) = \int_0^t (s - 1)cp(s)ds = c\int_0^t (s - 1)p(s)ds = cL(p(t). 
+\]
 Therefore, $L$ is a linear mapping.
-
-
-
 
 
 \end{solution}

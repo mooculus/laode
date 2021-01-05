@@ -6,24 +6,24 @@ Show that
 \[
 \frac{d}{dt}:{\cal P}_3\to{\cal P}_2
 \]
-is a linear mapping.
+is a linear mapping, where $\frac{d}{dt}$ be a transformation that maps $p(t) \mapsto
+\frac{d}{dt}p(t)$.  
 
 \begin{solution}
 
-Let $\frac{d}{dt}$ be a transformation that maps $p(t) \mapsto
-\frac{d}{dt}p(t)$.  For $p(t) =  p_0 + p_1t + p_2t^2 + p_3t^3$, then
+\soln
+Let $p(t) =  p_0 + p_1t + p_2t^2 + p_3t^3$.  Then
 $\frac{d}{dt}p(t) = p_1 + 2p_2t + 3p_3t^2$, so $\frac{d}{dt}$ is 
 a mapping ${\cal P}_3 \rightarrow {\cal P}_2$.  From calculus, we
-know that, for any functions $f$ and $g$:
+know that for any differentiable functions $f$ and $g$
 \[ 
-\frac{d}{dt}(f + g)(t) = \frac{d}{dt}f(t) + \frac{d}{dt}g(t), 
+\frac{d}{dt}(f + g)(t) = \frac{d}{dt}f(t) + \frac{d}{dt}g(t) 
 \]
-and that, for any scalar $c$:
+and that, for any scalar $c$
 \[ 
 \frac{d}{dt}(cf)(t) = c\frac{d}{dt}f(t). 
 \]
-Let $f$ and $g$ be elements of ${\cal P}_3$.  Then
-$\frac{d}{dt}: {\cal P}_3 \rightarrow {\cal P}_2$ is a linear mapping.
+It follows that  $\frac{d}{dt}: {\cal P}_3 \rightarrow {\cal P}_2$ is a linear mapping.
 
 \end{solution}
 \end{exercise}

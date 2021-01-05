@@ -1,6 +1,6 @@
 \documentclass{ximera}
 
-\author{Matthew Carr}
+\author{Marty Golubitsky}
 
 \input{../../preamble.tex}
 
@@ -10,16 +10,16 @@
 
 \begin{exercise}\label{mc.exercise10}
 
-Show that if $P$ is an $n\times n$ orthogonal matrix, then $\det(P) = \pm 1$.
+Show that if $P$ and $Q$ are $n\times n$ orthogonal matrices, then $PQ$ is an $n\times n$ orthogonal matrix.
   
 \begin{solution}
 
 
-\soln By definition, an $n\times n$ matrix $P$ is orthogonal if $P^t P=I_n$. Properties of the determinant imply 
+\soln By definition, an $n\times n$ matrix $P$ is orthogonal if $P^t P=I_n$. Properties of transpose and inverse matrices imply 
 \[
-1=\det(I_n)=\det(P^t P)=\det(P^t)\det(P)=\det(P)\det(P)=\det(P)^2.
+(PQ)^t = Q^t P^t = Q^{-1} P^{-1} = (PQ)^{-1} 
 \]
-It follows that $\det(P)^2=1$ and hence $\det(P)=\pm 1$. 
+It follows that $PQ$ is orthogonal. 
 \end{solution}
 \end{exercise}
 

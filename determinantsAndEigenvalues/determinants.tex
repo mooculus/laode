@@ -224,13 +224,15 @@ $R\inv=I_n-cE_{ij}$.  More precisely,
 (I_n+cE_{ij})(I_n-cE_{ij})=I_n+cE_{ij}-cE_{ij}-c^2E_{ij}^2=I_n,
 \]
 since $E_{ij}^2 = O$ for $i\not= j$.  For example,
-\begin{eqnarray*}
-(I_3 + 5E_{12})A &  = & \left(\begin{array}{ccc} 1 & 5 & 0\\ 0 & 1 & 0 \\ 0 & 0 & 1\end{array}\right)
+\[
+(I_3 + 5E_{12})A  =  \left(\begin{array}{ccc} 1 & 5 & 0\\ 0 & 1 & 0 \\ 0 & 0 & 1\end{array}\right)
 \left(\begin{array}{ccc} a_{11} & a_{12} & a_{13}\\ a_{21} & a_{22} & a_{23}
- \\ a_{31} & a_{32} & a_{33} \end{array}\right) \\ & = & 
-\left(\begin{array}{ccc} a_{11}+5a_{21} & a_{12}+5a_{22} & a_{13}+5a_{23} \\ 
+ \\ a_{31} & a_{32} & a_{33} \end{array}\right) 
+ \]
+ \[
+=\left(\begin{array}{ccc} a_{11}+5a_{21} & a_{12}+5a_{22} & a_{13}+5a_{23} \\ 
 a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33} \end{array}\right),
-\end{eqnarray*}
+\]
 adds $5$ times the $2^{nd}$ row to the $1^{st}$ row.   \end{proof}
 
 \subsubsection*{Determinants of Elementary Row Matrices}
@@ -265,15 +267,18 @@ $a_i$.  Then perform the following four operations in order:
 \begin{tabular}{lllc}
 Operation & \multicolumn{2}{c}{Result} & Matrix\\
 \hline
-Add row $i$ to row $j$ & row $i = a_i$ & row $j = a_i + a_j$ & $B_1$ \\
-Multiply row $i$ by $-1$  & row $i = -a_i$ & row $j = a_i + a_j$ & $B_2$\\
-Add row $j$ to row $i$  &    row $i =  a_j$ &  row $j = a_i + a_j$ &  $B_3$ \\
-Subtract row $i$ from row $j$ & row $i = a_j$ &  row $j = a_i$ & $B_4$\\ 
+Add $r_i$ to $r_j$ & $r_i = a_i$ & $r_j = a_i + a_j$ & $B_1$ \\
+Multiply $r_i$ by $-1$  & $r_j = -a_i$ & $r_j = a_i + a_j$ & $B_2$\\
+Add $r_j$ to $r_i$  &  $r_i =  a_j$ &  $r_j = a_i + a_j$ &  $B_3$ \\
+Subtract  $r_i$ from $r_j$ & $r_i = a_j$ &  $r_j = a_i$ & $B_4$\\ 
 \end{tabular}
 \end{center}
 It follows that the swap matrix equals $B_4 B_3 B_2 B_1$.  Therefore 
 \[
-\det(\mbox{swap}) = \det(B_4) \det(B_3) \det(B_2) \det(B_1) = (1)(-1)(1)(1) = -1.
+\det(\mbox{swap})  = \det(B_4) \det(B_3) \det(B_2) \det(B_1)
+\]
+\[ 
+ =  (1)(-1)(1)(1) = -1.
 \]
 \end{proof}
 

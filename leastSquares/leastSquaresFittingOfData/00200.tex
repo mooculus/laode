@@ -1,6 +1,7 @@
 \documentclass{ximera}
 \input{../../preamble.tex}
 \begin{document}
+
 \begin{computerExercise} \label{c7.6.1}
 World population data for each decade of this century (except for 1910)
 is given in Table~\ref{T:popdata}.  Assume that population growth is linear
@@ -11,10 +12,6 @@ measured in billions of people.  This data can be recovered by typing
 \item[(a)]  Find $m$ and $b$ to give the best linear fit to this data.
 \item[(b)]  Use this linear approximation to the data to make predictions
 of the world populations in the year 1910 and 2000.
-\item[(c)]  Do you expect the prediction for the year 2000 to be high or low
-or on target? Explain why by graphing the data with the best linear fit
-superimposed and by using the differential equation population model
-discussed in Section~\ref{S:growthmodels}.
 \end{itemize}
 \begin{table}[htb]
 \begin{center}
@@ -44,11 +41,10 @@ billions.
 \soln Create the matrix $A$ whose columns are $w_1$ and $w_2$.  Then use
 \eqref{E:nearestvector} to compute the best values for $m$ and $b$.
 
-(b) In 1910, $P \approx 408.4(1) + 960.3 = 1369$ million people.
+(b) \ans In 1910, $P \approx 408.4(1) + 960.3 = 1369$ million people.
 
 \para In 2000, $P \approx 408.4(10) + 960.3 = 5044$ million people.
 
-(c) \ans The prediction for 2000 is likely to be low.
 
 \soln As shown in Figure~\ref{c7.6.1}, a linear approximation does not
 fit the data points well.  To understand why, assume that population
@@ -65,6 +61,20 @@ underestimates the population at the endpoints of the curve.
 		\psfig{file=exfigure/7-6-1.eps,width=3.0in}}
 	\exercap{c7.6.1}
 \end{figure}
+
+\end{solution}
+\end{computerExercise}
+
+
+\begin{computerExercise} \label{c7.6.1C}
+Continue from Exercise~\ref{c7.6.1}.
+Do you expect the prediction for the year 2000 to be high or low
+or on target? Explain why by graphing the data with the best linear fit
+superimposed and by using the differential equation population model
+discussed in Section~\ref{S:growthmodels}.
+
+\begin{solution}
+\ans The prediction for 2000 is likely to be low.
 
 \end{solution}
 \end{computerExercise}

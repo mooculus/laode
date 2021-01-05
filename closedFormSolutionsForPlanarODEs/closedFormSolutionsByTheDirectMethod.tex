@@ -303,13 +303,13 @@ Then $C = \lambda_1 I_2$.
 \end{lemma}\index{eigenvector!linearly independent}\index{eigenvector!real}
 
 \begin{proof}  Let $v_1$ and $v_2$ be two linearly independent
-eigenvectors of $C$, that is, $Cv_j = \lambda_1 v_j$.  It follows
-from linearity that $Cv = \lambda_1 v$ for any linear combination
-$v = \alpha_1v_1+\alpha_2v_2$.  Since $v_1$ and $v_2$ are linearly
-independent and $\dim(\R^2)=2$, it follows that $\{v_1,v_2\}$ is
-a basis of $\R^2$.  Thus, every vector $v\in\R^2$ is a linear
-combination of $v_1$ and $v_2$.  Therefore, $C$ is $\lambda_1$ times
-the identity matrix.  
+eigenvectors of $C$; that is, $Cv_j = \lambda_1 v_j$.  Since $\dim(\R^2) = 2$,
+Corollary~\ref{C:dim=n} implies that $\{v_1,v_2\}$ is a basis of $\R^2$.  Hence,
+every vector $v$ has the form $v = \alpha_1v_1+\alpha_2v_2$.  Linearity implies 
+\[
+Cv = C( \alpha_1v_1+\alpha_2v_2) = \alpha_1\lambda_1 v_1+\alpha_2\lambda_1 v_2 = \lambda_1v
+\]
+Therefore, $Cv = \lambda_1 v$ for every $v\in\R^2$ and hence $C= \lambda_1 I_2$.  
 \end{proof}
 
 \subsubsection*{Generalized Eigenvectors}
