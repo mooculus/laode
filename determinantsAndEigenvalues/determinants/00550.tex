@@ -10,18 +10,25 @@
 
 \begin{exercise}\label{c10.1.5c}
 
-Compute \quad $\det\Matrix{0 & 2 & 0 & 1\\ 1 & -1 & 0 & -1\\ 1 & 1 & 1& 3\\ 0 & 1 & 0 & 1}$.
+Compute \quad $\det\Matrix{-1 & 2 & 3 & 1\\ 1 & -1 & 2 & -1\\ 1 & 1 & 1& 3\\ 0 & -3 & 2 & -1} $.
   
 \begin{solution}
 
-\ans $-1$
+\ans $57$
 
-\soln Use cofactor expansions to compute
+\soln Use cofactor expansion along the fourth row to compute
 \[
-\det\Matrix{0 & 2 & 0 & 1\\ 1 & -1 & 0 & -1\\ 1 & 1 & 1& 3\\ 0 & 1 & 0 & 1} = 
-\det\Matrix{0 & 2 & 1\\ 1 & -1 &  -1\\  0& 1 & 1} = -\det\Matrix{2 & 1\\ 1 & 1} = -1
+\det\Matrix{-1 & 2 & 3 & 1\\ 1 & -1 & 2 & -1\\ 1 & 1 & 1& 3\\ 0 & -3 & 2 & -1} = 
 \]
-
+\[
+= -(0)\det\Matrix{2 & 3 & 1\\ -1 & 2 &  -1\\  1 & 1 & 3} 
++(-3)\det\Matrix{-1 & 3 & 1\\ 1 & 2 &  -1\\  1& 1 & 3} 
+-(2)\det\Matrix{-1 & 2 & 1\\ 1 & -1 &  -1\\  1 & 1 & 3} 
++(-1)\det\Matrix{-1 & 2 & 3\\ 1 & -1 &  2\\  1& 1 & 1} 
+\]
+\[
+ = -(0)(-2) + (-3)(-20) - (2)(-4)  + (-1)(11) =   57
+\]
 \end{solution}
 \end{exercise}
 
