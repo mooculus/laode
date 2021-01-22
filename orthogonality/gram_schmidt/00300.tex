@@ -1,0 +1,30 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c7.5.2}
+Find an orthonormal basis of the plane $W\subset\R^3$ spanned by the
+vectors $w_1=(1,2,3)$ and $w_2=(2,5,-1)$ by applying Gram-Schmidt
+orthonormalization.
+
+\begin{solution}
+
+\ans The vectors $v_1 = \frac{1}{\sqrt{14}}(1,2,3)$ and
+$v_2 = \frac{1}{\sqrt{4746}}(19,52,-41)$ form an orthonormal basis
+for $W$.
+
+\soln Use Gram-Schmidt orthonormalization
+(Theorem~\ref{T:orthobasis}) to calculate $v_1$ and $v_2$ such that:
+\[
+\begin{array}{rcl}
+v_1 & = & \frac{1}{||w_1||}w_1 = \frac{1}{\sqrt{14}}(1,2,3). \\
+v_2' & = & w_2 - (w_2 \cdot v_1)v_1 = (2,5,-1) -
+\frac{9}{14}(1,2,3) = \frac{1}{14}(19,52,-41). \\
+v_2 & = & \frac{1}{||v_2'||}v_2' = \frac{14}{\sqrt{4746}}
+\left(\frac{1}{14}(19,52,-41)\right) = \frac{1}{\sqrt{4746}}
+(19,52,-41).
+\end{array}
+\]
+
+\end{solution}
+\end{exercise}
+\end{document}

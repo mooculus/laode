@@ -1,0 +1,28 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{exercise} \label{c7.5.1}
+Find an orthonormal basis of $\R^2$ by applying Gram-Schmidt
+orthonormalization to the vectors $w_1=(3,4)$ and $w_2=(1,5)$.
+
+\begin{solution}
+
+\ans The vectors $v_1 = \frac{1}{5}(3,4)$ and $v_2 = \frac{1}{5}(-4,3)$
+form an orthonormal basis for $\R^2$.
+
+\soln Find these vectors using Gram-Schmidt orthonormalization
+(Theorem~\ref{T:orthobasis}).  More
+specifically, calculate $v_1$ and $v_2$ such that:
+\[
+\begin{array}{rcl}
+v_1 & = & \frac{1}{||w_1||}w_1 = \frac{1}{5}(3,4). \\
+v_2' & = & w_2 - (w_2 \cdot v_1)v_1 = (1,5) - \frac{23}{25}(3,4)
+= \frac{1}{25}(-44,33). \\
+v_2 & = & \frac{1}{||v_2'||}v_2' = \frac{5}{11}
+\left(\frac{1}{25}(-44,33)\right) = \frac{1}{5}(-4,3).
+\end{array}
+\]
+
+\end{solution}
+\end{exercise}
+\end{document}

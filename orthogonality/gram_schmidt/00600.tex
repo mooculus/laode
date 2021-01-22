@@ -1,0 +1,58 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+\begin{computerExercise} \label{c7.5.4}
+Use Gram-Schmidt orthonormalization to find an orthonormal basis for the
+subspace of $\R^5$ spanned by the vectors
+\begin{matlabEquation}\label{MATLAB:61}
+w1 = (2,1,3,5,7) \quad w2 = (2,-1,5,2,3) \AND w3 = (10,1,-23,2,3).
+\end{matlabEquation}
+Extend this basis to an orthonormal basis of $\R^5$.
+
+\begin{solution}
+
+\ans
+An orthonormal basis for the subspace spanned by {\tt w1}, {\tt w2},
+and {\tt w3} is:
+\begin{verbatim}
+v1 = (0.2132, 0.1066, 0.3198, 0.5330, 0.7462)
+v2 = (0.2236, -0.3927, 0.8399, -0.1978, -0.2265)
+v3 = (0.8452, -0.3542, -0.3979, -0.0409, 0.0088)
+\end{verbatim}
+Adding the vectors
+\begin{verbatim}
+v4 = (0.4340, 0.8222, 0.1827, 0, -0.3198)
+v5 = (0.0424, 0.1813, 0.0251, -0.8217, 0.5381)
+\end{verbatim}
+to this basis forms an orthonormal basis for $\R^5$.
+
+\soln The following set of \Matlab commands computes {\tt v1}, {\tt v2},
+and {\tt v3} by Gram-Schmidt orthonormalization:
+\begin{verbatim}
+v1 = 1/norm(w1)*w1;
+v2p = w2 - dot(w2,v1)*v1;
+v2 = 1/norm(v2p)*v2p;
+v3p = w3 - dot(w3,v1)*v1 - dot(w3,v2)*v2;
+v3 = 1/norm(v3p)*v3p;
+\end{verbatim}
+We can verify this result by creating the matrix {\tt A} whose columns
+are {\tt w1'}, {\tt w2'}, and {\tt w3'}, then using the command
+{\tt [Q R] = qr(A,0)}.
+
+\para We extend the basis by finding a vector {\tt w4} which is
+orthogonal to {\tt w1}, {\tt w2}, and {\tt w3}.  That is, solve the
+linear system
+\[
+\vecthree{{\tt w1}}{{\tt w2}}{{\tt w3}}{\tt w4'} = \vecthree{0}{0}{0}. \]
+One possible solution is {\tt w4} $= (19,36,8,0,-14)$.  Then, find
+the unit vector {\tt v4} in the direction of {\tt w4}.  Next, add a
+fifth basis vector by finding the vector {\tt w5} which is orthogonal
+to {\tt \{w1,w2,w3,w4\}}.  In this case, {\tt w5}
+$= (22,94,13,-426,279)$.  Normalize this vector to obtain {\tt v5}.
+
+
+
+
+\end{solution}
+\end{computerExercise}
+\end{document}
