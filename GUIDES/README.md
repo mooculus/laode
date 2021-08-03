@@ -2,7 +2,7 @@
 
 Let's learn how to add a new exercise to the textbook.
 
-We assume that you have already followed the instructions in the [GUIDE.md](../GUIDE.md).
+We assume that you have already followed the instructions in the tex file.
 
 ## Fork the repository
 
