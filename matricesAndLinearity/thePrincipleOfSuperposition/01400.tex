@@ -1,0 +1,66 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+%\input{preamble.tex}
+\begin{document}
+
+
+
+
+\begin{exercise} \label{YZ_3.4.6}
+Let $L:\mathbb R^3\to \mathbb R^4$ be a mapping such that 
+\[
+Lx=\Matrixc{x_1-x_2 \\ x_1+x_2-x_3\\ -x_1+x_2+4x_3 \\ -3x_1+x_2-x_3}
+\]
+for all $x=\Matrix{x_1 \\ x_2 \\ x_3}.$
+\begin{enumeratea}
+\item Find matrix representative of $L$.
+\item Verify that $x=\Matrix{-1/2\\-3/2\\-2}$ is a solution to the equation $Lx=\Matrix{1 \\ 0 \\ -9\\2 }$.
+\item Find the full set of solutions of $Lx=\Matrix{1 \\ 0 \\ -9\\2 }$.
+\end{enumeratea}
+
+
+\begin{solution}
+\ans
+ \begin{enumeratea}
+\item  The matrix representative of $L$ is 
+\[
+A=\Matrix{1 &-1& 0\\ 1&1&-1\\ -1&1&4 \\ -3&1&-1}.
+\]
+\item Direct verification.
+\item $x=\Matrix{-1/2\\-3/2\\-2}$ is the only solution.
+\end{enumeratea}
+
+
+\soln 
+\begin{enumeratea}
+\item From the expression of the linear map, put the coefficients of $x_1$ in the first column, put the coefficients of $x_2$ in the second column, and put the coefficients of $x_3$ in the third column, then you get the matrix $A=\Matrix{1 &-1& 0\\ 1&1&-1\\ -1&1&4 \\ -3&1&-1}$.
+\item Verify that 
+\[
+\Matrix{1 &-1& 0\\ 1&1&-1\\ -1&1&4 \\ -3&1&-1}\Matrix{-1/2\\-3/2\\-2}=\Matrix{1 \\ 0 \\ -9\\2 }.
+\]
+
+\item We use the elementary row reduction to find the reduced echelon form of the matrix $A$:
+
+\[
+\Matrix{1 &-1& 0 \\ 1&1&-1 \\ -1&1&4  \\ -3&1&-1 } \to \Matrix{1 &-1& 0 \\ 0&2&-1 \\ 0&0&4 \\ 0&-2&-1} \to
+\Matrix{ 1 &-1& 0\\ 0&2&-1 \\ 0&-2&-1 \\ 0&0&4  }
+\]
+
+\[
+\to \Matrix{1 &-1& 0\\ 0&2&-1 \\ 0&0&-2 \\ 0&0&4 } \to \Matrix{1 &0& 0 \\ 0&1&0 \\ 0&0&1  \\ 0&0&0 }.
+\]
+
+Therefore, $A$ has rank 3, so $Ax=0$ only have zero solution, so by principle of superposition,  $x=\Matrix{-1/2\\-3/2\\-2}$ is the unique solution of the inhomogeneous equation $Ax=b$.
+
+\end{enumeratea}
+
+\end{solution}
+\end{exercise}
+
+
+
+
+
+
+
+\end{document}

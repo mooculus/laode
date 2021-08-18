@@ -1,0 +1,97 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+%\input{preamble.tex}
+\begin{document}
+
+
+
+
+\begin{exercise} \label{YZ_3.4.7}
+Let $L:\mathbb R^3\to \mathbb R^2$ be a linear mapping such that 
+\[
+\Matrix{1\\-1\\0}=\Matrix{-3\\1},~L\Matrix{0\\1\\1 }=\Matrix{2\\-1},
+\]
+and 
+\[
+L\Matrix{ 0\\1\\-1}=\Matrix{0\\1}.
+\]
+
+
+\begin{enumeratea}
+\item Determine the matrix representation of $L$. Namely, find the matrix $A$ such that $L_A=L$.
+
+\item Verify that  $\Matrix{0\\2\\-2}$ is a solution to $Lx=\Matrix{0\\2}$
+\item Find the full set of solutions of $Lx=\Matrix{0\\2}$.
+\end{enumeratea}
+
+
+\begin{solution}
+
+\ans 
+\begin{enumeratea}
+\item  The matrix representation of $L$ is 
+ \[
+\Matrix{ -2&1&1\\1&0&-1}.
+\]
+
+\item Direct verification.
+\item The general solution of the inhomogeneous equation is 
+\[
+\alpha \Matrix{1\\1\\1}+\Matrix{0\\2\\-2}, \alpha\in \mathbb R
+\]
+
+\end{enumeratea}
+
+
+
+\soln 
+
+\begin{enumeratea}
+\item  $\Matrix{ 0\\0\\2 }=L\Matrix{ 0\\1\\1}-L\Matrix{0\\1\\-1}=\Matrix{2\\-2 }$, so 
+\[
+L\Matrix{0\\0\\1}=\Matrix{1\\-1}.
+\]
+Similarly, subtracting it from the second equation, we get 
+\[
+L\Matrix{0\\1\\0}=L\Matrix{ 0\\1\\1}-L\Matrix{0\\0\\1}=\Matrix{2\\-1}-\Matrix{1\\-1}=\Matrix{1\\0 }.
+\]
+
+Finally, adding it to the first equation, we have 
+\[
+L\Matrix{1\\0\\0}=L\Matrix{1\\-1\\0}+L\Matrix{0\\1\\0}=\Matrix{ -3\\1}+\Matrix{1\\0}=\Matrix{-2\\1}.
+\]
+
+Therefore the matrix representation $A$ of $L$ is 
+\[
+\Matrix{ -2&1&1\\1&0&-1}.
+\]
+
+\item Verify that 
+\[
+\Matrix{ -2&1&1\\1&0&-1} \Matrix{0\\2\\-2} =\Matrix{0\\2}.
+\]
+
+
+\item From the elementary row reduction of $A$, one can find the solution to $Ax=0$ is 
+\[
+\Matrix{1\\1\\1}.
+\]
+Therefore, the general solution of the inhomogeneous equation is 
+\[
+\alpha \Matrix{1\\1\\1}+\Matrix{0\\2\\-2}, \alpha\in \mathbb R
+\]
+\end{enumeratea}
+
+
+
+\end{solution}
+\end{exercise}
+
+
+
+
+
+
+
+
+\end{document}
