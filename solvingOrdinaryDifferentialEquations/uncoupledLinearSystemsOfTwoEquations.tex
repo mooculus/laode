@@ -156,23 +156,20 @@ the differential equation solver plots the direction field
 $(f,g)$ and then finds curves that are tangent to these
 vectors at each point in time.
 
-The program {\pplane}\index{\computer!pplane8}, written by John
-Polking,\index{Polking, John} draws two-dimensional phase planes.  
+The program {\pplane}\index{\computer!pplane8}, originally written by John
+Polking\index{Polking, John} under the name {\sf pplane}, draws two-dimensional phase planes.  
 In \Matlab type
 \begin{verbatim}
-pplane10
+PhasePlane
 \end{verbatim}
-and the window with the {\sf PPLANE\ Setup} appears. {\pplane}
+and the \pplane\; window will appear. {\pplane}
 has a number of preprogrammed differential equations listed in a
-menu accessed by clicking on {\sf Gallery}.  To explore linear
-systems, choose {\sf linear system} in the {\sf Gallery}.  (Note that the 
-parameters in the {\sf linear system} are given by capitals rather than 
-lower case {\sf a,b,c,d}.)
+menu accessed by clicking on {\sf library}.  To explore linear
+systems, choose {\sf linear system} in the {\sf library}.  
 
 To integrate the uncoupled linear system, set the parameters $b$
-and $c$ equal to zero. We now have the system \eqref{lin2} with
-$a = 2$ and $d = -3$.  After pushing {\sf Proceed}, a display window
-appears. In this window the plane is filled by vectors $(f,g)$ indicating 
+and $c$ equal to zero, $a = 2$, and $d = -3$. We now have the system \eqref{lin2}.  
+After pushing {\sf Update}, the {\sf Phase plane} window is filled by vectors $(f,g)$ indicating 
 directions.
 
 We may start the computations by clicking
@@ -241,21 +238,13 @@ In forward time, all trajectories, except the equilibrium at the
 origin, move towards infinity and the origin is called a
 {\em source\/}.
 
-\subsection*{Time Series Using {\pplane}} \index{\computer!pplane8}
+\subsection*{Time Series} 
 
-We may also use {\pplane} to graph the time series of the
-single components $x(t)$ and $y(t)$ of a solution $(x(t),y(t))$.
-For this we choose {\sf x vs.\ t} from the {\sf Graph} menu.
-After using the mouse to select a solution curve, another window
-with the title {\sf PPLANE\ t-plot} appears.  There the time
-series of $x(t)$ is shown.  For example, when the differential 
-equation is a sink, we observe that this component
-approaches $0$ as time $t$ tends to infinity.  We may also
-display the time series of both components $x(t)$ and $y(t)$
-simultaneously by clicking on {\sf Both} in the {\sf PPLANE t-plot} 
-window.  Again we see that both $x(t)$ and $y(t)$ tend
-to $0$ for increasing $t$.
+{\pplane} simultaneously graphs the time series of the
+single components $x(t)$ and $y(t)$ of a solution $(x(t),y(t))$
+in the upper right window of \pplane.
 
+\ignore{
 We may also visualize the time series \index{time series} of
 $x(t)$ and $y(t)$ in the three-dimensional $(x,y,t)$-space.  To
 see this, click onto {\sf 3 D} and a curve $(x(t),y(t),t)$ 
@@ -281,7 +270,7 @@ the {\sf Composite} button.  See Figure~\ref{plotall}.
 	UR: $(t,y(t))$; LL: $(x(t),y(t),t)$; LR: all plots.}
      \label{plotall}
 \end{figure*}
-
+}
 
 
 

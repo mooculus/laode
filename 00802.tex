@@ -1,0 +1,278 @@
+\documentclass{ximera}
+%\input{../../preamble.tex}
+\input{preamble.tex}
+\begin{document}
+
+
+
+
+\begin{exercise} \label{YZ_3.4.1}
+
+Suppose $A$ is a $3\times 3$ full rank matrix. Determine how many solutions the homogeneous system $Ax=0$ has and how many solutions the inhomogenous system $Ax=b$ has.
+
+
+\begin{solution}
+\ans
+If $A$ has full rank, the reduced echelon form of $A$ is the identity matrix $I_3$. Since both $I_3x=0$ and $I_3x=b$ have unique solutions ($x=0$ and $x=b$ respective), so \RED{do} $Ax=0$ and $Ax=b$.
+
+\end{solution}
+\end{exercise}
+
+
+\begin{exercise} \label{YZ_3.4.2}
+Suppose $A$ is a $3\times 3$ matrix with rank less than $3$. Determine how many solution the homogeneous system $Ax=0$ has and how many solutions the inhomogenous system $Ax=b$ has.
+
+
+\begin{solution}
+\ans
+If $A$ has rank lower than $3$. $Ax=0$ has infinitely many solutions. $Ax=b$ can have infinitely many solutions or no solution depending on whether the system of equations is consistent or \RED{inconsistent}.
+
+\end{solution}
+\end{exercise}
+
+
+\begin{exercise} \label{YZ_3.4.3}
+Let $A$ be a $3\times 3$ matrix.  Suppose 
+\[
+A\Matrix{-1\\2\\1}=\Matrix{3\\1\\1} \textup{\quad and \quad} A\Matrix{0\\4\\0}=\Matrix{-2\\0\\1}.
+\]
+
+\begin{enumeratea}
+\item Find a solution to the inhomogeneous system 
+\[
+Ax=\Matrix{1 \\ 1 \\2}.
+\]
+\item Is the solution unique?
+\end{enumeratea}
+
+
+\begin{solution}
+\ans 
+
+\begin{enumeratea}
+\item $x=\Matrix{-1 \\ 6 \\ 1}$ is a solution. 
+
+\item If $A$ has full rank, then the solution is unique. Otherwise, there are infinitely many solutions.
+\end{enumeratea}
+
+
+
+
+\soln 
+\begin{enumeratea}
+\item  \RED{Since} 
+\[
+\Matrix{3 \\ 1\\ 1}+ \Matrix{-2 \\ 0 \\ 1}=\Matrix{1 \\ 1 \\ 2}
+\].
+
+Then by linearity, 
+
+\[
+\Matrix{1 \\ 1\\ 2}=\Matrix{3 \\ 1\\ 1}+ \Matrix{-2 \\ 0 \\ 1}=A\Matrix{-1 \\ 2\\ 1}+A\Matrix{0 \\ 4 \\ 0}=A\Matrix{-1 \\ 6 \\ 1}.
+\] 
+
+So $x=\Matrix{-1 \\ 6 \\ 1}$ is a solution.
+\end{enumeratea}
+
+\end{solution}
+\end{exercise}
+
+
+
+\begin{exercise} \label{YZ_3.4.4}
+Let $A$ be a $n\times m$ matrix.  Suppose there are $n$ vectors $u_1,\ldots,u_n$ such that 
+\[
+Au_1=\Matrixc{ 1 \\ 0 \\ \vdots \\ 0}, Au_2=\Matrixc{ 0 \\ 1 \\ \vdots \\ 0}, \ldots, Au_n=\Matrixc{0\\ 0 \\ \vdots \\ 1} .
+\]
+Then verify that for any $m\times 1$ vector $b$, the inhomogeneous equation $Ax=b$ always has a solution.
+
+\begin{solution}
+\soln 
+Note that 
+\[
+b = \Matrixc{b_1 \\ b_2 \\ \vdots \\ b_n} = 
+b_1\Matrixc{1 \\ 0 \\ \vdots \\ 0}+b_2\Matrixc{ 0 \\ 1 \\ \vdots \\ 0}+\RED{\cdots}+b_n\Matrixc{ 0 \\ 0 \\ \vdots \\ 1}.
+\]
+Therefore
+\[
+b = \RED{b_1}Au_1 +  \RED{b_2}Au_2 + \cdots +  \RED{b_n}Au_n=
+A( \RED{b_1}u_1 +  \RED{b_2}u_2+\cdots +  \RED{b_n}u_n).
+\]
+\end{solution}
+\end{exercise}
+
+
+\begin{exercise} \label{YZ_3.4.5}
+Every solution to the homogeneous
+
+Let $A$ be an $n\times n$ matrix with rank $n-1$.  Suppose $u$ and $v$ in $\R^n$ are distinct solutions to the inhomogeneous system $Ax = b$.  Verify that every \RED{solution} to $Ax = b$ can be written as 
+$\alpha u+(1-\alpha)v$ for some $\alpha\in \mathbb R$.
+
+(Hint: idea is similar to Exercise $\ref{A.3.4.2}$.)
+
+\begin{solution}
+\soln 
+
+\RED{Here is another possible solution.  I'm not sure that the needed theorems have already been stated. If correct the references to the needed theorems should be given.
+
+Note that $u-v$ is a nonzero solution to the homogeneous system $Ax = 0$.  Since $\rank(A) = n-1$ every solution to the homogeneous system has the form $\alpha(u-v)$.  Therefore every solution to the inhomogeneous system has the form
+\[
+\alpha(u-v) + v = \alpha u + (1-\alpha) v
+\]
+as claimed.}
+
+
+Since $A$ has rank $n-1$ and the system $Ax=b$ is consistent, the solution has one free variable, namely, the reduced echelon form of $A$ is 
+
+\[
+\Matrix{1 & 0 & 0 & \cdots &0 & a_1\\ 0 &1 &0   &\cdots &0&a_2\\ 0& 0 &1 &\cdots &0&a_3 \\ & \cdots & & \cdots& &\\ 0& 0 &0 &\cdots &1&a_{n-1}\\  0& 0 &0 &\cdots &0&0},
+\]
+
+where $a_i\in \mathbb R$ is an unknown number for $1\le i\le n-1$, so we can express the solutions of the homogeneous equation $Ax=0$ as 
+
+\[
+x=\Matrix{x_1 \\ x_2 \\ \vdots \\ x_{n-1} \\x_n}=\Matrix{-a_1x_n \\ -a_2x_n \\ \vdots \\-a_{n-1}x_n\\ x_n}
+=x_n\Matrix{-a_1 \\ -a_2 \\ \vdots \\-a_{n-1}\\ 1},
+\]
+
+where $x_n$ is a free variable. 
+
+On the other hand, by assumption, $u$ and $v$ are distinct solutions to $Ax=b$, so $u-v$ is a nonzero solution of the homogeneous equation $Ax=0$, then it should be a scalar multiple of $\Matrix{-a_1 \\ -a_2 \\ \vdots \\-a_{n-1}\\ 1}$. In other words, one can express any solution to the homogeneous equation $Ax=0$ as $x=\alpha(u-v)$, where $\alpha\in \mathbb R$. Thus any solution to the inhomogenous equation $Ax=b$ can be written as $\alpha(u-v)+v=\alpha u+(1-\alpha)v$.
+
+
+\end{solution}
+\end{exercise}
+
+
+\begin{exercise} \label{YZ_3.4.6}
+Let $L:\mathbb R^3\to \mathbb R^4$ be a mapping such that 
+\[
+Lx=\Matrixc{x_1-x_2 \\ x_1+x_2-x_3\\ -x_1+x_2+4x_3 \\ -3x_1-x_3}
+\]
+for all $x=\Matrix{x_1 \\ x_2 \\ x_3}.$
+\begin{enumeratea}
+\item Find matrix representative of $L$.
+\item Verify that $x=\Matrix{-1/4\\-5/4\\-3/2}$ is a solution to the equation $Lx=\Matrix{1 \\ 0 \\ -7\\1 }$.
+\item Find the full set of solutions of $Lx=\Matrix{1 \\ 0 \\ -7\\1 }$.
+\end{enumeratea}
+
+
+\begin{solution}
+
+\ans
+ \begin{enumeratea}
+\item  The matrix representative of $L$ is 
+\[
+A=\Matrix{1 &-1& 0\\ 1&1&-1\\ -1&1&4 \\ -3&0&-1}.
+\]
+\item Direct verification.
+\item $x=\Matrix{-1/4\\-5/4\\-3/2}$ is the only solution.
+\end{enumeratea}
+
+
+\soln \RED{NEED TO SHOW SOLUTIONS TO (a) (b) (c) }
+
+We use the elementary row reduction to find the reduced echelon form of the matrix $A$:
+
+\[
+\Matrix{1 &-1& 0 \\ 1&1&-1 \\ -1&1&4  \\ -3&0&-1 } \to \Matrix{1 &-1& 0 \\ 0&2&-1 \\ 0&0&4 \\ 0&-3&-1} \to
+\Matrix{ 1 &-1& 0\\ 0&2&-1 \\ 0&-3&-1 \\ 0&0&4  }
+\]
+
+\[
+\to \Matrix{1 &-1& 0\\ 0&2&-1 \\ 0&0&-2 \\ 0&0&4 } \to \Matrix{1 &0& 0 \\ 0&1&0 \\ 0&0&1  \\ 0&0&0 }.
+\]
+
+Therefore, $A$ has rank 3, so $Ax=0$ only have zero solution, so by principle of superposition,  $x=\Matrix{-1/4\\-5/4\\-3/2}$ is the unique solution of the inhomogeneous equation $Ax=b$.
+\end{solution}
+\end{exercise}
+
+
+\begin{exercise} \label{YZ_3.4.7}
+Let $L:\mathbb R^3\to \mathbb R^2$ be a linear mapping such that 
+\[
+\Matrix{1\\-1\\0}=\Matrix{-3\\1},~L\Matrix{0\\1\\1 }=\Matrix{2\\-1},
+\]
+and 
+\[
+L\Matrix{ 0\\1\\-1}=\Matrix{0\\1}.
+\]
+
+
+\begin{enumeratea}
+\item Determine the matrix representation of $L$. Namely, find the matrix $A$ such that $L_A=L$.
+
+\item Verify that  $\Matrix{0\\2\\-2}$ is a solution to $Lx=\Matrix{0\\2}$
+\item Find the full set of solutions of $Lx=\Matrix{0\\2}$.
+\end{enumeratea}
+
+
+\begin{solution}
+
+\ans 
+\begin{enumeratea}
+\item  The matrix representation of $L$ is 
+ \[
+\Matrix{ -2&1&1\\1&0&-1}.
+\]
+
+\item Direct verification.
+\item The general solution of the inhomogeneous equation is 
+\[
+\alpha \Matrix{1\\1\\1}+\Matrix{0\\2\\-2}, \alpha\in \mathbb R
+\]
+
+\end{enumeratea}
+
+
+
+\soln 
+
+\begin{enumeratea}
+\item  $\Matrix{ 0\\0\\2 }=L\Matrix{ 0\\1\\1}-L\Matrix{0\\1\\-1}=\Matrix{2\\-2 }$, so 
+\[
+L\Matrix{0\\0\\1}=\Matrix{1\\-1}.
+\]
+Similarly, subtracting it from the second equation, we get 
+\[
+L\Matrix{0\\1\\0}=L\Matrix{ 0\\1\\1}-L\Matrix{0\\0\\1}=\Matrix{2\\-1}-\Matrix{1\\-1}=\Matrix{1\\0 }.
+\]
+
+Finally, adding it to the first equation, we have 
+\[
+L\Matrix{1\\0\\0}=L\Matrix{1\\-1\\0}+L\Matrix{0\\1\\0}=\Matrix{ -3\\1}+\Matrix{1\\0}=\Matrix{-2\\1}.
+\]
+
+Therefore the matrix representation $A$ of $L$ is 
+\[
+\Matrix{ -2&1&1\\1&0&-1}.
+\]
+
+\item \RED{Verify that 
+\[
+\Matrix{ -2&1&1\\1&0&-1} \Matrix{0\\2\\-2} =\Matrix{0\\2}.
+\]
+}
+
+\item From the elementary row reduction of $A$, one can find the solution to $Ax=0$ is 
+\[
+\Matrix{1\\1\\1}.
+\]
+Therefore, the general solution of the inhomogeneous equation is 
+\[
+\alpha \Matrix{1\\1\\1}+\Matrix{0\\2\\-2}, \alpha\in \mathbb R
+\]
+\end{enumeratea}
+
+
+
+\end{solution}
+\end{exercise}
+
+
+
+
+
+
+
+\end{document}

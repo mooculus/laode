@@ -15,46 +15,57 @@ Let $W\subset\R^n$ be a subspace and $x_0\in\R^n$ be a vector.  In this
 section we solve a basic geometric problem and investigate some of its
 consequences.  The problem is:
 \begin{quote}
-Find a vector $w_0\in W$ that is the nearest vector in $W$ to $x_0$.
+Find the vector $w_0\in W$ that is the nearest vector in $W$ to $x_0$.
 \end{quote}
+
+\begin{definition} \rm \label{D:least_squares}
+The vector $w_0$ in the subspace $W$ of $\R^n$ that is the nearest to the 
+vector $x_0$ in $\R^n$ is called the \em{least squares approximation} of 
+$x_0$ in $W$.
+\end{definition} 
 
 \begin{figure}[htb]
         \centerline{%
         \psfig{file=../figures/nearest.eps,width=2.5in}}
-        \caption{Approximation of $x_0$ by $w_0\in W$ by least squares.}
+        \caption{The vector $w_0$ is the least squares approximation of the vector $x_0$ by a vector in $W$.}
         \label{F:nearest}
 \end{figure}
 
 
 The distance between two vectors\index{distance!between vectors}
-$v$ and $w$ is $||v-w||$ and the geometric
-problem can be rephrased as follows: find a vector $w_0\in W$ such that
+$v$ and $w$ is $||v-w||$.  Hence the least squares approximation 
+can be rephrased as follows: find a vector $w_0\in W$ such that
 \begin{equation}  \label{E:leastsq}
 ||x_0-w_0||\leq ||x_0-w|| \quad \forall w\in W.
 \end{equation}
-Condition \eqref{E:leastsq} is called the
+Condition \eqref{E:leastsq} is also called the
 {\em least squares approximation}\index{least squares!approximation}.
-In order to see where this name comes from we write\eqref{E:leastsq} in the
+In order to see where this name comes from we write \eqref{E:leastsq} in the
 equivalent form
-\[
+\begin{equation} \label{E:LS_inequality}
 ||x_0-w_0||^2\leq ||x_0-w||^2 \quad \forall w\in W.
-\]
-This form means that for $w=w_0$ the sum of the squares of the
-components of the vector $x_0-w$ is minimal.
+\end{equation}
+The form \eqref{E:LS_inequality} means that the sum of the squares of the
+components of the vectors $x_0 - w$ is minimal at $w = w_0$.
 
-Before continuing, we state and prove the {\em Law of Pythagorus\/}.
-\index{Law of Pythagorus}  Let $z_1,z_2\in\R^n$ be orthogonal vectors.  Then 
+Before continuing, we state and prove 
+\begin{lemma}[The Law of Pythagorus] \index{Law of Pythagorus}  \label{L:LP}
+The vectors $z_1,z_2\in\R^n$ are orthogonal if and only if  
 \begin{equation} \label{E:LP}
 ||z_1+z_2||^2 = ||z_1||^2 + ||z_2||^2.
 \end{equation}
+\end{lemma}
+
+\begin{proof}
 To verify \eqref{E:LP} calculate 
 \begin{align*}
   ||z_1+z_2||^2&=(z_1+z_2)\cdot(z_1+z_2) \\
   &=z_1\cdot z_1 +2z_1\cdot z_2+z_2\cdot z_2 \\
   &=||z_1||^2 + 2z_1\cdot z_2 +||z_2||^2.
 \end{align*}
-Since $z_1$ and $z_2$ are orthogonal, $z_1\cdot z_2=0$ and the Law of 
-Pythagorus is valid.
+It follows that $z_1$ and $z_2$ satisfy \eqref{E:LP} if and only if $z_1\cdot z_2 = 0$  
+if and only $z_1$ and $z_2$ are orthogonal.
+\end{proof}
 
 Using \eqref{E:leastsq} and \eqref{E:LP}, we can rephrase the minimum distance 
 problem as follows.
@@ -116,12 +127,12 @@ w_0 = \alpha_1w_1 + \cdots + \alpha_kw_k
 for some scalars $\alpha_i$.  We now show how to find these scalars.
 
 \begin{theorem}  \label{T:nearestvector}
-Let $x_0\in\R^n$ be a vector, and let $\{w_1,\ldots,w_k\}$ be a
+Let $x_0\in\R^n$ be a vector and let $\{w_1,\ldots,w_k\}$ be a
 basis\index{basis} for the subspace\index{subspace} $W\subset\R^n$.
 Then
-\[
+\begin{equation} \label{e:w_0_in_basis}
 w_0 = \alpha_1w_1 + \cdots + \alpha_kw_k
-\]
+\end{equation}
 is the nearest vector in $W$ to $x_0$ when
 \begin{equation}  \label{E:nearestvector}
 \left(\begin{array}{c} \alpha_1 \\ \vdots \\ \alpha_k \end{array}\right) =
@@ -175,8 +186,27 @@ z_1w_1 + \cdots + z_kw_k = 0.
 \]
 Since the $w_j$ are linearly independent, it follows that the $z_j=0$.  In
 particular, $z=0$.  Since $A^tA$ is invertible, \eqref{E:nearestvector} is
-valid, and the theorem is proved. \end{proof}
+valid, and the theorem is proved. 
+\end{proof}
 
+\begin{corollary} \label{C:nearestvector}
+Let $x_0$ be a vector in $\R^n$, let $W$ be a subspace of $\R^n$, and
+let $w_1,\ldots,w_k$ in $\R^n$ be a basis for $W$.
+Let $A = (w_1|\cdots| w_k)$ be an $n\times k$ matrix.  Then 
+\begin{equation} \label{C:w_0_formula}
+w_0 =  A(A^tA)\inv A^tx_0.
+\end{equation}
+ is the least squares approximation to $x_0$ in $W$.
+\end{corollary}
+
+\begin{proof}
+Define scalars $\alpha_1,\ldots,\alpha_k$ by \eqref{E:nearestvector}.  It follows 
+from Theorem~\ref{T:nearestvector} that the least squares approximation is
+\[ 
+w_0 = A \left(\begin{array}{c} \alpha_1 \\ \vdots \\ \alpha_k \end{array}\right) = A(A^tA)\inv A^tx_0, 
+\]
+as claimed.
+\end{proof}
 
 \includeexercises
 

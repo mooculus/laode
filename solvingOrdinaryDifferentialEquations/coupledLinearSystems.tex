@@ -40,10 +40,11 @@ After starting {\pplane}, select {\sf linear system} from the
 \[
 	a = -1,\quad b = 3,\quad c = 3, \quad d = -1.
 \]
-Click on {\sf Proceed}.  In order to have equally spaced coordinates on
-the $x$ and $y$ axes, do the following.   In the {\sf PPLANE9 Display} 
-window click on the {\sf edit} button and then on the {\sf zoom in square} 
-command.  Then, using the mouse, click on the origin.
+In order to have equally spaced coordinates on
+the $x$ and $y$ axes, do the following.   In the \pplane\; {\sf Display} 
+window enter $x_0 = 0.5$ and $y_0 = 0$ and click on {\sf Update}.
+Repeat three times with $x_0 = -0.5$ and $y_0 = 0$, $x_0 = 0$ and $y_0 = 0.5$, 
+and $x_0 = 0$ and $y_0 = -0.5$ to recreate Figure~\ref{F:invariantlines}.
 
 \subsection*{Eigendirections}
 
@@ -56,8 +57,7 @@ distinguished directions in the $(x,y)$-plane.  See
 Figure~\ref{F:invariantlines}.  Moreover, the computations
 indicate that these lines are invariant in the sense that
 solutions starting on these lines remain on them for all time.
-This statement can be verified numerically by using the {\sf
-Keyboard input} in the {\sf \PPLANE\ Options} to choose initial
+This statement can be verified numerically by choosing initial
 conditions $(x_0,y_0)=(1,1)$ and $(x_0,y_0)=(1,-1)$.
 
 \begin{figure}[htb]

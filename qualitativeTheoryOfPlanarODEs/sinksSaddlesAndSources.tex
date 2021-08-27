@@ -261,31 +261,26 @@ associated eigenvectors $v_1$ and $v_2$.  The stable orbits are given by the
 solutions $X(t) = \pm e^{\lambda_1 t}v_1$ and the unstable orbits are given
 by the solutions $X(t) = \pm e^{\lambda_2 t}v_2$.
 
-\subsubsection*{Stable and Unstable Orbits using {\pplane}}
+\subsubsection*{Stable and Unstable Orbits using {\sf \pplane}}
 
 The program {\pplane} is programmed to draw the stable and unstable
 orbits of a saddle on command. Although the principal use of this
 feature is seen when analyzing nonlinear systems, it is useful to
-introduce this feature here.  As an example, load the linear system
-\eqref{e:saddlet} into {\pplane} and click on {\sf Proceed}.  Now
-pull down the {\sf PPLANE9 Options} menu and click on {\sf Find an
-equilibrium}.  Click the cross hairs in the {\sf PPLANE9 Display}
+introduce this feature now.  As an example, load the linear system
+\eqref{e:saddlet} into {\pplane} and click on {\sf Update}.  Now
+pull down the {\sf Analysis} menu and click on {\sf Find nearby
+equilibrium}.  Click the cross hairs in the {\sf \PPLANE\; Display}
 window on a point near the origin; {\pplane} responds by
-opening a new window --- the {\sf PPLANE9 Equilibrium point data}
-window --- and by putting a small yellow circle about the
-origin.  The circle indicates that the numerical algorithm
+plotting the equilibrium and the real eigenvectors --- and by putting 
+a small circle about the origin.  The circle indicates that the numerical algorithm
 programmed into {\pplane} has detected an equilibrium near
-the chosen point. A new window opens and displays the message
-{\sf There is a saddle point at} $(0,0)$.  This window also displays the
-coefficient matrix (called the {\em Jacobian} at the equilibrium) and its eigenvalues
-and eigenvectors.  This process numerically verifies that the origin
+the chosen point.  This process numerically verifies that the origin
 is a saddle (a fact that could have been verified in a more
 straightforward way).
 
-Now pull down the {\sf PPLANE9 Options} menu again and click on
-{\sf Plot stable and unstable orbits}.  Next click on the mouse
-when the cross hairs are within the yellow circle and {\sf
-\pplane} responds by drawing the stable and unstable orbits.
+Now pull down the {\sf Analysis} menu again and click on
+{\sf Solve for stable separatrices}.  {\sf \pplane} responds by 
+drawing the stable and unstable orbits.
 The result is shown in Figure~\ref{F:linsaddle}(left).
 On this figure we have also plotted one trajectory
 from each quadrant; thus obtaining the phase portrait of a saddle.
