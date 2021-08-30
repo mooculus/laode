@@ -1,0 +1,51 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+
+\begin{document}
+
+
+
+\begin{exercise} \label{YZ_9.1.3}
+Find the vector in the plane $x-\frac12 y-\frac13 z=0$ that has the minimal distance to the point $x_0=\Matrix{1\\1\\1}$.
+
+\begin{solution}
+
+\ans The vector is $\frac{1}{49}\Matrix{43\\52\\51}$.
+
+\soln Choose basis vectors $w_1=\Matrix{1\\2\\0}$ and $w_2=\Matrix{1\\0\\3}$ for the plane. The vector 
+$w$ in the plane that realizes the minimal distance can be expressed as 
+\[
+w=\alpha_1w_1+\alpha_2w_2.
+\]
+Then according to \eqref{E:nearestvector}, we have
+
+\[
+\Matrix{\alpha_1\\\alpha_2}=(A^tA)^{-1}A^tx_0,
+\]
+where $A=\Matrix{1&1\\2&0\\0&3}$ and $x_0=\Matrix{1\\1\\1}$. So we find that 
+\[
+A^tA=\Matrix{1 & 2&0\\1&0&3}\Matrix{1&1\\2&0\\0&3}=\Matrix{5&1\\1&10}.
+\]
+Thanks to the explicit formula \eqref{e:formAinv} for the inverse of a $2\times 2$ matrix, we have
+\[
+(A^tA)^{-1}=\Matrix{5&1\\1&10}^{-1}=\frac{1}{5\times 10-1\times 1}\Matrix{ 10 & -1\\-1& 5}=\frac{1}{49}\Matrix{10& -1\\-1& 5}.
+\]
+On the other hand, 
+\[
+A^tx_0=\Matrix{1 & 2&0\\1&0&3}\Matrix{1\\1\\1}=\Matrix{3\\4}. 
+\]
+Thus, we have 
+\[
+\Matrix{\alpha_1\\\alpha_2}=\frac{1}{49}\Matrix{10& -1\\-1& 5}\Matrix{3\\4}=\frac{1}{49}\Matrix{26\\17}=\Matrix{26/49\\17/49}.
+\]
+It follows that 
+\[
+w=\frac{26}{49}w_1+\frac{17}{49}w_2=\frac{26}{49}\Matrix{1\\2\\0}+\frac{17}{49}\Matrix{1\\0\\3}=\frac{1}{49}\Matrix{43\\52\\51}.
+\]
+\end{solution}
+\end{exercise}
+
+
+
+
+\end{document}

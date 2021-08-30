@@ -1,0 +1,37 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+
+
+\begin{document}
+
+
+\begin{exercise} \label{YZ_9.1.1}
+
+Use the least squares method, specifically formula $\eqref{E:singleortho}$ to 
+find the minimal distance between the point $(3,4)$ to the $x$-axis.
+
+\begin{solution}
+\ans 
+The minimal distance to the $x$-axis is $4$.
+
+\soln
+The $x$-axis has basis vector $(1,0)$, then according to \eqref{E:singleortho},  
+\[
+v = \frac{(1,0)\cdot (3,4)}{||(1,0)||^2}(1,0) = (3,0)
+\]
+is the unique vector on the $x$-axis that has minimal distance to the given point $(3,4)$. 
+So the minimal distance between $(3,4)$ and the $x$-axis is 
+\[
+||(3,0)-(3,4)|| = 4.
+\]
+
+\end{solution}
+\end{exercise}
+
+
+
+
+
+
+
+\end{document}
