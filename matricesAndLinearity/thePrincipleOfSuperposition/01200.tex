@@ -1,0 +1,34 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+%\input{preamble.tex}
+\begin{document}
+
+
+\begin{exercise} \label{YZ_3.4.4}
+Let $A$ be a $n\times m$ matrix.  Suppose there are $n$ vectors $u_1,\ldots,u_n$ such that 
+\[
+Au_1=\Matrixc{ 1 \\ 0 \\ \vdots \\ 0}, Au_2=\Matrixc{ 0 \\ 1 \\ \vdots \\ 0}, \ldots, Au_n=\Matrixc{0\\ 0 \\ \vdots \\ 1} .
+\]
+Then verify that for any $m\times 1$ vector $b$, the inhomogeneous equation $Ax=b$ always has a solution.
+
+\begin{solution}
+\soln 
+Note that 
+\[
+b = \Matrixc{b_1 \\ b_2 \\ \vdots \\ b_n} = 
+b_1\Matrixc{1 \\ 0 \\ \vdots \\ 0}+b_2\Matrixc{ 0 \\ 1 \\ \vdots \\ 0}+\cdots+b_n\Matrixc{ 0 \\ 0 \\ \vdots \\ 1}.
+\]
+Therefore
+\[
+b = b_1Au_1 +  b_2Au_2 + \cdots +  b_nAu_n=
+A( b_1u_1 +  b_2u_2+\cdots +  b_nu_n).
+\]
+\end{solution}
+\end{exercise}
+
+
+
+
+
+
+\end{document}

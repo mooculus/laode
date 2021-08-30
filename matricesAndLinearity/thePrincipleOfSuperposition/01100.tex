@@ -1,0 +1,63 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+%\input{preamble.tex}
+\begin{document}
+
+
+
+\begin{exercise} \label{YZ_3.4.3}
+Let $A$ be a $3\times 3$ matrix.  Suppose 
+\[
+A\Matrix{-1\\2\\1}=\Matrix{3\\1\\1} \textup{\quad and \quad} A\Matrix{0\\4\\0}=\Matrix{-2\\0\\1}.
+\]
+
+\begin{enumeratea}
+\item Find a solution to the inhomogeneous system 
+\[
+Ax=\Matrix{1 \\ 1 \\2}.
+\]
+\item Is the solution unique?
+\end{enumeratea}
+
+
+\begin{solution}
+\ans 
+
+\begin{enumeratea}
+\item $x=\Matrix{-1 \\ 6 \\ 1}$ is a solution. 
+
+\item If $A$ has full rank, then the solution is unique. Otherwise, there are infinitely many solutions.
+\end{enumeratea}
+
+
+
+
+\soln 
+\begin{enumeratea}
+\item  Since
+\[
+\Matrix{3 \\ 1\\ 1}+ \Matrix{-2 \\ 0 \\ 1}=\Matrix{1 \\ 1 \\ 2},
+\]
+
+then by linearity, 
+
+\[
+\Matrix{1 \\ 1\\ 2}=\Matrix{3 \\ 1\\ 1}+ \Matrix{-2 \\ 0 \\ 1}=A\Matrix{-1 \\ 2\\ 1}+A\Matrix{0 \\ 4 \\ 0}=A\Matrix{-1 \\ 6 \\ 1}.
+\] 
+
+So $x=\Matrix{-1 \\ 6 \\ 1}$ is a solution.
+
+\item This is a consequence of Theorem $\ref{number}$ (b).
+\end{enumeratea}
+
+\end{solution}
+\end{exercise}
+
+
+
+
+
+
+
+
+\end{document}
