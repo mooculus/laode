@@ -48,7 +48,8 @@ equivalent form
 The form \eqref{E:LS_inequality} means that the sum of the squares of the
 components of the vectors $x_0 - w$ is minimal at $w = w_0$.
 
-Before continuing, we state and prove 
+Recall from \eqref{dotprod=0} that two vectors $z_1,z_2\in\R^n$ are perpendicular 
+or equivalently {\em orthogonal} if $z_1\cdot z_2 = 0$.  Before continuing, we state and prove 
 \begin{lemma}[The Law of Pythagorus] \index{Law of Pythagorus}  \label{L:LP}
 The vectors $z_1,z_2\in\R^n$ are orthogonal if and only if  
 \begin{equation} \label{E:LP}
@@ -71,7 +72,7 @@ Using \eqref{E:leastsq} and \eqref{E:LP}, we can rephrase the minimum distance
 problem as follows.
 \begin{lemma}  \label{L:orthoLSA}
 The vector $w_0\in W$ is the closest vector to $x_0\in\R^n$ if the vector 
-$x_0-w_0$ is orthogonal to every vector in $W$. (See Figure~\ref{F:nearest}.)
+$x_0-w_0$ is orthogonal to every vector in $W$. See Figure~\ref{F:nearest}.
 \end{lemma}
 
 \begin{proof}  Write $x_0-w=z_1+z_2$ where $z_1=x_0-w_0$ and $z_2=w_0-w$.  By 
@@ -192,11 +193,12 @@ valid, and the theorem is proved.
 \begin{corollary} \label{C:nearestvector}
 Let $x_0$ be a vector in $\R^n$, let $W$ be a subspace of $\R^n$, and
 let $w_1,\ldots,w_k$ in $\R^n$ be a basis for $W$.
-Let $A = (w_1|\cdots| w_k)$ be an $n\times k$ matrix.  Then 
+Let $A $ be the $n\times k$ matrix $(w_1|\cdots| w_k)$.  Then 
 \begin{equation} \label{C:w_0_formula}
 w_0 =  A(A^tA)\inv A^tx_0.
 \end{equation}
- is the least squares approximation to $x_0$ in $W$.
+ is the least squares approximation to $x_0$ in $W$.  The distance of 
+ $x_0$ to $W$ is $|| x_0 - w_0 ||$.
 \end{corollary}
 
 \begin{proof}
