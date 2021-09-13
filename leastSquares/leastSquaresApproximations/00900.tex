@@ -1,0 +1,42 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+
+\begin{document}
+
+
+\begin{computerExercise}  \label{YZ_9.1.9}
+Let $W$ be the vector space spanned by the vectors 
+\begin{equation} \label{e:W_9.1.9}
+\Matrix{1 \\3\\7\\1\\0},\Matrix{-3 \\0\\8\\3\\9},\Matrix{-5 \\2\\-2\\1\\4}.
+\end{equation}
+
+Find the closest point $\tilde{w}$ in $W$ to the point $b=\Matrix{9\\6\\4\\3\\0}$ in $\R^5$.
+
+\begin{solution}
+
+\ans
+\[
+\tilde{w}=\Matrix{ 3.4083\\
+    2.6352\\
+    6.6518\\
+    0.1238\\
+   -3.2623}
+\]
+
+\soln First, define $\tt W$ as the matrix whose column vectors are given in \eqref{e:W_9.1.9}. Define $b$ accordingly. Then the point $\tilde{w}$ is found via
+the command {\tt W*inv(W'*W)*W'*b}:
+\begin{verbatim}
+    ans =
+
+    3.4083
+    2.6352
+    6.6518
+    0.1238
+   -3.2623
+
+\end{verbatim}
+\end{solution}
+\end{computerExercise}
+
+
+\end{document}

@@ -1,0 +1,45 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+
+\begin{document}
+
+
+\begin{computerExercise}\label{YZ_9.1.15}
+Consider the system of 4 linear equations in 3 unknown
+\[
+Ax=b
+\]
+where 
+\[
+A=\Matrix{7&4&-3\\0&9&-10\\3&-2&-5\\9&2&1} \AND b=\Matrix{4\\0\\3\\1}.
+\] 
+Use \Matlab to verify that the system is inconsistent and to find a least squares approximation solution of the system.
+\begin{solution}
+
+\ans  $\tilde{x}=\Matrix{0.3534\\-0.2913\\-0.3161}$ is a least squares approximation solution of the system.
+
+\soln Use the command {\tt rref([A b])} to find the reduced echelon form of the concatenated matrix $[A|b]$:
+\begin{verbatim}
+ans =
+
+     1     0     0     0
+     0     1     0     0
+     0     0     1     0
+     0     0     0     1
+\end{verbatim}
+So the system is inconsistent. This also shows that the column vectors of $A$ is linearly independent, so we use the command {\tt inv(A'*A)*A'*b} to find the least squares approximation of $Ax = b$:
+
+\begin{verbatim}
+ans =
+
+    0.3534
+   -0.2913
+   -0.3161
+\end{verbatim}
+It follows that $\tilde{x} = \Matrix{0.3534\\-0.2913\\-0.3161}$ is a least squares approximation solution of the system.
+\end{solution}
+\end{computerExercise}
+
+
+
+\end{document}

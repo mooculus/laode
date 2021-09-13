@@ -1,0 +1,44 @@
+
+\begin{computerExercise} \label{YZ_9.1.17}
+Consider the following system of linear equations
+\begin{matlabEquation}
+\begin{array}{rcc}
+2x_1+x_2+x_3 & = & \phantom{-}0\\
+x_1-6x_3 & = & -2\\
+3x_2+5x_3 & = &  \phantom{-}4\\
+5x_1-2x_2+12x_3& = & -7\\
+2x_1-9x_2-11x_3 & = &  \phantom{-}0
+\end{array}
+\end{matlabEquation}
+ Use \Matlab to verify that the system of linear equations is inconsistent.  Then find the least squares approximation solution of the system.
+
+
+\begin{solution}
+
+\ans  $\Matrix{x_1\\x_2\\x_3}=\Matrix{-0.8856\\0.1301\\-0.1032}$ is the least squares approximation solution of the system.
+
+
+\soln 
+ To find the reduced echelon form of the concatenated matrix $B=[A|b]$, we can enter \Matlab command {\tt B=[A b]},  then use the command {\tt rref(B)}, we get
+\begin{verbatim}
+ans =
+
+     1     0     0     0
+     0     1     0     0
+     0     0     1     0
+     0     0     0     1
+     0     0     0     0
+\end{verbatim}
+The 4-th row has an nonzero element in the last column and is zero elsewhere, so the system of equations is inconsistent.
+To find the least squares solution,  we use the command {\tt inv(A'*A)*A'*b}, we get the solution
+
+\begin{verbatim}
+ans =
+
+   -0.8856
+    0.1301
+   -0.1032
+
+\end{verbatim}
+\end{solution}
+\end{computerExercise}
