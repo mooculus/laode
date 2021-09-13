@@ -1,0 +1,79 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+
+\begin{document}
+
+
+
+\begin{computerExercise} \label{YZ_9.1.11}
+Let $W$ be the vector subspace of $\R^5$ defined by the following system of equations:
+\begin{matlabEquation}
+\begin{array}{rcc}
+x_1+2.5x_2-5\sqrt{3}x_3+x_4-3x_5&=&0\\
+7x_1-x_2-5.5x_3-10x_4-x_5&=&0\\
+3x_1+4x_2-5x_3-2x_4-6x_5&=&0
+\end{array}
+\end{matlabEquation}
+
+\begin{enumeratea}
+\item Let $A$ be its coefficients matrix of size $3\times 5$. Find a basis of the subspace $W$.
+\item Find the distance between the vector $b=(2,4,6,8,10)$ and $W$.
+\end{enumeratea}
+\begin{solution}
+
+\ans \begin{enumeratea}
+\item A basis of $W$ consists of
+\[
+\Matrix{ 0.6433 \\-0.5275 \\ 0.0648\\0.4922\\-0.2481} ~\textup{and}~ \Matrix{0.5342\\0.6103\\0.0766\\0.2170\\0.5378}.
+\]
+\item The distance is 11.1300, realized by the vector $\tilde{w}=\Matrix{ 6.5776\\
+    6.2252\\
+    0.9154\\
+    2.9076\\
+    5.7069}$.
+\end{enumeratea}
+
+\soln \begin{enumeratea}
+
+\item Let $A$ be the coefficient matrix of the system of equations. Enter the command {\tt W = null(A)} to find the basis of solution space as column vectors of
+
+\begin{verbatim}
+W =
+
+   0.6433    0.5342
+  -0.5275    0.6103
+   0.0648    0.0766
+   0.4922    0.2170
+  -0.2481    0.5378
+\end{verbatim}
+
+
+\item Define the vector $b$ via {\tt b = [2,4,6,8,10]'}. Apply the least squares method via the command {\tt wtilde = W*inv(W'*W)*W'*b} to determine
+
+\begin{verbatim}
+wtilde =
+
+    6.5776
+    6.2252
+    0.9154
+    2.9076
+    5.7069
+\end{verbatim}
+
+Finally, the distance between {\tt wtilde} and $b$ is calculated via the command
+{\tt  dist = norm(b - wtilde)}
+\begin{verbatim}
+dist =
+
+    9.8042
+\end{verbatim}
+
+
+\end{enumeratea}
+
+\end{solution}
+\end{computerExercise}
+
+
+
+\end{document}

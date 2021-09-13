@@ -1,0 +1,25 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+
+
+\begin{document}
+
+
+
+\begin{exercise} \label{YZ_9.1.5}
+Prove that the least squares approximation is unique. More precisely, let $W$ be a subspace of $\mathbb R^n$ 
+and let $b$ be a vector in $\mathbb R^n$ outside $W$. Suppose $w_1,w_2\in W$ are two vectors such that the distance $||w_1-b||=||w_2-b||$ is minimal among all vectors in $W$. Then show that $w_1=w_2$.
+\begin{solution}
+
+\soln Apply Lemma \ref{L:orthoLSA} to $w_1$, then $w_1-b$ is orthogonal to every vector in $W$. In particular, $w_2-w_1\in W$. So $w_1-b$ is orthogonal to $w_2-w_1$. Then the Law of Pythagorus 
+\eqref{E:LP} implies that
+\[
+||w_1-b||^2+||w_2-w_1||^2=||(w_1-b)+(w_2-w_1)||^2=||w_2-b||^2.
+\]
+So $||w_2-w_1||^2=0$ and $w_1=w_2$.
+\end{solution}
+\end{exercise}
+
+
+
+\end{document}

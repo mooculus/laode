@@ -1,0 +1,47 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+
+
+\begin{document}
+
+
+
+\begin{exercise} \label{YZ_9.1.7}
+Find the distance from the point $b=\Matrix{6\\-12\\0}$ to the plane $W$ that consists of the solutions of the equation $-x_1 + 2x_2 -x_3 =0$.
+\begin{solution}
+
+\ans The distance is $5$.
+
+\soln Find a basis of $W$ consisting of vectors $w_1=\Matrix{2\\1\\0}$ and $w_2=\Matrix{0\\1\\2}$. We set $\WW=[w_1|w_2]$. The distance from $b$ to $W$ is the distance from $b$ to $\tilde{w}$ where
+\[
+\tilde{w}=\WW(\WW^t\WW)^{-1}\WW^tb.
+\]
+We first find
+\[
+\WW^t\WW=\Matrix{2&1&0\\0&1&2}\Matrix{2&0\\1&1\\0&2}=\Matrix{5 &1 \\1 &5}.
+\]
+Its inverse is 
+\[
+(\WW^t\WW)^{-1}=\frac{1}{5\cdot 5-1\cdot 1}\Matrix{5 &-1\\
+-1 &5}=\frac{1}{24}\Matrix{5 &-1\\-1 &5}.
+\]
+On the other hand,
+\[
+\WW^tb=\Matrix{2&1&0\\0&1&2}\Matrix{6\\-12\\0}=\Matrix{0\\-12}.
+\]
+Putting these calculations together, we find 
+\[
+\tilde{w}=\WW(\WW^t\WW)^{-1}\WW^tb=\Matrix{2&0\\1&1\\0&2}\frac{1}{24}\Matrix{5 &-1\\-1 &5}\Matrix{0\\-2}=\Matrix{1\\-2\\-5}.
+\]
+
+Finally, the distance between $b$ and $\tilde{w}$ is 
+\[
+||\Matrix{1\\-2\\0}-\Matrix{1\\-2\\-5}||=5.
+\]
+\end{solution}
+
+\end{exercise}
+
+
+
+\end{document}

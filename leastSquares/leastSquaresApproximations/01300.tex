@@ -1,0 +1,71 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+
+\begin{document}
+
+\begin{exercise} \label{YZ_9.1.13}
+
+Consider the following system of linear equations
+\[
+\begin{array}{rcc}
+x_1+x_2 &=&0\\
+2x_1-3x_2&=&1\\
+5x_1-2x_2&=&2
+\end{array}
+\]
+Verify that the system of linear equations is inconsistent.  Then find the least squares approximation solution of the system.
+\begin{solution}
+
+\ans 
+$\Matrix{x_1\\x_2}=\frac{1}{195}\Matrix{63\\-30}$ is the least squares approximation solution.
+
+\soln 
+Perform the elementary row reduction
+\[
+\left(
+\begin{array}{cc|c}
+1 & 1 &0 \\
+2 &-3 &1 \\
+5 &-2 &2\\
+\end{array}
+\right)\to \left(
+\begin{array}{cc|c}
+1 & 1 &0 \\
+0 &-5 &1 \\
+0 &-7 &2\\
+\end{array}
+\right)
+\]
+to verify that the system of equations is inconsistent.
+
+Since the column vectors of the coefficient matrix $A=\Matrix{1&1\\2&-3\\5&-2}$ are linearly independent, $\WW=A=\Matrix{1&1\\2&-3\\5&-2}$. Since  $b=\Matrix{0\\1\\2}$, we have
+\[
+\tilde{x}=\Matrix{x_1\\x_2}=(\WW^t\WW)^{-1}\WW^tb.
+\]
+By computation,
+\[
+\WW^t\WW=\Matrix{1&2&5\\1&-3&-2}\Matrix{1&1\\2&-3\\5&-2}=\Matrix{30 &-15 \\-15 &14}.
+\]
+Its inverse is 
+\[
+(\WW^t\WW)^{-1}=\frac{1}{30\cdot 14-(-15)\cdot (-15)}\Matrix{14 &15\\
+15 &30}=\frac{1}{195}\Matrix{14 &15\\
+15 &30}.
+\]
+On the other hand,
+\[
+\WW^tb=\Matrix{1&2&5\\1&-3&-2}\Matrix{0\\1\\2}=\Matrix{12\\-7}.
+\]
+Therefore, the least squares approximation solution is
+\[
+\tilde{x}=\Matrix{x_1\\x_2}=\frac{1}{195}\Matrix{14 &15\\
+15 &30}\Matrix{12\\-7}=\frac{1}{195}\Matrix{63\\-30}.
+\]
+
+\end{solution}
+\end{exercise}
+
+
+
+
+\end{document}

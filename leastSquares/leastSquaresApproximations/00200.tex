@@ -1,31 +1,32 @@
 \documentclass{ximera}
 \input{../../preamble.tex}
 
+
 \begin{document}
 
 
 
 
 
-
-
 \begin{exercise} \label{YZ_9.1.2}
-Find the point on the line $y=x$ in $\R^2$ that has minimal distance to the point $(1,6)$.
+Use the least squares method, specifically formula \eqref{E:singleortho}, to 
+find the minimal distance between the point $(3,4)$ to the $y$-axis.
+
 \begin{solution}
+\ans
+The minimal distance to the $y$-axis is $3$.
 
-\ans $(\frac{7}{2},\frac{7}{2})$
-
-\soln The line $y=x$ is a one-dimensional subspace of $\mathbb R^2$ and has basis vector $(1,1)$.
-
-According to formula \eqref{E:singleortho}, the vector on $y = x$ that realizes the minimal distance to $(1,6)$ is 
+\soln 
+The $y$-axis has basis vector $(0,1)$, then according to \eqref{E:singleortho},  
 \[
-\frac{(1,1)\cdot (1,6)}{||(1,1)||^2}(1,1) = \frac{7}{2}(1,1) = (\frac{7}{2},\frac{7}{2}).
+u = \frac{(0,1)\cdot (3,4)}{||(0,1)||^2}(0,1) = (0,4)
+\]
+is the unique vector on the $y$-axis that has minimal distance to the given point $(3,4)$. So the minimal distance between $(3,4)$ and the $y$-axis is 
+\[
+||(0,4)-(3,4)|| = 3.
 \]
 \end{solution}
 \end{exercise}
-
-
-
 
 
 

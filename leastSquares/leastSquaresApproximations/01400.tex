@@ -1,0 +1,32 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+
+
+
+\begin{document}
+
+\begin{exercise}  \label{YZ_9.1.14}
+Suppose the linear system $Ax=b$ is inconsistent. Let $\tilde{x}$ be a least squares approximation solution. Then use the principle of superposition in Section \ref{S:Superposition} to prove that the set of least squares solutions of the system consists of 
+\[
+\tilde{x}+x
+\]
+where $x\in\textup{null space}(A)$.
+
+\begin{solution}
+\soln 
+As we know, there is a unique $\tilde{w}\in \textup{range}(A)$, which has the minimal distance to $b$ among all $w\in W$. So the set of least squares approximation solutions are solutions to the consistent linear system
+\begin{equation}
+Ax=\tilde{w}, \label{YZ_9.1.14_Eqn}
+\end{equation}
+which has $\tilde{x}$ as a solution. Then by the principle of superposition, the solution to \eqref{YZ_9.1.14_Eqn} consists of sums
+\[
+\tilde{x}+x,
+\]
+where $x$ is a solution to the homogeneous system $Ax=0$.
+\end{solution}
+\end{exercise}
+
+
+
+
+\end{document}
