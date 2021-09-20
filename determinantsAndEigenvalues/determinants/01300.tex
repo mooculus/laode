@@ -1,0 +1,43 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+
+\begin{document}
+
+
+
+\begin{exercise} \label{YZ_7.1_Vandermonde_b} 
+Let
+\[
+V_3 = \Matrix{x_1^2&x_1&1\\ x_2^2&x_2&1\\x_3^2&x_3&1} 
+\]
+Verify that 
+\[
+\det(V_3) = (x_1-x_2)(x_1-x_3)(x_2-x_3).
+\]
+
+\begin{solution}
+
+\soln
+There are many possible ways to calculate this determinant. For example subtract the second column times $x_1$ from the first column. Then subtract the third column times $x_1$ from the second column. The determinant remains unchanged under both of these subtractions.  We find
+\[
+    \det(V_3) = \det\Matrix{x_1^2&x_1&1\\x_2^2&x_2&1\\x_3^2&x_3&1} =
+\det\Matrixc{0&x_1&1\\x_2^2-x_2x_1&x_2&1\\x_3^2-x_3x_1&x_3&1}
+\]
+and 
+\[
+\det(V_3)=\det\Matrixc{0&0&1\\ x_2^2-x_2x_1&x_2-x_1&1\\x_3^2-x_3x_1&x_3-x_1&1}.
+\]
+Expansion by cofactors along the first row (see \eqref{e:inductdetc}) yields
+\[
+\det(V_3)=(-1)^{3+1}A_{13}=\det\Matrix{x_2(x_2-x_1)&x_2-x_1\\x_3(x_3-x_1)&x_3-x_1},
+\]
+where $A_{13}$ is the cofactor minor of $A$ obtained by deleting the first row and third column.
+Since $x_2-x_1$ is a common factor on the first row and $x_3-x_1$ is a common factor on the second row, we obtain
+\begin{align*}
+    \det(V_3)&=(x_2-x_1)(x_3-x_1) \det\Matrix{x_2&1\\x_3&1}\\
+&=(x_2-x_1)(x_3-x_1)(x_2-x_3)\\
+&=(x_1-x_2)(x_1-x_3)(x_2-x_3).
+\end{align*}
+\end{solution}
+\end{exercise}
+\end{document}

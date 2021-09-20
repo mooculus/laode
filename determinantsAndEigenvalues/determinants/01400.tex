@@ -1,0 +1,60 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+
+
+\begin{document}
+
+
+\begin{exercise}   \label{YZ_7.1_Vandermonde_c} 
+The $(n+1)\times (n+1)$ {\em Vandermonde matrix} is
+\begin{equation}  \label{YZ_7.1_Vandermonde}
+V_{n+1} = \Matrixc{x_1^n &x_1^{n-1}&\cdots&x_1^2&x_1&1\\
+x_2^n &x_2^{n-1}&\cdots&x_2^2&x_2&1\\
+\vdots&\vdots & & \vdots&\vdots &\vdots\\
+x_{n+1}^n &x_{n+1}^{n-1}&\cdots&x^2_{n-1}&x_{n+1}&1\\}.
+\end{equation}
+Verify that
+\begin{equation}  \label{YZ_7.1_Vandermonde_det}
+\det(V_{n+1})=\prod_{1\le i<j\le n+1}(x_i-x_j).
+\end{equation}
+
+%\RED{(Hint: Use induction on $n$. Perform column operations similar to Exercise \ref{YZ_7.1_Vandermonde_b}.)}
+\begin{solution}
+
+\soln 
+
+We verify \eqref{YZ_7.1_Vandermonde_det} by induction. Note that Exercise~\ref{YZ_7.1_Vandermonde_a}verifies the induction step $n = 1$.
+
+Suppose the claim is valid for $V_n$. Subtract the second column times $x_1$ from the first column, then subtract the third column times $x_1$ from the second column, etc, until at the last step where we subtract the last column times $x_1$ from the second from the last column. By performing these operations, we get
+\[
+\det(V_{n+1})=
+\det\Matrixc{0&0&\cdots &0&0&1\\
+x_2^{n-1}(x_2-x_1) &x_2^{n-2}(x_2-x_1)&\cdots&x_2(x_2-x_1)&x_2-x_1&1\\
+\vdots&\vdots & & \vdots &\vdots&\vdots\\
+x_{n+1}^{n-1}(x_{n+1}-x_1) &x_{n+1}^{n-2}(x_{n+1}-x_1)&\cdots&x_{n+1}(x_{n+1}-x_1)&x_{n+1}-x_1&1}.
+\]
+Then by cofactor expansion \eqref{e:inductdetc} along the first row, we get
+\[
+\det(V_{n+1})=(-1)^{n+2}\det\Matrixc{
+x_2^{n-1}(x_2-x_1) &x_2^{n-2}(x_2-x_1)&\cdots&x_2(x_2-x_1)&x_2-x_1\\
+\vdots&\vdots & & \vdots &\vdots\\
+x_{n+1}^{n-1}(x_{n+1}-x_1) &x_{n+1}^{n-2}(x_{n+1}-x_1)&\cdots&x_{n+1}(x_{n+1}-x_1)&x_{n+1}-x_1}.
+\]
+Then by taking out the common factors $(x_i-x_1)$ on the $(i-1)$-th row, we have
+\begin{align*}
+    \det(V_{n+1}) & =(-1)^{n+2}\prod_{i=2}^{n+1}(x_i-x_1)
+    \det\Matrixc{ x_2^{n-1} & x_2^{n-2} & \cdots&x_2&1\\ \vdots&\vdots & & \vdots &\vdots\\
+x_{n+1}^{n-1} &x_{n+1}^{n-2}&\cdots&x_{n+1}&1}\\ &=\prod_{i=2}^{n+1}(x_1-x_i)\det(V_n),
+\end{align*}
+where $V_n$ is the $n\times n$ matrix in variables $x_2,\ldots x_{n+1}$. So by induction step, $\det(V_n)=\prod_{2\le i<j\le n+1}(x_i-x_j)$. Then plug into the previous step, we find that
+
+\[
+\det(V_{n+1})=\prod_{i=2}^{n+1}(x_1-x_i)\cdot \prod_{2\le i<j\le n+1}(x_i-x_j).
+\]
+which is exactly the expression in $(\ref{YZ_7.1_Vandermonde})$, so we verified the claim.
+\end{solution}
+\end{exercise}
+
+
+\end{document}
+

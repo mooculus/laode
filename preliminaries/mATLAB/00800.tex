@@ -1,0 +1,26 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\begin{computerExercise}\label{YZ_1.2_operation3}
+Use \Matlab to compute $\log(-0.1) $.  Are you surprised by the answer? 
+
+\begin{solution}
+\ans $\log(-0.1) = -2.3026 + 3.1416 i$.
+
+\soln
+The \Matlab response to log(-0.1) may be unexpected since the real logarithm is only defined for positive real numbers.  The \Matlab help for $\log$ states:
+
+\begin{quote}
+$\log(x)$ returns the natural logarithm $\ln(x)$.
+The $\log$ function’s domain includes negative and complex numbers, which can lead to unexpected results if used unintentionally. For negative and complex numbers z = u + i*w, the complex logarithm log(z) returns
+\[
+\log(\text{abs}(z)) + \text{angle}(z)*i
+\]
+If you want negative and complex numbers to return error messages rather than return complex results, use {\tt reallog} instead of {\tt log}.
+\end{quote}
+\end{solution}
+\end{computerExercise}
+
+
+\end{document}

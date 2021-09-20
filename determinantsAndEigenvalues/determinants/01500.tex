@@ -1,0 +1,42 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+
+\begin{document}
+
+
+\begin{exercise} \label{YZ_7.1_Polynomial_Interpolation}(This exercise generalizes Exercise~\ref{c2.1.11} in Section \ref{S:2.1}.)
+Let $x_1,\ldots,x_{n+1}$ be distinct real numbers and let $b_1,\ldots, b_{n+1}$ be real numbers. Then 
+there exists a unique polynomial 
+\[
+P(x)=a_nx^n+a_{n-1}x^{n-1}+\cdots+a_0
+\]
+of degree $n$ such that 
+\begin{equation} \label{YZ_7.1_PolyEqn}
+    P(x_i)=b_i
+\end{equation}
+for $i=1,\ldots, n+1$.
+
+{\bf Hint:} Rewrite the system of equations \eqref{YZ_7.1_PolyEqn} as the system of linear equations $V_{n+1} x = b$, where $V_{n+1}$ is the Vandermonde matrix \eqref{YZ_7.1_Vandermonde}.
+\begin{solution}
+
+\soln 
+
+Express \eqref{YZ_7.1_PolyEqn} as the matrix equation
+\[
+\Matrixc{x_1^n &x_1^{n-1}&\cdots&x_1&1\\
+x_2^n &x_2^{n-1}&\cdots&x_2&1\\
+\vdots&\vdots & & \vdots &\vdots\\
+x_{n+1}^n &x_{n+1}^{n-1}&\cdots&x_{n+1}&1\\}\Matrixc{a_n\\a_{n-1}\\ \vdots\\ a_1\\1}=\Matrixc{b_1 \\ b_2 \\ \vdots\\b_{n+1}},
+\]
+where the matrix on the left is the Vandermonde matrix $V_{n+1}$, whose determinant is $\prod_{1\le i<j\le n+1}(x_i-x_j)$ according to \eqref{YZ_7.1_Vandermonde}. By assumption, all $x_i$'s are distinct, so $x_i-x_j\neq 0$ whenever $i\neq j$. This implies $\det(V_{n+1})\neq 0$. 
+It follows from Theorem \ref{T:detandinv} that the Vandermonde matrix $V_{n+1}$ is invertible, so  
+\[
+\Matrixc{a_n\\ \vdots \\ a_1 \\1}=V_{n+1}^{-1}\Matrixc{b_1\\ \vdots\\b_{n+1}}
+\]
+has a unique solution. That solution determines a unique polynomial $P(x)$ of degree $n$.
+
+\end{solution}
+\end{exercise}
+
+
+\end{document}
