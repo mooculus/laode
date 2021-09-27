@@ -1,0 +1,25 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+
+\begin{document}
+\begin{exercise} \label{YZ_1.3_decomp1}
+Let $A$ be an $n\times n$ matrix, verify that 
+\begin{equation} 
+ A = \frac{A+A^t}{2}+\frac{A-A^t}{2}.\label{YZ_2.1_decomp} 
+\end{equation}
+Use \eqref{YZ_2.1_decomp} to verify that any $n\times n$ matrix can be expressed as a sum of a symmetric matrix and a skew-symmetric matrix.
+
+\begin{solution}
+\soln
+By factoring the right hand side of $\eqref{YZ_2.1_decomp}$,
+\[ 
+\frac{A+A^t}{2}+\frac{A-A^t}{2}=\frac{A}{2}+\frac{A^t}{2}+\frac{A}{2}-\frac{A^t}{2}=(\frac{A}{2}+\frac{A}{2})+(\frac{A^t}{2}-\frac{A^t}{2})=A.
+\]
+ Therefore the equality \eqref{YZ_2.1_decomp} holds.
+ 
+By Exercise \ref{YZ_1.3_sym4}, the matrix $A+A^t$ is symmetric. Clearly, $\frac{A+A^t}{2}$ is symmetric as well. By Exercise \ref{YZ_1.3_skewsym2}, $A-A^t$ is symmetric, and $\frac{A-A^t}{2}$ is skew-symmetric as well. So the decomposition \eqref{YZ_2.1_decomp} expressed $A$ as a sum of a symmetric matrix and a skew-symmetric matrix.
+\end{solution}
+\end{exercise}
+
+
+\end{document}

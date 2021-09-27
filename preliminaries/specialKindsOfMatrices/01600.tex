@@ -1,0 +1,51 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+
+\begin{document}
+
+Let $A=\Matrix{-1&1\\4&5}$ and $B=\Matrix{-2&3\\0&1}$. In Exercises \ref{YZ_1.3_Compu1}-\ref{YZ_1.3_Compu4}, determine whether the given matrix is symmetric, skew symmetric, or neither.
+
+\begin{exercise}\label{YZ_1.3_Compu1}
+$A+B$.
+
+\begin{solution}
+\ans The matrix is symmetric.
+
+\soln
+$A+B=\Matrix{-1&1\\4&5}+\Matrix{-2&3\\0&1}=\Matrix{-3&4\\4&6}$. We see that the $(2,1)$ entry coincides with the $(1,2)$ entry, so the matrix is symmetric.
+\end{solution}
+\end{exercise}
+
+\begin{exercise}\label{YZ_1.3_Compu2}
+$A^t-B$.
+
+\begin{solution}
+\ans The matrix is symmetric.
+
+\soln
+$A^t-B=\Matrix{-1&1\\4&5}^t-\Matrix{-2&3\\0&1}=\Matrix{-1&4\\1&5}-\Matrix{-2&3\\0&1}=\Matrix{1&1\\1&4}$. We see that the $(2,1)$ entry coincides with the $(1,2)$ entry, so the matrix is symmetric.
+\end{solution}
+\end{exercise}
+
+\begin{exercise}\label{YZ_1.3_Compu3}
+$\frac{A+A^t}{2}$.
+
+\begin{solution}
+\ans The matrix is symmetric.
+
+\soln According to Exercise \ref{YZ_1.3_sym4}, $A+A^t$ is symmetric. Denote $A+A^t$ by $B$, and let $c=\frac12$. Then by Exercise \ref{YZ_1.3_transpose2}, $(cB)^t=cB^t=cB$. Being symmetric is unchanged by multiplying by a constant.
+\end{solution}
+\end{exercise}
+
+\begin{exercise}\label{YZ_1.3_Compu4}
+$\frac{2021}{2}(B-B^t)$.
+
+\begin{solution}
+\ans The matrix is skew-symmetric.
+
+\soln According to Exercise \ref{YZ_1.3_skewsym2}, $A-A^t$ is skew-symmetric. Denote $A-A^t$ by $B$, and let $c=\frac{2021}{2}$. Then by Exercise \ref{YZ_1.3_transpose2}, $(cB)^t=cB^t=-cB$. Being skew-symmetric is unchanged by multiplying by a constant.
+
+\end{solution}
+\end{exercise}
+
+\end{document}
