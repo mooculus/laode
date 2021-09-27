@@ -1,0 +1,55 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+
+\begin{document}
+
+\begin{computerExercise}  \label{YZ_1.3_skewsym3}
+Use \Matlab to show that $A-A^t$ is skew-symmetric for 
+\[
+A=\Matrix{2&8&3&0\\1&0&8&2\\2&-5&-6&7\\9&-1&-4&5}
+\]
+in the following way: 
+\begin{enumeratea}
+\item Enter matrix $A$ in \Matlab.
+\item Define $B=A-A^t$.
+\item Verify that $B+B^t=0$.
+\end{enumeratea}
+
+\begin{solution}
+\soln
+\begin{enumeratea}
+
+\item Enter the command {\tt A = [2,8,3,0;1,0,8,2;2,-5,-6,7;9,-1,-4,5]} and obtain
+\begin{verbatim}
+A =
+
+     2     8     3     0
+     1     0     8     2
+     2    -5    -6     7
+     9    -1    -4     5
+\end{verbatim}
+\item Enter the command {\tt B = A - A'} and obtain
+\begin{verbatim}
+B =
+
+     0     7     1    -9
+    -7     0    13     3
+    -1   -13     0    11
+     9    -3   -11     0
+\end{verbatim}
+\item Enter the command {\tt B + B'} and obtain
+\begin{verbatim}
+ans =
+
+     0     0     0     0
+     0     0     0     0
+     0     0     0     0
+     0     0     0     0
+
+\end{verbatim}
+It is a zero matrix, meaning $B=-B^t$, so $B=A-A^t$ is skew-symmetric.
+\end{enumeratea}
+\end{solution}
+\end{computerExercise}
+
+\end{document}

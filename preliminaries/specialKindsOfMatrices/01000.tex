@@ -1,0 +1,17 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+
+\begin{document}
+
+Exercises \ref{YZ_1.3_transpose1}-\ref{YZ_1.3_transpose2} prove several properties of the transpose operation
+\begin{exercise} \label{YZ_1.3_transpose1}
+Let $A$ and $B$ be $m\times n$ matrices. Show that 
+\begin{equation} \label{at+bt}
+(A+B)^t=A^t+B^t.
+\end{equation}
+\begin{solution}
+\soln Recall that the transpose operation switches the rows and columns of a matrix. Denote the $(i,j)$-entries of the matrices $A$ and $B$ by $a_{ij}$ and $b_{ij}$, respectively. So, the $(i,j)$-entry of $A^t$ is $a_{ji}$ and the $(i,j)$-entry of $B^t$ is $b_{ji}$. Therefore, the $(i,j)$-entry of $A^t+B^t$ is $a_{ji}+b_{ji}$. By definition the $(i,j)$-entry of $(A+B)^t$ is equal to $a_{ji}+b_{ji}$. Since the entries of $(A+B)^t$ and $A^t+B^t$ coincide, the two matrices are equal.
+\end{solution}
+\end{exercise}
+
+\end{document}

@@ -1,0 +1,19 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+
+\begin{document}
+
+\begin{definition} \rm \label{D:skew_symmetric}
+An $n\times n$ matrix is {\em skew-symmetric} if $A^t = -A$. Equivalently, $a_{ij} = -a_{ji}$ for each $i,j = 1,\ldots,n$.
+\end{definition}
+
+
+\begin{exercise} \label{YZ_1.3_skewsym1}
+Show that an $n\times n$ skew-symmetric matrix $A$ has diagonal elements $a_{ii}=0$, for all $i=1,\ldots,n$.
+
+\begin{solution}
+\soln Since $A$ is skew-symmetric, $a_{ij} = -a_{ji}$. In particular, when $i = j$, skew-symmetry implies $a_{ii} = -a_{ii}$. Hence the diagonal elements $a_{ii} = 0$ for $i=1,\ldots, n$.
+\end{solution}
+\end{exercise}
+
+\end{document}
