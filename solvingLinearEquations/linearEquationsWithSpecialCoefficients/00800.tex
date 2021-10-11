@@ -1,0 +1,53 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+
+
+\begin{document}
+
+
+In Exercise \ref{YZ_2.5_Matlab1}-\ref{YZ_2.5_Matlab2}, use \Matlab to simplify the expression and expression the solution as $x+iy$, where $x$ and $y$ are real numbers.
+\begin{computerExercise}\label{YZ_2.5_Matlab1}
+$\frac{3\sqrt{5}-6i}{(7+2i)^2}$.
+
+\begin{solution}
+\ans $0.0477 - 0.1630i$.
+
+\soln 
+Enter the command 
+
+\begin{verbatim}
+    (3 * sqrt(5) - 6i)/(7 + 2i)^2}
+\end{verbatim}
+
+ and find the solution 
+\begin{verbatim}
+ans =
+
+    0.0477 - 0.1630i
+\end{verbatim}
+\end{solution}
+\end{computerExercise}
+
+\begin{computerExercise}\label{YZ_2.5_Matlab2}
+$(-3 + 2i)^4\overline{\sqrt{2} - 5i}$.
+
+\begin{solution}
+\ans $4.3171\times 10^2 - 7.6471\times 10^2i$.
+
+\soln  The conjugation command in \Matlab is {\tt conj}. Enter the command 
+
+\begin{verbatim}
+    (-3 + 2i)^4 * conj(sqrt(2) - 5i)
+\end{verbatim}
+
+ and find the solution 
+\begin{verbatim}
+ans =
+
+    4.3171e+02 - 7.6471e+02i
+\end{verbatim}
+
+\end{solution}
+\end{computerExercise}
+
+\end{document}
