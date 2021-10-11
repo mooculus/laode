@@ -1,0 +1,63 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+
+\begin{document}
+
+
+
+For a complex number $z=x+iy$, $x$ is called the \textit{real part} of $z$ and $y$ is called the \textit{imaginary part} of $z$. In \Matlabp, {\tt real(z)} returns the real part of $z$ and {\tt imag(z)} returns the imaginary part of $z$. 
+For example, on entering  {\tt real(2 + 3i)}, \Matlab returns {\tt 2}, whereas on entering {\tt imag(2 + 3i)}, \Matlab returns {\tt 3}.
+
+\begin{computerExercise} \label{YZ_2.5_Matlab3}
+Verify the identity \eqref{YZ_2.5_E1} for $z=-21+56i$.
+
+\begin{solution}
+
+\soln In \Matlab, enter the command {\tt z = -21 + 56i}, then enter {\tt z * conj(z)} and find
+\begin{verbatim}
+ans =
+
+        3577
+\end{verbatim}
+Enter 
+\begin{verbatim}
+    real(z)^2 + imag(z)^2
+\end{verbatim}
+and find 
+\begin{verbatim}
+ans =
+
+        3577
+\end{verbatim}
+So the identity \eqref{YZ_2.5_E1} holds for $z=-21+56i$.
+\end{solution}
+\end{computerExercise}
+
+\begin{computerExercise} \label{YZ_2.5_Matlab4}
+Verify the identity \eqref{YZ_2.5_E2} for $z=14-4\sqrt{5}i$.
+
+\begin{solution}
+
+\soln In \Matlab, enter the command {\tt z = 14 - 4 * sqrt(5) * i}, then enter {\tt 1 / z} and find
+\begin{verbatim}
+ans =
+
+        0.0507 + 0.0324i
+\end{verbatim}
+Enter 
+\begin{verbatim}
+    conj(z) / (real(z)^2 + imag(z)^2)
+\end{verbatim}
+and find 
+\begin{verbatim}
+ans =
+
+        0.0507 + 0.0324i
+\end{verbatim}
+So the identity \eqref{YZ_2.5_E2} holds for $z=14-4\sqrt{5}i$.
+\end{solution}
+\end{computerExercise}
+\end{document}
+
+
+

@@ -1,0 +1,34 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+
+
+\begin{document}
+
+
+\begin{exercise} \label{YZ_2.5_proof}
+Let $z=x+iy$ be a complex number. 
+
+\begin{enumeratea}
+\item Verify that 
+\begin{equation}
+    z\bar{z}=x^2+y^2. \label{YZ_2.5_E1}
+\end{equation}
+
+
+\item Verify that 
+\begin{equation}
+    \frac{1}{z}=\frac{x-iy}{x^2+y^2}. \label{YZ_2.5_E2}
+\end{equation}
+\end{enumeratea}
+
+\begin{solution}
+\soln 
+\begin{enumeratea}
+\item $z\bar{z}=(x+iy)\overline{(x+iy)}=(x+iy)(x-iy)=x^2-i^2y^2-x iy+iyx=x^2-(-1)y^2+0=x^2+y^2.$
+
+\item By part (a), $z\bar{z}=x^2+y^2$, so $\frac{1}{z}=\frac{\bar{z}}{z\bar{z}}=\frac{x-iy}{x^2+y^2}$.
+\end{enumeratea}
+\end{solution}
+\end{exercise}
+
+\end{document}
