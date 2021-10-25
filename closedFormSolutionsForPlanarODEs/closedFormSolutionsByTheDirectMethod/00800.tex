@@ -1,0 +1,50 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+
+
+\begin{document}
+
+
+\begin{exercise}\label{YZ_6.2_CplxMult1}
+Show that multiplication of the plane $\C$ by $i$ rotates $\C$ counterclockwise by $90^\circ$. 
+
+\begin{solution}
+\soln
+Calculate
+\[
+i (x+iy) = -y +ix
+\]
+Therefore, the $(x,y)$-plane moves by 
+\[
+ \Matrix{x\\y} \mapsto \Matrix{-y\\x} = \Matrix{ 0 & -1 \\ 1 & 0 } \Matrix{x\\y}
+\]
+which is rotation counterclockwise by $90^\circ$.
+\end{solution}
+\end{exercise}
+
+
+\begin{exercise} \label{YZ_6.2_CplxMult1}
+Show that multiplication of the plane $\C$ by $\sigma+i\tau$ moves $\C$ 
+by the matrix $\Matrix{\sigma&-\tau\\ \tau&\sigma}$.
+
+\begin{solution}
+\soln
+Calculate
+\[
+(\sigma+i\tau) (x+iy) = (\sigma x - \tau y)+i(\tau x + \sigma y),
+\]
+Therefore, the $(x,y)$-plane moves by
+\[
+ \Matrix{x\\y} \mapsto \Matrix{\sigma x - \tau y \\ \tau x + \sigma y} = 
+ \Matrix{ \sigma & -\tau \\ \tau & \sigma } \Matrix{x\\y}.
+\]
+\end{solution}
+
+\end{exercise}
+
+
+
+\end{document}
+
+
+

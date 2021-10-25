@@ -1,0 +1,44 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+
+
+\begin{document}
+
+
+In Exercise \ref{YZ_6.2_Euler1}-\ref{YZ_6.2_Euler2}, use Euler's formula \eqref{E:Euler} and \eqref{e:complex_exp} to express the given complex numbers as $x+iy$, where $x$ and $y$ are real numbers.
+\begin{exercise}\label{YZ_6.2_Euler1}
+$e^{i\pi}+ 1$.
+
+\begin{solution}
+\ans $0$.
+
+\soln Apply Euler's formula \eqref{E:Euler} to obtain
+\[
+e^{i\pi} + 1 = \cos(\pi) + i\sin(\pi) + 1 = -1 + i(0) + 1 = 0.
+\]
+\end{solution}
+\end{exercise}
+
+\begin{exercise}\label{YZ_6.2_Euler2}
+$e^{\ln 2+i\frac{3\pi}{2}}$.
+
+\begin{solution}
+\ans $-2i$.
+
+\soln Apply formula \eqref{e:complex_exp}, we obtain
+\[
+e^{\ln 2+i\frac{3\pi}{2}}=e^{\ln 2}e^{i\frac{3\pi}{2}}=e^{\ln 2}(\cos(\frac{3\pi}{2})+i\sin(\frac{3\pi}{2})).
+\]
+Since $e^{\ln 2}=2$, $\cos(\frac{3\pi}{2})=0$, and $\sin(\frac{3\pi}{2})=-1$, we have
+\[
+e^{\ln 2+i\frac{3\pi}{2}}=e^{\ln 2}(\cos(\frac{3\pi}{2})+i\sin(\frac{3\pi}{2}))=2(0+i(-1))=-2i.
+\]
+\end{solution}
+\end{exercise}
+
+
+
+\end{document}
+
+
+

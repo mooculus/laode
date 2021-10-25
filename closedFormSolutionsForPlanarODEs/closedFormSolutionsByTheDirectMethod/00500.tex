@@ -1,0 +1,71 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+
+
+\begin{document}
+
+\begin{exercise}\label{YZ_6.2_trig1}
+ Use Euler's formula \eqref{E:Euler} and the identity 
+\begin{equation}
+    e^{i(a-b)}=e^{ia}e^{-ib}\label{YZ_6.2_Etrig1}
+\end{equation}
+to prove  
+\begin{equation}
+ \cos(a-b)=\cos(a)\cos(b)+\sin(a)\sin(b), \label{YZ_6.2_Etrig2}
+\end{equation}
+\begin{equation}
+  \sin(a-b)=\sin(a)\cos(b)-\cos(a)\sin(b). \label{YZ_6.2_Etrig3}  
+\end{equation}
+
+\begin{solution}
+\soln
+
+Euler's formula and \eqref{YZ_6.2_Etrig1} show that 
+\[
+ \cos(a-b)+i\sin(a-b)=e^{i(a-b)}=e^{ia}e^{-ib}.
+\]
+Apply Euler's formula to $e^{ia}$ and $e^{-ib}$ to  get
+\[
+ \cos(a-b)+i\sin(a-b) = (\cos(a)+i\sin(a))  (\cos(b)-i\sin(b)).  
+\]
+Equate real and imaginary parts to obtain \eqref{YZ_6.2_Etrig2} and \eqref{YZ_6.2_Etrig2}.
+\end{solution}
+\end{exercise}
+
+\begin{exercise}\label{YZ_6.2_trig2}
+Equate the real and imaginary parts of both sides of the identity \begin{equation}
+    e^{2i\theta}=e^{i\theta}\cdot e^{i\theta}\label{YZ_6.2_Etrig4}
+\end{equation}
+
+and Euler's formula \eqref{E:Euler} to prove the identities
+\begin{equation}
+    \sin(2\theta)=2\sin(\theta)\cos(\theta),\label{YZ_6.2_Etrig5}
+\end{equation}
+\begin{equation}
+    \cos(2\theta)=\cos^{2}(\theta)-\sin^{2}(\theta).\label{YZ_6.2_Etrig6}
+\end{equation}
+
+\begin{solution}
+\soln
+Using Euler's formula \eqref{E:Euler} and \eqref{YZ_6.2_Etrig4} observe that
+\[
+ \cos(2\theta)+i\sin(2\theta) = (\cos(\theta)+i\sin(\theta))^2.
+\]
+Therefore 
+\begin{align*}
+    \cos(2\theta)+i\sin(2\theta)&=(\cos(\theta)+i\sin(\theta))(\cos(\theta)+i\sin(\theta))\\
+    &=\cos^2(\theta)+2i\cos(\theta)\sin(\theta)+i^2\sin^2(\theta)\\
+    &=\cos^2(\theta)-\sin^2(\theta)+2i(\cos(\theta)\sin(\theta)).
+\end{align*}
+Equate real and imaginary parts to obtain \eqref{YZ_6.2_Etrig6} and \eqref{YZ_6.2_Etrig5}.
+
+\end{solution}
+
+\end{exercise}
+
+
+
+\end{document}
+
+
+
