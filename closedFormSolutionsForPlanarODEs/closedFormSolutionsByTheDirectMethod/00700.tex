@@ -1,0 +1,37 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+
+
+\begin{document}
+
+
+\begin{computerExercise} \label{YZ_6.2_Matlab1}
+Use \Matlab to verify 
+
+\begin{equation}
+e^{-13+31i}=e^{-13}(\cos(31)+i\sin(31)). \label{YZ_6.2_EMatlab1}
+\end{equation}
+
+\begin{solution}
+\soln
+
+Enter the command {\tt exp(-13 + 31i)} and obtain
+
+\begin{verbatim}
+
+ans =
+
+   2.0676e-06 - 9.1326e-07i
+   
+\end{verbatim}
+
+On the other hand,  enter the command {\tt exp(-13) * (cos(31) + sin(31)*i)} and we obtain the same result displayed above, so the equality \eqref{YZ_6.2_EMatlab1} holds.
+
+\end{solution}
+
+\end{computerExercise}
+
+\end{document}
+
+
+
