@@ -1,0 +1,24 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+\begin{exercise} \label{YZ_3.5_Permu7}
+Show that there are $n!$ different permutation matrices of size $n\times n$, where $n!=n\cdot (n-1)\cdots 2\cdot 1$.
+{\bf Hint:} Use induction.
+
+\begin{solution}
+\soln
+
+For $n=1$, the only permutation matrix is the $1\times 1$ matrix $(1)$ and the formula is valid. (We also verified the formula for $n=2$ and $n = 3$ in Exercises \ref{YZ_3.5_Permu1} and \ref{YZ_3.5_Permu6}. )
+
+An $n\times n$ permutation matrix $C$ has a single $1$ in the first column and $0$s in the other entries that are in the same row or column as that $1$. Thus $C$ has one of the forms
+\begin{equation}\label{YZ_3.5_Epermu}
+\Matrix{1&0&\cdots &0\\0&*&\cdots &*\\\vdots&\vdots&&\vdots\\0&*&\cdots&*}, \Matrix{0&*&\cdots &*\\1&0&\cdots &0\\\vdots&\vdots&&\vdots\\0&*&\cdots&*},\cdots \Matrix{0&*&\cdots&*\\0&*&\cdots &*\\\vdots&\vdots&&\vdots\\1&0&\cdots &0},
+\end{equation}
+where the $(n-1)\times (n-1)$ minor formed by $*$s in each of the matrices is again a permutation matrix. By the induction assumption, there are $(n-1)!$ different permutation matrices of size $(n-1)\times (n-1)$; hence, there are $(n-1)!$ different permutations matrices in each of the $n$ cases in \eqref{YZ_3.5_Epermu}. Therefore, there are in total $n\times (n-1)! = n!$ different permutation matrices of size $n\times n$.
+\end{solution}
+\end{exercise}
+
+
+
+\end{document}
