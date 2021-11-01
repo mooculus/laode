@@ -1,0 +1,32 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+
+\begin{exercise} \label{YZ_3.5_Permu8}
+Consider the following $n\times n$ permutation matrix
+
+\[
+A=\Matrix{0&1&0&0&\cdots &0\\0&0&1&0&\cdots &0\\0&0&0&1&\cdots &0\\\vdots&\vdots&\vdots&\vdots&&\vdots\\0&0&0&0&\cdots&1\\1&0&0&0&\cdots&0}.
+\]
+Show that $A^n=I_n$.
+{\bf Hint:} Describe the action of $A$ on coordinate vectors.
+
+\begin{solution}
+\soln Since
+\[
+A\Matrix{x_1\\x_2\\\vdots\\x_n}=\Matrix{x_2\\x_3\\\vdots\\x_1},
+\]
+$A$ acts on the coordinate vectors $e_1,\ldots,e_n$ in cyclic order by 
+\[
+e_1\mapsto e_n\mapsto e_{n-1}\mapsto \cdots \mapsto e_2\mapsto e_1.
+\]
+In particular, when we compose the action of $A$ on $e_i$ $n$ times for each $i$, it cycles back to $e_i$.
+
+
+
+Therefore $A^n=\smash[b]{\! \underbrace{A\cdot A\cdots A\,}_\text{$n$ times}}$ fixes each coordinate vector $e_i$, so $A^n=I_n$ is the identity matrix.
+\end{solution}
+\end{exercise}
+
+\end{document}

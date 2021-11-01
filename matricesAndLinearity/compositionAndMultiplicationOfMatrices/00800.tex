@@ -1,0 +1,87 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+\begin{document}
+
+Exercises \ref{YZ_3.5_Permu2} - \ref{YZ_3.5_Permu6} consider $3\times 3$ permutation matrices. Let 
+\[
+A=\Matrix{0&1&0\\0&0&1\\1&0&0} \AND B=\Matrix{1&0&0\\0&0&1\\0&1&0}.
+\]
+
+
+
+\begin{exercise}\label{YZ_3.5_Permu2}
+Compute $A\Matrix{x_1\\x_2\\x_3}$.  Then describe in words how $A$ acts on each coordinate vector 
+\[
+e_1=\Matrix{1\\0\\0}, e_2=\Matrix{0\\1\\0}, e_3=\Matrix{0\\0\\1}.
+\]
+
+\begin{solution}
+\ans $A\Matrix{x_1\\x_2\\x_3} =\Matrix{x_2\\x_3\\x_1}$.  The matrix $A$ permutes the three coordinate vectors in cyclic order by $e_1\mapsto e_3\mapsto e_2\mapsto e_1$.
+\end{solution}
+\end{exercise}
+
+
+\begin{exercise}\label{YZ_3.5_Permu3}
+Compute $B\Matrix{x_1\\x_2\\x_3}$ and describe in words how $B$ acts on each coordinate vector
+\[
+e_1=\Matrix{1\\0\\0}, e_2=\Matrix{0\\1\\0}, e_3=\Matrix{0\\0\\1}.
+\]
+
+\begin{solution}
+\ans $B \Matrix{x_1\\x_2\\x_3} = \Matrix{x_1\\x_3\\x_2}$. $B$ fixes $e_1$, and interchanges $e_2$ and $e_3$.
+
+\end{solution}
+\end{exercise}
+
+\begin{exercise} \label{YZ_3.5_Permu4}
+Compute $A^2$ and $A^3$ and verify that each is a permutation matrix.
+
+\begin{solution}
+\ans $A^2 = \Matrix{0&0&1\\1&0&0\\0&1&0}$ and $A^3 = \Matrix{1&0&0\\0&1&0\\0&0&1} = I_3$. $A^2$ and $A^3$ have unique $1$s in each row and column and hence are permutation matrices.
+\end{solution}
+
+
+\end{exercise}
+
+\begin{exercise} \label{YZ_3.5_Permu5}
+Compute $AB$, $A^2B$, and $BA$ and verify that each is a permutation matrix.
+
+\begin{solution}
+\ans 
+$AB=\Matrix{0&0&1\\0&1&0\\1&0&0}$, $A^2B=BA=\Matrix{0&1&0\\1&0&0\\0&0&1}$. $AB, A^2B$ and $BA$ have unique $1$s in each row and column and hence are permutation matrices.
+
+
+\end{solution}
+\end{exercise}
+
+\begin{exercise} \label{YZ_3.5_Permu6}
+Find all $3\times 3$ permutation matrices.
+
+\begin{solution}
+\ans 
+There are six different $3\times 3$ permutation matrices and they are $I_3, A, A^2, B, AB, A^2B$.
+
+\soln 
+A $3\times 3$ permutation matrix $C$ has a single $1$ in the first column and $0$s in the other entries that are in the same row or column as that $1$. Thus $C$ has one of the forms
+\[
+\Matrix{1 & 0 & 0\\ 0 & * & *\\0 & * & *} \quad \Matrix{0 & * & *\\ 1 & 0 & 0\\ 0 & * & *}
+ \quad \Matrix{0 & * & *\\ 0 & * & *\\ 1 & 0 & 0}
+\]
+Since $C$ has a single $1$ in the $2^{nd}$ column each of these $3\times 3$ matrices yields two possibilities
+\[
+\Matrix{1 & 0 & 0\\ 0 & * & *\\0 & * & *}: \qquad I_3 = \Matrix{1 & 0 & 0\\ 0 & 1 & 0\\0 & 0 & 1} \qquad B = \Matrix{1 & 0 & 0\\ 0 & 0 & 1 \\0 & 1 & 0}
+\]
+\[
+\Matrix{0 & * & *\\ 1 & 0 & 0\\ 0 & * & *}: \qquad A^2B = \Matrix{0 & 1 & 0\\ 1 & 0 & 0\\ 0 & 0 & 1} \qquad A^2 = \Matrix{0 & 0 & 1\\ 1 & 0 & 0\\ 0 & 1 & 0}
+\]
+\[
+\Matrix{0 & * & *\\ 0 & * & *\\ 1 & 0 & 0}: \qquad A = \Matrix{0 & 1 & 0 \\ 0 & 0  & 1 \\ 1 & 0 & 0} \qquad AB = \Matrix{0 & 0 & 1 \\ 0 & 1 & 0 \\ 1 & 0 & 0}
+\]
+Thus, there are at most six $3\times 3$ permutation matrices.
+
+\end{solution}
+\end{exercise}
+
+
+
+\end{document}
