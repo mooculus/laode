@@ -1,0 +1,27 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+
+\begin{document}
+
+Recall that a skew-symmetric matrix $A$ is an $n\times n$ matrix such that $A=-A^t$ (See Definition \ref{D:skew_symmetric}).
+\begin{exercise} \label{YZ_7.1_skewsym1}
+When $n=3$, a skew-symmetric matrix has the form
+\[
+A=\Matrix{0&a&b\\-a&0&c\\-b&-c&0}
+\]
+for some $a,b,c\in \R$. Show that $\det(A)=0$ by direct computation.
+
+\begin{solution}
+\soln
+By a formula for determinant of $3\times 3$ matrices \eqref{e:det3}, we obtain 
+\[
+\det\Matrix{0&a&b\\-a&0&c\\-b&-c&0}=0 + ac(-b) + b(-a)(-c) - 0 - 0 - 0 = 0.
+\]
+So $\det(A)=0$.
+\end{solution}
+\end{exercise}
+
+
+
+
+\end{document}

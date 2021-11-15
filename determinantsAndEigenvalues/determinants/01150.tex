@@ -1,0 +1,26 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+
+\begin{document}
+\begin{exercise} \label{YZ_7.1_permu}
+Show that the determinant of a permutation matrix is $1$ or $-1$. {\bf Hint:} Related to Exercise \ref{YZ_3.5_Permu7}. Use induction.
+
+\begin{solution}
+\soln
+We induct on the size $n$ of the permutation matrix. When $n=1$, the only permutation matrix is the $1\times 1$ matrix $(1)$, whose determinant is $1$, so the assertion is valid. By induction, we assume the assertion is valid for $(n-1)\times (n-1)$ matrices and let $P$ be an $n\times n$ permutation matrix. 
+
+By definition, $P$ has a single $1$ in the first column, say in row $i$,  and $0$'s in the other entries that are in the same row or column as that $1$. Let $Q$ be the matrix obtained from $P$ by swapping rows $1$ and $i$.  It follows that $\det(P) = \pm\det(Q)$ and
+\[
+Q = \Matrix{1 & 0 \\ 0 & S},
+\]
+where $S$ is an $(n-1)\times (n-1)$ permutation matrix. Expanding $\det(Q)$ along the first row yields $\det(Q) = \det(S)$ Hence, by the induction hypothesis 
+\[
+\det(P) = \pm\det(Q) =\pm\det(S) =\pm 1.
+\]
+\end{solution}
+\end{exercise}
+
+
+
+
+\end{document}
