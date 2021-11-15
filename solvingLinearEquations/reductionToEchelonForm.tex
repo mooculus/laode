@@ -373,8 +373,9 @@ reduced echelon form matrix $E$.  Then the {\em rank\/} of $A$,
 denoted $\rank(A)$, is the number of nonzero rows in $E$.
 \end{definition}  \index{rank}
 
-We make three remarks concerning the rank of a matrix.
-\begin{itemize}
+\begin{corollary} \label{C:rank_solutions}
+We make four remarks concerning the rank of a matrix.
+\begin{enumeratea}
 \item An echelon form matrix is always row equivalent to a
 reduced echelon form matrix with the same number of nonzero
 rows.  Thus, to compute the rank of a matrix, we need only
@@ -384,12 +385,11 @@ form.
 Enter a matrix $A$ and type {\tt rank(A)}\index{\computer!rank}.
 \item The number $\ell$ in the statement of Theorem~\ref{number}
 is just the rank of $E$.
-\end{itemize}
-In particular, if the rank of the augmented matrix corresponding to
+\item  \label{C:rank_solutions_d} In particular, if the rank of the augmented matrix corresponding to
 a consistent system of linear equations in $n$ unknowns has rank $\ell$,
 then the solutions to this system are parametrized by $n-\ell$ parameters.
-
-
+\end{enumeratea}
+\end{corollary}
 
 
 \includeexercises
