@@ -1,0 +1,102 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+
+\begin{document}
+
+\begin{exercise} \label{YZ_3.6_assoc1}
+Verify associativity of matrix multiplication $(AB)C=A(BC)$ by hand where
+\[
+A=\Matrix{4&-2} \quad  B=\Matrix{1\\-3} \quad C=\Matrix{0&2}.
+\]
+
+\begin{solution}
+\soln Compute
+\[
+AB=\Matrix{10} \AND BC=\Matrix{0&2\\0&-6}.
+\]
+Therefore
+\[
+(AB)C=\Matrix{10}\Matrix{0&2}=\Matrix{0&20}.
+\]
+\[
+A(BC)=\Matrix{4&-2}\Matrix{0&2\\0&-6}=\Matrix{0&20}.
+\]
+Thus $(AB)C=A(BC)$.
+\end{solution}
+\end{exercise}
+
+
+\begin{exercise}\label{YZ_3.6_assoc2}
+Verify associativity of matrix multiplication $(AB)C=A(BC)$ by hand where
+\[
+A=\Matrix{2&3&1\\0&-1&2} \quad B=\Matrix{0&-1\\2&3\\-2&1} \quad C=\Matrix{3&1\\0&-2}.
+\]
+
+\begin{solution}
+\soln Compute
+\[
+AB=\Matrix{4&8\\-6&-1} \AND BC=\Matrix{0&2\\6&-4\\-6&-4}.
+\]
+Therefore
+\[
+(AB)C=\Matrix{4&8\\-6&-1}\Matrix{3&1\\0&-2}=\Matrix{12&-12\\-18&-4}.
+\]
+\[
+A(BC)=\Matrix{2&3&1\\0&-1&2}\Matrix{0&2\\6&-4\\-6&-4}=\Matrix{12&-12\\-18&-4}.
+\]
+Thus $(AB)C=A(BC)$.
+\end{solution}
+\end{exercise}
+
+\begin{computerExercise}\label{YZ_3.6_assoc3}
+Verify associativity of matrix multiplication $(AB)C=A(BC)$ using \Matlab where
+\[
+A=\Matrix{5&1\\-8&-2\\7&10}\quad B=\Matrix{2&0\\3&-6} \quad C=\Matrix{4&12&-3\\-2&-5&7}
+\]
+
+\begin{solution}
+\soln
+Enter 
+\[
+\begin{array}{l}
+{\tt A = [5,1;-8,-2;7,10]} \\
+{\tt B = [2,0;3,-6]} \\
+{\tt C = [4,12,-3;-2,-5,7]}
+\end{array}
+\]
+to define the three matrices.  Enter 
+\[
+{\tt ABC1 = (A * B)*C} 
+\]
+and \Matlab returns the $3\times 3$ matrix
+\begin{verbatim}
+ABC1=
+
+    64   186   -81
+  -112  -324   150
+   296   828  -552
+\end{verbatim}
+Next enter 
+\[
+{\tt ABC2 = A * ( B*C)} 
+\]
+and \Matlab returns the $3\times 3$ matrix
+\begin{verbatim}
+ABC2=
+
+    64   186   -81
+  -112  -324   150
+   296   828  -552
+\end{verbatim}
+
+Observe that {\tt ABC1} = {\tt ABC2}.  Alternatively,  enter 
+\[
+{\tt ABC1 - ABC2} 
+\]
+and \Matlab returns the zero $3\times 3$ matrix.
+\end{solution}
+
+\end{computerExercise}
+
+
+\end{document}

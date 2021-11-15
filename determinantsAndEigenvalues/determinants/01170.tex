@@ -1,0 +1,29 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+
+\begin{document}
+
+\begin{exercise} \label{YZ_7.1_skewsym2}
+Suppose $A$ is an $n\times n$ skew-symmetric matrix with $n$ being odd. Show that $\det(A)=0$.
+{\bf Hint:} Use Lemma \ref{L:detbasic} (a) and Definition \ref{D:determinants} (b).
+
+\begin{solution}
+\soln
+Since $A = -A^t$,  Lemma \ref{L:detbasic} (a) implies 
+\[
+\det(A) = \det(-A^t) = (-1)^n\det(A^t) = -\det(A^t),
+\]
+since $n$ is odd. By Definition \ref{D:determinants} (b), $\det(A^t)=\det(A)$, so 
+\[
+\det(A) = -\det(A^t)= -\det(A).
+\]
+Hence $\det(A) = 0$.
+
+\end{solution}
+\end{exercise}
+
+
+
+
+
+\end{document}

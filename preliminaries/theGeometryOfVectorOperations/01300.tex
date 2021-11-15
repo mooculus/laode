@@ -1,0 +1,21 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+
+
+\begin{document}
+\begin{exercise} \label{YZ_1.4_zeronorm}
+Show that the only vector that has norm zero is the zero vector. In other words, $||x||=0$ implies that $x=0$.
+
+\begin{solution}
+\soln
+ Suppose $x=\Matrix{x_1\\x_2\\\vdots\\x_n}$, then by definition $||x||=\sqrt{x_1^2+\cdots+x_n^2}=0$. Square the both sides and we get 
+ \begin{equation}
+ x_1^2+\cdots+x_n^2=0. \label{YZ_1.4_Ezeronorm}
+ \end{equation}
+ Since $x_1,\ldots,x_n$ are real numbers, $x_i^2\ge 0$ for each $i=1,\ldots, n$, hence \eqref{YZ_1.4_Ezeronorm} implies that $x_i^2=0$, so $x_i=0$, and $x=\Matrix{0\\0\\\vdots\\0}$ is the zero vector.
+\end{solution}
+
+
+\end{exercise}
+
+\end{document}

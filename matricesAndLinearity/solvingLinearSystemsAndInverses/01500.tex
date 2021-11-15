@@ -1,0 +1,72 @@
+\documentclass{ximera}
+\input{../../preamble.tex}
+
+\begin{document}
+
+
+\begin{exercise} \label{YZ_3.7_invert1}
+
+Let $A$ be an $m\times n$ matrix with $\rank(A) = n$. Use the following steps to 
+prove that $A^tA$ is an invertible $n\times n$ matrix.
+\begin{enumeratea}
+
+\item Let $x$ be an $n \times 1$ column vector. Prove that if $(A^tA)x = 0$, then $Ax = 0$. 
+
+Hint: Calculate $x^t(A^tA)x = ||Ax||^2$.
+
+\item Use $\rank(A) = n$ to prove that if $Ax =0$, then $x = 0$. 
+
+\item Use (a) and (b) to conclude that if $(A^tA)x = 0$ then $x = 0$. Then use Theorem~\ref{invertequiv} to imply that $A^tA$ is invertible. 
+
+\end{enumeratea}
+
+
+\begin{solution}
+\soln
+
+\begin{enumeratea}
+\item By associativity of matrix multiplication and $(Ax)^t=x^tA^t$ \eqref{e:transposeprod}, one has
+\[
+x^t(A^tA)x = (x^tA^t)(Ax) = (Ax)^t(Ax) = ||Ax||^2.
+\]
+ Hence if $(A^tA)x = 0$, then $||Ax||^2 = 0$ and $Ax = 0$. 
+\item Use Corollary~\ref{C:rank_solutions}\eqref{C:rank_solutions_d} to conclude that $\rank(A) = n$ implies that the only solution to $Ax = 0$ is $x=0$.
+
+\item It follows from (a) and (b) that 
+\[
+(A^tA)x = 0 \Longrightarrow Ax = 0 \Longrightarrow x = 0.
+\]
+Theorem \ref{invertequiv} (c)$\Rightarrow$(a) implies that $A^tA$ is invertible.
+\end{enumeratea}
+\end{solution}
+\end{exercise}
+
+
+\begin{exercise} \label{YZ_3.7_invert2} 
+Let $A$ be an $m\times n$ matrix with rank $n$.  Use Exercise~\ref{YZ_3.7_invert1} to prove:  
+Suppose the system of linear equations 
+\begin{equation} 
+    Ax=b \label{YZ_3.7_Eqn}
+\end{equation}
+is consistent, then 
+\[
+x=(A^tA)^{-1}A^tb.
+\]
+
+\begin{solution}
+\soln
+Multiply by $A^t$ on both sides of \eqref{YZ_3.7_Eqn} on the left, we obtain
+\begin{equation}
+    A^tAx=A^tb. \label{YZ_3.7_Eqn2}
+\end{equation}
+
+According to Exercise~\ref{YZ_3.7_invert1}, $A^tA$ is invertible.  Hence we multiply 
+both sides of \eqref{YZ_3.7_Eqn2} by $(A^tA)^{-1}$ to obtain
+\[
+x=(A^tA)^{-1}A^tb.
+\]
+\end{solution}
+
+\end{exercise}
+
+\end{document}
