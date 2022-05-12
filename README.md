@@ -1,4 +1,4 @@
-# LAODE by Martin Golubitsky and Michael Dellnitz
+## LAODE by Martin Golubitsky and Michael Dellnitz and Jim Fowler
 
 [View the free PDF textbook.](https://osu.app.box.com/v/laode)
 
