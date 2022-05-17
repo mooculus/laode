@@ -1,3 +1,9 @@
+for file in Dir.new('packages').entries
+  if file !== '.' and file !== '..' then
+    `ln packages/#{file} linearAlgebra/#{file}`
+  end
+end
+
 for line in File.open("../linearAlgebra.aux").readlines
   if line.match( /\\newlabel{([^}]*)}{{([^}]*)}/ )
     number = $2
