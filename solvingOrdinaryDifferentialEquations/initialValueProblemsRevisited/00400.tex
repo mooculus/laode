@@ -3,30 +3,36 @@
 \begin{document}
 
 \noindent In Exercises~\ref{c4.10A.4a} -- \ref{c4.10A.4b}, find the solution 
-to $\dot{X} = CX$ satisfying $X(0)=X_0$ in two different ways, as follows.  
-\begin{itemize}
-\item[(a)]  Use {\pplane} to find $X(0.5)$.  {\bf Hint}: Use the 
-{\sf Appearance} window in {\pplane} to compute the solution from 
-$t_{min} = 0$ to $t_{max}=0.5$.
-Then use the {\sf zoom in square} 
-feature to determine an answer to three decimal places.  
-\item[(b)]  Next use \Matlab to find the eigenvalues and eigenvectors of $C$ 
-and to find a closed form solution $X(t)$.  Use this formula to evaluate 
+to $\dot{X} = CX$ satisfying $X(0)=X_0$. %in two different ways, as follows.  
+
+%\begin{itemize}
+%\item[(a)]  
+%Use {\pplane} to find $X(0.5)$.  
+%{\bf Hint}: Use the lower right {\sf Appearance} window in {\pplane} to compute the solution from $t_{min} = 0$ to $t_{max}=0.5$. Then use the {\sf zoom in square} 
+%feature to determine an answer to three decimal places.  
+%\item[(b)]  Next 
+
+Use \Matlab to find the eigenvalues and eigenvectors of $C$ 
+and then find a closed form solution $X(t)$.  Use this formula to evaluate 
 $X(0.5)$ to three decimal places.    
-\item[(c)]  Do the two answers agree?
-\end{itemize}
+%\item[(c)]  Do the two answers agree?
+%\end{itemize}
+
 \begin{computerExercise}  \label{c4.10A.4a}  
 $C = \mattwo{2.65}{-2.34}{-1.5}{-1.2} \AND X_0=\vectwo{0.5}{0.1}$.
 
 \begin{solution}
-\ans $X(0.5) = (0.155,0.386)^t$ and the two methods agree to three 
-decimal places.
+\ans $X(0.5) = (0.155,0.386)^t$. 
+%and the two methods agree to three decimal places.
 
-\soln (a) The result of the {\pplane} integration is given in 
-Figure~\ref{c4.10A.4a}a. After zooming several times we arrive at
-Figure~\ref{c4.10A.4a}b.  By inspection $X(0.5)=(0.155,0.386)$.
+%\soln (a) The result of the {\pplane} integration is given in 
+%Figure~\ref{c4.10A.4a}a. After zooming several times we arrive at
+%Figure~\ref{c4.10A.4a}b.  By inspection $X(0.5)=(0.155,0.386)$.
 
-(b)  Enter the matrix $C$ into \Matlab by typing
+%(b)  
+
+\soln
+Enter the matrix $C$ into \Matlab by typing
 \begin{verbatim}
 C = [2.65 -2.34; -1.5 -1.2];
 \end{verbatim}
@@ -72,31 +78,32 @@ X5 =
 \end{verbatim}
 
 
-(c)  The two answers agree to three decimal places.
+%(c)  The two answers agree to three decimal places.
 
+\ignore{
 \begin{figure}[htb]
                        \centerline{%
                        \includegraphics[width=2.75in]{exfigure/4-9-8a.pdf}
                        \includegraphics[width=2.75in]{exfigure/4-9-8b.pdf}}
                 \exercaptwo{c4.10A.4a}
 \end{figure}
-
-
-
+}
 \end{solution}
 \end{computerExercise}
+
 \begin{computerExercise}  \label{c4.10A.4b}  
 $C = \mattwo{1.2}{2.4}{0.6}{-3.5} \AND X_0=\vectwo{0.5}{0.7}$.
 
 \begin{solution}
-\ans $X(0.5) = (1.621,0.291)^t$ and the two methods agree to three 
-decimal places.
+\ans $X(0.5) = (1.621,0.291)^t$ %and the two methods agree to three decimal places.
 
+\ignore{
 \soln (a) The result of the {\pplane} integration is given in 
 Figure~\ref{c4.10A.4b}a. After zooming several times we arrive at
 Figure~\ref{c4.10A.4b}b.  By inspection $X(0.5)=(1.621,0.291)$.
+(b)} 
 
-(b) (b)  Enter the matrix $C$ into \Matlab by typing
+Enter the matrix $C$ into \Matlab by typing
 \begin{verbatim}
 C = [1.2 2.4; 0.6 -3.5];
 \end{verbatim}
@@ -141,17 +148,16 @@ X5 =
     0.2912
 \end{verbatim}
 
-(c)  The two answers agree to three decimal places.
+%(c)  The two answers agree to three decimal places.
 
-
+\ignore{
 \begin{figure}[htb]
                        \centerline{%
                        \includegraphics[width=2.75in]{exfigure/4-9-9a.pdf}
                        \includegraphics[width=2.75in]{exfigure/4-9-9b.pdf}}
                 \exercaptwo{c4.10A.4b}
 \end{figure}
-
-
+}
 
 \end{solution}
 \end{computerExercise}
