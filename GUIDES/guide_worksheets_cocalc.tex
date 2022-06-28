@@ -1,0 +1,123 @@
+\documentclass{article}
+\usepackage{hyperref}
+\usepackage{fullpage}
+\usepackage{enumerate}
+
+\setlength{\parindent}{0in}
+\setlength{\parskip}{1ex}
+
+\title{Guide: Worksheet Construction via CoCalc}
+\author{Jim Fowler \and Marty Golubitsky}
+
+\usepackage{xcolor,verbatimbox}
+\catcode`>=\active %
+\catcode`<=\active %
+\def\openesc{\color{red}}
+\def\closeesc{\color{black}}
+\def\vbdelim{\catcode`<=\active\catcode`>=\active%
+\def<{\openesc}
+\def>{\closeesc}}
+\catcode`>=12 %
+\catcode`<=12 %
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+In the instructor edition of the textbook, you will notice a
+\verb|\label| attached to the exercise and displayed in the margin.
+You can create worksheets from these labels.
+
+\section{Access CoCalc}\label{co-calc}
+
+Rather than installing the ``worksheet builder'' on your own computer,
+you can use CoCalc, a cloud-hosted platform.
+
+\begin{enumerate}[\bfseries(a)]
+\item First, visit \url{https://cocalc.com/} and
+\item sign up for an account.
+\item Email \texttt{fowler@math.osu.edu} with the email address that you used to register for CoCalc.
+\end{enumerate}
+You will then be added to the ``Math 2568'' project.
+
+\section{Build a worksheet}\label{try-it}
+
+Once you added to the Math 2568 project, you are ready to build a
+worksheet.
+
+\begin{enumerate}[\bfseries(a)]
+  \item Visit \url{https://cocalc.com/} and log in again.
+  \item Click on ``projects'' along the top bar of CoCalc.
+  \item Choose ``Math 2568,'' a shared project.
+  \item Click on the ``worksheet-builder'' folder.
+  \item Click on the button labeled ``$\otimes$ New'' to create a new file.
+  \item In the text field labeled ``Name your file'' enter a name for your worksheet.
+  \item Then click on ``LaTeX document.''
+  \item Replace the provided content with a worksheet template, such as
+\begin{verbatim}
+\documentclass{article}
+
+\input{worksheet-preamble}
+
+\title{Math 2568 Homework 7}
+\author{Dr. Instructor}
+\date{Due: Jan 1, 2078 at 9:00am}
+
+\begin{document}
+\maketitle
+
+\exercise{c4.10A.1b}
+\exercise{c4.10A.4a}
+\exercise{c5.1.3}
+
+\end{document}
+\end{verbatim}
+  \item Under ``Build Control and Log'' there is a ``Build Command.''  Replace this with
+    \texttt{./build-both.sh your-chosen-filename.tex} and click the ``Build'' button.
+\item If you return to the ``worksheet-builder'' folder in CoCalc, you will see two PDF files, 
+\begin{enumerate}
+\item one worksheet with solutions called \texttt{homework-samples.pdf} and
+\item one worksheet without solutions called \texttt{homework-samplee.pdf}.
+\end{enumerate}
+Here is a helpful mnemonic: the filename
+\texttt{homework-sample\textcolor{red}{s}.pdf} has an \texttt{s} for
+\texttt{s}olutions and the filename
+\texttt{homework-sample\textcolor{red}{e}.pdf} has an \texttt{e} for
+\texttt{e}xercises.  It is helpful to provide the PDF with solutions
+both to the grader and to the students after the due date.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item \textbf{If desired, edit the \LaTeX\ files.} Two \LaTeX\ files are also created:
+\begin{enumerate}
+\item one with solutions called \texttt{homework1s.tex} and
+\item one without solutions called \texttt{homework1e.tex}.
+\end{enumerate}
+You may edit the \LaTeX\ files by hand if you wish.  For example, you
+may wish to insert \verb|\clearpage| to provide more logical
+page-breaks.  Be warned that these auto-generated \LaTeX\ files may be
+challenging to read.
+\end{enumerate}
+
+\section{Send us new exercises}
+
+Our goal is to increase the number of available exercises.  Your
+contributions will be a tremendous help in reaching this goal.  A good
+source of new exercises will be your exams.
+
+It is easiest for us if you submit a separate \LaTeX\ file for each
+new exercise.  It would be helpful if you use the format provided in
+\href{https://github.com/mooculus/laode/blob/master/GUIDES/template.tex}{\texttt{template.tex}}.
+
+As in the template, your contribution should include the exercise
+written in \LaTeX, and below it the solution (preferably including an
+answer).
+
+Please include the section where the new exercise should appear.  It
+would also be helpful if you provide with the label of the existing
+exercise that the new exercise should follow.
+
+MATLAB exercises should be marked as such.  If needed, please include
+new \verb|.m|-files.
+
+\end{document}
