@@ -7,15 +7,18 @@ for $f\in\CCone$.  Verify that $L$ is a linear mapping.
 
 \begin{solution}
 
+\soln
 Let $f$ and $g$ be functions in ${\cal C}^1$.  Then,
-\[ \begin{array}{rcl}
+\[ 
+\begin{array}{rcl}
  L(f + g) & = & \int_0^{2\pi}(f(t) + g(t))\cos(t)dt \\
 & = & \int_0^{2\pi}(f(t)\cos(t)dt + g(t)\cos(t)dt) \\
 & = & \int_0^{2\pi}f(t)\cos(t)dt + \int_0^{2\pi}g(t)\cos(t)dt \\
 & = & L(f) + L(g). \end{array} \]
 For any real scalar $c$,
 \[ L(cf) = \int_0^{2\pi}cf(t)\cos(t)dt = c\int_0^{2\pi}f(t)\cos(t)dt
-= cL(f). \]
+= cL(f). 
+\]
 So $L$ is a linear mapping.
 
 \end{solution}

@@ -7,17 +7,21 @@
 
 
 \begin{exercise} \label{YZ_3.4.5}
-Every solution to the homogeneous
-
 Let $A$ be an $n\times n$ matrix with rank $n-1$.  Suppose $u$ and $v$ in $\R^n$ are distinct solutions to the inhomogeneous system $Ax = b$.  Verify that every solution to $Ax = b$ can be written as 
 $\alpha u+(1-\alpha)v$ for some $\alpha\in \mathbb R$.
 
 (Hint: idea is similar to Exercise $\ref{A.3.4.2}$.)
 
 \begin{solution}
+
 \soln 
 
-Note that $u-v$ is a nonzero solution to the homogeneous system $Ax = 0$.  Since $\rank(A) = n-1$, according to Theorem $\ref{number}$ (b), every solution to the homogeneous system has the form $\alpha(u-v)$, where $\alpha\in\R$.  Therefore every solution to the inhomogeneous system has the form
+First, note that $\alpha u+(1-\alpha)v$ is a solution to the inhomogeneous system for every $\alpha$ since
+\[
+A(\alpha u+(1-\alpha)v) = \alpha A(u) + (1-\alpha)A(v) =  \alpha b + (1-\alpha) b = b
+\]
+
+Second, note that $u-v$ is a nonzero solution to the homogeneous system $Ax = 0$.  Since $\rank(A) = n-1$, according to Theorem $\ref{number}$(b), every solution to the homogeneous system has the form $\alpha(u-v)$, where $\alpha\in\R$.  Therefore every solution to the inhomogeneous system has the form
 \[
 \alpha(u-v) + v = \alpha u + (1-\alpha) v
 \]

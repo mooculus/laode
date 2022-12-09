@@ -583,8 +583,24 @@ equations in terms of the variables $x_5$ and $x_6$,
 It is important to note that every consistent system of linear equations
 corresponding to an augmented matrix in reduced echelon form can be
 solved as in \eqref{e:refexamp6} --- and this is one reason for emphasizing
-reduced echelon form.  We will discuss the reduction to reduced echelon
-form in more detail in the next section.
+reduced echelon form.  We can rewrite the solutions in \eqref{e:refexamp6}
+in the form:
+\[
+\Matrix{x_1,\\x_2\\x_3\\x_4\\x_5\\x_6} = \Matrix{-6 \\ 0 \\ -2 \\1 \\0 \\ 0} +
+x_5\Matrix{ 6\\-10 \\ 5\\ 0\\ 1\\ 0} + x_6\Matrix{ -4\\20 \\-5 \\ -2\\0 \\ 1}.
+\]
+
+\begin{definition} \rm \label{D:lin_comb1}
+A {\em linear combination} of the vectors $v_1,\ldots, v_k$ in 
+$\R^n$ is a vector in $\R^n$ of the form
+\[
+v = \alpha_1 v_1 + \cdots + \alpha_k v_k
+\] 
+where $\alpha_1,\ldots\alpha_k$ are scalars in $\R$.  
+\end{definition}
+It follows that the general solution to a linear system of equations is given by 
+a single solution ($x_5 = x_6=0$) plus the linear combination of a finite number 
+of vectors.  We will discuss reduced echelon form in more detail in the next section.
 
 
 

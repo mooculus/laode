@@ -65,8 +65,19 @@ $V=\CCone$ and $W$ consists of functions
      $x(t)\in\CCone$ satisfying $\int_{-2}^4x(t)dt =0$.
 
 \begin{solution}
-$W$ is a subspace of $V$, since $W$ is closed under
+
+\ans $W$ is a subspace of $V$, since $W$ is closed under
 addition and scalar multiplication.
+
+\soln Suppose $f$ and $g$ are functions in $V$ and $c \in \R$.  Then $\int_{-2}^4f(t)dt =0$ and $\int_{-2}^4g(t)dt =0$.  Thus, 
+\[
+\int_{-2}^4(f+g)(t)dt = \int_{-2}^4f(t)dt  + \int_{-2}^4g(t)dt = 0.  
+\]
+Similarly, 
+\[
+\int_{-2}^4(cf)(t)dt = c\int_{-2}^4f(t)dt = 0.
+\]
+So $f+g \in V$ and $cf \in V$, as claimed above.   
 
 \end{solution}
 \end{exercise}

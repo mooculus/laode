@@ -25,7 +25,7 @@ Determine whether each of the following statements is true or false and explain 
 We strike out those statements that are false and circle those that are true.
 \begin{enumerate}[label=(\alph*)]
 \item \sout{If $A$ is an $m\times n$ matrix and the equation $AX=b$ is consistent for some $b$, then the columns of $A$ span $\mathbb{R}^m$.}
-\item \sout{Let $A$ and $B$ be $n\times n$ matrices. If $AB = BA$ and if $A$ is invertible, then $A^{-1} B= B A^{-1}$.}
+\item \fbox{Let $A$ and $B$ be $n\times n$ matrices. If $AB = BA$ and if $A$ is invertible, then $A^{-1} B= B A^{-1}$.}
 \item \fbox{If $A$ and $B$ are $m\times$n matrices, then both $AB^t$ and $A^t B$ are defined.}
 \item \sout{Similar matrices always have the same eigenvectors.}
 \item \sout{If $u,v,w$ are vectors such that $\{u,v\},$ $\{u,w\},$ and $\{v,w\}$ are linearly independent sets, then $\{u,v,w\}$ is a linearly independent set.}
@@ -34,12 +34,10 @@ We strike out those statements that are false and circle those that are true.
 
 \soln \begin{enumerate}[label=(\alph*)]
 \item This is false. For example, let $A=\Matrix{1 & 0 \\ 0 & 0}$ and $b=\Matrix{1\\0}$. Then the system of equations $AX=b$ is consistent with solution $X=\Matrix{1\\0}$. 
-
-\item This is false. For example, let $A=\Matrix{1 & 1\\ 0 & 1}$ and $B=\Matrix{1 & 0\\ 0 & 2}$. Then $A^{-1}=\Matrix{1 & -1\\ 0 & 1}$ and 
-\[
-A^{-1}B = \Matrix{1 & -2\\ 0 & 2} \neq \Matrix{1 & -1\\ 0 & 2} = BA^{-1}.
+\item This is true since
+\[ 
+AB = BA \Longrightarrow B = A^{-1}BA \Longrightarrow BA^{-1} = A^{-1}BAA^{-1} \Longrightarrow BA^{-1} = A^{-1}B.
 \]
-
 \item This is true.  The transpose of an $m\times n$ matrix is an $n\times m$ matrix. Therefore 
 \[
 AB^t \mbox{ is }  (m\times n)(n\times m) = m\times m

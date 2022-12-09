@@ -19,17 +19,26 @@ A=\left(\begin{array}{rrr} -1 & 0 & 2\\ 3 & -2 & 4\end{array}\right).
 
 \begin{solution}
 
+\soln
 (a) By Theorem~\ref{basis=span+indep},
 the subset ${\cal V}$ is a basis for the vector space of $2 \times
 3$ matrices if the vectors of ${\cal V}$ are linearly independent and
 span the vector space.  Let
-\[ B = \left(\begin{array}{rrr} b_{11} & b_{12} & b_{13} \\ b_{21} &
-b_{22} & b_{23} \end{array}\right). \]
+\[ 
+B = \left(\begin{array}{rrr} b_{11} & b_{12} & b_{13} \\ b_{21} &
+b_{22} & b_{23} \end{array}\right). 
+\]
 We show that $B$ is in the span of ${\cal V}$ by noting that
-$B = b_{11}E_{11} + b_{12}E_{12} + b_{13}E_{13} + b_{21}E_{21}
-+ b_{22}E_{22} + b_{23}E_{23}$.  To show that the matrices $E_{ij}$
-are linearly independent, suppose $b_{11}E_{11} + b_{12}E_{12} +
-b_{13}E_{13} + b_{21}E_{21} + b_{22}E_{22} + b_{23}E_{23} = 0$.  Then,
+\[
+B = b_{11}E_{11} + b_{12}E_{12} + b_{13}E_{13} + b_{21}E_{21}
++ b_{22}E_{22} + b_{23}E_{23}.  
+\]
+To show that the matrices $E_{ij}$
+are linearly independent, suppose 
+\[
+b_{11}E_{11} + b_{12}E_{12} + b_{13}E_{13} + b_{21}E_{21} + b_{22}E_{22} + b_{23}E_{23} = 0.  
+\]
+Then,
 \[  B = \left(\begin{array}{rrr} b_{11} & b_{12} & b_{13} \\ b_{21} &
 b_{22} & b_{23} \end{array}\right) = 0, \]
 so $b_{ij} = 0$.

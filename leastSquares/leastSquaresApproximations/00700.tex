@@ -10,7 +10,7 @@
 Find the distance from the point $b=\Matrix{6\\-12\\0}$ to the plane $W$ that consists of the solutions of the equation $-x_1 + 2x_2 -x_3 =0$.
 \begin{solution}
 
-\ans The distance is $5$.
+\ans The distance is $\sqrt{150} \approx  12.2474$.
 
 \soln Find a basis of $W$ consisting of vectors $w_1=\Matrix{2\\1\\0}$ and $w_2=\Matrix{0\\1\\2}$. We set $\WW=[w_1|w_2]$. The distance from $b$ to $W$ is the distance from $b$ to $\tilde{w}$ where
 \[
@@ -31,12 +31,12 @@ On the other hand,
 \]
 Putting these calculations together, we find 
 \[
-\tilde{w}=\WW(\WW^t\WW)^{-1}\WW^tb=\Matrix{2&0\\1&1\\0&2}\frac{1}{24}\Matrix{5 &-1\\-1 &5}\Matrix{0\\-2}=\Matrix{1\\-2\\-5}.
+\tilde{w}=\WW(\WW^t\WW)^{-1}\WW^tb=\Matrix{2&0\\1&1\\0&2}\frac{1}{24}\Matrix{5 &-1\\-1 &5}\Matrix{0\\-12}=\Matrix{1\\-2\\-5}.
 \]
 
 Finally, the distance between $b$ and $\tilde{w}$ is 
 \[
-||\Matrix{1\\-2\\0}-\Matrix{1\\-2\\-5}||=5.
+|| b - \tilde{w} || = ||\Matrix{6\\-12\\0}-\Matrix{1\\-2\\-5}|| = \sqrt{25+ 100 + 25} =\sqrt{150} \approx  12.2474.
 \]
 \end{solution}
 
