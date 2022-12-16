@@ -215,67 +215,6 @@ from Theorem~\ref{T:nearestvector} that the least squares approximation is
 as claimed.
 \end{proof}
 
-
-\subsection{Best Approximate Solutions for Inconsistent Systems}
-
-Here we present an application of least squares approximation.
-Let $Ax = b$ be a system of $m$ linear equations in $n$ unknowns.  
-We have discussed various methods for solving such a linear system.  
-We now use least squares to answer a different question: 
-\begin{quote}
-What is the closest vector to a solution to $Ax = b$ when the system is inconsistent?  
-\end{quote}
-Specifically, we use least squares to find $\tilde{x}\in\R^n$ where 
-the image $A\tilde{x}$ is closest to $b$ among all vectors in $R^n$. 
-
-Conceptually this question is best answered in two steps.  
-\begin{enumeratea}
-\item Find $\tilde{w}\in W = \mathrm{range}(A)$ that is closest to $b$.  
-This step can be done using \eqref{C:w_0_formula}.
-\item Solve the consistent system $A\tilde{x} = \tilde{w}$.  Do this by choosing  
-$x_1,\ldots,x_k\in\R^n$ such that $Ax_j = w_j$ for all j.  Then 
-\[
-\tilde{x} = \alpha_1 x_1 + \cdots + \alpha_k x_k
-\]
-where the $\alpha_j$ are found using \eqref{E:nearestvector}.
-\end{enumeratea} 
-Computationally it is simplest to reorder unknowns so that the basis for the 
-$k$-dimensional column space of $A$ is given by the first $k$ columns 
-$w_1,\ldots,w_k$ of $A$. It then follows that $Ae_j = w_j$, where $e_j$ 
-is the $j^{th}$ standard basis element of $\R^n$.  Hence
-\[
-\tilde{x} = \alpha_1 e_1 + \cdots + \alpha_k e_k  
-= (\alpha_1,\ldots,\alpha_k, 0, \ldots,0)^t
-\]
-
-\begin{example} \rm \label{Ex:nearest_solution}
-Consider the system $Ax = b$ where 
-\[
-A = \Matrix{2 & 1 & 5 \\ 1 & 2 & 4\\ 1& 3 & 5}  \AND b = \Matrix{ 1\\ 0 \\ 2}
-\]
-Verify that $Ax = b$ is inconsistent, rank$(A) = 2$, and 
-\[
-w_1 = \Matrix{2 \\ 1\\ 1} \qquad w_2 = \Matrix{1 \\ 2\\ 3}
-\]
-is a basis for range($A$) = column space of $A$.  Let
-\[
-\WW = (w_1 | w_2) = \Matrix{2 & 1 \\ 1 & 2 \\ 1 & 3}.
-\]
-Use \Matlab and \eqref{C:w_0_formula} to compute 
-\[
-\tilde{w} =  \WW (\WW^t\WW )\inv \WW^t b = (0.8, 1.0, 1.4)^t.
-\]
-Finally, use \eqref{E:nearestvector} to see that
-\[
-\tilde{x} = (\alpha_1,\alpha_2,0)^t = (0.2, 0.4, 0)^t
-\]
-is a best approximate solution. We end by noting that $\tilde{w}$ and 
-the distance between $\tilde{w}$ and $b$ are unique, whereas 
-$\tilde{x}$ is not unique if the nullity of $A$ is nonzero. 
-\end{example}
-
-
-
 \includeexercises
 
 \end{document}
