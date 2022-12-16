@@ -1,0 +1,61 @@
+\newcounter{exer}
+\newenvironment{exercise}{}{\vspace{4ex}}
+\setlength{\parindent}{0in}
+\setlength{\parskip}{1ex}
+
+\newenvironment{solution}{}{}
+\newif\ifxake\xaketrue
+%\input{\string~/linear-algebra/laode/preamble.tex}
+\usepackage{graphicx}
+\input{preamble}
+\usepackage{xcolor}
+\renewenvironment{solution}{\color{blue}}{\color{black}}
+\renewenvironment{computerExercise}{\begin{exercise}}{\end{exercise}}
+
+\usepackage{amsmath}
+
+\usepackage{environ}
+\NewEnviron{prompt}{}
+\NewEnviron{hint}{}
+\NewEnviron{multipleChoice}{}
+\NewEnviron{feedback}{}
+
+\renewcommand{\ans}{\noindent\textbf{Answer: }}
+\renewcommand{\soln}{\noindent\textbf{Solution: }}
+
+\newcommand{\answer}[2][]{#2}
+
+%\graphicspath{\string~/linear-algebra/laode}
+
+% if you want to hide solutions, uncomment the following
+%\usepackage{comment}\excludecomment{solution}
+
+\def\isitmatlab{}
+\newcommand{\matlab}{\def\isitmatlab{ (MATLAB)}}
+
+\makeatletter
+\newcommand{\exerciselabel}[2]{\textbf{\textsection #2, Exercise #1\isitmatlab.}\def\@currentlabel{#1}\def\isitmatlab{}}
+
+\newcounter{problem}
+\newcommand{\problemlabel}{\refstepcounter{problem}\section*{Problem \arabic{problem}}}
+\newcommand{\matlabproblemlabel}{\refstepcounter{problem}\section*{Problem \arabic{problem} (MATLAB)}}
+
+\renewcommand{\maketitle}{%
+  \begin{center}
+    \textbf{\@title} \\
+    \@author \\
+    \@date
+  \end{center}
+  }
+\makeatother
+
+%\renewenvironment{matlabEquation}{\begin{equation}\renewcommand{\label}[1]{\tag{\ref{##1}}}}{\end{equation}}
+
+\let\oldequation\equation
+\let\oldendequation\endequation
+\def\equation{\begingroup\oldequation\renewcommand{\label}[1]{\tag{\ref{##1}}}}
+\def\endequation{\oldendequation \endgroup}
+
+\usepackage{zref-xr}
+\zxrsetup{tozreflabel=false, toltxlabel=true, verbose}
+\zexternaldocument*{/Users/golubitsky.4/linear-algebra/laode/linearAlgebra}
