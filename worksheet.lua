@@ -232,11 +232,12 @@ function insert_exercise(label)
       tex.print("")
    end
 
-   if flavors[flavor[label]] == nil then
+   -- only output the flavor text once
+   if flavors[table.concat(flavor[label],"\n")] == nil then
       for i = 1, #flavor[label] do
 	 tex.print(flavor[label][i])
       end
-      flavors[flavor[label]] = true 
+      flavors[table.concat(flavor[label],"\n")] = true
    end 
 
    tex.print("")
