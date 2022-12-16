@@ -72,7 +72,7 @@ for i in dirtree('./') do
 	 local c, _, m1, m2, m3, m4, m5 = string.find( line,
 		"newlabel{([^}]*)}{{([0-9]*)}{([0-9]*)}{}{exercise.exercise.([0-9]*).([0-9]*)." )
 	 if c then
-	    section_numbers[m1] = m4 .. m5
+	    section_numbers[m1] = m4 .. "." .. m5
 	    exercise_numbers[m1] = m2
 	    table.insert( exercise_order, m1 )
 	 end
@@ -97,6 +97,8 @@ end
 function table.clone(org)
   return {table.unpack(org)}
 end
+
+SOLUTIONS = true
 
 for i in dirtree('./') do
    local f = i
@@ -153,8 +155,6 @@ for i in dirtree('./') do
 	    local c, _, m1 = string.find( line, "\\label[ ]*{([^}]*)}" )
 	    if c and label == nil then
 	       label = m1
-	       print("m.m.m.m" .. m1)
-	       print(line)
 	    end
 	 end
 
@@ -166,11 +166,12 @@ for i in dirtree('./') do
 	    depth = depth - 1
 
 	    if depth == 0 then
-	       --if not exercises[label].nil?
-	       --puts "WARNING: in #{f} the exercise #{label} appears more than once."
-	       --end
+	       if exercises[label] ~= nil then
+		  print("WARNING: in " .. f .. " the exercise " .. label .. " appears more than once.")
+	       end 
+
 	       if label == nil then
-		  print(filename)
+		  print("WARNING: in " .. f .. " an exercise is missing a label.")
 	       else
 		  exercises[label] = table.clone(output)
 		  flavor[label] = table.clone(paragraph)
@@ -205,6 +206,7 @@ end
  -- end
 --end
 
+flavors = {}
 
 function insert_exercise(label)
    if exercises[label] == nil then
@@ -229,15 +231,13 @@ function insert_exercise(label)
       tex.print("")
       tex.print("")
    end
-    
-   --if $flavor and not flavors.include?( flavor[label] )
-   --   text = flavor[label]
-   --   unless already_flavored.any?{ |x| x == text }
-   --     already_flavored << text
-   --     line = line + text + "\n\n"
-   --     flavors << text
-   --   end
-   -- end
+
+   if flavors[flavor[label]] == nil then
+      for i = 1, #flavor[label] do
+	 tex.print(flavor[label][i])
+      end
+      flavors[flavor[label]] = true 
+   end 
 
    tex.print("")
    tex.print("")

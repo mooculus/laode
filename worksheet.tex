@@ -2,10 +2,15 @@
 
 \input{worksheet-preamble}
 
-\begin{document}
+% comment this line to show solutions
+\usepackage{comment}\excludecomment{solution}
 
-\directlua{dofile(kpse.find_file("worksheet","lua"))}
-\newcommand\insertexercise[1]{\directlua{insert_exercise("#1")}}     
+\title{Worksheet 1}
+\date{July 1, 2100}
+\author{Math 1234}
+
+\begin{document}
+\maketitle
 
 Here is a sample worksheet.
 

@@ -58,4 +58,7 @@
 
 \usepackage{zref-xr}
 \zxrsetup{tozreflabel=false, toltxlabel=true, verbose}
-\zexternaldocument*{/Users/golubitsky.4/linear-algebra/laode/linearAlgebra}
+\zexternaldocument*{linearAlgebra}
+
+\directlua{dofile(kpse.find_file("worksheet","lua"))}
+\newcommand\insertexercise[1]{\directlua{insert_exercise("#1")}}     
