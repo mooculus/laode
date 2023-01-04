@@ -2,7 +2,7 @@
 
 \input{../preamble.tex}
 
-\title{Best Approximate Solutions for Inconsistent Systems}
+\title{Best Approximate Solution}
 
 \begin{document}
 \begin{abstract}
@@ -13,15 +13,16 @@
 
 Here we present an application of least squares approximation.
 Let $Ax = b$ be a system of $m$ linear equations in $n$ unknowns.  
-We have discussed various methods for solving such a linear system.  
-We now use least squares to answer a different question: 
+We have discussed various methods for solving such a linear system when the 
+system is consistent. Now we use least squares to answer a related but different question: 
 \begin{quote}
-What is the closest vector to a solution to $Ax = b$ when the system is inconsistent?  
+What is the closest vector $\tilde{x}$ to an image point  $A\tilde{x}$ to $b$ 
+when the system is inconsistent?  
 \end{quote}
 Specifically, we use least squares to find $\tilde{x}\in\R^n$ where 
 the image $A\tilde{x}$ is closest to $b$ among all vectors in $R^n$. 
 
-Conceptually this question is best answered in two steps.  
+This question is best answered in two steps.  
 \begin{enumeratea}
 \item Find $\tilde{w}\in W = \mathrm{range}(A)$ that is closest to $b$.  
 This step can be done using \eqref{C:w_0_formula}.
