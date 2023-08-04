@@ -130,8 +130,7 @@ vectors have the same number of entries.  Trying to add the
 $3$-vector $x$ with the $5$-vector $w$ by typing {\tt x + w} in \Matlab
 yields the warning:
 \begin{verbatim}
-??? Error using ==> +
-Matrix dimensions must agree.
+Arrays have incompatible sizes for this operation
 \end{verbatim}
 
 In \Matlab new rows are indicated by typing {\tt ;}. For
@@ -143,18 +142,20 @@ just type:
 \begin{verbatim}
 z = [-1; 2; 3]
 \end{verbatim}
-\index{\computer![1; 2; 3]} and \Matlab responds with
+\index{\computer![1; 2; 3]} and \Matlab responds with the column vector 
 \begin{verbatim}
 z =
     -1
      2
      3
 \end{verbatim}
-Note that \Matlab will not add a row vector and a column vector.
-Try typing {\tt x + z}.
-
 Individual entries of a vector can also be addressed.  For instance,
 to display the first component of {\tt z} type {\tt z(1)}.
+
+Note that \Matlab will add two row vectors only if they are the same size.  
+Similarly for column vectors. Although \Matlab will add a row vector and 
+a column vector to get a rectangular matrix (try typing {\tt x + z}), this a 
+feature that will not be used in this text.
 
 \subsection*{Entering Matrices}
 
