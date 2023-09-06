@@ -12,25 +12,25 @@
 
 Which of the following mappings $T$ are linear?  Circle those maps that are linear and cross out those maps that are not linear.
 
-\begin{enumerate}
+\begin{enumeratea}
 \item $T:\R^2\to\R^3$ where $T(x_1,x_2) = (2x_1 - x_2, x_2 + x_1, x_1 + 2)$
 \item $T:P_k\to\R^2$ where $T(p(t)) = (p'(1), \int_2^5p(t)dt)$
 \item Fix $B\in M_{n,n}$. Then $T:M_{n,n}\to M_{n,n}$ where $T(A) = AB-BA$
-\end{enumerate}
+\end{enumeratea}
 Recall that $P_k$ is the vector space of polynomials of degree $\leq k$ and $M_{n,n}$ is the vector space of $n\times n$ square matrices. 
  
   
 \begin{solution}
 
-\ans \begin{enumerate}
+\ans \begin{enumeratea}
 \item \sout{$T:\R^2\to\R^3$ where $T(x_1,x_2) = (2x_1 - x_2, x_2 + x_1, x_1 + 2)$}
 \item \fbox{$T:P_k\to\R^2$ where $T(p(t)) = (p'(1), \int_2^5p(t)dt)$}
 \item \fbox{Fix $B\in M_{n,n}$. Then $T:M_{n,n}\to M_{n,n}$ where $T(A) = AB-BA$}
-\end{enumerate}
+\end{enumeratea}
 
 
 \soln  
-\begin{enumerate}
+\begin{enumeratea}
 \item If $T$ is linear, then $T$ maps the zero vector to the zero vector.  However, $T(0,0)=(0,0,2)\ne (0,0,0)$; so $T$ is not linear.
 \item Since $T(p(t))=\left(\left.\dfrac{d}{dt}p(t)\right|_{t=1},\int_{2}^{5}p(t)\,dt\right)$, it suffices to show that 
 \[
@@ -46,7 +46,7 @@ T(A_1+A_2)&=(A_1+A_2)B-B(A_1+A_2)=A_1 B+A_2 B-B A_1-BA_2\\
 &=A_1 B-BA_1+A_2B-BA_2=T(A_1)+T(A_2)\ldotp
 \end{align*}
 This shows $T$ is linear.
-\end{enumerate}
+\end{enumeratea}
 
 \end{solution}
 \end{exercise}

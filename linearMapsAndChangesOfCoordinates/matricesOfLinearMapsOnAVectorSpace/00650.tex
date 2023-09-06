@@ -16,22 +16,22 @@ Let  $T\colon \R^3\rightarrow\R^3$ be a linear function so that
 \[
 T(v_1)=\Matrix{-1 \\ 1 \\ 0} \quad T(v_2)=\Matrix{-4 \\ 2 \\ 2}  \quad T(v_3)=\Matrix{1 \\ 0 \\ 0}.
 \]
-\begin{enumerate}[label=(\alph*)]
+\begin{enumeratea}%[label=(\alph*)]
 \item Find the coordinates of $T(v_3)$ relative to the basis $\mathcal{W}$. That is, compute $[T(v_3)]_\mathcal{W}$.
 \item Find the  matrix $[T]_\mathcal{W}$ of $T$ relative to the basis $\mathcal{W}$.
 \item Find the standard matrix $[T]_{\mathcal{E}}$ of $T$. 
 %(Hint: use your answer to the previous part. It might be helpful to compute the inverse of a certain matrix.)
-\end{enumerate}
+\end{enumeratea}
 
 \begin{solution}
 \ans
-\begin{enumerate}[label=(\alph*)]
+\begin{enumeratea}%[label=(\alph*)]
 \item $[T(v_3)]_\mathcal{W} = \Matrixc{-1 \\ 1/2\\ 1}$.
 \item $[T]_{\mathcal{W}}=\Matrix{ 0& 2& -1\\ 0& 0& 1/2\\ 1& 0& 1}$.
 \item $[T]_{\mathcal{E}}=\Matrix{0&1&-2 \\ 0&0& 1\\ 1&1&1}$.
-\end{enumerate}
+\end{enumeratea}
 \soln  
-\begin{enumerate}[label=(\alph*)]
+\begin{enumeratea}%[label=(\alph*)]
 \item Express $T(v_3)$ as the linear combination 
 \[
 T(v_3) = a v_1 + bv_2 + cv_3.
@@ -62,7 +62,7 @@ One can compute $(v_1\mid v_2\mid v_3)^{-1}=\Matrix{ -1 & -1 & 0 \\ 1/2 & 1/2 & 
  [T]_\mathcal{E}=\Matrix{ -1 & -4 & 1 \\ 1 & 2 & 0 \\ 0 & 2 & 0}\Matrix{ -1 & -1 & 0 \\ 1/2 & 1/2& 1/2 \\ 1 & 2 & 0}=\Matrix{0&1&-2 \\ 0&0& 1\\ 1&1&1}\ldotp
  \]
  This could also be done in the same fashion as part (b).
- \end{enumerate}
+ \end{enumeratea}
 \end{solution}
 \end{exercise}
 \end{document}
