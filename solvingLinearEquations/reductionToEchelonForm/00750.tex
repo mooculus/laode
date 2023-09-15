@@ -20,7 +20,7 @@ Can you write the vector
 y=\Matrix{2\\-4\\5 \\ 0}
 \]
 in the form 
-\begin{equation} \label{e:linear_comb}
+\begin{equation} \label{e:linear_comb} \index{linear!combination}
 x_1 C_1 + x_2 C_2 + x_3 C_3
 \end{equation}
 where $x_1, x_2, x_3 \in\R$?  If so, express $y$ in this form.
@@ -31,7 +31,8 @@ where $x_1, x_2, x_3 \in\R$?  If so, express $y$ in this form.
 
 \ans \begin{enumeratea}%[label=(\alph*)]
 \item (i) The set is empty when $b_2+2b_1\neq 0$ or $b_4\neq 0$. (ii) The set is empty.  (iii) the set consists of vectors for which $b_2+2b_1 = 0$ and $b_4 = 0$.
-\item No.
+\item One linear combination is $2 C_1 + 5 C_2 + 0 C_3 = y$.  
+All solution are of the form $(2+t) C_1 + (5+2t) C_2 + t C_3 = y$ for some $t\in\R$. 
 \end{enumeratea}
 
 \soln
@@ -63,12 +64,44 @@ x_1 = x_3 + b_1 \AND x_2 = 2x_3 + b_3.
 \] 
 Thus, when there are any solutions to $Ax=b$, there are infinitely many solutions (one for each value of $x_3$).  So (ii) is the empty set and (iii) is the set  $b_4=0$ and $b_2 + 2b_1 = 0$.
 
-\item  Write
+\item  Observe that 
 \[
 x_1C_1 + x_2C_2 + x_3C_3 = (C_1\mid C_2\mid C_3)\left(\begin{array}{c} x_1\\x_2\\x_3 \end{array}\right) = Ax. 
 \]
-From (a) it follows that $y$ has the form \eqref{e:linear_comb}
- if and only if $y_4 = 0$ and $y_2 + 2y_1 = 0$. However, the second constraint does not hold and $y$ cannot be written in the form \eqref{e:linear_comb}.
+Thus, we seek a solution $x$ to the equation $Ax=y$.  
+
+We can use the \texttt{rref} from (a), 
+\[
+\left(\begin{array}{ccc|c} 
+1 & 0 & -1 & b_1 \\ 
+0 & 1 & -2 & b_3 \\ 
+0 & 0 & 0 & b_2+2b_1 \\ 
+0 & 0 & 0 & b_4
+\end{array}\right), 
+\qquad \text{with} \qquad
+b=\Matrix{b_1\\b_2\\b_3\\b_4} = y = \Matrix{2\\-4\\5 \\ 0}.  
+\]
+Substituting the coordinates of $y$, the \texttt{rref} becomes
+\[
+\left(\begin{array}{ccc|c} 
+1 & 0 & -1 & 2 \\ 
+0 & 1 & -2 & 5 \\ 
+0 & 0 & 0 & 0 \\ 
+0 & 0 & 0 & 0
+\end{array}\right)\ldotp
+\]
+We see the are infinitely many solutions, and
+\[
+x_1 = x_3 + 2 \AND x_2 = 2x_3 + 5.
+\] 
+Thus, if $x_3 = 0$, a specific linear combination is 
+\[
+2 C_1 + 5 C_2 + 0 C_3 = y. 
+\]  
+If $x_3=t$, the linear combination is of the form 
+\[
+(2+t) C_1 + (5+2t) C_2 + t C_3 = y,\text{ where } t\in\R.
+\] 
 \end{enumeratea}
 \end{solution}
 \end{exercise}
