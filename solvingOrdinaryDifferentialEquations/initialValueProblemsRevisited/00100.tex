@@ -42,18 +42,21 @@ X(t) = \alpha_1e^{\lambda_1 t}v_1 + \alpha_2e^{\lambda_2 t}v_2
 \]
 From this formula, find $\alpha_1$ and $\alpha_2$ by solving
 \[
-\vectwo{4}{-3} = X(0) = \alpha_1\vectwo{1}{1} + \alpha_2\vectwo{1}{0} =
+\vectwo{1}{4} = X(0) = \alpha_1\vectwo{1}{1} + \alpha_2\vectwo{1}{0} =
 \cvectwo{\alpha_1 + \alpha_2}{\alpha_1}.
 \]
 Solving the linear system
 \[
 \begin{array}{rrrrr}
-\alpha_1 & + & \alpha_2 & = & 4 \\
-\alpha_1 & & & = & -3
+\alpha_1 & + & \alpha_2 & = & 1 \\
+\alpha_1 & & & = & 4
 \end{array}
 \]
-we obtain $\alpha_1 = 4$ and $\alpha_2 = -3$ and find the
-solution to the differential equation.
+we obtain $\alpha_1 = 4$ and $\alpha_2 = -3$ and write the
+specific solution to the differential equation: 
+\[
+X(t) = 4e^{2t}\vectwo{1}{1} - 3e^t\vectwo{1}{0}.
+\]
 
 
 \end{solution}
@@ -104,8 +107,11 @@ Solving the linear system
 & & \alpha_2 & = & -2
 \end{array}
 \]
-we obtain $\alpha_1 = 3$ and $\alpha_2 = -2$ and find the
-solution to the differential equation.
+we obtain $\alpha_1 = 3$ and $\alpha_2 = -2$ and write the
+specific solution to the differential equation:
+\[
+X(t) = 3e^{2t}\vectwo{1}{0} - 2e^{-t}\vectwo{1}{1}.
+\]
 
 
 \end{solution}
@@ -157,8 +163,10 @@ Solving the linear system
 \end{array}
 \]
 we obtain $\alpha_1 = \frac{7}{3}$ and $\alpha_2 = -\frac{5}{3}$
-and find the solution to the differential equation.
-
+and write the specific solution to the differential equation: 
+\[
+X(t) =\frac{7}{3}e^t\vectwo{1}{2} -\frac{5}{3}e^{-2t}\vectwo{2}{1}.
+\]
 
 \end{solution}
 \end{exercise}
@@ -209,7 +217,10 @@ Solving the linear system
 \end{array}
 \]
 we obtain $\alpha_1 = \frac{3}{2}$ and $\alpha_2 = -\frac{1}{2}$
-and find the solution to the differential equation.
+and write the specific solution to the differential equation: 
+\[
+X(t) = \frac{3}{2}e^{3t}\vectwo{1}{1} -\frac{1}{2}e^t\vectwo{1}{-1}.
+\]
 
 \end{solution}
 \end{exercise}
