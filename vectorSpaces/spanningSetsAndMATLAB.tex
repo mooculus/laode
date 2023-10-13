@@ -35,10 +35,10 @@ B = null(A)
 then we obtain
 \begin{verbatim}
 B =
-    0.4830         0
-   -0.4140    0.8729
-   -0.1380   -0.2182
-    0.7591    0.4364
+   -0.4100    0.2555
+    0.8130    0.5219
+    0.0017   -0.2582
+   -0.4134    0.7718
 \end{verbatim}
 The two columns of the matrix $B$ span the set of solutions of
 the equation $Ax=0$.  In particular, the vector $(2,-8,1,0)$ is a
@@ -46,12 +46,12 @@ solution to $Ax=0$ and is therefore a
 linear combination \index{linear!combination} of the
 column vectors of {\tt B}.  Indeed, type
 \begin{verbatim}
-4.1404*B(:,1)-7.2012*B(:,2)
+-7.3224*B(:,1)-3.9221*B(:,2)
 \end{verbatim}
 and observe that this linear combination is the desired one.
 
-Next we describe how to find the coefficients {\tt 4.1404} and
-{\tt -7.2012} by showing that these coefficients themselves are
+Next we describe how to find the coefficients {\tt -7.3224} and
+{\tt -3.9221} by showing that these coefficients themselves are
 solutions to another system of linear equations.
 
 \subsection*{When is a Vector in a Span?} \index{span}
