@@ -33,7 +33,7 @@ v2 = null(C - lambda(2)*eye(2))
 Thus, the general solution is
 \[
 X(t) = \alpha_1e^{\lambda_1 t}v_1 + \alpha_2e^{\lambda_2 t}v_2
-\approx \alpha_1e^{2.5190t}\vectwo{-0.9869}{-0.1611} +
+\approx \alpha_1e^{2.5190t}\vectwo{0.9869}{0.1611} +
 \alpha_2e^{0.3510t}\vectwo{-0.9570}{0.2900}.
 \]
 The initial condition is
@@ -46,7 +46,7 @@ computing $A^{-1}X_0$.  In \Matlabp, type
 A = [v1 v2]
 alpha = inv(A)*X0
 \end{verbatim}
-obtaining $\alpha_1 \approx 0.8627$ and $\alpha_2 \approx -1.2449$.
+obtaining $\alpha_1 \approx -0.8627$ and $\alpha_2 \approx -1.2449$.
 
 
 \end{solution}
@@ -79,7 +79,7 @@ Thus, the general solution is
 \[
 X(t) = \alpha_1e^{\lambda_1 t}v_1 + \alpha_2e^{\lambda_2 t}v_2
 \approx \alpha_1e^{-1.8035t}\vectwo{-0.9005}{ 0.4348} +
-\alpha_2e^{4.4835t}\vectwo{-0.8880}{-0.4598}.
+\alpha_2e^{4.4835t}\vectwo{0.8880}{0.4598}.
 \]
 The initial condition is
 \[
@@ -91,7 +91,7 @@ computing $A^{-1}X_0$.  In \Matlabp, type
 A = [v1 v2]
 alpha = inv(A)*X0
 \end{verbatim}
-obtaining $\alpha_1 \approx 1.0860$ and $\alpha_2 \approx -2.4527$.
+obtaining $\alpha_1 \approx 1.0860$ and $\alpha_2 \approx 2.4527$.
 
 \end{solution}
 \end{computerExercise}
