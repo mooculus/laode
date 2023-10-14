@@ -328,8 +328,8 @@ v1 = null(C1)
 and obtain
 \begin{verbatim}
 v1 =
-   -0.9830
-   -0.1838
+    0.9830
+    0.1838
 \end{verbatim}
 Similarly, to find an eigenvector associated to the eigenvalue $\lambda_2$
 type
@@ -348,7 +348,7 @@ v2 =
 \paragraph{Step 3:}  The general solution to this system of differential
 equations is:
 \[
-X(t) = \alpha_1 e^{2.3543t}\vectwo{-0.9830}{-0.1838} +
+X(t) = \alpha_1 e^{2.3543t}\vectwo{0.9830}{0.1838} +
 \alpha_2e^{-5.2543t}\vectwo{-0.4496}{0.8932}.
 \]
 
@@ -365,13 +365,13 @@ alpha = inv(A)*X0
 obtaining
 \begin{verbatim}
 alpha =
-   -3.0253
+    3.0253
     0.6091
 \end{verbatim}
 
 Therefore, the closed form solution to the initial value problem is:
 \begin{align*}
-  X(t) = & 3.0253 e^{2.3543t}\vectwo{0.9830}{0.1838} \\
+  X(t) = & 3.0253 e^{2.3543t}\vectwo{0.9830}{0.1838} 
   + 0.6091 e^{-5.2543t}\vectwo{-0.4496}{0.8932}.
 \end{align*}
 
