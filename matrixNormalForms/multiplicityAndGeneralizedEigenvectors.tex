@@ -297,7 +297,7 @@ the first two steps are:
 \item[(i)]  Find the eigenvalues of $A$.
 \item[(ii)]  Find the eigenvectors of $A$.
 \end{enumerate}
-After entering $A$ into \Matlab by typing {\tt e13\_3\_6}, we type 
+After entering $A$ into \Matlab by typing {\tt e11\_2\_6}, we type 
 {\tt eig(A)} and find that all of the eigenvalues of $A$ equal $6$.  Without 
 additional information, there could be 1,2,3 or 4 linearly independent 
 eigenvectors of $A$ corresponding to the eigenvalue $6$.  In \Matlab we 
@@ -305,10 +305,10 @@ determine the number of linearly independent eigenvectors by typing
 {\tt null(A-6*eye(4))} and obtaining
 \begin{verbatim}
 ans =
-    0.8892         0
+    0.8892   -0.0000
    -0.4446    0.0000
-   -0.0262    0.9701
-   -0.1046   -0.2425
+   -0.0262   -0.9701
+   -0.1046    0.2425
 \end{verbatim}
  
 We now know that (numerically) there are two linearly independent

@@ -224,17 +224,17 @@ v3 = null(A-3*eye(3));
 Now type {\tt S = [v1 v2 v3]} to obtain
 \begin{verbatim}
 S =
-    0.8729    0.7071         0
-    0.4364    0.0000    0.3162
-   -0.2182    0.7071   -0.9487
+   -0.8729    0.7071    0.0000
+   -0.4364    0.0000   -0.3162
+   -0.2182    0.7071    0.9487
 \end{verbatim}
 Finally, check that $S\inv AS$ is the desired diagonal matrix by 
 typing {\tt inv(S)*A*S}\index{\computer!inv} to obtain
 \begin{verbatim}
 ans =
-   -1.0000    0.0000         0
-    0.0000   -2.0000   -0.0000
-    0.0000         0    3.0000
+   -1.0000    0.0000   -0.0000
+    0.0000   -2.0000    0.0000
+    0.0000    0.0000    3.0000
 \end{verbatim}
 
 It is cumbersome to use the 
@@ -249,8 +249,8 @@ follows.  Type
 and \Matlab responds with 
 \begin{verbatim}
 S =
-   -0.7071    0.8729   -0.0000
-   -0.0000    0.4364   -0.3162
+   -0.7071    0.8729    0.0000
+    0.0000    0.4364   -0.3162
    -0.7071   -0.2182    0.9487
  
 D = 
