@@ -216,10 +216,10 @@ independent eigenvectors and we determine which by typing {\tt null(A)}
 and obtaining
 \begin{verbatim}
 ans =
-  -0.1818
-   0.6365
-   0.7273
-  -0.1818
+   0.1818
+  -0.6365
+  -0.7273
+   0.1818
 \end{verbatim}
 So \Matlab tells us that there is just one linearly independent
 eigenvector having $0$ as an eigenvalue.  There must be a generalized
@@ -232,10 +232,10 @@ null2 = null(A^2)
 obtaining
 \begin{verbatim}
 null2 =
-    0.2193   -0.2236
-   -0.5149   -0.8216
-   -0.8139    0.4935
-    0.1561    0.1774
+    0.3132   -0.0021
+    0.2198   -0.9443
+   -0.9238   -0.2295
+   -0.0158    0.2358
 \end{verbatim}
 Choose one of these vectors, say the first vector, to be $v_{12}$ by typing
 \begin{verbatim}
@@ -250,10 +250,10 @@ v11 = A*v12
 obtaining
 \begin{verbatim}
 v11 =
-   -0.1263
-    0.4420
-    0.5051
-   -0.1263
+   -0.6580
+    2.3030
+    2.6320
+   -0.6580
 \end{verbatim}
 Since {\tt v11} is nonzero, we have found a basis for $V_0$.
 We can now put the matrix $A$ in Jordan normal 
@@ -266,10 +266,10 @@ J = inv(S)*A*S
 to obtain
 \begin{verbatim}
 J = 
-   -0.0000    1.0000    0.0000   -0.0000
-    0.0000    0.0000    0.0000   -0.0000
-   -0.0000   -0.0000    5.0000    0.0000
-    0.0000   -0.0000   -0.0000   -3.0000
+    0.0000    1.0000    0.0000   -0.0000
+    0.0000   -0.0000    0.0000   -0.0000
+   -0.0000   -0.0000    5.0000   -0.0000
+    0.0000    0.0000    0.0000   -3.0000
 \end{verbatim}
 
 We have only discussed a Jordan normal form example when the eigenvalues

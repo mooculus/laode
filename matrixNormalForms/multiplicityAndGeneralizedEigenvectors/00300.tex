@@ -21,10 +21,10 @@ multiplicity $1$.
 \soln Using \Matlab to find eigenvalues of high algebraic multiplicity is numerically
 dangerous. Type {\tt eig(A)} and obtain
 \begin{verbatim}
-   2.0000 + 0.0006i
-   2.0000 - 0.0006i
-   1.9994          
-   2.0006          
+   1.9996 + 0.0000i
+   2.0000 + 0.0004i
+   2.0000 - 0.0004i
+   2.0004 + 0.0000i
 \end{verbatim}
 Since the coefficients of $A$ are all integers, you might be suspicious of the answer
 and guess that all of the eigenvalues of $A$ equal $2$.  Type {\tt null(A-2*eye(4))}
@@ -82,24 +82,24 @@ B=\left(\begin{array}{rrrrr} 179 & -230 & 0 & 10 & -30 \\
 \ans The eigenvalue $-1$ has algebraic multiplicity $5$ and geometric
 multiplicity $3$.
 
-\soln Type {\tt eig(A)} and obtain
+\soln Type {\tt eig(B)} and obtain
 \begin{verbatim}
 ans =
-  -1.0000          
+  -1.0000 + 0.0000i
   -1.0000 + 0.0000i
   -1.0000 - 0.0000i
-  -1.0000          
-  -1.0000         
+  -1.0000 + 0.0000i
+  -1.0000 - 0.0000i
 \end{verbatim}
 Type {\tt null(B+eye(5))}
 and obtain
 \begin{verbatim}
 ans =
-    0.7701   -0.1043    0.0000
-    0.6160   -0.0835    0.0000
-   -0.0000   -0.0000   -1.0000
-   -0.0966   -0.9443    0.0000
-   -0.1349   -0.3008    0.0000
+    0.7771   -0.0016   -0.0000
+    0.6217   -0.0013   -0.0000
+         0    0.0000   -1.0000
+    0.0291   -0.9487   -0.0000
+   -0.0939   -0.3160   -0.0000
 \end{verbatim}
 We see that $-1$ is an eigenvalue of $B$ with geometric multiplicity $5$. 
 

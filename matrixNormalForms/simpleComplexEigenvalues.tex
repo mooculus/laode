@@ -240,7 +240,7 @@ Using \Matlab we find the eigenvalues of $A$ by typing {\tt eig(A)}.
 They are:
 \begin{verbatim}
 ans =
-   4.6432          
+   4.6432 + 0.0000i   
   -3.3216 + 0.9014i
   -3.3216 - 0.9014i
 \end{verbatim}
@@ -250,14 +250,15 @@ Type {\tt [T,D] = eig(A)} and obtain
 {\small
 \begin{verbatim}
 T =
-   0.9604    -0.1299 + 0.1587i  -0.1299 - 0.1587i
-   0.2632     0.0147 - 0.5809i   0.0147 + 0.5809i
-   0.0912     0.7788 - 0.1173i   0.7788 + 0.1173i
-
+  -0.9604 + 0.0000i  -0.1521 + 0.1376i  -0.1521 - 0.1376i
+  -0.2632 + 0.0000i   0.1011 - 0.5723i   0.1011 + 0.5723i
+  -0.0912 + 0.0000i   0.7875 + 0.0000i   0.7875 + 0.0000i
+\end{verbatim}
+\begin{verbatim}
 D =
-   4.6432          0                  0          
-        0    -3.3216 + 0.9014i        0          
-        0          0            -3.3216 - 0.9014i
+   4.6432 + 0.0000i   0.0000 + 0.0000i   0.0000 + 0.0000i
+   0.0000 + 0.0000i  -3.3216 + 0.9014i   0.0000 + 0.0000i
+   0.0000 + 0.0000i   0.0000 + 0.0000i  -3.3216 - 0.9014i
 \end{verbatim}
 }
 This calculation can be checked by typing {\tt inv(T)*A*T} to see that 
@@ -458,15 +459,15 @@ Let $C$ be the $4\times 4$ matrix
 C =\left(\begin{array}{rrrr}  1 & 0 & 2 & 3 \\ 2 & 1 & 4 & 6\\
 -1 & -5 & 1 & 3 \\ 1 & 4 & 7 & 10 \end{array}\right).
 \end{matlabEquation}
-Using \Matlab enter $C$ by typing {\tt e13\_2\_14} and find the 
+Using \Matlab enter $C$ by typing {\tt e11\_1\_13} and find the 
 eigenvalues of $C$ by typing {\tt eig(C)}\index{\computer!eig} 
 to obtain
 \begin{verbatim}
 ans =
+  -0.6399 + 0.0000i
    0.5855 + 0.8861i
    0.5855 - 0.8861i
-  -0.6399          
-  12.4690    
+  12.4690 + 0.0000i
 \end{verbatim}
 We see that $C$ has two real and two complex conjugate eigenvalues.
 To find the complex eigenvectors associated with these eigenvalues,
@@ -477,18 +478,18 @@ type
 \Matlab responds with
 {\small \begin{verbatim}
 T =
--0.0787+0.0899i -0.0787-0.0899i  0.0464   0.2209          
- 0.0772+0.2476i  0.0772-0.2476i  0.0362   0.4803          
--0.5558-0.5945i -0.5558+0.5945i -0.8421  -0.0066          
- 0.3549+0.3607i  0.3549-0.3607i  0.5361   0.8488       
+  -0.0464 + 0.0000i  -0.0119 - 0.1189i  -0.0119 + 0.1189i   0.2209 + 0.0000i
+  -0.0362 + 0.0000i  -0.2336 - 0.1127i  -0.2336 + 0.1127i   0.4803 + 0.0000i
+   0.8421 + 0.0000i   0.8139 + 0.0000i   0.8139 + 0.0000i  -0.0066 + 0.0000i
+  -0.5361 + 0.0000i  -0.5058 + 0.0129i  -0.5058 - 0.0129i   0.8488 + 0.0000i
  \end{verbatim}
  }
  \begin{verbatim}   
-D =
-0.586+0.886i 0           0         0          
-0            0.586-0.886i 0       0          
-0            0           -0.640     0          
-0.           0              0      12.469          
+ D =
+  -0.6399 + 0.0000i   0.0000 + 0.0000i   0.0000 + 0.0000i   0.0000 + 0.0000i
+   0.0000 + 0.0000i   0.5855 + 0.8861i   0.0000 + 0.0000i   0.0000 + 0.0000i
+   0.0000 + 0.0000i   0.0000 + 0.0000i   0.5855 - 0.8861i   0.0000 + 0.0000i
+   0.0000 + 0.0000i   0.0000 + 0.0000i   0.0000 + 0.0000i  12.4690 + 0.0000i
 \end{verbatim}
 The $4\times 4$ matrix $T$ has the eigenvectors of $C$ as columns.
 The $j^{th}$ column is the eigenvector associated with the $j^{th}$
@@ -501,25 +502,25 @@ corresponding to the real eigenvalues.  In this case, type
 \index{\computer!real}\index{\computer!imag}
 {\small
 \begin{verbatim}
-S = [real(T(:,1)) imag(T(:,1)) T(:,3) T(:,4)]
+S = [T(:,1) real(T(:,2)) imag(T(:,2)) T(:,4)]
 \end{verbatim}
 }
 to obtain 
 \begin{verbatim}
 S =
-   -0.0787    0.0899    0.0464    0.2209
-    0.0772    0.2476    0.0362    0.4803
-   -0.5558   -0.5945   -0.8421   -0.0066
-    0.3549    0.3607    0.5361    0.8488
+   -0.0464   -0.0119   -0.1189    0.2209
+   -0.0362   -0.2336   -0.1127    0.4803
+    0.8421    0.8139         0   -0.0066
+   -0.5361   -0.5058    0.0129    0.8488
 \end{verbatim} 
 Note that the $1^{st}$ and $2^{nd}$ columns are the real and 
 imaginary parts of the complex eigenvector.  Check that 
 {\tt inv(S)*C*S} is the matrix in complex diagonal form
 \begin{verbatim}
 ans = 
-    0.5855    0.8861    0.0000    0.0000
-   -0.8861    0.5855    0.0000   -0.0000
-    0.0000    0.0000   -0.6399    0.0000
+   -0.6399    0.0000   -0.0000    0.0000
+   -0.0000    0.5855    0.8861    0.0000
+   -0.0000   -0.8861    0.5855   -0.0000
    -0.0000   -0.0000   -0.0000   12.4690
 \end{verbatim}
 as proved in Theorem~\ref{T:Complexdiag}.
