@@ -24,9 +24,10 @@ Suppose that we are given $n$ data points\index{data points}
 $(x_i,y_i)$ for $i=1,\ldots,10$.
 For example, consider the ten points
 \begin{matlabEquation}  \label{E:scatterdata}
-\begin{array}{ccccc}
-(2.0,0.1) & (3.0,2.7) & (1.5,-1.1) & (-1.0,-5.5) & (0.0,-3.4)\\
-(3.6,3.0) & (0.7,-2.8) & (4.1,4.0) & (1.9,-1.9) & (5.0,5.5) \end{array}
+\begin{array}{cccc}
+(2.0,0.1) & (3.0,2.7) & (1.5,-1.1) & (-1.0,-5.5) \\
+(0.0,-3.4) & (3.6,3.0) & (0.7,-2.8) & (4.1,4.0) \\
+ (1.9,-1.9) & (5.0,5.5) \end{array}
 \end{matlabEquation}
 The ten points $(x_i,y_i)$ are plotted in Figure~\ref{F:linreg} using the
 commands
@@ -59,16 +60,17 @@ data value\index{data value}
 $y_i$ and the hypothesized value $b_1+b_2x_i$ is the error that is made at that
 data point.  Next, we combine the errors made at all of the data points; a
 standard way to combine the errors is to use the
-Euclidean distance\index{distance!Euclidean}
+Euclidean distance\index{distance!Euclidean}%
 \[
 E(b) =
-\left((y_1-(b_1+b_2x_1))^2+\cdots+(y_{10}-(b_1+b_2x_{10}))^2\right)^{\half}.
+\left((y_1-(b_1+b_2x_1))^2+\cdots+(y_{10}-(b_1+b_2x_{10}))^2\right)^{\frac{1}{2}}.
 \]
 Rewriting $E(b)$ in vector notation leads to an economy in notation and
 to a conceptual advantage.  Let
 \[
-X=(x_1,\ldots,x_{10})^t \quad Y=(y_1,\ldots,y_{10})^t \AND
-F_1=(1,1,\ldots,1)
+X=(x_1,\ldots,x_{10})^t, \quad Y=(y_1,\ldots,y_{10})^t, 
+\]
+\[ \AND F_1=(1,1,\ldots,1)
 \]
 be vectors in $\R^{10}$.  Then in coordinates
 \[

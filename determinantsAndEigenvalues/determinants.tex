@@ -448,8 +448,11 @@ valid as an inductive definition of determinant, then expansion by cofactors
 along the $1^{st}$ column is also valid.  That is,
 \begin{equation}  \label{e:inductdetc}
 \det(A) = 
-a_{11}\det(A_{11})-a_{21}\det(A_{21})+\cdots+(-1)^{n+1}a_{n1}\det(A_{n1}).
+a_{11}\det(A_{11})-a_{21}\det(A_{21})+\cdots
 \end{equation} 
+\begin{equation*}
+\quad +\ (-1)^{n+1}a_{n1}\det(A_{n1}).
+\end{equation*}
 
 We now explore some of the consequences of this definition, beginning 
 with determinants of small matrices.  For example, 
@@ -460,11 +463,13 @@ $1\times 1$ matrix is just
 \]
 Therefore, using \eqref{e:inductdet}, the determinant of a $2\times
 2$ matrix is:
-\[
+\begin{equation*}
 \det\left(\begin{array}{cc} a_{11} & a_{12}\\a_{21} & a_{22}
-\end{array}\right) = a_{11}\det(a_{22}) - a_{12}\det(a_{21}) =
-a_{11}a_{22} - a_{12}a_{21},
-\]
+\end{array}\right) = a_{11}\det(a_{22}) - a_{12}\det(a_{21})  
+\end{equation*}
+\begin{equation*}
+\qquad = a_{11}a_{22} - a_{12}a_{21},
+\end{equation*}
 which is just the formula for determinants of $2\times 2$
 \index{determinant!of $2\times 2$ matrices}
 matrices given in \eqref{e:determinantn=2}. 

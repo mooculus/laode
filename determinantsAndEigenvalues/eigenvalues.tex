@@ -181,10 +181,10 @@ p(\lambda) = c_n\lambda^n + c_{n-1}\lambda^{n-1} + \cdots + c_0,
 \]
 where each $c_j\in\R$.  Then
 \begin{align*}
-\overline{p(\lambda)} \\
+\overline{p(\lambda)} 
 &=\overline{c_n\lambda^n + c_{n-1}\lambda^{n-1} + \cdots + c_0}  \\
 &= c_n\overline{\lambda}^n + c_{n-1}\overline{\lambda}^{n-1} + \cdots + c_0 \\
-= p(\overline{\lambda})
+&= p(\overline{\lambda})
 \end{align*}
 If $\lambda_0$ is a root of $p(\lambda)$, then
 \[
@@ -326,10 +326,12 @@ found by typing
 poly(A)
 \end{verbatim} \index{\computer!poly}
 to obtain
+{\small
 \begin{verbatim}
 ans =
     1.0000   -5.0000   15.0000  -10.0000  -46.0000
 \end{verbatim} 
+}
 Thus the characteristic polynomial of $A$ is:
 \[
 p_A(\lambda) = \lambda^4 -5\lambda^3+15\lambda^2-10\lambda-46.

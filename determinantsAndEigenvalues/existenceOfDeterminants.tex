@@ -165,13 +165,11 @@ adding row $i-1$ to row $j-1$.
 
 If $j=1$, then 
 \begin{eqnarray*}
-  D(EB) & = & (b_{11} + b_{i1})\det(B_{11}) +\cdots+ \\
-   & & (-1)^{n+1}(b_{1n}+ b_{in})\det(B_{1n})\\
+  D(EB) & = & (b_{11} + b_{i1})\det(B_{11}) +\cdots \\
+   & & +\ (-1)^{n+1}(b_{1n}+ b_{in})\det(B_{1n})\\
 & = &
-\left[b_{11}\det(B_{11})+\cdots+(-1)^{n+1}b_{1n}\det(B_{1n})\right]
-+ 
-\\ & & 
-        \left[b_{i1}\det(B_{11})+\cdots+(-1)^{n+1}b_{i1}\det(B_{1n})\right]\\
+\left[b_{11}\det(B_{11})+\cdots+(-1)^{n+1}b_{1n}\det(B_{1n})\right]  \\
+& & +\  \left[b_{i1}\det(B_{11})+\cdots+(-1)^{n+1}b_{i1}\det(B_{1n})\right]\\
 & = & D(B) + D(C)
 \end{eqnarray*}
 where the $1^{st}$ and $i^{th}$ rows of $C$ are equal.  The fact that $D(C)=0$ 
@@ -213,9 +211,10 @@ Next suppose now that $A$ is nonsingular.  It follows that
 AB = E_s\cdots E_1B.
 \]
 Using \eqref{e:proddetE} we see that
-\[
-D(AB)=D(E_s)\cdots D(E_1)D(B) = D(E_s\cdots E_1)D(B) = D(A)D(B),
-\]
+\begin{align*}
+D(AB) &=  D(E_s)\cdots D(E_1)D(B) \\
+&= D(E_s\cdots E_1)D(B) = D(A)D(B),
+\end{align*}
 as desired.  
 
 Before verifying property (b) we prove the following:
