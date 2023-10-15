@@ -247,7 +247,7 @@ ans =
 We can diagonalize (over the complex numbers) using \Matlab --- indeed 
 \Matlab is programmed to do these calculations over the complex numbers. 
 Type {\tt [T,D] = eig(A)} and obtain
-{\small
+{\footnotesize
 \begin{verbatim}
 T =
   -0.9604 + 0.0000i  -0.1521 + 0.1376i  -0.1521 - 0.1376i
@@ -476,21 +476,21 @@ type
 [T,D] = eig(C)
 \end{verbatim}
 \Matlab responds with
-{\small \begin{verbatim}
+{\footnotesize \begin{verbatim}
 T =
-  -0.0464 + 0.0000i  -0.0119 - 0.1189i  -0.0119 + 0.1189i   0.2209 + 0.0000i
-  -0.0362 + 0.0000i  -0.2336 - 0.1127i  -0.2336 + 0.1127i   0.4803 + 0.0000i
-   0.8421 + 0.0000i   0.8139 + 0.0000i   0.8139 + 0.0000i  -0.0066 + 0.0000i
-  -0.5361 + 0.0000i  -0.5058 + 0.0129i  -0.5058 - 0.0129i   0.8488 + 0.0000i
+  -0.0464   -0.0119 - 0.1189i  -0.0119 + 0.1189i   0.2209 
+  -0.0362   -0.2336 - 0.1127i  -0.2336 + 0.1127i   0.4803 
+   0.8421    0.8139 + 0.0000i   0.8139 + 0.0000i  -0.0066 
+  -0.5361   -0.5058 + 0.0129i  -0.5058 - 0.0129i   0.8488 
  \end{verbatim}
- }
  \begin{verbatim}   
  D =
-  -0.6399 + 0.0000i   0.0000 + 0.0000i   0.0000 + 0.0000i   0.0000 + 0.0000i
-   0.0000 + 0.0000i   0.5855 + 0.8861i   0.0000 + 0.0000i   0.0000 + 0.0000i
-   0.0000 + 0.0000i   0.0000 + 0.0000i   0.5855 - 0.8861i   0.0000 + 0.0000i
-   0.0000 + 0.0000i   0.0000 + 0.0000i   0.0000 + 0.0000i  12.4690 + 0.0000i
+  -0.6399   0.0000 + 0.0000i   0.0000 + 0.0000i   0.0000 
+   0.0000   0.5855 + 0.8861i   0.0000 + 0.0000i   0.0000 
+   0.0000   0.0000 + 0.0000i   0.5855 - 0.8861i   0.0000 
+   0.0000   0.0000 + 0.0000i   0.0000 + 0.0000i  12.4690 
 \end{verbatim}
+}
 The $4\times 4$ matrix $T$ has the eigenvectors of $C$ as columns.
 The $j^{th}$ column is the eigenvector associated with the $j^{th}$
 diagonal entry in the diagonal matrix $D$. 
@@ -513,7 +513,7 @@ S =
     0.8421    0.8139         0   -0.0066
    -0.5361   -0.5058    0.0129    0.8488
 \end{verbatim} 
-Note that the $1^{st}$ and $2^{nd}$ columns are the real and 
+Note that the $2^{nd}$ and $3^{rd}$ columns are the real and 
 imaginary parts of the complex eigenvector.  Check that 
 {\tt inv(S)*C*S} is the matrix in complex diagonal form
 \begin{verbatim}
