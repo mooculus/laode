@@ -3,17 +3,17 @@
 \begin{document}
 \begin{computerExercise} \label{c5.3.2}
 Use the {\tt null} command in \Matlab to verify your answers to
-Exercises~\ref{c5.2.2a} and \ref{c5.2.2b}.
+Exercises~\ref{c5.2.2a} and~\ref{c5.2.2b} from section~\ref{S:5.2}. 
 
 \begin{solution}
 
-Enter matrix {\tt A} into \Matlab and type {\tt null(A)}, obtaining
+\soln Enter matrix {\tt A} into \Matlab and type {\tt null(A)}, obtaining
 \begin{verbatim}
 ans =
-   -0.8957         0
-    0.4414    0.1204
-   -0.0519    0.9631
-    0.0130   -0.2408
+   -0.8854    0.1353
+    0.4181   -0.1857
+   -0.1968   -0.9442
+    0.0492    0.2360
          0         0
 \end{verbatim}
 The \Matlab answer is a valid solution if the vectors found
@@ -23,25 +23,23 @@ and {\tt null(A)|y} where $x = (-2,1,0,0,0)$ and $y = (-1,0,-4,1,0)$
 to find that
 \[
 \left(\begin{array}{r} -2 \\ 1 \\ 0 \\ 0 \\ 0 \end{array}\right) =
-2.2328\left(\begin{array}{r} -0.8957 \\ 0.4414 \\ -0.0519 \\ 0.0130 \\ 0
-\end{array}\right) + 0.1204\left(\begin{array}{r} 0 \\ 0.1204 \\ 0.9631 \\
--0.2408 \\ 0 \end{array}\right)
+2.1890\left(\begin{array}{r} -0.8854 \\ 0.4181 \\ -0.1968 \\ 0.0492 \\ 0 \end{array}\right) 
+-0.4563 \left(\begin{array}{r} 0.1353 \\ -0.1857 \\ -0.9442 \\ 0.2360 \\ 0 \end{array}\right).
 \]
 and
 \[
 \left(\begin{array}{r} -1 \\ 0 \\ -4 \\ 1 \\ 0 \end{array}\right) =
-1.1164\left(\begin{array}{r} -0.8957 \\ 0.4414 \\ -0.0519 \\ 0.0130 \\ 0
-\end{array}\right) - 4.0931\left(\begin{array}{r} 0 \\ 0.1204 \\ 0.9631 \\
--0.2408 \\ 0 \end{array}\right).
+1.7219\left(\begin{array}{r} -0.8854 \\ 0.4181 \\ -0.1968 \\ 0.0492 \\ 0 \end{array}\right) +
+3.8775 \left(\begin{array}{r} 0.1353 \\ -0.1857 \\ -0.9442 \\ 0.2360 \\ 0 \end{array}\right).
 \]
 
 Enter matrix {\tt B} into \Matlab and type {\tt null(B)}, obtaining
 \begin{verbatim}
 ans =
-   -0.9661         0
-    0.2070   -0.5976
-   -0.1380   -0.7171
-    0.0690    0.3586
+   -0.1420   -0.9556
+    0.6215    0.1170
+    0.6891   -0.2419
+   -0.3445    0.1209    
 \end{verbatim}
 Again, the \Matlab answer can be checked by verifying by row reduction
 of the augmented matrix that the vectors $(-3,1,0,0)$ and $(-5,0,-2,1)$
@@ -49,16 +47,14 @@ can be written as linear combinations of the \Matlab solution vectors.
 In particular,
 \[
 \left(\begin{array}{r} -3 \\ 1 \\ 0 \\ 0 \end{array}\right) =
-3.1053\left(\begin{array}{r} -0.9661 \\ 0.2070 \\ -0.1380 \\ 0.0690
-\end{array}\right) - 0.5976\left(\begin{array}{r} 0 \\ -0.5976 \\ -0.7171 \\
-0.3586 \end{array}\right)
+1.0475\left(\begin{array}{r}  -0.1420 \\ 0.6215 \\ 0.6891 \\ -0.3445 \end{array}\right) +
+2.9838\left(\begin{array}{r} -0.9556 \\ 0.1170 \\ -0.2419 \\ 0.1209 \end{array}\right).
 \]
 and
 \[
 \left(\begin{array}{r} -5 \\ 0 \\ -2 \\ 1 \end{array}\right) =
-5.1755\left(\begin{array}{r} -0.9661 \\ 0.2070 \\ -0.1380 \\ 0.0690
-\end{array}\right) + 1.7928\left(\begin{array}{r} 0 \\ -0.5976 \\ -0.7171 \\
-0.3586 \end{array}\right).
+-1.0128\left(\begin{array}{r}  -0.1420 \\ 0.6215 \\ 0.6891 \\ -0.3445 \end{array}\right) +
+5.3828\left(\begin{array}{r} -0.9556 \\ 0.1170 \\ -0.2419 \\ 0.1209 \end{array}\right).
 \]
 
 \end{solution}
