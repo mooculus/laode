@@ -103,8 +103,9 @@ b0 = inv(A'*A)*A'*Y
 \end{verbatim}
 to obtain
 \begin{verbatim}
-b0(1) = -3.8597
-b0(2) =  1.8845
+b0 =
+   -3.8597
+    1.8845
 \end{verbatim}
 Superimposing the line $y=-3.8597+1.8845x$ on the
 scatter plot\index{scatter plot} in
@@ -179,20 +180,22 @@ polynomial rather than a linear one.   Use \Matlab as follows
 \begin{verbatim}
 e9_3_1
 A = [F1 X X.*X];
-b = inv(A'*A)*A'*Y
+b0 = inv(A'*A)*A'*Y
 \end{verbatim}
 to obtain
 \begin{verbatim}
-b0(1) =   0.0443
-b0(2) =   1.7054
-b0(3) =  -3.8197
+b0 =
+   -3.8197
+    1.7054
+    0.0443
 \end{verbatim}
 So the best parabolic fit\index{parabolic fit}
 to this data is $y=-3.8197+1.7054x+0.0443x^2$.
-Note that the coefficient of $x^2$ is small suggesting that the data was
+Note that the coefficient of $x^2$ is small, suggesting that the data was
 well fit by a straight line.  Note also that the error is
-$E(b0)=1.9098$ which
-is only marginally smaller than the error for the best linear fit.  For
+$E(b0)=1.9098$ (obtained in \Matlab by typing
+{\tt norm(Y-(b0(1)*F1+b0(2)*X+b0(3)*X.*X)})\index{\computer!norm}
+which is only marginally smaller than the error for the best linear fit.  For
 comparison, in Figure~\ref{F:linreg3} we superimpose the equation for the
 quadratic fit onto Figure~\ref{F:linreg2}.
 \begin{figure}[htb]
