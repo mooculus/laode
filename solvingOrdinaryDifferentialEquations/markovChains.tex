@@ -110,7 +110,7 @@ induction argument shows that the probability of the cat moving from
 room~$i$ to room~$j$ in $k$ steps is precisely the $(i,j)^{th}$ entry in the
 matrix $P^k$ --- which answers Question (A).  In particular, we can answer the
 question: What is the probability that the cat will move from room~4 to room~3
-in four steps?  Using \Matlab the answer is given by typing {\tt e4\_10\_1} to
+in four steps?  Using \Matlab the answer is given by typing {\tt e4\_8\_1} to
 recall the matrix $P$ and then typing
 \begin{verbatim}
 P4 = P^4;
@@ -161,7 +161,7 @@ Suppose, for example, that the initial vector is
 \begin{matlabEquation}\label{MATLAB:9}
 V_0 =\left(\begin{array}{c} 2 \\ 43 \\ 21 \\ 34 \end{array}\right).
 \end{matlabEquation}
-Typing {\tt e4\_10\_1} and {\tt e4\_10\_4} enters the matrix $P$ and the
+Typing {\tt e4\_8\_1} and {\tt e4\_8\_4} enters the matrix $P$ and the
 initial vector $V_0$ into \Matlabp.  To compute $V_{20}$, the distribution
 of cats after $20$ steps, type
 \begin{verbatim}
@@ -440,7 +440,7 @@ moving from state $s_i$ on one morning to
 state $s_j$ the next morning is just $M=PQ$.  We can compute this matrix
 using \Matlab by typing
 \begin{verbatim}
-e4_10_6
+e4_8_6
 M = P*Q
 \end{verbatim}
 obtaining

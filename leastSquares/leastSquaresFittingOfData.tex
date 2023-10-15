@@ -95,7 +95,7 @@ in the Section~\ref{S:LSA}.
 We can use \Matlab to compute the values of $b_1^0$ and $b_2^0$ that give the
 best linear approximation to $Y$.  If we set the matrix $A=(F_1|X)$, then
 Theorem~\ref{T:nearestvector} implies that the values of $b_1^0$ and $b_2^0$
-are obtained using \eqref{E:nearestvector}.  In particular, type {\tt e10\_3\_1}
+are obtained using \eqref{E:nearestvector}.  In particular, type {\tt e9\_3\_1}
 to call the vectors {\tt X, Y, F1} into \Matlabp, and then type
 \begin{verbatim}
 A = [F1 X];
@@ -179,7 +179,7 @@ polynomial rather than a linear one.   Use \Matlab as follows
 \begin{verbatim}
 e9_3_1
 A = [F1 X X.*X];
-b = inv(A'*A)*A'*Y;
+b = inv(A'*A)*A'*Y
 \end{verbatim}
 to obtain
 \begin{verbatim}
