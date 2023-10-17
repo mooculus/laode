@@ -14,41 +14,41 @@ Consider the matrix
  \[
 A=\Matrix{1 & -6 & -1 \\ -3 & 0 & 2 \\ 0 & 1 & -2 \\ 0 & -2 & 4}\ldotp
 \]
-\begin{enumerate} 
+\begin{enumeratea} 
 \item Show that the rows of $A$ are  linearly dependent.
 \item Find two subsets $S_1$ and $S_2$ of rows of $A$ such that 
 \begin{enumerate}
-	\item $S_1\ne S_2$.
-	\item $\mathrm{span}\,S_1=\mathrm{span}\,S_2$. 
-	\item The vectors in $S_1$ are linearly independent and the vectors in $S_2$ are linearly independent. 
+	\item[(i)] $S_1\ne S_2$.
+	\item[(ii)] $\mathrm{span}\,S_1=\mathrm{span}\,S_2$. 
+	\item[(iii)] The vectors in $S_1$ are linearly independent and the vectors in $S_2$ are linearly independent. 
 	\end{enumerate}
-\end{enumerate}
+\end{enumeratea}
 
 \begin{solution}
 \ans 
-\begin{enumerate}
+\begin{enumeratea}
 \item Let $\{R_1,R_2,R_3,R_4\}$ be the rows of $A$.  Linear dependence follows from 
 \[
 0R_1 + 0R_3+2R_3+R_4 = 0.
 \] 
 \item $S_1=\{R_1,R_2,R_3\}$ and $S_2=\{R_1,R_2,R_4\}$ satisfy the three conditions.
-\end{enumerate}
+\end{enumeratea}
 
 \soln 
 
-\begin{enumerate}
+\begin{enumeratea}
 
 \item By inspection, $R_4=-2R_3$. This implies, by Lemma~\ref{L:lindep}, that the rows of $A$ are linearly dependent. 
 
 \item Let $S_1=\{R_1,R_2,R_3\}$ and $S_2=\{R_1,R_2,R_4\}$.   
 \begin{enumerate}
-	\item The sets of vectors $S_1$ and $S_2$ are unequal.
-	\item Verify that $\mathrm{span}\,S_1 = \mathrm{span}\,S_2$ as follows.  A linear combination of vectors in $S_1$ has the form
+	\item[(i)] The sets of vectors $S_1$ and $S_2$ are unequal.
+	\item[(ii)] Verify that $\mathrm{span}\,S_1 = \mathrm{span}\,S_2$ as follows.  A linear combination of vectors in $S_1$ has the form
 	\[
 	r_1 R_1 + r_2 R_2 + r_3 R_3 = r_1 R_1 + r_2 R_2 - \frac{1}{2} r_3 R_4 
 	\]
 	which is a linear combination of vectors in $S_2$. 
-	\item Use  Lemma~\ref{L:linindep} to see that $S_1$ is a linearly independent set of vectors. More precisely, the augmented matrix for the system of equations $r_1R_1+r_2 R_2+r_3 R_3=0$ row reduces to 
+	\item[(iii)] Use  Lemma~\ref{L:linindep} to see that $S_1$ is a linearly independent set of vectors. More precisely, the augmented matrix for the system of equations $r_1R_1+r_2 R_2+r_3 R_3=0$ row reduces to 
 \[
 \left(
 \begin{array}{ccc|c}
@@ -60,7 +60,7 @@ A=\Matrix{1 & -6 & -1 \\ -3 & 0 & 2 \\ 0 & 1 & -2 \\ 0 & -2 & 4}\ldotp
 \]
 Thus, $r_1 = r_2 = r_3 = 0$ so Lemma~\ref{L:linindep} implies $S_1$ is a linearly independent set of vectors. The same reasoning shows that $S_2$ is a linearly independent set of vectors.  Alternatively, since $R_4=-2R_3$, linear independence of $S_1$ implies linear independence of $S_2$.
 \end{enumerate}
-\end{enumerate}
+\end{enumeratea}
 \end{solution}
 \end{exercise}
 
