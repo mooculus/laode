@@ -13,7 +13,7 @@ $X(0.5)$ to three decimal places.
 $C = \mattwo{2.65}{-2.34}{-1.5}{-1.2} \AND X_0=\vectwo{0.5}{0.1}$.
 
 \begin{solution}
-\ans $X(0.5) = (0.155,0.386)^t$.  
+\ans $X(0.5) = (2.166,-0.606)^t$.  
 
 \soln
 Enter the matrix $C$ into \Matlab by typing
@@ -42,13 +42,13 @@ X(0) = V \vectwo{\alpha}{\beta}
 Therefore,
 \[
 \vectwo{\alpha}{\beta} = V\inv X_0 = 
-\mattwo{0.9510}{0.4525}{-0.3093}{0.8918}\vectwo{0.5}{1.0} = \vectwo{-0.0067}{1.1191}
+\mattwo{0.9510}{0.4525}{-0.3093}{0.8918}^{-1}\vectwo{0.5}{1.0} = \vectwo{0.4055}{0.2528}
 \]
-The last calculation is done by typing {\tt coeff = inv(V)*[0.5;1.0]}. 
+The last calculation is done by typing {\tt coeff = inv(V)*[0.5;0.1]}. 
 Therefore, the solution to the initial value problem is:
 \[
-X(t) = -0.0067e^{3.4112 t}\vectwo{0.9510}{-0.3093} +
-1.1191e^{-1.9612 t}\vectwo{0.4525}{0.8918}.
+X(t) = 0.4055e^{3.4112 t}\vectwo{0.9510}{-0.3093} +
+0.2528e^{-1.9612 t}\vectwo{0.4525}{0.8918}.
 \]
 We can evaluate $X(0.5)$ in \Matlab by typing
 \begin{verbatim}
@@ -57,8 +57,8 @@ X5 = coeff(1)*exp(D(1,1)*0.5)*V(:,1) + coeff(2)*exp(D(2,2)*0.5)*V(:,2)
 and obtaining
 \begin{verbatim}
 X5 =
-    0.1547
-    0.3858
+    2.1655
+   -0.6059
 \end{verbatim}
 
 \end{solution}
@@ -96,7 +96,7 @@ X(0) = V \vectwo{\alpha}{\beta}
 Therefore,
 \[
 \vectwo{\alpha}{\beta} = V\inv X_0 = 
-\mattwo{0.9928}{-0.4335}{0.1194}{0.9011}\vectwo{0.5}{0.7} = \vectwo{0.7967}{0.6712}
+\mattwo{0.9928}{-0.4335}{0.1194}{0.9011}^{-1}\vectwo{0.5}{0.7} = \vectwo{0.7967}{0.6712}
 \]
 The last calculation is done by typing {\tt coeff = inv(V)*[0.5;0.7]}. 
 Therefore, the solution to the initial value problem is:
