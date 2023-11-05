@@ -17,21 +17,21 @@ where $x(0) = 1  \AND  y(0) = -2$.
 this system is:
 \[
 \vectwo{x(t)}{y(t)} = \vectwo{e^{2t}(\cos(3t) - 2\sin(3t))}
-{-e^{2t}(\sin(3t) + 2\cos(2t))}.
+{-e^{2t}(\sin(3t) + 2\cos(3t))}.
 \]
 
-\soln Let $\sigma = 2$ and $\tau = -3$.  Then,
+\soln The system is already in Jordan Normal Form with $\sigma = 2$ and $\tau = -3$: 
 \[
 \begin{array}{rrr}
 \dot{x} & = & \sigma x - \tau y \\
-\dot{y} & = & \tau x + \sigma y \end{array}
+\dot{y} & = & \tau x + \sigma y \end{array}. 
 \]
-so, according to Table~\ref{T:3sys}
+So, according to Table~\ref{T:3sys}
 \[
 \vectwo{x(t)}{y(t)} = \vectwo{e^{\sigma t}(x_0\cos(\tau t) -
 y_0\sin(\tau t))}{e^{\sigma t}(x_0\sin(\tau t) +
-y_0\cos(\tau t))} = \vectwo{e^{2t}(x_0\cos(-3t) - y_0\sin(-3t))}
-{e^{2t}(x_0\sin(-3t) + y_0\cos(2t))}.
+y_0\cos(\tau t))} = \vectwo{e^{2t}(\cos(-3t) + 2\sin(-3t))}
+{e^{2t}(\sin(-3t) -2\cos(-3t))}.
 \]
 
 \end{solution}
