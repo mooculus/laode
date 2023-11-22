@@ -10,7 +10,7 @@
 
 \begin{exercise}\label{mc.exercise12}
 Which of the following are True and which False.  Give reasons for your answer.
-\begin{enumerate}
+\begin{enumeratea}
 \item For any $n \times n$ matrix $A$, $\det(A)$ is the product of its $n$ eigenvalues.
 \item Similar matrices always have the same eigenvectors.
 \item For any $n \times n$ matrix $A$ and scalar $k\in\R$, $\det(kA) = k^n \det(A)$.
@@ -19,7 +19,7 @@ Which of the following are True and which False.  Give reasons for your answer.
 L(1,2,3) = (0,1) \AND L(2,4,6) = (1,1).
 \]
 \item The only rank $0$ matrix is the zero matrix.
-\end{enumerate}
+\end{enumeratea}
 
 \begin{solution}
 
@@ -27,18 +27,18 @@ L(1,2,3) = (0,1) \AND L(2,4,6) = (1,1).
 True statements are circled and False statements are crossed out.
 
 
-\begin{enumerate}
+\begin{enumeratea}
 
 \item \fbox{For any $n \times n$ matrix $A$, $\det(A)$ is the product of its $n$ eigenvalues.}
 \item \sout{Similar matrices always have the same eigenvectors}.
 \item \fbox{For any $n \times n$ matrix $A$ and scalar $k\in\R$, $\det(kA) = k^n \det(A)$.}
 \item \sout{There is a linear map $L: \R^3 \to \R^2$ such that $L(1,2,3) = (0,1)$ and $L(2,4,6) = (1,1)$}.
 \item \fbox{The only rank $0$ matrix is the zero matrix.}
-\end{enumerate}
+\end{enumeratea}
 
-\soln \begin{enumerate}
+\soln \begin{enumeratea}
 
-\item This follows from Theorem~\ref{T:eigens}(a).
+\item This follows from Theorem~\ref{T:eigens}(b).
 
 %The characteristic polynomial of $A$ is computed as the determinant $p(\lambda)=\det(A-\lambda I)$, so when $\lambda=0$, we recover $\det(A)$. It is always the case that $p(\lambda)$ has leading coefficient $(-1)^n$, so the fundamental theorem of algebra guarantees that the polynomial $\det(A-\lambda I)$ factors as $(-1)^n (\lambda-\lambda_1)\cdot \cdots\cdot (\lambda-\lambda_n)$ where the $\lambda_i$ are the roots of $c(\lambda)$. So when $\lambda=0$, we recover 
 %\[
@@ -54,7 +54,7 @@ True statements are circled and False statements are crossed out.
 \item Since the vector $(2,4,6)=2(1,2,3)$, linearity forces $L(2,4,6)=2L(1,2,3)$. But $2L(1,2,3)=(0,2)\ne (1,1)$. So there exists no such function.
 
 \item The rank of a matrix $A$ is the number of linearly independent rows. Hence, if a row of $A$ is nonzero, then the $\rank(A)\geq 1$.  Therefore, $\rank(A) = 0$ implies all rows of $A$ equal $0$ and $A=0$.
-\end{enumerate}
+\end{enumeratea}
 
 
 

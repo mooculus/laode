@@ -33,7 +33,7 @@ $B = \left(\begin{array}{rrrr} 1 & 0 & 2 & 3 \\ -1 & -2 & 3 & 2
 
 \soln First row reduce:
 \[
-\det\left(\begin{array}{rrrr}
+\det(B)=\det\left(\begin{array}{rrrr}
 1 & 0 & 2 & 3 \\ 
 -1 & -2 & 3 & 2 \\
 4 & -2 & 0 & 3 \\
@@ -44,9 +44,9 @@ $B = \left(\begin{array}{rrrr} 1 & 0 & 2 & 3 \\ -1 & -2 & 3 & 2
 0 & -2 & -8 & -9 \\
 0 & 2 & -2 & -6 \end{array}\right).
 \]
-Then, use formula \eqref{e:inductdet}:
+Then, with cofactor expansion about the first column, only one cofactor has a nonzero coefficient, so 
 \[ \begin{array}{rcl}
-\det\matthree{-2}{5}{5}{-2}{-8}{-9}{2}{-2}{-6} & = &
+\det(B) = 1\det\matthree{-2}{5}{5}{-2}{-8}{-9}{2}{-2}{-6} & = &
 \begin{array}{l}
 (-2)(-8)(-6) + 5(-9)2 + 5(-2)(-2) - 5(-8)2 \\
 - 5(-2)(-6) - (-2)(-9)(-2) \end{array} \\
