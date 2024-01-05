@@ -14,20 +14,20 @@ Let $W\subset \R^n$ be a $k$-dimensional subspace where $k<n$.  Define
 \[
 W^\perp = \{v\in\R^n: v\cdot w = 0\quad \mbox{for all $w\in W$} \}
 \]
-\begin{enumerate}
+\begin{enumeratea}
 \item Show that $W^\perp$ is a subspace of $\R^n$.
 \item Find a basis for $W^\perp$ in the special case that $W = \mathrm{span}\{e_1,e_2,e_3\}\subset\R^5$.
 
-\end{enumerate}
+\end{enumeratea}
 
   
 \begin{solution}
 
 
-\soln \begin{enumerate}
+\soln \begin{enumeratea}
 \item If $v\in W^\perp$, then for any $c\in\R^n$, $cv\in W^\perp$ since $(cv)\cdot w=c(v\cdot w)=0$, so $cv\in W^\perp$. Let $v_1,v_2\in W^\perp$. Then $(v_1+v_2)\cdot w=v_1\cdot w+v_2\cdot w=0+0=0$. So $v_1+v_2\in W^\perp$. So $W^\perp$ is a subspace of $\R^n$.
 \item A good guess would be that $W^\perp$ has a basis $\{e_4,e_5\}$. Since every vector $v\in\R^5$ is a linear combination of the $e_i$ ($i=1,2,\ldots,5$), $v\in W^\perp$ precisely when $v=c_4 e_4+c_5 e_5$ for some $c_4,c_5\in\R$. Indeed, if $v=c_1e_1+\cdots+c_5e_5$ where the $c_i\in\R$, then $v\in W^\perp$ forces $v\cdot e_i=0$ for $i=1,2,3$. By inspection, $v\cdot e_i=c_i$, so $c_i=0$. Thus, every vector in $W^\perp$ must be of the form $c_4 e_4+c_5 e_5$ and hence $\{e_4,e_5\}$ is a basis for $W^\perp$. 
-\end{enumerate}
+\end{enumeratea}
 
 
 \end{solution}

@@ -14,16 +14,16 @@ Let $p(t)=t$ and find $[p]_{\cal V}$.
 \ans If $p(t) = t$, then
 $[p]_{\cal V} = (\frac{4}{7}, -\frac{1}{7}, -\frac{2}{7})$.
 
-\soln In order to verify that ${\cal V}$ is a basis for ${\cal P}_2$, first
-show that the set $\{1,t,t^2\}$ is a basis for ${\cal P}_2$.  To prove
-this, note that any polynomial in ${\cal P}_2$ can be written as
-$p = \alpha_1 + \alpha_2t + \alpha_3t^2$, so the set spans ${\cal P}_2$.
-Also, $0 = \alpha_1 + \alpha_2t + \alpha_3t^2$ if and only if
-$\alpha_1 = \alpha_2 = \alpha_3 = 0$, so the set is linearly
-independent.
+%\soln In order to verify that ${\cal V}$ is a basis for ${\cal P}_2$, first
+%show that the set $\{1,t,t^2\}$ is a basis for ${\cal P}_2$.  To prove
+%this, note that any polynomial in ${\cal P}_2$ can be written as
+%$p = \alpha_1 + \alpha_2t + \alpha_3t^2$, so the set spans ${\cal P}_2$.
+%Also, $0 = \alpha_1 + \alpha_2t + \alpha_3t^2$ if and only if
+%$\alpha_1 = \alpha_2 = \alpha_3 = 0$, so the set is linearly
+%independent.
 
-\para The set $\{1,t,t^2\}$ has dimension 3 and is a basis for
-${\cal P}_2$.  Therefore, any linearly independent set of three vectors
+\soln The set $\{1,t,t^2\}$ is a basis for ${\cal P}_2$, which therefore has dimension 3. 
+Thus, any linearly independent set of three vectors
 in ${\cal P}_2$ will span ${\cal P}_2$.  So we need only show that
 ${\cal V}$ is a linearly independent set, which we do by solving:
 \[
@@ -31,11 +31,11 @@ ${\cal V}$ is a linearly independent set, which we do by solving:
 0 & = & \alpha_1p_1(t) + \alpha_2p_2(t) + \alpha_3p_3(t) \\
 & = & \alpha_1(1 + 2t) + \alpha_2(t + 2t^2) + \alpha_3(2 - t^2) \\
 & = & (\alpha_1 + 2\alpha_3) + (2\alpha_1 + \alpha_2)t +
-(2\alpha_2 - \alpha_3). \end{array}
+(2\alpha_2 - \alpha_3)t^2. \end{array}
 \]
 This equation is identically $0$ if
 \[
-\matthree{1}{2}{0}{2}{0}{1}{0}{2}{1}\vecthree{\alpha_1}{\alpha_2}
+\matthree{1}{0}{2}{2}{1}{0}{0}{2}{-1}\vecthree{\alpha_1}{\alpha_2}
 {\alpha_3} = 0.
 \]
 The only solution to this system is $\alpha_1 = \alpha_2 = \alpha_3
